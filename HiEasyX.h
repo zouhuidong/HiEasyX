@@ -29,7 +29,7 @@
 #endif
 
 #include "HiEasyX/HiCanvas.h"
-#include "HiEasyX/HiGUI.h"
+#include "HiEasyX/HiGUI/HiGUI.h"
 
 
 // 兼容旧版 EasyWin32 命名空间，请尽量使用 HiEasyX 命名空间

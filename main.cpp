@@ -159,7 +159,7 @@ int main()
 
 		});
 
-	HiEasyX::ProgressCtrl progress(300, 55, 300, 20, 300);	// 进度条控件
+	HiEasyX::ProgressCtrl progress(250, 55, 300, 20, 300);	// 进度条控件
 	progress.SetProcess(33);
 	//progress.SetBarColor(RED);
 	progress.EnableAnimation(true);
@@ -167,10 +167,10 @@ int main()
 	progress.GetCanavs().SetBkMode(TRANSPARENT);
 
 	HiEasyX::ScrollBar scrollbar(20, 100, 25, 300, 100, 20, false);
-	//scrollbar.SetViewRatio(0.33f);
-	scrollbar.SetContentLength(100);
 	scrollbar.SetViewLength(33);
-	scrollbar.SetSliderContentPos(33);
+
+	HiEasyX::ScrollBar scrollbar_horizon(ALIGN_X, 10, 300, 25, 100, 20, true);
+	scrollbar_horizon.SetViewLength(33);
 
 	ExMessage msg;
 	while (window.isAlive())
@@ -184,13 +184,19 @@ int main()
 			btnClassic.UpdateMessage(msg);
 			btnDisabled.UpdateMessage(msg);
 			scrollbar.UpdateMessage(msg);
+			scrollbar_horizon.UpdateMessage(msg);
 		}
 
 		if (window.isSizeChanged())
 		{
-			scrollbar.SetHeight(window.GetClientHeight() - scrollbar.GetY() - 50);
+			int interval = 25;
+			int w = window.GetClientWidth();
+			int h = window.GetClientHeight();
+			progress.SetWidth(w - progress.GetX() - interval);
+			scrollbar.SetHeight(h - scrollbar.GetY() - interval);
+			scrollbar_horizon.SetWidth(w - scrollbar_horizon.GetX() - interval);
 		}
-		
+
 		//canvas.Clear();
 
 		btnSave.Redraw();
@@ -222,6 +228,9 @@ int main()
 
 		scrollbar.Redraw();
 		scrollbar.Render(&canvas);
+
+		scrollbar_horizon.Redraw();
+		scrollbar_horizon.Render(&canvas);
 
 		window.FlushDrawing();
 		window.Redraw();

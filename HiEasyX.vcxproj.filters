@@ -42,10 +42,28 @@
     <ClInclude Include="HiEasyX\HiMusicMCI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HiEasyX\HiGUI.h">
+    <ClInclude Include="HiEasyX\HiStart.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HiEasyX\HiStart.h">
+    <ClInclude Include="HiEasyX\HiGUI\Container.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\ControlBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\HiGUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\ProgressCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\ScrollBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\Static.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\Button.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,10 +92,25 @@
     <ClCompile Include="HiEasyX\HiMusicMCI.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="HiEasyX\HiGUI.cpp">
+    <ClCompile Include="HiEasyX\HiStart.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="HiEasyX\HiStart.cpp">
+    <ClCompile Include="HiEasyX\HiGUI\ControlBase.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\ProgressCtrl.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\ScrollBar.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\Static.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\Button.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\Container.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
