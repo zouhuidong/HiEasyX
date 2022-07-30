@@ -212,21 +212,19 @@ int main()
 
 		page.Draw();
 		progress.Draw_Text();
+
+		canvas.BeginBatchDrawing();
 		page.Render();
-		
+		canvas.EndBatchDrawing();
+
 		//page.UpdateImage();
 
 		window.FlushDrawing();
 		window.Redraw();
 
-		if (GetForegroundWindow() != window.GetHandle())
-		{
-			Sleep(500);
-		}
-		/*Sleep(50);*/
-		HiEasyX::DelayFPS(60);
+		// 固定帧率，并在非活动窗口时释放 CPU 占用
+		HiEasyX::DelayFPS(24, !window.isForegroundWindow());
 	}
-
 
 	return 0;
 }

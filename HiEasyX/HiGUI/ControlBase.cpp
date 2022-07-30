@@ -160,11 +160,15 @@ namespace HiEasyX
 	{
 		if (m_bVisible)
 		{
+			m_canvas.BeginBatchDrawing();
+
 			// 子控件先绘制到此控件画布上，再绘制到 dst
 			for (auto& child : m_listChild)
 			{
 				child->Render(&m_canvas);
 			}
+
+			m_canvas.EndBatchDrawing();
 
 			dst->PutImageIn_Alpha(
 				m_rct.left, m_rct.top,

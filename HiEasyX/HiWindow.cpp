@@ -1464,6 +1464,11 @@ namespace HiEasyX
 		ResizeWindow(w, h, g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
+	bool Window::isForegroundWindow()
+	{
+		return GetForegroundWindow() == g_vecWindows[m_nWindowIndex].hWnd;
+	}
+
 	int Window::GetClientWidth()
 	{
 		return g_vecWindows[m_nWindowIndex].pBufferImg->getwidth();

@@ -8,8 +8,14 @@ namespace HiEasyX
 {
 	clock_t tRecord = 0;
 	
-	void DelayFPS(int fps)
+	void DelayFPS(int fps, bool wait_long)
 	{
+		if (wait_long)
+		{
+			Sleep(500);
+			return;
+		}
+
 		clock_t tNow = clock();
 		if (tRecord)
 		{

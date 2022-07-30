@@ -9,5 +9,6 @@
 namespace HiEasyX
 {
 	// 根据目标帧率延时
-	void DelayFPS(int fps);
+	// wait_long	是否长等待（降低占用）
+	void DelayFPS(int fps, bool wait_long = false);
 };

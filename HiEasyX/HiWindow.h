@@ -166,6 +166,9 @@ namespace HiEasyX
 
 		void Resize(int w, int h);
 
+		// 是否为用户正在使用的窗口
+		bool isForegroundWindow();
+
 		ExMessage Get_Message(BYTE filter = -1);
 
 		void Get_Message(ExMessage* msg, BYTE filter = -1);
