@@ -213,7 +213,7 @@ int main()
 		page.Draw();
 		progress.Draw_Text();
 		page.Render();
-
+		
 		//page.UpdateImage();
 
 		window.FlushDrawing();
