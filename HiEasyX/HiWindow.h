@@ -122,7 +122,7 @@ namespace HiEasyX
 
 		bool BeginTask();
 
-		void EndTask();
+		void EndTask(bool flush = true);
 
 		bool isInTask();
 
@@ -264,8 +264,8 @@ namespace HiEasyX
 	// 调用 EasyX 函数进行绘图或获取消息时，都应该先启动任务再进行调用。
 	bool BeginTask();
 
-	// 终止当前任务，输出绘图缓冲
-	void EndTask();
+	// 终止当前任务，（可选）输出绘图缓冲
+	void EndTask(bool flush = true);
 
 	// 判断当前是否有任务在进行
 	// 若传入句柄，则额外判断它是否为活动窗口

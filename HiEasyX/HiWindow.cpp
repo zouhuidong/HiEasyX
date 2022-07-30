@@ -198,8 +198,9 @@ namespace HiEasyX
 		}
 
 		// 等待任务结束
-		WaitForTask(g_vecWindows[index].hWnd);
 		g_vecWindows[index].isBusyProcessing = true;
+		WaitForTask(g_vecWindows[index].hWnd);
+
 		g_vecWindows[index].isAlive = false;
 
 		// 若已设置父窗口为模态窗口，则需要将父窗口恢复正常
@@ -321,6 +322,7 @@ namespace HiEasyX
 			WaitForTask();
 			WaitForProcessing(index);
 			g_nFocusWindowIndex = index;
+
 			SetWorkingImage(GetFocusWindow().pBufferImg);
 			return true;
 		}
@@ -349,9 +351,6 @@ namespace HiEasyX
 	{
 		if (isAliveWindow(index))
 		{
-			WaitForProcessing(index);
-			g_vecWindows[index].isBusyProcessing = true;
-
 			int w = g_vecWindows[index].pImg->getwidth();
 			int h = g_vecWindows[index].pImg->getheight();
 
@@ -382,8 +381,6 @@ namespace HiEasyX
 					buf[0][i] = buf[1][i];
 				}
 			}
-
-			g_vecWindows[index].isBusyProcessing = false;
 		}
 	}
 
@@ -398,11 +395,11 @@ namespace HiEasyX
 		return g_isInTask;
 	}
 
-	void EndTask()
+	void EndTask(bool flush)
 	{
 		if (g_isInTask)
 		{
-			if (isFocusWindowExisted())
+			if (flush && isFocusWindowExisted())
 			{
 				FlushDrawing(g_nFocusWindowIndex);
 			}
@@ -806,15 +803,14 @@ namespace HiEasyX
 			break;
 
 		case WM_SIZE:
-			// 防止和当前绘图任务发生冲突
-			WaitForTask(g_vecWindows[indexWnd].hWnd);
 			WaitForProcessing(indexWnd);
-			g_vecWindows[indexWnd].isBusyProcessing = true;
+			g_vecWindows[indexWnd].isBusyProcessing = true;		// 不能再启动任务
+			WaitForTask(g_vecWindows[indexWnd].hWnd);			// 等待最后一个任务完成
 
 			ResizeWindowImage(indexWnd);
 			if (g_vecWindows[indexWnd].pBufferImgCanvas)
 			{
-				g_vecWindows[indexWnd].pBufferImgCanvas->UpdateInfo();
+				g_vecWindows[indexWnd].pBufferImgCanvas->UpdateSizeInfo();
 			}
 
 			g_vecWindows[indexWnd].isBusyProcessing = false;
@@ -1350,9 +1346,9 @@ namespace HiEasyX
 		}
 	}
 
-	void Window::EndTask()
+	void Window::EndTask(bool flush)
 	{
-		HiEasyX::EndTask();
+		HiEasyX::EndTask(flush);
 	}
 
 	bool Window::isInTask()
@@ -1404,7 +1400,8 @@ namespace HiEasyX
 
 	void Window::FlushDrawing()
 	{
-		HiEasyX::FlushDrawing(m_nWindowIndex);
+		BeginTask();
+		EndTask();
 	}
 
 	void Window::Redraw()

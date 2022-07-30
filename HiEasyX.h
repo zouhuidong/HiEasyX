@@ -18,6 +18,7 @@
 
 #include "HiEasyX/HiMacro.h"
 #include "HiEasyX/HiFunc.h"
+#include "HiEasyX/HiFPS.h"
 #include "HiEasyX/HiDrawingProperty.h"
 #include "HiEasyX/HiMouseDrag.h"
 #include "HiEasyX/HiMusicMCI.h"

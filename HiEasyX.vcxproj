@@ -130,12 +130,14 @@
     <ClInclude Include="HiEasyX.h" />
     <ClInclude Include="HiEasyX\HiCanvas.h" />
     <ClInclude Include="HiEasyX\HiDrawingProperty.h" />
+    <ClInclude Include="HiEasyX\HiFPS.h" />
     <ClInclude Include="HiEasyX\HiFunc.h" />
     <ClInclude Include="HiEasyX\HiGif.h" />
     <ClInclude Include="HiEasyX\HiGUI\Button.h" />
     <ClInclude Include="HiEasyX\HiGUI\Container.h" />
     <ClInclude Include="HiEasyX\HiGUI\ControlBase.h" />
     <ClInclude Include="HiEasyX\HiGUI\HiGUI.h" />
+    <ClInclude Include="HiEasyX\HiGUI\Page.h" />
     <ClInclude Include="HiEasyX\HiGUI\ProgressCtrl.h" />
     <ClInclude Include="HiEasyX\HiGUI\ScrollBar.h" />
     <ClInclude Include="HiEasyX\HiGUI\Static.h" />
@@ -148,11 +150,13 @@
   <ItemGroup>
     <ClCompile Include="HiEasyX\HiCanvas.cpp" />
     <ClCompile Include="HiEasyX\HiDrawingProperty.cpp" />
+    <ClCompile Include="HiEasyX\HiFPS.cpp" />
     <ClCompile Include="HiEasyX\HiFunc.cpp" />
     <ClCompile Include="HiEasyX\HiGif.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\Button.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\Container.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\ControlBase.cpp" />
+    <ClCompile Include="HiEasyX\HiGUI\Page.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\ProgressCtrl.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\ScrollBar.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\Static.cpp" />

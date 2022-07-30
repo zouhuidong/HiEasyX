@@ -66,6 +66,12 @@
     <ClInclude Include="HiEasyX\HiGUI\Button.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HiEasyX\HiGUI\Page.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiFPS.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,6 +117,12 @@
       <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="HiEasyX\HiGUI\Container.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiGUI\Page.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HiEasyX\HiFPS.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>

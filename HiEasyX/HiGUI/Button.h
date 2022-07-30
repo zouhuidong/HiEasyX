@@ -50,7 +50,7 @@ namespace HiEasyX
 
 		void UpdateMessage(ExMessage msg) override;
 
-		void Redraw(bool draw_child = true) override;
+		void Draw(bool draw_child = true) override;
 	};
 }
 

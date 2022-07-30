@@ -20,15 +20,29 @@ namespace HiEasyX
 		);
 	}
 
-	void CopyImage_Alpha(int x, int y, DWORD* pDst, int wDst, int hDst, DWORD* pSrc, int wSrc, int hSrc, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
+	void CopyImage_Alpha(int x, int y, DWORD* pDst, int wDst, int hDst, DWORD* pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
+		// 裁剪起点或终点无效
+		if (crop.left > wSrc || crop.top > hSrc || crop.right < crop.left || crop.bottom < crop.top)
+			return;
+
+		// 限制原图宽高
+		int limit_w = ((crop.right && crop.right < wSrc) ? crop.right : wSrc);
+		int limit_h = ((crop.bottom && crop.bottom < hSrc) ? crop.bottom : hSrc);
+
+		// 标记不使用任何透明通道
 		bool bNoAlpha = false;
 		float fTransparent = alpha / 255.0f;
 		if (alpha == 255 && !bUseSrcAlpha)	bNoAlpha = true;
-		if (!bUseSrcAlpha)	isCalculated = false;	// 保证只有在使用原图透明度时，已计算标记才能开启
-		for (int i = x < 0 ? -x : 0, nx = i + x; i < wSrc && nx < wDst; i++, nx++)
+
+		// 保证只有在使用原图透明度时，已计算标记才能开启
+		if (!bUseSrcAlpha)	isCalculated = false;
+
+		// i j -> 原图索引（若输出位置为负，则略过超出范围部分）
+		// nx ny -> 载体图像索引
+		for (int i = (x < 0 ? -x : 0) + crop.left, nx = i + x; i < limit_w && nx < wDst; i++, nx++)
 		{
-			for (int j = y < 0 ? -y : 0, ny = j + y; j < hSrc && ny < hDst; j++, ny++)
+			for (int j = (y < 0 ? -y : 0) + crop.top, ny = j + y; j < limit_h && ny < hDst; j++, ny++)
 			{
 				int indexSrc = j * wSrc + i;
 				int indexDst = ny * wDst + nx;
@@ -224,7 +238,7 @@ namespace HiEasyX
 	Canvas::Canvas()
 	{
 		CleanUpSettings();
-		UpdateInfo();
+		UpdateSizeInfo();
 	}
 
 	Canvas::Canvas(int w, int h, COLORREF cBk)
@@ -257,7 +271,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			Resize(w, h);
-			UpdateInfo();
+			UpdateSizeInfo();
 
 			// 不使用 IMAGE::operator=，因为它不支持指针
 			memcpy(m_pBuf, GetImageBuffer(pImg), m_nBufSize * sizeof(COLORREF));
@@ -272,7 +286,7 @@ namespace HiEasyX
 		return operator=(&img);
 	}
 
-	void Canvas::UpdateInfo()
+	void Canvas::UpdateSizeInfo()
 	{
 		m_pBuf = GetImageBuffer(GetImagePointer());
 
@@ -308,7 +322,7 @@ namespace HiEasyX
 			}
 
 			EndWindowTask();
-			UpdateInfo();
+			UpdateSizeInfo();
 		}
 	}
 
@@ -317,7 +331,7 @@ namespace HiEasyX
 		CleanUpSettings();
 		m_bBindToImgPointer = true;
 		m_pImg = pImg;
-		UpdateInfo();
+		UpdateSizeInfo();
 		return *this;
 	}
 
@@ -353,9 +367,9 @@ namespace HiEasyX
 		return true;
 	}
 
-	void Canvas::RenderTo_Alpha(int x, int y, IMAGE* pImg, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
+	void Canvas::Render(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
-		int w, h;
+		int w, h;	// 目标输出画布尺寸
 		GetImageSize(pImg, w, h);
 		if (BeginWindowTask())
 		{
@@ -363,6 +377,7 @@ namespace HiEasyX
 				x, y,
 				GetImageBuffer(pImg), w, h,
 				m_pBuf, m_nWidth, m_nHeight,
+				crop,
 				alpha, bUseSrcAlpha, isCalculated
 			);
 
@@ -1493,13 +1508,13 @@ namespace HiEasyX
 			int nh = y + h;
 			Resize(m_nWidth < nw ? nw : m_nWidth, m_nHeight < nh ? nh : m_nHeight);
 		}
-		PutImage_Alpha(x, y, &img, alpha, bUseSrcAlpha);
+		PutImageIn_Alpha(x, y, &img, { 0 }, alpha, bUseSrcAlpha);
 		return img;
 	}
 
-	void Canvas::PutImage_Alpha(int x, int y, IMAGE* pImg, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
+	void Canvas::PutImageIn_Alpha(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
-		int w, h;
+		int w, h;	// 原图像尺寸
 		GetImageSize(pImg, w, h);
 		if (BeginWindowTask())
 		{
@@ -1507,6 +1522,7 @@ namespace HiEasyX
 				x, y,
 				m_pBuf, m_nWidth, m_nHeight,
 				GetImageBuffer(pImg), w, h,
+				crop,
 				alpha, bUseSrcAlpha, isCalculated
 			);
 
@@ -1536,7 +1552,7 @@ namespace HiEasyX
 			if (BeginWindowTask())
 			{
 				*m_pImg = HiEasyX::ZoomImage_Alpha(m_pImg, nW, nH);
-				UpdateInfo();
+				UpdateSizeInfo();
 
 				EndWindowTask();
 			}
@@ -1554,7 +1570,7 @@ namespace HiEasyX
 			if (BeginWindowTask())
 			{
 				*m_pImg = HiEasyX::ZoomImage_Win32_Alpha(m_pImg, nW, nH);
-				UpdateInfo();
+				UpdateSizeInfo();
 			}
 		}
 		else
@@ -1615,20 +1631,10 @@ namespace HiEasyX
 		return m_pCanvas;
 	}
 
-	Canvas* ImageBlock::GetCanvas()
-	{
-		return m_pCanvas;
-	}
-
 	void ImageBlock::SetCanvas(Canvas* pCanvas)
 	{
 		DeleteMyCanvas();
 		m_pCanvas = pCanvas;
-	}
-
-	POINT ImageBlock::GetPos()
-	{
-		return { x,y };
 	}
 
 	void ImageBlock::SetPos(int _x, int _y)
@@ -1637,7 +1643,21 @@ namespace HiEasyX
 		y = _y;
 	}
 
-	void Layer::RenderTo_Alpha(IMAGE* pImg, bool bShowOutline, bool bShowText, std::wstring wstrAddedText)
+	void ImageBlock::Render(IMAGE* pImg, BYTE alpha)
+	{
+		if (m_pCanvas)
+		{
+			m_pCanvas->Render(
+				x, y,
+				pImg,
+				rctCrop,
+				(BYTE)(alpha * (alpha == 255 ? 1 : alpha / 255.0f)),
+				bUseSrcAlpha, isAlphaCalculated
+			);
+		}
+	}
+
+	void Layer::Render(IMAGE* pImg, bool bShowOutline, bool bShowText, std::wstring wstrAddedText)
 	{
 		bool flagOutline = bOutline || bShowOutline;
 		bool flagText = bText || bShowText;
@@ -1659,18 +1679,10 @@ namespace HiEasyX
 				canvas.SetTextStyle(16, 0, L"Arial");
 			}
 
-			// 图层叠加透明度
-			
-			float fAlphaRatio = (alpha == 255 ? 1 : alpha / 255.0f);
 			size_t i = 0;
 			for (auto& element : *this)
 			{
-				element->GetCanvas()->RenderTo_Alpha(
-					element->x, element->y,
-					pImg,
-					(BYTE)(element->alpha * fAlphaRatio),
-					element->bUseSrcAlpha, element->isAlphaCalculated
-				);
+				element->Render(pImg, alpha);
 
 				// 绘制轮廓
 				if (flagOutline)
@@ -1678,8 +1690,8 @@ namespace HiEasyX
 					RECT rctImg = {
 						element->x,
 						element->y,
-						element->x + element->GetCanvas()->Width(),
-						element->y + element->GetCanvas()->Height()
+						element->x + element->GetWidth(),
+						element->y + element->GetHeight()
 					};
 
 					canvas.Rectangle(rctImg, true, BLACK);
@@ -1731,7 +1743,7 @@ namespace HiEasyX
 		return vecLayer;
 	}
 
-	size_t Scene::GetAllLayerSize()
+	size_t Scene::GetAllLayerSize() const
 	{
 		// 普通图层加 4 个特殊图层
 		return this->size() + 4;
@@ -1751,7 +1763,7 @@ namespace HiEasyX
 		}
 	}
 
-	void Scene::RenderTo_Alpha(IMAGE* pImg, bool bShowAllOutline, bool bShowAllText)
+	void Scene::Render(IMAGE* pImg, bool bShowAllOutline, bool bShowAllText)
 	{
 		m_property.SaveWorkingImageOnly();
 		SetWorkingImage(pImg);
@@ -1761,7 +1773,7 @@ namespace HiEasyX
 		size_t i = 0;
 		for (auto& layer : GetAllLayer())
 		{
-			layer->RenderTo_Alpha(pImg, bShowAllOutline, bShowAllText, L"Layer[" + std::to_wstring(i) + L"]");
+			layer->Render(pImg, bShowAllOutline, bShowAllText, L"Layer[" + std::to_wstring(i) + L"]");
 			i++;
 		}
 	}

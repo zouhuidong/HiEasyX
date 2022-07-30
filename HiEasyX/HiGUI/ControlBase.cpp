@@ -23,8 +23,7 @@ namespace HiEasyX
 
 	void ControlBase::UpdateRect()
 	{
-		if (m_rct.bottom < m_rct.top) m_rct.bottom = m_rct.top;
-		if (m_rct.right < m_rct.left) m_rct.right = m_rct.left;
+		Container::UpdateRect();
 
 		m_canvas.Resize(GetWidth(), GetHeight());
 
@@ -135,7 +134,7 @@ namespace HiEasyX
 		);
 	}
 
-	void ControlBase::Redraw(bool draw_child)
+	void ControlBase::Draw(bool draw_child)
 	{
 		m_canvas.SetLineThickness(m_nBorderThickness);
 		m_canvas.FillRectangle(
@@ -153,7 +152,7 @@ namespace HiEasyX
 	{
 		for (auto& child : m_listChild)
 		{
-			child->Redraw();
+			child->Draw();
 		}
 	}
 
@@ -161,14 +160,16 @@ namespace HiEasyX
 	{
 		if (m_bVisible)
 		{
+			// 子控件先绘制到此控件画布上，再绘制到 dst
 			for (auto& child : m_listChild)
 			{
 				child->Render(&m_canvas);
 			}
 
-			dst->PutImage_Alpha(
+			dst->PutImageIn_Alpha(
 				m_rct.left, m_rct.top,
 				&m_canvas,
+				{ 0 },
 				m_alpha, m_bUseCanvasAlpha, m_isAlphaCalculated
 			);
 		}

@@ -10,6 +10,12 @@ namespace HiEasyX
 	{
 	}
 
+	void Container::UpdateRect()
+	{
+		if (m_rct.bottom < m_rct.top) m_rct.bottom = m_rct.top;
+		if (m_rct.right < m_rct.left) m_rct.right = m_rct.left;
+	}
+
 	void Container::SetRect(RECT rct)
 	{
 		m_rct = rct;

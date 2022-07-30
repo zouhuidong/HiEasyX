@@ -21,7 +21,7 @@ namespace HiEasyX
 
 		int m_nLightPos = 0;							// 光源位置
 		clock_t m_tClock = 0;							// 保留上一次动画的绘制时间
-		float m_fSpeedRatio = 0.4;						// 动画速度（每秒经过总长度的多少）
+		float m_fSpeedRatio = 0.4f;						// 动画速度（每秒经过总长度的多少）
 
 		float m_fLenRatio = 0.8f;						// 动画光亮效果长度占比
 
@@ -65,7 +65,7 @@ namespace HiEasyX
 		// 设置是否启用动画
 		virtual void EnableAnimation(bool enable);
 
-		void Redraw(bool draw_child = true) override;
+		void Draw(bool draw_child = true) override;
 	};
 }
 

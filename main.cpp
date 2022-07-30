@@ -16,7 +16,7 @@ void TestMain()
 	rectangle(20, 20, 50, 50);
 	END_TASK();
 
-	canvasChild.FillCircle(canvasChild.Width() / 2, canvasChild.Height() / 2, 50);
+	canvasChild.FillCircle(canvasChild.GetWidth() / 2, canvasChild.GetHeight() / 2, 50);
 	windowChild.Redraw();
 
 	canvas.SetFont(72);
@@ -37,7 +37,7 @@ void TestMain()
 
 		gif.draw();
 		gif.toggle();
-		canvas.PutImage_Alpha(0, 0, &canvasGif, 100);
+		canvas.PutImageIn_Alpha(0, 0, &canvasGif, { 0 }, 100);
 
 		// 已输出帧数
 		canvas.OutTextXY_Format(0, 0, 6, L"%d", count);
@@ -63,6 +63,8 @@ void TestMain()
 #define BTN_HEIGHT 23
 
 #define ALIGN_X 60
+
+HiEasyX::Page page;
 
 HiEasyX::Canvas canvas;
 
@@ -94,8 +96,6 @@ void MsgProc(HiEasyX::ControlBase* _Ctrl, int _MsgId, ExMessage msg)
 		{
 		case HiEasyX::CM_CLICK:
 
-			canvas.Clear();
-
 			text.ClearText();
 			text.AddText(L"Text ", true, BLUE);
 			text.AddText(L" bkcolor ", true, RED, true, GREEN);
@@ -116,6 +116,8 @@ int main()
 
 	window.BindCanvas(&canvas);								// 绑定窗口画布
 	canvas.Clear(true, WHITE);								// 清屏
+
+	page.BindToCanvas(&canvas);
 
 	// 按钮控件
 	HiEasyX::Button btnOK(ALIGN_X, 50, BTN_WIDTH, BTN_HEIGHT, L"OK");
@@ -172,19 +174,24 @@ int main()
 	HiEasyX::ScrollBar scrollbar_horizon(ALIGN_X, 10, 300, 25, 100, 20, true);
 	scrollbar_horizon.SetViewLength(33);
 
+	page.push({
+		&pic,
+		&btnOK,
+		&btnClassic,
+		&btnDisabled,
+		&btnSave,
+		&text,
+		&progress,
+		&scrollbar,
+		&scrollbar_horizon,
+		});
+
 	ExMessage msg;
 	while (window.isAlive())
 	{
 		while (window.Peek_Message(&msg, EM_MOUSE))
 		{
-			btnSave.UpdateMessage(msg);
-			btnOK.UpdateMessage(msg);
-			pic.UpdateMessage(msg);
-			progress.UpdateMessage(msg);
-			btnClassic.UpdateMessage(msg);
-			btnDisabled.UpdateMessage(msg);
-			scrollbar.UpdateMessage(msg);
-			scrollbar_horizon.UpdateMessage(msg);
+			page.UpdateMessage(msg);
 		}
 
 		if (window.isSizeChanged())
@@ -192,50 +199,32 @@ int main()
 			int interval = 25;
 			int w = window.GetClientWidth();
 			int h = window.GetClientHeight();
+			page.SetRect({ 0,0,w,h });
 			progress.SetWidth(w - progress.GetX() - interval);
 			scrollbar.SetHeight(h - scrollbar.GetY() - interval);
 			scrollbar_horizon.SetWidth(w - scrollbar_horizon.GetX() - interval);
 		}
 
-		//canvas.Clear();
-
-		btnSave.Redraw();
-		btnSave.Render(&canvas);
-
-		btnOK.Redraw();
-		btnOK.Render(&canvas);
-
-		btnClassic.Redraw();
-		btnClassic.Render(&canvas);
-
-		btnDisabled.Redraw();
-		btnDisabled.Render(&canvas);
-
-		text.Redraw();
-		//text.m_canvas.Circle(10, 10, 5, true, RED);
-		text.Render(&canvas);
-
-		pic.Redraw();
-		pic.Render(&canvas);
-
 		if (progress.isPressed())
 		{
 			progress.Step();
 		}
-		progress.Redraw();
+
+		page.Draw();
 		progress.Draw_Text();
-		progress.Render(&canvas);
+		page.Render();
 
-		scrollbar.Redraw();
-		scrollbar.Render(&canvas);
-
-		scrollbar_horizon.Redraw();
-		scrollbar_horizon.Render(&canvas);
+		//page.UpdateImage();
 
 		window.FlushDrawing();
 		window.Redraw();
 
-		Sleep(50);
+		if (GetForegroundWindow() != window.GetHandle())
+		{
+			Sleep(500);
+		}
+		/*Sleep(50);*/
+		HiEasyX::DelayFPS(60);
 	}
 
 

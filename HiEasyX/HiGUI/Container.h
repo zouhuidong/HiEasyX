@@ -23,7 +23,7 @@ namespace HiEasyX
 
 		virtual ~Container();
 
-		virtual void UpdateRect() = 0;			// 更新区域消息响应
+		virtual void UpdateRect();				// 更新区域消息响应
 
 		RECT GetRect() const { return m_rct; }
 

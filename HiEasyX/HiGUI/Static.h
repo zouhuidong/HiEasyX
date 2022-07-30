@@ -61,7 +61,7 @@ namespace HiEasyX
 
 		void Draw_Text(int nTextOffsetX = 0, int nTextOffsetY = 0) override;
 
-		void Redraw(bool draw_child = true) override;
+		void Draw(bool draw_child = true) override;
 	};
 }
 

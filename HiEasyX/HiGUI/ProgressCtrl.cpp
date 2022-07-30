@@ -46,9 +46,9 @@ namespace HiEasyX
 		m_bEnableAnimation = enable;
 	}
 
-	void ProgressCtrl::Redraw(bool draw_child)
+	void ProgressCtrl::Draw(bool draw_child)
 	{
-		ControlBase::Redraw(false);
+		ControlBase::Draw(false);
 
 		// ªÊ÷∆Ω· ¯Œª÷√
 		int nEnd = (int)((m_nPos / (float)m_nLen) * (GetWidth() - 2));
@@ -90,11 +90,11 @@ namespace HiEasyX
 					);
 				}
 			}
-		}
 
-		if (draw_child)
-		{
-			RedrawChild();
+			if (draw_child)
+			{
+				RedrawChild();
+			}
 		}
 	}
 }

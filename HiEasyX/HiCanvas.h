@@ -25,6 +25,18 @@ namespace HiEasyX
 	// CopyImage_Alpha
 	// 快速复制图像（可开启透明通道）
 	// 
+	// x, y
+	//		图像输出位置
+	// 
+	// pDst, wDst, hDst
+	//		载体图像指针，图像尺寸
+	// 
+	// pSrc, wSrc, hSrc
+	//		原图像指针，图像尺寸
+	// 
+	// crop
+	//		原图像裁剪区域（right 或 bottom 为 0 代表不裁剪）
+	// 
 	// alpha
 	//		叠加透明度（透明 0 ~ 255 不透明），默认为 255（表示不启用）
 	// 
@@ -47,6 +59,7 @@ namespace HiEasyX
 		int x, int y,
 		DWORD* pDst, int wDst, int hDst,
 		DWORD* pSrc, int wSrc, int hSrc,
+		RECT crop = { 0 },
 		BYTE alpha = 255,
 		bool bUseSrcAlpha = false,
 		bool isCalculated = true
@@ -67,12 +80,11 @@ namespace HiEasyX
 	IMAGE ZoomImage_Win32_Alpha(IMAGE* pImg, int width, int height);
 
 	// 画布
-	// 支持 Alpha 通道的函数名称中都带有 "_Alpha" 后缀
 	class Canvas : public IMAGE
 	{
 	private:
 
-		IMAGE m_imgEmpty;						// 空图像
+		IMAGE m_imgEmpty;					// 空图像
 
 	protected:
 
@@ -122,15 +134,16 @@ namespace HiEasyX
 		Canvas& operator= (IMAGE* pImg);
 		Canvas& operator= (IMAGE img);
 
-		// 重新加载图像信息
-		void UpdateInfo();
+		// 重新加载图像尺寸信息
+		// 若绑定了图像指针，当外部调整图像大小后，须调用此函数
+		void UpdateSizeInfo();
 
 		// 重设画布大小（若绑定了窗口，则不建议调用）
-		virtual void Resize(int w, int h);
+		void Resize(int w, int h) override;
 
 		// 绑定到图像指针
 		// 注意：
-		//		绑定到图像指针后，如果在外部调整了图像的大小，则必须调用 UpdateInfo 重新加载图像信息
+		//		绑定到图像指针后，如果在外部调整了图像大小，则必须调用 UpdateSizeInfo 重新加载图像信息
 		//		若要在外部使用图像指针，则必须调用 GetImagePointer
 		//		若要绑定到窗口，请使用 BindWindowCanvas
 		Canvas& BindToImage(IMAGE* pImg);
@@ -143,21 +156,21 @@ namespace HiEasyX
 		IMAGE* GetImagePointer() { return m_bBindToImgPointer ? m_pImg : this; }
 
 		// 获取图像缓冲区指针
-		DWORD* GetBuffer() { return m_bBindToImgPointer ? GetImageBuffer(m_pImg) : m_pBuf; }
+		DWORD* GetBuffer() const { return m_bBindToImgPointer ? GetImageBuffer(m_pImg) : m_pBuf; }
 
 		// 获取图像缓冲区大小（宽 * 高）
-		int GetBufferSize() { return m_nBufSize; }
+		int GetBufferSize() const { return m_nBufSize; }
 
 		// 获取画布的 HDC
 		HDC GetHDC() { return GetImageHDC(GetImagePointer()); }
 
-		int getwidth() { return m_nWidth; }
+		int getwidth() const { return m_nWidth; }
 
-		int getheight() { return m_nHeight; }
+		int getheight() const { return m_nHeight; }
 
-		int Width() { return m_nWidth; }
+		int GetWidth() const { return m_nWidth; }
 
-		int Height() { return m_nHeight; }
+		int GetHeight() const { return m_nHeight; }
 
 		/// 绘图状态设置函数
 
@@ -179,9 +192,11 @@ namespace HiEasyX
 		bool isValidPoint(int x, int y, int* pIndex = nullptr);
 
 		// 将该画布的图像绘制到另一画布中
-		void RenderTo_Alpha(
+		// crop		裁剪区域（坐标位置 0 表示默认）
+		void Render(
 			int x, int y,
 			IMAGE* pImg = nullptr,
+			RECT crop = { 0 },
 			BYTE alpha = 255,
 			bool bUseSrcAlpha = false,
 			bool isCalculated = true
@@ -460,9 +475,11 @@ namespace HiEasyX
 		);
 
 		// 绘制图像到该画布
-		void PutImage_Alpha(
+		// crop		裁剪区域（坐标位置 0 表示默认）
+		void PutImageIn_Alpha(
 			int x, int y,
 			IMAGE* pImg,
+			RECT crop = { 0 },
 			BYTE alpha = 255,
 			bool bUseSrcAlpha = false,
 			bool isCalculated = true
@@ -482,7 +499,7 @@ namespace HiEasyX
 
 	};
 
-	// 图像块（用于展示在图层）
+	// 图像块
 	class ImageBlock
 	{
 	private:
@@ -493,6 +510,7 @@ namespace HiEasyX
 
 	public:
 		int x = 0, y = 0;					// 图像显示在图层的位置
+		RECT rctCrop = { 0 };				// 裁剪信息
 		bool bUseSrcAlpha = false;			// 是否使用图像自身的 alpha 数据
 
 		bool isAlphaCalculated = false;		// 图像自身的像素颜色是否已经完成了 alpha 混合
@@ -515,13 +533,21 @@ namespace HiEasyX
 		// 不绑定外部画布，直接新建画布
 		Canvas* CreateCanvas(int w, int h, COLORREF cBk = 0);
 
-		Canvas* GetCanvas();
+		Canvas* GetCanvas() const { return m_pCanvas; }
 
 		void SetCanvas(Canvas* pCanvas);
 
-		POINT GetPos();
+		int GetWidth() const { return m_pCanvas ? m_pCanvas->GetWidth() : 0; }
+
+		int GetHeight() const { return m_pCanvas ? m_pCanvas->GetHeight() : 0; }
+
+		POINT GetPos() const { return { x,y }; }
 
 		void SetPos(int _x, int _y);
+
+		// 绘制到画布
+		// alpha	叠加透明度
+		virtual void Render(IMAGE* pImg, BYTE alpha);
 	};
 
 	// 图层
@@ -539,7 +565,7 @@ namespace HiEasyX
 		// 渲染到...
 		// bShowOutline 是否显示轮廓
 		// strAddedText 轮廓中的附加文本内容
-		void RenderTo_Alpha(IMAGE* pImg = nullptr, bool bShowOutline = false, bool bShowText = true, std::wstring wstrAddedText = L"");
+		void Render(IMAGE* pImg = nullptr, bool bShowOutline = false, bool bShowText = true, std::wstring wstrAddedText = L"");
 	};
 
 	// 特殊图层顺序标识
@@ -573,14 +599,14 @@ namespace HiEasyX
 		std::vector<Layer*> GetAllLayer();
 
 		// 获取所有图层的总数
-		size_t GetAllLayerSize();
+		size_t GetAllLayerSize() const;
 
 		// 获取特殊图层（除了普通图层外的其他图层，见 LayerOrder）
-		// 建议多使用普通图层
+		// 不建议滥用特殊图层
 		Layer* GetSpecialLayer(int order);
 
 		// 渲染到...
-		void RenderTo_Alpha(IMAGE* pImg = nullptr, bool bShowAllOutline = false, bool bShowAllText = true);
+		void Render(IMAGE* pImg = nullptr, bool bShowAllOutline = false, bool bShowAllText = true);
 	};
 
 }

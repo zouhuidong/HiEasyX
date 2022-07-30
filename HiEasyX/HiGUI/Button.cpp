@@ -64,9 +64,9 @@ namespace HiEasyX
 		}
 	}
 
-	void Button::Redraw(bool draw_child)
+	void Button::Draw(bool draw_child)
 	{
-		ControlBase::Redraw(false);
+		ControlBase::Draw(false);
 
 		if (m_bEnableClassicStyle)
 		{

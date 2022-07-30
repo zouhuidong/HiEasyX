@@ -76,7 +76,10 @@ namespace HiEasyX
 		bool m_bHovered = false;									// 鼠标是否悬停
 		bool m_bPressed = false;									// 鼠标是否按下
 		bool m_bFocused = false;									// 是否拥有焦点
-
+		
+		// 更新区域消息处理
+		void UpdateRect() override;
+		
 		// 重绘子控件
 		virtual void RedrawChild();
 
@@ -115,8 +118,6 @@ namespace HiEasyX
 
 		virtual void RemoveChild(ControlBase* p);
 
-		virtual void UpdateRect();
-
 		virtual bool isEnabled() const { return m_bEnabled; }
 
 		virtual void SetEnable(bool enable);
@@ -145,10 +146,10 @@ namespace HiEasyX
 
 		virtual void Draw_Text(int nTextOffsetX = 0, int nTextOffsetY = 0);
 
-		// 重绘画布
-		virtual void Redraw(bool draw_child = true);
+		// 绘制控件（可选绘制子控件）
+		virtual void Draw(bool draw_child = true);
 
-		// 渲染控件
+		// 渲染控件到外部
 		virtual void Render(Canvas* dst);
 
 		// 设置消息响应函数

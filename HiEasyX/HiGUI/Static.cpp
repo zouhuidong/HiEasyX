@@ -84,17 +84,20 @@ namespace HiEasyX
 		m_canvas.SetBkColor(m_cBackground);
 	}
 
-	void Static::Redraw(bool draw_child)
+	void Static::Draw(bool draw_child)
 	{
-		ControlBase::Redraw(false);
+		ControlBase::Draw(false);
+
 		if (m_pImgBlock)
 		{
-			m_canvas.PutImage_Alpha(
+			m_canvas.PutImageIn_Alpha(
 				m_pImgBlock->x, m_pImgBlock->y,
 				m_pImgBlock->GetCanvas(),
+				{ 0 },
 				m_pImgBlock->alpha, m_pImgBlock->bUseSrcAlpha, m_pImgBlock->isAlphaCalculated
 			);
 		}
+
 		Draw_Text();
 
 		if (draw_child)

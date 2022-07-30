@@ -52,8 +52,9 @@ HICON Bitmap2Icon(HBITMAP hBmp)
 void HpSleep(int ms)
 {
 	static clock_t oldclock = clock();		// 静态变量，记录上一次 tick
+	static int c = CLOCKS_PER_SEC / 1000;
 
-	oldclock += ms * CLOCKS_PER_SEC / 1000;	// 更新 tick
+	oldclock += ms * c;						// 更新 tick
 
 	if (clock() > oldclock)					// 如果已经超时，无需延时
 		oldclock = clock();

@@ -228,9 +228,9 @@ namespace HiEasyX
 		}
 	}
 
-	void ScrollBar::Redraw(bool draw_child)
+	void ScrollBar::Draw(bool draw_child)
 	{
-		ControlBase::Redraw();
+		ControlBase::Draw();
 
 		// °´Å¥
 		clock_t tNow = clock();
