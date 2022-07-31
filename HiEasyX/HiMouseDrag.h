@@ -19,8 +19,8 @@ namespace HiEasyX
 	class MouseDrag
 	{
 	private:
-		ExMessage old, msg;
-		int dx, dy;
+		ExMessage old = { 0 }, msg = { 0 };
+		int dx = 0, dy = 0;
 		bool lbtn = false, mbtn = false, rbtn = false;
 		bool ldrag = false, mdrag = false, rdrag = false;
 		bool newmsg = false;

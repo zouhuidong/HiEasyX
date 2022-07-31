@@ -1,7 +1,5 @@
 #include "HiEasyX.h"
 
-#include "HiEasyX/HiStart.h"
-
 void TestMain()
 {
 	HiEasyX::Window window(640, 480);
@@ -112,7 +110,6 @@ int main()
 	//TestMain();
 
 	HiEasyX::Window window(640, 480);						// 创建窗口
-	//HiEasyX::RenderStartScene();
 
 	window.BindCanvas(&canvas);								// 绑定窗口画布
 	canvas.Clear(true, WHITE);								// 清屏

@@ -1,10 +1,8 @@
 ﻿#include "HiWindow.h"
 
+#include "HiStart.h"
 #include "HiCanvas.h"
 
-// 支持多监视器鼠标坐标获取
-//#define GET_X_LPARAM(lp)	((int)(short)LOWORD(lp))
-//#define GET_Y_LPARAM(lp)	((int)(short)HIWORD(lp))
 
 // 预留消息空间
 #define MSG_RESERVE_SIZE 100
@@ -313,6 +311,10 @@ namespace HiEasyX
 	{
 		if (GetFocusWindow().hWnd == hWnd)
 		{
+			if (GetWorkingImage() != GetFocusWindow().pBufferImg)
+			{
+				SetWorkingImage(GetFocusWindow().pBufferImg);
+			}
 			return true;
 		}
 
@@ -1083,6 +1085,16 @@ namespace HiEasyX
 		// 第一次创建窗口 --- 初始化各项数据
 		if (nWndCount == 0)
 		{
+			// 发布模式下默认渲染开场动画
+#ifndef _DEBUG
+#ifndef _NO_START_ANIMATION_
+
+			// 渲染开场动画
+			RenderStartScene();
+
+#endif // _NO_START_ANIMATION_
+#endif // RELEASE
+
 			// 获取分辨率
 			g_nSysW = GetSystemMetrics(SM_CXSCREEN);
 			g_nSysH = GetSystemMetrics(SM_CYSCREEN);

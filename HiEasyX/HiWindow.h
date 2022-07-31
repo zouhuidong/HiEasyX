@@ -13,6 +13,8 @@
 #include <thread>
 
 
+#define __HIWINDOW_H__
+
 // 补充绘图窗口初始化参数
 // 普通窗口
 #define EW_NORMAL 0
@@ -40,7 +42,7 @@ namespace HiEasyX
 
 		IMAGE* pImg;								// 窗口图像
 		IMAGE* pBufferImg;							// 图像缓冲区
-		Canvas* pBufferImgCanvas;				// 图像缓冲区绑定的画布指针
+		Canvas* pBufferImgCanvas;					// 图像缓冲区绑定的画布指针
 
 		bool(*funcWndProc)							// 窗口消息处理函数
 			(HWND, UINT, WPARAM, LPARAM, HINSTANCE);

@@ -1136,7 +1136,7 @@ namespace HiEasyX
 
 			outtextxy(x, y, buf);
 			int width = textwidth(buf);
-			delete buf;
+			delete[] buf;
 
 			EndDrawing();
 			return width;
@@ -1227,7 +1227,7 @@ namespace HiEasyX
 		va_end(list);
 
 		CenterText(buf);
-		delete buf;
+		delete[] buf;
 	}
 
 	LOGFONT Canvas::GetTextStyle()
@@ -1487,7 +1487,7 @@ namespace HiEasyX
 
 			outtext(buf);
 			int width = textwidth(buf);
-			delete buf;
+			delete[] buf;
 
 			EndDrawing();
 			return width;

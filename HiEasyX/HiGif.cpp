@@ -296,7 +296,8 @@ namespace HiEasyX
 
 		int size = gif.gifImage->GetPropertyItemSize(PropertyTagFrameDelay);
 		pItem = (Gdiplus::PropertyItem*)malloc(size);
-		memcpy(pItem, gif.pItem, size);
+		if(pItem)
+			memcpy(pItem, gif.pItem, size);
 	}
 
 	// Gif时间更新，计算当前帧
