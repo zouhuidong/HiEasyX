@@ -178,8 +178,8 @@ namespace HiEasyX
 		// 绘制控件（可选绘制子控件）
 		virtual void Draw(bool draw_child = true);
 
-		// 渲染控件到外部，返回渲染区域
-		virtual std::vector<RECT> Render(Canvas* dst);
+		// 渲染控件到外部
+		virtual void Render(Canvas* dst, RECT* pRct = nullptr, int* pCount = 0);
 
 		// 设置消息响应函数
 		virtual void SetMsgProcFunc(MESSAGE_PROC_FUNC func);

@@ -109,7 +109,7 @@ namespace HiEasyX
 
 	int ControlBase::GetChildCount()
 	{
-		int sum = 0;
+		int sum = m_listChild.size();
 		for (auto& child : m_listChild)
 			sum += child->GetChildCount();
 		return sum;
@@ -251,32 +251,26 @@ namespace HiEasyX
 		}
 	}
 
-	std::vector<RECT> ControlBase::Render(Canvas* dst)
+	void ControlBase::Render(Canvas* dst, RECT* pRct, int* pCount)
 	{
-		std::vector<RECT> vecRect;
+		// 当前控件获取到的重绘矩形记录
+		int size = m_bRender ? 1 : GetChildCount();		// 若自身需要绘制，则只需要记录一个矩形
+		RECT* my_rct = new RECT[size];
+		int my_count = 0;								// 当前控件获取到的重绘区域数量统计
 
+		// 为当前控件的子控件执行清除任务
+		// 必须在 Render 前执行，否则可能覆盖效果
 		for (auto& child : m_listChild)
 		{
-			// clear 需要提前处理
 			if (child->m_bClear)
 			{
-				/*m_canvas.ClearRectangle(child->m_rctClear);
+				m_canvas.ClearRectangle(child->m_rctClear);
 				MOVE_RECT(child->m_rctClear, m_rct.left, m_rct.top);
-
-				COLORREF c = dst->GetBkColor();
-				dst->ClearRectangle(child->m_rctClear);*/
-
-				m_canvas.SolidRectangle(child->m_rctClear, true, RED);
-				MOVE_RECT(child->m_rctClear, m_rct.left, m_rct.top);
-				dst->SolidRectangle(child->m_rctClear, true, RED);
-
-				saveimage(L"test.jpg", &m_canvas);
-				saveimage(L"test.jpg", dst);
+				dst->ClearRectangle(child->m_rctClear);
 
 				child->m_bClear = false;
 				child->m_rctClear = { 0 };
 			}
-
 		}
 
 		// 控件必须可显示才渲染
@@ -292,7 +286,7 @@ namespace HiEasyX
 				for (auto& child : m_listChild)
 					child->Render(&m_canvas);
 
-				vecRect.push_back({ 0,0,GetWidth(),GetHeight() });
+				my_rct[my_count++] = { 0,0,GetWidth(),GetHeight() };
 
 				if (!m_bAlwaysRedrawAndRender)
 					m_bRender = false;
@@ -303,52 +297,44 @@ namespace HiEasyX
 			{
 				for (auto& child : m_listChild)
 				{
-					std::vector<RECT> vecChildRect = child->Render(&m_canvas);
-					vecRect.insert(vecRect.end(), vecChildRect.begin(), vecChildRect.end());
+					child->Render(&m_canvas, my_rct, &my_count);
 				}
 			}
 
 			m_canvas.EndBatchDrawing();
 
 			// 渲染有更新的区域
-			for (auto& rct : vecRect)
+			for (int i = 0; i < my_count; i++)
 			{
 				dst->PutImageIn_Alpha(
 					m_rct.left, m_rct.top,
 					&m_canvas,
-					rct,
+					my_rct[i],
 					m_alpha, m_bUseCanvasAlpha, m_isAlphaCalculated
 				);
-				//SetWorkingImage(dst);
-				//putimage(m_rct.left, m_rct.top, &m_canvas);
 			}
 
 			// 为了返回区域信息给父控件，需要转换区域坐标参考系
-			if (m_rct.left || m_rct.top)
+			if (pRct)
 			{
-				for (auto& rct : vecRect)
+				for (int i = 0; i < my_count; i++)
 				{
-					MOVE_RECT(rct, m_rct.left, m_rct.top);
+					MOVE_RECT(my_rct[i], m_rct.left, m_rct.top);
+					pRct[(*pCount)++] = my_rct[i];
 				}
 			}
 		}
 
-		saveimage(L"test.jpg", &m_canvas);
-		saveimage(L"test.jpg", dst);
-
-		return vecRect;
+		delete[] my_rct;
 
 		/*for (auto& child : m_listChild)
 			child->Render(&m_canvas);
-
 		dst->PutImageIn_Alpha(
 			m_rct.left, m_rct.top,
 			&m_canvas,
 			{ 0 },
 			m_alpha, m_bUseCanvasAlpha, m_isAlphaCalculated
-		);
-
-		return {};*/
+		);*/
 	}
 
 	void ControlBase::SetMsgProcFunc(MESSAGE_PROC_FUNC func)
