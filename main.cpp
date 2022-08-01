@@ -140,7 +140,9 @@ int main()
 
 	HiEasyX::Static pic(20, 40, 30, 30);					// ¾²Ì¬Í¼Ïñ¿Ø¼þ
 	HiEasyX::ImageBlock pic_imgblock(0, 0, 30, 30, WHITE);	// °ó¶¨Í¼Ïñ¿é
+	pic.EnableAutoRedraw(true);
 	pic.SetImage(&pic_imgblock);
+	pic.GetImage()->GetCanvas()->FillPie({ 0,0,29,29 }, 2, PI * 2, true, GREEN, WHITE);
 	pic.SetMsgProcFunc([](HiEasyX::ControlBase* ctrl, int id, ExMessage msg) {
 
 		HiEasyX::Canvas* pCanvas = ((HiEasyX::Static*)ctrl)->GetImage()->GetCanvas();
@@ -163,7 +165,7 @@ int main()
 	//progress.SetBarColor(RED);
 	progress.EnableAnimation(true);
 	progress.SetText(L"Press me");
-	progress.GetCanavs().SetBkMode(TRANSPARENT);
+	progress.GetCanvas().SetBkMode(TRANSPARENT);
 
 	HiEasyX::ScrollBar scrollbar(20, 100, 25, 300, 100, 20, false);
 	scrollbar.SetViewLength(33);
@@ -209,10 +211,7 @@ int main()
 
 		page.Draw();
 		progress.Draw_Text();
-
-		canvas.BeginBatchDrawing();
 		page.Render();
-		canvas.EndBatchDrawing();
 
 		//page.UpdateImage();
 

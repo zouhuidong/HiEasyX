@@ -2,14 +2,20 @@
 
 namespace HiEasyX
 {
-	Static::Static()
+	void Static::Init()
 	{
 		m_bEnableBorder = false;
+		m_bAutoRedrawWhenReceiveMsg = false;
+	}
+
+	Static::Static()
+	{
+		Init();
 	}
 
 	Static::Static(int x, int y, int w, int h, std::wstring wstrText)
 	{
-		*this = Static();
+		Init();
 		SetRect(x, y, w, h);
 		SetText(wstrText);
 	}
@@ -40,6 +46,8 @@ namespace HiEasyX
 	{
 		m_wstrText.clear();
 		m_vecText.clear();
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void Static::AddText(std::wstring wstr, bool isSetTextColor, COLORREF cText, bool isSetBkColor, COLORREF cBk)
@@ -51,18 +59,24 @@ namespace HiEasyX
 		{
 			m_vecText.push_back({ ch,cText,cBk });
 		}
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void Static::SetText(std::wstring wstrText)
 	{
 		m_wstrText = wstrText;
 		m_vecText = Convert(wstrText);
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void Static::SetText(std::vector<Char> vecText)
 	{
 		m_wstrText = Convert(vecText);
 		m_vecText = vecText;
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void Static::Draw_Text(int nTextOffsetX, int nTextOffsetY)
@@ -86,28 +100,33 @@ namespace HiEasyX
 
 	void Static::Draw(bool draw_child)
 	{
-		ControlBase::Draw(false);
-
-		if (m_pImgBlock)
+		if (m_bRedraw)
 		{
-			m_canvas.PutImageIn_Alpha(
-				m_pImgBlock->x, m_pImgBlock->y,
-				m_pImgBlock->GetCanvas(),
-				{ 0 },
-				m_pImgBlock->alpha, m_pImgBlock->bUseSrcAlpha, m_pImgBlock->isAlphaCalculated
-			);
-		}
+			ControlBase::Draw(false);
 
-		Draw_Text();
+			if (m_pImgBlock)
+			{
+				m_canvas.PutImageIn_Alpha(
+					m_pImgBlock->x, m_pImgBlock->y,
+					m_pImgBlock->GetCanvas(),
+					{ 0 },
+					m_pImgBlock->alpha, m_pImgBlock->bUseSrcAlpha, m_pImgBlock->isAlphaCalculated
+				);
+			}
+
+			Draw_Text();
+		}
 
 		if (draw_child)
 		{
-			RedrawChild();
+			DrawChild();
 		}
 	}
 
 	void Static::SetImage(ImageBlock* pImgBlock)
 	{
 		m_pImgBlock = pImgBlock;
+
+		MarkNeedRedrawAndRender();
 	}
 }

@@ -62,6 +62,13 @@
 												&&	(rctChild).top		>= (rctParent).top		\
 												&&	(rctChild).bottom	<= (rctParent).bottom	)
 
+// 移动矩形
+#define MOVE_RECT(rct, dx, dy)			(rct).left		+= dx;\
+										(rct).top		+= dy;\
+										(rct).right		+= dx;\
+										(rct).bottom	+= dy
+
+
 // 常用色彩扩展
 enum EXTRA_COLORS
 {

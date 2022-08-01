@@ -36,16 +36,18 @@ namespace HiEasyX
 		int m_nPos = 0;									// 进度条进度
 		int m_nLen = 100;								// 进度总长度
 
+		virtual void Init();
+
 	public:
 
 		ProgressCtrl();
 
 		ProgressCtrl(int x, int y, int w, int h, int len);
 
-		// 获取总长度
-		virtual int GetLen() const { return m_nLen; }
+		// 获取内容长度
+		virtual int GetContentLength() const { return m_nLen; }
 
-		virtual void SetLen(int len);					// 设置总长度
+		virtual void SetContentLength(int len);			// 设置内容长度
 
 		// 获取进度
 		virtual int GetProcess() const { return m_nPos; }

@@ -17,11 +17,7 @@ namespace HiEasyX
 
 		bool m_bEnableClassicStyle = false;			// 是否使用经典样式
 
-		void InitColor()
-		{
-			m_cBorder = m_cBorder_Normal;
-			m_cBackground = m_cBackground_Normal;
-		}
+		virtual void InitColor();
 
 	public:
 
@@ -47,7 +43,7 @@ namespace HiEasyX
 		void SetEnable(bool enable) override;
 
 		virtual void EnableClassicStyle(bool enable);
-
+		
 		void UpdateMessage(ExMessage msg) override;
 
 		void Draw(bool draw_child = true) override;

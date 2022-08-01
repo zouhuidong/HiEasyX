@@ -17,7 +17,7 @@ namespace HiEasyX
 
 		Canvas* m_pCanvas = nullptr;
 
-		void Init(COLORREF cBk = WHITE);
+		virtual void Init(COLORREF cBk = WHITE);
 
 	public:
 
@@ -39,7 +39,7 @@ namespace HiEasyX
 		virtual void remove(ControlBase* pCtrl);
 
 		// 渲染（若已绑定画布，则默认输出到绑定画布）
-		void Render(Canvas* dst = nullptr) override;
+		std::vector<RECT> Render(Canvas* dst = nullptr) override;
 
 		// 更新画布到...（若已绑定画布，则默认输出到绑定画布）
 		void UpdateImage(Canvas* pCanvas = nullptr);

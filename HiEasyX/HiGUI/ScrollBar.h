@@ -65,8 +65,11 @@ namespace HiEasyX
 		// 初始化
 		virtual void Init();
 
-		// 响应按钮消息
-		static void OnButtonMsg(void* pThis, ControlBase* pCtrl, int msgid, ExMessage msg);
+		// 响应特殊按钮消息（Top 和 Bottom）
+		static void OnSpecialButtonMsg(void* pThis, ControlBase* pCtrl, int msgid, ExMessage msg);
+
+		// 响应普通按钮消息（Up 和 Down）
+		virtual void OnNormalButtonMsg();
 
 		// 更新滑块位置区域
 		virtual void UpdateSliderRect();
@@ -141,7 +144,7 @@ namespace HiEasyX
 		// 设置响应滚轮消息的区域（客户区坐标）
 		void SetOnWheelRect(RECT rct);
 
-		void UpdateRect() override;
+		void UpdateRect(RECT rctOld) override;
 
 		void UpdateMessage(ExMessage msg) override;
 

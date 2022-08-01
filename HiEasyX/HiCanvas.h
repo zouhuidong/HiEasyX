@@ -82,10 +82,6 @@ namespace HiEasyX
 	// 画布
 	class Canvas : public IMAGE
 	{
-	private:
-
-		IMAGE m_imgEmpty;					// 空图像
-
 	protected:
 
 		DrawingProperty m_property;			// 保存外界绘图属性
@@ -556,7 +552,7 @@ namespace HiEasyX
 	private:
 		DrawingProperty m_property[2];		// 保存上次的绘图属性
 
-	public:
+	public: 
 		bool bVisible = true;				// 图层是否可见
 		BYTE alpha = 255;					// 图层中所有图像块的叠加透明度
 		bool bOutline = false;				// 是否显示轮廓

@@ -15,7 +15,7 @@ namespace HiEasyX
 	{
 	protected:
 
-		RECT m_rct = {};						// 容器区域
+		RECT m_rct = { 0 };					// 容器区域
 
 	public:
 
@@ -23,12 +23,16 @@ namespace HiEasyX
 
 		virtual ~Container();
 
-		virtual void UpdateRect();				// 更新区域消息响应
+		// 响应更新区域消息
+		// rctOld	旧的区域
+		virtual void UpdateRect(RECT rctOld);
 
 		RECT GetRect() const { return m_rct; }
 
+		// 设置位置和宽高
 		void SetRect(int x, int y, int w, int h);
 
+		// 设置矩形区域
 		void SetRect(RECT rct);
 
 		POINT GetPos() const { return { m_rct.left,m_rct.top }; }

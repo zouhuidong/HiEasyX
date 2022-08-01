@@ -27,6 +27,8 @@ namespace HiEasyX
 		std::vector<Char> m_vecText;
 		ImageBlock* m_pImgBlock = nullptr;
 
+		virtual void Init();
+
 	public:
 
 		Static();
@@ -41,6 +43,7 @@ namespace HiEasyX
 
 		virtual void ClearText();
 
+		// 添加文本（可设置颜色，若不设置则使用当前颜色）
 		virtual void AddText(
 			std::wstring wstr,
 			bool isSetTextColor = false,

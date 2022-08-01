@@ -7,7 +7,11 @@ namespace HiEasyX
 	void Page::Init(COLORREF cBk)
 	{
 		EnableBorder(false);
-		SetBkColor(cBk);
+		
+		// TODO：等 EasyX 修好了再启用
+		//SetBkColor(cBk);
+
+		m_bAutoRedrawWhenReceiveMsg = false;
 	}
 
 	Page::Page()
@@ -50,14 +54,14 @@ namespace HiEasyX
 		RemoveChild(pCtrl);
 	}
 
-	void Page::Render(Canvas* dst)
+	std::vector<RECT> Page::Render(Canvas* dst)
 	{
 		if (!dst && m_pCanvas)
 		{
 			dst = m_pCanvas;
 		}
 
-		ControlBase::Render(dst);
+		return ControlBase::Render(dst);
 	}
 
 	void Page::UpdateImage(Canvas* pCanvas)

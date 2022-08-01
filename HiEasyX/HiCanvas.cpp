@@ -1518,14 +1518,13 @@ namespace HiEasyX
 		GetImageSize(pImg, w, h);
 		if (BeginWindowTask())
 		{
-			
-				CopyImage_Alpha(
-					x, y,
-					m_pBuf, m_nWidth, m_nHeight,
-					GetImageBuffer(pImg), w, h,
-					crop,
-					alpha, bUseSrcAlpha, isCalculated
-				);
+			CopyImage_Alpha(
+				x, y,
+				m_pBuf, m_nWidth, m_nHeight,
+				GetImageBuffer(pImg), w, h,
+				crop,
+				alpha, bUseSrcAlpha, isCalculated
+			);
 
 			EndWindowTask();
 		}

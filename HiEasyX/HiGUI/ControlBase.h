@@ -48,6 +48,14 @@ namespace HiEasyX
 		bool m_bEnabled = true;										// 是否可用
 		bool m_bVisible = true;										// 是否可见
 
+		// 重绘和渲染标志
+		bool m_bAutoRedrawWhenReceiveMsg = true;					// 当默认消息处理函数接受到消息时，是否自动标识重绘和渲染
+		bool m_bRedraw = true;										// 标识需要重绘
+		bool m_bRender = true;										// 标识需要渲染
+		bool m_bClear = false;										// 标识需要清空某区域
+		RECT m_rctClear = { 0 };									// 记录需要清空的区域
+		bool m_bAlwaysRedrawAndRender = false;						// 总是重绘和渲染（占用更高）
+
 		std::wstring m_wstrText;									// 控件文本
 
 		Canvas m_canvas;											// 画布
@@ -76,12 +84,18 @@ namespace HiEasyX
 		bool m_bHovered = false;									// 鼠标是否悬停
 		bool m_bPressed = false;									// 鼠标是否按下
 		bool m_bFocused = false;									// 是否拥有焦点
-		
+
 		// 更新区域消息处理
-		void UpdateRect() override;
-		
-		// 重绘子控件
-		virtual void RedrawChild();
+		void UpdateRect(RECT rctOld) override;
+
+		// 标记需要重绘和渲染
+		void MarkNeedRedrawAndRender();
+
+		// 标记需要清空矩形区域
+		void MarkNeedClearRect(RECT rct);
+
+		// 绘制子控件
+		virtual void DrawChild();
 
 		// 转换消息
 		virtual ExMessage& TransformMessage(ExMessage& msg);
@@ -91,6 +105,10 @@ namespace HiEasyX
 
 		// 子控件区域更变
 		virtual void ChildRectChanged(ControlBase* pChild);
+
+	private:
+
+		void Init();
 
 	public:
 
@@ -114,6 +132,9 @@ namespace HiEasyX
 
 		std::list<ControlBase*>& GetChildList();
 
+		// 获取子控件总数
+		int GetChildCount();
+
 		virtual void AddChild(ControlBase* p, int offset_x = 0, int offset_y = 0);
 
 		virtual void RemoveChild(ControlBase* p);
@@ -126,7 +147,12 @@ namespace HiEasyX
 
 		virtual void SetVisible(bool visible);
 
-		virtual Canvas& GetCanavs() { return m_canvas; }
+		virtual bool GetAutoRedrawState() const { return m_bAutoRedrawWhenReceiveMsg; }
+
+		// 启用自动重绘（接受到基础消息事件时自动标识需要重绘）
+		virtual void EnableAutoRedraw(bool enable);
+
+		virtual Canvas& GetCanvas() { return m_canvas; }
 
 		virtual COLORREF GetBkColor() const { return m_cBackground; }
 
@@ -146,11 +172,14 @@ namespace HiEasyX
 
 		virtual void Draw_Text(int nTextOffsetX = 0, int nTextOffsetY = 0);
 
+		// 重绘控件
+		virtual void Redraw();
+
 		// 绘制控件（可选绘制子控件）
 		virtual void Draw(bool draw_child = true);
 
-		// 渲染控件到外部
-		virtual void Render(Canvas* dst);
+		// 渲染控件到外部，返回渲染区域
+		virtual std::vector<RECT> Render(Canvas* dst);
 
 		// 设置消息响应函数
 		virtual void SetMsgProcFunc(MESSAGE_PROC_FUNC func);

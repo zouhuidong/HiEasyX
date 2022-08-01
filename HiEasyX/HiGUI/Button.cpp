@@ -2,6 +2,12 @@
 
 namespace HiEasyX
 {
+	void Button::InitColor()
+	{
+		m_cBorder = m_cBorder_Normal;
+		m_cBackground = m_cBackground_Normal;
+	}
+
 	Button::Button()
 	{
 		InitColor();
@@ -66,33 +72,36 @@ namespace HiEasyX
 
 	void Button::Draw(bool draw_child)
 	{
-		ControlBase::Draw(false);
-
-		if (m_bEnableClassicStyle)
+		if (m_bRedraw)
 		{
-			if (m_bPressed)
+			ControlBase::Draw(false);
+
+			if (m_bEnableClassicStyle)
 			{
-				m_canvas.SetLineColor(m_cClassicPressedBorder3D);
-				m_canvas.Line(1, 1, 1, GetHeight() - 2);
-				m_canvas.Line(1, 1, GetWidth() - 2, 1);
-				Draw_Text(1, 1);
+				if (m_bPressed)
+				{
+					m_canvas.SetLineColor(m_cClassicPressedBorder3D);
+					m_canvas.Line(1, 1, 1, GetHeight() - 2);
+					m_canvas.Line(1, 1, GetWidth() - 2, 1);
+					Draw_Text(1, 1);
+				}
+				else
+				{
+					m_canvas.SetLineColor(m_cClassicNormalBorder3D);
+					m_canvas.Line(GetWidth() - 2, 1, GetWidth() - 2, GetHeight() - 2);
+					m_canvas.Line(1, GetHeight() - 2, GetWidth() - 2, GetHeight() - 2);
+					Draw_Text();
+				}
 			}
 			else
 			{
-				m_canvas.SetLineColor(m_cClassicNormalBorder3D);
-				m_canvas.Line(GetWidth() - 2, 1, GetWidth() - 2, GetHeight() - 2);
-				m_canvas.Line(1, GetHeight() - 2, GetWidth() - 2, GetHeight() - 2);
 				Draw_Text();
 			}
-		}
-		else
-		{
-			Draw_Text();
 		}
 
 		if (draw_child)
 		{
-			RedrawChild();
+			DrawChild();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace HiEasyX
 {
-	void ScrollBar::OnButtonMsg(void* pThis, ControlBase* pCtrl, int msgid, ExMessage msg)
+	void ScrollBar::OnSpecialButtonMsg(void* pThis, ControlBase* pCtrl, int msgid, ExMessage msg)
 	{
 		ScrollBar* _this = (ScrollBar*)pThis;
 
@@ -21,13 +21,40 @@ namespace HiEasyX
 		}
 	}
 
+	void ScrollBar::OnNormalButtonMsg()
+	{
+		clock_t tNow = clock();
+		float move_len = (float)(tNow - m_tPressed) / CLOCKS_PER_SEC * m_nSliderSpeed;
+		if (m_btnUp.isPressed())
+		{
+			if (m_tPressed != 0)
+			{
+				MoveSlider(-move_len);
+			}
+			m_tPressed = tNow;
+
+			MarkNeedRedrawAndRender();
+		}
+		else if (m_btnDown.isPressed())
+		{
+			if (m_tPressed != 0)
+			{
+				MoveSlider(move_len);
+			}
+			m_tPressed = tNow;
+
+			MarkNeedRedrawAndRender();
+		}
+		else
+		{
+			m_tPressed = 0;
+		}
+	}
+
 	void ScrollBar::Init()
 	{
-		m_btnTop.SetMsgProcFunc(OnButtonMsg, this);
-		m_btnUp.SetMsgProcFunc(OnButtonMsg, this);
-		m_btnDown.SetMsgProcFunc(OnButtonMsg, this);
-		m_btnBottom.SetMsgProcFunc(OnButtonMsg, this);
-		m_btnDrag.SetMsgProcFunc(OnButtonMsg, this);
+		m_btnTop.SetMsgProcFunc(OnSpecialButtonMsg, this);
+		m_btnBottom.SetMsgProcFunc(OnSpecialButtonMsg, this);
 
 		AddChild(&m_btnTop);
 		AddChild(&m_btnUp);
@@ -48,6 +75,8 @@ namespace HiEasyX
 		{
 			m_btnDrag.SetRect(2, (int)(m_info.btnH * 2 + m_info.slider_move_len * m_fPosRatio) + 1, m_info.btnW - 4, m_info.slider_len);
 		}
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void ScrollBar::UpdatePosRatio()
@@ -98,11 +127,15 @@ namespace HiEasyX
 	void ScrollBar::SetButtonHeight(int h)
 	{
 		m_nBtnHeight = h;
+
+		MarkNeedRedrawAndRender();
 	}
 
 	void ScrollBar::SetButtonWidth(int w)
 	{
 		m_nBtnWidth = w;
+
+		MarkNeedRedrawAndRender();
 	}
 
 	ScrollBar::ScrollBar()
@@ -112,10 +145,10 @@ namespace HiEasyX
 
 	ScrollBar::ScrollBar(int x, int y, int w, int h, int len, int pos, bool bHorizontal)
 	{
+		m_bHorizontal = bHorizontal;
 		SetRect(x, y, w, h);
 		SetContentLength(len);
 		SetSliderContentPos((float)pos);
-		m_bHorizontal = bHorizontal;
 		Init();
 	}
 
@@ -162,9 +195,9 @@ namespace HiEasyX
 		m_nSliderSpeed = speed;
 	}
 
-	void ScrollBar::UpdateRect()
+	void ScrollBar::UpdateRect(RECT rctOld)
 	{
-		ControlBase::UpdateRect();
+		ControlBase::UpdateRect(rctOld);
 
 		UpdateScrollBarInfo();
 
@@ -218,110 +251,106 @@ namespace HiEasyX
 
 			// 滚轮消息响应区域
 			RECT rctWheel = m_bSetOnWheelRct ? m_rctOnWheel : m_rct;
+			bool bWheel = false;
 			if (isInRect(msg.x, msg.y, rctWheel) || m_bDragging)
 			{
 				if (msg.wheel)
 				{
+					bWheel = true;
 					MoveSlider(-msg.wheel / 120.0f * 3);
 				}
+			}
+
+			// 拖动或滚轮时需要重绘
+			if (m_bDragging || bWheel)
+			{
+				MarkNeedRedrawAndRender();
 			}
 		}
 	}
 
 	void ScrollBar::Draw(bool draw_child)
 	{
-		ControlBase::Draw();
+		// 按钮消息
+		// 由于按下消息不会一直发送，所以此消息只能在每次重绘时处理
+		OnNormalButtonMsg();
 
-		// 按钮
-		clock_t tNow = clock();
-		float move_len = (float)(tNow - m_tPressed) / CLOCKS_PER_SEC * m_nSliderSpeed;
-		if (m_btnUp.isPressed())
+		if (m_bRedraw)
 		{
-			if (m_tPressed != 0)
+			ControlBase::Draw();
+
+			Canvas& canvasTop = m_btnTop.GetCanvas();
+			Canvas& canvasUp = m_btnUp.GetCanvas();
+			Canvas& canvasDown = m_btnDown.GetCanvas();
+			Canvas& canvasBottom = m_btnBottom.GetCanvas();
+
+			COLORREF cLine = DARKGRAY;
+
+			if (m_bHorizontal)
 			{
-				MoveSlider(-move_len);
+				int bottom_y = GetHeight() - m_nDrawInterval;
+				int middle_y = GetHeight() / 2;
+				int right_x = m_nBtnWidth - m_nDrawInterval;
+
+				// 绘制朝左箭头
+				auto pDrawLeft = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
+					canvas.SetLineColor(cLine);
+					canvas.MoveTo(right_x, m_nDrawInterval);
+					canvas.LineTo(m_nDrawInterval, middle_y);
+					canvas.LineTo(right_x, bottom_y);
+				};
+
+				// 绘制朝右箭头
+				auto pDrawRight = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
+					canvas.SetLineColor(cLine);
+					canvas.MoveTo(m_nDrawInterval, m_nDrawInterval);
+					canvas.LineTo(right_x, middle_y);
+					canvas.LineTo(m_nDrawInterval, bottom_y);
+				};
+
+				pDrawLeft(canvasTop);
+				pDrawLeft(canvasUp);
+				pDrawRight(canvasDown);
+				pDrawRight(canvasBottom);
+
+				canvasTop.Line(m_nDrawInterval, m_nDrawInterval, m_nDrawInterval, bottom_y);
+				canvasBottom.Line(right_x, m_nDrawInterval, right_x, bottom_y);
 			}
-			m_tPressed = tNow;
-		}
-		else if (m_btnDown.isPressed())
-		{
-			if (m_tPressed != 0)
+			else
 			{
-				MoveSlider(move_len);
+				int bottom_y = m_nBtnHeight - m_nDrawInterval;
+				int middle_x = GetWidth() / 2;
+				int right_x = GetWidth() - m_nDrawInterval;
+
+				// 绘制朝上箭头
+				auto pDrawUp = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
+					canvas.SetLineColor(cLine);
+					canvas.MoveTo(m_nDrawInterval, bottom_y);
+					canvas.LineTo(middle_x, m_nDrawInterval);
+					canvas.LineTo(right_x, bottom_y);
+				};
+
+				// 绘制朝下箭头
+				auto pDrawDown = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
+					canvas.SetLineColor(cLine);
+					canvas.MoveTo(m_nDrawInterval, m_nDrawInterval);
+					canvas.LineTo(middle_x, bottom_y);
+					canvas.LineTo(right_x, m_nDrawInterval);
+				};
+
+				pDrawUp(canvasTop);
+				pDrawUp(canvasUp);
+				pDrawDown(canvasDown);
+				pDrawDown(canvasBottom);
+
+				canvasTop.Line(m_nDrawInterval, m_nDrawInterval, right_x, m_nDrawInterval);
+				canvasBottom.Line(m_nDrawInterval, bottom_y, right_x, bottom_y);
 			}
-			m_tPressed = tNow;
-		}
-		else
-		{
-			m_tPressed = 0;
 		}
 
-		Canvas& canvasTop = m_btnTop.GetCanavs();
-		Canvas& canvasUp = m_btnUp.GetCanavs();
-		Canvas& canvasDown = m_btnDown.GetCanavs();
-		Canvas& canvasBottom = m_btnBottom.GetCanavs();
-
-		COLORREF cLine = DARKGRAY;
-
-		if (m_bHorizontal)
+		if (draw_child)
 		{
-			int bottom_y = GetHeight() - m_nDrawInterval;
-			int middle_y = GetHeight() / 2;
-			int right_x = m_nBtnWidth - m_nDrawInterval;
-
-			// 绘制朝左箭头
-			auto pDrawLeft = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
-				canvas.SetLineColor(cLine);
-				canvas.MoveTo(right_x, m_nDrawInterval);
-				canvas.LineTo(m_nDrawInterval, middle_y);
-				canvas.LineTo(right_x, bottom_y);
-			};
-
-			// 绘制朝右箭头
-			auto pDrawRight = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
-				canvas.SetLineColor(cLine);
-				canvas.MoveTo(m_nDrawInterval, m_nDrawInterval);
-				canvas.LineTo(right_x, middle_y);
-				canvas.LineTo(m_nDrawInterval, bottom_y);
-			};
-
-			pDrawLeft(canvasTop);
-			pDrawLeft(canvasUp);
-			pDrawRight(canvasDown);
-			pDrawRight(canvasBottom);
-
-			canvasTop.Line(m_nDrawInterval, m_nDrawInterval, m_nDrawInterval, bottom_y);
-			canvasBottom.Line(right_x, m_nDrawInterval, right_x, bottom_y);
-		}
-		else
-		{
-			int bottom_y = m_nBtnHeight - m_nDrawInterval;
-			int middle_x = GetWidth() / 2;
-			int right_x = GetWidth() - m_nDrawInterval;
-
-			// 绘制朝上箭头
-			auto pDrawUp = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
-				canvas.SetLineColor(cLine);
-				canvas.MoveTo(m_nDrawInterval, bottom_y);
-				canvas.LineTo(middle_x, m_nDrawInterval);
-				canvas.LineTo(right_x, bottom_y);
-			};
-
-			// 绘制朝下箭头
-			auto pDrawDown = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
-				canvas.SetLineColor(cLine);
-				canvas.MoveTo(m_nDrawInterval, m_nDrawInterval);
-				canvas.LineTo(middle_x, bottom_y);
-				canvas.LineTo(right_x, m_nDrawInterval);
-			};
-
-			pDrawUp(canvasTop);
-			pDrawUp(canvasUp);
-			pDrawDown(canvasDown);
-			pDrawDown(canvasBottom);
-
-			canvasTop.Line(m_nDrawInterval, m_nDrawInterval, right_x, m_nDrawInterval);
-			canvasBottom.Line(m_nDrawInterval, bottom_y, right_x, bottom_y);
+			DrawChild();
 		}
 	}
 
@@ -341,5 +370,7 @@ namespace HiEasyX
 	void ScrollBar::EnableHorizontal(bool enable)
 	{
 		m_bHorizontal = enable;
+
+		MarkNeedRedrawAndRender();
 	}
 }
