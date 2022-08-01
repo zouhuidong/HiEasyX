@@ -7,9 +7,9 @@
 //	版　　本：Ver 0.1(alpha)
 //	作　　者：huidong <mailhuid@163.com>
 //	编译环境：VisualStudio 2022 | EasyX_20220610 | Windows 10 
-//	项目地址：< 待填写 >
+//	项目地址：https://github.com/zouhuidong/HiEasyX
 //	创建日期：2022.07.20
-//	最后修改：2022.07.20
+//	最后修改：2022.08.01
 //
 
 #pragma once
