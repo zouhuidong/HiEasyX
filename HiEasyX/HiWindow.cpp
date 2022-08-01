@@ -13,7 +13,7 @@ namespace HiEasyX
 
 
 	WNDCLASSEX				g_WndClassEx;								// 窗口类
-	wchar_t					g_lpszClassName[] = L"EasyWin32";			// 窗口类名
+	wchar_t					g_lpszClassName[] = L"HiEasyX";				// 窗口类名
 	int						g_nSysW = 0, g_nSysH = 0;					// 系统分辨率
 	HWND					g_hConsole;									// 控制台句柄
 	HINSTANCE				g_hInstance = GetModuleHandle(0);			// 程序实例

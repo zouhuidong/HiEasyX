@@ -302,7 +302,7 @@ namespace HiEasyX
 	// 注：必须在第一次创建窗口前就调用该函数才能生效。默认情况下，程序将自绘 EasyX 程序图标
 	void SetCustomIcon(int nIcon, int nIconSm);
 
-	// 获取 EasyWin32 自绘默认窗口图标的 IMAGE
+	// 获取 HiWindow 自绘默认窗口图标的 IMAGE
 	IMAGE GetDefaultIconImage();
 
 	// 在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
@@ -410,8 +410,8 @@ namespace HiEasyX
 									HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SYSMENU))
 
 // 开启 / 关闭当前窗口的工具栏样式
-#define EnableToolWindowStyle(state)	(state ? HiEasyX::SetWindowExStyle(HiEasyX::GetWindowExStyle() | WS_EX_TOOLWINDOW) :\
-										HiEasyX::SetWindowExStyle(HiEasyX::GetWindowExStyle() & ~WS_EX_TOOLWINDOW))
+#define EnableToolWindowStyle(state)	(state ? HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) | WS_EX_TOOLWINDOW) :\
+										HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) & ~WS_EX_TOOLWINDOW))
 
 ////////////****** 键盘消息宏定义 ******////////////
 
