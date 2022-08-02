@@ -109,7 +109,7 @@ namespace HiEasyX
 
 	int ControlBase::GetChildCount()
 	{
-		int sum = m_listChild.size();
+		size_t sum = m_listChild.size();
 		for (auto& child : m_listChild)
 			sum += child->GetChildCount();
 		return sum;
