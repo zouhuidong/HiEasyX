@@ -133,7 +133,7 @@ namespace HiEasyX
 		std::list<ControlBase*>& GetChildList();
 
 		// 获取子控件总数
-		int GetChildCount();
+		size_t GetChildCount();
 
 		virtual void AddChild(ControlBase* p, int offset_x = 0, int offset_y = 0);
 

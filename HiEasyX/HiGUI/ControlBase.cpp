@@ -107,7 +107,7 @@ namespace HiEasyX
 		return m_listChild;
 	}
 
-	int ControlBase::GetChildCount()
+	size_t ControlBase::GetChildCount()
 	{
 		size_t sum = m_listChild.size();
 		for (auto& child : m_listChild)
@@ -254,7 +254,7 @@ namespace HiEasyX
 	void ControlBase::Render(Canvas* dst, RECT* pRct, int* pCount)
 	{
 		// 当前控件获取到的重绘矩形记录
-		int size = m_bRender ? 1 : GetChildCount();		// 若自身需要绘制，则只需要记录一个矩形
+		size_t size = m_bRender ? 1 : GetChildCount();	// 若自身需要绘制，则只需要记录一个矩形
 		RECT* my_rct = new RECT[size];
 		int my_count = 0;								// 当前控件获取到的重绘区域数量统计
 
