@@ -1085,7 +1085,7 @@ namespace HiEasyX
 		// 第一次创建窗口 --- 初始化各项数据
 		if (nWndCount == 0)
 		{
-			// 发布模式下默认渲染开场动画
+			// 发布模式下渲染开场动画
 #ifndef _DEBUG
 #ifndef _NO_START_ANIMATION_
 
@@ -1253,7 +1253,7 @@ namespace HiEasyX
 	{
 		// 标记是否已经完成窗口创建任务
 		int nDoneFlag = 0;
-		HWND hWnd = NULL;
+		HWND hWnd = nullptr;
 
 		// 存在父窗口时，实现模态窗口
 		if (hParent)

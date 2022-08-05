@@ -73,14 +73,14 @@ void GetDstPoints()
 			}
 
 	// 恢复对屏幕的绘图操作
-	SetWorkingImage(NULL);
+	SetWorkingImage(nullptr);
 }
 
 // 获取源点集
 void GetSrcPoints()
 {
 	// 设置随机种子
-	srand((unsigned int)time(NULL));
+	srand((unsigned int)time(nullptr));
 
 	// 设置随机的源数据
 	g_pSrc = new POINT[g_nCount];
