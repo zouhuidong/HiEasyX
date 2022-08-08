@@ -22,12 +22,12 @@ namespace HiEasyX
 	public:
 
 		// 按钮颜色设置（现代样式）
-		COLORREF m_cBorder_Normal = MODEN_BORDER_GRAY;
-		COLORREF m_cBackground_Normal = MODEN_FILL_GRAY;
-		COLORREF m_cBorder_Hovered = MODEN_BORDER_BLUE;
-		COLORREF m_cBackground_Hovered = MODEN_FILL_BLUE;
-		COLORREF m_cBorder_Pressed = MODEN_BORDER_PRESSED_BLUE;
-		COLORREF m_cBackground_Pressed = MODEN_FILL_PRESSED_BLUE;
+		COLORREF m_cBorder_Normal = MODERN_BORDER_GRAY;
+		COLORREF m_cBackground_Normal = MODERN_FILL_GRAY;
+		COLORREF m_cBorder_Hovered = MODERN_BORDER_BLUE;
+		COLORREF m_cBackground_Hovered = MODERN_FILL_BLUE;
+		COLORREF m_cBorder_Pressed = MODERN_BORDER_PRESSED_BLUE;
+		COLORREF m_cBackground_Pressed = MODERN_FILL_PRESSED_BLUE;
 
 		COLORREF m_cText_Disabled = LIGHTGRAY;
 		COLORREF m_cBorder_Disabled = GRAY;

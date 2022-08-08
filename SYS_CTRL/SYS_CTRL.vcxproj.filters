@@ -140,5 +140,8 @@
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

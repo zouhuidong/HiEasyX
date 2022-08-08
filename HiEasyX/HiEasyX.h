@@ -16,6 +16,7 @@
 
 #define __HIEASYX_H__
 
+#include "HiEasyX/HiDef.h"
 #include "HiEasyX/HiMacro.h"
 #include "HiEasyX/HiFunc.h"
 #include "HiEasyX/HiFPS.h"
@@ -24,14 +25,13 @@
 #include "HiEasyX/HiMusicMCI.h"
 #include "HiEasyX/HiGif.h"
 
-// 定义 NATIVE_EASYX 以使用原生 EasyX 窗口，而非 HiWindow
-#ifndef NATIVE_EASYX
+#ifndef _NATIVE_EASYX_
 #include "HiEasyX/HiWindow.h"
-#endif
+#include "HiEasyX/HiGUI/HiSysGUI/HiSysGUI.h"
+#endif /* _NATIVE_EASYX_ */
 
 #include "HiEasyX/HiCanvas.h"
 #include "HiEasyX/HiGUI/HiGUI.h"
-#include "HiEasyX/HiGUI/HiSysGUI/HiSysGUI.h"
 
 
 // 兼容旧版 EasyWin32 命名空间，请尽量使用 HiEasyX 命名空间

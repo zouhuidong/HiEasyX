@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "HiDef.h"
 #include "HiFunc.h"
 #include <graphics.h>
 #include <windowsx.h>

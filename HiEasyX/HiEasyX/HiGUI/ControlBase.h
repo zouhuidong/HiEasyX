@@ -63,7 +63,7 @@ namespace HiEasyX
 		bool m_bUseCanvasAlpha = false;								// 是否使用画布自身的透明度信息
 		bool m_isAlphaCalculated = false;							// 画布是否已经计算透明混合颜色
 
-		COLORREF m_cBorder = MODEN_BORDER_GRAY;						// 边框颜色
+		COLORREF m_cBorder = MODERN_BORDER_GRAY;						// 边框颜色
 		COLORREF m_cBackground = CLASSICGRAY;						// 背景色
 		COLORREF m_cText = BLACK;									// 文本颜色
 

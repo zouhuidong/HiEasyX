@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="..\HiEasyX\HiEasyX.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiCanvas.h" />
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiDef.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiDrawingProperty.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiFPS.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiFunc.h" />

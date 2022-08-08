@@ -147,11 +147,14 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 int main()
 {
-	HiEasyX::Window wnd(640, 480, EW_NORMAL, 0, WndProc2);
+	HiEasyX::Window wnd(640, 480, EW_NORMAL, 0/*, WndProc2*/);
 	HiEasyX::Canvas canvas;
 	wnd.BindCanvas(&canvas);
 
 	btn.Create(wnd.GetHandle(), 10, 50, 80, 25, L"Hello");
+
+	//btn.Enable(false);
+	//btn.Show(false);
 
 	btn.SetFocus(true);
 

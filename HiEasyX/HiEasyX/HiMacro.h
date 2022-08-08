@@ -8,9 +8,6 @@
 
 #include <graphics.h>
 
-// 版本定义
-#define _HIEASYX_VER_STR_	L"Ver 0.1(alpha)"
-
 ////// 透明相关
 
 // 混合 rgb 色彩和 alpha 透明度
@@ -104,13 +101,13 @@ enum EXTRA_COLORS
 	
 	CLASSICGRAY = RGB(0xF0, 0xF0, 0xF0),			// Windows 经典灰
 
-	MODEN_BORDER_GRAY = 0xadadad,					// 现代边框灰
-	MODEN_FILL_GRAY = 0xe1e1e1,						// 现代填充灰
+	MODERN_BORDER_GRAY = 0xadadad,					// 现代边框灰
+	MODERN_FILL_GRAY = 0xe1e1e1,					// 现代填充灰
 
-	MODEN_BORDER_BLUE = 0xd77800,					// 现代边框蓝
-	MODEN_FILL_BLUE = 0xfbf1e5,						// 现代填充蓝
+	MODERN_BORDER_BLUE = 0xd77800,					// 现代边框蓝
+	MODERN_FILL_BLUE = 0xfbf1e5,					// 现代填充蓝
 
-	MODEN_BORDER_PRESSED_BLUE = 0x995400,			// 现代边框蓝（按下）
-	MODEN_FILL_PRESSED_BLUE = 0xf7e4cc,				// 现代填充蓝（按下）
+	MODERN_BORDER_PRESSED_BLUE = 0x995400,			// 现代边框蓝（按下）
+	MODERN_FILL_PRESSED_BLUE = 0xf7e4cc,			// 现代填充蓝（按下）
 };
 

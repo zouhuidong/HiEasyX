@@ -9,8 +9,9 @@ namespace HiEasyX
 			hParent,
 			L"Button",
 			L"",
-			WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON
+			WS_CHILD | WS_VISIBLE | WS_TABSTOP | /*BS_AUTOCHECKBOX*/ BS_AUTORADIOBUTTON | WS_GROUP
 		);
+		//SetSysColors(GetID(),)
 	}
 
 	SysButton::SysButton()
@@ -37,6 +38,7 @@ namespace HiEasyX
 				m_nClickCount++;
 				if (m_pFunc)
 					m_pFunc();
+				//SendMessage(GetHandle(),BM_SETCHECK,)
 			}
 		}
 

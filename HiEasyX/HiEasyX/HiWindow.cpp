@@ -1426,6 +1426,16 @@ namespace HiEasyX
 		}
 		else
 		{
+			// 预设背景色
+			if (BeginTask())
+			{
+				setbkcolor(CLASSICGRAY);
+				settextcolor(BLACK);
+				setlinecolor(BLACK);
+				setfillcolor(BLACK);
+				cleardevice();
+				EndTask();
+			}
 			return hWnd;
 		}
 	}
