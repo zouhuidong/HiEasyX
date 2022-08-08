@@ -6,10 +6,13 @@ namespace HiEasyX
 {
 	HWND SysControlBase::CreateControl(HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)
 	{
+		m_hParent = hParent;
+		m_nID = AllocID();
+
 		CREATESTRUCT c;
 		c.lpCreateParams = 0;
 		c.hInstance = 0;
-		c.hMenu = (HMENU)(long long)AllocID();
+		c.hMenu = (HMENU)(long long)GetID();
 		c.hwndParent = hParent;
 		c.cy = GetHeight();
 		c.cx = GetWidth();
@@ -20,7 +23,7 @@ namespace HiEasyX
 		c.lpszClass = lpszClassName;
 		c.dwExStyle = 0;
 
-		return (HWND)SendMessage(hParent, WM_SYSCTRL_CREATE, 0, (LPARAM)&c);
+		return (HWND)SendMessage(hParent, WM_SYSCTRL_CREATE, (WPARAM)this, (LPARAM)&c);
 	}
 
 	SysControlBase::SysControlBase()
@@ -90,16 +93,17 @@ namespace HiEasyX
 
 	bool SysControlBase::isFocused()
 	{
-		HWND wnd;//窗口句柄
-		wnd = GetActiveWindow();//获得当前激活的窗口句柄
-		DWORD SelfThreadId = GetCurrentThreadId();//获取本身的线程ID
-		DWORD ForeThreadId = GetWindowThreadProcessId(wnd, NULL);//根据窗口句柄获取线程ID
-		AttachThreadInput(ForeThreadId, SelfThreadId, true);//附加线程
-		wnd = GetFocus();//获取具有输入焦点的窗口句柄
-		AttachThreadInput(ForeThreadId, SelfThreadId, false);//取消附加的线程
-		SendMessage(wnd, WM_CHAR, WPARAM('a'), 0);//发送一个字消息
+		DWORD SelfThreadId = GetCurrentThreadId();						// 获取自身线程 ID
+		DWORD ForeThreadId = GetWindowThreadProcessId(m_hParent, NULL);	// 根据窗口句柄获取线程 ID
+		AttachThreadInput(ForeThreadId, SelfThreadId, true);			// 附加到线程
+		HWND hWnd = GetFocus();											// 获取具有输入焦点的窗口句柄
+		AttachThreadInput(ForeThreadId, SelfThreadId, false);			// 取消附加到线程
+		return hWnd == GetHandle();
+	}
 
-		return true;
+	void SysControlBase::SetFocus(bool focused)
+	{
+		SendMessage(GetHandle(), focused ? WM_SETFOCUS : WM_KILLFOCUS, 0, 0);
 	}
 
 	std::wstring SysControlBase::GetText()
@@ -120,7 +124,8 @@ namespace HiEasyX
 
 	int SysControlBase::GetID()
 	{
-		return GetDlgCtrlID(GetHandle());
+		//return GetDlgCtrlID(GetHandle());
+		return m_nID;
 	}
 
 	int AllocID()

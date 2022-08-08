@@ -93,6 +93,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
+
+HiEasyX::SysButton btn;
+
 LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	static HINSTANCE hInstance = GetModuleHandle(0);
@@ -102,7 +105,7 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_CREATE:
 	{
-		hBtn = CreateWindow(L"Button", L"Press me", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 10, 10, 80, 25, hWnd, nullptr, hInstance, 0);
+		hBtn = CreateWindow(L"Button", L"Press me", WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON, 10, 10, 80, 25, hWnd, nullptr, hInstance, 0);
 		break;
 	}
 
@@ -111,6 +114,17 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		circle(100, 100, 70);
 		END_TASK();
 		break;
+
+
+	case WM_COMMAND:
+	{
+		/*int id = LOWORD(wParam);
+		if (id == btn.GetID())
+		{
+			btn.SetText(L"!!");
+		}*/
+		break;
+	}
 
 	case WM_CLOSE:
 		DestroyWindow(hWnd);
@@ -133,12 +147,24 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 int main()
 {
-	HWND hWnd = HiEasyX::initgraph_win32(640, 480, EW_NORMAL, 0, WndProc2);
-	//HiEasyX::SetWndProcFunc(nullptr, WndProc2);
+	HiEasyX::Window wnd(640, 480, EW_NORMAL, 0, WndProc2);
+	HiEasyX::Canvas canvas;
+	wnd.BindCanvas(&canvas);
 
-	Sleep(3000);
-	HiEasyX::SysButton btn;
-	btn.Create(hWnd, 10, 50, 80, 25, L"Hello");
+	btn.Create(wnd.GetHandle(), 10, 50, 80, 25, L"Hello");
+
+	btn.SetFocus(true);
+
+	int i = 0;
+	while (wnd.isAlive())
+	{
+		i += btn.GetClickCount();
+		canvas.Clear();
+		canvas.CenterText_Format(6, L"%d", i);
+		wnd.Redraw();
+		Sleep(10);
+	}
+	return 0;
 
 	HiEasyX::init_end();
 	return 0;

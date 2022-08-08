@@ -12,6 +12,10 @@ namespace HiEasyX
 {
 	class SysButton : public SysControlBase
 	{
+	private:
+		int m_nClickCount = 0;
+		void (*m_pFunc)() = nullptr;
+
 	protected:
 
 		void RealCreate(HWND hParent) override;
@@ -24,5 +28,12 @@ namespace HiEasyX
 
 		SysButton(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
 
+		void UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam) override;
+
+		// 注册点击消息
+		void RegisterMessage(void (*pFunc)());
+
+		// 获取按下次数
+		int GetClickCount();
 	};
 }

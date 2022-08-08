@@ -24,7 +24,8 @@ namespace HiEasyX
 	protected:
 
 		HWND m_hWnd = nullptr;
-
+		HWND m_hParent = nullptr;
+		int m_nID = 0;
 		SysControlType m_type = SCT_Unknown;
 
 		// 创建控件
@@ -45,8 +46,13 @@ namespace HiEasyX
 
 		void UpdateRect(RECT rctOld) override;
 
+		// 更新消息，此函数无需用户调用
+		virtual void UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam) = 0;
+
+		// 注：控件只能创建一次
 		HWND Create(HWND hParent, RECT rct, std::wstring strText = L"");
 
+		// 注：控件只能创建一次
 		HWND Create(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
 
 		HWND GetHandle() const { return m_hWnd; }
@@ -63,7 +69,7 @@ namespace HiEasyX
 
 		bool isFocused();
 
-		//void 
+		void SetFocus(bool focused);
 
 		std::wstring GetText();
 

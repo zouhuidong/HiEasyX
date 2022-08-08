@@ -3,10 +3,14 @@
 #include "HiMacro.h"
 #include "HiStart.h"
 #include "HiCanvas.h"
+#include "HiGUI/HiSysGUI/SysControlBase.h"
 
 
 // 预留消息空间
-#define MSG_RESERVE_SIZE 100
+#define MSG_RESERVE_SIZE		100
+
+// 预留控件空间
+#define SYSCTRL_RESERVE_SIZE	100
 
 namespace HiEasyX
 {
@@ -996,7 +1000,7 @@ namespace HiEasyX
 		}
 	}
 
-	HWND OnSysCtrlCreate(int indexWnd, LPARAM lParam)
+	HWND OnSysCtrlCreate(int indexWnd, WPARAM wParam, LPARAM lParam)
 	{
 		CREATESTRUCT* c = (CREATESTRUCT*)lParam;
 		HWND hWnd = CreateWindow(
@@ -1011,9 +1015,35 @@ namespace HiEasyX
 			c->lpCreateParams
 		);
 
+		// 记录
+		g_vecWindows[indexWnd].vecSysCtrl.push_back((SysControlBase*)wParam);
+
 		// 重绘，防止旧控件“消失”
 		EnforceRedraw(c->hwndParent);
 		return hWnd;
+	}
+
+	// 处理系统控件消息
+	// bRet 传出，标记是否直接返回
+	LRESULT SysCtrlProc(int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
+	{
+		bRet = false;
+		switch (msg)
+		{
+			// 创建系统控件
+		case WM_SYSCTRL_CREATE:
+			bRet = true;
+			return (LRESULT)OnSysCtrlCreate(indexWnd, wParam, lParam);
+			break;
+		}
+
+		// 派发消息
+		for (auto& ctrl : g_vecWindows[indexWnd].vecSysCtrl)
+		{
+			ctrl->UpdateMessage(msg, wParam, lParam);
+		}
+
+		return 0;
 	}
 
 	// 窗口过程函数
@@ -1056,11 +1086,6 @@ namespace HiEasyX
 			OnTray(indexWnd, lParam);
 			break;
 
-			// 创建系统控件
-		case WM_SYSCTRL_CREATE:
-			return (LRESULT)OnSysCtrlCreate(indexWnd, lParam);
-			break;
-
 		default:
 			// 系统任务栏重新创建，此时可能需要重新创建托盘
 			if (msg == g_uWM_TASKBARCREATED)
@@ -1072,6 +1097,12 @@ namespace HiEasyX
 
 		// 登记消息
 		RegisterMessage(indexWnd, msg, wParam, lParam);
+
+		// 处理系统控件消息
+		bool bRetSysCtrl = false;
+		LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
+		if (bRetSysCtrl)
+			return lrSysCtrl;
 
 		// 调用用户消息处理函数
 		if (g_vecWindows[indexWnd].funcWndProc)
@@ -1167,6 +1198,29 @@ namespace HiEasyX
 		}
 	}
 
+	// 初始化窗口结构体
+	EasyWindow& InitWindowStruct(EasyWindow& wnd, HWND hParent, int w, int h, WNDPROC WindowProcess)
+	{
+		wnd.isAlive = true;
+		wnd.hWnd = nullptr;
+		wnd.hParent = hParent;
+		wnd.pImg = new IMAGE(w, h);
+		wnd.pBufferImg = new IMAGE(w, h);
+		wnd.pBufferImgCanvas = nullptr;
+		wnd.funcWndProc = WindowProcess;
+		wnd.vecMessage.reserve(MSG_RESERVE_SIZE);
+		wnd.isUseTray = false;
+		wnd.nid = { 0 };
+		wnd.isUseTrayMenu = false;
+		wnd.hTrayMenu = nullptr;
+		wnd.funcTrayMenuProc = nullptr;
+		wnd.isNewSize = false;
+		wnd.isBusyProcessing = false;
+		wnd.nSkipPixels = 0;
+		wnd.vecSysCtrl.reserve(SYSCTRL_RESERVE_SIZE);
+		return wnd;
+	}
+
 	// 真正创建窗口的函数（阻塞）
 	void InitWindow(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent, int* nDoneFlag, HWND* hWnd)
 	{
@@ -1244,23 +1298,7 @@ namespace HiEasyX
 		}
 
 		// 在创建窗口前将窗口加入容器，预设句柄为空，方便过程函数接收 WM_CREATE 消息
-		wnd.isAlive = true;
-		wnd.hWnd = nullptr;
-		wnd.hParent = hParent;
-		wnd.pImg = new IMAGE(w, h);
-		wnd.pBufferImg = new IMAGE(w, h);
-		wnd.pBufferImgCanvas = nullptr;
-		wnd.funcWndProc = WindowProcess;
-		wnd.vecMessage.reserve(MSG_RESERVE_SIZE);
-		wnd.isUseTray = false;
-		wnd.nid = { 0 };
-		wnd.isUseTrayMenu = false;
-		wnd.hTrayMenu = nullptr;
-		wnd.funcTrayMenuProc = nullptr;
-		wnd.isNewSize = false;
-		wnd.isBusyProcessing = false;
-		wnd.nSkipPixels = 0;
-
+		InitWindowStruct(wnd, hParent, w, h, WindowProcess);
 		g_vecWindows.push_back(wnd);
 
 		// 创建窗口

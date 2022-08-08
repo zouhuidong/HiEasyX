@@ -35,6 +35,7 @@
 namespace HiEasyX
 {
 	class Canvas;
+	class SysControlBase;
 
 	////////////****** 类型定义 ******////////////
 
@@ -109,6 +110,8 @@ namespace HiEasyX
 		bool isBusyProcessing;						// 是否正忙于处理内部消息（指不允许用户启动任务的情况）
 
 		int nSkipPixels;							// 绘制时跳过的像素点数量（降质性速绘）
+
+		std::vector<SysControlBase*> vecSysCtrl;	// 记录创建的系统控件
 	};
 
 	// 窗口类
