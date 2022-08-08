@@ -996,6 +996,26 @@ namespace HiEasyX
 		}
 	}
 
+	HWND OnSysCtrlCreate(int indexWnd, LPARAM lParam)
+	{
+		CREATESTRUCT* c = (CREATESTRUCT*)lParam;
+		HWND hWnd = CreateWindow(
+			c->lpszClass,
+			c->lpszName,
+			c->style,
+			c->x, c->y,
+			c->cx, c->cy,
+			c->hwndParent,
+			c->hMenu,
+			GetModuleHandle(0),
+			c->lpCreateParams
+		);
+
+		// 重绘，防止旧控件“消失”
+		EnforceRedraw(c->hwndParent);
+		return hWnd;
+	}
+
 	// 窗口过程函数
 	LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
@@ -1036,8 +1056,9 @@ namespace HiEasyX
 			OnTray(indexWnd, lParam);
 			break;
 
+			// 创建系统控件
 		case WM_SYSCTRL_CREATE:
-			
+			return (LRESULT)OnSysCtrlCreate(indexWnd, lParam);
 			break;
 
 		default:

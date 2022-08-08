@@ -21,18 +21,6 @@ namespace HiEasyX
 		c.dwExStyle = 0;
 
 		return (HWND)SendMessage(hParent, WM_SYSCTRL_CREATE, 0, (LPARAM)&c);
-			
-		//	CreateWindow(
-		//	lpszClassName,
-		//	lpszWindowName,
-		//	dwStyle,
-		//	GetX(), GetY(),
-		//	GetWidth(), GetHeight(),
-		//	hParent,
-		//	(HMENU)AllocID(),
-		//	GetModuleHandle(0),
-		//	nullptr
-		//);
 	}
 
 	SysControlBase::SysControlBase()
@@ -60,17 +48,23 @@ namespace HiEasyX
 
 	HWND SysControlBase::Create(HWND hParent, RECT rct, std::wstring strText)
 	{
-		SetRect(rct);
-		RealCreate(hParent);
-		SetText(strText);
+		if (!GetHandle())
+		{
+			SetRect(rct);
+			RealCreate(hParent);
+			SetText(strText);
+		}
 		return GetHandle();
 	}
 
 	HWND SysControlBase::Create(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
-		SetRect(x, y, w, h);
-		RealCreate(hParent);
-		SetText(strText);
+		if (!GetHandle())
+		{
+			SetRect(x, y, w, h);
+			RealCreate(hParent);
+			SetText(strText);
+		}
 		return GetHandle();
 	}
 

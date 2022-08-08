@@ -112,22 +112,11 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		END_TASK();
 		break;
 
-	case WM_MOVE:
-	{
-		
-
-		break;
-	}
-
 	case WM_CLOSE:
 		DestroyWindow(hWnd);
 		break;
 
 	case WM_DESTROY:
-		// TODO: 在此处释放申请的内存
-
-		//FreeLibrary()
-
 		PostQuitMessage(0);
 		break;
 
@@ -147,9 +136,9 @@ int main()
 	HWND hWnd = HiEasyX::initgraph_win32(640, 480, EW_NORMAL, 0, WndProc2);
 	//HiEasyX::SetWndProcFunc(nullptr, WndProc2);
 
-	//Sleep(3000);
-	//HiEasyX::SysButton btn;
-	//btn.Create(hWnd, 10, 50, 80, 25, L"Hello");
+	Sleep(3000);
+	HiEasyX::SysButton btn;
+	btn.Create(hWnd, 10, 50, 80, 25, L"Hello");
 
 	HiEasyX::init_end();
 	return 0;
