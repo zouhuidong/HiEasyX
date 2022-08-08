@@ -17,16 +17,20 @@
 
 // 补充绘图窗口初始化参数
 // 普通窗口
-#define EW_NORMAL 0
+#define EW_NORMAL							0
 
 // 托盘消息
-#define WM_TRAY	(WM_USER + 100)
+#define WM_TRAY								(WM_USER + 100)
 
 // 无窗口时的索引
-#define NO_WINDOW_INDEX -1
+#define NO_WINDOW_INDEX						-1
 
 // 窗口过程函数默认返回值
-#define HIWINDOW_DEFAULT_PROC (LRESULT)(-1)
+#define HIWINDOW_DEFAULT_PROC				(LRESULT)(-10086)
+
+// 系统控件创建消息
+// lParam 传入 CREATESTRUCT*
+#define WM_SYSCTRL_CREATE					(WM_USER + 101)
 
 namespace HiEasyX
 {
@@ -39,30 +43,40 @@ namespace HiEasyX
 	//	窗口过程函数规范
 	// 
 	//	函数签名：
-	//		LRESULT WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	//		LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 	// 
 	//	注意事项：
-	//		1. 接收 WM_CREATE 消息时，wParam 和 lParam 为空，函数无法获得 CREATESTRUCT 结构体信息
-	//		2. 接收 WM_CLOSE 消息时，返回 true 或 false 表示是否关闭窗口，但如果关闭窗口，您无需编写销毁窗口的代码
-	//		3. 接收 WM_DESTROY 消息时，无需调用 PostQuitMessage
-	//		4. 若无需返回值，则返回 HIWINDOW_DEFAULT_PROC 即可
+	//		若要以默认方式处理消息，则返回 HIWINDOW_DEFAULT_PROC 即可（不要使用 DefWindowProc 函数）
 	/*
 		// 示例函数
-		LRESULT WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+		LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		{
-			switch(msg)
+			switch (msg)
 			{
-			case WM_CLOSE:
-				return true;	// 确认关闭窗口
-				return false;	// 不关闭窗口
+			case WM_PAINT:
+				BEGIN_TASK_WND(hWnd);
+				circle(100, 100, 70);
+				END_TASK();
 				break;
+
+			case WM_CLOSE:
+				DestroyWindow(hWnd);
+				break;
+
 			case WM_DESTROY:
-				// TODO: 在此处释放内存
-				// PostQuitMessage(0)
+				// TODO: 在此处释放申请的内存
+				PostQuitMessage(0);
+				break;
+	
+			default:
+				return HIWINDOW_DEFAULT_PROC;	// 标识使用默认消息处理函数继续处理
+		
+				// 若要以默认方式处理，请勿使用此语句
+				//return DefWindowProc(hWnd, msg, wParam, lParam);
 				break;
 			}
 
-			return HIWINDOW_DEFAULT_PROC;
+			return 0;
 		}
 	*/
 
@@ -266,6 +280,9 @@ namespace HiEasyX
 	// 绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
 	// 绑定画布后，如在外部操作画布，则必须先启动窗口任务
 	void BindWindowCanvas(Canvas* pCanvas, HWND hWnd = nullptr);
+
+	// 将绘制在 EasyX 中的内容显示到目标窗口上（任意窗口）
+	void FlushDrawingToWnd(IMAGE* pImg, HWND hWnd);
 
 	// 阻塞等待绘图任务完成
 	// 如果传入句柄，则只有该句柄窗口是活动窗口时才等待

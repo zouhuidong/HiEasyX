@@ -66,6 +66,12 @@
     <ClCompile Include="..\HiEasyX\HiEasyX\HiWindow.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysControlBase.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\HiEasyX\HiEasyX\HiCanvas.h">
@@ -123,6 +129,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\HiEasyX\HiEasyX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\HiSysGUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysControlBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

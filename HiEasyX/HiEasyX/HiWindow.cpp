@@ -1,5 +1,6 @@
 ﻿#include "HiWindow.h"
 
+#include "HiMacro.h"
 #include "HiStart.h"
 #include "HiCanvas.h"
 
@@ -14,7 +15,7 @@ namespace HiEasyX
 
 	WNDCLASSEX				g_WndClassEx;								// 窗口类
 	wchar_t					g_lpszClassName[] = L"HiEasyX";				// 窗口类名
-	int						g_nSysW = 0, g_nSysH = 0;					// 系统分辨率
+	ScreenSize				g_screenSize;								// 显示器信息
 	HWND					g_hConsole;									// 控制台句柄
 	HINSTANCE				g_hInstance = GetModuleHandle(0);			// 程序实例
 
@@ -137,7 +138,6 @@ namespace HiEasyX
 		}
 	}
 
-	// 将绘制在 EasyX 中的内容显示到目标窗口上
 	void FlushDrawingToWnd(IMAGE* pImg, HWND hWnd)
 	{
 		HDC hdc = GetDC(hWnd);
@@ -233,17 +233,15 @@ namespace HiEasyX
 			{
 				if (g_vecWindows[i].isAlive)
 				{
-					DestroyWindow(g_vecWindows[i].hWnd);
-					//// 必须交由原线程销毁窗口，才能使窗口销毁
-					//// 发送 WM_DESTROY 时特殊标记 wParam 为 1，表示程序命令销毁窗口
-					//SendMessage(g_vecWindows[i].hWnd, WM_DESTROY, 1, 0);
+					// 必须交由原线程 DestroyWindow
+					// 发送 WM_DESTROY 时特殊标记 wParam 为 1，表示程序命令销毁窗口
+					SendMessage(g_vecWindows[i].hWnd, WM_DESTROY, 1, 0);
 				}
 			}
 		}
 		else if (isAliveWindow(hWnd))
 		{
-			DestroyWindow(hWnd);
-			//SendMessage(hWnd, WM_DESTROY, 1, 0);
+			SendMessage(hWnd, WM_DESTROY, 1, 0);
 		}
 	}
 
@@ -791,92 +789,70 @@ namespace HiEasyX
 		return hIcon;
 	}
 
-	// 窗口过程函数
-	LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	void OnSize(int indexWnd)
 	{
-		RECT rctWnd;							// 窗口矩形信息
-		POINT ptMouse;							// 鼠标位置
-		LRESULT resultUserProc = 0;				// 记录用户窗口过程函数返回值
-		int indexWnd = GetWindowIndex(hwnd);	// 该窗口在已记录列表中的索引
+		WaitForProcessing(indexWnd);
+		g_vecWindows[indexWnd].isBusyProcessing = true;		// 不能再启动任务
+		WaitForTask(g_vecWindows[indexWnd].hWnd);			// 等待最后一个任务完成
 
-		// 出现未知窗口，则使用默认方法进行处理（这是非正常情况）
-		// 死窗口也可能调用过程函数
-		if (!isValidWindowIndex(indexWnd))
+		ResizeWindowImage(indexWnd);
+		if (g_vecWindows[indexWnd].pBufferImgCanvas)
 		{
-			return DefWindowProc(hwnd, msg, wParam, lParam);
+			g_vecWindows[indexWnd].pBufferImgCanvas->UpdateSizeInfo();
 		}
-		GetWindowRect(hwnd, &rctWnd);
-		GetCursorPos(&ptMouse);
 
-		//** 开始处理窗口消息 **//
+		g_vecWindows[indexWnd].isBusyProcessing = false;
+	}
 
-		// 必须预先处理的一些消息
-		switch (msg)
+	void OnTray(int indexWnd, LPARAM lParam)
+	{
+		if (g_vecWindows[indexWnd].isUseTray)
 		{
-		case WM_CREATE:
-			break;
+			HWND hWnd = g_vecWindows[indexWnd].hWnd;
+			POINT ptMouse;
+			GetCursorPos(&ptMouse);
 
-		case WM_SIZE:
-			WaitForProcessing(indexWnd);
-			g_vecWindows[indexWnd].isBusyProcessing = true;		// 不能再启动任务
-			WaitForTask(g_vecWindows[indexWnd].hWnd);			// 等待最后一个任务完成
-
-			ResizeWindowImage(indexWnd);
-			if (g_vecWindows[indexWnd].pBufferImgCanvas)
+			switch (lParam)
 			{
-				g_vecWindows[indexWnd].pBufferImgCanvas->UpdateSizeInfo();
-			}
+				// 左键激活窗口
+			case WM_LBUTTONDOWN:
+				SetForegroundWindow(hWnd);
+				break;
 
-			g_vecWindows[indexWnd].isBusyProcessing = false;
-			break;
-
-			// 托盘消息
-		case WM_TRAY:
-			if (g_vecWindows[indexWnd].isUseTray)
-			{
-				switch (lParam)
+				// 右键打开菜单
+			case WM_RBUTTONDOWN:
+				if (g_vecWindows[indexWnd].isUseTrayMenu)
 				{
-					// 左键激活窗口
-				case WM_LBUTTONDOWN:
-					SetForegroundWindow(hwnd);
-					break;
+					SetForegroundWindow(hWnd);	// 激活一下窗口，防止菜单不消失
 
-					// 右键打开菜单
-				case WM_RBUTTONDOWN:
-					if (g_vecWindows[indexWnd].isUseTrayMenu)
+					// 显示菜单并跟踪
+					int nMenuId = TrackPopupMenu(g_vecWindows[indexWnd].hTrayMenu, TPM_RETURNCMD, ptMouse.x, ptMouse.y, 0, hWnd, nullptr);
+					if (nMenuId == 0) PostMessage(hWnd, WM_LBUTTONDOWN, 0, 0);
+					if (g_vecWindows[indexWnd].funcTrayMenuProc)
 					{
-						SetForegroundWindow(hwnd);	// 激活一下窗口，防止菜单不消失
-
-						// 显示菜单并跟踪
-						int nMenuId = TrackPopupMenu(g_vecWindows[indexWnd].hTrayMenu, TPM_RETURNCMD, ptMouse.x, ptMouse.y, 0, hwnd, nullptr);
-						if (nMenuId == 0) PostMessage(hwnd, WM_LBUTTONDOWN, 0, 0);
-						if (g_vecWindows[indexWnd].funcTrayMenuProc)
-						{
-							g_vecWindows[indexWnd].funcTrayMenuProc(nMenuId);
-						}
-
+						g_vecWindows[indexWnd].funcTrayMenuProc(nMenuId);
 					}
-					break;
 
-				default:
-					break;
 				}
-			}
-			break;
+				break;
 
-		default:
-			// 系统任务栏重新创建，此时可能需要重新创建托盘
-			if (msg == g_uWM_TASKBARCREATED)
-			{
-				if (g_vecWindows[indexWnd].isUseTray)
-				{
-					ShowTray(&g_vecWindows[indexWnd].nid);
-				}
+			default:
+				break;
 			}
-			break;
 		}
+	}
 
-		// 消息记录
+	void OnTaskBarCreated(int indexWnd)
+	{
+		if (g_vecWindows[indexWnd].isUseTray)
+		{
+			ShowTray(&g_vecWindows[indexWnd].nid);
+		}
+	}
+
+	void RegisterMessage(int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	{
+		// 记录消息事件
 		switch (msg)
 		{
 			// EM_MOUSE
@@ -987,34 +963,117 @@ namespace HiEasyX
 		break;
 
 		}
+	}
+
+	void OnPaint(int indexWnd)
+	{
+		// 映射绘图缓存到窗口
+		FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, g_vecWindows[indexWnd].hWnd);
+		DefWindowProc(g_vecWindows[indexWnd].hWnd, WM_PAINT, 0, 0);
+	}
+
+	void OnMove(HWND hWnd)
+	{
+		RECT rctWnd;
+		GetWindowRect(hWnd, &rctWnd);
+		if (rctWnd.left < g_screenSize.left || rctWnd.top < g_screenSize.top
+			|| rctWnd.right > g_screenSize.left + g_screenSize.w
+			|| rctWnd.bottom > g_screenSize.top + g_screenSize.h)
+		{
+			InvalidateRect(hWnd, nullptr, false);
+		}
+	}
+
+	void OnDestroy(int indexWnd, WPARAM wParam)
+	{
+		closegraph_win32(indexWnd);
+
+		// 存在参数，意味着这是用户调用 closegraph_win32 销毁窗口
+		// 故再调用 DestroyWindow
+		if (wParam)
+		{
+			DestroyWindow(g_vecWindows[indexWnd].hWnd);
+		}
+	}
+
+	// 窗口过程函数
+	LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	{
+		// 窗口矩形信息
+		LRESULT resultUserProc = HIWINDOW_DEFAULT_PROC;		// 记录用户窗口过程函数返回值
+		int indexWnd = GetWindowIndex(hWnd);				// 该窗口在已记录列表中的索引
+
+		// 调用窗口不在窗口列表内，则使用默认方法进行处理（无需检查窗口死活）
+		if (!isValidWindowIndex(indexWnd))
+		{
+			// 也有可能正在接收 WM_CREATE 消息，此时窗口还未加入列表，则调用用户过程函数
+			if (msg == WM_CREATE)
+			{
+				WNDPROC proc = g_vecWindows[g_vecWindows.size() - 1].funcWndProc;
+				if (proc)
+				{
+					proc(hWnd, msg, wParam, lParam);
+				}
+			}
+
+			return DefWindowProc(hWnd, msg, wParam, lParam);
+		}
+
+		//** 开始处理窗口消息 **//
+
+		// 必须预先处理的一些消息
+		switch (msg)
+		{
+		case WM_CREATE:
+			break;
+
+		case WM_SIZE:
+			OnSize(indexWnd);
+			break;
+
+			// 托盘消息
+		case WM_TRAY:
+			OnTray(indexWnd, lParam);
+			break;
+
+		case WM_SYSCTRL_CREATE:
+			
+			break;
+
+		default:
+			// 系统任务栏重新创建，此时可能需要重新创建托盘
+			if (msg == g_uWM_TASKBARCREATED)
+			{
+				OnTaskBarCreated(indexWnd);
+			}
+			break;
+		}
+
+		// 登记消息
+		RegisterMessage(indexWnd, msg, wParam, lParam);
 
 		// 调用用户消息处理函数
 		if (g_vecWindows[indexWnd].funcWndProc)
 		{
-			resultUserProc = g_vecWindows[indexWnd].funcWndProc(hwnd, msg, wParam, lParam);
+			resultUserProc = g_vecWindows[indexWnd].funcWndProc(hWnd, msg, wParam, lParam);
 		}
 
 		// 善后工作
 		switch (msg)
 		{
-			// 映射绘图缓存到窗口
 			// 因为用户可能在过程函数中绘图，要在他之后输出缓存
 		case WM_PAINT:
-			FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, g_vecWindows[indexWnd].hWnd);
-			DefWindowProc(hwnd, msg, wParam, lParam);
+			OnPaint(indexWnd);
 			break;
 
 			// 移动窗口超出屏幕时可能导致子窗口显示有问题，所以此时需要彻底重绘
-		case WM_MOVE:
-			if (rctWnd.left <= 0 || rctWnd.top <= 0 || rctWnd.right >= g_nSysW || rctWnd.bottom >= g_nSysH)
-			{
-				InvalidateRect(hwnd, nullptr, false);
-			}
+		case WM_MOVING:	case WM_MOVE:
+			OnMove(hWnd);
 			break;
 
 			// 关闭窗口，释放内存
 		case WM_DESTROY:
-			closegraph_win32(indexWnd);
+			OnDestroy(indexWnd, wParam);
 			break;
 		}
 
@@ -1024,7 +1083,7 @@ namespace HiEasyX
 		// 此处统一在函数末尾返回
 
 		// 用户未处理此消息
-		if (resultUserProc == HIWINDOW_DEFAULT_PROC)
+		if (!g_vecWindows[indexWnd].funcWndProc || resultUserProc == HIWINDOW_DEFAULT_PROC)
 		{
 			switch (msg)
 			{
@@ -1037,7 +1096,7 @@ namespace HiEasyX
 				break;
 			}
 
-			lResult = DefWindowProc(hwnd, msg, wParam, lParam);
+			lResult = DefWindowProc(hWnd, msg, wParam, lParam);
 		}
 
 		// 用户已处理此消息
@@ -1065,7 +1124,7 @@ namespace HiEasyX
 		if (g_nCustomIcon)		hIcon = g_hCustomIcon;
 		if (g_nCustomIconSm)	hIconSm = g_hCustomIconSm;
 
-		g_WndClassEx.cbSize = sizeof(WNDCLASSEX);
+		g_WndClassEx.cbSize = sizeof WNDCLASSEX;
 		g_WndClassEx.style = CS_VREDRAW | CS_HREDRAW;
 		g_WndClassEx.lpfnWndProc = WndProc;
 		g_WndClassEx.cbClsExtra = 0;
@@ -1098,7 +1157,7 @@ namespace HiEasyX
 		// 未设置标题
 		if (lstrlen(lpszWndTitle) == 0)
 		{
-			wstrTitle = L"EasyX Window";
+			wstrTitle = L"HiEasyX_" _HIEASYX_VER_STR_ + (std::wstring)L"  EasyX_" + GetEasyXVer();
 			if (nWndCount != 0)
 			{
 				wstrTitle += L" (" + std::to_wstring(nWndCount + 1) + L")";
@@ -1123,8 +1182,7 @@ namespace HiEasyX
 #endif // RELEASE
 
 			// 获取分辨率
-			g_nSysW = GetSystemMetrics(SM_CXSCREEN);
-			g_nSysH = GetSystemMetrics(SM_CYSCREEN);
+			g_screenSize = GetScreenSize();
 
 			// 默认程序图标
 			g_hIconDefault = GetDefaultAppIcon();
@@ -1141,7 +1199,7 @@ namespace HiEasyX
 
 			// 获取系统任务栏自定义的消息代码
 			g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
-	}
+		}
 
 		// 控制台
 		if (g_hConsole && flag & EW_SHOWCONSOLE)
@@ -1164,6 +1222,26 @@ namespace HiEasyX
 			user_style |= CS_DBLCLKS;
 		}
 
+		// 在创建窗口前将窗口加入容器，预设句柄为空，方便过程函数接收 WM_CREATE 消息
+		wnd.isAlive = true;
+		wnd.hWnd = nullptr;
+		wnd.hParent = hParent;
+		wnd.pImg = new IMAGE(w, h);
+		wnd.pBufferImg = new IMAGE(w, h);
+		wnd.pBufferImgCanvas = nullptr;
+		wnd.funcWndProc = WindowProcess;
+		wnd.vecMessage.reserve(MSG_RESERVE_SIZE);
+		wnd.isUseTray = false;
+		wnd.nid = { 0 };
+		wnd.isUseTrayMenu = false;
+		wnd.hTrayMenu = nullptr;
+		wnd.funcTrayMenuProc = nullptr;
+		wnd.isNewSize = false;
+		wnd.isBusyProcessing = false;
+		wnd.nSkipPixels = 0;
+
+		g_vecWindows.push_back(wnd);
+
 		// 创建窗口
 		for (int i = 0;; i++)
 		{
@@ -1173,16 +1251,19 @@ namespace HiEasyX
 				wstrTitle.c_str(),
 				g_isPreStyle ? g_lPreStyle : user_style,
 				CW_USEDEFAULT, CW_USEDEFAULT,
-				w, h,	// 宽高暂时这样设置，稍后获取边框大小后再调整
+				w, h,	// 宽高现在这样设置，稍后获取边框大小后再调整
 				hParent,
 				nullptr,
 				g_hInstance,
 				nullptr
 			);
 
-			// 创建成功，跳出
 			if (wnd.hWnd)
+			{
+				// 创建窗口成功后，再将句柄记录
+				g_vecWindows[g_vecWindows.size() - 1].hWnd = wnd.hWnd;
 				break;
+			}
 
 			// 三次创建窗口失败，不再尝试
 			else if (i == 2)
@@ -1201,26 +1282,7 @@ namespace HiEasyX
 			RemoveMenu(hmenu, SC_CLOSE, MF_BYCOMMAND);
 		}
 
-		// 初始化窗口属性
-		wnd.isAlive = true;
-		wnd.hParent = hParent;
-		wnd.pImg = new IMAGE(w, h);
-		wnd.pBufferImg = new IMAGE(w, h);
-		wnd.pBufferImgCanvas = nullptr;
-		wnd.funcWndProc = WindowProcess;
-		wnd.vecMessage.reserve(MSG_RESERVE_SIZE);
-		wnd.isUseTray = false;
-		wnd.nid = { 0 };
-		wnd.isUseTrayMenu = false;
-		wnd.hTrayMenu = nullptr;
-		wnd.funcTrayMenuProc = nullptr;
-		wnd.isNewSize = false;
-		wnd.isBusyProcessing = false;
-		wnd.nSkipPixels = 0;
-
-		g_vecWindows.push_back(wnd);
-
-		// 抢夺焦点
+		// 抢夺窗口焦点
 		SetWorkingWindow(wnd.hWnd);
 
 		*hWnd = wnd.hWnd;
@@ -1263,9 +1325,6 @@ namespace HiEasyX
 		ShowWindow(wnd.hWnd, SW_SHOWNORMAL);
 		UpdateWindow(wnd.hWnd);
 
-		// 由于 WM_CREATE 消息被未知原因吞噬，所以需要模拟发送此消息
-		WndProc(wnd.hWnd, WM_CREATE, 0, 0);
-
 		// 消息派发，阻塞
 		// 窗口销毁后会自动退出
 		MSG Msg;
@@ -1274,7 +1333,7 @@ namespace HiEasyX
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
 		}
-}
+	}
 
 	HWND initgraph_win32(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)
 	{

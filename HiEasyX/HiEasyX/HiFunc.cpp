@@ -3,6 +3,14 @@
 #include <iostream>
 #include <time.h>
 
+ScreenSize GetScreenSize()
+{
+	int left = GetSystemMetrics(SM_XVIRTUALSCREEN);
+	int top = GetSystemMetrics(SM_YVIRTUALSCREEN);
+	int w = GetSystemMetrics(SM_CXVIRTUALSCREEN);
+	int h = GetSystemMetrics(SM_CYVIRTUALSCREEN);
+	return { left,top,w,h };
+}
 
 // 获取图像尺寸
 // 可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况

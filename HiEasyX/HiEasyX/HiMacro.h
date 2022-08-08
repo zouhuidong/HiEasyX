@@ -8,6 +8,8 @@
 
 #include <graphics.h>
 
+// 版本定义
+#define _HIEASYX_VER_STR_	L"Ver 0.1(alpha)"
 
 ////// 透明相关
 

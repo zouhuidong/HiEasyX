@@ -135,6 +135,8 @@
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\Button.cpp" />
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\Container.cpp" />
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\ControlBase.cpp" />
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.cpp" />
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysControlBase.cpp" />
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\Page.cpp" />
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\ProgressCtrl.cpp" />
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\ScrollBar.cpp" />
@@ -156,6 +158,9 @@
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\Container.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\ControlBase.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiGUI.h" />
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\HiSysGUI.h" />
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.h" />
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysControlBase.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\Page.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\ProgressCtrl.h" />
     <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\ScrollBar.h" />
