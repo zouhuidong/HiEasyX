@@ -68,10 +68,10 @@ namespace HiEasyX
 				// TODO: 在此处释放申请的内存
 				PostQuitMessage(0);
 				break;
-	
+
 			default:
 				return HIWINDOW_DEFAULT_PROC;	// 标识使用默认消息处理函数继续处理
-		
+
 				// 若要以默认方式处理，请勿使用此语句
 				//return DefWindowProc(hWnd, msg, wParam, lParam);
 				break;
@@ -170,8 +170,10 @@ namespace HiEasyX
 
 		void SetQuickDraw(UINT nSkipPixels);
 
+		// 输出绘图缓冲（并非重绘窗口）
 		void FlushDrawing();
 
+		// 重绘窗口
 		void Redraw();
 
 		bool BeginTask();
@@ -441,12 +443,12 @@ namespace HiEasyX
 ////////////****** 窗口样式宏定义 ******////////////
 
 // 是否禁用当前窗口改变大小
-#define DisableResizing(state)	(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX) :\
-								HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SIZEBOX | WS_MAXIMIZEBOX))
+#define DisableResizing(state)			(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX) :\
+										HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SIZEBOX | WS_MAXIMIZEBOX))
 
 // 是否禁用当前窗口的系统菜单
-#define DisableSystemMenu(state)	(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SYSMENU) :\
-									HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SYSMENU))
+#define DisableSystemMenu(state)		(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SYSMENU) :\
+										HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SYSMENU))
 
 // 开启 / 关闭当前窗口的工具栏样式
 #define EnableToolWindowStyle(state)	(state ? HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) | WS_EX_TOOLWINDOW) :\

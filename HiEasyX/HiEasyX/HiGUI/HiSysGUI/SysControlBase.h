@@ -47,7 +47,8 @@ namespace HiEasyX
 		void UpdateRect(RECT rctOld) override;
 
 		// 更新消息，此函数无需用户调用
-		virtual void UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam) = 0;
+		// bRet 传出，标记是否返回值
+		virtual LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) = 0;
 
 		// 注：控件只能创建一次
 		HWND Create(HWND hParent, RECT rct, std::wstring strText = L"");
@@ -74,9 +75,9 @@ namespace HiEasyX
 		std::wstring GetText();
 
 		void SetText(std::wstring wstr);
-		
+
 		int GetID();
-		
+
 	};
 
 	// 自动分配控件 ID

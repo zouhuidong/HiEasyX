@@ -28,7 +28,7 @@ namespace HiEasyX
 	{
 	}
 
-	void SysButton::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam)
+	LRESULT SysButton::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
 	{
 		if (msg == WM_COMMAND)
 		{
@@ -39,6 +39,9 @@ namespace HiEasyX
 					m_pFunc();
 			}
 		}
+
+		bRet = false;
+		return 0;
 	}
 
 	void SysButton::RegisterMessage(void(*pFunc)())

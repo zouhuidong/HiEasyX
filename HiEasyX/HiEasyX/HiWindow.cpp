@@ -429,22 +429,14 @@ namespace HiEasyX
 		return g_isInTask && (hWnd ? GetFocusWindow().hWnd == hWnd : true);
 	}
 
-	// 根据窗口大小重新调整该窗口画布大小
-	void ResizeWindowImage(int index)
+	// 重新调整窗口画布大小
+	void ResizeWindowImage(int index, RECT rct)
 	{
 		if (isAliveWindow(index))
 		{
-			RECT rctWnd;
-			for (int i = 0; i < 2; i++)
-			{
-				if (GetClientRect(g_vecWindows[index].hWnd, &rctWnd))	// 客户区矩形
-				{
-					g_vecWindows[index].pImg->Resize(rctWnd.right, rctWnd.bottom);
-					g_vecWindows[index].pBufferImg->Resize(rctWnd.right, rctWnd.bottom);
-					g_vecWindows[index].isNewSize = true;
-					break;
-				}
-			}
+			g_vecWindows[index].pImg->Resize(rct.right, rct.bottom);
+			g_vecWindows[index].pBufferImg->Resize(rct.right, rct.bottom);
+			g_vecWindows[index].isNewSize = true;
 		}
 	}
 
@@ -795,11 +787,14 @@ namespace HiEasyX
 
 	void OnSize(int indexWnd)
 	{
+		RECT rctWnd;
+		GetClientRect(g_vecWindows[indexWnd].hWnd, &rctWnd);
+
 		WaitForProcessing(indexWnd);
 		g_vecWindows[indexWnd].isBusyProcessing = true;		// 不能再启动任务
 		WaitForTask(g_vecWindows[indexWnd].hWnd);			// 等待最后一个任务完成
 
-		ResizeWindowImage(indexWnd);
+		ResizeWindowImage(indexWnd, rctWnd);
 		if (g_vecWindows[indexWnd].pBufferImgCanvas)
 		{
 			g_vecWindows[indexWnd].pBufferImgCanvas->UpdateSizeInfo();
@@ -854,7 +849,8 @@ namespace HiEasyX
 		}
 	}
 
-	void RegisterMessage(int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	// 登记消息（ExMessage）
+	void RegisterExMessage(int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 		// 记录消息事件
 		switch (msg)
@@ -1038,12 +1034,23 @@ namespace HiEasyX
 		}
 
 		// 派发消息
+		bool bCtrlRet = false;
+		LRESULT lr = 0;
 		for (auto& ctrl : g_vecWindows[indexWnd].vecSysCtrl)
 		{
-			ctrl->UpdateMessage(msg, wParam, lParam);
+			LRESULT lr = ctrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
+			if (bCtrlRet)
+			{
+				bRet = true;
+				return lr;
+			}
 		}
 
 		return 0;
+	}
+
+	void OnCreate(int indexWnd, HWND hWnd, LPARAM lParam)
+	{
 	}
 
 	// 窗口过程函数
@@ -1059,7 +1066,9 @@ namespace HiEasyX
 			// 也有可能正在接收 WM_CREATE 消息，此时窗口还未加入列表，则调用用户过程函数
 			if (msg == WM_CREATE)
 			{
-				WNDPROC proc = g_vecWindows[g_vecWindows.size() - 1].funcWndProc;
+				indexWnd = (int)g_vecWindows.size() - 1;
+				OnCreate(indexWnd, hWnd, lParam);
+				WNDPROC proc = g_vecWindows[indexWnd].funcWndProc;
 				if (proc)
 				{
 					proc(hWnd, msg, wParam, lParam);
@@ -1071,12 +1080,9 @@ namespace HiEasyX
 
 		//** 开始处理窗口消息 **//
 
-		// 必须预先处理的一些消息
+		// 预先处理部分消息
 		switch (msg)
 		{
-		case WM_CREATE:
-			break;
-
 		case WM_SIZE:
 			OnSize(indexWnd);
 			break;
@@ -1096,7 +1102,7 @@ namespace HiEasyX
 		}
 
 		// 登记消息
-		RegisterMessage(indexWnd, msg, wParam, lParam);
+		RegisterExMessage(indexWnd, msg, wParam, lParam);
 
 		// 处理系统控件消息
 		bool bRetSysCtrl = false;
@@ -1119,7 +1125,7 @@ namespace HiEasyX
 			break;
 
 			// 移动窗口超出屏幕时可能导致子窗口显示有问题，所以此时需要彻底重绘
-		case WM_MOVING:	case WM_MOVE:
+		case WM_MOVE:
 			OnMove(hWnd);
 			break;
 

@@ -118,11 +118,11 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 	case WM_COMMAND:
 	{
-		/*int id = LOWORD(wParam);
+		int id = LOWORD(wParam);
 		if (id == btn.GetID())
 		{
 			btn.SetText(L"!!");
-		}*/
+		}
 		break;
 	}
 
@@ -162,7 +162,7 @@ int main()
 		canvas.Clear();
 		canvas.CenterText_Format(6, L"%d", i);
 		wnd.Redraw();
-		Sleep(10);
+		Sleep(100);
 	}
 	return 0;
 

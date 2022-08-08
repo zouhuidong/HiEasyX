@@ -28,7 +28,7 @@ namespace HiEasyX
 
 		SysButton(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
 
-		void UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam) override;
+		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 
 		// ×¢²áµã»÷ÏûÏ¢
 		void RegisterMessage(void (*pFunc)());
