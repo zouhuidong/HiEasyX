@@ -1,5 +1,7 @@
 #include "SysButton.h"
 
+#include "../../HiFunc.h"
+
 namespace HiEasyX
 {
 	void SysButton::RealCreate(HWND hParent)
@@ -9,24 +11,22 @@ namespace HiEasyX
 			hParent,
 			L"Button",
 			L"",
-			WS_CHILD | WS_VISIBLE | WS_TABSTOP | /*BS_AUTOCHECKBOX*/ BS_AUTORADIOBUTTON | WS_GROUP
+			WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON
 		);
-		//SetSysColors(GetID(),)
 	}
 
 	SysButton::SysButton()
-		: SysControlBase()
 	{
 	}
 
 	SysButton::SysButton(HWND hParent, RECT rct, std::wstring strText)
-		: SysControlBase(hParent, rct, strText)
 	{
+		Create(hParent, rct, strText);
 	}
 
 	SysButton::SysButton(HWND hParent, int x, int y, int w, int h, std::wstring strText)
-		:SysControlBase(hParent, x, y, w, h, strText)
 	{
+		Create(hParent, x, y, w, h, strText);
 	}
 
 	LRESULT SysButton::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
@@ -38,7 +38,6 @@ namespace HiEasyX
 				m_nClickCount++;
 				if (m_pFunc)
 					m_pFunc();
-				//SendMessage(GetHandle(),BM_SETCHECK,)
 			}
 		}
 
@@ -51,10 +50,34 @@ namespace HiEasyX
 		m_pFunc = pFunc;
 	}
 
+	void SysButton::Image(bool enable, IMAGE* img, bool reserve_text)
+	{
+		long style = GetWindowLong(GetHandle(), GWL_STYLE);
+		if (enable)
+			style |= BS_BITMAP;
+		else
+			style &= ~BS_BITMAP;
+		if (!enable || (enable && !reserve_text))
+		{
+			SetWindowLongPtr(GetHandle(), GWL_STYLE, style);
+		}
+		if (enable)
+		{
+			HBITMAP hBitmap = Image2Bitmap(img);
+			SendMessage(GetHandle(), BM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBitmap);
+			DeleteObject(hBitmap);
+		}
+	}
+
 	int SysButton::GetClickCount()
 	{
 		int c = m_nClickCount;
 		m_nClickCount = 0;
 		return c;
+	}
+
+	bool SysButton::isClicked()
+	{
+		return GetClickCount();
 	}
 }

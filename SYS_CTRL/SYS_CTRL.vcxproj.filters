@@ -72,6 +72,27 @@
     <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysButton.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysGroup.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysGroupBox.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysStatic.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysCheckBox.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysRadioButton.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysEdit.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysComboBox.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\HiEasyX\HiEasyX\HiCanvas.h">
@@ -141,6 +162,27 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\HiEasyX\HiEasyX\HiDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysGroupBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysStatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysCheckBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysRadioButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HiEasyX\HiEasyX\HiGUI\HiSysGUI\SysComboBox.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

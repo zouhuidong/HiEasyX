@@ -357,9 +357,7 @@ namespace HiEasyX
 
 	void EnforceRedraw(HWND hWnd)
 	{
-		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
-			InvalidateRect(g_vecWindows[index].hWnd, nullptr, false);
+		InvalidateRect(hWnd, nullptr, false);
 	}
 
 	// 复制缓冲区
@@ -965,23 +963,26 @@ namespace HiEasyX
 		}
 	}
 
-	void OnPaint(int indexWnd)
+	void OnPaint(int indexWnd, HWND hWnd)
 	{
 		// 映射绘图缓存到窗口
-		FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, g_vecWindows[indexWnd].hWnd);
-		DefWindowProc(g_vecWindows[indexWnd].hWnd, WM_PAINT, 0, 0);
+		FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, hWnd);
+		DefWindowProc(hWnd, WM_PAINT, 0, 0);
 	}
 
 	void OnMove(HWND hWnd)
 	{
-		RECT rctWnd;
-		GetWindowRect(hWnd, &rctWnd);
-		if (rctWnd.left < g_screenSize.left || rctWnd.top < g_screenSize.top
-			|| rctWnd.right > g_screenSize.left + g_screenSize.w
-			|| rctWnd.bottom > g_screenSize.top + g_screenSize.h)
-		{
-			InvalidateRect(hWnd, nullptr, false);
-		}
+		//RECT rctWnd;
+		//GetWindowRect(hWnd, &rctWnd);
+
+		//// 移动窗口超出屏幕时可能导致子窗口显示有问题，所以此时需要彻底重绘
+		//// 如果用户代码一直在强制重绘，则此操作多余。
+		//if (rctWnd.left < g_screenSize.left || rctWnd.top < g_screenSize.top
+		//	|| rctWnd.right > g_screenSize.left + g_screenSize.w
+		//	|| rctWnd.bottom > g_screenSize.top + g_screenSize.h)
+		//{
+		//	EnforceRedraw(hWnd);
+		//}
 	}
 
 	void OnDestroy(int indexWnd, WPARAM wParam)
@@ -1013,9 +1014,6 @@ namespace HiEasyX
 
 		// 记录
 		g_vecWindows[indexWnd].vecSysCtrl.push_back((SysControlBase*)wParam);
-
-		// 重绘，防止旧控件“消失”
-		EnforceRedraw(c->hwndParent);
 		return hWnd;
 	}
 
@@ -1023,29 +1021,52 @@ namespace HiEasyX
 	// bRet 传出，标记是否直接返回
 	LRESULT SysCtrlProc(int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
 	{
-		bRet = false;
 		switch (msg)
 		{
 			// 创建系统控件
 		case WM_SYSCTRL_CREATE:
+		{
 			bRet = true;
 			return (LRESULT)OnSysCtrlCreate(indexWnd, wParam, lParam);
 			break;
 		}
 
+		// 析构系统控件
+		case WM_SYSCTRL_DELETE:
+		{
+			// 被析构的控件指针标记为空
+			for (size_t i = 0; i < g_vecWindows[indexWnd].vecSysCtrl.size(); i++)
+			{
+				if (g_vecWindows[indexWnd].vecSysCtrl[i] == (SysControlBase*)wParam)
+				{
+					g_vecWindows[indexWnd].vecSysCtrl[i] = nullptr;
+				}
+			}
+
+			bRet = true;
+			return 0;
+			break;
+		}
+
+		}
+
 		// 派发消息
 		bool bCtrlRet = false;
 		LRESULT lr = 0;
-		for (auto& ctrl : g_vecWindows[indexWnd].vecSysCtrl)
+		for (auto& pCtrl : g_vecWindows[indexWnd].vecSysCtrl)
 		{
-			LRESULT lr = ctrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
-			if (bCtrlRet)
+			if (pCtrl)
 			{
-				bRet = true;
-				return lr;
+				LRESULT lr = pCtrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
+				if (bCtrlRet)
+				{
+					bRet = true;
+					return lr;
+				}
 			}
 		}
 
+		bRet = false;
 		return 0;
 	}
 
@@ -1101,14 +1122,17 @@ namespace HiEasyX
 			break;
 		}
 
-		// 登记消息
-		RegisterExMessage(indexWnd, msg, wParam, lParam);
+		if (isAliveWindow(indexWnd))
+		{
+			// 登记消息
+			RegisterExMessage(indexWnd, msg, wParam, lParam);
 
-		// 处理系统控件消息
-		bool bRetSysCtrl = false;
-		LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
-		if (bRetSysCtrl)
-			return lrSysCtrl;
+			// 处理系统控件消息
+			bool bRetSysCtrl = false;
+			LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
+			if (bRetSysCtrl)
+				return lrSysCtrl;
+		}
 
 		// 调用用户消息处理函数
 		if (g_vecWindows[indexWnd].funcWndProc)
@@ -1121,10 +1145,9 @@ namespace HiEasyX
 		{
 			// 因为用户可能在过程函数中绘图，要在他之后输出缓存
 		case WM_PAINT:
-			OnPaint(indexWnd);
+			OnPaint(indexWnd, hWnd);
 			break;
 
-			// 移动窗口超出屏幕时可能导致子窗口显示有问题，所以此时需要彻底重绘
 		case WM_MOVE:
 			OnMove(hWnd);
 			break;
@@ -1310,11 +1333,13 @@ namespace HiEasyX
 		// 创建窗口
 		for (int i = 0;; i++)
 		{
+			int final_style = g_isPreStyle ? g_lPreStyle : user_style;
+			final_style |= WS_CLIPCHILDREN;
 			wnd.hWnd = CreateWindowEx(
 				WS_EX_WINDOWEDGE,
 				g_lpszClassName,
 				wstrTitle.c_str(),
-				g_isPreStyle ? g_lPreStyle : user_style,
+				final_style,
 				CW_USEDEFAULT, CW_USEDEFAULT,
 				w, h,	// 宽高现在这样设置，稍后获取边框大小后再调整
 				hParent,
@@ -1427,7 +1452,7 @@ namespace HiEasyX
 		else
 		{
 			// 预设背景色
-			if (BeginTask())
+			if (SetWorkingWindow(hWnd) && BeginTask())
 			{
 				setbkcolor(CLASSICGRAY);
 				settextcolor(BLACK);

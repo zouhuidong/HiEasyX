@@ -7,9 +7,16 @@
 #pragma once
 
 #include "../../HiDef.h"
-#include "SysControlBase.h"
+#include "SysGroup.h"
+#include "SysGroupBox.h"
+#include "SysStatic.h"
 #include "SysButton.h"
+#include "SysCheckBox.h"
+#include "SysRadioButton.h"
+#include "SysEdit.h"
+#include "SysComboBox.h"
 
+// 注意：创建系统控件时，父窗口必须选择由 HiWindow 创建的窗口，控件才能正常运行
 
 // 现代样式
 #ifndef _NO_MORDEN_SYSCTRL_

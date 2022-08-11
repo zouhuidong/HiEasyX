@@ -30,23 +30,24 @@ namespace HiEasyX
 	{
 	}
 
-	SysControlBase::SysControlBase(HWND hParent, RECT rct, std::wstring strText)
-	{
-		Create(hParent, rct, strText);
-	}
-
-	SysControlBase::SysControlBase(HWND hParent, int x, int y, int w, int h, std::wstring strText)
-	{
-		Create(hParent, x, y, w, h, strText);
-	}
-
 	SysControlBase::~SysControlBase()
 	{
+		if (m_hFont)
+		{
+			DeleteFont(m_hFont);
+			m_hFont = nullptr;
+		}
+		SendMessage(m_hParent, WM_SYSCTRL_DELETE, (WPARAM)this, 0);
 	}
 
 	void SysControlBase::UpdateRect(RECT rctOld)
 	{
 		SetWindowPos(GetHandle(), 0, GetX(), GetY(), GetWidth(), GetHeight(), 0);
+	}
+
+	LRESULT SysControlBase::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
+	{
+		return LRESULT();
 	}
 
 	HWND SysControlBase::Create(HWND hParent, RECT rct, std::wstring strText)
@@ -106,12 +107,17 @@ namespace HiEasyX
 		SendMessage(GetHandle(), focused ? WM_SETFOCUS : WM_KILLFOCUS, 0, 0);
 	}
 
+	int SysControlBase::GetTextLength()
+	{
+		return GetWindowTextLength(GetHandle());;
+	}
+
 	std::wstring SysControlBase::GetText()
 	{
-		int len = GetWindowTextLength(GetHandle());
+		int len = GetTextLength();
 		WCHAR* buf = new WCHAR[len + 1];
 		ZeroMemory(buf, sizeof WCHAR * (len + 1));
-		GetWindowText(GetHandle(), buf, len);
+		GetWindowText(GetHandle(), buf, len + 1);
 		std::wstring str = buf;
 		delete[] buf;
 		return str;
@@ -122,9 +128,33 @@ namespace HiEasyX
 		SetWindowText(GetHandle(), wstr.c_str());
 	}
 
+	HFONT SysControlBase::GetFont()
+	{
+		return (HFONT)SendMessage(GetHandle(), WM_GETFONT, 0, 0);
+	}
+
+	void SysControlBase::SetFont(int h, int w, LPCTSTR lpszTypeface)
+	{
+		if (m_hFont)
+		{
+			DeleteFont(m_hFont);
+			m_hFont = nullptr;
+		}
+		m_hFont = CreateFont(
+			h, w,
+			0, 0, 0, 0, 0, 0,
+			GB2312_CHARSET,
+			OUT_DEFAULT_PRECIS,
+			CLIP_DEFAULT_PRECIS,
+			DEFAULT_QUALITY,
+			DEFAULT_PITCH | FF_MODERN,
+			lpszTypeface
+		);
+		SendMessage(GetHandle(), WM_SETFONT, (WPARAM)m_hFont, 0);
+	}
+
 	int SysControlBase::GetID()
 	{
-		//return GetDlgCtrlID(GetHandle());
 		return m_nID;
 	}
 

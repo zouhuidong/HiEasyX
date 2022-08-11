@@ -21,7 +21,7 @@
 #define EW_NORMAL							0
 
 // 托盘消息
-#define WM_TRAY								(WM_USER + 100)
+#define WM_TRAY								(WM_USER + 9337)
 
 // 无窗口时的索引
 #define NO_WINDOW_INDEX						-1
@@ -30,8 +30,14 @@
 #define HIWINDOW_DEFAULT_PROC				(LRESULT)(-10086)
 
 // 系统控件创建消息
+// wParam 传入 SysControlBase*
 // lParam 传入 CREATESTRUCT*
-#define WM_SYSCTRL_CREATE					(WM_USER + 101)
+#define WM_SYSCTRL_CREATE					(WM_USER + 9338)
+
+// 系统控件析构消息
+// wParam 传入 SysControlBase*
+#define WM_SYSCTRL_DELETE					(WM_USER + 9339)
+
 
 namespace HiEasyX
 {
@@ -207,15 +213,15 @@ namespace HiEasyX
 
 		POINT GetPos();
 
-		SIZE GetWindowSize();
+		SIZE GetWindowSize();				// 获取整个窗口的大小
 
-		int GetWindowWidth();
+		int GetWindowWidth();				// 获取整个窗口的宽度
 
-		int GetWindowHeight();
+		int GetWindowHeight();				// 获取整个窗口的高度
 
-		int GetClientWidth();
+		int GetClientWidth();				// 获取客户区宽度
 
-		int GetClientHeight();
+		int GetClientHeight();				// 获取客户区高度
 
 		void Move(int x, int y);
 

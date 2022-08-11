@@ -25,6 +25,7 @@
 #include "HiEasyX/HiMusicMCI.h"
 #include "HiEasyX/HiGif.h"
 
+// 未选择使用原生 EasyX
 #ifndef _NATIVE_EASYX_
 #include "HiEasyX/HiWindow.h"
 #include "HiEasyX/HiGUI/HiSysGUI/HiSysGUI.h"
