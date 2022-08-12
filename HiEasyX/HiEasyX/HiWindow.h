@@ -20,14 +20,14 @@
 // 普通窗口
 #define EW_NORMAL							0
 
-// 托盘消息
-#define WM_TRAY								(WM_USER + 9337)
-
 // 无窗口时的索引
 #define NO_WINDOW_INDEX						-1
 
 // 窗口过程函数默认返回值
 #define HIWINDOW_DEFAULT_PROC				(LRESULT)(-10086)
+
+// 托盘消息
+#define WM_TRAY								(WM_USER + 9337)
 
 // 系统控件创建消息
 // wParam 传入 SysControlBase*
@@ -37,6 +37,10 @@
 // 系统控件析构消息
 // wParam 传入 SysControlBase*
 #define WM_SYSCTRL_DELETE					(WM_USER + 9339)
+
+// 用户重绘消息，无需参数
+// 在快速绘制模式下会发送此消息而非 WN_PAINT
+#define WM_USER_REDRAW						(WM_USER + 9340)
 
 
 namespace HiEasyX
@@ -120,6 +124,15 @@ namespace HiEasyX
 
 		std::vector<SysControlBase*> vecSysCtrl;	// 记录创建的系统控件
 		bool bHasCtrl = false;						// 是否创建过系统控件
+	};
+
+	enum DrawMode
+	{
+		DM_Real,		// 完全按实际绘制（每次要求重绘都立即执行，可能导致程序卡顿）
+		DM_Normal,		// 正常绘制（默认，发送 WM_PAINT 消息）
+		DM_Fast,		// 快速绘制（发送 WM_USER_REDRAW 消息，可能跳过部分绘制）
+		DM_VeryFast,	// 极速绘制（发送 WM_USER_REDRAW 消息，可能跳过很多绘制）
+		DM_Fastest,		// 最快的绘制方式（发送 WM_USER_REDRAW 消息，可能跳过大部分绘制）
 	};
 
 	// 窗口类
@@ -327,6 +340,12 @@ namespace HiEasyX
 	// 设置加速绘制跳过多少像素点
 	// 此加速效果是有损的，加速效果与跳过的像素点数正相关。
 	void QuickDraw(UINT nSkipPixels, HWND hWnd = nullptr);
+
+	// 获取全局绘制模式
+	DrawMode GetDrawMode();
+
+	// 设置全局绘制模式
+	void SetDrawMode(DrawMode mode);
 
 	// 强制重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数）
 	void EnforceRedraw(HWND hWnd = nullptr);

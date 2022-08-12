@@ -45,6 +45,8 @@ namespace HiEasyX
 	long					g_lPreStyle;								// 创建窗口前的预设样式
 	POINT					g_pPrePos;									// 创建窗口前的预设窗口位置
 
+	DrawMode				g_fDrawMode = DM_Normal;					// 全局绘制模式
+
 	UINT					g_uWM_TASKBARCREATED;						// 系统任务栏消息代码
 
 	////////////****** 函数定义 ******////////////
@@ -361,9 +363,53 @@ namespace HiEasyX
 			g_vecWindows[index].nSkipPixels = nSkipPixels;
 	}
 
+	DrawMode GetDrawMode()
+	{
+		return g_fDrawMode;
+	}
+
+	void SetDrawMode(DrawMode mode)
+	{
+		g_fDrawMode = mode;
+	}
+
+	// 内部函数，直接发送用户重绘消息
+	void SendUserRedrawMsg(HWND hWnd)
+	{
+		SendMessage(hWnd, WM_USER_REDRAW, 0, 0);
+	}
+
 	void EnforceRedraw(HWND hWnd)
 	{
-		InvalidateRect(hWnd, nullptr, false);
+		if (!hWnd)
+			hWnd = GetFocusWindow().hWnd;
+
+		switch (g_fDrawMode)
+		{
+		case DM_Real:
+			SendUserRedrawMsg(hWnd);
+			break;
+
+		case DM_Normal:
+			InvalidateRect(hWnd, nullptr, false);
+			break;
+
+		case DM_Fast:
+			if (!(clock() % 9))
+				SendUserRedrawMsg(hWnd);
+			break;
+
+		case DM_VeryFast:
+			if (!(clock() % 13))
+				SendUserRedrawMsg(hWnd);
+			break;
+
+		case DM_Fastest:
+			if (!(clock() % 17))
+				SendUserRedrawMsg(hWnd);
+			break;
+
+		}
 	}
 
 	// 复制缓冲区
@@ -950,11 +996,11 @@ namespace HiEasyX
 		}
 	}
 
+	// 绘制用户内容
 	void OnPaint(int indexWnd, HWND hWnd)
 	{
 		// 映射绘图缓存到窗口
 		FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, hWnd);
-		DefWindowProc(hWnd, WM_PAINT, 0, 0);
 	}
 
 	void OnMove(HWND hWnd)
@@ -1038,18 +1084,21 @@ namespace HiEasyX
 
 		}
 
-		// 派发消息
-		bool bCtrlRet = false;
-		LRESULT lr = 0;
-		for (auto& pCtrl : g_vecWindows[indexWnd].vecSysCtrl)
+		// 存在控件时，派发消息
+		if (g_vecWindows[indexWnd].bHasCtrl)
 		{
-			if (pCtrl)
+			bool bCtrlRet = false;
+			LRESULT lr = 0;
+			for (auto& pCtrl : g_vecWindows[indexWnd].vecSysCtrl)
 			{
-				LRESULT lr = pCtrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
-				if (bCtrlRet)
+				if (pCtrl)
 				{
-					bRet = true;
-					return lr;
+					LRESULT lr = pCtrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
+					if (bCtrlRet)
+					{
+						bRet = true;
+						return lr;
+					}
 				}
 			}
 		}
@@ -1101,6 +1150,13 @@ namespace HiEasyX
 			OnTray(indexWnd, lParam);
 			break;
 
+			// 用户重绘消息，处理完直接返回
+			// 也无需调用系统重绘方法
+		case WM_USER_REDRAW:
+			OnPaint(indexWnd, hWnd);
+			return 0;
+			break;
+
 		default:
 			// 系统任务栏重新创建，此时可能需要重新创建托盘
 			if (msg == g_uWM_TASKBARCREATED)
@@ -1116,13 +1172,10 @@ namespace HiEasyX
 			RegisterExMessage(indexWnd, msg, wParam, lParam);
 
 			// 处理系统控件消息
-			if (g_vecWindows[indexWnd].bHasCtrl)
-			{
-				bool bRetSysCtrl = false;
-				LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
-				if (bRetSysCtrl)
-					return lrSysCtrl;
-			}
+			bool bRetSysCtrl = false;
+			LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
+			if (bRetSysCtrl)
+				return lrSysCtrl;
 		}
 
 		// 调用用户消息处理函数
@@ -1136,7 +1189,12 @@ namespace HiEasyX
 		{
 			// 因为用户可能在过程函数中绘图，要在他之后输出缓存
 		case WM_PAINT:
+
 			OnPaint(indexWnd, hWnd);
+
+			// WM_PAINT 消息中需要调用系统绘制方法
+			DefWindowProc(hWnd, WM_PAINT, 0, 0);
+
 			break;
 
 		case WM_MOVE:
@@ -1167,6 +1225,7 @@ namespace HiEasyX
 				PostQuitMessage(0);
 				break;
 
+				// WM_PAINT 消息无需重复调用默认方法
 			case WM_PAINT:
 				break;
 
