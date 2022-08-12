@@ -119,6 +119,7 @@ namespace HiEasyX
 		int nSkipPixels;							// 绘制时跳过的像素点数量（降质性速绘）
 
 		std::vector<SysControlBase*> vecSysCtrl;	// 记录创建的系统控件
+		bool bHasCtrl = false;						// 是否创建过系统控件
 	};
 
 	// 窗口类

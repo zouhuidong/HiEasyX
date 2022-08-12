@@ -1013,6 +1013,7 @@ namespace HiEasyX
 			// 创建系统控件
 		case WM_SYSCTRL_CREATE:
 		{
+			g_vecWindows[indexWnd].bHasCtrl = true;
 			bRet = true;
 			return (LRESULT)OnSysCtrlCreate(indexWnd, wParam, lParam);
 			break;
@@ -1115,10 +1116,13 @@ namespace HiEasyX
 			RegisterExMessage(indexWnd, msg, wParam, lParam);
 
 			// 处理系统控件消息
-			bool bRetSysCtrl = false;
-			LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
-			if (bRetSysCtrl)
-				return lrSysCtrl;
+			if (g_vecWindows[indexWnd].bHasCtrl)
+			{
+				bool bRetSysCtrl = false;
+				LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
+				if (bRetSysCtrl)
+					return lrSysCtrl;
+			}
 		}
 
 		// 调用用户消息处理函数
@@ -1162,9 +1166,14 @@ namespace HiEasyX
 			case WM_DESTROY:
 				PostQuitMessage(0);
 				break;
-			}
 
-			lResult = DefWindowProc(hWnd, msg, wParam, lParam);
+			case WM_PAINT:
+				break;
+
+			default:
+				lResult = DefWindowProc(hWnd, msg, wParam, lParam);
+				break;
+			}
 		}
 
 		// 用户已处理此消息
@@ -1199,11 +1208,11 @@ namespace HiEasyX
 		g_WndClassEx.cbWndExtra = 0;
 		g_WndClassEx.hInstance = g_hInstance;
 		g_WndClassEx.hIcon = hIcon;
+		g_WndClassEx.hIconSm = hIconSm;
 		g_WndClassEx.hCursor = LoadCursor(nullptr, IDC_ARROW);
 		g_WndClassEx.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 		g_WndClassEx.lpszMenuName = nullptr;
 		g_WndClassEx.lpszClassName = g_lpszClassName;
-		g_WndClassEx.hIconSm = hIconSm;
 
 		// 注册窗口类
 		if (!RegisterClassEx(&g_WndClassEx))
