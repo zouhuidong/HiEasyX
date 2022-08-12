@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "../../HiDef.h"
+#include "../HiDef.h"
 #include "SysGroup.h"
 #include "SysGroupBox.h"
 #include "SysStatic.h"

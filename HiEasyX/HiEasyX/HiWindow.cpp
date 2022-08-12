@@ -1,9 +1,10 @@
 ﻿#include "HiWindow.h"
 
 #include "HiMacro.h"
+#include "HiIcon.h"
 #include "HiStart.h"
 #include "HiCanvas.h"
-#include "HiGUI/HiSysGUI/SysControlBase.h"
+#include "HiSysGUI/SysControlBase.h"
 
 
 // 预留消息空间
@@ -192,6 +193,7 @@ namespace HiEasyX
 	}
 
 	// 此函数用于内部调用，按窗口索引标记关闭窗口、释放内存
+	// 重要：此函数仅可在 WndProc 线程中调用，否则无法关闭窗口
 	void closegraph_win32(int index)
 	{
 		if (!isAliveWindow(index))
@@ -294,13 +296,17 @@ namespace HiEasyX
 		}
 	}
 
-	void init_end()
+	void init_end(HWND hWnd)
 	{
-		// 阻塞，直到所有窗口都被关闭
-		while (isAnyWindow())
+		if (hWnd)
 		{
-			Sleep(100);
+			int index = GetWindowIndex(hWnd);
+			while (isAliveWindow(index))
+				Sleep(100);
 		}
+		else
+			while (isAnyWindow())
+				Sleep(100);
 	}
 
 	void AutoExit()
@@ -691,29 +697,6 @@ namespace HiEasyX
 		return msg;
 	}
 
-	IMAGE GetDefaultIconImage()
-	{
-		IMAGE* old = GetWorkingImage();
-		IMAGE img(32, 32);
-		SetWorkingImage(&img);
-
-		setbkcolor(RED);
-		setbkmode(TRANSPARENT);
-
-		settextcolor(WHITE);
-		settextstyle(48, 0, L"Consolas");
-
-		setfillcolor(BLUE);
-		setlinecolor(BLUE);
-
-		cleardevice();
-		fillcircle(16, 16, 16);
-		outtextxy(4, -8, L'X');
-
-		SetWorkingImage(old);
-		return img;
-	}
-
 	void PreSetWindowStyle(long lStyle)
 	{
 		g_isPreStyle = true;
@@ -776,10 +759,14 @@ namespace HiEasyX
 	// 获取默认窗口图标
 	HICON GetDefaultAppIcon()
 	{
-		IMAGE img = GetDefaultIconImage();
-		HBITMAP hBmp = Image2Bitmap(&img);
-		HICON hIcon = Bitmap2Icon(hBmp);
-		DeleteObject(hBmp);
+		static HBITMAP hBmp = Image2Bitmap(GetIconImage(), true);
+		static HICON hIcon = Bitmap2Icon(hBmp);
+		static bool init = false;
+		if (!init)
+		{
+			DeleteObject(hBmp);
+			init = true;
+		}
 		return hIcon;
 	}
 
@@ -1474,6 +1461,10 @@ namespace HiEasyX
 		InitWindow(w, h, flag, lpszWndTitle, WindowProcess, hParent);
 	}
 
+	Window::~Window()
+	{
+	}
+
 	HWND Window::InitWindow(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)
 	{
 		if (!m_isCreated)
@@ -1487,9 +1478,19 @@ namespace HiEasyX
 		return nullptr;
 	}
 
+	HWND Window::Create(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)
+	{
+		return InitWindow(w, h, flag, lpszWndTitle, WindowProcess, hParent);
+	}
+
 	void Window::CloseWindow()
 	{
-		closegraph_win32(m_nWindowIndex);
+		closegraph_win32(g_vecWindows[m_nWindowIndex].hWnd);
+	}
+
+	void Window::Destroy()
+	{
+		CloseWindow();
 	}
 
 	void Window::SetProcFunc(WNDPROC WindowProcess)

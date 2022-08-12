@@ -1,6 +1,6 @@
 #include "SysControlBase.h"
 
-#include "../../HiWindow.h"
+#include "../HiWindow.h"
 
 namespace HiEasyX
 {
@@ -133,7 +133,7 @@ namespace HiEasyX
 		return (HFONT)SendMessage(GetHandle(), WM_GETFONT, 0, 0);
 	}
 
-	void SysControlBase::SetFont(int h, int w, LPCTSTR lpszTypeface)
+	void SysControlBase::SetFont(int h, int w, std::wstring typeface)
 	{
 		if (m_hFont)
 		{
@@ -148,9 +148,10 @@ namespace HiEasyX
 			CLIP_DEFAULT_PRECIS,
 			DEFAULT_QUALITY,
 			DEFAULT_PITCH | FF_MODERN,
-			lpszTypeface
+			typeface.c_str()
 		);
 		SendMessage(GetHandle(), WM_SETFONT, (WPARAM)m_hFont, 0);
+		InvalidateRect(GetHandle(), nullptr, true);
 	}
 
 	int SysControlBase::GetID()

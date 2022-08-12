@@ -167,7 +167,7 @@ namespace HiEasyX
 	{
 		m_cBk = color;
 		if (hBk)
-			delete hBk;
+			DeleteBrush(hBk);
 		hBk = CreateSolidBrush(color);
 		InvalidateRect(GetHandle(), nullptr, true);
 	}

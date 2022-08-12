@@ -40,11 +40,11 @@ void GetDstPoints()
 	SetWorkingImage(&img);
 
 	// 定义目标字符串
-	TCHAR s[] = _T("EasyX");
+	TCHAR s[] = _T("Hi EasyX");
 
 	// 计算目标字符串的宽高，并调整临时绘图对象的尺寸
 	setcolor(WHITE);
-	setfont(100, 0, _T("Arial"), 5, 0, 1000, true, false, false);
+	setfont(120, 0, _T("Arial"), 0, 0, 1000, false, false, false);
 	g_nWidth = textwidth(s);
 	g_nHeight = textheight(s);
 	Resize(&img, g_nWidth, g_nHeight);

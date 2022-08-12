@@ -1,6 +1,4 @@
 #include "../HiEasyX/HiEasyX.h"
-#include <CommCtrl.h>
-#pragma comment (lib, "Comctl32.lib")
 
 #define IDC_EDIT 101
 

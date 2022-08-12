@@ -45,6 +45,8 @@ namespace HiEasyX
 
 		void SetPos(POINT pt);
 
+		void Move(int x, int y) { SetPos(x, y); }
+
 		void MoveRel(int dx, int dy);
 
 		int GetWidth() const { return m_rct.right - m_rct.left; }

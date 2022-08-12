@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "../Container.h"
+#include "../HiContainer.h"
 
 #include <windowsx.h>
 #include <string>
@@ -89,7 +89,7 @@ namespace HiEasyX
 
 		HFONT GetFont();
 
-		void SetFont(int h, int w = 0, LPCTSTR lpszTypeface = L"");
+		void SetFont(int h, int w = 0, std::wstring typeface = L"");
 
 		int GetID();
 

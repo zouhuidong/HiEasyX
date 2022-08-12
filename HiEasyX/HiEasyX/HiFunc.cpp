@@ -34,9 +34,27 @@ void GetImageSize(IMAGE* pImg, int& width, int& height)
 	}
 }
 
-HBITMAP Image2Bitmap(IMAGE* img)
+DWORD* ReverseAlpha(DWORD* pBuf, int size)
 {
-	return CreateBitmap(img->getwidth(), img->getheight(), 1, 32, (void*)GetImageBuffer(img));
+	for (int i = 0; i < size; i++)
+		if (pBuf[i] & 0xff000000)
+			pBuf[i] &= 0x00ffffff;
+		else
+			pBuf[i] |= 0xff000000;
+	return pBuf;
+}
+
+HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha)
+{
+	// 测试结论
+	// 若图像中有任何像素 alpha 不为 0，则启用 alpha
+	// 若图像 alpha 全部为 0，则表示完全不透明
+
+	DWORD* pBuf = GetImageBuffer(img);
+	if (!enable_alpha)
+		for (int i = 0; i < img->getwidth() * img->getheight(); i++)
+			pBuf[i] &= 0x00ffffff;
+	return CreateBitmap(img->getwidth(), img->getheight(), 1, 32, pBuf);
 }
 
 HICON Bitmap2Icon(HBITMAP hBmp)

@@ -185,6 +185,8 @@ int main()
 		&scrollbar_horizon,
 		});
 
+	HiEasyX::SysButton sys_btn(window.GetHandle(), 200, 200, 100, 30, L"Sys Btn");
+
 	ExMessage msg;
 	while (window.isAlive())
 	{

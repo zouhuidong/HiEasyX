@@ -1,6 +1,6 @@
 #include "SysStatic.h"
 
-#include "../../HiFunc.h"
+#include "../HiFunc.h"
 
 namespace HiEasyX
 {
@@ -50,7 +50,7 @@ namespace HiEasyX
 		SetWindowLongPtr(GetHandle(), GWL_STYLE, style);
 		if (enable)
 		{
-			HBITMAP hBitmap = Image2Bitmap(img);
+			HBITMAP hBitmap = Image2Bitmap(img, false);
 			HBITMAP hBitmap2 = (HBITMAP)SendMessage(GetHandle(), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBitmap);
 			DeleteObject(hBitmap2);
 		}

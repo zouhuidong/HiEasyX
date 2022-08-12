@@ -75,7 +75,14 @@ namespace HiEasyX
 					m_nSel = ComboBox_GetCurSel(GetHandle());
 					m_bSelChanged = true;
 					if (m_pFuncSel)
-						m_pFuncSel(m_nSel, GetText());
+					{
+						int len = ComboBox_GetLBTextLen(GetHandle(), m_nSel);
+						WCHAR* buf = new WCHAR[len + 1];
+						ZeroMemory(buf, (len + 1) * sizeof WCHAR);
+						ComboBox_GetLBText(GetHandle(), m_nSel, buf);
+						m_pFuncSel(m_nSel, buf);
+						delete[] buf;
+					}
 					break;
 
 				case CBN_EDITUPDATE:

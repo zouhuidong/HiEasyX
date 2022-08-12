@@ -146,6 +146,8 @@ namespace HiEasyX
 			HWND hParent = nullptr
 		);
 
+		virtual ~Window();
+
 		HWND InitWindow(
 			int w = 640,
 			int h = 480,
@@ -155,7 +157,20 @@ namespace HiEasyX
 			HWND hParent = nullptr
 		);
 
+		// 等价于 InitWindow
+		HWND Create(
+			int w = 640,
+			int h = 480,
+			int flag = EW_NORMAL,
+			LPCTSTR lpszWndTitle = L"",
+			WNDPROC WindowProcess = nullptr,
+			HWND hParent = nullptr
+		);
+
 		void CloseWindow();
+
+		// 等价于 CloseWindow
+		void Destroy();
 
 		void SetProcFunc(WNDPROC WindowProcess);
 
@@ -269,8 +284,10 @@ namespace HiEasyX
 	// 得到当前绘图窗口的句柄
 	HWND GetHWnd_win32();
 
-	// 结束初始化窗口（阻塞）
-	void init_end();
+	// 结束初始化窗口
+	// 阻塞，直到目标窗口被关闭
+	// 若传入句柄 nullptr，则等待所有窗口关闭
+	void init_end(HWND hWnd = nullptr);
 
 	// 设置：当窗口都被销毁时，自动退出程序
 	void AutoExit();
@@ -349,9 +366,6 @@ namespace HiEasyX
 	// 参数传入图标资源 ID（大图标和小图标）
 	// 注：必须在第一次创建窗口前就调用该函数才能生效。默认情况下，程序将自绘 EasyX 程序图标
 	void SetCustomIcon(int nIcon, int nIconSm);
-
-	// 获取 HiWindow 自绘默认窗口图标的 IMAGE
-	IMAGE GetDefaultIconImage();
 
 	// 在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
 	// 注意：新窗口的所有样式都将被当前样式覆盖
@@ -449,15 +463,19 @@ namespace HiEasyX
 
 ////////////****** 窗口样式宏定义 ******////////////
 
-// 是否禁用当前窗口改变大小
-#define DisableResizing(state)			(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX) :\
-										HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SIZEBOX | WS_MAXIMIZEBOX))
+// 是否允许某窗口改变大小
+#define EnableResizing(hwnd, state)		(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SIZEBOX | WS_MAXIMIZEBOX) :\
+										HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX))
 
-// 是否禁用当前窗口的系统菜单
-#define DisableSystemMenu(state)		(state ? HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) & ~WS_SYSMENU) :\
-										HiEasyX::SetWindowStyle(GetWindowStyle(HiEasyX::GetHWnd_win32()) | WS_SYSMENU))
+#define DisableResizing(hwnd, state)	EnableResizing(hwnd, !state)
 
-// 开启 / 关闭当前窗口的工具栏样式
+// 是否启用某窗口的系统菜单
+#define EnableSystemMenu(hwnd, state)	(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SYSMENU) :\
+										HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SYSMENU))
+
+#define DisableSystemMenu(hwnd, state)	EnableSystemMenu(hwnd, !state)
+
+// 是否启用当前窗口的工具栏样式
 #define EnableToolWindowStyle(state)	(state ? HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) | WS_EX_TOOLWINDOW) :\
 										HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) & ~WS_EX_TOOLWINDOW))
 

@@ -26,8 +26,15 @@ ScreenSize GetScreenSize();
 // 可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
 void GetImageSize(IMAGE* pImg, int& width, int& height);
 
+// 反转图像 Alpha 值
+// 将 alpha 值不为 0 的一切像素的 alpha 设为 0，
+// 同时将 alpha 值为 0 的一切像素的 alpha 设为 255
+DWORD* ReverseAlpha(DWORD* pBuf, int size);
+
 // 得到 IMAGE 对象的 HBITMAP
-HBITMAP Image2Bitmap(IMAGE* img);
+// enable_alpha	是否启用透明度
+// 注意，若图像 alpha 值全为 0，则表示不启用透明混合
+HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha);
 
 // HBITMAP 转 HICON
 HICON Bitmap2Icon(HBITMAP hBmp);

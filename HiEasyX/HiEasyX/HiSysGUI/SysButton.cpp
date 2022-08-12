@@ -1,6 +1,6 @@
 #include "SysButton.h"
 
-#include "../../HiFunc.h"
+#include "../HiFunc.h"
 
 namespace HiEasyX
 {
@@ -63,7 +63,7 @@ namespace HiEasyX
 		}
 		if (enable)
 		{
-			HBITMAP hBitmap = Image2Bitmap(img);
+			HBITMAP hBitmap = Image2Bitmap(img, false);
 			SendMessage(GetHandle(), BM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBitmap);
 			DeleteObject(hBitmap);
 		}
