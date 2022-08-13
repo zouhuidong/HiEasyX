@@ -75,7 +75,7 @@ namespace HiEasyX
 		int left = 0, top = 0, right = 0, bottom = 0;							// 旋转后图像顶点
 		int w = pImg->getwidth(), h = pImg->getheight();
 		DWORD* pBuf = GetImageBuffer(pImg);
-		POINT points[4] = { { 0, 0 },{ w, 0 },{ 0, h },{ w, h } };					// 存储图像顶点
+		POINT points[4] = { { 0, 0 },{ w, 0 },{ 0, h },{ w, h } };				// 存储图像顶点
 		for (int j = 0; j < 4; j++)												// 旋转图像顶点，搜索旋转后的图像边界
 		{
 			points[j] = {
@@ -197,6 +197,7 @@ namespace HiEasyX
 		}
 		else
 		{
+			// 内部总是调用此函数，故未绑定窗口时直接返回 true
 			return true;
 		}
 	}
@@ -1749,7 +1750,7 @@ namespace HiEasyX
 		return this->size() + 4;
 	}
 
-	Layer* Scene::GetSpecialLayer(int order)
+	Layer* Scene::GetSpecialLayer(LayerOrder order)
 	{
 		static Layer layerNull;
 		layerNull = {};

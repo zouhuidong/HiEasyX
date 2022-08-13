@@ -1,8 +1,8 @@
-﻿////////////////////////////////////
-//
-//	HiCanvas.h
-//	HiEasyX 库的绘制模块
-//
+﻿/**
+ * @file	HiCanvas.h
+ * @author	huidong
+ * @brief	HiEasyX 库的画布模块
+*/
 
 #pragma once
 
@@ -13,48 +13,38 @@
 
 namespace HiEasyX
 {
-
-	// 根据透明度混合颜色
-	// cDst				原像素点
-	// cSrc				新像素点，根据该点的透明度进行混合
-	// isCalculated		新像素是否已经混合过透明色
-	// alpha			叠加透明度（默认为 255，即不启用）
+	/**
+	 * @brief 根据透明度混合颜色
+	 * @param cDst			原位置像素点
+	 * @param cSrc			待输出像素点（根据该点的透明度进行混合）
+	 * @param isCalculated	待输出像素点是否已经混合过颜色
+	 * @param alpha			叠加透明度（默认为 255，即不叠加）
+	 * @return 混合后的颜色（不含透明信息）
+	*/
 	COLORREF MixAlphaColor(COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha = 255);
 
-	//
-	// CopyImage_Alpha
-	// 快速复制图像（可开启透明通道）
-	// 
-	// x, y
-	//		图像输出位置
-	// 
-	// pDst, wDst, hDst
-	//		载体图像指针，图像尺寸
-	// 
-	// pSrc, wSrc, hSrc
-	//		原图像指针，图像尺寸
-	// 
-	// crop
-	//		原图像裁剪区域（right 或 bottom 为 0 代表不裁剪）
-	// 
-	// alpha
-	//		叠加透明度（透明 0 ~ 255 不透明），默认为 255（表示不启用）
-	// 
-	// bUseSrcAlpha
-	//		是否使用原图像透明度进行混合（可同时使用叠加透明度）
-	//		开启时必须保证 IMAGE 中含有透明度信息。
-	//		EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。
-	//		一般情况下，只有复制 png 图像、或是复制专门生成的含有透明信息的图像时，才开启此项。
-	// 
-	// isCalculated
-	//		在启用原图像透明度的前提下，标记原图像是否已经计算好混合后的颜色
-	//		通常 png 图像像素颜色都已进行过混合运算。
-	//		开启后，原图像便不再计算混合颜色，只有目标图像参与计算。
-	// 
-	// 注：
-	//		若未启用任何一种透明通道，则等同于覆盖式地复制图像内容，这可以保留原图像的透明信息（如果有）。
-	//		无论启用哪种透明通道，目标图像最终都不再包含透明度信息（原图数据不受影响），因为已经混合完毕。
-	//
+	/**
+	 * @brief 快速复制图像（可开启透明通道）
+	 * @param x				图像输出 x 坐标
+	 * @param y				图像输出 y 坐标
+	 * @param pDst			载体图像指针
+	 * @param wDst			载体图像宽
+	 * @param hDst			载体图像高
+	 * @param pSrc			待输出图像指针
+	 * @param wSrc			待输出图像宽
+	 * @param hSrc			待输出图像高
+	 * @param crop			待输出图像裁剪区域（right 或 bottom 为 0 表示不裁剪）
+	 * @param alpha			叠加透明度（透明 0 ~ 255 不透明）
+	 * @param bUseSrcAlpha	是否使用待输出图像透明度进行混合（须保证 IMAGE 中含有透明度信息）
+	 *							EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。
+	 *							通常只有 png 图像，或是特地生成的图像才含有透明度信息。
+	 * @param isCalculated	标记待输出图像是否已经计算好混合后的颜色（启用图像透明度时有效）
+	 *							注意，png 图像像素颜色都已进行过混合运算
+	 *							开启后，原图像便不再计算混合颜色，只有载体图像参与计算。
+	 * @note
+	 *		若未启用任何透明通道，等同于直接复制图像，在此情况下将保留原图像的透明度信息，
+	 *		否则不保留透明度信息。
+	*/
 	void CopyImage_Alpha(
 		int x, int y,
 		DWORD* pDst, int wDst, int hDst,
@@ -65,53 +55,81 @@ namespace HiEasyX
 		bool isCalculated = true
 	);
 
-	// 旋转图像（保留透明信息，自适应大小）
-	// pImg		原图像
-	// radian	旋转弧度
-	// bkcolor	背景填充颜色
-	// 返回旋转后的图像
+	/**
+	 * @brief 旋转图像（保留透明信息，自适应大小）
+	 * @param pImg		原图像
+	 * @param radian	旋转弧度
+	 * @param bkcolor	背景填充颜色
+	 * @return	旋转后的图像
+	*/
 	IMAGE RotateImage_Alpha(IMAGE* pImg, double radian, COLORREF bkcolor = BLACK);
 
-	// 缩放图像（保留透明度信息）
-	// 原作者：豆焰 <beanflame@qq.com>（有改动）
+	/**
+	 * @brief	缩放图像（保留透明度信息）
+	 * @author	豆焰 <beanflame@qq.com>（有改动）
+	 * @param srcimg	原图像
+	 * @param width		目标宽度
+	 * @param height	目标高度
+	 * @return 缩放后的图像
+	*/
 	IMAGE ZoomImage_Alpha(IMAGE* srcimg, int width, int height);
 
-	// 图像缩放（基于 Win32 API，保留透明度信息）
+	/**
+	 * @brief	图像缩放（基于 Win32 API，保留透明度信息）
+	 * @param srcimg	原图像
+	 * @param width		目标宽度
+	 * @param height	目标高度
+	 * @return 缩放后的图像
+	*/
 	IMAGE ZoomImage_Win32_Alpha(IMAGE* pImg, int width, int height);
 
-	// 画布
+	/**
+	 * @brief 画布
+	*/
 	class Canvas : public IMAGE
 	{
 	protected:
 
-		DrawingProperty m_property;			// 保存外界绘图属性
+		DrawingProperty m_property;			///< 保存外界绘图属性
 
-		DWORD* m_pBuf = nullptr;			// 图像内存指针
-		int m_nWidth, m_nHeight;			// 图像宽高
-		int m_nBufSize;						// 图像面积
+		DWORD* m_pBuf = nullptr;			///< 图像内存指针
+		int m_nWidth, m_nHeight;			///< 图像宽高
+		int m_nBufSize;						///< 图像面积
 
-		bool m_bBindToImgPointer;			// 该画布是否绑定到图像指针
-		IMAGE* m_pImg;						// 画布绑定的图像指针（若画布绑定到指针）
+		bool m_bBindToImgPointer;			///< 该画布是否绑定到图像指针
+		IMAGE* m_pImg;						///< 画布绑定的图像指针（若画布绑定到指针）
 
-		bool m_bBatchDraw;					// 是否启用了批量绘制
-		bool m_bDoNotEndDrawing;			// 标记不要结束绘制（用于处理绘图函数相互调用的情况，防止提前结束任务）
+		bool m_bBatchDraw;					///< 是否启用了批量绘制
+		bool m_bDoNotEndDrawing;			///< 标记不要结束绘制（用于处理绘图函数相互调用的情况，防止提前结束任务）
 
-		HWND m_hBindWindow;					// 绑定到的窗口
+		HWND m_hBindWindow;					///< 绑定到的窗口
 
-		// 清空设置
+		/**
+		 * @brief 清空设置
+		*/
 		void CleanUpSettings();
 
-		// 单独启动 HiWindow 的窗口任务（如果绑定了窗口）
+		/**
+		 * @brief 单独启动 HiWindow 的窗口任务（如果绑定了窗口）
+		 * @return 是否启动成功
+		*/
 		bool BeginWindowTask();
 
-		// 结束 HiWindow 的窗口任务
+		/**
+		 * @brief 结束 HiWindow 的窗口任务
+		*/
 		void EndWindowTask();
 
-		// 调用 EasyX 绘图函数前，设置该画布为目标绘图画布
-		// 若绑定了窗口，则自动启动窗口任务
+		/**
+		 * @brief	调用 EasyX 绘图函数前，设置该画布为目标绘图画布
+		 * @note	若绑定了窗口，则自动启动窗口任务
+		 * @return	是否设置成功
+		*/
 		bool BeginDrawing();
 
-		// 调用 EasyX 绘图函数完毕，恢复先前的绘图状态
+		/**
+		 * @brief 调用 EasyX 绘图函数完毕，恢复先前的绘图状态
+		*/
 		void EndDrawing();
 
 	public:
@@ -122,42 +140,83 @@ namespace HiEasyX
 
 		Canvas(int w, int h, COLORREF cBk = BLACK);
 
-		// 只是复制图像指针中的内容，绑定图像指针请调用 BindToImage
+		/**
+		 * @brief 复制图像内容（绑定图像指针请调用 BindToImage）
+		 * @param pImg 原图像
+		*/
 		Canvas(IMAGE* pImg);
 		Canvas(IMAGE img);
 
-		// 只是复制图像指针中的内容，绑定图像指针请调用 BindToImage
+		/**
+		 * @brief 复制图像内容（绑定图像指针请调用 BindToImage）
+		 * @param pImg 原图像
+		*/
 		Canvas& operator= (IMAGE* pImg);
 		Canvas& operator= (IMAGE img);
 
-		// 重新加载图像尺寸信息
-		// 若绑定了图像指针，当外部调整图像大小后，须调用此函数
+		/**
+		 * @brief	重新加载图像尺寸信息
+		 * @note	若绑定了图像指针，当外部调整图像大小后，须调用此函数
+		*/
 		void UpdateSizeInfo();
 
-		// 重设画布大小（若绑定了窗口，则不建议调用）
+		/**
+		 * @brief 重设画布大小（若绑定了窗口，则不建议调用）
+		 * @param w 目标宽度
+		 * @param h 目标高度
+		*/
 		void Resize(int w, int h) override;
 
 		// 绑定到图像指针
 		// 注意：
-		//		绑定到图像指针后，如果在外部调整了图像大小，则必须调用 UpdateSizeInfo 重新加载图像信息
-		//		若要在外部使用图像指针，则必须调用 GetImagePointer
-		//		若要绑定到窗口，请使用 BindWindowCanvas
+		//		
+		//		
+		//		
+
+		/**
+		 * @brief 绑定到图像指针
+		 * @attention
+		 *		绑定到图像指针后：
+		 *		如果在外部调整了图像大小，则需要调用 UpdateSizeInfo 重新加载图像信息
+		 *		如果要在外部使用图像指针，则需要调用 GetImagePointer
+		 *		如果要绑定到窗口，请使用 BindWindowCanvas
+		 *
+		 * @param pImg 目标图像指针
+		 * @return 此画布
+		*/
 		Canvas& BindToImage(IMAGE* pImg);
 
-		// 将画布绑定到窗口（自动响应画布调整消息）
-		// 此函数禁止用户调用，请使用 BindWindowCanvas
+		/**
+		 * @brief 将画布绑定到窗口（画布大小随窗口自动调整）
+		 * @attention 此函数禁止用户调用，请使用 BindWindowCanvas
+		 * @param hWnd 目标窗口
+		 * @param pImg 窗口图像缓冲区
+		 * @return 此画布
+		*/
 		Canvas& BindToWindow(HWND hWnd, IMAGE* pImg);
 
-		// 获取画布 IMAGE 指针
+		/**
+		 * @brief 获取画布 IMAGE 指针
+		 * @return 画布指针
+		*/
 		IMAGE* GetImagePointer() { return m_bBindToImgPointer ? m_pImg : this; }
 
-		// 获取图像缓冲区指针
+		/**
+		 * @brief 获取图像缓冲区指针
+		 * @return 图像缓冲区指针
+		*/
 		DWORD* GetBuffer() const { return m_bBindToImgPointer ? GetImageBuffer(m_pImg) : m_pBuf; }
 
-		// 获取图像缓冲区大小（宽 * 高）
+		/**
+		 * @brief 获取图像缓冲区大小，即图像面积（宽 * 高）
+		 * @return 图像缓冲区大小
+		*/
 		int GetBufferSize() const { return m_nBufSize; }
 
-		// 获取画布的 HDC
+		/**
+		 * @brief 获取画布的 HDC
+		 * @return 画布 HDC
+		*/
 		HDC GetHDC() { return GetImageHDC(GetImagePointer()); }
 
 		int getwidth() const { return m_nWidth; }
@@ -170,25 +229,42 @@ namespace HiEasyX
 
 		/// 绘图状态设置函数
 
-		// 开始大批量绘制（该函数并非用于开启双缓冲）
-		// 注意：
-		//		调用该函数后，当前绘图目标将转移到该画布，此后每次绘制不会恢复绘图目标。
-		//		仅针对 EasyX 原生绘图函数对应的大部分类函数有效，且仅在绘图量较大时有明显效果。
-		//		若画布和窗口绑定，则开启批量绘制后必须手动结束批量绘制才能结束窗口任务
+		/**
+		 * @brief 开始大批量绘制（该函数并非用于开启双缓冲）
+		 * @note 调用该函数后，当前绘图目标将转移到该画布，此后每次绘制不会恢复绘图目标
+		*/
 		void BeginBatchDrawing();
 
-		// 结束批量绘制
-		// 绘图目标将恢复到先前状态（即使在批量绘制中手动修改了绘图目标，也将被重置）
+		/**
+		 * @brief 结束批量绘制
+		 * @note 绘图目标将恢复到批量绘制前的状态
+		*/
 		void EndBatchDrawing();
 
 		/// 绘图函数
 
-		// 判断某点是否位于图像中
+		// 
 		// pIndex 返回该点的数组索引
+
+		/**
+		 * @brief 判断某点是否位于图像中
+		 * @param x 坐标
+		 * @param y 坐标
+		 * @param[out] pIndex 返回该点数组索引
+		 * @return 是否位于图像中
+		*/
 		bool isValidPoint(int x, int y, int* pIndex = nullptr);
 
-		// 将该画布的图像绘制到另一画布中
-		// crop		裁剪区域（坐标位置 0 表示默认）
+		/**
+		 * @brief 将该画布的图像绘制到另一画布中
+		 * @param x				绘制位置
+		 * @param y				绘制位置
+		 * @param pImg			目标绘制画布
+		 * @param crop			裁剪区域（默认不裁剪）
+		 * @param alpha			叠加透明度
+		 * @param bUseSrcAlpha	是否使用此画布透明度
+		 * @param isCalculated	画布像素是否已经透明混合
+		*/
 		void Render(
 			int x, int y,
 			IMAGE* pImg = nullptr,
@@ -252,13 +328,28 @@ namespace HiEasyX
 
 		void PutPixel(int x, int y, COLORREF c);
 
-		// 直接操作显存快速获取点
+		/**
+		 * @brief  直接操作显存快速获取点
+		 * @param x 位置
+		 * @param y 位置
+		 * @return 目标点颜色
+		*/
 		COLORREF GetPixel_Fast(int x, int y);
 
-		// 直接操作显存快速绘制点
+		/**
+		 * @brief 直接操作显存快速绘制点
+		 * @param x 位置
+		 * @param y 位置
+		 * @param c 目标点颜色
+		*/
 		void PutPixel_Fast(int x, int y, COLORREF c);
 
-		// 绘制带有透明度的点，透明度信息在 COLORREF 中
+		/**
+		 * @brief 绘制带有透明度的点，透明度信息在 COLORREF 中
+		 * @param x 位置
+		 * @param y 位置
+		 * @param c 目标点颜色
+		*/
 		void PutPixel_Fast_Alpha(int x, int y, COLORREF c);
 
 		void Line(int x1, int y1, int x2, int y2, bool isSetColor = false, COLORREF c = 0);
@@ -353,42 +444,75 @@ namespace HiEasyX
 
 		void PolyBezier(const POINT* points, int num, bool isSetColor = false, COLORREF c = 0);
 
-		// 填充某区域
-		// filltype 填充模式
-		//		FLOODFILLBORDER		指定 color 为填充区域的边框颜色
-		//		FLOODFILLSURFACE	指定 color 为填充区域的连续颜色
+		/**
+		 * @brief 填充某区域
+		 * @param x				填充起始位置
+		 * @param y				填充起始位置
+		 * @param color			填充颜色
+		 * @param filltype		填充模式
+		 *							FLOODFILLBORDER		指定 color 为填充边界颜色，即遇到此颜色后停止填充
+		 *							FLOODFILLSURFACE	指定 color 为填充表面颜色，即只覆盖此颜色
+		 * @param isSetColor	是否设置填充颜色
+		 * @param cFill			填充颜色
+		*/
 		void FloodFill(int x, int y, COLORREF color, int filltype = FLOODFILLBORDER, bool isSetColor = false, COLORREF cFill = 0);
 
-		// 在指定位置输出文本，返回文本像素宽度
+		/**
+		 * @brief 在指定位置输出文本
+		 * @param x				位置
+		 * @param y				位置
+		 * @param lpszText		文本
+		 * @param isSetColor	是否设置颜色
+		 * @param c				文本颜色
+		 * @return 文本像素宽度
+		*/
 		int OutTextXY(int x, int y, LPCTSTR lpszText, bool isSetColor = false, COLORREF c = 0);
 
-		// 在指定位置输出字符，返回字符像素宽度
 		int OutTextXY(int x, int y, TCHAR ch, bool isSetColor = false, COLORREF c = 0);
 
-		// 在指定位置输出格式化文本，返回文本像素宽度
+		/**
+		 * @brief 在指定位置输出格式化文本
+		 * @param x			位置
+		 * @param y			位置
+		 * @param _Size		格式化文本最大长度
+		 * @param _Format	格式化字符串
+		 * @param			不定参数
+		 * @return 文本像素宽度
+		*/
 		int OutTextXY_Format(int x, int y, int _Size, LPCTSTR _Format, ...);
 
-		// 获取文本像素宽度
+		/**
+		 * @brief 获取文本像素宽度
+		 * @param lpszText 文本
+		 * @return 获取文本像素宽度
+		*/
 		int TextWidth(LPCTSTR lpszText);
 
-		// 获取字符像素宽度
 		int TextWidth(TCHAR c);
 
-		// 获取文本像素宽度
 		int TextHeight(LPCTSTR lpszText);
 
-		// 获取字符像素宽度
 		int TextHeight(TCHAR c);
 
 		int Draw_Text(LPCTSTR str, RECT* pRect, UINT uFormat, bool isSetColor = false, COLORREF c = 0);
 
 		int Draw_Text(TCHAR ch, RECT* pRect, UINT uFormat, bool isSetColor = false, COLORREF c = 0);
 
-		// 在某区域居中输出文字
-		// rct 输出区域，默认为画布区域
+		/**
+		 * @brief 在某区域居中输出文字
+		 * @param lpszText		文本
+		 * @param rct			输出区域，默认为画布区域
+		 * @param isSetColor	是否设置颜色
+		 * @param c				文本颜色
+		*/
 		void CenterText(LPCTSTR lpszText, RECT rct = { -1 }, bool isSetColor = false, COLORREF c = 0);
 
-		// 在画布居中输出格式化文本
+		/**
+		 * @brief 居中输出格式化文本
+		 * @param _Size		格式化文本最大长度
+		 * @param _Format	格式化字符串
+		 * @param			不定参数
+		*/
 		void CenterText_Format(int _Size, LPCTSTR _Format, ...);
 
 		LOGFONT GetTextStyle();
@@ -401,34 +525,65 @@ namespace HiEasyX
 
 		void SetTextStyle(LOGFONT font);
 
-		// 设置字体大小
+		/**
+		 * @brief 设置字体大小
+		 * @param nHeight	高度
+		 * @param nWidth	宽度（为 0 时，自动与高度匹配）
+		*/
 		void SetFont(int nHeight, int nWidth = 0);
 
-		// 设置使用字体的名称
+		/**
+		 * @brief 设置使用字体的名称
+		 * @param lpsz 字体名称
+		*/
 		void SetTypeface(LPCTSTR lpsz);
 
-		// 设置字符串的书写角度（单位 0.1 度）
+		/**
+		 * @brief 设置字符串的书写角度（单位 0.1 度）
+		 * @param lfEscapement 角度
+		*/
 		void SetTextEscapement(LONG lfEscapement);
 
-		// 设置每个字符的书写角度（单位 0.1 度）
+		/**
+		 * @brief 设置每个字符的书写角度（单位 0.1 度）
+		 * @param lfOrientation 角度
+		*/
 		void SetTextOrientation(LONG lfOrientation);
 
-		// 设置字符的笔画粗细（范围 默认 0 ~ 1000 最粗）
+		/**
+		 * @brief 设置字符的笔画粗细（范围 默认 0 ~ 1000 最粗）
+		 * @param lfWeight 粗细
+		*/
 		void SetTextWeight(LONG lfWeight);
 
-		// 设置字体是否为斜体
+		/**
+		 * @brief 设置字体是否为斜体
+		 * @param lfItalic 是否斜体
+		*/
 		void SetTextItalic(bool lfItalic);
 
-		// 设置字体是否有下划线
+		/**
+		 * @brief 设置字体是否有下划线
+		 * @param lfUnderline 是否下划线
+		*/
 		void SetTextUnderline(bool lfUnderline);
 
-		// 设置字体是否有删除线
+		/**
+		 * @brief 设置字体是否有删除线
+		 * @param lfStrikeOut 是否删除项
+		*/
 		void SetTextStrikeOut(bool lfStrikeOut);
 
-		// 获取前景色
+		/**
+		 * @brief 获取前景色
+		 * @return 前景色
+		*/
 		COLORREF GetColor();
 
-		// 设置前景色
+		/**
+		 * @brief 设置前景色
+		 * @param color 前景色
+		*/
 		void SetColor(COLORREF color);
 
 		int GetX();
@@ -447,20 +602,29 @@ namespace HiEasyX
 
 		void OutText(TCHAR ch, bool isSetColor = false, COLORREF c = 0);
 
-		// 输出格式化文本，返回文本像素宽度
+		/**
+		 * @brief 输出格式化文本
+		 * @param _Size		格式化文本最大长度
+		 * @param _Format	格式化字符串
+		 * @param			不定参数
+		 * @return 文本像素宽度
+		*/
 		int OutText_Format(int _Size, LPCTSTR _Format, ...);
 
-		// 加载图片文件到画布
-		// 
-		// x, y					图像输出位置
-		// bResize				标记是否调整画布大小以正好容纳图像
-		// nWidth, nHeight		图像目标拉伸尺寸，为 0 表示不拉伸
-		// alpha				输出图像的透明度
-		// bUseSrcAlpha			是否使用原图的透明度信息进行混合（仅支持有透明度信息的 png 图像）
-		// 
-		// 注：开启任意一个透明通道，都会使得该画布最终不包含透明度信息。
-		// 
-		// 返回读取到的 IMAGE 对象
+		/**
+		 * @brief 加载图片文件到画布
+		 * @param lpszImgFile	图像文件路径
+		 * @param x				输出到画布的位置
+		 * @param y				输出到画布的位置
+		 * @param bResize		是否调整画布大小以正好容纳图像
+		 * @param nWidth		图像目标拉伸尺寸，为 0 表示不拉伸
+		 * @param nHeight		图像目标拉伸尺寸，为 0 表示不拉伸
+		 * @param alpha			叠加透明度
+		 * @param bUseSrcAlpha	是否使用原图的透明度信息进行混合（仅支持有透明度信息的 png 图像）
+		 * @return 读取到的 IMAGE 对象
+		 *
+		 * @note 若开启透明通道，则会丢失原图像的透明度信息
+		*/
 		IMAGE Load_Image_Alpha(
 			LPCTSTR lpszImgFile,
 			int x = 0, int y = 0,
@@ -470,8 +634,16 @@ namespace HiEasyX
 			bool bUseSrcAlpha = false
 		);
 
-		// 绘制图像到该画布
-		// crop		裁剪区域（坐标位置 0 表示默认）
+		/**
+		 * @brief 绘制图像到该画布
+		 * @param x				图像输入位置
+		 * @param y				图像输入位置
+		 * @param pImg			待输入图像
+		 * @param crop			裁剪区域
+		 * @param alpha			叠加透明度
+		 * @param bUseSrcAlpha	是否使用原图透明度
+		 * @param isCalculated	原图是否已经混合透明度
+		*/
 		void PutImageIn_Alpha(
 			int x, int y,
 			IMAGE* pImg,
@@ -481,39 +653,58 @@ namespace HiEasyX
 			bool isCalculated = true
 		);
 
-		// EasyX 原生旋转函数
+		/**
+		 * @brief EasyX 原生旋转函数
+		 * @param radian		旋转弧度
+		 * @param bkcolor		填充背景色
+		 * @param autosize		是否自适应旋转图像大小
+		 * @param highquality	高质量
+		*/
 		void RotateImage(double radian, COLORREF bkcolor = BLACK, bool autosize = false, bool highquality = true);
 
-		// 旋转图像（保留 Alpha 信息）
+		/**
+		 * @brief 旋转图像（保留 Alpha 信息）
+		 * @param radian	旋转弧度
+		 * @param bkcolor	填充背景色
+		*/
 		void RotateImage_Alpha(double radian, COLORREF bkcolor = BLACK);
 
-		// 缩放图像
+		/**
+		 * @brief 缩放图像
+		 * @param nW	目标宽度
+		 * @param nH	目标高度
+		*/
 		void ZoomImage_Alpha(int nW, int nH);
 
-		// 缩放图像（基于 Win32 API）
+		/**
+		 * @brief 缩放图像（基于 Win32 API）
+		 * @param nW	目标宽度
+		 * @param nH	目标高度
+		*/
 		void ZoomImage_Win32_Alpha(int nW, int nH);
 
 	};
 
-	// 图像块
+	/**
+	 * @brief 图像块
+	*/
 	class ImageBlock
 	{
 	private:
 		Canvas* m_pCanvas = nullptr;
-		bool m_isCreated = false;			// 画布是否为自己创建的
+		bool m_isCreated = false;			///< 画布是否为自己创建的
 
-		void DeleteMyCanvas();				// 删除自己创建的画布
+		void DeleteMyCanvas();				///< 删除自己创建的画布
 
 	public:
-		int x = 0, y = 0;					// 图像显示在图层的位置
-		RECT rctCrop = { 0 };				// 裁剪信息
-		bool bUseSrcAlpha = false;			// 是否使用图像自身的 alpha 数据
+		int x = 0, y = 0;					///< 图像显示在图层的位置
+		RECT rctCrop = { 0 };				///< 裁剪信息
+		bool bUseSrcAlpha = false;			///< 是否使用图像自身的 alpha 数据
 
-		bool isAlphaCalculated = false;		// 图像自身的像素颜色是否已经完成了 alpha 混合
-											// 注：启用此项，须先启用 bUseSrcAlpha
+		bool isAlphaCalculated = false;		///< 图像色值是否已混合透明度（使用自身透明度时有效）
 
-		BYTE alpha = 255;					// 绘制到图层时的叠加透明度
-		bool bVisible = true;				// 图像是否可见
+		BYTE alpha = 255;					///< 绘制到图层时的叠加透明度
+		bool bVisible = true;				///< 图像是否可见
 
 		ImageBlock();
 
@@ -521,12 +712,25 @@ namespace HiEasyX
 
 		ImageBlock(int _x, int _y, Canvas* pCanvas);
 
-		// 新建画布
+		/**
+		 * @brief 新建画布
+		 * @param _x	位置
+		 * @param _y	位置
+		 * @param w		宽度
+		 * @param h		高度
+		 * @param cBk	背景色
+		*/
 		ImageBlock(int _x, int _y, int w, int h, COLORREF cBk = 0);
 
 		virtual ~ImageBlock();
 
-		// 不绑定外部画布，直接新建画布
+		/**
+		 * @brief 不绑定外部画布，直接新建画布
+		 * @param w		宽度
+		 * @param h		高度
+		 * @param cBk	背景色
+		 * @return 画布
+		*/
 		Canvas* CreateCanvas(int w, int h, COLORREF cBk = 0);
 
 		Canvas* GetCanvas() const { return m_pCanvas; }
@@ -541,30 +745,41 @@ namespace HiEasyX
 
 		void SetPos(int _x, int _y);
 
-		// 绘制到画布
-		// alpha	叠加透明度
+		/**
+		 * @brief 绘制到画布
+		 * @param pImg	目标绘制画布
+		 * @param alpha	叠加透明度
+		*/
 		virtual void Render(IMAGE* pImg, BYTE alpha);
 	};
 
-	// 图层
+	/**
+	 * @brief 图层
+	*/
 	class Layer : public std::list<ImageBlock*>
 	{
 	private:
-		DrawingProperty m_property[2];		// 保存上次的绘图属性
+		DrawingProperty m_property[2];		///< 保存上次的绘图属性
 
-	public: 
-		bool bVisible = true;				// 图层是否可见
-		BYTE alpha = 255;					// 图层中所有图像块的叠加透明度
-		bool bOutline = false;				// 是否显示轮廓
-		bool bText = false;					// 若显示轮廓，是否显示文字
+	public:
+		bool bVisible = true;				///< 图层是否可见
+		BYTE alpha = 255;					///< 图层中所有图像块的叠加透明度
+		bool bOutline = false;				///< 是否显示轮廓
+		bool bText = false;					///< 若显示轮廓，是否显示文字
 
-		// 渲染到...
-		// bShowOutline 是否显示轮廓
-		// strAddedText 轮廓中的附加文本内容
+		/**
+		 * @brief 渲染到画布
+		 * @param pImg			目标绘制画布
+		 * @param bShowOutline	是否显示轮廓
+		 * @param bShowText		是否显示轮廓文本
+		 * @param wstrAddedText	附加轮廓文本
+		*/
 		void Render(IMAGE* pImg = nullptr, bool bShowOutline = false, bool bShowText = true, std::wstring wstrAddedText = L"");
 	};
 
-	// 特殊图层顺序标识
+	/**
+	 * @brief 特殊图层顺序标识
+	*/
 	enum LayerOrder
 	{
 		LAYERORDER_BOTTOM_MOST,
@@ -574,34 +789,51 @@ namespace HiEasyX
 		LAYERORDER_TOP_MOST
 	};
 
-	// 场景
-	// 图层索引越大，图层越靠前
+	/**
+	 * @brief 场景
+	 * @note 图层索引越大，图层越靠前
+	*/
 	class Scene : public std::vector<Layer*>
 	{
 	private:
 
-		DrawingProperty m_property;				// 保存之前的绘图属性
+		DrawingProperty m_property;				///< 保存之前的绘图属性
 
 		// 特殊图层
-		Layer m_layerBottomMost;				// 最底层
-		Layer m_layerBottom;					// 底层
-		Layer m_layerTop;						// 顶层
-		Layer m_layerTopMost;					// 最顶层
+		Layer m_layerBottomMost;				///< 最底层
+		Layer m_layerBottom;					///< 底层
+		Layer m_layerTop;						///< 顶层
+		Layer m_layerTopMost;					///< 最顶层
 
 	public:
 
-		// 获取所有图层的拷贝
-		// 图层索引越大，图层越靠前
+		/**
+		 * @brief 获取所有图层的拷贝
+		 * @note 图层索引越大，图层越靠前
+		 * @return 所有图层的拷贝
+		*/
 		std::vector<Layer*> GetAllLayer();
 
-		// 获取所有图层的总数
+		/**
+		 * @brief 获取所有图层的总数
+		 * @return 图层总数
+		*/
 		size_t GetAllLayerSize() const;
 
-		// 获取特殊图层（除了普通图层外的其他图层，见 LayerOrder）
-		// 不建议滥用特殊图层
-		Layer* GetSpecialLayer(int order);
+		/**
+		 * @brief 获取特殊图层（除了普通图层外的其他图层，见 LayerOrder）
+		 * @note 不建议滥用特殊图层
+		 * @param order 特殊图层索引
+		 * @return 特殊图层
+		*/
+		Layer* GetSpecialLayer(LayerOrder order);
 
-		// 渲染到...
+		/**
+		 * @brief 渲染到画布
+		 * @param pImg				目标绘制画布
+		 * @param bShowAllOutline	是否显示轮廓
+		 * @param bShowAllText		是否显示轮廓文本
+		*/
 		void Render(IMAGE* pImg = nullptr, bool bShowAllOutline = false, bool bShowAllText = true);
 	};
 

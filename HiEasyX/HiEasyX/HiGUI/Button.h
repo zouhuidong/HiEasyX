@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	Button.h
-//	HiGUI 控件分支：按钮控件
-//
+/**
+ * @file	Button.h
+ * @author	huidong
+ * @brief	HiGUI 控件分支：按钮控件
+*/
 
 #pragma once
 
@@ -10,12 +10,14 @@
 
 namespace HiEasyX
 {
-	// 按钮控件
+	/**
+	 * @brief 按钮控件
+	*/
 	class Button : public ControlBase
 	{
 	protected:
 
-		bool m_bEnableClassicStyle = false;			// 是否使用经典样式
+		bool m_bEnableClassicStyle = false;	///< 是否使用经典样式
 
 		virtual void InitColor();
 
@@ -33,19 +35,35 @@ namespace HiEasyX
 		COLORREF m_cBorder_Disabled = GRAY;
 		COLORREF m_cBackground_Disabled = GRAY;
 
-		COLORREF m_cClassicNormalBorder3D = GRAY;			// 未按下时的 3D 边框颜色（经典样式）
-		COLORREF m_cClassicPressedBorder3D = LIGHTGRAY;		// 按下时的 3D 边框颜色（经典样式）
+		COLORREF m_cClassicNormalBorder3D = GRAY;			///< 未按下时的 3D 边框颜色（经典样式）
+		COLORREF m_cClassicPressedBorder3D = LIGHTGRAY;		///< 按下时的 3D 边框颜色（经典样式）
 
 		Button();
 
 		Button(int x, int y, int w, int h, std::wstring wstrText = L"");
 
+		/**
+		 * @brief 启用控件
+		 * @param enable 是否启用
+		*/
 		void SetEnable(bool enable) override;
 
+		/**
+		 * @brief 是否启用经典样式
+		 * @param enable 是否启用
+		*/
 		virtual void EnableClassicStyle(bool enable);
 		
+		/**
+		 * @brief 更新消息
+		 * @param msg 消息
+		*/
 		void UpdateMessage(ExMessage msg) override;
 
+		/**
+		 * @brief 绘制
+		 * @param draw_child 是否绘制子控件
+		*/
 		void Draw(bool draw_child = true) override;
 	};
 }
