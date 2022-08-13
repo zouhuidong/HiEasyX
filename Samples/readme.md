@@ -1,24 +1,21 @@
-> ÔÚÕâÀïÎÒÎª HiEasyX ÖÆ×÷ÁËÒ»Ð©Ê¾Àý£¬Ï£Íû¶Ô´ó¼ÒÓÐ°ïÖú¡£
+> åœ¨è¿™é‡Œæˆ‘ä¸º HiEasyX åˆ¶ä½œäº†ä¸€äº›ç¤ºä¾‹ï¼Œå¸Œæœ›å¯¹å¤§å®¶æœ‰å¸®åŠ©ã€‚
 
-# ÈçºÎÔËÐÐÊ¾ÀýÎÄ¼þ
+# å¦‚ä½•è¿è¡Œç¤ºä¾‹æ–‡ä»¶
 
-**·½·¨ 1**
-´´½¨Ò»¸öÏîÄ¿£¬½« HiEasyX ÅäÖÃµ½ÏîÄ¿ÖÐ£¬ÔÙ½«Ê¾Àý´úÂë¸´ÖÆµ½ÏîÄ¿ÖÐÔËÐÐ
+**æ–¹æ³• 1**  
+åˆ›å»ºä¸€ä¸ªé¡¹ç›®ï¼Œå°† HiEasyX é…ç½®åˆ°é¡¹ç›®ä¸­ï¼Œå†å°†ç¤ºä¾‹ä»£ç å¤åˆ¶åˆ°é¡¹ç›®ä¸­è¿è¡Œ  
 
-**·½·¨ 2**
-Ö±½Ó½«Ê¾Àý´úÂë¸´ÖÆµ½´ËÏîÄ¿µÄ main.cpp ÖÐÔËÐÐ
+**æ–¹æ³• 2**  
+ç›´æŽ¥å°†ç¤ºä¾‹ä»£ç å¤åˆ¶åˆ°æ­¤é¡¹ç›®çš„ main.cpp ä¸­è¿è¡Œ  
 
-# Ê¾ÀýÎÄ¼þÄ¿Â¼½á¹¹
+# ç¤ºä¾‹æ–‡ä»¶ç›®å½•ç»“æž„  
 
-**Recommend**
-ÕâÀïÃæÓÐ´ú±íÐÔµÄÀý×Ó£¬ÍÆ¼öÊ×ÏÈ¿´¿´ÕâÀïÃæµÄÊ¾Àý
+**Recommend**  
+è¿™é‡Œé¢æœ‰ä»£è¡¨æ€§çš„ä¾‹å­ï¼ŒæŽ¨èé¦–å…ˆçœ‹çœ‹è¿™é‡Œé¢çš„ç¤ºä¾‹  
 
-**StagedLearning**
-ÎÄ¼þ¼ÐÖÐº¬ÓÐ¶à¸ö½×¶ÎµÄÊ¾Àý£¬¿ÉÒÔ¸ù¾ÝÕâÀïµÄÊ¾Àý¿ìËÙÉÏÊÖ HiEasyX¡£
-Èç¹ûÏëÒª¸üÉîÈëµØÁË½â HiEasyX£¬Çë²éÔÄ HiEasyX Í·ÎÄ¼þ£¬Ò²¿ÉÒÔ¿´ Recommend ÖÐµÄÀý×Ó
-
-**Others**
-ÆäËûµÄÒ»Ð©Ê¾Àý£¬´ó¶à±È½ÏÔÓÂÒ£¬ÑÝÊ¾ÁË HiEasyX ÆäËü·½ÃæµÄ¹¦ÄÜ
-
-
-huidong 2022.08.13
+**StagedLearning**  
+æ–‡ä»¶å¤¹ä¸­å«æœ‰å¤šä¸ªé˜¶æ®µçš„ç¤ºä¾‹ï¼Œå¯ä»¥æ ¹æ®è¿™é‡Œçš„ç¤ºä¾‹å¿«é€Ÿä¸Šæ‰‹ HiEasyXã€‚  
+å¦‚æžœæƒ³è¦æ›´æ·±å…¥åœ°äº†è§£ HiEasyXï¼Œè¯·æŸ¥é˜… HiEasyX å¤´æ–‡ä»¶ï¼Œä¹Ÿå¯ä»¥çœ‹ Recommend ä¸­çš„ä¾‹å­  
+  
+**Others**  
+å…¶ä»–çš„ä¸€äº›ç¤ºä¾‹ï¼Œå¤§å¤šæ¯”è¾ƒæ‚ä¹±ï¼Œæ¼”ç¤ºäº† HiEasyX å…¶å®ƒæ–¹é¢çš„åŠŸèƒ½  
