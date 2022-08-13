@@ -17,6 +17,20 @@ hiex::SysEdit edit;
 hiex::SysButton btn;
 hiex::SysCheckBox checkbox;
 
+void OutInfo(hiex::Canvas& canvas)
+{
+	static LPCTSTR lpszText = L"Created by HiEasyX " _HIEASYX_VER_STR_;
+	canvas.SetTextEscapement(0);
+	canvas.SetTextOrientation(0);
+	canvas.SetTextStyle(16, 0, L"Arial");
+	canvas.OutTextXY(
+		canvas.GetWidth() - canvas.TextWidth(lpszText),
+		canvas.GetHeight() - canvas.TextHeight(lpszText),
+		lpszText,
+		true, GRAY
+	);
+}
+
 // 连续输出垂直文字
 // 调用前需要自行设置文字垂直属性
 void VerticalText(LPCTSTR lpsz, bool text_c, COLORREF cText, bool  bk_c, COLORREF cBk, bool set = false, int x = 0, int y = 0)
@@ -45,20 +59,25 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		canvas_main.SetTextEscapement(-900);
 		canvas_main.SetTextOrientation(-900);
 		canvas_main.SetTextStyle(140, 0, L"微软雅黑");
+
 		canvas_main.BeginBatchDrawing();
 		VerticalText(L"Hi", true, LIGHTRED, true, SKYBLUE, true, getwidth() + 10, 20);
-		VerticalText(L" ", false, 0, true, CLASSICGRAY);
+		VerticalText(L" ", false, 0, true, bk);
 		VerticalText(L"E", true, WHITE, true, RED);
 		VerticalText(L"a", false, 0, true, ORANGE);
 		VerticalText(L"s", false, 0, true, GREEN);
 		VerticalText(L"y", false, 0, true, CYAN);
 		VerticalText(L"X", false, 0, true, BLUE);
 		canvas_main.EndBatchDrawing();
+
+		canvas_main.SetBkColor(bk);
+		OutInfo(canvas_main);
+		
 		break;
 
 	case WM_SIZE:
 	{
-		canvas_main.Clear(true, CLASSICGRAY);
+		canvas_main.Clear(true, bk);
 
 		int dx = canvas_main.GetWidth() - WND_W;
 		int dy = canvas_main.GetHeight() - WND_H;
@@ -112,6 +131,8 @@ void OnClick()
 			SetWindowText(wnd_option.GetHandle(), L"Option");
 			hiex::Canvas canvas;
 			wnd_option.BindCanvas(&canvas);
+			OutInfo(canvas);
+			canvas.SetTypeface(L"system");
 
 			DisableResizing(wnd_option.GetHandle(), true);
 
@@ -216,13 +237,12 @@ int main()
 	);
 	edit.SetFont(26, 0, L"微软雅黑");
 
-	btn.Create(hwnd, BTN_X, BTN_Y, 100, 30, L"Options...");
+	btn.Create(hwnd, BTN_X, BTN_Y, 100, 30, L" Options...");
 	btn.RegisterMessage(OnClick);
 	hiex::Canvas btn_img(20, 20, 0xe1e1e1);
-	btn_img.SetLineThickness(2);
-	btn_img.Rectangle(6, 7, 15, 14, true, GRAY);
-	btn_img.SetLineThickness(3);
-	btn_img.Circle(10, 10, 8, true, GRAY);
+	btn_img.SolidCircle(10, 10, 10, true, GRAY);
+	btn_img.Line(10, 0, 10, 20, true, WHITE);
+	btn_img.Line(0, 10, 20, 10, true, WHITE);
 	btn.Image(true, &btn_img, true);
 
 	checkbox.Create(hwnd, CHECKBOX_X, CHECKBOX_Y, 100, 20, L"Read only");

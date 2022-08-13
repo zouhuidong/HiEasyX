@@ -1,4 +1,4 @@
-#include "../HiEasyX/HiEasyX.h"
+#include "HiEasyX.h"
 
 #define IDC_EDIT 101
 
@@ -250,8 +250,7 @@ int main()
 	btnImage.Image(true, &img, true);
 
 	OnEdit(edit.GetText());
-
-
+	wnd2.Redraw();
 
 	int i = 0;
 	while (wnd.isAlive())

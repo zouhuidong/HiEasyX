@@ -331,7 +331,7 @@ namespace HiEasyX
 
 	bool SetWorkingWindow(HWND hWnd)
 	{
-		if (GetFocusWindow().hWnd == hWnd)
+		if (!hWnd || GetFocusWindow().hWnd == hWnd)
 		{
 			if (GetWorkingImage() != GetFocusWindow().pBufferImg)
 			{
