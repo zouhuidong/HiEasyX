@@ -1,119 +1,22 @@
+////////////////////////////////////////
+//
+//	简单演示 HiEasyX 中系统 GUI 的调用方式
+//
+
 #include "HiEasyX.h"
 
-#define IDC_EDIT 101
-
-HWND editWindow = nullptr;
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	static HFONT hFont;//定义静态字体变量
-
-	switch (msg)
-	{
-	case WM_CREATE:
-	{
-		//获取客户区窗口大小参数
-		RECT rct;
-		GetClientRect(hWnd, &rct);
-		//创建edit编辑窗口，子窗口，可视，有边框，多行，识别enter为回车，失去焦点后光标不消失
-		editWindow = CreateWindow(
-			L"EDIT",
-			nullptr,
-			WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE | ES_WANTRETURN | ES_NOHIDESEL | WS_VSCROLL | ES_AUTOVSCROLL,
-			0, 100, rct.right, rct.bottom,
-			hWnd,
-			(HMENU)IDC_EDIT,
-			nullptr,
-			nullptr
-		);
-
-		hFont = CreateFont(
-			24, 0, 0, 0, 0,
-			FALSE, FALSE,
-			0, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS,
-			L"Consolas");
-		//创建字体
-		//HWND hStatic = CreateWindow("STATIC", "静态文本", WS_CHILD | WS_VISIBLE, 10, 10, 100, 25, hwnd, (HMENU)IDC_FILTER_STATIC, g_hInstance, NULL);//创建静态文本
-		SendMessage(editWindow, WM_SETFONT, (WPARAM)hFont, TRUE);//发送设置字体消息	
-
-		//Edit_SetPasswordChar(editWindow, L'*');
-
-		Edit_SetText(editWindow, L"注意：\r\n刚刚");
-		Edit_SetReadOnly(editWindow, true);
-
-		break;
-	}
-
-	case WM_CTLCOLOREDIT://设置Edit颜色
-	{
-		if (editWindow == (HWND)lParam)//这里的1是静态文本框的ID
-		{
-			SetTextColor((HDC)wParam, RGB(0, 122, 204));
-			SetBkColor((HDC)wParam, RGB(30, 30, 30));
-			//SetBkMode((HDC)wParam, TRANSPARENT);
-			return (INT_PTR)CreateSolidBrush(RGB(30, 30, 30));
-			//return (LRESULT)GetStockObject(WHITE_BRUSH);
-		}
-		break;
-	}
-
-	case WM_SIZE:
-	{
-		RECT rct;
-		GetClientRect(hWnd, &rct);
-		//Edit_SetRect(editWindow, &rct);
-		SetWindowPos(editWindow, 0, 0, 100, rct.right, rct.bottom, 0);
-		break;
-	}
-
-	case WM_PAINT:
-	{
-		BEGIN_TASK_WND(hWnd);
-
-		circle(30, 30, 30);
-
-		END_TASK();
-
-		break;
-	}
-
-	case WM_DESTROY:
-	{
-		DeleteObject(hFont);//删除所创建字体对象
-		PostQuitMessage(0);
-		break;
-	}
-
-	default:
-		return HIWINDOW_DEFAULT_PROC;
-		break;
-
-	}
-
-	return 0;
-}
-
-
 HiEasyX::SysButton btn;
+HiEasyX::Canvas canvas_wnd2;
 
 LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	static HINSTANCE hInstance = GetModuleHandle(0);
-	static HWND hBtn = nullptr;
-
 	switch (msg)
 	{
-	case WM_CREATE:
-	{
-		break;
-	}
-
 	case WM_PAINT:
 		BEGIN_TASK_WND(hWnd);
 		circle(100, 100, 70);
 		END_TASK();
 		break;
-
 
 	case WM_COMMAND:
 	{
@@ -124,14 +27,6 @@ LRESULT CALLBACK WndProc2(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	}
-
-	case WM_CLOSE:
-		DestroyWindow(hWnd);
-		break;
-
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		break;
 
 	default:
 		return HIWINDOW_DEFAULT_PROC;	// 标识使用默认消息处理函数继续处理
@@ -148,8 +43,6 @@ void OnCheck(bool checked)
 		MessageBox(nullptr, L"Checked", L"tip", MB_OK);
 	}
 }
-
-HiEasyX::Canvas canvas_wnd2;
 
 void OnEdit(std::wstring wstrText)
 {

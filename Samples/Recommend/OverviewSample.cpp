@@ -1,4 +1,12 @@
+////////////////////////////////
+//
+//	总览 HiEasyX 的功能
+// 
+//	提示：窗口可拉伸
+//
+
 #include "HiEasyX.h"
+#include <map>
 
 #define WND_W 640
 #define WND_H 480
@@ -72,7 +80,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 		canvas_main.SetBkColor(bk);
 		OutInfo(canvas_main);
-		
+
 		break;
 
 	case WM_SIZE:
@@ -99,7 +107,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 	return 0;
 }
-#include <map>
+
 void OnClick()
 {
 	static bool running = false;

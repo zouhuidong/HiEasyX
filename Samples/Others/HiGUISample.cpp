@@ -1,3 +1,9 @@
+////////////////////////////
+//
+//	ÑÝÊ¾ HiEasyX µÄ×Ô»æ GUI
+//
+//
+
 #include "HiEasyX.h"
 
 #define BTN_WIDTH 70
