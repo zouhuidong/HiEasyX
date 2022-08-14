@@ -46,9 +46,11 @@ EasyX 全面扩展库
     
 ## 编译环境
 
-VisualStudio 2022 | EasyX_20220610 | Windows 10
+* Windows 10
+* VisualStudio 2022
+* EasyX_20220610
 
-*您必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn*
+> *您必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn*
 
 **注意：暂不支持 MingW 和 GCC 编译器，请使用 Visual Studio 编译项目。**
 
@@ -91,6 +93,21 @@ int main()
 
 ```
 
+## 示例程序截屏
 
+以下的示例程序源码可以在 `./Samples/` 中找到
 
+<div align=center>
+<img src="./screenshot/overview.png"><br>
+<b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
+</div><br>
 
+<div align=center>
+<img src="./screenshot/sysgui.png"><br>
+<b>系统控件</b>
+</div><br>
+
+<div align=center>
+<img src="./screenshot/gui.png"><br>
+<b>自绘控件</b>
+</div><br>
