@@ -8,7 +8,13 @@
 
 该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
 
-> 前身：[EasyWin32](github.com/zouhuidong/EasyWin32)
+> [查看教程](./Tutorial.md)
+
+> [更新日志](./Changelog.md)
+
+*前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
+
+## 支持功能
 
 * HiEasyX
   + HiWindow：窗口支持
