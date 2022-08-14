@@ -1,10 +1,14 @@
+# HiEasyX 快速攻略
+
 ## Why HiEasyX
 
-EasyX 在制作软件或游戏时经常会遇到下列问题：
+`EasyX` 从设计之初，它就仅仅是一个图形库，不涉及其它方面的功能。
 
-* 多窗口的支持
+当我们用 `EasyX` 制作软件或游戏时经常会遇到下列问题：
+
+* 创建多个绘图窗口
 * 完整的控件库
-* 动画
+* 播放 gif 动画
 * 声音
 * 画布
 * 透明通道
@@ -12,17 +16,17 @@ EasyX 在制作软件或游戏时经常会遇到下列问题：
 
 等等……
 
-您是否曾经为它们苦恼？HiEasyX 可能是一个更完美的解决方案。
+您是否曾经为它们苦恼？`HiEasyX` 可能是一个更完美的解决方案。
 
-您想用 EasyX 更高效地制作软件或游戏吗？HiEasyX 或许是适合您的选择。
+您想用 `EasyX` 更高效地制作软件或游戏吗？`HiEasyX` 或许是适合您的选择。
 
-HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展库。
+`HiEasyX` 不是独立的一个库，它依赖 `EasyX`，是 `EasyX` 充分的扩展库，它使用 C++，或许不适合 EasyX 的初学者。
 
 ## 开始 HiEasyX
 
 **配置库**
 
-请确保您已经在 Visual Studio 项目中配置好 HiEasyX，如果还没有，请看 [README.md](./README.md#配置此库)
+请确保您已经在 Visual Studio 项目中配置好 `HiEasyX`，如果还没有，请看 [README.md](./README.md#配置此库)
 
 推荐使用新版 Visual Studio 编译项目，详见编译环境 [README.md](./README.md#编译环境)
 
@@ -32,7 +36,63 @@ HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展�
 
 **原有项目使用 HiEasyX**
 
-EasyWin32 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 EasyWin32。 [详细教程](#在原有-easyx-项目上使用-easywin32)
+`HiEasyX` 的高兼容性支持您轻松地将原先的 `EasyX` 项目配置上 `HiEasyX`。 [详细教程](#在原有-easyx-项目上使用-hieasyx)
+
+## HiEasyX 怎样运作
+
+为了理解 `HiEasyX` 和原生 `EasyX` 的不同之处，了解 `HiEasyX` 的运作方式十分必要。
+
+### 命名空间
+
+`HiEasyX` 在代码中使用 `HiEasyX` 命名空间，缩写 `hiex`，兼容旧版命名空间 `EasyWin32`。
+
+### 绘图窗口
+
+`HiEasyX` 完全抛弃了 `EasyX` 原生的创建绘图窗口的方式，自己调用 Win32 API 创建窗口，而这个管理窗口的模块，就是 `HiWindow`。
+
+`HiWindow` 通过自行创建窗口，实现了对多绘图窗口和 Win32 GUI 的支持。
+
+`HiWindow` 使用宏定义覆盖了原生 EasyX 的窗口相关函数，所以您仍可以使用 `initgraph` 创建窗口。
+
+但是，`HiWindow` 有另一种更推荐的创建窗口方式，那就是 `hiex::Window`
+
+您可以这样创建窗口
+
+
+---
+*接下来将层层递进，向您展示 HiEasyX 的使用方法*
+
+### 第 0 步：开始绘制
+
+此例中，以最简洁的方式展现了 HiEasyX 的调用方式
+
+```cpp
+#include "HiEasyX.h"		// 包含 HiEasyX 头文件
+
+int main()
+{
+	initgraph();			// 初始化窗口
+
+	BEGIN_TASK();			// （不同于 EasyX）启动任务，标识开始绘制
+
+	circle(320, 240, 100);	// 画圆
+
+	END_TASK();				// （不同于 EasyX）完成绘制，结束任务
+
+	FLUSH_DRAW();			// （不同于 EasyX）将绘制内容刷新到屏幕
+
+	getmessage(EM_KEY);		// 任意键退出
+
+	closegraph();			// 关闭窗口
+	return 0;
+}
+```
+
+是的，HiEasyX 在绘图方式上最大的区别仅限于，在每段绘图代码前后加上 `BEGIN_TASK()` 和 `END_TASK()` 宏。
+
+但是为了将绘图缓存刷新到屏幕，还需要再调用一个 `FLUSH_DRAW()` 宏。
+
+并不是每条绘图语句前后都要加这些宏，
 
 ---
 *接下来将从数个具有代表性的例子开始，讲解 EasyWin32 的使用方法。*
