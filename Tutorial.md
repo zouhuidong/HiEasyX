@@ -170,7 +170,7 @@ if (hiex::SetWorkingWindow(_YourWindowHandle_))
 
 HiEasyX 强制双缓冲，所以无需再调用 EasyX 的 `BeginBatchDraw()` 系列函数
 
-EasyX 原生的 `FlushBatchDraw()` 和 `EndBatchDraw()` 函数都被宏定义为输出绘图缓冲（hiex::EnforceRedraw()）
+EasyX 原生的 `FlushBatchDraw()` 和 `EndBatchDraw()` 函数都被宏定义为输出绘图缓冲（`hiex::EnforceRedraw()`）
 
 由于绘图代码在窗口任务中执行，故每次窗口任务结束时将默认输出绘图缓冲。
 
