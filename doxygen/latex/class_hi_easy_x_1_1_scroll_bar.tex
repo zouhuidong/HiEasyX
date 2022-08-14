@@ -1,0 +1,711 @@
+\hypertarget{class_hi_easy_x_1_1_scroll_bar}{}\doxysection{Hi\+EasyX\+::Scroll\+Bar Class Reference}
+\label{class_hi_easy_x_1_1_scroll_bar}\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+
+
+{\ttfamily \#include $<$Scroll\+Bar.\+h$>$}
+
+Inheritance diagram for Hi\+EasyX\+::Scroll\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hi_easy_x_1_1_scroll_bar}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info}{Scroll\+Bar\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a73600745b8b71a680365ecb2f32ba181}{Scroll\+Bar}} ()
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a6a3c85c603f9a544bb8f4bd4e2b491c3}{Scroll\+Bar}} (int x, int y, int w, int h, int len, int pos, bool b\+Horizontal=false)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a2b82c461ff89c4a8f29e2b7c18650f0e}{Get\+Button\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a33bf88b76e447a6b1704659d60e43bfc}{Set\+Button\+Height}} (int h)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a54d6c8b18f572eb3fccf9be6ff194963}{Get\+Button\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a0775d779625ae2433147179f2be59d66}{Set\+Button\+Width}} (int w)
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ada3889208916c9a04183c52fdbcc12a2}{is\+Dragging}} () const
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a458d2d14e2d4f06681cee2119ca6f291}{Get\+Slider\+Length}} () const
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a98080f314d8f04564063b6469db3be86}{Get\+Slider\+Content\+Pos}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a8f9e4b8f0c67d86c9edc153398804aa0}{Set\+Slider\+Content\+Pos}} (float pos)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a1822514e21dcaba2ffda20e79ab0dc98}{Move\+Slider}} (float d)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_aecb5546bfbd3096c6e14d9eea177224f}{Get\+Content\+Length}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ae31dac3450a0c927be524f8fa94c7621}{Set\+Content\+Length}} (int len)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a85be49928569c3933f091781f6224740}{Get\+View\+Length}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ad5304ed42295e7105a56e1099c1f37a7}{Set\+View\+Length}} (int len)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_adf2d83d5154cda31fb7eb0f6bf7cbaf6}{Get\+Slider\+Speed}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a8475086ee53e0294b6b972e9445af3ee}{Set\+Slider\+Speed}} (int speed)
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ad36113990a43a19226b75c9d53182d48}{is\+Horizontal}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a18dad71c6c51565b1c92167f8f536b19}{Enable\+Horizontal}} (bool enable)
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a73c62ef7794bb17da5ceb84f037ce97b}{is\+Slider\+Pos\+Changed}} ()
+\item 
+R\+E\+CT \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ae1a9673851b1908ff80872f86e7da75e}{Get\+On\+Wheel\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a9fb3156cf34e99a6edc2cb84db7594af}{Set\+On\+Wheel\+Rect}} (R\+E\+CT rct)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ade529f6a1f17a7ebd55ea89d250c2742}{Update\+Rect}} (R\+E\+CT rct\+Old) override
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_acf7a3985b8391ad91226c5c2c17c3b2a}{Update\+Message}} (Ex\+Message msg) override
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ae8cae5756a14d5996988bcb7dcddfe95}{Draw}} (bool draw\+\_\+child=true) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_aa5a7ec2588e350858ed56bf2831c6971}{Init}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a633e119f07639b733d18e05ffb9f87c2}{On\+Normal\+Button\+Msg}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ad4b86cbe6e2edd43246c76479105643d}{Update\+Slider\+Rect}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a06d851bbbda5f14786549b02bef46b51}{Update\+Pos\+Ratio}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a80865edc4bb6e14204055c97afcea325}{Update\+View\+Ratio}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a7d140d0508b11ddd99c1d51cc757e573}{Update\+Scroll\+Bar\+Info}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ab463ca59afa189d331f1a95825fbf083}{On\+Special\+Button\+Msg}} (void $\ast$p\+This, \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p\+Ctrl, int msgid, Ex\+Message msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a5494c374438756bc787c1ea9d513966b}{m\+\_\+n\+Btn\+Height}} = 20
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a41dfc762e642bac48b61d94dd6ffc94c}{m\+\_\+n\+Btn\+Width}} = 20
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_adae16869df37041b3666ea61242578c8}{m\+\_\+b\+Horizontal}} = false
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_adbda470bf4235592bdfd4313ff30c3df}{m\+\_\+n\+Draw\+Interval}} = 6
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a23f91b05982f82cf336a3e6bf603ef9b}{m\+\_\+btn\+Top}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a3bc1b7044bf0a7978962f4d309ddee5e}{m\+\_\+btn\+Up}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ac6e344b7e690b6673e5e75f777824fcc}{m\+\_\+btn\+Down}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a6b7e32c5fe82714f433b9034693e8ba7}{m\+\_\+btn\+Bottom}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_abe6fe4b1940f6919f6bc2964d0f61b52}{m\+\_\+btn\+Drag}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_mouse_drag}{Mouse\+Drag}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a5c8ac3bef60e28526be5314a01024ada}{m\+\_\+\+Mouse\+Drag}}
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a162d5a0d668bb095fffa10b9bfa45989}{m\+\_\+b\+Dragging}} = false
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_aaf957e1158ac61af16d328a2f221cf75}{m\+\_\+n\+Slider\+Speed}} = 20
+\item 
+clock\+\_\+t \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ade3e15910d03cb0fb72584818262b03e}{m\+\_\+t\+Pressed}} = 0
+\item 
+float \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a48243ad11257b9622550f194ed14b040}{m\+\_\+f\+Pos}} = 0
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a64bc90f52af04e6409bb0d3eb1714edd}{m\+\_\+n\+Len}} = 0
+\item 
+float \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_af97f294df770c43b0234ef4244e22698}{m\+\_\+f\+Pos\+Ratio}} = 0
+\item 
+\mbox{\hyperlink{struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info}{Scroll\+Bar\+Info}} \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a02f5d311e36594ec22dd2a2ccac8260a}{m\+\_\+info}} = \{\}
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a94d36d5dc8877a596b20d8fd99b6acc9}{m\+\_\+n\+View\+Len}} = 10
+\item 
+float \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ae77a1db18649a83f4a01fe4c7f09e078}{m\+\_\+f\+View\+Ratio}} = 1
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a5c734bb7eee56efaa47ea99f5c326b24}{m\+\_\+b\+Slider\+Pos\+Changed}} = false
+\item 
+R\+E\+CT \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_aea8bf401df2fff62d926c79c7cf84568}{m\+\_\+rct\+On\+Wheel}} = \{ 0 \}
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_a5a097f29f356cbafab76d629c62ae8e1}{m\+\_\+b\+Set\+On\+Wheel\+Rct}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 18 of file Scroll\+Bar.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a73600745b8b71a680365ecb2f32ba181}\label{class_hi_easy_x_1_1_scroll_bar_a73600745b8b71a680365ecb2f32ba181}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!ScrollBar@{ScrollBar}}
+\index{ScrollBar@{ScrollBar}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{ScrollBar()}{ScrollBar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Scroll\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 141 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a6a3c85c603f9a544bb8f4bd4e2b491c3}\label{class_hi_easy_x_1_1_scroll_bar_a6a3c85c603f9a544bb8f4bd4e2b491c3}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!ScrollBar@{ScrollBar}}
+\index{ScrollBar@{ScrollBar}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{ScrollBar()}{ScrollBar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Scroll\+Bar (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{len,  }\item[{int}]{pos,  }\item[{bool}]{b\+Horizontal = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file Scroll\+Bar.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ae8cae5756a14d5996988bcb7dcddfe95}\label{class_hi_easy_x_1_1_scroll_bar_ae8cae5756a14d5996988bcb7dcddfe95}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!Draw@{Draw}}
+\index{Draw@{Draw}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Draw (\begin{DoxyParamCaption}\item[{bool}]{draw\+\_\+child = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac3a8b32c92d5a6e4a251fe0db5080796}{Hi\+Easy\+X\+::\+Control\+Base}}.
+
+
+
+Definition at line 272 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a18dad71c6c51565b1c92167f8f536b19}\label{class_hi_easy_x_1_1_scroll_bar_a18dad71c6c51565b1c92167f8f536b19}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!EnableHorizontal@{EnableHorizontal}}
+\index{EnableHorizontal@{EnableHorizontal}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{EnableHorizontal()}{EnableHorizontal()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Enable\+Horizontal (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Definition at line 370 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a2b82c461ff89c4a8f29e2b7c18650f0e}\label{class_hi_easy_x_1_1_scroll_bar_a2b82c461ff89c4a8f29e2b7c18650f0e}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetButtonHeight@{GetButtonHeight}}
+\index{GetButtonHeight@{GetButtonHeight}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetButtonHeight()}{GetButtonHeight()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Button\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 92 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a54d6c8b18f572eb3fccf9be6ff194963}\label{class_hi_easy_x_1_1_scroll_bar_a54d6c8b18f572eb3fccf9be6ff194963}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetButtonWidth@{GetButtonWidth}}
+\index{GetButtonWidth@{GetButtonWidth}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetButtonWidth()}{GetButtonWidth()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Button\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 97 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_aecb5546bfbd3096c6e14d9eea177224f}\label{class_hi_easy_x_1_1_scroll_bar_aecb5546bfbd3096c6e14d9eea177224f}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetContentLength@{GetContentLength}}
+\index{GetContentLength@{GetContentLength}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetContentLength()}{GetContentLength()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Content\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 118 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ae1a9673851b1908ff80872f86e7da75e}\label{class_hi_easy_x_1_1_scroll_bar_ae1a9673851b1908ff80872f86e7da75e}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetOnWheelRect@{GetOnWheelRect}}
+\index{GetOnWheelRect@{GetOnWheelRect}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetOnWheelRect()}{GetOnWheelRect()}}
+{\footnotesize\ttfamily R\+E\+CT Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+On\+Wheel\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 142 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a98080f314d8f04564063b6469db3be86}\label{class_hi_easy_x_1_1_scroll_bar_a98080f314d8f04564063b6469db3be86}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetSliderContentPos@{GetSliderContentPos}}
+\index{GetSliderContentPos@{GetSliderContentPos}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetSliderContentPos()}{GetSliderContentPos()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Slider\+Content\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 109 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a458d2d14e2d4f06681cee2119ca6f291}\label{class_hi_easy_x_1_1_scroll_bar_a458d2d14e2d4f06681cee2119ca6f291}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetSliderLength@{GetSliderLength}}
+\index{GetSliderLength@{GetSliderLength}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetSliderLength()}{GetSliderLength()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Slider\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 106 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_adf2d83d5154cda31fb7eb0f6bf7cbaf6}\label{class_hi_easy_x_1_1_scroll_bar_adf2d83d5154cda31fb7eb0f6bf7cbaf6}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetSliderSpeed@{GetSliderSpeed}}
+\index{GetSliderSpeed@{GetSliderSpeed}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetSliderSpeed()}{GetSliderSpeed()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+Slider\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 128 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a85be49928569c3933f091781f6224740}\label{class_hi_easy_x_1_1_scroll_bar_a85be49928569c3933f091781f6224740}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!GetViewLength@{GetViewLength}}
+\index{GetViewLength@{GetViewLength}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{GetViewLength()}{GetViewLength()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Get\+View\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 123 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_aa5a7ec2588e350858ed56bf2831c6971}\label{class_hi_easy_x_1_1_scroll_bar_aa5a7ec2588e350858ed56bf2831c6971}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!Init@{Init}}
+\index{Init@{Init}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 54 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ada3889208916c9a04183c52fdbcc12a2}\label{class_hi_easy_x_1_1_scroll_bar_ada3889208916c9a04183c52fdbcc12a2}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!isDragging@{isDragging}}
+\index{isDragging@{isDragging}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{isDragging()}{isDragging()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::is\+Dragging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 103 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ad36113990a43a19226b75c9d53182d48}\label{class_hi_easy_x_1_1_scroll_bar_ad36113990a43a19226b75c9d53182d48}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!isHorizontal@{isHorizontal}}
+\index{isHorizontal@{isHorizontal}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{isHorizontal()}{isHorizontal()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::is\+Horizontal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 133 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a73c62ef7794bb17da5ceb84f037ce97b}\label{class_hi_easy_x_1_1_scroll_bar_a73c62ef7794bb17da5ceb84f037ce97b}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!isSliderPosChanged@{isSliderPosChanged}}
+\index{isSliderPosChanged@{isSliderPosChanged}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{isSliderPosChanged()}{isSliderPosChanged()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::is\+Slider\+Pos\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 357 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a1822514e21dcaba2ffda20e79ab0dc98}\label{class_hi_easy_x_1_1_scroll_bar_a1822514e21dcaba2ffda20e79ab0dc98}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!MoveSlider@{MoveSlider}}
+\index{MoveSlider@{MoveSlider}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{MoveSlider()}{MoveSlider()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Move\+Slider (\begin{DoxyParamCaption}\item[{float}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line 173 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a633e119f07639b733d18e05ffb9f87c2}\label{class_hi_easy_x_1_1_scroll_bar_a633e119f07639b733d18e05ffb9f87c2}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!OnNormalButtonMsg@{OnNormalButtonMsg}}
+\index{OnNormalButtonMsg@{OnNormalButtonMsg}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{OnNormalButtonMsg()}{OnNormalButtonMsg()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+On\+Normal\+Button\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 24 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ab463ca59afa189d331f1a95825fbf083}\label{class_hi_easy_x_1_1_scroll_bar_ab463ca59afa189d331f1a95825fbf083}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!OnSpecialButtonMsg@{OnSpecialButtonMsg}}
+\index{OnSpecialButtonMsg@{OnSpecialButtonMsg}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{OnSpecialButtonMsg()}{OnSpecialButtonMsg()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+On\+Special\+Button\+Msg (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+This,  }\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p\+Ctrl,  }\item[{int}]{msgid,  }\item[{Ex\+Message}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a33bf88b76e447a6b1704659d60e43bfc}\label{class_hi_easy_x_1_1_scroll_bar_a33bf88b76e447a6b1704659d60e43bfc}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetButtonHeight@{SetButtonHeight}}
+\index{SetButtonHeight@{SetButtonHeight}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetButtonHeight()}{SetButtonHeight()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+Button\+Height (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a0775d779625ae2433147179f2be59d66}\label{class_hi_easy_x_1_1_scroll_bar_a0775d779625ae2433147179f2be59d66}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetButtonWidth@{SetButtonWidth}}
+\index{SetButtonWidth@{SetButtonWidth}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetButtonWidth()}{SetButtonWidth()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+Button\+Width (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})}
+
+
+
+Definition at line 134 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ae31dac3450a0c927be524f8fa94c7621}\label{class_hi_easy_x_1_1_scroll_bar_ae31dac3450a0c927be524f8fa94c7621}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetContentLength@{SetContentLength}}
+\index{SetContentLength@{SetContentLength}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetContentLength()}{SetContentLength()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+Content\+Length (\begin{DoxyParamCaption}\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 178 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a9fb3156cf34e99a6edc2cb84db7594af}\label{class_hi_easy_x_1_1_scroll_bar_a9fb3156cf34e99a6edc2cb84db7594af}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetOnWheelRect@{SetOnWheelRect}}
+\index{SetOnWheelRect@{SetOnWheelRect}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetOnWheelRect()}{SetOnWheelRect()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+On\+Wheel\+Rect (\begin{DoxyParamCaption}\item[{R\+E\+CT}]{rct }\end{DoxyParamCaption})}
+
+
+
+Definition at line 364 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a8f9e4b8f0c67d86c9edc153398804aa0}\label{class_hi_easy_x_1_1_scroll_bar_a8f9e4b8f0c67d86c9edc153398804aa0}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetSliderContentPos@{SetSliderContentPos}}
+\index{SetSliderContentPos@{SetSliderContentPos}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetSliderContentPos()}{SetSliderContentPos()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+Slider\+Content\+Pos (\begin{DoxyParamCaption}\item[{float}]{pos }\end{DoxyParamCaption})}
+
+
+
+Definition at line 155 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a8475086ee53e0294b6b972e9445af3ee}\label{class_hi_easy_x_1_1_scroll_bar_a8475086ee53e0294b6b972e9445af3ee}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetSliderSpeed@{SetSliderSpeed}}
+\index{SetSliderSpeed@{SetSliderSpeed}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetSliderSpeed()}{SetSliderSpeed()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+Slider\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ad5304ed42295e7105a56e1099c1f37a7}\label{class_hi_easy_x_1_1_scroll_bar_ad5304ed42295e7105a56e1099c1f37a7}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!SetViewLength@{SetViewLength}}
+\index{SetViewLength@{SetViewLength}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{SetViewLength()}{SetViewLength()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Set\+View\+Length (\begin{DoxyParamCaption}\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 186 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_acf7a3985b8391ad91226c5c2c17c3b2a}\label{class_hi_easy_x_1_1_scroll_bar_acf7a3985b8391ad91226c5c2c17c3b2a}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdateMessage@{UpdateMessage}}
+\index{UpdateMessage@{UpdateMessage}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdateMessage()}{UpdateMessage()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+Message (\begin{DoxyParamCaption}\item[{Ex\+Message}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac50c2510107edcd0003ec609d896fb7a}{Hi\+Easy\+X\+::\+Control\+Base}}.
+
+
+
+Definition at line 222 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a06d851bbbda5f14786549b02bef46b51}\label{class_hi_easy_x_1_1_scroll_bar_a06d851bbbda5f14786549b02bef46b51}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdatePosRatio@{UpdatePosRatio}}
+\index{UpdatePosRatio@{UpdatePosRatio}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdatePosRatio()}{UpdatePosRatio()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+Pos\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 82 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ade529f6a1f17a7ebd55ea89d250c2742}\label{class_hi_easy_x_1_1_scroll_bar_ade529f6a1f17a7ebd55ea89d250c2742}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdateRect@{UpdateRect}}
+\index{UpdateRect@{UpdateRect}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdateRect()}{UpdateRect()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+Rect (\begin{DoxyParamCaption}\item[{R\+E\+CT}]{rct\+Old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a82f6680093e218339da20daa750c6839}{Hi\+Easy\+X\+::\+Control\+Base}}.
+
+
+
+Definition at line 198 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a7d140d0508b11ddd99c1d51cc757e573}\label{class_hi_easy_x_1_1_scroll_bar_a7d140d0508b11ddd99c1d51cc757e573}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdateScrollBarInfo@{UpdateScrollBarInfo}}
+\index{UpdateScrollBarInfo@{UpdateScrollBarInfo}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdateScrollBarInfo()}{UpdateScrollBarInfo()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+Scroll\+Bar\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 107 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ad4b86cbe6e2edd43246c76479105643d}\label{class_hi_easy_x_1_1_scroll_bar_ad4b86cbe6e2edd43246c76479105643d}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdateSliderRect@{UpdateSliderRect}}
+\index{UpdateSliderRect@{UpdateSliderRect}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdateSliderRect()}{UpdateSliderRect()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+Slider\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 68 of file Scroll\+Bar.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a80865edc4bb6e14204055c97afcea325}\label{class_hi_easy_x_1_1_scroll_bar_a80865edc4bb6e14204055c97afcea325}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!UpdateViewRatio@{UpdateViewRatio}}
+\index{UpdateViewRatio@{UpdateViewRatio}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{UpdateViewRatio()}{UpdateViewRatio()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Scroll\+Bar\+::\+Update\+View\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 94 of file Scroll\+Bar.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a162d5a0d668bb095fffa10b9bfa45989}\label{class_hi_easy_x_1_1_scroll_bar_a162d5a0d668bb095fffa10b9bfa45989}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_bDragging@{m\_bDragging}}
+\index{m\_bDragging@{m\_bDragging}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_bDragging}{m\_bDragging}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+b\+Dragging = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_adae16869df37041b3666ea61242578c8}\label{class_hi_easy_x_1_1_scroll_bar_adae16869df37041b3666ea61242578c8}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_bHorizontal@{m\_bHorizontal}}
+\index{m\_bHorizontal@{m\_bHorizontal}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_bHorizontal}{m\_bHorizontal}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+b\+Horizontal = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a5a097f29f356cbafab76d629c62ae8e1}\label{class_hi_easy_x_1_1_scroll_bar_a5a097f29f356cbafab76d629c62ae8e1}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_bSetOnWheelRct@{m\_bSetOnWheelRct}}
+\index{m\_bSetOnWheelRct@{m\_bSetOnWheelRct}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_bSetOnWheelRct}{m\_bSetOnWheelRct}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+b\+Set\+On\+Wheel\+Rct = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 63 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a5c734bb7eee56efaa47ea99f5c326b24}\label{class_hi_easy_x_1_1_scroll_bar_a5c734bb7eee56efaa47ea99f5c326b24}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_bSliderPosChanged@{m\_bSliderPosChanged}}
+\index{m\_bSliderPosChanged@{m\_bSliderPosChanged}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_bSliderPosChanged}{m\_bSliderPosChanged}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+b\+Slider\+Pos\+Changed = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a6b7e32c5fe82714f433b9034693e8ba7}\label{class_hi_easy_x_1_1_scroll_bar_a6b7e32c5fe82714f433b9034693e8ba7}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_btnBottom@{m\_btnBottom}}
+\index{m\_btnBottom@{m\_btnBottom}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_btnBottom}{m\_btnBottom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+btn\+Bottom\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ac6e344b7e690b6673e5e75f777824fcc}\label{class_hi_easy_x_1_1_scroll_bar_ac6e344b7e690b6673e5e75f777824fcc}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_btnDown@{m\_btnDown}}
+\index{m\_btnDown@{m\_btnDown}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_btnDown}{m\_btnDown}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+btn\+Down\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_abe6fe4b1940f6919f6bc2964d0f61b52}\label{class_hi_easy_x_1_1_scroll_bar_abe6fe4b1940f6919f6bc2964d0f61b52}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_btnDrag@{m\_btnDrag}}
+\index{m\_btnDrag@{m\_btnDrag}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_btnDrag}{m\_btnDrag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+btn\+Drag\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a23f91b05982f82cf336a3e6bf603ef9b}\label{class_hi_easy_x_1_1_scroll_bar_a23f91b05982f82cf336a3e6bf603ef9b}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_btnTop@{m\_btnTop}}
+\index{m\_btnTop@{m\_btnTop}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_btnTop}{m\_btnTop}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+btn\+Top\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a3bc1b7044bf0a7978962f4d309ddee5e}\label{class_hi_easy_x_1_1_scroll_bar_a3bc1b7044bf0a7978962f4d309ddee5e}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_btnUp@{m\_btnUp}}
+\index{m\_btnUp@{m\_btnUp}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_btnUp}{m\_btnUp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_button}{Button}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+btn\+Up\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 42 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a48243ad11257b9622550f194ed14b040}\label{class_hi_easy_x_1_1_scroll_bar_a48243ad11257b9622550f194ed14b040}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_fPos@{m\_fPos}}
+\index{m\_fPos@{m\_fPos}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_fPos}{m\_fPos}}
+{\footnotesize\ttfamily float Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+f\+Pos = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_af97f294df770c43b0234ef4244e22698}\label{class_hi_easy_x_1_1_scroll_bar_af97f294df770c43b0234ef4244e22698}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_fPosRatio@{m\_fPosRatio}}
+\index{m\_fPosRatio@{m\_fPosRatio}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_fPosRatio}{m\_fPosRatio}}
+{\footnotesize\ttfamily float Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+f\+Pos\+Ratio = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ae77a1db18649a83f4a01fe4c7f09e078}\label{class_hi_easy_x_1_1_scroll_bar_ae77a1db18649a83f4a01fe4c7f09e078}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_fViewRatio@{m\_fViewRatio}}
+\index{m\_fViewRatio@{m\_fViewRatio}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_fViewRatio}{m\_fViewRatio}}
+{\footnotesize\ttfamily float Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+f\+View\+Ratio = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a02f5d311e36594ec22dd2a2ccac8260a}\label{class_hi_easy_x_1_1_scroll_bar_a02f5d311e36594ec22dd2a2ccac8260a}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_info@{m\_info}}
+\index{m\_info@{m\_info}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_info}{m\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info}{Scroll\+Bar\+Info}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+info = \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a5c8ac3bef60e28526be5314a01024ada}\label{class_hi_easy_x_1_1_scroll_bar_a5c8ac3bef60e28526be5314a01024ada}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_MouseDrag@{m\_MouseDrag}}
+\index{m\_MouseDrag@{m\_MouseDrag}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_MouseDrag}{m\_MouseDrag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_mouse_drag}{Mouse\+Drag}} Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+\+Mouse\+Drag\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a5494c374438756bc787c1ea9d513966b}\label{class_hi_easy_x_1_1_scroll_bar_a5494c374438756bc787c1ea9d513966b}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nBtnHeight@{m\_nBtnHeight}}
+\index{m\_nBtnHeight@{m\_nBtnHeight}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nBtnHeight}{m\_nBtnHeight}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+Btn\+Height = 20\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 33 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a41dfc762e642bac48b61d94dd6ffc94c}\label{class_hi_easy_x_1_1_scroll_bar_a41dfc762e642bac48b61d94dd6ffc94c}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nBtnWidth@{m\_nBtnWidth}}
+\index{m\_nBtnWidth@{m\_nBtnWidth}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nBtnWidth}{m\_nBtnWidth}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+Btn\+Width = 20\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 34 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_adbda470bf4235592bdfd4313ff30c3df}\label{class_hi_easy_x_1_1_scroll_bar_adbda470bf4235592bdfd4313ff30c3df}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nDrawInterval@{m\_nDrawInterval}}
+\index{m\_nDrawInterval@{m\_nDrawInterval}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nDrawInterval}{m\_nDrawInterval}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+Draw\+Interval = 6\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a64bc90f52af04e6409bb0d3eb1714edd}\label{class_hi_easy_x_1_1_scroll_bar_a64bc90f52af04e6409bb0d3eb1714edd}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nLen@{m\_nLen}}
+\index{m\_nLen@{m\_nLen}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nLen}{m\_nLen}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+Len = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_aaf957e1158ac61af16d328a2f221cf75}\label{class_hi_easy_x_1_1_scroll_bar_aaf957e1158ac61af16d328a2f221cf75}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nSliderSpeed@{m\_nSliderSpeed}}
+\index{m\_nSliderSpeed@{m\_nSliderSpeed}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nSliderSpeed}{m\_nSliderSpeed}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+Slider\+Speed = 20\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_a94d36d5dc8877a596b20d8fd99b6acc9}\label{class_hi_easy_x_1_1_scroll_bar_a94d36d5dc8877a596b20d8fd99b6acc9}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_nViewLen@{m\_nViewLen}}
+\index{m\_nViewLen@{m\_nViewLen}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_nViewLen}{m\_nViewLen}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+n\+View\+Len = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_aea8bf401df2fff62d926c79c7cf84568}\label{class_hi_easy_x_1_1_scroll_bar_aea8bf401df2fff62d926c79c7cf84568}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_rctOnWheel@{m\_rctOnWheel}}
+\index{m\_rctOnWheel@{m\_rctOnWheel}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_rctOnWheel}{m\_rctOnWheel}}
+{\footnotesize\ttfamily R\+E\+CT Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+rct\+On\+Wheel = \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 62 of file Scroll\+Bar.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_scroll_bar_ade3e15910d03cb0fb72584818262b03e}\label{class_hi_easy_x_1_1_scroll_bar_ade3e15910d03cb0fb72584818262b03e}} 
+\index{HiEasyX::ScrollBar@{HiEasyX::ScrollBar}!m\_tPressed@{m\_tPressed}}
+\index{m\_tPressed@{m\_tPressed}!HiEasyX::ScrollBar@{HiEasyX::ScrollBar}}
+\doxysubsubsection{\texorpdfstring{m\_tPressed}{m\_tPressed}}
+{\footnotesize\ttfamily clock\+\_\+t Hi\+Easy\+X\+::\+Scroll\+Bar\+::m\+\_\+t\+Pressed = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Scroll\+Bar.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_scroll_bar_8h}{Scroll\+Bar.\+h}}\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_scroll_bar_8cpp}{Scroll\+Bar.\+cpp}}\end{DoxyCompactItemize}

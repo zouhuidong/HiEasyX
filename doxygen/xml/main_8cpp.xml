@@ -1,0 +1,1564 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes refid="_hi_easy_x_8h" local="yes">HiEasyX.h</includes>
+    <includes local="no">map</includes>
+    <incdepgraph>
+      <node id="34">
+        <label>list</label>
+      </node>
+      <node id="23">
+        <label>SysControlBase.h</label>
+        <link refid="_sys_control_base_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>HiEasyX/HiSysGUI/HiSysGUI.h</label>
+        <link refid="_hi_sys_g_u_i_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>ScrollBar.h</label>
+        <link refid="_scroll_bar_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>HiEasyX/HiMusicMCI.h</label>
+        <link refid="_hi_music_m_c_i_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>graphics.h</label>
+      </node>
+      <node id="38">
+        <label>Static.h</label>
+        <link refid="_static_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>HiEasyX/HiWindow.h</label>
+        <link refid="_hi_window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>windowsx.h</label>
+      </node>
+      <node id="35">
+        <label>HiEasyX/HiGUI/HiGUI.h</label>
+        <link refid="_hi_g_u_i_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Windows.h</label>
+      </node>
+      <node id="22">
+        <label>SysGroup.h</label>
+        <link refid="_sys_group_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>SysCheckBox.h</label>
+        <link refid="_sys_check_box_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ProgressCtrl.h</label>
+        <link refid="_progress_ctrl_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>string</label>
+      </node>
+      <node id="42">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>WinUser.h</label>
+      </node>
+      <node id="9">
+        <label>HiEasyX/HiFPS.h</label>
+        <link refid="_hi_f_p_s_8h"/>
+      </node>
+      <node id="24">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>HiEasyX/HiGif.h</label>
+        <link refid="_hi_gif_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HiEasyX/HiDrawingProperty.h</label>
+        <link refid="_hi_drawing_property_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>SysEdit.h</label>
+        <link refid="_sys_edit_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>gdiplus.h</label>
+      </node>
+      <node id="30">
+        <label>SysRadioButton.h</label>
+        <link refid="_sys_radio_button_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>Page.h</label>
+        <link refid="_page_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>HiEasyX/HiDef.h</label>
+        <link refid="_hi_def_8h"/>
+      </node>
+      <node id="39">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>vector</label>
+      </node>
+      <node id="32">
+        <label>SysComboBox.h</label>
+        <link refid="_sys_combo_box_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>SysButton.h</label>
+        <link refid="_sys_button_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>HiEasyX/HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>HiEasyX/HiCanvas.h</label>
+        <link refid="_hi_canvas_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>SysStatic.h</label>
+        <link refid="_sys_static_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>time.h</label>
+      </node>
+      <node id="4">
+        <label>HiEasyX/HiMacro.h</label>
+        <link refid="_hi_macro_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>HiEasyX/HiMouseDrag.h</label>
+        <link refid="_hi_mouse_drag_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>thread</label>
+      </node>
+      <node id="16">
+        <label>stdio.h</label>
+      </node>
+      <node id="26">
+        <label>SysGroupBox.h</label>
+        <link refid="_sys_group_box_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8cpp_1a0487dffe9c1abed4df11a9bd7b42a78c" prot="public" static="no">
+        <name>WND_W</name>
+        <initializer>640</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="11" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a70c36f7a7b6efaedf10c0e9f9a399a3b" prot="public" static="no">
+        <name>WND_H</name>
+        <initializer>480</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="12" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1ae7d4997d874cadf4c47f238cf680d5a7" prot="public" static="no">
+        <name>EDIT_W</name>
+        <initializer>480</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="14" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a9b03d1e3b45e6525c0e2f099f1d68d24" prot="public" static="no">
+        <name>EDIT_H</name>
+        <initializer>400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="15" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a892a3c47110d70575b32287729b447c7" prot="public" static="no">
+        <name>BTN_X</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="17" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1ae731fc74a8b23ae1545fbcb73cb105e9" prot="public" static="no">
+        <name>BTN_Y</name>
+        <initializer>430</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="18" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1ac5e8212a5feeb48a21c2bfcb519ad587" prot="public" static="no">
+        <name>CHECKBOX_X</name>
+        <initializer>140</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="20" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a7b8b83587c39cc3642ab544c74b60819" prot="public" static="no">
+        <name>CHECKBOX_Y</name>
+        <initializer>435</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="21" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" prot="public" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref></type>
+        <definition>hiex::Canvas canvas_main</definition>
+        <argsstring></argsstring>
+        <name>canvas_main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="23" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" prot="public" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_sys_edit" kindref="compound">hiex::SysEdit</ref></type>
+        <definition>hiex::SysEdit edit</definition>
+        <argsstring></argsstring>
+        <name>edit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="24" column="15" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" prot="public" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_sys_button" kindref="compound">hiex::SysButton</ref></type>
+        <definition>hiex::SysButton btn</definition>
+        <argsstring></argsstring>
+        <name>btn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="25" column="17" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" prot="public" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_sys_check_box" kindref="compound">hiex::SysCheckBox</ref></type>
+        <definition>hiex::SysCheckBox checkbox</definition>
+        <argsstring></argsstring>
+        <name>checkbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="26" column="19" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1a5bb6fd8709a9a5368c3c4ad78e7cbe52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutInfo</definition>
+        <argsstring>(hiex::Canvas &amp;canvas)</argsstring>
+        <name>OutInfo</name>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref> &amp;</type>
+          <declname>canvas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="28" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="28" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VerticalText</definition>
+        <argsstring>(LPCTSTR lpsz, bool text_c, COLORREF cText, bool bk_c, COLORREF cBk, bool set=false, int x=0, int y=0)</argsstring>
+        <name>VerticalText</name>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpsz</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>text_c</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>cText</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bk_c</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>cBk</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>set</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="44" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="44" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a2641211f9fb5d626cfc3bbfd916829b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LRESULT CALLBACK</type>
+        <definition>LRESULT CALLBACK WndProc</definition>
+        <argsstring>(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</argsstring>
+        <name>WndProc</name>
+        <param>
+          <type>HWND</type>
+          <declname>hWnd</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>WPARAM</type>
+          <declname>wParam</declname>
+        </param>
+        <param>
+          <type>LPARAM</type>
+          <declname>lParam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="60" column="18" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="60" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a19b23a8f0be9e579bcaba36294df054f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OnClick</definition>
+        <argsstring>()</argsstring>
+        <name>OnClick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="111" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="111" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1af9aba2311683f2bb2db8ce81ecdedbbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OnCheck</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>OnCheck</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="217" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" line="222" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" bodystart="222" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>×ÜÀÀ<sp/>HiEasyX<sp/>µÄ¹¦ÄÜ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ÌáÊ¾£º´°¿Ú¿ÉÀ­Éì</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_easy_x_8h" kindref="compound">HiEasyX.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="main_8cpp_1a0487dffe9c1abed4df11a9bd7b42a78c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WND_W<sp/>640</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="main_8cpp_1a70c36f7a7b6efaedf10c0e9f9a399a3b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WND_H<sp/>480</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="main_8cpp_1ae7d4997d874cadf4c47f238cf680d5a7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EDIT_W<sp/>480</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="main_8cpp_1a9b03d1e3b45e6525c0e2f099f1d68d24" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EDIT_H<sp/>400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="main_8cpp_1a892a3c47110d70575b32287729b447c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BTN_X<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="main_8cpp_1ae731fc74a8b23ae1545fbcb73cb105e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BTN_Y<sp/>430</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="main_8cpp_1ac5e8212a5feeb48a21c2bfcb519ad587" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHECKBOX_X<sp/>140</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="main_8cpp_1a7b8b83587c39cc3642ab544c74b60819" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHECKBOX_Y<sp/>435</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" refkind="member"><highlight class="normal"><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>;</highlight></codeline>
+<codeline lineno="24" refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" refkind="member"><highlight class="normal"><ref refid="class_hi_easy_x_1_1_sys_edit" kindref="compound">hiex::SysEdit</ref><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>;</highlight></codeline>
+<codeline lineno="25" refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" refkind="member"><highlight class="normal"><ref refid="class_hi_easy_x_1_1_sys_button" kindref="compound">hiex::SysButton</ref><sp/><ref refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" kindref="member">btn</ref>;</highlight></codeline>
+<codeline lineno="26" refid="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" refkind="member"><highlight class="normal"><ref refid="class_hi_easy_x_1_1_sys_check_box" kindref="compound">hiex::SysCheckBox</ref><sp/><ref refid="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" kindref="member">checkbox</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="main_8cpp_1a5bb6fd8709a9a5368c3c4ad78e7cbe52" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a5bb6fd8709a9a5368c3c4ad78e7cbe52" kindref="member">OutInfo</ref>(<ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref>&amp;<sp/>canvas)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>LPCTSTR<sp/>lpszText<sp/>=<sp/>L</highlight><highlight class="stringliteral">&quot;Created<sp/>by<sp/>HiEasyX<sp/>&quot;</highlight><highlight class="normal"><sp/><ref refid="_hi_def_8h_1a09928f3fa684f0518455a6ee6e71bb24" kindref="member">_HIEASYX_VER_STR_</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1a0009ccd8339b30a5573dd70a5d22ad21" kindref="member">SetTextEscapement</ref>(0);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1ab3e82178f177d75d0060dc6fa3ba2547" kindref="member">SetTextOrientation</ref>(0);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1ac03dff71618f577b27583878970ef4ed" kindref="member">SetTextStyle</ref>(16,<sp/>0,<sp/>L</highlight><highlight class="stringliteral">&quot;Arial&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1af50189b3a5bc9a2db1ad20dfc8441339" kindref="member">OutTextXY</ref>(</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1a0c778d3005365fd6314d9bad67ce1b6d" kindref="member">GetWidth</ref>()<sp/>-<sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1a08a97e2fc9f2dae9c9582b65fc9ecbdf" kindref="member">TextWidth</ref>(lpszText),</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1a643398621198d564fd5c6c6799475a9a" kindref="member">GetHeight</ref>()<sp/>-<sp/>canvas.<ref refid="class_hi_easy_x_1_1_canvas_1a76b30f977307730f1615bf2afc84b850" kindref="member">TextHeight</ref>(lpszText),</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lpszText,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Á¬ÐøÊä³ö´¹Ö±ÎÄ×Ö</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>µ÷ÓÃÇ°ÐèÒª×ÔÐÐÉèÖÃÎÄ×Ö´¹Ö±ÊôÐÔ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(LPCTSTR<sp/>lpsz,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>text_c,<sp/>COLORREF<sp/>cText,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/>bk_c,<sp/>COLORREF<sp/>cBk,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>0)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sx<sp/>=<sp/>0,<sp/>sy<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(set)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sx<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sy<sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(text_c)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>settextcolor(cText);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bk_c)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setbkcolor(cBk);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>outtextxy(sx,<sp/>sy,<sp/>lpsz);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>sy<sp/>+=<sp/>textwidth(lpsz);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="main_8cpp_1a2641211f9fb5d626cfc3bbfd916829b0" refkind="member"><highlight class="normal">LRESULT<sp/>CALLBACK<sp/><ref refid="main_8cpp_1a2641211f9fb5d626cfc3bbfd916829b0" kindref="member">WndProc</ref>(HWND<sp/>hWnd,<sp/>UINT<sp/>msg,<sp/>WPARAM<sp/>wParam,<sp/>LPARAM<sp/>lParam)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>COLORREF<sp/>bk<sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b" kindref="member">CLASSICGRAY</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(msg)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_PAINT:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1a0009ccd8339b30a5573dd70a5d22ad21" kindref="member">SetTextEscapement</ref>(-900);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1ab3e82178f177d75d0060dc6fa3ba2547" kindref="member">SetTextOrientation</ref>(-900);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1ac03dff71618f577b27583878970ef4ed" kindref="member">SetTextStyle</ref>(140,<sp/>0,<sp/>L</highlight><highlight class="stringliteral">&quot;Î¢ÈíÑÅºÚ );
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas_main.BeginBatchDrawing();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;Hi&quot;,<sp/>true,<sp/>LIGHTRED,<sp/>true,<sp/>SKYBLUE,<sp/>true,<sp/>getwidth()<sp/>+<sp/>10,<sp/>20);
+<sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;<sp/>&quot;,<sp/>false,<sp/>0,<sp/>true,<sp/>bk);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;E&quot;,<sp/>true,<sp/>WHITE,<sp/>true,<sp/>RED);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;a&quot;,<sp/>false,<sp/>0,<sp/>true,<sp/>ORANGE);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;s&quot;,<sp/>false,<sp/>0,<sp/>true,<sp/>GREEN);
+<sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;y&quot;,<sp/>false,<sp/>0,<sp/>true,<sp/>CYAN);
+<sp/><sp/><sp/><sp/><sp/><sp/>VerticalText(L&quot;X&quot;,<sp/>false,<sp/>0,<sp/>true,<sp/>BLUE);
+<sp/><sp/><sp/><sp/><sp/><sp/>canvas_main.EndBatchDrawing();
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas_main.SetBkColor(bk);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutInfo(canvas_main);
+
+<sp/><sp/><sp/><sp/><sp/>break;
+
+<sp/><sp/><sp/><sp/>case<sp/>WM_SIZE:
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>canvas_main.Clear(true,<sp/>bk);
+
+<sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>dx<sp/>=<sp/>canvas_main.GetWidth()<sp/>-<sp/>WND_W;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>dy<sp/>=<sp/>canvas_main.GetHeight()<sp/>-<sp/>WND_H;
+
+<sp/><sp/><sp/><sp/><sp/>edit.Resize(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EDIT_W<sp/>+<sp/>dx,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EDIT_H<sp/>+<sp/>dy
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>btn.Move(BTN_X,<sp/>BTN_Y<sp/>+<sp/>dy);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>checkbox.Move(CHECKBOX_X,<sp/>CHECKBOX_Y<sp/>+<sp/>dy);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+<sp/><sp/>default:
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>HIWINDOW_DEFAULT_PROC;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+
+<sp/>return<sp/>0;
+}
+
+void<sp/>OnClick()
+{
+<sp/><sp/>static<sp/>bool<sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/>static<sp/>std::map&lt;std::wstring,<sp/>COLORREF&gt;<sp/>color_map<sp/>=<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;black&quot;,<sp/>BLACK},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;white&quot;,<sp/>WHITE},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;gray&quot;,<sp/>GRAY},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;red&quot;,<sp/>RED},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;purple&quot;,<sp/>PURPLE},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;orange&quot;,<sp/>ORANGE},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;yellow&quot;,<sp/>YELLOW},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;green&quot;,<sp/>GREEN},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;blue&quot;,<sp/>BLUE},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L&quot;cyan&quot;,<sp/>CYAN}
+<sp/><sp/><sp/><sp/>};
+
+<sp/><sp/><sp/><sp/>static<sp/>std::wstring<sp/>typeface[]<sp/>=<sp/>{
+<sp/><sp/><sp/><sp/><sp/>L&quot;system&quot;,<sp/>L&quot;Arial&quot;,<sp/>L&quot;Consolas&quot;,<sp/>L&quot;Î¢ÈíÑÅºÚ",<sp/>L&quot;ËÎÌå&quot;,<sp/>L&quot;·ÂËÎ",<sp/>L&quot;ºÚÌå"
+<sp/>};
+
+<sp/><sp/><sp/><sp/>if<sp/>(!running)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>true;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::thread([]()<sp/>{
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd_option(300,<sp/>300);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowText(wnd_option.GetHandle(),<sp/>L&quot;Option&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Canvas<sp/>canvas;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wnd_option.BindCanvas(&amp;canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutInfo(canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTypeface(L&quot;system&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisableResizing(wnd_option.GetHandle(),<sp/>true);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_ctext;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_cbk;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_typeface;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysRadioButton<sp/>radio[2];
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTextColor(GRAY);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>20,<sp/>L&quot;Select<sp/>text<sp/>color&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.Create(wnd_option.GetHandle(),<sp/>20,<sp/>40,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>80,<sp/>L&quot;Select<sp/>background<sp/>color&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.Create(wnd_option.GetHandle(),<sp/>20,<sp/>100,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>140,<sp/>L&quot;Select<sp/>typeface&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.PreSetEtyle(false,<sp/>true,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.Create(wnd_option.GetHandle(),<sp/>20,<sp/>160,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>color<sp/>:<sp/>color_map)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>name<sp/>:<sp/>typeface)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.AddString(name);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.SetSel(0);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.SelectString(L&quot;white&quot;);<sp/><sp/><sp/><sp/>//<sp/>Í¨¹ý×Ö·û´®Ñ¡ÔñÏî
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.SelectString(L&quot;Î¢ÈíÑÅºÚ");
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrSelText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterEditMessage([](std::wstring<sp/>wstrText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Create(wnd_option.GetHandle(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L&quot;Left<sp/>align&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].Create(wnd_option.GetHandle(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L&quot;Right<sp/>align&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Check(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(false);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::init_end(wnd_option.GetHandle());
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();
+<sp/><sp/><sp/>}
+
+}
+
+void<sp/>OnCheck(bool<sp/>checked)
+{
+<sp/>edit.ReadOnly(checked);
+}
+
+int<sp/>main()
+{
+<sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd(WND_W,<sp/>WND_H);
+<sp/><sp/><sp/><sp/>wnd.BindCanvas(&amp;canvas_main);
+<sp/><sp/>wnd.SetProcFunc(WndProc);
+<sp/><sp/>hiex::AutoExit();
+
+<sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.GetHandle();
+
+<sp/><sp/>edit.PreSetStyle(true,<sp/>false,<sp/>true);
+<sp/><sp/><sp/>edit.Create(hwnd,<sp/>20,<sp/>20,<sp/>EDIT_W,<sp/>EDIT_H,
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;etc.\r\n&quot;
+<sp/><sp/><sp/><sp/>);
+<sp/>edit.SetFont(26,<sp/>0,<sp/>L&quot;Î¢ÈíÑÅºÚ");
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1adfe1f3ed0a4f0d63c0d89227944712e8" kindref="member">BeginBatchDrawing</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;Hi&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>LIGHTRED,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa6b5583180d340207fa6ec3bc994affe2" kindref="member">SKYBLUE</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>getwidth()<sp/>+<sp/>10,<sp/>20);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>bk);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;E&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>WHITE,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>RED);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aace9ee4c1a6b777940c7f3a766a9a88d4" kindref="member">ORANGE</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>GREEN);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>CYAN);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a1dcddd4d8c87253ddee3c3158c3e99c0" kindref="member">VerticalText</ref>(L</highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>BLUE);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1ae9e1d48f0e90ea4c0533fc8b746d5b8f" kindref="member">EndBatchDrawing</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1ab72a7cafb2f957ecf3511de507217137" kindref="member">SetBkColor</ref>(bk);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a5bb6fd8709a9a5368c3c4ad78e7cbe52" kindref="member">OutInfo</ref>(<ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_SIZE:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1abf9d86ff5289ffa6884c2ed3f51f9f96" kindref="member">Clear</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>bk);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dx<sp/>=<sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1a0c778d3005365fd6314d9bad67ce1b6d" kindref="member">GetWidth</ref>()<sp/>-<sp/><ref refid="main_8cpp_1a0487dffe9c1abed4df11a9bd7b42a78c" kindref="member">WND_W</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dy<sp/>=<sp/><ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1a643398621198d564fd5c6c6799475a9a" kindref="member">GetHeight</ref>()<sp/>-<sp/><ref refid="main_8cpp_1a70c36f7a7b6efaedf10c0e9f9a399a3b" kindref="member">WND_H</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" kindref="member">Resize</ref>(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae7d4997d874cadf4c47f238cf680d5a7" kindref="member">EDIT_W</ref><sp/>+<sp/>dx,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9b03d1e3b45e6525c0e2f099f1d68d24" kindref="member">EDIT_H</ref><sp/>+<sp/>dy</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" kindref="member">btn</ref>.<ref refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" kindref="member">Move</ref>(<ref refid="main_8cpp_1a892a3c47110d70575b32287729b447c7" kindref="member">BTN_X</ref>,<sp/><ref refid="main_8cpp_1ae731fc74a8b23ae1545fbcb73cb105e9" kindref="member">BTN_Y</ref><sp/>+<sp/>dy);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" kindref="member">checkbox</ref>.<ref refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" kindref="member">Move</ref>(<ref refid="main_8cpp_1ac5e8212a5feeb48a21c2bfcb519ad587" kindref="member">CHECKBOX_X</ref>,<sp/><ref refid="main_8cpp_1a7b8b83587c39cc3642ab544c74b60819" kindref="member">CHECKBOX_Y</ref><sp/>+<sp/>dy);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_hi_window_8h_1a9afcf922352ddb6d093557b948c0af70" kindref="member">HIWINDOW_DEFAULT_PROC</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="main_8cpp_1a19b23a8f0be9e579bcaba36294df054f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a19b23a8f0be9e579bcaba36294df054f" kindref="member">OnClick</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>running<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::wstring,<sp/>COLORREF&gt;<sp/>color_map<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>BLACK},</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;white&quot;</highlight><highlight class="normal">,<sp/>WHITE},</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;gray&quot;</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>},</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>RED},</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;purple&quot;</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa2772ad7cd64f03c2aed60f91c69fa69d" kindref="member">PURPLE</ref>},</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;orange&quot;</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aace9ee4c1a6b777940c7f3a766a9a88d4" kindref="member">ORANGE</ref>},</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;yellow&quot;</highlight><highlight class="normal">,<sp/>YELLOW},</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;green&quot;</highlight><highlight class="normal">,<sp/>GREEN},</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;blue&quot;</highlight><highlight class="normal">,<sp/>BLUE},</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{L</highlight><highlight class="stringliteral">&quot;cyan&quot;</highlight><highlight class="normal">,<sp/>CYAN}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::wstring<sp/>typeface[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;system&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;Arial&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;Consolas&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;Î¢ÈíÑÅºÚ ,<sp/>L&quot;ËÎÌå&quot;,<sp/>L&quot;·ÂËÎ",<sp/>L&quot;ºÚÌå"
+<sp/>};
+
+<sp/><sp/><sp/><sp/>if<sp/>(!running)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>true;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::thread([]()<sp/>{
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd_option(300,<sp/>300);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowText(wnd_option.GetHandle(),<sp/>L&quot;Option&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Canvas<sp/>canvas;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wnd_option.BindCanvas(&amp;canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutInfo(canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTypeface(L&quot;system&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisableResizing(wnd_option.GetHandle(),<sp/>true);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_ctext;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_cbk;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_typeface;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysRadioButton<sp/>radio[2];
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTextColor(GRAY);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>20,<sp/>L&quot;Select<sp/>text<sp/>color&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.Create(wnd_option.GetHandle(),<sp/>20,<sp/>40,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>80,<sp/>L&quot;Select<sp/>background<sp/>color&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.Create(wnd_option.GetHandle(),<sp/>20,<sp/>100,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>140,<sp/>L&quot;Select<sp/>typeface&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.PreSetEtyle(false,<sp/>true,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.Create(wnd_option.GetHandle(),<sp/>20,<sp/>160,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>color<sp/>:<sp/>color_map)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>name<sp/>:<sp/>typeface)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.AddString(name);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.SetSel(0);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.SelectString(L&quot;white&quot;);<sp/><sp/><sp/><sp/>//<sp/>Í¨¹ý×Ö·û´®Ñ¡ÔñÏî
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.SelectString(L&quot;Î¢ÈíÑÅºÚ");
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrSelText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterEditMessage([](std::wstring<sp/>wstrText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Create(wnd_option.GetHandle(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L&quot;Left<sp/>align&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].Create(wnd_option.GetHandle(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L&quot;Right<sp/>align&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Check(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(false);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::init_end(wnd_option.GetHandle());
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();
+<sp/><sp/><sp/>}
+
+}
+
+void<sp/>OnCheck(bool<sp/>checked)
+{
+<sp/>edit.ReadOnly(checked);
+}
+
+int<sp/>main()
+{
+<sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd(WND_W,<sp/>WND_H);
+<sp/><sp/><sp/><sp/>wnd.BindCanvas(&amp;canvas_main);
+<sp/><sp/>wnd.SetProcFunc(WndProc);
+<sp/><sp/>hiex::AutoExit();
+
+<sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.GetHandle();
+
+<sp/><sp/>edit.PreSetStyle(true,<sp/>false,<sp/>true);
+<sp/><sp/><sp/>edit.Create(hwnd,<sp/>20,<sp/>20,<sp/>EDIT_W,<sp/>EDIT_H,
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;etc.\r\n&quot;
+<sp/><sp/><sp/><sp/>);
+<sp/>edit.SetFont(26,<sp/>0,<sp/>L&quot;Î¢ÈíÑÅºÚ");
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;ËÎÌå&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;·ÂËÎ ,<sp/>L&quot;ºÚÌå"
+<sp/>};
+
+<sp/><sp/><sp/><sp/>if<sp/>(!running)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>true;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::thread([]()<sp/>{
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd_option(300,<sp/>300);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowText(wnd_option.GetHandle(),<sp/>L&quot;Option&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Canvas<sp/>canvas;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wnd_option.BindCanvas(&amp;canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutInfo(canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTypeface(L&quot;system&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisableResizing(wnd_option.GetHandle(),<sp/>true);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_ctext;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_cbk;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_typeface;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysRadioButton<sp/>radio[2];
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTextColor(GRAY);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>20,<sp/>L&quot;Select<sp/>text<sp/>color&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.Create(wnd_option.GetHandle(),<sp/>20,<sp/>40,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>80,<sp/>L&quot;Select<sp/>background<sp/>color&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.Create(wnd_option.GetHandle(),<sp/>20,<sp/>100,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>140,<sp/>L&quot;Select<sp/>typeface&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.PreSetEtyle(false,<sp/>true,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.Create(wnd_option.GetHandle(),<sp/>20,<sp/>160,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>color<sp/>:<sp/>color_map)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>name<sp/>:<sp/>typeface)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.AddString(name);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.SetSel(0);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.SelectString(L&quot;white&quot;);<sp/><sp/><sp/><sp/>//<sp/>Í¨¹ý×Ö·û´®Ñ¡ÔñÏî
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.SelectString(L&quot;Î¢ÈíÑÅºÚ");
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrSelText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterEditMessage([](std::wstring<sp/>wstrText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Create(wnd_option.GetHandle(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L&quot;Left<sp/>align&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].Create(wnd_option.GetHandle(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L&quot;Right<sp/>align&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Check(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(false);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::init_end(wnd_option.GetHandle());
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();
+<sp/><sp/><sp/>}
+
+}
+
+void<sp/>OnCheck(bool<sp/>checked)
+{
+<sp/>edit.ReadOnly(checked);
+}
+
+int<sp/>main()
+{
+<sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd(WND_W,<sp/>WND_H);
+<sp/><sp/><sp/><sp/>wnd.BindCanvas(&amp;canvas_main);
+<sp/><sp/>wnd.SetProcFunc(WndProc);
+<sp/><sp/>hiex::AutoExit();
+
+<sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.GetHandle();
+
+<sp/><sp/>edit.PreSetStyle(true,<sp/>false,<sp/>true);
+<sp/><sp/><sp/>edit.Create(hwnd,<sp/>20,<sp/>20,<sp/>EDIT_W,<sp/>EDIT_H,
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;etc.\r\n&quot;
+<sp/><sp/><sp/><sp/>);
+<sp/>edit.SetFont(26,<sp/>0,<sp/>L&quot;Î¢ÈíÑÅºÚ");
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal">,<sp/>L</highlight><highlight class="stringliteral">&quot;ºÚÌå 
+<sp/><sp/><sp/>};
+
+<sp/><sp/><sp/><sp/>if<sp/>(!running)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>true;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::thread([]()<sp/>{
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd_option(300,<sp/>300);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowText(wnd_option.GetHandle(),<sp/>L&quot;Option&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::Canvas<sp/>canvas;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wnd_option.BindCanvas(&amp;canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutInfo(canvas);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTypeface(L&quot;system&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisableResizing(wnd_option.GetHandle(),<sp/>true);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_ctext;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_cbk;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysComboBox<sp/>combobox_typeface;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::SysRadioButton<sp/>radio[2];
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTextColor(GRAY);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>20,<sp/>L&quot;Select<sp/>text<sp/>color&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.Create(wnd_option.GetHandle(),<sp/>20,<sp/>40,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>80,<sp/>L&quot;Select<sp/>background<sp/>color&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.PreSetEtyle(false,<sp/>false,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.Create(wnd_option.GetHandle(),<sp/>20,<sp/>100,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>140,<sp/>L&quot;Select<sp/>typeface&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.PreSetEtyle(false,<sp/>true,<sp/>true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.Create(wnd_option.GetHandle(),<sp/>20,<sp/>160,<sp/>260,<sp/>200);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>color<sp/>:<sp/>color_map)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.AddString(color.first);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto&amp;<sp/>name<sp/>:<sp/>typeface)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.AddString(name);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.SetSel(0);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.SelectString(L&quot;white&quot;);<sp/><sp/><sp/><sp/>//<sp/>Í¨¹ý×Ö·û´®Ñ¡ÔñÏî
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetTextBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetBkColor(color_map[wstrSelText]);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.SelectString(L&quot;Î¢ÈíÑÅºÚ");
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrSelText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterEditMessage([](std::wstring<sp/>wstrText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Create(wnd_option.GetHandle(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L&quot;Left<sp/>align&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].Create(wnd_option.GetHandle(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L&quot;Right<sp/>align&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Check(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(false);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::init_end(wnd_option.GetHandle());
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();
+<sp/><sp/><sp/>}
+
+}
+
+void<sp/>OnCheck(bool<sp/>checked)
+{
+<sp/>edit.ReadOnly(checked);
+}
+
+int<sp/>main()
+{
+<sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd(WND_W,<sp/>WND_H);
+<sp/><sp/><sp/><sp/>wnd.BindCanvas(&amp;canvas_main);
+<sp/><sp/>wnd.SetProcFunc(WndProc);
+<sp/><sp/>hiex::AutoExit();
+
+<sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.GetHandle();
+
+<sp/><sp/>edit.PreSetStyle(true,<sp/>false,<sp/>true);
+<sp/><sp/><sp/>edit.Create(hwnd,<sp/>20,<sp/>20,<sp/>EDIT_W,<sp/>EDIT_H,
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;etc.\r\n&quot;
+<sp/><sp/><sp/><sp/>);
+<sp/>edit.SetFont(26,<sp/>0,<sp/>L&quot;Î¢ÈíÑÅºÚ");
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!running)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::thread([]()<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_window" kindref="compound">hiex::Window</ref><sp/>wnd_option(300,<sp/>300);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowText(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>L</highlight><highlight class="stringliteral">&quot;Option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref><sp/>canvas;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a749a74f5ca2960abd91e37011b8f939d" kindref="member">BindCanvas</ref>(&amp;canvas);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a5bb6fd8709a9a5368c3c4ad78e7cbe52" kindref="member">OutInfo</ref>(canvas);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTypeface(L</highlight><highlight class="stringliteral">&quot;system&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_hi_window_8h_1a0d110a7a9d3d85a5d3e1a2ce7955a633" kindref="member">DisableResizing</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_combo_box" kindref="compound">hiex::SysComboBox</ref><sp/>combobox_ctext;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_combo_box" kindref="compound">hiex::SysComboBox</ref><sp/>combobox_cbk;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_combo_box" kindref="compound">hiex::SysComboBox</ref><sp/>combobox_typeface;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_radio_button" kindref="compound">hiex::SysRadioButton</ref><sp/>radio[2];</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.SetTextColor(<ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>20,<sp/>L</highlight><highlight class="stringliteral">&quot;Select<sp/>text<sp/>color&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.PreSetEtyle(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>20,<sp/>40,<sp/>260,<sp/>200);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>80,<sp/>L</highlight><highlight class="stringliteral">&quot;Select<sp/>background<sp/>color&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1a2f30482c2b0f346f095908eab7f70ea6" kindref="member">PreSetEtyle</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>20,<sp/>100,<sp/>260,<sp/>200);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>canvas.OutTextXY(20,<sp/>140,<sp/>L</highlight><highlight class="stringliteral">&quot;Select<sp/>typeface&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1a2f30482c2b0f346f095908eab7f70ea6" kindref="member">PreSetEtyle</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>20,<sp/>160,<sp/>260,<sp/>200);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>color<sp/>:<sp/>color_map)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.AddString(color.first);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1aa62f9397866276459e9586514f0b9888" kindref="member">AddString</ref>(color.first);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>name<sp/>:<sp/>typeface)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1aa62f9397866276459e9586514f0b9888" kindref="member">AddString</ref>(name);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.SetSel(0);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_ctext.RegisterSelMessage([](</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1a116408aea4f792f8338de3649486aa84" kindref="member">SetTextColor</ref>(color_map[wstrSelText]);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1aeee8a49380614432db092e5a4e2414ac" kindref="member">SelectString</ref>(L</highlight><highlight class="stringliteral">&quot;white&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Í¨¹ý×Ö·û´®Ñ¡ÔñÏî</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_cbk.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1a6a56d1201818ff53416ee2190ee8d975" kindref="member">RegisterSelMessage</ref>([](</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1aaaaf75ecc4347a01758a478648e4c49e" kindref="member">SetTextBkColor</ref>(color_map[wstrSelText]);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1abdf60709dfccd3b86b293e6cc33e208c" kindref="member">SetBkColor</ref>(color_map[wstrSelText]);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1aeee8a49380614432db092e5a4e2414ac" kindref="member">SelectString</ref>(L</highlight><highlight class="stringliteral">&quot;Î¢ÈíÑÅºÚ );
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterSelMessage([](int<sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrSelText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.RegisterEditMessage([](std::wstring<sp/>wstrText)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.SetFont(26,<sp/>0,<sp/>wstrText);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Create(wnd_option.GetHandle(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L&quot;Left<sp/>align&quot;);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].Create(wnd_option.GetHandle(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L&quot;Right<sp/>align&quot;);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].Check(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(false);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].RegisterMessage([](bool<sp/>checked)<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checked)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edit.RightAlign(true);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hiex::init_end(wnd_option.GetHandle());
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/>false;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();
+<sp/><sp/><sp/>}
+
+}
+
+void<sp/>OnCheck(bool<sp/>checked)
+{
+<sp/>edit.ReadOnly(checked);
+}
+
+int<sp/>main()
+{
+<sp/><sp/><sp/><sp/>hiex::Window<sp/>wnd(WND_W,<sp/>WND_H);
+<sp/><sp/><sp/><sp/>wnd.BindCanvas(&amp;canvas_main);
+<sp/><sp/>wnd.SetProcFunc(WndProc);
+<sp/><sp/>hiex::AutoExit();
+
+<sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.GetHandle();
+
+<sp/><sp/>edit.PreSetStyle(true,<sp/>false,<sp/>true);
+<sp/><sp/><sp/>edit.Create(hwnd,<sp/>20,<sp/>20,<sp/>EDIT_W,<sp/>EDIT_H,
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/>L&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;etc.\r\n&quot;
+<sp/><sp/><sp/><sp/>);
+<sp/>edit.SetFont(26,<sp/>0,<sp/>L&quot;Î¢ÈíÑÅºÚ");
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1a6a56d1201818ff53416ee2190ee8d975" kindref="member">RegisterSelMessage</ref>([](</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSel,<sp/>std::wstring<sp/>wstrSelText)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" kindref="member">SetFont</ref>(26,<sp/>0,<sp/>wstrSelText);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>combobox_typeface.<ref refid="class_hi_easy_x_1_1_sys_combo_box_1a5b30ad53bcbfc876e8e381e6ec71ebf6" kindref="member">RegisterEditMessage</ref>([](std::wstring<sp/>wstrText)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" kindref="member">SetFont</ref>(26,<sp/>0,<sp/>wstrText);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>20,<sp/>200,<sp/>100,<sp/>30,<sp/>L</highlight><highlight class="stringliteral">&quot;Left<sp/>align&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>(),<sp/>20,<sp/>230,<sp/>100,<sp/>30,<sp/>L</highlight><highlight class="stringliteral">&quot;Right<sp/>align&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].<ref refid="class_hi_easy_x_1_1_sys_radio_button_1a29adf736906f2eef9df173448664b56d" kindref="member">Check</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[0].<ref refid="class_hi_easy_x_1_1_sys_radio_button_1a2a3e4e7b1834d540465c55053ad5912f" kindref="member">RegisterMessage</ref>([](</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(checked)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1a7c2d5bf732d9c8867a8a4272ec69ac99" kindref="member">RightAlign</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radio[1].<ref refid="class_hi_easy_x_1_1_sys_radio_button_1a2a3e4e7b1834d540465c55053ad5912f" kindref="member">RegisterMessage</ref>([](</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(checked)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1a7c2d5bf732d9c8867a8a4272ec69ac99" kindref="member">RightAlign</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_hi_easy_x_1a46e006040fc59669f3eaa4887ce3c5cf" kindref="member">hiex::init_end</ref>(wnd_option.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>());</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>running<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="main_8cpp_1af9aba2311683f2bb2db8ce81ecdedbbf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1af9aba2311683f2bb2db8ce81ecdedbbf" kindref="member">OnCheck</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1a5c8008152f249d794aae23e19ccc483d" kindref="member">ReadOnly</ref>(checked);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_window" kindref="compound">hiex::Window</ref><sp/>wnd(<ref refid="main_8cpp_1a0487dffe9c1abed4df11a9bd7b42a78c" kindref="member">WND_W</ref>,<sp/><ref refid="main_8cpp_1a70c36f7a7b6efaedf10c0e9f9a399a3b" kindref="member">WND_H</ref>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>wnd.<ref refid="class_hi_easy_x_1_1_window_1a749a74f5ca2960abd91e37011b8f939d" kindref="member">BindCanvas</ref>(&amp;<ref refid="main_8cpp_1ab353ac2418d36afbaed783f2e2c99593" kindref="member">canvas_main</ref>);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>wnd.<ref refid="class_hi_easy_x_1_1_window_1ae864d1d8ad06e5f5d5df1086bc15707b" kindref="member">SetProcFunc</ref>(<ref refid="main_8cpp_1a2641211f9fb5d626cfc3bbfd916829b0" kindref="member">WndProc</ref>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_hi_easy_x_1a28ee4b16feccc01e9cb795b384517217" kindref="member">hiex::AutoExit</ref>();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>HWND<sp/>hwnd<sp/>=<sp/>wnd.<ref refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" kindref="member">GetHandle</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_edit_1a121bedc28a86b3c965df0d6094518ff1" kindref="member">PreSetStyle</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(hwnd,<sp/>20,<sp/>20,<sp/><ref refid="main_8cpp_1ae7d4997d874cadf4c47f238cf680d5a7" kindref="member">EDIT_W</ref>,<sp/><ref refid="main_8cpp_1a9b03d1e3b45e6525c0e2f099f1d68d24" kindref="member">EDIT_H</ref>,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;Welcome<sp/>to<sp/>HiEasyX<sp/>!\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;Here<sp/>you<sp/>will<sp/>experience<sp/>the<sp/>overall<sp/>upgrade<sp/>of<sp/>EasyX.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;Let&apos;s<sp/>start<sp/>HiEasyX<sp/>from<sp/>the<sp/>simple<sp/>sample.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;What&apos;s<sp/>new<sp/>in<sp/>HiEasyX\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>You<sp/>could<sp/>create<sp/>multi-window<sp/>application<sp/>with<sp/>HiEasyX<sp/>easily.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>You<sp/>could<sp/>use<sp/>HiCanvas,<sp/>which<sp/>is<sp/>a<sp/>C++<sp/>canvas<sp/>wrapper<sp/>of<sp/>EasyX,<sp/>in<sp/>the<sp/>similar<sp/>way<sp/>of<sp/>EasyX.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>The<sp/>best<sp/>support<sp/>of<sp/>Windows<sp/>system<sp/>controls<sp/>integrated<sp/>in<sp/>HiEasyX<sp/>is<sp/>avalible.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>The<sp/>most<sp/>easy<sp/>method<sp/>to<sp/>create<sp/>a<sp/>tray.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;etc.\r\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a67a522fb2b6b88879c7a4f87d0230208" kindref="member">edit</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" kindref="member">SetFont</ref>(26,<sp/>0,<sp/>L</highlight><highlight class="stringliteral">&quot;Î¢ÈíÑÅºÚ );
+
+<sp/>btn.Create(hwnd,<sp/>BTN_X,<sp/>BTN_Y,<sp/>100,<sp/>30,<sp/>L&quot;<sp/>Options...&quot;);
+<sp/><sp/><sp/>btn.RegisterMessage(OnClick);
+<sp/><sp/>hiex::Canvas<sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);
+<sp/><sp/><sp/><sp/>btn_img.SolidCircle(10,<sp/>10,<sp/>10,<sp/>true,<sp/>GRAY);
+<sp/><sp/><sp/>btn_img.Line(10,<sp/>0,<sp/>10,<sp/>20,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn_img.Line(0,<sp/>10,<sp/>20,<sp/>10,<sp/>true,<sp/>WHITE);
+<sp/><sp/>btn.Image(true,<sp/>&amp;btn_img,<sp/>true);
+
+<sp/><sp/>checkbox.Create(hwnd,<sp/>CHECKBOX_X,<sp/>CHECKBOX_Y,<sp/>100,<sp/>20,<sp/>L&quot;Read<sp/>only&quot;);
+<sp/><sp/>checkbox.RegisterMessage(OnCheck);
+
+<sp/><sp/><sp/><sp/>hiex::init_end(hwnd);
+
+<sp/>closegraph();
+<sp/><sp/>return<sp/>0;
+}
+&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" kindref="member">btn</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(hwnd,<sp/><ref refid="main_8cpp_1a892a3c47110d70575b32287729b447c7" kindref="member">BTN_X</ref>,<sp/><ref refid="main_8cpp_1ae731fc74a8b23ae1545fbcb73cb105e9" kindref="member">BTN_Y</ref>,<sp/>100,<sp/>30,<sp/>L</highlight><highlight class="stringliteral">&quot;<sp/>Options...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" kindref="member">btn</ref>.<ref refid="class_hi_easy_x_1_1_sys_button_1ad6de077dd43cb25a60779b5514ddaf9e" kindref="member">RegisterMessage</ref>(<ref refid="main_8cpp_1a19b23a8f0be9e579bcaba36294df054f" kindref="member">OnClick</ref>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">hiex::Canvas</ref><sp/>btn_img(20,<sp/>20,<sp/>0xe1e1e1);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>btn_img.<ref refid="class_hi_easy_x_1_1_canvas_1a28600aae5a27a4c8897247b428054972" kindref="member">SolidCircle</ref>(10,<sp/>10,<sp/>10,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>btn_img.<ref refid="class_hi_easy_x_1_1_canvas_1a59d33722c947b1957767478b497b4ef5" kindref="member">Line</ref>(10,<sp/>0,<sp/>10,<sp/>20,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>WHITE);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>btn_img.<ref refid="class_hi_easy_x_1_1_canvas_1a59d33722c947b1957767478b497b4ef5" kindref="member">Line</ref>(0,<sp/>10,<sp/>20,<sp/>10,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>WHITE);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a49733bfd0a1be1533ceaa7c7d3ef7fe8" kindref="member">btn</ref>.<ref refid="class_hi_easy_x_1_1_sys_button_1ae7696dc1deaab9011ba6c2ec4f855ec5" kindref="member">Image</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>&amp;btn_img,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" kindref="member">checkbox</ref>.<ref refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" kindref="member">Create</ref>(hwnd,<sp/><ref refid="main_8cpp_1ac5e8212a5feeb48a21c2bfcb519ad587" kindref="member">CHECKBOX_X</ref>,<sp/><ref refid="main_8cpp_1a7b8b83587c39cc3642ab544c74b60819" kindref="member">CHECKBOX_Y</ref>,<sp/>100,<sp/>20,<sp/>L</highlight><highlight class="stringliteral">&quot;Read<sp/>only&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a6ebd1c5be2c8b92b4ef630af3c09b763" kindref="member">checkbox</ref>.<ref refid="class_hi_easy_x_1_1_sys_check_box_1a229ed7543c73166e720389dfef30acef" kindref="member">RegisterMessage</ref>(<ref refid="main_8cpp_1af9aba2311683f2bb2db8ce81ecdedbbf" kindref="member">OnCheck</ref>);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_hi_easy_x_1a46e006040fc59669f3eaa4887ce3c5cf" kindref="member">hiex::init_end</ref>(hwnd);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_hi_window_8h_1ad9bb6730860f6ba4763370ad10eb7eb0" kindref="member">closegraph</ref>();</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp"/>
+  </compounddef>
+</doxygen>

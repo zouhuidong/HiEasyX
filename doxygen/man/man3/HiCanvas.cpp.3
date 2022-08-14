@@ -1,0 +1,44 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiCanvas\&.h'\fP
+.br
+\fC#include 'HiMacro\&.h'\fP
+.br
+\fC#include 'HiWindow\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBHiEasyX::MixAlphaColor\fP (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::CopyImage_Alpha\fP (int x, int y, DWORD *pDst, int wDst, int hDst, DWORD *pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::RotateImage_Alpha\fP (IMAGE *pImg, double radian, COLORREF bkcolor)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Alpha\fP (IMAGE *srcimg, int width, int height)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Win32_Alpha\fP (IMAGE *pImg, int width, int height)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

@@ -1,0 +1,160 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiEasyX\&.h'\fP
+.br
+\fC#include <map>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBWND_W\fP   640"
+.br
+.ti -1c
+.RI "#define \fBWND_H\fP   480"
+.br
+.ti -1c
+.RI "#define \fBEDIT_W\fP   480"
+.br
+.ti -1c
+.RI "#define \fBEDIT_H\fP   400"
+.br
+.ti -1c
+.RI "#define \fBBTN_X\fP   20"
+.br
+.ti -1c
+.RI "#define \fBBTN_Y\fP   430"
+.br
+.ti -1c
+.RI "#define \fBCHECKBOX_X\fP   140"
+.br
+.ti -1c
+.RI "#define \fBCHECKBOX_Y\fP   435"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBOutInfo\fP (\fBhiex::Canvas\fP &canvas)"
+.br
+.ti -1c
+.RI "void \fBVerticalText\fP (LPCTSTR lpsz, bool text_c, COLORREF cText, bool bk_c, COLORREF cBk, bool set=false, int x=0, int y=0)"
+.br
+.ti -1c
+.RI "LRESULT CALLBACK \fBWndProc\fP (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+.br
+.ti -1c
+.RI "void \fBOnClick\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnCheck\fP (bool checked)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBhiex::Canvas\fP \fBcanvas_main\fP"
+.br
+.ti -1c
+.RI "\fBhiex::SysEdit\fP \fBedit\fP"
+.br
+.ti -1c
+.RI "\fBhiex::SysButton\fP \fBbtn\fP"
+.br
+.ti -1c
+.RI "\fBhiex::SysCheckBox\fP \fBcheckbox\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BTN_X   20"
+
+.PP
+Definition at line 17 of file main\&.cpp\&.
+.SS "#define BTN_Y   430"
+
+.PP
+Definition at line 18 of file main\&.cpp\&.
+.SS "#define CHECKBOX_X   140"
+
+.PP
+Definition at line 20 of file main\&.cpp\&.
+.SS "#define CHECKBOX_Y   435"
+
+.PP
+Definition at line 21 of file main\&.cpp\&.
+.SS "#define EDIT_H   400"
+
+.PP
+Definition at line 15 of file main\&.cpp\&.
+.SS "#define EDIT_W   480"
+
+.PP
+Definition at line 14 of file main\&.cpp\&.
+.SS "#define WND_H   480"
+
+.PP
+Definition at line 12 of file main\&.cpp\&.
+.SS "#define WND_W   640"
+
+.PP
+Definition at line 11 of file main\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+
+.PP
+Definition at line 222 of file main\&.cpp\&.
+.SS "void OnCheck (bool checked)"
+
+.PP
+Definition at line 217 of file main\&.cpp\&.
+.SS "void OnClick ()"
+
+.PP
+Definition at line 111 of file main\&.cpp\&.
+.SS "void OutInfo (\fBhiex::Canvas\fP & canvas)"
+
+.PP
+Definition at line 28 of file main\&.cpp\&.
+.SS "void VerticalText (LPCTSTR lpsz, bool text_c, COLORREF cText, bool bk_c, COLORREF cBk, bool set = \fCfalse\fP, int x = \fC0\fP, int y = \fC0\fP)"
+
+.PP
+Definition at line 44 of file main\&.cpp\&.
+.SS "LRESULT CALLBACK WndProc (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+
+.PP
+Definition at line 60 of file main\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBhiex::SysButton\fP btn"
+
+.PP
+Definition at line 25 of file main\&.cpp\&.
+.SS "\fBhiex::Canvas\fP canvas_main"
+
+.PP
+Definition at line 23 of file main\&.cpp\&.
+.SS "\fBhiex::SysCheckBox\fP checkbox"
+
+.PP
+Definition at line 26 of file main\&.cpp\&.
+.SS "\fBhiex::SysEdit\fP edit"
+
+.PP
+Definition at line 24 of file main\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

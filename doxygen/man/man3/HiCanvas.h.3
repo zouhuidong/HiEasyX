@@ -1,0 +1,69 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiDrawingProperty\&.h'\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <list>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBHiEasyX::Canvas\fP"
+.br
+.ti -1c
+.RI "class \fBHiEasyX::ImageBlock\fP"
+.br
+.ti -1c
+.RI "class \fBHiEasyX::Layer\fP"
+.br
+.ti -1c
+.RI "class \fBHiEasyX::Scene\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHiEasyX::LayerOrder\fP { \fBHiEasyX::LAYERORDER_BOTTOM_MOST\fP, \fBHiEasyX::LAYERORDER_BOTTOM\fP, \fBHiEasyX::LAYERORDER_NORMAL\fP, \fBHiEasyX::LAYERORDER_TOP\fP, \fBHiEasyX::LAYERORDER_TOP_MOST\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBHiEasyX::MixAlphaColor\fP (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::CopyImage_Alpha\fP (int x, int y, DWORD *pDst, int wDst, int hDst, DWORD *pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::RotateImage_Alpha\fP (IMAGE *pImg, double radian, COLORREF bkcolor)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Alpha\fP (IMAGE *srcimg, int width, int height)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Win32_Alpha\fP (IMAGE *pImg, int width, int height)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

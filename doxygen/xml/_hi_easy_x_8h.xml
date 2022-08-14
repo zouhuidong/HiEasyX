@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_hi_easy_x_8h" kind="file" language="C++">
+    <compoundname>HiEasyX.h</compoundname>
+    <includes refid="_hi_def_8h" local="yes">HiEasyX/HiDef.h</includes>
+    <includes refid="_hi_macro_8h" local="yes">HiEasyX/HiMacro.h</includes>
+    <includes refid="_hi_func_8h" local="yes">HiEasyX/HiFunc.h</includes>
+    <includes refid="_hi_f_p_s_8h" local="yes">HiEasyX/HiFPS.h</includes>
+    <includes refid="_hi_drawing_property_8h" local="yes">HiEasyX/HiDrawingProperty.h</includes>
+    <includes refid="_hi_mouse_drag_8h" local="yes">HiEasyX/HiMouseDrag.h</includes>
+    <includes refid="_hi_music_m_c_i_8h" local="yes">HiEasyX/HiMusicMCI.h</includes>
+    <includes refid="_hi_gif_8h" local="yes">HiEasyX/HiGif.h</includes>
+    <includes refid="_hi_window_8h" local="yes">HiEasyX/HiWindow.h</includes>
+    <includes refid="_hi_sys_g_u_i_8h" local="yes">HiEasyX/HiSysGUI/HiSysGUI.h</includes>
+    <includes refid="_hi_canvas_8h" local="yes">HiEasyX/HiCanvas.h</includes>
+    <includes refid="_hi_g_u_i_8h" local="yes">HiEasyX/HiGUI/HiGUI.h</includes>
+    <includedby refid="main_8cpp" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</includedby>
+    <incdepgraph>
+      <node id="33">
+        <label>list</label>
+      </node>
+      <node id="22">
+        <label>SysControlBase.h</label>
+        <link refid="_sys_control_base_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>HiEasyX/HiSysGUI/HiSysGUI.h</label>
+        <link refid="_hi_sys_g_u_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ScrollBar.h</label>
+        <link refid="_scroll_bar_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>HiEasyX/HiMusicMCI.h</label>
+        <link refid="_hi_music_m_c_i_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>graphics.h</label>
+      </node>
+      <node id="37">
+        <label>Static.h</label>
+        <link refid="_static_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>HiEasyX/HiWindow.h</label>
+        <link refid="_hi_window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>windowsx.h</label>
+      </node>
+      <node id="34">
+        <label>HiEasyX/HiGUI/HiGUI.h</label>
+        <link refid="_hi_g_u_i_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Windows.h</label>
+      </node>
+      <node id="21">
+        <label>SysGroup.h</label>
+        <link refid="_sys_group_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>SysCheckBox.h</label>
+        <link refid="_sys_check_box_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ProgressCtrl.h</label>
+        <link refid="_progress_ctrl_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>WinUser.h</label>
+      </node>
+      <node id="8">
+        <label>HiEasyX/HiFPS.h</label>
+        <link refid="_hi_f_p_s_8h"/>
+      </node>
+      <node id="23">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>HiEasyX/HiGif.h</label>
+        <link refid="_hi_gif_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>HiEasyX/HiDrawingProperty.h</label>
+        <link refid="_hi_drawing_property_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>SysEdit.h</label>
+        <link refid="_sys_edit_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gdiplus.h</label>
+      </node>
+      <node id="29">
+        <label>SysRadioButton.h</label>
+        <link refid="_sys_radio_button_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Page.h</label>
+        <link refid="_page_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HiEasyX/HiDef.h</label>
+        <link refid="_hi_def_8h"/>
+      </node>
+      <node id="38">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
+      <node id="31">
+        <label>SysComboBox.h</label>
+        <link refid="_sys_combo_box_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>SysButton.h</label>
+        <link refid="_sys_button_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>HiEasyX/HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>HiEasyX/HiCanvas.h</label>
+        <link refid="_hi_canvas_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>SysStatic.h</label>
+        <link refid="_sys_static_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>HiEasyX/HiMacro.h</label>
+        <link refid="_hi_macro_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HiEasyX/HiMouseDrag.h</label>
+        <link refid="_hi_mouse_drag_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>thread</label>
+      </node>
+      <node id="15">
+        <label>stdio.h</label>
+      </node>
+      <node id="25">
+        <label>SysGroupBox.h</label>
+        <link refid="_sys_group_box_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_hi_easy_x_8h_1a2d480f09fb51dd071e73c5f360dfeb77" prot="public" static="no">
+        <name>__HIEASYX_H__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h" line="17" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>HiEasyX.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>HiEasyX<sp/>库头文件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>该库基于 EasyX<sp/>实现了在窗口、绘图、UI<sp/>等诸多方面的全面升级</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>版　　本：Ver<sp/>0.2<sp/>(alpha)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>作　　者：huidong<sp/>&lt;mailhuid@163.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>编译环境：VisualStudio<sp/>2022<sp/>|<sp/>EasyX_20220610<sp/>|<sp/>Windows<sp/>10<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>项目地址：https://github.com/zouhuidong/HiEasyX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>创建日期：2022.07.20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>最后修改：2022.08.11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="_hi_easy_x_8h_1a2d480f09fb51dd071e73c5f360dfeb77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__HIEASYX_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_def_8h" kindref="compound">HiEasyX/HiDef.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_macro_8h" kindref="compound">HiEasyX/HiMacro.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_func_8h" kindref="compound">HiEasyX/HiFunc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_f_p_s_8h" kindref="compound">HiEasyX/HiFPS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_drawing_property_8h" kindref="compound">HiEasyX/HiDrawingProperty.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_mouse_drag_8h" kindref="compound">HiEasyX/HiMouseDrag.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_music_m_c_i_8h" kindref="compound">HiEasyX/HiMusicMCI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_gif_8h" kindref="compound">HiEasyX/HiGif.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>未选择使用原生<sp/>EasyX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_NATIVE_EASYX_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_window_8h" kindref="compound">HiEasyX/HiWindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_sys_g_u_i_8h" kindref="compound">HiEasyX/HiSysGUI/HiSysGUI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_NATIVE_EASYX_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_canvas_8h" kindref="compound">HiEasyX/HiCanvas.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_g_u_i_8h" kindref="compound">HiEasyX/HiGUI/HiGUI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HiEasyX<sp/>命名空间缩写</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">hiex</ref><sp/>=<sp/><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>兼容旧版 EasyWin32<sp/>命名空间，请尽量使用<sp/>HiEasyX<sp/>命名空间 namespace<sp/>EasyWin32<sp/>=<sp/>HiEasyX;
+
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">EasyWin32</ref><sp/>=<sp/><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h"/>
+  </compounddef>
+</doxygen>

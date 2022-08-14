@@ -1,0 +1,116 @@
+.TH "HiEasyX::Page" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Page
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Page\&.h>\fP
+.PP
+Inherits \fBHiEasyX::ControlBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPage\fP ()"
+.br
+.ti -1c
+.RI "\fBPage\fP (int w, int h, COLORREF cBk=WHITE)"
+.br
+.ti -1c
+.RI "\fBPage\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "virtual void \fBBindToCanvas\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "virtual void \fBpush\fP (\fBControlBase\fP *pCtrl, int offset_x=0, int offset_y=0)"
+.br
+.ti -1c
+.RI "virtual void \fBpush\fP (const std::list< \fBControlBase\fP * > list)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBControlBase\fP *pCtrl)"
+.br
+.ti -1c
+.RI "void \fBRender\fP (\fBCanvas\fP *dst=nullptr, RECT *pRct=nullptr, int *pCount=0) override"
+.br
+.ti -1c
+.RI "void \fBUpdateImage\fP (\fBCanvas\fP *pCanvas=nullptr)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP (COLORREF cBk=WHITE)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCanvas\fP * \fBm_pCanvas\fP = nullptr"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file Page\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::Page::Page ()"
+
+.PP
+Definition at line 17 of file Page\&.cpp\&.
+.SS "HiEasyX::Page::Page (int w, int h, COLORREF cBk = \fCWHITE\fP)"
+
+.PP
+Definition at line 22 of file Page\&.cpp\&.
+.SS "HiEasyX::Page::Page (\fBCanvas\fP * pCanvas)"
+
+.PP
+Definition at line 28 of file Page\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void HiEasyX::Page::BindToCanvas (\fBCanvas\fP * pCanvas)\fC [virtual]\fP"
+
+.PP
+Definition at line 34 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::Init (COLORREF cBk = \fCWHITE\fP)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 7 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::push (const std::list< \fBControlBase\fP * > list)\fC [virtual]\fP"
+
+.PP
+Definition at line 46 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::push (\fBControlBase\fP * pCtrl, int offset_x = \fC0\fP, int offset_y = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+Definition at line 41 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::remove (\fBControlBase\fP * pCtrl)\fC [virtual]\fP"
+
+.PP
+Definition at line 52 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::Render (\fBCanvas\fP * dst = \fCnullptr\fP, RECT * pRct = \fCnullptr\fP, int * pCount = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 57 of file Page\&.cpp\&.
+.SS "void HiEasyX::Page::UpdateImage (\fBCanvas\fP * pCanvas = \fCnullptr\fP)"
+
+.PP
+Definition at line 67 of file Page\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCanvas\fP* HiEasyX::Page::m_pCanvas = nullptr\fC [protected]\fP"
+
+.PP
+Definition at line 18 of file Page\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

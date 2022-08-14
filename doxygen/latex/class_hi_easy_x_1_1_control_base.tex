@@ -1,0 +1,939 @@
+\hypertarget{class_hi_easy_x_1_1_control_base}{}\doxysection{Hi\+EasyX\+::Control\+Base Class Reference}
+\label{class_hi_easy_x_1_1_control_base}\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+
+
+{\ttfamily \#include $<$Control\+Base.\+h$>$}
+
+Inheritance diagram for Hi\+EasyX\+::Control\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.301370cm]{class_hi_easy_x_1_1_control_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ae76f7599a28302ad10bcea03596cd4f4}{Control\+Base}} ()
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a93c329b48a1d3ced2f8b01df809b094e}{Control\+Base}} (std\+::wstring wstr\+Text)
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a878d5f05839dad41c6192fd45b7d0089}{Control\+Base}} (int x, int y, int w=0, int h=0, std\+::wstring wstr\+Text=L\char`\"{}\char`\"{})
+\item 
+virtual \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aea4f802233d392dd4302479a428f97de}{$\sim$\+Control\+Base}} ()
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aad00f0df715ce907b84141b4ac7d9f71}{Get\+Parent}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_acd99a2375080ebc29af5ec5a78e8ceb0}{Set\+Parent}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p)
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a72c682d658053588916fdf12bd8d3f56}{is\+Auto\+Size\+For\+Child}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a68665d8347eee65d0b57d3afd8d916c7}{Enable\+Auto\+Size\+For\+Child}} (bool enable)
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ $>$ \& \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a1a01c4a70d14f9649887d8fbeb3e05ed}{Get\+Child\+List}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ab7d753c89838202ff5c37612a8f9715f}{Get\+Child\+Count}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a75cdabdaa297155395d0420a11da4599}{Add\+Child}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p, int offset\+\_\+x=0, int offset\+\_\+y=0)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a1234eaab74c2b51dbb9197b697429993}{Remove\+Child}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p)
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a462628b9679c4ebc935c3c5ce5f24222}{is\+Enabled}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a6ce290712b6fff9d80eae26fa8eced06}{Set\+Enable}} (bool enable)
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a7e533b346d6e96e57ec1cd8f6e0b055a}{is\+Visible}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a1e58bdfc56f0781bdd500cf4013a6d86}{Set\+Visible}} (bool visible)
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a86595b70b389d8c8382f5b5a0a613d79}{Get\+Auto\+Redraw\+State}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a67e8affaf474d4f9441d3e72dac4d1f1}{Enable\+Auto\+Redraw}} (bool enable)
+\item 
+virtual \mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} \& \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a89fd69ef31bd91b7eeca590686c0637e}{Get\+Canvas}} ()
+\item 
+virtual C\+O\+L\+O\+R\+R\+EF \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a2749c6a3a556f93174f9ca6e9dbf3829}{Get\+Bk\+Color}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aeb9bc2b20dbcf0dea4ac3ab32706bdc3}{Set\+Bk\+Color}} (C\+O\+L\+O\+R\+R\+EF color)
+\item 
+virtual C\+O\+L\+O\+R\+R\+EF \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a172ae71e2be303acb30c83f83ad4d064}{Get\+Text\+Color}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aa200c0d27e4a88df9833ff5e8b29e33e}{Set\+Text\+Color}} (C\+O\+L\+O\+R\+R\+EF color)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a69d07e6ca0fcb597a0704cc67beddd6b}{Enable\+Border}} (bool b\+Enable\+Border, C\+O\+L\+O\+R\+R\+EF color=B\+L\+A\+CK, int thickness=1)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ade3f9e1097c4607a2fd8c9cc74153e95}{Set\+Alpha}} (B\+Y\+TE alpha, bool b\+Use\+Canvas\+Alpha, bool is\+Alpha\+Calculated)
+\item 
+virtual std\+::wstring \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a97bef5dfe261c7eaf6116ca16676fd00}{Get\+Text}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a73821ac5c9e46196df1e3dd922d96d35}{Set\+Text}} (std\+::wstring wstr)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a416db1040e5caa28d86f618bd9c5cd1c}{Draw\+\_\+\+Text}} (int n\+Text\+OffsetX=0, int n\+Text\+OffsetY=0)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aeb5ceed0aa8e63ab2610ea2abedc4bc3}{Redraw}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac3a8b32c92d5a6e4a251fe0db5080796}{Draw}} (bool draw\+\_\+child=true)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a01a9afff183b9f0cda0d83dbb767a0b8}{Render}} (\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$dst, R\+E\+CT $\ast$p\+Rct=nullptr, int $\ast$p\+Count=0)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a83fa7686f91675a89235205335aab92f}{Set\+Msg\+Proc\+Func}} (\mbox{\hyperlink{namespace_hi_easy_x_a2e10a7927d2a46e2c89643adae8094e2}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+NC}} func)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ad01c8bbd6a40e56459d2faba5fab4b3d}{Set\+Msg\+Proc\+Func}} (\mbox{\hyperlink{namespace_hi_easy_x_aa2fcbd9caec6ec195eae63584e9232fe}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+N\+C\+\_\+\+C\+L\+A\+SS}} static\+\_\+class\+\_\+func, void $\ast$\+\_\+this)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac50c2510107edcd0003ec609d896fb7a}{Update\+Message}} (Ex\+Message msg)
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a522e6e3676e6f1ffe15f70371f676d5b}{is\+Hovered}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a6e30e0745734a8a246c33249ae6e8443}{is\+Focused}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a2b7c5f2614e457ee54b22baee0bb06a4}{is\+Pressed}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a82f6680093e218339da20daa750c6839}{Update\+Rect}} (R\+E\+CT rct\+Old) override
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a81ff0b42ffbcb7c3a7cd4030c0d94cba}{Mark\+Need\+Redraw\+And\+Render}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a2172a2e6a76a652f90882b941fc1d127}{Mark\+Need\+Clear\+Rect}} (R\+E\+CT rct)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_af0373d28a9f56e4c9e04920ec2727b2d}{Draw\+Child}} ()
+\item 
+virtual Ex\+Message \& \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a5bd403fbd8682259a33f3301531ddf41}{Transform\+Message}} (Ex\+Message \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_adfafda8974eb9211f7ddee264d58ac04}{Call\+User\+Msg\+Proc\+Func}} (int msgid, Ex\+Message msg)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a709cbc231405929ae9d4c8f01dd97287}{Child\+Rect\+Changed}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p\+Child)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac32c07be0d613b508c36220ba7938d06}{m\+\_\+b\+Enabled}} = true
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a5199ab6ebcf3bef6fd601f60310550fe}{m\+\_\+b\+Visible}} = true
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a5b0539e21f7013d44646d3ca2838ed33}{m\+\_\+b\+Auto\+Redraw\+When\+Receive\+Msg}} = true
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a206af1bbabb242872b6128e84972f256}{m\+\_\+b\+Redraw}} = true
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a4cfe720d3e77a2c15d87b4da565a1c37}{m\+\_\+b\+Render}} = true
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ae404f7e5aab1fbfd611776c7995996d5}{m\+\_\+b\+Clear}} = false
+\item 
+R\+E\+CT \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a6bbf7e24f18391620d371e05892ad8d7}{m\+\_\+rct\+Clear}} = \{ 0 \}
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a50af68164c7790b3f06af11301a866b0}{m\+\_\+b\+Always\+Redraw\+And\+Render}} = false
+\item 
+std\+::wstring \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a0f51d324623ae83c706c6c3a9a6c9d3b}{m\+\_\+wstr\+Text}}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ae95bbe48d81bb21b7e760ff792af059a}{m\+\_\+canvas}}
+\item 
+B\+Y\+TE \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aef9fc2d0d6365a371c9ce13ff86752b9}{m\+\_\+alpha}} = 255
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a6b0caf2ebbdd099e6d36fba2d1e38e1c}{m\+\_\+b\+Use\+Canvas\+Alpha}} = false
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a255c9dc0ff8db31e4371006e3dd2364d}{m\+\_\+is\+Alpha\+Calculated}} = false
+\item 
+C\+O\+L\+O\+R\+R\+EF \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aebce31b4e9be410a4d0a247616c16ad4}{m\+\_\+c\+Border}} = \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68}{M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+G\+R\+AY}}
+\item 
+C\+O\+L\+O\+R\+R\+EF \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a56ef733920e54f454c990fd1aebfac1f}{m\+\_\+c\+Background}} = \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b}{C\+L\+A\+S\+S\+I\+C\+G\+R\+AY}}
+\item 
+C\+O\+L\+O\+R\+R\+EF \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aaaecf1b442d34f7674a4f3da49cb1ea7}{m\+\_\+c\+Text}} = B\+L\+A\+CK
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ae0ec54aca4911bd3eeb388c77917cb38}{m\+\_\+b\+Enable\+Border}} = true
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aef9e13f82ff2956fc0d34e1de4713e8c}{m\+\_\+n\+Border\+Thickness}} = 1
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ac3032416bb487fb5ee04160f2f2b3bd5}{m\+\_\+b\+Complete\+First\+Set\+Rect}} = false
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ae762452f0d6e75a1f3b215c29a1d2cbe}{m\+\_\+p\+Parent}} = nullptr
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ $>$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a1fb286838bbb30c2fa2daa64c1277939}{m\+\_\+list\+Child}}
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a3c7d5df0c1558c0ec993ad3890e18c79}{m\+\_\+b\+Auto\+Size\+For\+Child}} = false
+\item 
+\mbox{\hyperlink{namespace_hi_easy_x_a2e10a7927d2a46e2c89643adae8094e2}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+NC}} \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a6a3797dd102a11dc00a7c36581b22daa}{m\+\_\+func\+Message\+Proc}} = nullptr
+\item 
+\mbox{\hyperlink{namespace_hi_easy_x_aa2fcbd9caec6ec195eae63584e9232fe}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+N\+C\+\_\+\+C\+L\+A\+SS}} \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a240d262fc1e65624813a9a8ef39c0ad5}{m\+\_\+func\+Message\+Proc\+\_\+\+Class}} = nullptr
+\item 
+void $\ast$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_abf130d8b75dbe3762567a0c3f82791bd}{m\+\_\+p\+Called\+Class}} = nullptr
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_ab407e304413acc7d4c9a88e8c9c94849}{m\+\_\+b\+Hovered}} = false
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aac1e82098ce1faacec3eb1f5666ec0ea}{m\+\_\+b\+Pressed}} = false
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_aa96b30a60cd8d93ea0b49b2d787233c9}{m\+\_\+b\+Focused}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 44 of file Control\+Base.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ae76f7599a28302ad10bcea03596cd4f4}\label{class_hi_easy_x_1_1_control_base_ae76f7599a28302ad10bcea03596cd4f4}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!ControlBase@{ControlBase}}
+\index{ControlBase@{ControlBase}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{ControlBase()}{ControlBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Control\+Base\+::\+Control\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a93c329b48a1d3ced2f8b01df809b094e}\label{class_hi_easy_x_1_1_control_base_a93c329b48a1d3ced2f8b01df809b094e}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!ControlBase@{ControlBase}}
+\index{ControlBase@{ControlBase}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{ControlBase()}{ControlBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Control\+Base\+::\+Control\+Base (\begin{DoxyParamCaption}\item[{std\+::wstring}]{wstr\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a878d5f05839dad41c6192fd45b7d0089}\label{class_hi_easy_x_1_1_control_base_a878d5f05839dad41c6192fd45b7d0089}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!ControlBase@{ControlBase}}
+\index{ControlBase@{ControlBase}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{ControlBase()}{ControlBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Control\+Base\+::\+Control\+Base (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w = {\ttfamily 0},  }\item[{int}]{h = {\ttfamily 0},  }\item[{std\+::wstring}]{wstr\+Text = {\ttfamily L\char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aea4f802233d392dd4302479a428f97de}\label{class_hi_easy_x_1_1_control_base_aea4f802233d392dd4302479a428f97de}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!````~ControlBase@{$\sim$ControlBase}}
+\index{````~ControlBase@{$\sim$ControlBase}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$ControlBase()}{~ControlBase()}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Control\+Base\+::$\sim$\+Control\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 32 of file Control\+Base.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a75cdabdaa297155395d0420a11da4599}\label{class_hi_easy_x_1_1_control_base_a75cdabdaa297155395d0420a11da4599}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p,  }\item[{int}]{offset\+\_\+x = {\ttfamily 0},  }\item[{int}]{offset\+\_\+y = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 118 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_adfafda8974eb9211f7ddee264d58ac04}\label{class_hi_easy_x_1_1_control_base_adfafda8974eb9211f7ddee264d58ac04}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!CallUserMsgProcFunc@{CallUserMsgProcFunc}}
+\index{CallUserMsgProcFunc@{CallUserMsgProcFunc}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{CallUserMsgProcFunc()}{CallUserMsgProcFunc()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Call\+User\+Msg\+Proc\+Func (\begin{DoxyParamCaption}\item[{int}]{msgid,  }\item[{Ex\+Message}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 368 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a709cbc231405929ae9d4c8f01dd97287}\label{class_hi_easy_x_1_1_control_base_a709cbc231405929ae9d4c8f01dd97287}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!ChildRectChanged@{ChildRectChanged}}
+\index{ChildRectChanged@{ChildRectChanged}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{ChildRectChanged()}{ChildRectChanged()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Child\+Rect\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p\+Child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 380 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ac3a8b32c92d5a6e4a251fe0db5080796}\label{class_hi_easy_x_1_1_control_base_ac3a8b32c92d5a6e4a251fe0db5080796}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!Draw@{Draw}}
+\index{Draw@{Draw}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Draw (\begin{DoxyParamCaption}\item[{bool}]{draw\+\_\+child = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ae8cae5756a14d5996988bcb7dcddfe95}{Hi\+Easy\+X\+::\+Scroll\+Bar}}, \mbox{\hyperlink{class_hi_easy_x_1_1_progress_ctrl_a5ee055272f2c97b0d84ca6898ba6cac0}{Hi\+Easy\+X\+::\+Progress\+Ctrl}}, \mbox{\hyperlink{class_hi_easy_x_1_1_static_a1e7a4bb6eea237fe6f1b3f48927d1f69}{Hi\+Easy\+X\+::\+Static}}, and \mbox{\hyperlink{class_hi_easy_x_1_1_button_ad8ee2b9caafd1b1ac59f1d401181edc7}{Hi\+Easy\+X\+::\+Button}}.
+
+
+
+Definition at line 224 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a416db1040e5caa28d86f618bd9c5cd1c}\label{class_hi_easy_x_1_1_control_base_a416db1040e5caa28d86f618bd9c5cd1c}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!Draw\_Text@{Draw\_Text}}
+\index{Draw\_Text@{Draw\_Text}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{Draw\_Text()}{Draw\_Text()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Draw\+\_\+\+Text (\begin{DoxyParamCaption}\item[{int}]{n\+Text\+OffsetX = {\ttfamily 0},  }\item[{int}]{n\+Text\+OffsetY = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_static_a0259199c8adcd02c88a2804a2eddd182}{Hi\+Easy\+X\+::\+Static}}.
+
+
+
+Definition at line 205 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_af0373d28a9f56e4c9e04920ec2727b2d}\label{class_hi_easy_x_1_1_control_base_af0373d28a9f56e4c9e04920ec2727b2d}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!DrawChild@{DrawChild}}
+\index{DrawChild@{DrawChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{DrawChild()}{DrawChild()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Draw\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 246 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a67e8affaf474d4f9441d3e72dac4d1f1}\label{class_hi_easy_x_1_1_control_base_a67e8affaf474d4f9441d3e72dac4d1f1}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!EnableAutoRedraw@{EnableAutoRedraw}}
+\index{EnableAutoRedraw@{EnableAutoRedraw}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{EnableAutoRedraw()}{EnableAutoRedraw()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Enable\+Auto\+Redraw (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 154 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a68665d8347eee65d0b57d3afd8d916c7}\label{class_hi_easy_x_1_1_control_base_a68665d8347eee65d0b57d3afd8d916c7}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!EnableAutoSizeForChild@{EnableAutoSizeForChild}}
+\index{EnableAutoSizeForChild@{EnableAutoSizeForChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{EnableAutoSizeForChild()}{EnableAutoSizeForChild()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Enable\+Auto\+Size\+For\+Child (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 100 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a69d07e6ca0fcb597a0704cc67beddd6b}\label{class_hi_easy_x_1_1_control_base_a69d07e6ca0fcb597a0704cc67beddd6b}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!EnableBorder@{EnableBorder}}
+\index{EnableBorder@{EnableBorder}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{EnableBorder()}{EnableBorder()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Enable\+Border (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable\+Border,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{color = {\ttfamily BLACK},  }\item[{int}]{thickness = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 175 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a86595b70b389d8c8382f5b5a0a613d79}\label{class_hi_easy_x_1_1_control_base_a86595b70b389d8c8382f5b5a0a613d79}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetAutoRedrawState@{GetAutoRedrawState}}
+\index{GetAutoRedrawState@{GetAutoRedrawState}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetAutoRedrawState()}{GetAutoRedrawState()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Auto\+Redraw\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 150 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a2749c6a3a556f93174f9ca6e9dbf3829}\label{class_hi_easy_x_1_1_control_base_a2749c6a3a556f93174f9ca6e9dbf3829}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetBkColor@{GetBkColor}}
+\index{GetBkColor@{GetBkColor}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetBkColor()}{GetBkColor()}}
+{\footnotesize\ttfamily virtual C\+O\+L\+O\+R\+R\+EF Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Bk\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 157 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a89fd69ef31bd91b7eeca590686c0637e}\label{class_hi_easy_x_1_1_control_base_a89fd69ef31bd91b7eeca590686c0637e}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetCanvas@{GetCanvas}}
+\index{GetCanvas@{GetCanvas}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetCanvas()}{GetCanvas()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}}\& Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 155 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ab7d753c89838202ff5c37612a8f9715f}\label{class_hi_easy_x_1_1_control_base_ab7d753c89838202ff5c37612a8f9715f}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetChildCount@{GetChildCount}}
+\index{GetChildCount@{GetChildCount}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetChildCount()}{GetChildCount()}}
+{\footnotesize\ttfamily size\+\_\+t Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Child\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a1a01c4a70d14f9649887d8fbeb3e05ed}\label{class_hi_easy_x_1_1_control_base_a1a01c4a70d14f9649887d8fbeb3e05ed}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetChildList@{GetChildList}}
+\index{GetChildList@{GetChildList}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetChildList()}{GetChildList()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ $>$ \& Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Child\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aad00f0df715ce907b84141b4ac7d9f71}\label{class_hi_easy_x_1_1_control_base_aad00f0df715ce907b84141b4ac7d9f71}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}}$\ast$ Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 123 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a97bef5dfe261c7eaf6116ca16676fd00}\label{class_hi_easy_x_1_1_control_base_a97bef5dfe261c7eaf6116ca16676fd00}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetText@{GetText}}
+\index{GetText@{GetText}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}}
+{\footnotesize\ttfamily virtual std\+::wstring Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 169 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a172ae71e2be303acb30c83f83ad4d064}\label{class_hi_easy_x_1_1_control_base_a172ae71e2be303acb30c83f83ad4d064}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!GetTextColor@{GetTextColor}}
+\index{GetTextColor@{GetTextColor}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{GetTextColor()}{GetTextColor()}}
+{\footnotesize\ttfamily virtual C\+O\+L\+O\+R\+R\+EF Hi\+Easy\+X\+::\+Control\+Base\+::\+Get\+Text\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 161 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a72c682d658053588916fdf12bd8d3f56}\label{class_hi_easy_x_1_1_control_base_a72c682d658053588916fdf12bd8d3f56}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isAutoSizeForChild@{isAutoSizeForChild}}
+\index{isAutoSizeForChild@{isAutoSizeForChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isAutoSizeForChild()}{isAutoSizeForChild()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Auto\+Size\+For\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 128 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a462628b9679c4ebc935c3c5ce5f24222}\label{class_hi_easy_x_1_1_control_base_a462628b9679c4ebc935c3c5ce5f24222}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 142 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a6e30e0745734a8a246c33249ae6e8443}\label{class_hi_easy_x_1_1_control_base_a6e30e0745734a8a246c33249ae6e8443}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isFocused@{isFocused}}
+\index{isFocused@{isFocused}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isFocused()}{isFocused()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Focused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 197 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a522e6e3676e6f1ffe15f70371f676d5b}\label{class_hi_easy_x_1_1_control_base_a522e6e3676e6f1ffe15f70371f676d5b}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isHovered@{isHovered}}
+\index{isHovered@{isHovered}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isHovered()}{isHovered()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Hovered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 194 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a2b7c5f2614e457ee54b22baee0bb06a4}\label{class_hi_easy_x_1_1_control_base_a2b7c5f2614e457ee54b22baee0bb06a4}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isPressed@{isPressed}}
+\index{isPressed@{isPressed}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 200 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a7e533b346d6e96e57ec1cd8f6e0b055a}\label{class_hi_easy_x_1_1_control_base_a7e533b346d6e96e57ec1cd8f6e0b055a}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily virtual bool Hi\+Easy\+X\+::\+Control\+Base\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 146 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a2172a2e6a76a652f90882b941fc1d127}\label{class_hi_easy_x_1_1_control_base_a2172a2e6a76a652f90882b941fc1d127}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!MarkNeedClearRect@{MarkNeedClearRect}}
+\index{MarkNeedClearRect@{MarkNeedClearRect}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{MarkNeedClearRect()}{MarkNeedClearRect()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Mark\+Need\+Clear\+Rect (\begin{DoxyParamCaption}\item[{R\+E\+CT}]{rct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 72 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a81ff0b42ffbcb7c3a7cd4030c0d94cba}\label{class_hi_easy_x_1_1_control_base_a81ff0b42ffbcb7c3a7cd4030c0d94cba}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!MarkNeedRedrawAndRender@{MarkNeedRedrawAndRender}}
+\index{MarkNeedRedrawAndRender@{MarkNeedRedrawAndRender}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{MarkNeedRedrawAndRender()}{MarkNeedRedrawAndRender()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Mark\+Need\+Redraw\+And\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 62 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aeb5ceed0aa8e63ab2610ea2abedc4bc3}\label{class_hi_easy_x_1_1_control_base_aeb5ceed0aa8e63ab2610ea2abedc4bc3}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!Redraw@{Redraw}}
+\index{Redraw@{Redraw}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{Redraw()}{Redraw()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Redraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 218 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a1234eaab74c2b51dbb9197b697429993}\label{class_hi_easy_x_1_1_control_base_a1234eaab74c2b51dbb9197b697429993}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!RemoveChild@{RemoveChild}}
+\index{RemoveChild@{RemoveChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Remove\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 131 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a01a9afff183b9f0cda0d83dbb767a0b8}\label{class_hi_easy_x_1_1_control_base_a01a9afff183b9f0cda0d83dbb767a0b8}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!Render@{Render}}
+\index{Render@{Render}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$}]{dst,  }\item[{R\+E\+CT $\ast$}]{p\+Rct = {\ttfamily nullptr},  }\item[{int $\ast$}]{p\+Count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_page_ab6c79c6a2a61bf73d50999aceb036d91}{Hi\+Easy\+X\+::\+Page}}.
+
+
+
+Definition at line 254 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ade3f9e1097c4607a2fd8c9cc74153e95}\label{class_hi_easy_x_1_1_control_base_ade3f9e1097c4607a2fd8c9cc74153e95}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetAlpha@{SetAlpha}}
+\index{SetAlpha@{SetAlpha}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetAlpha()}{SetAlpha()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Alpha (\begin{DoxyParamCaption}\item[{B\+Y\+TE}]{alpha,  }\item[{bool}]{b\+Use\+Canvas\+Alpha,  }\item[{bool}]{is\+Alpha\+Calculated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 189 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aeb9bc2b20dbcf0dea4ac3ab32706bdc3}\label{class_hi_easy_x_1_1_control_base_aeb9bc2b20dbcf0dea4ac3ab32706bdc3}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetBkColor@{SetBkColor}}
+\index{SetBkColor@{SetBkColor}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetBkColor()}{SetBkColor()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Bk\+Color (\begin{DoxyParamCaption}\item[{C\+O\+L\+O\+R\+R\+EF}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 159 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a6ce290712b6fff9d80eae26fa8eced06}\label{class_hi_easy_x_1_1_control_base_a6ce290712b6fff9d80eae26fa8eced06}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetEnable@{SetEnable}}
+\index{SetEnable@{SetEnable}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetEnable()}{SetEnable()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_button_aefe32680d115e7937e15ae3f6ddd9b83}{Hi\+Easy\+X\+::\+Button}}.
+
+
+
+Definition at line 78 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a83fa7686f91675a89235205335aab92f}\label{class_hi_easy_x_1_1_control_base_a83fa7686f91675a89235205335aab92f}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetMsgProcFunc@{SetMsgProcFunc}}
+\index{SetMsgProcFunc@{SetMsgProcFunc}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetMsgProcFunc()}{SetMsgProcFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Msg\+Proc\+Func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_hi_easy_x_a2e10a7927d2a46e2c89643adae8094e2}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+NC}}}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 340 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ad01c8bbd6a40e56459d2faba5fab4b3d}\label{class_hi_easy_x_1_1_control_base_ad01c8bbd6a40e56459d2faba5fab4b3d}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetMsgProcFunc@{SetMsgProcFunc}}
+\index{SetMsgProcFunc@{SetMsgProcFunc}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetMsgProcFunc()}{SetMsgProcFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Msg\+Proc\+Func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_hi_easy_x_aa2fcbd9caec6ec195eae63584e9232fe}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+N\+C\+\_\+\+C\+L\+A\+SS}}}]{static\+\_\+class\+\_\+func,  }\item[{void $\ast$}]{\+\_\+this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 347 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_acd99a2375080ebc29af5ec5a78e8ceb0}\label{class_hi_easy_x_1_1_control_base_acd99a2375080ebc29af5ec5a78e8ceb0}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 85 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a73821ac5c9e46196df1e3dd922d96d35}\label{class_hi_easy_x_1_1_control_base_a73821ac5c9e46196df1e3dd922d96d35}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetText@{SetText}}
+\index{SetText@{SetText}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{std\+::wstring}]{wstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_static_a44bb917bda7c56b19a47a95aee2a55ac}{Hi\+Easy\+X\+::\+Static}}.
+
+
+
+Definition at line 198 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aa200c0d27e4a88df9833ff5e8b29e33e}\label{class_hi_easy_x_1_1_control_base_aa200c0d27e4a88df9833ff5e8b29e33e}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetTextColor@{SetTextColor}}
+\index{SetTextColor@{SetTextColor}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetTextColor()}{SetTextColor()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Text\+Color (\begin{DoxyParamCaption}\item[{C\+O\+L\+O\+R\+R\+EF}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 167 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a1e58bdfc56f0781bdd500cf4013a6d86}\label{class_hi_easy_x_1_1_control_base_a1e58bdfc56f0781bdd500cf4013a6d86}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!SetVisible@{SetVisible}}
+\index{SetVisible@{SetVisible}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{SetVisible()}{SetVisible()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 138 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a5bd403fbd8682259a33f3301531ddf41}\label{class_hi_easy_x_1_1_control_base_a5bd403fbd8682259a33f3301531ddf41}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!TransformMessage@{TransformMessage}}
+\index{TransformMessage@{TransformMessage}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{TransformMessage()}{TransformMessage()}}
+{\footnotesize\ttfamily Ex\+Message \& Hi\+Easy\+X\+::\+Control\+Base\+::\+Transform\+Message (\begin{DoxyParamCaption}\item[{Ex\+Message \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 354 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ac50c2510107edcd0003ec609d896fb7a}\label{class_hi_easy_x_1_1_control_base_ac50c2510107edcd0003ec609d896fb7a}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!UpdateMessage@{UpdateMessage}}
+\index{UpdateMessage@{UpdateMessage}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{UpdateMessage()}{UpdateMessage()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Update\+Message (\begin{DoxyParamCaption}\item[{Ex\+Message}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_acf7a3985b8391ad91226c5c2c17c3b2a}{Hi\+Easy\+X\+::\+Scroll\+Bar}}, and \mbox{\hyperlink{class_hi_easy_x_1_1_button_a195a1c4c28c1bc4efa00d43fc76d4d1f}{Hi\+Easy\+X\+::\+Button}}.
+
+
+
+Definition at line 391 of file Control\+Base.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a82f6680093e218339da20daa750c6839}\label{class_hi_easy_x_1_1_control_base_a82f6680093e218339da20daa750c6839}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!UpdateRect@{UpdateRect}}
+\index{UpdateRect@{UpdateRect}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{UpdateRect()}{UpdateRect()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Control\+Base\+::\+Update\+Rect (\begin{DoxyParamCaption}\item[{R\+E\+CT}]{rct\+Old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_container_a76c0f6f36e51a3cd11828ad64240b293}{Hi\+Easy\+X\+::\+Container}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hi_easy_x_1_1_scroll_bar_ade529f6a1f17a7ebd55ea89d250c2742}{Hi\+Easy\+X\+::\+Scroll\+Bar}}.
+
+
+
+Definition at line 36 of file Control\+Base.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aef9fc2d0d6365a371c9ce13ff86752b9}\label{class_hi_easy_x_1_1_control_base_aef9fc2d0d6365a371c9ce13ff86752b9}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_alpha@{m\_alpha}}
+\index{m\_alpha@{m\_alpha}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_alpha}{m\_alpha}}
+{\footnotesize\ttfamily B\+Y\+TE Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+alpha = 255\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 62 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a50af68164c7790b3f06af11301a866b0}\label{class_hi_easy_x_1_1_control_base_a50af68164c7790b3f06af11301a866b0}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bAlwaysRedrawAndRender@{m\_bAlwaysRedrawAndRender}}
+\index{m\_bAlwaysRedrawAndRender@{m\_bAlwaysRedrawAndRender}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bAlwaysRedrawAndRender}{m\_bAlwaysRedrawAndRender}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Always\+Redraw\+And\+Render = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a5b0539e21f7013d44646d3ca2838ed33}\label{class_hi_easy_x_1_1_control_base_a5b0539e21f7013d44646d3ca2838ed33}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bAutoRedrawWhenReceiveMsg@{m\_bAutoRedrawWhenReceiveMsg}}
+\index{m\_bAutoRedrawWhenReceiveMsg@{m\_bAutoRedrawWhenReceiveMsg}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bAutoRedrawWhenReceiveMsg}{m\_bAutoRedrawWhenReceiveMsg}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Auto\+Redraw\+When\+Receive\+Msg = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a3c7d5df0c1558c0ec993ad3890e18c79}\label{class_hi_easy_x_1_1_control_base_a3c7d5df0c1558c0ec993ad3890e18c79}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bAutoSizeForChild@{m\_bAutoSizeForChild}}
+\index{m\_bAutoSizeForChild@{m\_bAutoSizeForChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bAutoSizeForChild}{m\_bAutoSizeForChild}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Auto\+Size\+For\+Child = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 78 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ae404f7e5aab1fbfd611776c7995996d5}\label{class_hi_easy_x_1_1_control_base_ae404f7e5aab1fbfd611776c7995996d5}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bClear@{m\_bClear}}
+\index{m\_bClear@{m\_bClear}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bClear}{m\_bClear}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Clear = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ac3032416bb487fb5ee04160f2f2b3bd5}\label{class_hi_easy_x_1_1_control_base_ac3032416bb487fb5ee04160f2f2b3bd5}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bCompleteFirstSetRect@{m\_bCompleteFirstSetRect}}
+\index{m\_bCompleteFirstSetRect@{m\_bCompleteFirstSetRect}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bCompleteFirstSetRect}{m\_bCompleteFirstSetRect}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Complete\+First\+Set\+Rect = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 73 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ae0ec54aca4911bd3eeb388c77917cb38}\label{class_hi_easy_x_1_1_control_base_ae0ec54aca4911bd3eeb388c77917cb38}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bEnableBorder@{m\_bEnableBorder}}
+\index{m\_bEnableBorder@{m\_bEnableBorder}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bEnableBorder}{m\_bEnableBorder}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Enable\+Border = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ac32c07be0d613b508c36220ba7938d06}\label{class_hi_easy_x_1_1_control_base_ac32c07be0d613b508c36220ba7938d06}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bEnabled@{m\_bEnabled}}
+\index{m\_bEnabled@{m\_bEnabled}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bEnabled}{m\_bEnabled}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Enabled = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aa96b30a60cd8d93ea0b49b2d787233c9}\label{class_hi_easy_x_1_1_control_base_aa96b30a60cd8d93ea0b49b2d787233c9}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bFocused@{m\_bFocused}}
+\index{m\_bFocused@{m\_bFocused}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bFocused}{m\_bFocused}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Focused = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 86 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ab407e304413acc7d4c9a88e8c9c94849}\label{class_hi_easy_x_1_1_control_base_ab407e304413acc7d4c9a88e8c9c94849}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bHovered@{m\_bHovered}}
+\index{m\_bHovered@{m\_bHovered}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bHovered}{m\_bHovered}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Hovered = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 84 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aac1e82098ce1faacec3eb1f5666ec0ea}\label{class_hi_easy_x_1_1_control_base_aac1e82098ce1faacec3eb1f5666ec0ea}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bPressed@{m\_bPressed}}
+\index{m\_bPressed@{m\_bPressed}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bPressed}{m\_bPressed}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Pressed = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 85 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a206af1bbabb242872b6128e84972f256}\label{class_hi_easy_x_1_1_control_base_a206af1bbabb242872b6128e84972f256}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bRedraw@{m\_bRedraw}}
+\index{m\_bRedraw@{m\_bRedraw}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bRedraw}{m\_bRedraw}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Redraw = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a4cfe720d3e77a2c15d87b4da565a1c37}\label{class_hi_easy_x_1_1_control_base_a4cfe720d3e77a2c15d87b4da565a1c37}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bRender@{m\_bRender}}
+\index{m\_bRender@{m\_bRender}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bRender}{m\_bRender}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Render = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 54 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a6b0caf2ebbdd099e6d36fba2d1e38e1c}\label{class_hi_easy_x_1_1_control_base_a6b0caf2ebbdd099e6d36fba2d1e38e1c}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bUseCanvasAlpha@{m\_bUseCanvasAlpha}}
+\index{m\_bUseCanvasAlpha@{m\_bUseCanvasAlpha}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bUseCanvasAlpha}{m\_bUseCanvasAlpha}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Use\+Canvas\+Alpha = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 63 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a5199ab6ebcf3bef6fd601f60310550fe}\label{class_hi_easy_x_1_1_control_base_a5199ab6ebcf3bef6fd601f60310550fe}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_bVisible@{m\_bVisible}}
+\index{m\_bVisible@{m\_bVisible}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_bVisible}{m\_bVisible}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+b\+Visible = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ae95bbe48d81bb21b7e760ff792af059a}\label{class_hi_easy_x_1_1_control_base_ae95bbe48d81bb21b7e760ff792af059a}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_canvas@{m\_canvas}}
+\index{m\_canvas@{m\_canvas}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_canvas}{m\_canvas}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+canvas\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 61 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a56ef733920e54f454c990fd1aebfac1f}\label{class_hi_easy_x_1_1_control_base_a56ef733920e54f454c990fd1aebfac1f}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_cBackground@{m\_cBackground}}
+\index{m\_cBackground@{m\_cBackground}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_cBackground}{m\_cBackground}}
+{\footnotesize\ttfamily C\+O\+L\+O\+R\+R\+EF Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+c\+Background = \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b}{C\+L\+A\+S\+S\+I\+C\+G\+R\+AY}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 67 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aebce31b4e9be410a4d0a247616c16ad4}\label{class_hi_easy_x_1_1_control_base_aebce31b4e9be410a4d0a247616c16ad4}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_cBorder@{m\_cBorder}}
+\index{m\_cBorder@{m\_cBorder}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_cBorder}{m\_cBorder}}
+{\footnotesize\ttfamily C\+O\+L\+O\+R\+R\+EF Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+c\+Border = \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68}{M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+G\+R\+AY}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 66 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aaaecf1b442d34f7674a4f3da49cb1ea7}\label{class_hi_easy_x_1_1_control_base_aaaecf1b442d34f7674a4f3da49cb1ea7}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_cText@{m\_cText}}
+\index{m\_cText@{m\_cText}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_cText}{m\_cText}}
+{\footnotesize\ttfamily C\+O\+L\+O\+R\+R\+EF Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+c\+Text = B\+L\+A\+CK\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 68 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a6a3797dd102a11dc00a7c36581b22daa}\label{class_hi_easy_x_1_1_control_base_a6a3797dd102a11dc00a7c36581b22daa}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_funcMessageProc@{m\_funcMessageProc}}
+\index{m\_funcMessageProc@{m\_funcMessageProc}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_funcMessageProc}{m\_funcMessageProc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_hi_easy_x_a2e10a7927d2a46e2c89643adae8094e2}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+NC}} Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+func\+Message\+Proc = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 80 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a240d262fc1e65624813a9a8ef39c0ad5}\label{class_hi_easy_x_1_1_control_base_a240d262fc1e65624813a9a8ef39c0ad5}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_funcMessageProc\_Class@{m\_funcMessageProc\_Class}}
+\index{m\_funcMessageProc\_Class@{m\_funcMessageProc\_Class}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_funcMessageProc\_Class}{m\_funcMessageProc\_Class}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_hi_easy_x_aa2fcbd9caec6ec195eae63584e9232fe}{M\+E\+S\+S\+A\+G\+E\+\_\+\+P\+R\+O\+C\+\_\+\+F\+U\+N\+C\+\_\+\+C\+L\+A\+SS}} Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+func\+Message\+Proc\+\_\+\+Class = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 81 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a255c9dc0ff8db31e4371006e3dd2364d}\label{class_hi_easy_x_1_1_control_base_a255c9dc0ff8db31e4371006e3dd2364d}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_isAlphaCalculated@{m\_isAlphaCalculated}}
+\index{m\_isAlphaCalculated@{m\_isAlphaCalculated}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_isAlphaCalculated}{m\_isAlphaCalculated}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+is\+Alpha\+Calculated = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 64 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a1fb286838bbb30c2fa2daa64c1277939}\label{class_hi_easy_x_1_1_control_base_a1fb286838bbb30c2fa2daa64c1277939}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_listChild@{m\_listChild}}
+\index{m\_listChild@{m\_listChild}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_listChild}{m\_listChild}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}}$\ast$$>$ Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+list\+Child\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 76 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_aef9e13f82ff2956fc0d34e1de4713e8c}\label{class_hi_easy_x_1_1_control_base_aef9e13f82ff2956fc0d34e1de4713e8c}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_nBorderThickness@{m\_nBorderThickness}}
+\index{m\_nBorderThickness@{m\_nBorderThickness}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_nBorderThickness}{m\_nBorderThickness}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+n\+Border\+Thickness = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 71 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_abf130d8b75dbe3762567a0c3f82791bd}\label{class_hi_easy_x_1_1_control_base_abf130d8b75dbe3762567a0c3f82791bd}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_pCalledClass@{m\_pCalledClass}}
+\index{m\_pCalledClass@{m\_pCalledClass}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_pCalledClass}{m\_pCalledClass}}
+{\footnotesize\ttfamily void$\ast$ Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+p\+Called\+Class = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 82 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_ae762452f0d6e75a1f3b215c29a1d2cbe}\label{class_hi_easy_x_1_1_control_base_ae762452f0d6e75a1f3b215c29a1d2cbe}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_pParent@{m\_pParent}}
+\index{m\_pParent@{m\_pParent}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_pParent}{m\_pParent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}}$\ast$ Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+p\+Parent = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 75 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a6bbf7e24f18391620d371e05892ad8d7}\label{class_hi_easy_x_1_1_control_base_a6bbf7e24f18391620d371e05892ad8d7}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_rctClear@{m\_rctClear}}
+\index{m\_rctClear@{m\_rctClear}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_rctClear}{m\_rctClear}}
+{\footnotesize\ttfamily R\+E\+CT Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+rct\+Clear = \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file Control\+Base.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_control_base_a0f51d324623ae83c706c6c3a9a6c9d3b}\label{class_hi_easy_x_1_1_control_base_a0f51d324623ae83c706c6c3a9a6c9d3b}} 
+\index{HiEasyX::ControlBase@{HiEasyX::ControlBase}!m\_wstrText@{m\_wstrText}}
+\index{m\_wstrText@{m\_wstrText}!HiEasyX::ControlBase@{HiEasyX::ControlBase}}
+\doxysubsubsection{\texorpdfstring{m\_wstrText}{m\_wstrText}}
+{\footnotesize\ttfamily std\+::wstring Hi\+Easy\+X\+::\+Control\+Base\+::m\+\_\+wstr\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 59 of file Control\+Base.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_control_base_8h}{Control\+Base.\+h}}\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_control_base_8cpp}{Control\+Base.\+cpp}}\end{DoxyCompactItemize}

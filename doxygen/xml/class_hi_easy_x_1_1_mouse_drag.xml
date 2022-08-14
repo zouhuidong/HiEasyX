@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_mouse_drag" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::MouseDrag</compoundname>
+    <includes refid="_hi_mouse_drag_8h" local="no">HiMouseDrag.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1aa2f6d829f8a1e17c66c4edda4e74abaa" prot="private" static="no" mutable="no">
+        <type>ExMessage</type>
+        <definition>ExMessage HiEasyX::MouseDrag::old</definition>
+        <argsstring></argsstring>
+        <name>old</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="22" column="11" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1ad0629ea886b75aa17901a1db38cd043e" prot="private" static="no" mutable="no">
+        <type>ExMessage</type>
+        <definition>ExMessage HiEasyX::MouseDrag::msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="22" column="16" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1aab7c02a4be5b7c297964688713ae95d3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::MouseDrag::dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="23" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1a1f009a27761ba4b240a460d02923ab02" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::MouseDrag::dy</definition>
+        <argsstring></argsstring>
+        <name>dy</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="23" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1af9cec2a0f91562038ecec55040e3bcba" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::lbtn</definition>
+        <argsstring></argsstring>
+        <name>lbtn</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="24" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1a01a406ef1dfe4f25d961b259d2a4acaa" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::mbtn</definition>
+        <argsstring></argsstring>
+        <name>mbtn</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="24" column="12" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1a1c3ae8d014f82fe0ec719ea4ce244b24" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::rbtn</definition>
+        <argsstring></argsstring>
+        <name>rbtn</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="24" column="18" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1ab025f05d16c6081b8536837b09e78ff5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::ldrag</definition>
+        <argsstring></argsstring>
+        <name>ldrag</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="25" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1a6f3605e4134b3db8e4d6b51fd95d9a59" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::mdrag</definition>
+        <argsstring></argsstring>
+        <name>mdrag</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="25" column="13" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1ac61de4bea7313d902bd2cb3c7b559a0b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::rdrag</definition>
+        <argsstring></argsstring>
+        <name>rdrag</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="25" column="20" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_mouse_drag_1a70d90aa6eb3d4919c5ef69e044e19fe3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::newmsg</definition>
+        <argsstring></argsstring>
+        <name>newmsg</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="26" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a0199b9ffc5a5e02982b72435cefad653" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::UpdateDragInfo</definition>
+        <argsstring>(bool &amp;btn, int msgid_down, int msgid_up)</argsstring>
+        <name>UpdateDragInfo</name>
+        <param>
+          <type>bool &amp;</type>
+          <declname>btn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msgid_down</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msgid_up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="28" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="6" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a04eb9c96bc115b2aa3f82fa95caa098f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::MouseDrag::UpdateMessage</definition>
+        <argsstring>(ExMessage m)</argsstring>
+        <name>UpdateMessage</name>
+        <param>
+          <type>ExMessage</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="32" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="47" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a690b38837e61c9a657261f954c79022e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::isLeftDrag</definition>
+        <argsstring>()</argsstring>
+        <name>isLeftDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="34" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1adc9a9521f92f6fc463f83e643f8b601f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::isMiddleDrag</definition>
+        <argsstring>()</argsstring>
+        <name>isMiddleDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="35" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a34019d6d68f3e470b7acc6d521e923ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MouseDrag::isRightDrag</definition>
+        <argsstring>()</argsstring>
+        <name>isRightDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="36" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="70" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a1d662a07dd6702f69788622b14d8f53a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::MouseDrag::GetDragX</definition>
+        <argsstring>()</argsstring>
+        <name>GetDragX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="38" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_mouse_drag_1a11e9ba60ff6bdcf9d80d462a86fdde81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::MouseDrag::GetDragY</definition>
+        <argsstring>()</argsstring>
+        <name>GetDragY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="39" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" line="20" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMouseDrag.h" bodystart="19" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1aab7c02a4be5b7c297964688713ae95d3" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>dx</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a1f009a27761ba4b240a460d02923ab02" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>dy</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a1d662a07dd6702f69788622b14d8f53a" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>GetDragX</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a11e9ba60ff6bdcf9d80d462a86fdde81" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>GetDragY</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a690b38837e61c9a657261f954c79022e" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>isLeftDrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1adc9a9521f92f6fc463f83e643f8b601f" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>isMiddleDrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a34019d6d68f3e470b7acc6d521e923ad" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>isRightDrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1af9cec2a0f91562038ecec55040e3bcba" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>lbtn</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1ab025f05d16c6081b8536837b09e78ff5" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>ldrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a01a406ef1dfe4f25d961b259d2a4acaa" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>mbtn</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a6f3605e4134b3db8e4d6b51fd95d9a59" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>mdrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1ad0629ea886b75aa17901a1db38cd043e" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>msg</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a70d90aa6eb3d4919c5ef69e044e19fe3" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>newmsg</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1aa2f6d829f8a1e17c66c4edda4e74abaa" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>old</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a1c3ae8d014f82fe0ec719ea4ce244b24" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>rbtn</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1ac61de4bea7313d902bd2cb3c7b559a0b" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>rdrag</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a0199b9ffc5a5e02982b72435cefad653" prot="private" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>UpdateDragInfo</name></member>
+      <member refid="class_hi_easy_x_1_1_mouse_drag_1a04eb9c96bc115b2aa3f82fa95caa098f" prot="public" virt="non-virtual"><scope>HiEasyX::MouseDrag</scope><name>UpdateMessage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_hi_easy_x_1_1_static_1_1_char" kind="struct" language="C++" prot="public">
+    <compoundname>HiEasyX::Static::Char</compoundname>
+    <includes refid="_static_8h" local="no">Static.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_static_1_1_char_1aa82289965b9fac7cbf8347187397220c" prot="public" static="no" mutable="no">
+        <type>TCHAR</type>
+        <definition>TCHAR HiEasyX::Static::Char::ch</definition>
+        <argsstring></argsstring>
+        <name>ch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" line="20" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_static_1_1_char_1a5eedeed913a5f34fcc11d7bdf9e832e7" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Static::Char::cText</definition>
+        <argsstring></argsstring>
+        <name>cText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" line="21" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_static_1_1_char_1a7d04ae1717e6be1ea7f937e18920c23d" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Static::Char::cBk</definition>
+        <argsstring></argsstring>
+        <name>cBk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" line="22" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" line="19" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h" bodystart="18" bodyend="23"/>
+    <listofallmembers>
+      <member refid="struct_hi_easy_x_1_1_static_1_1_char_1a7d04ae1717e6be1ea7f937e18920c23d" prot="public" virt="non-virtual"><scope>HiEasyX::Static::Char</scope><name>cBk</name></member>
+      <member refid="struct_hi_easy_x_1_1_static_1_1_char_1aa82289965b9fac7cbf8347187397220c" prot="public" virt="non-virtual"><scope>HiEasyX::Static::Char</scope><name>ch</name></member>
+      <member refid="struct_hi_easy_x_1_1_static_1_1_char_1a5eedeed913a5f34fcc11d7bdf9e832e7" prot="public" virt="non-virtual"><scope>HiEasyX::Static::Char</scope><name>cText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

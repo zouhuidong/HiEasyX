@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_hi_container_8h" kind="file" language="C++">
+    <compoundname>HiContainer.h</compoundname>
+    <includes local="no">Windows.h</includes>
+    <includedby refid="_hi_container_8cpp" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.cpp</includedby>
+    <includedby refid="_control_base_8h" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ControlBase.h</includedby>
+    <includedby refid="_sys_control_base_8h" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Windows.h</label>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="18">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h</label>
+        <link refid="_sys_control_base_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/HiSysGUI.h</label>
+        <link refid="_hi_sys_g_u_i_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h</label>
+        <link refid="_scroll_bar_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.h</label>
+        <link refid="_static_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="13">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.cpp</label>
+        <link refid="_page_8cpp"/>
+      </node>
+      <node id="7">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/HiGUI.h</label>
+        <link refid="_hi_g_u_i_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroup.h</label>
+        <link refid="_sys_group_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysCheckBox.h</label>
+        <link refid="_sys_check_box_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ProgressCtrl.h</label>
+        <link refid="_progress_ctrl_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysCheckBox.cpp</label>
+        <link refid="_sys_check_box_8cpp"/>
+      </node>
+      <node id="5">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp</label>
+        <link refid="_button_8cpp"/>
+      </node>
+      <node id="31">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysRadioButton.cpp</label>
+        <link refid="_sys_radio_button_8cpp"/>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp</label>
+        <link refid="_hi_window_8cpp"/>
+      </node>
+      <node id="17">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ProgressCtrl.cpp</label>
+        <link refid="_progress_ctrl_8cpp"/>
+      </node>
+      <node id="32">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h</label>
+        <link refid="_sys_edit_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysRadioButton.h</label>
+        <link refid="_sys_radio_button_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysStatic.cpp</label>
+        <link refid="_sys_static_8cpp"/>
+      </node>
+      <node id="11">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ControlBase.cpp</label>
+        <link refid="_control_base_8cpp"/>
+      </node>
+      <node id="12">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.h</label>
+        <link refid="_page_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysComboBox.h</label>
+        <link refid="_sys_combo_box_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysButton.h</label>
+        <link refid="_sys_button_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.cpp</label>
+        <link refid="_hi_container_8cpp"/>
+      </node>
+      <node id="24">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysStatic.h</label>
+        <link refid="_sys_static_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysComboBox.cpp</label>
+        <link refid="_sys_combo_box_8cpp"/>
+      </node>
+      <node id="27">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysButton.cpp</label>
+        <link refid="_sys_button_8cpp"/>
+      </node>
+      <node id="21">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroup.cpp</label>
+        <link refid="_sys_group_8cpp"/>
+      </node>
+      <node id="23">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.cpp</label>
+        <link refid="_sys_group_box_8cpp"/>
+      </node>
+      <node id="10">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp</label>
+        <link refid="_scroll_bar_8cpp"/>
+      </node>
+      <node id="36">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp</label>
+        <link refid="_sys_control_base_8cpp"/>
+      </node>
+      <node id="22">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h</label>
+        <link refid="_sys_group_box_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Static.cpp</label>
+        <link refid="_static_8cpp"/>
+      </node>
+      <node id="33">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp</label>
+        <link refid="_sys_edit_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_hi_easy_x_1_1_container" prot="public">HiEasyX::Container</innerclass>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Container.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>HiGUI<sp/>控件分支：基础容器</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>基础容器</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_hi_easy_x_1_1_container" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_hi_easy_x_1_1_container" kindref="compound">Container</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RECT<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref><sp/>=<sp/>{<sp/>0<sp/>};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>容器区域</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" kindref="member">Container</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" kindref="member">~Container</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>响应更新区域消息</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rctOld<sp/><sp/><sp/>旧的区域 <sp/><sp/><sp/><sp/><sp/><sp/><sp/>virtual<sp/>void<sp/>UpdateRect(RECT<sp/>rctOld);
+
+<sp/><sp/><sp/><sp/><sp/>RECT<sp/>GetRect()<sp/>const<sp/>{<sp/>return<sp/>m_rct;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>设置位置和宽高
+<sp/><sp/><sp/><sp/><sp/>void<sp/>SetRect(int<sp/>x,<sp/>int<sp/>y,<sp/>int<sp/>w,<sp/>int<sp/>h);
+
+<sp/><sp/><sp/><sp/><sp/>//<sp/>设置矩形区域
+<sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetRect(RECT<sp/>rct);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>POINT<sp/>GetPos()<sp/>const<sp/>{<sp/>return<sp/>{<sp/>m_rct.left,m_rct.top<sp/>};<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetX()<sp/>const<sp/>{<sp/>return<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>GetY()<sp/>const<sp/>{<sp/>return<sp/>m_rct.top;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(int<sp/>x,<sp/>int<sp/>y);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(POINT<sp/>pt);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Move(int<sp/>x,<sp/>int<sp/>y)<sp/>{<sp/>SetPos(x,<sp/>y);<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>MoveRel(int<sp/>dx,<sp/>int<sp/>dy);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetWidth()<sp/>const<sp/>{<sp/>return<sp/>m_rct.right<sp/>-<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>SetWidth(int<sp/>w);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetHeight()<sp/>const<sp/>{<sp/>return<sp/>m_rct.bottom<sp/>-<sp/>m_rct.top;<sp/>};
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetHeight(int<sp/>h);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Resize(int<sp/>w,<sp/>int<sp/>h);
+<sp/>};
+}
+
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a76c0f6f36e51a3cd11828ad64240b293" kindref="member">UpdateRect</ref>(RECT<sp/>rctOld);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RECT<sp/><ref refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" kindref="member">GetRect</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>设置位置和宽高 <sp/><sp/><sp/><sp/><sp/>void<sp/>SetRect(int<sp/>x,<sp/>int<sp/>y,<sp/>int<sp/>w,<sp/>int<sp/>h);
+
+<sp/><sp/><sp/><sp/><sp/>//<sp/>设置矩形区域
+<sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetRect(RECT<sp/>rct);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>POINT<sp/>GetPos()<sp/>const<sp/>{<sp/>return<sp/>{<sp/>m_rct.left,m_rct.top<sp/>};<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetX()<sp/>const<sp/>{<sp/>return<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>GetY()<sp/>const<sp/>{<sp/>return<sp/>m_rct.top;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(int<sp/>x,<sp/>int<sp/>y);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(POINT<sp/>pt);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Move(int<sp/>x,<sp/>int<sp/>y)<sp/>{<sp/>SetPos(x,<sp/>y);<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>MoveRel(int<sp/>dx,<sp/>int<sp/>dy);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetWidth()<sp/>const<sp/>{<sp/>return<sp/>m_rct.right<sp/>-<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>SetWidth(int<sp/>w);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetHeight()<sp/>const<sp/>{<sp/>return<sp/>m_rct.bottom<sp/>-<sp/>m_rct.top;<sp/>};
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetHeight(int<sp/>h);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Resize(int<sp/>w,<sp/>int<sp/>h);
+<sp/>};
+}
+
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>设置矩形区域 <sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetRect(RECT<sp/>rct);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>POINT<sp/>GetPos()<sp/>const<sp/>{<sp/>return<sp/>{<sp/>m_rct.left,m_rct.top<sp/>};<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetX()<sp/>const<sp/>{<sp/>return<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>GetY()<sp/>const<sp/>{<sp/>return<sp/>m_rct.top;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(int<sp/>x,<sp/>int<sp/>y);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetPos(POINT<sp/>pt);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Move(int<sp/>x,<sp/>int<sp/>y)<sp/>{<sp/>SetPos(x,<sp/>y);<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>MoveRel(int<sp/>dx,<sp/>int<sp/>dy);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetWidth()<sp/>const<sp/>{<sp/>return<sp/>m_rct.right<sp/>-<sp/>m_rct.left;<sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>void<sp/>SetWidth(int<sp/>w);
+
+<sp/><sp/><sp/><sp/><sp/>int<sp/>GetHeight()<sp/>const<sp/>{<sp/>return<sp/>m_rct.bottom<sp/>-<sp/>m_rct.top;<sp/>};
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>SetHeight(int<sp/>h);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>Resize(int<sp/>w,<sp/>int<sp/>h);
+<sp/>};
+}
+
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>(RECT<sp/>rct);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>POINT<sp/><ref refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" kindref="member">GetPos</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left,<ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top<sp/>};<sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" kindref="member">GetX</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left;<sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" kindref="member">GetY</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top;<sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" kindref="member">SetPos</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" kindref="member">SetPos</ref>(POINT<sp/>pt);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" kindref="member">Move</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/>{<sp/><ref refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" kindref="member">SetPos</ref>(x,<sp/>y);<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" kindref="member">MoveRel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dy);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" kindref="member">GetWidth</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.right<sp/>-<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left;<sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" kindref="member">SetWidth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" kindref="member">GetHeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.bottom<sp/>-<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top;<sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" kindref="member">SetHeight</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" kindref="member">Resize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.h"/>
+  </compounddef>
+</doxygen>

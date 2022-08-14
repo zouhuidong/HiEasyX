@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_ac806fb56071b04220f9882214ac4d4d" kind="dir">
+    <compoundname>E:/_MYC/_VS_Project/HiEasyX/HiEasyX</compoundname>
+    <innerdir refid="dir_bb30ec1a275f130a60275abb27bbddc6">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX</innerdir>
+    <innerfile refid="_hi_easy_x_8h">HiEasyX.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/"/>
+  </compounddef>
+</doxygen>

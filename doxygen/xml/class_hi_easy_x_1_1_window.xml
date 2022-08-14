@@ -1,0 +1,958 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_window" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::Window</compoundname>
+    <includes refid="_hi_window_8h" local="no">HiWindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1ab9a37ec39dcb8ed598e95c5b814b63a7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::Window::m_nWindowIndex</definition>
+        <argsstring></argsstring>
+        <name>m_nWindowIndex</name>
+        <initializer>= <ref refid="_hi_window_8h_1a84c163038896afa780149de502db4e31" kindref="member">NO_WINDOW_INDEX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="143" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1a5858da68191d6d1445930f406fb49498" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::m_isCreated</definition>
+        <argsstring></argsstring>
+        <name>m_isCreated</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="144" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1a89f97eee2bd11c60db4f2fff1b7d4cd0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::m_isPreStyle</definition>
+        <argsstring></argsstring>
+        <name>m_isPreStyle</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="145" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1ab64f1baff1241e4279de9fe4ea17c5f8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::m_isPrePos</definition>
+        <argsstring></argsstring>
+        <name>m_isPrePos</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="146" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1a5cab85149ac5e2835cc9fb80fcb21c88" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long HiEasyX::Window::m_lPreStyle</definition>
+        <argsstring></argsstring>
+        <name>m_lPreStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="147" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_window_1aac06d17c9e9d64da9400c77174a366b2" prot="private" static="no" mutable="no">
+        <type>POINT</type>
+        <definition>POINT HiEasyX::Window::m_pPrePos</definition>
+        <argsstring></argsstring>
+        <name>m_pPrePos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="148" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a50360ab615b160e2d3f8a351d82b69d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::Window::Window</definition>
+        <argsstring>()</argsstring>
+        <name>Window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="152" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1523" bodyend="1525"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a3d563d6f28b90002e570bd6bd4413f60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::Window::Window</definition>
+        <argsstring>(int w, int h, int flag=EW_NORMAL, LPCTSTR lpszWndTitle=L&quot;&quot;, WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)</argsstring>
+        <name>Window</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flag</declname>
+          <defval><ref refid="_hi_window_8h_1aa08e357fa976894b15d6f5964abe597d" kindref="member">EW_NORMAL</ref></defval>
+        </param>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszWndTitle</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>WNDPROC</type>
+          <declname>WindowProcess</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="154" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1527" bodyend="1530"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ab527c57e7a57446c48881b094c53e59e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>HiEasyX::Window::~Window</definition>
+        <argsstring>()</argsstring>
+        <name>~Window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="163" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1532" bodyend="1534"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a31e537f6e8c0239ee6fa0f720670b885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::Window::InitWindow</definition>
+        <argsstring>(int w=640, int h=480, int flag=EW_NORMAL, LPCTSTR lpszWndTitle=L&quot;&quot;, WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)</argsstring>
+        <name>InitWindow</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+          <defval>640</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+          <defval>480</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flag</declname>
+          <defval><ref refid="_hi_window_8h_1aa08e357fa976894b15d6f5964abe597d" kindref="member">EW_NORMAL</ref></defval>
+        </param>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszWndTitle</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>WNDPROC</type>
+          <declname>WindowProcess</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="165" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1536" bodyend="1547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a73ce39b5e8d51aa9da9216950eb43426" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::Window::Create</definition>
+        <argsstring>(int w=640, int h=480, int flag=EW_NORMAL, LPCTSTR lpszWndTitle=L&quot;&quot;, WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+          <defval>640</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+          <defval>480</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flag</declname>
+          <defval><ref refid="_hi_window_8h_1aa08e357fa976894b15d6f5964abe597d" kindref="member">EW_NORMAL</ref></defval>
+        </param>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszWndTitle</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>WNDPROC</type>
+          <declname>WindowProcess</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="175" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1549" bodyend="1552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a4a4f383a1ca1be8f9f98e885ce815f18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::CloseWindow</definition>
+        <argsstring>()</argsstring>
+        <name>CloseWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="184" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1554" bodyend="1557"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a3874552388af48b0d81b9b1aae6bbd4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Destroy</definition>
+        <argsstring>()</argsstring>
+        <name>Destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="187" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1559" bodyend="1562"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ae864d1d8ad06e5f5d5df1086bc15707b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::SetProcFunc</definition>
+        <argsstring>(WNDPROC WindowProcess)</argsstring>
+        <name>SetProcFunc</name>
+        <param>
+          <type>WNDPROC</type>
+          <declname>WindowProcess</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="189" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1564" bodyend="1567"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::Window::GetHandle</definition>
+        <argsstring>()</argsstring>
+        <name>GetHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="191" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1569" bodyend="1572"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1aa2ddf8de39392f0bae7adcec84d38867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_hi_easy_x_1_1_easy_window" kindref="compound">EasyWindow</ref></type>
+        <definition>EasyWindow HiEasyX::Window::GetInfo</definition>
+        <argsstring>()</argsstring>
+        <name>GetInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="193" column="12" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1574" bodyend="1577"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1aa68aa5fbe5ec4ad59e23dfa5d1948d06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::isAlive</definition>
+        <argsstring>()</argsstring>
+        <name>isAlive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="195" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1579" bodyend="1582"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1affbc2bf66ad1acf5192865e72428192b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IMAGE *</type>
+        <definition>IMAGE * HiEasyX::Window::GetImage</definition>
+        <argsstring>()</argsstring>
+        <name>GetImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="197" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1584" bodyend="1587"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1aedfe4fcebf8f9e98342d80da758da7c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+        <definition>Canvas * HiEasyX::Window::GetCanvas</definition>
+        <argsstring>()</argsstring>
+        <name>GetCanvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="199" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1589" bodyend="1592"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a749a74f5ca2960abd91e37011b8f939d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::BindCanvas</definition>
+        <argsstring>(Canvas *pCanvas)</argsstring>
+        <name>BindCanvas</name>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+          <declname>pCanvas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="201" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1594" bodyend="1597"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a10ba42493045b93c67ef70b9a9ab3777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::WaitMyTask</definition>
+        <argsstring>()</argsstring>
+        <name>WaitMyTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="203" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1599" bodyend="1602"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ac7c193a6a393ae32fbbdffd3a2ab8765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::SetWorkingWindow</definition>
+        <argsstring>()</argsstring>
+        <name>SetWorkingWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="205" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1604" bodyend="1607"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a4da01cc6784ce26ee4f39bcd640b350c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::SetQuickDraw</definition>
+        <argsstring>(UINT nSkipPixels)</argsstring>
+        <name>SetQuickDraw</name>
+        <param>
+          <type>UINT</type>
+          <declname>nSkipPixels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="207" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1668" bodyend="1671"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a4208e053ee7ac0718a56c518ebaf9f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::FlushDrawing</definition>
+        <argsstring>()</argsstring>
+        <name>FlushDrawing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="210" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1673" bodyend="1677"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ad945eb8c2be0269943ccc9a9ced7dbef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Redraw</definition>
+        <argsstring>()</argsstring>
+        <name>Redraw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="213" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1679" bodyend="1682"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a84d6746919ec44df9e79a50ec0f5bf8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::BeginTask</definition>
+        <argsstring>()</argsstring>
+        <name>BeginTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="215" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1609" bodyend="1619"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ab710116368877655a6952b868f54d9ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::EndTask</definition>
+        <argsstring>(bool flush=true)</argsstring>
+        <name>EndTask</name>
+        <param>
+          <type>bool</type>
+          <declname>flush</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="217" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1621" bodyend="1624"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ad66464fd4cc5a0f210b4acbc645c4a72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::isInTask</definition>
+        <argsstring>()</argsstring>
+        <name>isInTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="219" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1626" bodyend="1629"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a3571417b2cca37ba59b58353b46df055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::isSizeChanged</definition>
+        <argsstring>()</argsstring>
+        <name>isSizeChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="221" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1631" bodyend="1634"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a8dcb54ed226a3abccda09901ea6f21c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::CreateTray</definition>
+        <argsstring>(LPCTSTR lpszTrayName)</argsstring>
+        <name>CreateTray</name>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszTrayName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="223" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1636" bodyend="1639"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1adeb07944de92d3aeca422dcd0630d847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::DeleteTray</definition>
+        <argsstring>()</argsstring>
+        <name>DeleteTray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="225" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1641" bodyend="1644"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a12d12fc4af4caa31edaa980f2cbd833f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::SetTrayMenu</definition>
+        <argsstring>(HMENU hMenu)</argsstring>
+        <name>SetTrayMenu</name>
+        <param>
+          <type>HMENU</type>
+          <declname>hMenu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="227" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1646" bodyend="1649"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1adda1b6ac64c9a624089fc21e4a15f435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::SetTrayMenuProcFunc</definition>
+        <argsstring>(void(*pFunc)(UINT))</argsstring>
+        <name>SetTrayMenuProcFunc</name>
+        <param>
+          <type>void(*)(UINT)</type>
+          <declname>pFunc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="229" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1651" bodyend="1654"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a1d436d306bd76438376d3792c3e9e15e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::PreSetStyle</definition>
+        <argsstring>(long lStyle)</argsstring>
+        <name>PreSetStyle</name>
+        <param>
+          <type>long</type>
+          <declname>lStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="231" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1656" bodyend="1660"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ac87bb5818c8497e2402d000980326ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::PreSetPos</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>PreSetPos</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="233" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1662" bodyend="1666"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ad46cd00add89b602ba94e631be60ddfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long HiEasyX::Window::GetStyle</definition>
+        <argsstring>()</argsstring>
+        <name>GetStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="235" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1684" bodyend="1687"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ad710a0020b99a5db822742aa8c0396b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::SetStyle</definition>
+        <argsstring>(long lNewStyle)</argsstring>
+        <name>SetStyle</name>
+        <param>
+          <type>long</type>
+          <declname>lNewStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="237" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1689" bodyend="1692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a23ca186fccd1c0124e0e6c7b986c9b9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long HiEasyX::Window::GetExStyle</definition>
+        <argsstring>()</argsstring>
+        <name>GetExStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="239" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1694" bodyend="1697"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1aabb61b1270b1f3b357dc81f53b896da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::SetExStyle</definition>
+        <argsstring>(long lNewExStyle)</argsstring>
+        <name>SetExStyle</name>
+        <param>
+          <type>long</type>
+          <declname>lNewExStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="241" column="4" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1699" bodyend="1702"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a6fa87dcc06df061216bd413958634499" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>POINT</type>
+        <definition>POINT HiEasyX::Window::GetPos</definition>
+        <argsstring>()</argsstring>
+        <name>GetPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="243" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1704" bodyend="1707"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1ad57fa249de8c264354763593e82f69f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SIZE</type>
+        <definition>SIZE HiEasyX::Window::GetWindowSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindowSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="245" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1709" bodyend="1712"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a0dcb2609e0e68f1ac5bbec30d6454310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::GetWindowWidth</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindowWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="247" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1719" bodyend="1722"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a81485b82a4393de2a2c79580f27834f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::GetWindowHeight</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindowHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="249" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1724" bodyend="1727"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a5760826117b8a1a6beda2c07370a1437" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::GetClientWidth</definition>
+        <argsstring>()</argsstring>
+        <name>GetClientWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="251" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1744" bodyend="1747"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a057b56651e72c4c74625a3ab489efd26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::Window::GetClientHeight</definition>
+        <argsstring>()</argsstring>
+        <name>GetClientHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="253" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1749" bodyend="1752"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1adc251bdc1e2063e5f59a1aed8879c52f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Move</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>Move</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="255" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1714" bodyend="1717"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a790b32d87ee475bdaa30b2877c79e3c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::MoveRel</definition>
+        <argsstring>(int dx, int dy)</argsstring>
+        <name>MoveRel</name>
+        <param>
+          <type>int</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="257" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1729" bodyend="1732"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1adf83598ff93e76b6c2a0db5d63e544ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Resize</definition>
+        <argsstring>(int w, int h)</argsstring>
+        <name>Resize</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="259" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1734" bodyend="1737"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a071c67fa394f2b000301927684d11b83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::isForegroundWindow</definition>
+        <argsstring>()</argsstring>
+        <name>isForegroundWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="262" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1739" bodyend="1742"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a5bfee049a6182fca21b91319b58c3b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ExMessage</type>
+        <definition>ExMessage HiEasyX::Window::Get_Message</definition>
+        <argsstring>(BYTE filter=-1)</argsstring>
+        <name>Get_Message</name>
+        <param>
+          <type>BYTE</type>
+          <declname>filter</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="264" column="11" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1754" bodyend="1757"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1aaf1d3586239336876b3197ee2876eac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Get_Message</definition>
+        <argsstring>(ExMessage *msg, BYTE filter=-1)</argsstring>
+        <name>Get_Message</name>
+        <param>
+          <type>ExMessage *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>BYTE</type>
+          <declname>filter</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="266" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1759" bodyend="1762"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a35cd9c53aa78567ff0534043959ca379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::Window::Peek_Message</definition>
+        <argsstring>(ExMessage *msg, BYTE filter=-1, bool removemsg=true)</argsstring>
+        <name>Peek_Message</name>
+        <param>
+          <type>ExMessage *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>BYTE</type>
+          <declname>filter</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removemsg</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="268" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1764" bodyend="1767"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_window_1a7632803e146c97d92a21bf5fafe6dbd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Window::Flush_Message</definition>
+        <argsstring>(BYTE filter=-1)</argsstring>
+        <name>Flush_Message</name>
+        <param>
+          <type>BYTE</type>
+          <declname>filter</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="270" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.cpp" bodystart="1769" bodyend="1772"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="140" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="139" bodyend="271"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_window_1a84d6746919ec44df9e79a50ec0f5bf8e" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>BeginTask</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a749a74f5ca2960abd91e37011b8f939d" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>BindCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a4a4f383a1ca1be8f9f98e885ce815f18" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>CloseWindow</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a73ce39b5e8d51aa9da9216950eb43426" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a8dcb54ed226a3abccda09901ea6f21c3" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>CreateTray</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1adeb07944de92d3aeca422dcd0630d847" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>DeleteTray</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a3874552388af48b0d81b9b1aae6bbd4a" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Destroy</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ab710116368877655a6952b868f54d9ad" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>EndTask</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a7632803e146c97d92a21bf5fafe6dbd0" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Flush_Message</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a4208e053ee7ac0718a56c518ebaf9f54" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>FlushDrawing</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a5bfee049a6182fca21b91319b58c3b40" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Get_Message</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aaf1d3586239336876b3197ee2876eac1" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Get_Message</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aedfe4fcebf8f9e98342d80da758da7c5" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a057b56651e72c4c74625a3ab489efd26" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetClientHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a5760826117b8a1a6beda2c07370a1437" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetClientWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a23ca186fccd1c0124e0e6c7b986c9b9c" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetExStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a91c708f2f0fbb0c8df0d2cdbfebc26c7" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetHandle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1affbc2bf66ad1acf5192865e72428192b" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetImage</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aa2ddf8de39392f0bae7adcec84d38867" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetInfo</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a6fa87dcc06df061216bd413958634499" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ad46cd00add89b602ba94e631be60ddfd" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a81485b82a4393de2a2c79580f27834f5" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetWindowHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ad57fa249de8c264354763593e82f69f5" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetWindowSize</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a0dcb2609e0e68f1ac5bbec30d6454310" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>GetWindowWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a31e537f6e8c0239ee6fa0f720670b885" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>InitWindow</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aa68aa5fbe5ec4ad59e23dfa5d1948d06" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>isAlive</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a071c67fa394f2b000301927684d11b83" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>isForegroundWindow</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ad66464fd4cc5a0f210b4acbc645c4a72" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>isInTask</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a3571417b2cca37ba59b58353b46df055" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>isSizeChanged</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a5858da68191d6d1445930f406fb49498" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_isCreated</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ab64f1baff1241e4279de9fe4ea17c5f8" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_isPrePos</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a89f97eee2bd11c60db4f2fff1b7d4cd0" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_isPreStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a5cab85149ac5e2835cc9fb80fcb21c88" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_lPreStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ab9a37ec39dcb8ed598e95c5b814b63a7" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_nWindowIndex</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aac06d17c9e9d64da9400c77174a366b2" prot="private" virt="non-virtual"><scope>HiEasyX::Window</scope><name>m_pPrePos</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1adc251bdc1e2063e5f59a1aed8879c52f" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a790b32d87ee475bdaa30b2877c79e3c9" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a35cd9c53aa78567ff0534043959ca379" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Peek_Message</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ac87bb5818c8497e2402d000980326ab8" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>PreSetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a1d436d306bd76438376d3792c3e9e15e" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>PreSetStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ad945eb8c2be0269943ccc9a9ced7dbef" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Redraw</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1adf83598ff93e76b6c2a0db5d63e544ad" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1aabb61b1270b1f3b357dc81f53b896da0" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetExStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ae864d1d8ad06e5f5d5df1086bc15707b" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a4da01cc6784ce26ee4f39bcd640b350c" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetQuickDraw</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ad710a0020b99a5db822742aa8c0396b5" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a12d12fc4af4caa31edaa980f2cbd833f" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetTrayMenu</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1adda1b6ac64c9a624089fc21e4a15f435" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetTrayMenuProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ac7c193a6a393ae32fbbdffd3a2ab8765" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>SetWorkingWindow</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a10ba42493045b93c67ef70b9a9ab3777" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>WaitMyTask</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a50360ab615b160e2d3f8a351d82b69d6" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Window</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1a3d563d6f28b90002e570bd6bd4413f60" prot="public" virt="non-virtual"><scope>HiEasyX::Window</scope><name>Window</name></member>
+      <member refid="class_hi_easy_x_1_1_window_1ab527c57e7a57446c48881b094c53e59e" prot="public" virt="virtual"><scope>HiEasyX::Window</scope><name>~Window</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_image_block" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::ImageBlock</compoundname>
+    <includes refid="_hi_canvas_8h" local="no">HiCanvas.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1ac37991bd6a3bdee9b936f0a00e95d22b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+        <definition>Canvas* HiEasyX::ImageBlock::m_pCanvas</definition>
+        <argsstring></argsstring>
+        <name>m_pCanvas</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="502" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="502" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1a2b165f62aa605a13c46f95a42521d9c5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ImageBlock::m_isCreated</definition>
+        <argsstring></argsstring>
+        <name>m_isCreated</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="503" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1a67b06b887ac03218fd2495a23d324884" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ImageBlock::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="508" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1a12d0b9de5309e665d57fd922f40065cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ImageBlock::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="508" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1aeeeaddf7fb8c39e58711cb7d30f9b964" prot="public" static="no" mutable="no">
+        <type>RECT</type>
+        <definition>RECT HiEasyX::ImageBlock::rctCrop</definition>
+        <argsstring></argsstring>
+        <name>rctCrop</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="509" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="509" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1a9d928cc234682ad0e64fbbed06b29c76" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ImageBlock::bUseSrcAlpha</definition>
+        <argsstring></argsstring>
+        <name>bUseSrcAlpha</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="510" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1a9361fb9ce5239b4e06de0b66d2b56998" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ImageBlock::isAlphaCalculated</definition>
+        <argsstring></argsstring>
+        <name>isAlphaCalculated</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="512" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="512" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1ac77a27ba8cde18f2e1cbc458613b8ec7" prot="public" static="no" mutable="no">
+        <type>BYTE</type>
+        <definition>BYTE HiEasyX::ImageBlock::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="515" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="515" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_image_block_1ae81ee56acc56419b14ed6fa2a62a1f73" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ImageBlock::bVisible</definition>
+        <argsstring></argsstring>
+        <name>bVisible</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="516" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="516" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1ab48a25b13f07030cf1756936f8674af6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ImageBlock::DeleteMyCanvas</definition>
+        <argsstring>()</argsstring>
+        <name>DeleteMyCanvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="505" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1582" bodyend="1589"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a5bc5307a08f58142bff01d8f3cf15bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ImageBlock::ImageBlock</definition>
+        <argsstring>()</argsstring>
+        <name>ImageBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="518" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1591" bodyend="1593"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1ad921b031594051d79be44cfe249d3d0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ImageBlock::ImageBlock</definition>
+        <argsstring>(Canvas *pCanvas)</argsstring>
+        <name>ImageBlock</name>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+          <declname>pCanvas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="520" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1595" bodyend="1598"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1ab1052b1765b2bcce5a58c5eee63c543e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ImageBlock::ImageBlock</definition>
+        <argsstring>(int _x, int _y, Canvas *pCanvas)</argsstring>
+        <name>ImageBlock</name>
+        <param>
+          <type>int</type>
+          <declname>_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_y</declname>
+        </param>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+          <declname>pCanvas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="522" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1600" bodyend="1605"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1ae0462b78bd2d53093c30b330a1560e88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ImageBlock::ImageBlock</definition>
+        <argsstring>(int _x, int _y, int w, int h, COLORREF cBk=0)</argsstring>
+        <name>ImageBlock</name>
+        <param>
+          <type>int</type>
+          <declname>_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>cBk</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="525" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1607" bodyend="1612"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a529516d1e27d6fd59e14f1d2c04e499f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>HiEasyX::ImageBlock::~ImageBlock</definition>
+        <argsstring>()</argsstring>
+        <name>~ImageBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="527" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1614" bodyend="1617"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a59f2acf67c98f581502b86cca315f018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+        <definition>Canvas * HiEasyX::ImageBlock::CreateCanvas</definition>
+        <argsstring>(int w, int h, COLORREF cBk=0)</argsstring>
+        <name>CreateCanvas</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>cBk</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="530" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1619" bodyend="1632"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1ae91482d1e5db83ffd1b315a251b32886" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+        <definition>Canvas* HiEasyX::ImageBlock::GetCanvas</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCanvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="532" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="532" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a5963b3d8e857996f512caadb731acf97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ImageBlock::SetCanvas</definition>
+        <argsstring>(Canvas *pCanvas)</argsstring>
+        <name>SetCanvas</name>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+          <declname>pCanvas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="534" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1634" bodyend="1638"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1af2d4c2b56fb957ab41cc8ae02cdf8cd0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ImageBlock::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="536" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="536" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a2f3ea4561f23825cd47ea6b0b4cf46a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ImageBlock::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="538" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="538" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a455941c55c428999e17db1ee55e9fb59" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>POINT</type>
+        <definition>POINT HiEasyX::ImageBlock::GetPos</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="540" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="540" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1a7ffc111b77534d486650edaa49d4d0fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ImageBlock::SetPos</definition>
+        <argsstring>(int _x, int _y)</argsstring>
+        <name>SetPos</name>
+        <param>
+          <type>int</type>
+          <declname>_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="542" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1640" bodyend="1644"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_image_block_1afa3f260aea67604b761e5462ff48e709" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ImageBlock::Render</definition>
+        <argsstring>(IMAGE *pImg, BYTE alpha)</argsstring>
+        <name>Render</name>
+        <param>
+          <type>IMAGE *</type>
+          <declname>pImg</declname>
+        </param>
+        <param>
+          <type>BYTE</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="546" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1646" bodyend="1658"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="500" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="499" bodyend="547"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_image_block_1ac77a27ba8cde18f2e1cbc458613b8ec7" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>alpha</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a9d928cc234682ad0e64fbbed06b29c76" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>bUseSrcAlpha</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ae81ee56acc56419b14ed6fa2a62a1f73" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>bVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a59f2acf67c98f581502b86cca315f018" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>CreateCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ab48a25b13f07030cf1756936f8674af6" prot="private" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>DeleteMyCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ae91482d1e5db83ffd1b315a251b32886" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>GetCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a2f3ea4561f23825cd47ea6b0b4cf46a0" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a455941c55c428999e17db1ee55e9fb59" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1af2d4c2b56fb957ab41cc8ae02cdf8cd0" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a5bc5307a08f58142bff01d8f3cf15bb6" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>ImageBlock</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ad921b031594051d79be44cfe249d3d0f" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>ImageBlock</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ab1052b1765b2bcce5a58c5eee63c543e" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>ImageBlock</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ae0462b78bd2d53093c30b330a1560e88" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>ImageBlock</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a9361fb9ce5239b4e06de0b66d2b56998" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>isAlphaCalculated</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a2b165f62aa605a13c46f95a42521d9c5" prot="private" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>m_isCreated</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1ac37991bd6a3bdee9b936f0a00e95d22b" prot="private" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>m_pCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1aeeeaddf7fb8c39e58711cb7d30f9b964" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>rctCrop</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1afa3f260aea67604b761e5462ff48e709" prot="public" virt="virtual"><scope>HiEasyX::ImageBlock</scope><name>Render</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a5963b3d8e857996f512caadb731acf97" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>SetCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a7ffc111b77534d486650edaa49d4d0fe" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a67b06b887ac03218fd2495a23d324884" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>x</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a12d0b9de5309e665d57fd922f40065cf" prot="public" virt="non-virtual"><scope>HiEasyX::ImageBlock</scope><name>y</name></member>
+      <member refid="class_hi_easy_x_1_1_image_block_1a529516d1e27d6fd59e14f1d2c04e499f" prot="public" virt="virtual"><scope>HiEasyX::ImageBlock</scope><name>~ImageBlock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

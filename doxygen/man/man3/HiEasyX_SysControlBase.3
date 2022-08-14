@@ -1,0 +1,225 @@
+.TH "HiEasyX::SysControlBase" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysControlBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysControlBase\&.h>\fP
+.PP
+Inherits \fBHiEasyX::Container\fP\&.
+.PP
+Inherited by \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysGroup\fP, \fBHiEasyX::SysGroupBox\fP, \fBHiEasyX::SysRadioButton\fP, and \fBHiEasyX::SysStatic\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSysControlBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SysControlBase\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdateRect\fP (RECT rctOld) override"
+.br
+.ti -1c
+.RI "virtual LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet)"
+.br
+.ti -1c
+.RI "HWND \fBCreate\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "HWND \fBCreate\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "HWND \fBGetHandle\fP () const"
+.br
+.ti -1c
+.RI "\fBSysControlType\fP \fBGetControlType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEnable\fP ()"
+.br
+.ti -1c
+.RI "void \fBEnable\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBisVisible\fP ()"
+.br
+.ti -1c
+.RI "void \fBShow\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBisFocused\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFocus\fP (bool focused)"
+.br
+.ti -1c
+.RI "int \fBGetTextLength\fP ()"
+.br
+.ti -1c
+.RI "std::wstring \fBGetText\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (std::wstring wstr)"
+.br
+.ti -1c
+.RI "HFONT \fBGetFont\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFont\fP (int h, int w=0, std::wstring typeface=L'')"
+.br
+.ti -1c
+.RI "int \fBGetID\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBCreateControl\fP (HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)"
+.br
+.ti -1c
+.RI "virtual void \fBRealCreate\fP (HWND hParent)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBm_hWnd\fP = nullptr"
+.br
+.ti -1c
+.RI "HWND \fBm_hParent\fP = nullptr"
+.br
+.ti -1c
+.RI "int \fBm_nID\fP = 0"
+.br
+.ti -1c
+.RI "\fBSysControlType\fP \fBm_type\fP = \fBSCT_Unknown\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file SysControlBase\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::SysControlBase::SysControlBase ()"
+
+.PP
+Definition at line 29 of file SysControlBase\&.cpp\&.
+.SS "HiEasyX::SysControlBase::~SysControlBase ()\fC [virtual]\fP"
+
+.PP
+Definition at line 33 of file SysControlBase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "HWND HiEasyX::SysControlBase::Create (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+Definition at line 64 of file SysControlBase\&.cpp\&.
+.SS "HWND HiEasyX::SysControlBase::Create (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+Definition at line 53 of file SysControlBase\&.cpp\&.
+.SS "HWND HiEasyX::SysControlBase::CreateControl (HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)\fC [protected]\fP"
+
+.PP
+Definition at line 7 of file SysControlBase\&.cpp\&.
+.SS "void HiEasyX::SysControlBase::Enable (bool enable)"
+
+.PP
+Definition at line 80 of file SysControlBase\&.cpp\&.
+.SS "\fBSysControlType\fP HiEasyX::SysControlBase::GetControlType () const\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file SysControlBase\&.h\&.
+.SS "HFONT HiEasyX::SysControlBase::GetFont ()"
+
+.PP
+Definition at line 131 of file SysControlBase\&.cpp\&.
+.SS "HWND HiEasyX::SysControlBase::GetHandle () const\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file SysControlBase\&.h\&.
+.SS "int HiEasyX::SysControlBase::GetID ()"
+
+.PP
+Definition at line 157 of file SysControlBase\&.cpp\&.
+.SS "std::wstring HiEasyX::SysControlBase::GetText ()"
+
+.PP
+Definition at line 115 of file SysControlBase\&.cpp\&.
+.SS "int HiEasyX::SysControlBase::GetTextLength ()"
+
+.PP
+Definition at line 110 of file SysControlBase\&.cpp\&.
+.SS "bool HiEasyX::SysControlBase::isEnable ()"
+
+.PP
+Definition at line 75 of file SysControlBase\&.cpp\&.
+.SS "bool HiEasyX::SysControlBase::isFocused ()"
+
+.PP
+Definition at line 95 of file SysControlBase\&.cpp\&.
+.SS "bool HiEasyX::SysControlBase::isVisible ()"
+
+.PP
+Definition at line 85 of file SysControlBase\&.cpp\&.
+.SS "virtual void HiEasyX::SysControlBase::RealCreate (HWND hParent)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP, \fBHiEasyX::SysRadioButton\fP, \fBHiEasyX::SysGroupBox\fP, \fBHiEasyX::SysStatic\fP, and \fBHiEasyX::SysGroup\fP\&.
+.SS "void HiEasyX::SysControlBase::SetFocus (bool focused)"
+
+.PP
+Definition at line 105 of file SysControlBase\&.cpp\&.
+.SS "void HiEasyX::SysControlBase::SetFont (int h, int w = \fC0\fP, std::wstring typeface = \fCL''\fP)"
+
+.PP
+Definition at line 136 of file SysControlBase\&.cpp\&.
+.SS "void HiEasyX::SysControlBase::SetText (std::wstring wstr)"
+
+.PP
+Definition at line 126 of file SysControlBase\&.cpp\&.
+.SS "void HiEasyX::SysControlBase::Show (bool show)"
+
+.PP
+Definition at line 90 of file SysControlBase\&.cpp\&.
+.SS "LRESULT HiEasyX::SysControlBase::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP, and \fBHiEasyX::SysRadioButton\fP\&.
+.PP
+Definition at line 48 of file SysControlBase\&.cpp\&.
+.SS "void HiEasyX::SysControlBase::UpdateRect (RECT rctOld)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::Container\fP\&.
+.PP
+Definition at line 43 of file SysControlBase\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "HWND HiEasyX::SysControlBase::m_hParent = nullptr\fC [protected]\fP"
+
+.PP
+Definition at line 39 of file SysControlBase\&.h\&.
+.SS "HWND HiEasyX::SysControlBase::m_hWnd = nullptr\fC [protected]\fP"
+
+.PP
+Definition at line 38 of file SysControlBase\&.h\&.
+.SS "int HiEasyX::SysControlBase::m_nID = 0\fC [protected]\fP"
+
+.PP
+Definition at line 40 of file SysControlBase\&.h\&.
+.SS "\fBSysControlType\fP HiEasyX::SysControlBase::m_type = \fBSCT_Unknown\fP\fC [protected]\fP"
+
+.PP
+Definition at line 41 of file SysControlBase\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

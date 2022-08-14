@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_sys_static_8cpp" kind="file" language="C++">
+    <compoundname>SysStatic.cpp</compoundname>
+    <includes refid="_sys_static_8h" local="yes">SysStatic.h</includes>
+    <includes refid="_hi_func_8h" local="yes">../HiFunc.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>SysControlBase.h</label>
+        <link refid="_sys_control_base_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>graphics.h</label>
+      </node>
+      <node id="6">
+        <label>windowsx.h</label>
+      </node>
+      <node id="5">
+        <label>Windows.h</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>WinUser.h</label>
+      </node>
+      <node id="4">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysStatic.cpp</label>
+        <link refid="_sys_static_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SysStatic.h</label>
+        <link refid="_sys_static_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sys_static_8h" kindref="compound">SysStatic.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../HiFunc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7" refid="class_hi_easy_x_1_1_sys_static_1a95c28916b4031adca85e119d99ba45b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a95c28916b4031adca85e119d99ba45b0" kindref="member">HiEasyX::SysStatic::RealCreate</ref>(HWND<sp/>hParent)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_type<sp/>=<sp/><ref refid="namespace_hi_easy_x_1abf3107850ee180e3b75ab16cf237e6a6a5a1a8666f41d99f2e0fcc26c87685eeb" kindref="member">SCT_Static</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_hWnd<sp/>=<sp/>CreateControl(</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hParent,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;Static&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WS_CHILD<sp/>|<sp/>WS_VISIBLE</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_hi_easy_x_1_1_sys_static_1a30351f30acf8408a88d7cdd8d36d7045" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a30351f30acf8408a88d7cdd8d36d7045" kindref="member">SysStatic::SysStatic</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_hi_easy_x_1_1_sys_static_1ab3c36c87d9732ad8e6d7a3314742306b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a30351f30acf8408a88d7cdd8d36d7045" kindref="member">HiEasyX::SysStatic::SysStatic</ref>(HWND<sp/>hParent,<sp/>RECT<sp/>rct,<sp/>std::wstring<sp/>strText)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Create(hParent,<sp/>rct,<sp/>strText);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_hi_easy_x_1_1_sys_static_1a0cee30ebdf73e76af84545c283c1e66b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a30351f30acf8408a88d7cdd8d36d7045" kindref="member">HiEasyX::SysStatic::SysStatic</ref>(HWND<sp/>hParent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/>std::wstring<sp/>strText)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Create(hParent,<sp/>x,<sp/>y,<sp/>w,<sp/>h,<sp/>strText);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_hi_easy_x_1_1_sys_static_1a61d715e553125f0c94aae109c830ca38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a61d715e553125f0c94aae109c830ca38" kindref="member">SysStatic::Center</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>center)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style<sp/>=<sp/>GetWindowLong(<ref refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" kindref="member">GetHandle</ref>(),<sp/>GWL_STYLE);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(center)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style<sp/>|=<sp/>SS_CENTER;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style<sp/>&amp;=<sp/>~SS_CENTER;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowLongPtr(<ref refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" kindref="member">GetHandle</ref>(),<sp/>GWL_STYLE,<sp/>style);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_hi_easy_x_1_1_sys_static_1a75dbdd62d00f21cd47a3ddbff6317018" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_sys_static_1a75dbdd62d00f21cd47a3ddbff6317018" kindref="member">SysStatic::Image</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable,<sp/>IMAGE*<sp/>img)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style<sp/>=<sp/>GetWindowLong(<ref refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" kindref="member">GetHandle</ref>(),<sp/>GWL_STYLE);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enable)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style<sp/>|=<sp/>SS_BITMAP;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style<sp/>&amp;=<sp/>~SS_BITMAP;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowLongPtr(<ref refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" kindref="member">GetHandle</ref>(),<sp/>GWL_STYLE,<sp/>style);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enable)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HBITMAP<sp/>hBitmap<sp/>=<sp/><ref refid="_hi_func_8cpp_1a6e1ffaed1db4fff865e2cd8310d1fe5d" kindref="member">Image2Bitmap</ref>(img,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HBITMAP<sp/>hBitmap2<sp/>=<sp/>(HBITMAP)SendMessage(<ref refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" kindref="member">GetHandle</ref>(),<sp/>STM_SETIMAGE,<sp/>IMAGE_BITMAP,<sp/>(LPARAM)hBitmap);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DeleteObject(hBitmap2);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysStatic.cpp"/>
+  </compounddef>
+</doxygen>

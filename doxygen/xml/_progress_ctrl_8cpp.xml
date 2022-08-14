@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_progress_ctrl_8cpp" kind="file" language="C++">
+    <compoundname>ProgressCtrl.cpp</compoundname>
+    <includes refid="_progress_ctrl_8h" local="yes">ProgressCtrl.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>list</label>
+      </node>
+      <node id="7">
+        <label>graphics.h</label>
+      </node>
+      <node id="5">
+        <label>Windows.h</label>
+      </node>
+      <node id="2">
+        <label>ProgressCtrl.h</label>
+        <link refid="_progress_ctrl_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>WinUser.h</label>
+      </node>
+      <node id="4">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ProgressCtrl.cpp</label>
+        <link refid="_progress_ctrl_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>HiDrawingProperty.h</label>
+        <link refid="_hi_drawing_property_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+      <node id="8">
+        <label>../HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../HiCanvas.h</label>
+        <link refid="_hi_canvas_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>time.h</label>
+      </node>
+      <node id="6">
+        <label>../HiMacro.h</label>
+        <link refid="_hi_macro_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_progress_ctrl_8h" kindref="compound">ProgressCtrl.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5" refid="class_hi_easy_x_1_1_progress_ctrl_1a6edb145a969988486e707e1027e7b7bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a6edb145a969988486e707e1027e7b7bf" kindref="member">ProgressCtrl::Init</ref>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a50af68164c7790b3f06af11301a866b0" kindref="member">m_bAlwaysRedrawAndRender</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_hi_easy_x_1_1_progress_ctrl_1a50bdb32e71d1d578b7e2a83d9122f018" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a50bdb32e71d1d578b7e2a83d9122f018" kindref="member">ProgressCtrl::ProgressCtrl</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a6edb145a969988486e707e1027e7b7bf" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a3768f349144a909557023e9bffb6e273" kindref="member">SetBarColor</ref>(GREEN);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_hi_easy_x_1_1_progress_ctrl_1a6cdd76c37f65ef809fe9efdae8643df3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a50bdb32e71d1d578b7e2a83d9122f018" kindref="member">ProgressCtrl::ProgressCtrl</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a6edb145a969988486e707e1027e7b7bf" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a487a2b74d3f23e413920903886fb3e29" kindref="member">m_nLen</ref><sp/>=<sp/>len;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>(x,<sp/>y,<sp/>w,<sp/>h);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a3768f349144a909557023e9bffb6e273" kindref="member">SetBarColor</ref>(GREEN);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_hi_easy_x_1_1_progress_ctrl_1a3619df195fef04ecafe21cfba35b91fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a3619df195fef04ecafe21cfba35b91fd" kindref="member">ProgressCtrl::SetContentLength</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a487a2b74d3f23e413920903886fb3e29" kindref="member">m_nLen</ref><sp/>=<sp/>len;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" kindref="member">MarkNeedRedrawAndRender</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_hi_easy_x_1_1_progress_ctrl_1af0f84564d2f3ed4b1d889b61c1ea1a25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1af0f84564d2f3ed4b1d889b61c1ea1a25" kindref="member">ProgressCtrl::SetProcess</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a01d9eaa4ee0b6795f98fd5c890b950a0" kindref="member">m_nPos</ref><sp/>=<sp/>pos;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" kindref="member">MarkNeedRedrawAndRender</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_hi_easy_x_1_1_progress_ctrl_1a76b5a7445d62458b39ee49753c0396eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a76b5a7445d62458b39ee49753c0396eb" kindref="member">ProgressCtrl::Step</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a01d9eaa4ee0b6795f98fd5c890b950a0" kindref="member">m_nPos</ref><sp/>+<sp/>1<sp/>&lt;=<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a487a2b74d3f23e413920903886fb3e29" kindref="member">m_nLen</ref>)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a01d9eaa4ee0b6795f98fd5c890b950a0" kindref="member">m_nPos</ref>++;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" kindref="member">MarkNeedRedrawAndRender</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_hi_easy_x_1_1_progress_ctrl_1a3768f349144a909557023e9bffb6e273" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a3768f349144a909557023e9bffb6e273" kindref="member">ProgressCtrl::SetBarColor</ref>(COLORREF<sp/>cBar)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>h,<sp/>s,<sp/>l;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RGBtoHSL(cBar,<sp/>&amp;h,<sp/>&amp;s,<sp/>&amp;l);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a6dedcc7bdef88d40a71d610f2087a33a" kindref="member">m_fH</ref><sp/>=<sp/>h;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1aff019ad61a479bab52575ee13c7ef887" kindref="member">m_fS</ref><sp/>=<sp/>s;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1ad4faeb76d4507daf9498ea6d47011c7f" kindref="member">m_cBar</ref><sp/>=<sp/>HSLtoRGB(h,<sp/>s,<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a61537c4dbf06f9d69e47f5907312cded" kindref="member">m_fBarColorLightness</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" kindref="member">MarkNeedRedrawAndRender</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_hi_easy_x_1_1_progress_ctrl_1ad77a6fa60983bcda164da53c9c49260c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1ad77a6fa60983bcda164da53c9c49260c" kindref="member">ProgressCtrl::EnableAnimation</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1af09391f22ffae7d50b30443c1c92489d" kindref="member">m_bEnableAnimation</ref><sp/>=<sp/>enable;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>启用动画后，总是重绘 <sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bAlwaysRedrawAndRender<sp/>=<sp/>m_bEnableAnimation;
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MarkNeedRedrawAndRender();
+<sp/>}
+
+<sp/>void<sp/>ProgressCtrl::Draw(bool<sp/>draw_child)
+<sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_bRedraw)
+<sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ControlBase::Draw(false);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>绘制结束位置
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nEnd<sp/>=<sp/>(int)((m_nPos<sp/>/<sp/>(float)m_nLen)<sp/>*<sp/>(GetWidth()<sp/>-<sp/>2));
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.SolidRectangle(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>1,1,nEnd,GetHeight()<sp/>-<sp/>2<sp/>},
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>m_cBar
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>绘制动画效果
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_bEnableAnimation)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画进度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_tClock<sp/>==<sp/>0)<sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>fProcess<sp/>=<sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((clock()<sp/>-<sp/>m_tClock)<sp/>/<sp/>(float)CLOCKS_PER_SEC)<sp/><sp/>//<sp/>经过时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>(1<sp/>/<sp/>m_fSpeedRatio)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>总时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(fProcess<sp/>&gt;=<sp/>1)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fProcess<sp/>=<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLen<sp/>=<sp/>(int)(m_nPos<sp/>/<sp/>(float)m_nLen<sp/>*<sp/>GetWidth()<sp/>*<sp/>m_fLenRatio);<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果长度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLenHalf<sp/>=<sp/>nAnimationLen<sp/>/<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果半长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>draw_pos<sp/>=<sp/>(int)((nEnd<sp/>+<sp/>nAnimationLen)<sp/>*<sp/>fProcess)<sp/>-<sp/>nAnimationLenHalf;<sp/><sp/><sp/><sp/>//<sp/>光源绘制 x<sp/>坐标
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制 x<sp/>坐标
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a50af68164c7790b3f06af11301a866b0" kindref="member">m_bAlwaysRedrawAndRender</ref><sp/>=<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1af09391f22ffae7d50b30443c1c92489d" kindref="member">m_bEnableAnimation</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" kindref="member">MarkNeedRedrawAndRender</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_hi_easy_x_1_1_progress_ctrl_1a5ee055272f2c97b0d84ca6898ba6cac0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a5ee055272f2c97b0d84ca6898ba6cac0" kindref="member">ProgressCtrl::Draw</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>draw_child)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_control_base_1a206af1bbabb242872b6128e84972f256" kindref="member">m_bRedraw</ref>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1ac3a8b32c92d5a6e4a251fe0db5080796" kindref="member">ControlBase::Draw</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>绘制结束位置</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nEnd<sp/>=<sp/>(int)((<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a01d9eaa4ee0b6795f98fd5c890b950a0" kindref="member">m_nPos</ref><sp/>/<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a487a2b74d3f23e413920903886fb3e29" kindref="member">m_nLen</ref>)<sp/>*<sp/>(<ref refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" kindref="member">GetWidth</ref>()<sp/>-<sp/>2));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1ae95bbe48d81bb21b7e760ff792af059a" kindref="member">m_canvas</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1a796892771781dbf0de4d39f3f3c6aa2e" kindref="member">SolidRectangle</ref>(</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>1,1,nEnd,<ref refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" kindref="member">GetHeight</ref>()<sp/>-<sp/>2<sp/>},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1ad4faeb76d4507daf9498ea6d47011c7f" kindref="member">m_cBar</ref></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>绘制动画效果 <sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_bEnableAnimation)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画进度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_tClock<sp/>==<sp/>0)<sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>fProcess<sp/>=<sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((clock()<sp/>-<sp/>m_tClock)<sp/>/<sp/>(float)CLOCKS_PER_SEC)<sp/><sp/>//<sp/>经过时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>(1<sp/>/<sp/>m_fSpeedRatio)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>总时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(fProcess<sp/>&gt;=<sp/>1)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fProcess<sp/>=<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLen<sp/>=<sp/>(int)(m_nPos<sp/>/<sp/>(float)m_nLen<sp/>*<sp/>GetWidth()<sp/>*<sp/>m_fLenRatio);<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果长度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLenHalf<sp/>=<sp/>nAnimationLen<sp/>/<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果半长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>draw_pos<sp/>=<sp/>(int)((nEnd<sp/>+<sp/>nAnimationLen)<sp/>*<sp/>fProcess)<sp/>-<sp/>nAnimationLenHalf;<sp/><sp/><sp/><sp/>//<sp/>光源绘制 x<sp/>坐标
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制 x<sp/>坐标
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1af09391f22ffae7d50b30443c1c92489d" kindref="member">m_bEnableAnimation</ref>)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>动画进度 <sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_tClock<sp/>==<sp/>0)<sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>fProcess<sp/>=<sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((clock()<sp/>-<sp/>m_tClock)<sp/>/<sp/>(float)CLOCKS_PER_SEC)<sp/><sp/>//<sp/>经过时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>(1<sp/>/<sp/>m_fSpeedRatio)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>总时长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(fProcess<sp/>&gt;=<sp/>1)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fProcess<sp/>=<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tClock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLen<sp/>=<sp/>(int)(m_nPos<sp/>/<sp/>(float)m_nLen<sp/>*<sp/>GetWidth()<sp/>*<sp/>m_fLenRatio);<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果长度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLenHalf<sp/>=<sp/>nAnimationLen<sp/>/<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果半长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>draw_pos<sp/>=<sp/>(int)((nEnd<sp/>+<sp/>nAnimationLen)<sp/>*<sp/>fProcess)<sp/>-<sp/>nAnimationLenHalf;<sp/><sp/><sp/><sp/>//<sp/>光源绘制 x<sp/>坐标
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制 x<sp/>坐标
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a4f18d1d717a678b3add56d8abfd99207" kindref="member">m_tClock</ref><sp/>==<sp/>0)<sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a4f18d1d717a678b3add56d8abfd99207" kindref="member">m_tClock</ref><sp/>=<sp/>clock();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fProcess<sp/>=<sp/>(</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((clock()<sp/>-<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a4f18d1d717a678b3add56d8abfd99207" kindref="member">m_tClock</ref>)<sp/>/<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)CLOCKS_PER_SEC)<sp/><sp/></highlight><highlight class="comment">//<sp/>经过时长</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>(1<sp/>/<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a43282975fc8a9c0c848ae82f97a07544" kindref="member">m_fSpeedRatio</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>总时长</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fProcess<sp/>&gt;=<sp/>1)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fProcess<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a4f18d1d717a678b3add56d8abfd99207" kindref="member">m_tClock</ref><sp/>=<sp/>clock();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nAnimationLen<sp/>=<sp/>(int)(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a01d9eaa4ee0b6795f98fd5c890b950a0" kindref="member">m_nPos</ref><sp/>/<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a487a2b74d3f23e413920903886fb3e29" kindref="member">m_nLen</ref><sp/>*<sp/><ref refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" kindref="member">GetWidth</ref>()<sp/>*<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1a1bccad74b5fe793496e4ef0b42ee6d8c" kindref="member">m_fLenRatio</ref>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>动画效果长度 <sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>nAnimationLenHalf<sp/>=<sp/>nAnimationLen<sp/>/<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>动画效果半长
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>draw_pos<sp/>=<sp/>(int)((nEnd<sp/>+<sp/>nAnimationLen)<sp/>*<sp/>fProcess)<sp/>-<sp/>nAnimationLenHalf;<sp/><sp/><sp/><sp/>//<sp/>光源绘制 x<sp/>坐标
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制 x<sp/>坐标
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nAnimationLenHalf<sp/>=<sp/>nAnimationLen<sp/>/<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>动画效果半长</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>draw_pos<sp/>=<sp/>(int)((nEnd<sp/>+<sp/>nAnimationLen)<sp/>*<sp/>fProcess)<sp/>-<sp/>nAnimationLenHalf;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>光源绘制 x<sp/>坐标 <sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制 x<sp/>坐标
+
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>-nAnimationLenHalf;<sp/>i<sp/>&lt;<sp/>nAnimationLenHalf;<sp/>i++)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>i<sp/>+<sp/>draw_pos;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>当前绘制 x<sp/>坐标 
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>当前绘制亮度
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>当前绘制亮度 <sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>l<sp/>=<sp/>(m_fBarColorLightness<sp/>-<sp/>m_fBarLightLightness)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/>m_fBarLightLightness;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_canvas.Line(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/>GetHeight()<sp/>-<sp/>2,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/>HSLtoRGB(m_fH,<sp/>m_fS,<sp/>l)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/><sp/><sp/><sp/><sp/>}
+
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(draw_child)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrawChild();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}
+<sp/><sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a61537c4dbf06f9d69e47f5907312cded" kindref="member">m_fBarColorLightness</ref><sp/>-<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1ae6ea17367bfdc3a29d4db09a2b8cf479" kindref="member">m_fBarLightLightness</ref>)<sp/>*<sp/>(abs(i)<sp/>/<sp/>(float)nAnimationLenHalf)<sp/>+<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1ae6ea17367bfdc3a29d4db09a2b8cf479" kindref="member">m_fBarLightLightness</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pos<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>pos<sp/>&lt;=<sp/>nEnd)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1ae95bbe48d81bb21b7e760ff792af059a" kindref="member">m_canvas</ref>.<ref refid="class_hi_easy_x_1_1_canvas_1a59d33722c947b1957767478b497b4ef5" kindref="member">Line</ref>(</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,<sp/>1,<sp/>pos,<sp/><ref refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" kindref="member">GetHeight</ref>()<sp/>-<sp/>2,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>HSLtoRGB(<ref refid="class_hi_easy_x_1_1_progress_ctrl_1a6dedcc7bdef88d40a71d610f2087a33a" kindref="member">m_fH</ref>,<sp/><ref refid="class_hi_easy_x_1_1_progress_ctrl_1aff019ad61a479bab52575ee13c7ef887" kindref="member">m_fS</ref>,<sp/>l)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(draw_child)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_control_base_1af0373d28a9f56e4c9e04920ec2727b2d" kindref="member">DrawChild</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ProgressCtrl.cpp"/>
+  </compounddef>
+</doxygen>

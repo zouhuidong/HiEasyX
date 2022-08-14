@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_page_8h" kind="file" language="C++">
+    <compoundname>Page.h</compoundname>
+    <includes refid="_control_base_8h" local="yes">ControlBase.h</includes>
+    <includedby refid="_hi_g_u_i_8h" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/HiGUI.h</includedby>
+    <includedby refid="_page_8cpp" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.cpp</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>list</label>
+      </node>
+      <node id="6">
+        <label>graphics.h</label>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>WinUser.h</label>
+      </node>
+      <node id="3">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HiDrawingProperty.h</label>
+        <link refid="_hi_drawing_property_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.h</label>
+        <link refid="_page_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+      <node id="7">
+        <label>../HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../HiCanvas.h</label>
+        <link refid="_hi_canvas_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../HiMacro.h</label>
+        <link refid="_hi_macro_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.cpp</label>
+        <link refid="_page_8cpp"/>
+      </node>
+      <node id="3">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/HiGUI.h</label>
+        <link refid="_hi_g_u_i_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.h</label>
+        <link refid="_page_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_hi_easy_x_1_1_page" prot="public">HiEasyX::Page</innerclass>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Page.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>HiGUI<sp/>控件分支：页控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_control_base_8h" kindref="compound">ControlBase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>页控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_hi_easy_x_1_1_page" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_hi_easy_x_1_1_page" kindref="compound">Page</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_control_base" kindref="compound">ControlBase</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_hi_easy_x_1_1_page_1aa1e7ace85fdc4899cde93f109187449a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref>*<sp/><ref refid="class_hi_easy_x_1_1_page_1aa1e7ace85fdc4899cde93f109187449a" kindref="member">m_pCanvas</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1a883084caef7c13fcc51a2c6dd076ea41" kindref="member">Init</ref>(COLORREF<sp/>cBk<sp/>=<sp/>WHITE);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_page_1aad54d61e0e66dff83cd4e2dc49bb4877" kindref="member">Page</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_page_1aad54d61e0e66dff83cd4e2dc49bb4877" kindref="member">Page</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/>COLORREF<sp/>cBk<sp/>=<sp/>WHITE);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_page_1aad54d61e0e66dff83cd4e2dc49bb4877" kindref="member">Page</ref>(<ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref>*<sp/>pCanvas);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>绑定到画布</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1ab4042e6d045fc380e91a3cef45fef031" kindref="member">BindToCanvas</ref>(<ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref>*<sp/>pCanvas);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>加入控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1a72a9493951b84f3811ff3415876aa0ea" kindref="member">push</ref>(<ref refid="class_hi_easy_x_1_1_control_base" kindref="compound">ControlBase</ref>*<sp/>pCtrl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset_x<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset_y<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1a72a9493951b84f3811ff3415876aa0ea" kindref="member">push</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;ControlBase*&gt;<sp/>list);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>移除控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1a7d83705f40f7746e05faa56d4c18a88b" kindref="member">remove</ref>(<ref refid="class_hi_easy_x_1_1_control_base" kindref="compound">ControlBase</ref>*<sp/>pCtrl);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>渲染（若已绑定画布，则默认输出到绑定画布）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1ab6c79c6a2a61bf73d50999aceb036d91" kindref="member">Render</ref>(<ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref>*<sp/>dst<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>RECT*<sp/>pRct<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>pCount<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>更新画布到...（若已绑定画布，则默认输出到绑定画布）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_page_1abf72c43e61481fab90895b7b34d120a5" kindref="member">UpdateImage</ref>(<ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref>*<sp/>pCanvas<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Page.h"/>
+  </compounddef>
+</doxygen>

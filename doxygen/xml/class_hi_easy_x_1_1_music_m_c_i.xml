@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_music_m_c_i" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::MusicMCI</compoundname>
+    <includes refid="_hi_music_m_c_i_8h" local="no">HiMusicMCI.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_music_m_c_i_1a8381b8ea58bfe145021ce350b442fcf4" prot="private" static="no" mutable="no">
+        <type>MCIDEVICEID</type>
+        <definition>MCIDEVICEID HiEasyX::MusicMCI::nDeviceID</definition>
+        <argsstring></argsstring>
+        <name>nDeviceID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="33" column="13" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a70eff0ae910a6016c7c03a2f2ec808ec" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::MusicMCI::MusicMCI</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>MusicMCI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="36" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a3054ff2b13fe01b08b9c569fd91901ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>HiEasyX::MusicMCI::~MusicMCI</definition>
+        <argsstring>()</argsstring>
+        <name>~MusicMCI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="37" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1af99b4a6bddc3b2cc0870ac24344574c4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::open</definition>
+        <argsstring>(LPCWSTR music) noexcept</argsstring>
+        <name>open</name>
+        <param>
+          <type>LPCWSTR</type>
+          <declname>music</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="38" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="28" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a435f7d5acdf896c8ebe47a8eb364887e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::play</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>play</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="39" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="52" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1ade1393fc008ee1c059ff9abfbbf02451" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::pause</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>pause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="40" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a2d68f80b309123846a55b2fec36b6f1f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::stop</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="41" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="80" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a8fc8e7b171d619546e0b17f4def6a387" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::close</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="42" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="94" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a8f0620ff70ea7bf6712973f845ec3d0d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::getCurrentTime</definition>
+        <argsstring>(DWORD &amp;pos) noexcept</argsstring>
+        <name>getCurrentTime</name>
+        <param>
+          <type>DWORD &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="43" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="111" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1aaad263bbd06c034cf64dce6b9b3e2e08" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::getTotalTime</definition>
+        <argsstring>(DWORD &amp;time) noexcept</argsstring>
+        <name>getTotalTime</name>
+        <param>
+          <type>DWORD &amp;</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="44" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="132" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1a608521048c5561827eee586d8d1647f3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::setVolume</definition>
+        <argsstring>(size_t volume) noexcept</argsstring>
+        <name>setVolume</name>
+        <param>
+          <type>size_t</type>
+          <declname>volume</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="45" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="153" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_music_m_c_i_1aaa4965f2fc6c3a90cf41fc8140571641" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::MusicMCI::setStartTime</definition>
+        <argsstring>(size_t start) noexcept</argsstring>
+        <name>setStartTime</name>
+        <param>
+          <type>size_t</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="46" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.cpp" bodystart="177" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" line="27" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMusicMCI.h" bodystart="26" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a8fc8e7b171d619546e0b17f4def6a387" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>close</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a8f0620ff70ea7bf6712973f845ec3d0d" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>getCurrentTime</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1aaad263bbd06c034cf64dce6b9b3e2e08" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>getTotalTime</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a70eff0ae910a6016c7c03a2f2ec808ec" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>MusicMCI</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a8381b8ea58bfe145021ce350b442fcf4" prot="private" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>nDeviceID</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1af99b4a6bddc3b2cc0870ac24344574c4" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>open</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1ade1393fc008ee1c059ff9abfbbf02451" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>pause</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a435f7d5acdf896c8ebe47a8eb364887e" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>play</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1aaa4965f2fc6c3a90cf41fc8140571641" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>setStartTime</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a608521048c5561827eee586d8d1647f3" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>setVolume</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a2d68f80b309123846a55b2fec36b6f1f" prot="public" virt="non-virtual"><scope>HiEasyX::MusicMCI</scope><name>stop</name></member>
+      <member refid="class_hi_easy_x_1_1_music_m_c_i_1a3054ff2b13fe01b08b9c569fd91901ff" prot="public" virt="virtual"><scope>HiEasyX::MusicMCI</scope><name>~MusicMCI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

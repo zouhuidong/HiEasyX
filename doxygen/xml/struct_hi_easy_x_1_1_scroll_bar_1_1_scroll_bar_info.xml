@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info" kind="struct" language="C++" prot="public">
+    <compoundname>HiEasyX::ScrollBar::ScrollBarInfo</compoundname>
+    <includes refid="_scroll_bar_8h" local="no">ScrollBar.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a6bd7a3f9d7bb0e025dc35e0f64c924f8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::ScrollBarInfo::btnW</definition>
+        <argsstring></argsstring>
+        <name>btnW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="25" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a6ece4fe87d09c1c2b5d477d9b8b44f28" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::ScrollBarInfo::btnH</definition>
+        <argsstring></argsstring>
+        <name>btnH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="25" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a9d2a7d8dcc140c633563fed55fccb370" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::ScrollBarInfo::slider_free_len</definition>
+        <argsstring></argsstring>
+        <name>slider_free_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="26" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1ada074e62d155cf0c23b890b1ca9fab1c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::ScrollBarInfo::slider_move_len</definition>
+        <argsstring></argsstring>
+        <name>slider_move_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="27" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1aabb7290390d2b76701d6789ce7225153" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::ScrollBarInfo::slider_len</definition>
+        <argsstring></argsstring>
+        <name>slider_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="28" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="24" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="23" bodyend="29"/>
+    <listofallmembers>
+      <member refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a6ece4fe87d09c1c2b5d477d9b8b44f28" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar::ScrollBarInfo</scope><name>btnH</name></member>
+      <member refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a6bd7a3f9d7bb0e025dc35e0f64c924f8" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar::ScrollBarInfo</scope><name>btnW</name></member>
+      <member refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1a9d2a7d8dcc140c633563fed55fccb370" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar::ScrollBarInfo</scope><name>slider_free_len</name></member>
+      <member refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1aabb7290390d2b76701d6789ce7225153" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar::ScrollBarInfo</scope><name>slider_len</name></member>
+      <member refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info_1ada074e62d155cf0c23b890b1ca9fab1c" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar::ScrollBarInfo</scope><name>slider_move_len</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,214 @@
+.TH "HiEasyX::ProgressCtrl" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::ProgressCtrl
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ProgressCtrl\&.h>\fP
+.PP
+Inherits \fBHiEasyX::ControlBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressCtrl\fP ()"
+.br
+.ti -1c
+.RI "\fBProgressCtrl\fP (int x, int y, int w, int h, int len)"
+.br
+.ti -1c
+.RI "virtual int \fBGetContentLength\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetContentLength\fP (int len)"
+.br
+.ti -1c
+.RI "virtual int \fBGetProcess\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetProcess\fP (int pos)"
+.br
+.ti -1c
+.RI "virtual void \fBStep\fP ()"
+.br
+.ti -1c
+.RI "virtual COLORREF \fBGetBarColor\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetBarColor\fP (COLORREF cBar)"
+.br
+.ti -1c
+.RI "virtual bool \fBGetAnimationState\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBEnableAnimation\fP (bool enable)"
+.br
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_bEnableAnimation\fP = true"
+.br
+.ti -1c
+.RI "int \fBm_nLightPos\fP = 0"
+.br
+.ti -1c
+.RI "clock_t \fBm_tClock\fP = 0"
+.br
+.ti -1c
+.RI "float \fBm_fSpeedRatio\fP = 0\&.4f"
+.br
+.ti -1c
+.RI "float \fBm_fLenRatio\fP = 0\&.8f"
+.br
+.ti -1c
+.RI "float \fBm_fBarColorLightness\fP = 0\&.35f"
+.br
+.ti -1c
+.RI "float \fBm_fBarLightLightness\fP = 0\&.41f"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBar\fP"
+.br
+.ti -1c
+.RI "float \fBm_fH\fP = 0"
+.br
+.ti -1c
+.RI "float \fBm_fS\fP = 0"
+.br
+.ti -1c
+.RI "int \fBm_nPos\fP = 0"
+.br
+.ti -1c
+.RI "int \fBm_nLen\fP = 100"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file ProgressCtrl\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::ProgressCtrl::ProgressCtrl ()"
+
+.PP
+Definition at line 10 of file ProgressCtrl\&.cpp\&.
+.SS "HiEasyX::ProgressCtrl::ProgressCtrl (int x, int y, int w, int h, int len)"
+
+.PP
+Definition at line 16 of file ProgressCtrl\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void HiEasyX::ProgressCtrl::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 69 of file ProgressCtrl\&.cpp\&.
+.SS "void HiEasyX::ProgressCtrl::EnableAnimation (bool enable)\fC [virtual]\fP"
+
+.PP
+Definition at line 59 of file ProgressCtrl\&.cpp\&.
+.SS "virtual bool HiEasyX::ProgressCtrl::GetAnimationState () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 65 of file ProgressCtrl\&.h\&.
+.SS "virtual COLORREF HiEasyX::ProgressCtrl::GetBarColor () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 60 of file ProgressCtrl\&.h\&.
+.SS "virtual int HiEasyX::ProgressCtrl::GetContentLength () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file ProgressCtrl\&.h\&.
+.SS "virtual int HiEasyX::ProgressCtrl::GetProcess () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 53 of file ProgressCtrl\&.h\&.
+.SS "void HiEasyX::ProgressCtrl::Init ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 5 of file ProgressCtrl\&.cpp\&.
+.SS "void HiEasyX::ProgressCtrl::SetBarColor (COLORREF cBar)\fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file ProgressCtrl\&.cpp\&.
+.SS "void HiEasyX::ProgressCtrl::SetContentLength (int len)\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file ProgressCtrl\&.cpp\&.
+.SS "void HiEasyX::ProgressCtrl::SetProcess (int pos)\fC [virtual]\fP"
+
+.PP
+Definition at line 31 of file ProgressCtrl\&.cpp\&.
+.SS "void HiEasyX::ProgressCtrl::Step ()\fC [virtual]\fP"
+
+.PP
+Definition at line 38 of file ProgressCtrl\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool HiEasyX::ProgressCtrl::m_bEnableAnimation = true\fC [protected]\fP"
+
+.PP
+Definition at line 20 of file ProgressCtrl\&.h\&.
+.SS "COLORREF HiEasyX::ProgressCtrl::m_cBar\fC [protected]\fP"
+
+.PP
+Definition at line 31 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fBarColorLightness = 0\&.35f\fC [protected]\fP"
+
+.PP
+Definition at line 28 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fBarLightLightness = 0\&.41f\fC [protected]\fP"
+
+.PP
+Definition at line 29 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fH = 0\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fLenRatio = 0\&.8f\fC [protected]\fP"
+
+.PP
+Definition at line 26 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fS = 0\fC [protected]\fP"
+
+.PP
+Definition at line 34 of file ProgressCtrl\&.h\&.
+.SS "float HiEasyX::ProgressCtrl::m_fSpeedRatio = 0\&.4f\fC [protected]\fP"
+
+.PP
+Definition at line 24 of file ProgressCtrl\&.h\&.
+.SS "int HiEasyX::ProgressCtrl::m_nLen = 100\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file ProgressCtrl\&.h\&.
+.SS "int HiEasyX::ProgressCtrl::m_nLightPos = 0\fC [protected]\fP"
+
+.PP
+Definition at line 22 of file ProgressCtrl\&.h\&.
+.SS "int HiEasyX::ProgressCtrl::m_nPos = 0\fC [protected]\fP"
+
+.PP
+Definition at line 36 of file ProgressCtrl\&.h\&.
+.SS "clock_t HiEasyX::ProgressCtrl::m_tClock = 0\fC [protected]\fP"
+
+.PP
+Definition at line 23 of file ProgressCtrl\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

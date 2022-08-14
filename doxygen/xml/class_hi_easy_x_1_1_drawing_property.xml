@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_drawing_property" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::DrawingProperty</compoundname>
+    <includes refid="_hi_drawing_property_8h" local="no">HiDrawingProperty.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a93d3f99f8d7c4469a379ce7413d43d0e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::DrawingProperty::m_isSaved</definition>
+        <argsstring></argsstring>
+        <name>m_isSaved</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="19" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1accd4f5f344a11ac4c01b1b0157887645" prot="public" static="no" mutable="no">
+        <type>IMAGE *</type>
+        <definition>IMAGE* HiEasyX::DrawingProperty::m_pImg</definition>
+        <argsstring></argsstring>
+        <name>m_pImg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="22" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a057af238697db2230c9a3865382a7331" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HiEasyX::DrawingProperty::m_xasp</definition>
+        <argsstring></argsstring>
+        <name>m_xasp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="23" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a1ee4b43873611f16d3bc81af40f7551f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HiEasyX::DrawingProperty::m_yasp</definition>
+        <argsstring></argsstring>
+        <name>m_yasp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="23" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a61e8c3de33c89d4eb697373447fa2b7b" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::DrawingProperty::m_cBk</definition>
+        <argsstring></argsstring>
+        <name>m_cBk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="24" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a3a17dee8c4499768d50963472d9fdf5a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::DrawingProperty::m_nBkMode</definition>
+        <argsstring></argsstring>
+        <name>m_nBkMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="25" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a355484a25e14d0126861ef8770721edd" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::DrawingProperty::m_cFill</definition>
+        <argsstring></argsstring>
+        <name>m_cFill</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="26" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1ab6e1138ed3643d5fead9b57e9577d6cb" prot="public" static="no" mutable="no">
+        <type>FILLSTYLE</type>
+        <definition>FILLSTYLE HiEasyX::DrawingProperty::m_fillstyle</definition>
+        <argsstring></argsstring>
+        <name>m_fillstyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="27" column="11" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a05bb836ee004fdde554276756e695a7b" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::DrawingProperty::m_cLine</definition>
+        <argsstring></argsstring>
+        <name>m_cLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="28" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a866bbd28c8ad7b7c65b378e025705ee2" prot="public" static="no" mutable="no">
+        <type>LINESTYLE</type>
+        <definition>LINESTYLE HiEasyX::DrawingProperty::m_linestyle</definition>
+        <argsstring></argsstring>
+        <name>m_linestyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="29" column="11" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a2a2f7f9d40db825289bd451f9d6366ef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::DrawingProperty::m_nPolyFillMode</definition>
+        <argsstring></argsstring>
+        <name>m_nPolyFillMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="30" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1a7d000c402d9e4ed321d9a07ea218f083" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::DrawingProperty::m_nRop2Mode</definition>
+        <argsstring></argsstring>
+        <name>m_nRop2Mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="31" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1aa5b49a5db5555d98e210c072d381ea83" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::DrawingProperty::m_cText</definition>
+        <argsstring></argsstring>
+        <name>m_cText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="32" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_drawing_property_1adaa7a4c7cd5a22a3a9216ec6b177fb67" prot="public" static="no" mutable="no">
+        <type>LOGFONT</type>
+        <definition>LOGFONT HiEasyX::DrawingProperty::m_font</definition>
+        <argsstring></argsstring>
+        <name>m_font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="33" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1aa579f826f3f7c0b3e0fd06dc2ac99631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::DrawingProperty::SaveProperty</definition>
+        <argsstring>()</argsstring>
+        <name>SaveProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="35" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="6" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1a9f711cc7b0898983278bcc3e74981c48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::DrawingProperty::SaveWorkingImageOnly</definition>
+        <argsstring>()</argsstring>
+        <name>SaveWorkingImageOnly</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="36" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1a03152238e5a5041da1f48d6f6c6faab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::DrawingProperty::ApplyProperty</definition>
+        <argsstring>()</argsstring>
+        <name>ApplyProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="37" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="30" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1ac3706bd136c49bcfbea9d4d8ca62895e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::DrawingProperty::ApplyWorkingImageOnly</definition>
+        <argsstring>()</argsstring>
+        <name>ApplyWorkingImageOnly</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="38" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="49" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1acdcc0e0e5bbd959d2312239e97f93ec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::DrawingProperty::isSaved</definition>
+        <argsstring>()</argsstring>
+        <name>isSaved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="39" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_drawing_property_1aa69221af8718bf43fe00c41d5e234f70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::DrawingProperty::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="40" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" line="17" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiDrawingProperty.h" bodystart="16" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a03152238e5a5041da1f48d6f6c6faab6" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>ApplyProperty</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1ac3706bd136c49bcfbea9d4d8ca62895e" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>ApplyWorkingImageOnly</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1acdcc0e0e5bbd959d2312239e97f93ec6" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>isSaved</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a61e8c3de33c89d4eb697373447fa2b7b" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_cBk</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a355484a25e14d0126861ef8770721edd" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_cFill</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a05bb836ee004fdde554276756e695a7b" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_cLine</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1aa5b49a5db5555d98e210c072d381ea83" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_cText</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1ab6e1138ed3643d5fead9b57e9577d6cb" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_fillstyle</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1adaa7a4c7cd5a22a3a9216ec6b177fb67" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_font</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a93d3f99f8d7c4469a379ce7413d43d0e" prot="private" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_isSaved</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a866bbd28c8ad7b7c65b378e025705ee2" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_linestyle</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a3a17dee8c4499768d50963472d9fdf5a" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_nBkMode</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a2a2f7f9d40db825289bd451f9d6366ef" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_nPolyFillMode</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a7d000c402d9e4ed321d9a07ea218f083" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_nRop2Mode</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1accd4f5f344a11ac4c01b1b0157887645" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_pImg</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a057af238697db2230c9a3865382a7331" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_xasp</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a1ee4b43873611f16d3bc81af40f7551f" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>m_yasp</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1aa69221af8718bf43fe00c41d5e234f70" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>Reset</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1aa579f826f3f7c0b3e0fd06dc2ac99631" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>SaveProperty</name></member>
+      <member refid="class_hi_easy_x_1_1_drawing_property_1a9f711cc7b0898983278bcc3e74981c48" prot="public" virt="non-virtual"><scope>HiEasyX::DrawingProperty</scope><name>SaveWorkingImageOnly</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

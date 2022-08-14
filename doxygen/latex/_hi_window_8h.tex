@@ -1,0 +1,569 @@
+\hypertarget{_hi_window_8h}{}\doxysection{E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Window.h File Reference}
+\label{_hi_window_8h}\index{E:/\_MYC/\_VS\_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h@{E:/\_MYC/\_VS\_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h}}
+{\ttfamily \#include \char`\"{}Hi\+Def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hi\+Func.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$graphics.\+h$>$}\newline
+{\ttfamily \#include $<$windowsx.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hi_easy_x_1_1_easy_window}{Hi\+Easy\+X\+::\+Easy\+Window}}
+\item 
+class \mbox{\hyperlink{class_hi_easy_x_1_1_window}{Hi\+Easy\+X\+::\+Window}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_hi_easy_x}{Hi\+EasyX}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_af14a141cf3e2b9b96e44486f2cccd856}{\+\_\+\+\_\+\+H\+I\+W\+I\+N\+D\+O\+W\+\_\+\+H\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_aa08e357fa976894b15d6f5964abe597d}{E\+W\+\_\+\+N\+O\+R\+M\+AL}}~0
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a84c163038896afa780149de502db4e31}{N\+O\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+I\+N\+D\+EX}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a9afcf922352ddb6d093557b948c0af70}{H\+I\+W\+I\+N\+D\+O\+W\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+R\+OC}}~(L\+R\+E\+S\+U\+LT)(-\/10086)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a016976fd8db083a06b4658a34bd4734c}{W\+M\+\_\+\+T\+R\+AY}}~(W\+M\+\_\+\+U\+S\+ER + 9337)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_ac24af045bde462f45130dcba02ffb936}{W\+M\+\_\+\+S\+Y\+S\+C\+T\+R\+L\+\_\+\+C\+R\+E\+A\+TE}}~(W\+M\+\_\+\+U\+S\+ER + 9338)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a13eff6f9ec525326e2fe2d9824777ce1}{W\+M\+\_\+\+S\+Y\+S\+C\+T\+R\+L\+\_\+\+D\+E\+L\+E\+TE}}~(W\+M\+\_\+\+U\+S\+ER + 9339)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a1b8b0e9a917b3802a0680321cf2c4893}{W\+M\+\_\+\+U\+S\+E\+R\+\_\+\+R\+E\+D\+R\+AW}}~(W\+M\+\_\+\+U\+S\+ER + 9340)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_ab23a70286e0ac0c9000b2279603a1d70}{B\+E\+G\+I\+N\+\_\+\+T\+A\+SK}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a1f391430f662d94ab71c9d502f72e86b}{B\+E\+G\+I\+N\+\_\+\+T\+A\+S\+K\+\_\+\+W\+ND}}(h\+Wnd)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_acfe8f2881bf3efdc4627b2f2d287f489}{E\+N\+D\+\_\+\+T\+A\+SK}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a61051e5730386effb47800799b18fa78}{F\+L\+U\+S\+H\+\_\+\+D\+R\+AW}}()~\mbox{\hyperlink{namespace_hi_easy_x_aa0c521889af1f43694a54158b4f2d209}{Hi\+Easy\+X\+::\+Enforce\+Redraw}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a07feaed93cedd3b3e3484b60ec025c54}{Enable\+Resizing}}(hwnd,  state)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a0d110a7a9d3d85a5d3e1a2ce7955a633}{Disable\+Resizing}}(hwnd,  state)~\mbox{\hyperlink{_hi_window_8h_a07feaed93cedd3b3e3484b60ec025c54}{Enable\+Resizing}}(hwnd, !state)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a9c0e47b8a17065c5528f716dcae29014}{Enable\+System\+Menu}}(hwnd,  state)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_abe7280b56ee37d9ebfa25a9824251348}{Disable\+System\+Menu}}(hwnd,  state)~\mbox{\hyperlink{_hi_window_8h_a9c0e47b8a17065c5528f716dcae29014}{Enable\+System\+Menu}}(hwnd, !state)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a71f27678a31970eda77c938332702a27}{Enable\+Tool\+Window\+Style}}(state)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a39ed1218cbe6649d63285616c639acb9}{K\+E\+Y\+\_\+\+D\+O\+WN}}(V\+K\+\_\+\+N\+O\+N\+A\+ME)~((Get\+Async\+Key\+State(V\+K\+\_\+\+N\+O\+N\+A\+ME) \& 0x8000) ? 1\+:0)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a0a4a6911b56077a5b8285b55095911d0}{K\+E\+Y\+\_\+\+D\+O\+W\+N\+\_\+\+W\+ND}}(V\+K\+\_\+\+N\+O\+N\+A\+ME)~(Get\+Foreground\+Window() == \mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{Hi\+Easy\+X\+::\+Get\+H\+Wnd\+\_\+win32}}() \&\& \mbox{\hyperlink{_hi_window_8h_a39ed1218cbe6649d63285616c639acb9}{K\+E\+Y\+\_\+\+D\+O\+WN}}(V\+K\+\_\+\+N\+O\+N\+A\+ME))
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a4c09b71f211e2f8e29758ea49356232b}{initgraph}}(...)
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_ad9bb6730860f6ba4763370ad10eb7eb0}{closegraph}}~\mbox{\hyperlink{namespace_hi_easy_x_a14d43cb89d29b6e59ee49bb47f07f01d}{Hi\+Easy\+X\+::closegraph\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_aeed98cb0cace45f4d56a99382c968bc4}{Begin\+Batch\+Draw}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a2959db99a44d0f584a876927a8eb99f8}{Flush\+Batch\+Draw}}()~\mbox{\hyperlink{_hi_window_8h_a61051e5730386effb47800799b18fa78}{F\+L\+U\+S\+H\+\_\+\+D\+R\+AW}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a12d9f690479a4e9c13624d51bff8b11e}{End\+Batch\+Draw}}()~\mbox{\hyperlink{_hi_window_8h_a61051e5730386effb47800799b18fa78}{F\+L\+U\+S\+H\+\_\+\+D\+R\+AW}}()
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a438d4c23c04ce43cd76de38c8fbbe92f}{Get\+H\+Wnd}}~\mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{Hi\+Easy\+X\+::\+Get\+H\+Wnd\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a2dabe3f34636fddeef2f698ea1e4e2c1}{getmessage}}~\mbox{\hyperlink{namespace_hi_easy_x_ad6e89c04f7d2348f669818bee558f251}{Hi\+Easy\+X\+::getmessage\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_aba7e39ba456baa77d6ef5db677adbd31}{peekmessage}}~\mbox{\hyperlink{namespace_hi_easy_x_aeee44f2592fd20c7ed1afb147992fc43}{Hi\+Easy\+X\+::peekmessage\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_aa958fd853f11ce25149edbb4bcbe8908}{flushmessage}}~\mbox{\hyperlink{namespace_hi_easy_x_a22afa962f6630c209f3743c1eef93240}{Hi\+Easy\+X\+::flushmessage\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a5af1652731768bcb10a6f74ec386630c}{Mouse\+Hit}}~\mbox{\hyperlink{namespace_hi_easy_x_a54ab3d88f8cfc63af470d9f70ac667a9}{Hi\+Easy\+X\+::\+Mouse\+Hit\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_ac50c0e0e941f879aa15e26b88242fa35}{Get\+Mouse\+Msg}}~\mbox{\hyperlink{namespace_hi_easy_x_aaa06c939dfd7628aea9fdb6bb485f264}{Hi\+Easy\+X\+::\+Get\+Mouse\+Msg\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_a773d70a0163b6b01df079b92571e87b3}{Peek\+Mouse\+Msg}}~\mbox{\hyperlink{namespace_hi_easy_x_a1bb16eb736f85fae74d4beb7dc7b77d4}{Hi\+Easy\+X\+::\+Peek\+Mouse\+Msg\+\_\+win32}}
+\item 
+\#define \mbox{\hyperlink{_hi_window_8h_ab1d19c665d3722a5969b65e5497c2d77}{Flush\+Mouse\+Msg\+Buffer}}~\mbox{\hyperlink{namespace_hi_easy_x_a8deabadc5837351f0cc993002a12e61d}{Hi\+Easy\+X\+::\+Flush\+Mouse\+Msg\+Buffer\+\_\+win32}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097}{Hi\+Easy\+X\+::\+Draw\+Mode}} \{ \newline
+\mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097ae907e1c1dd7be8e70242f4c616cb8add}{Hi\+Easy\+X\+::\+D\+M\+\_\+\+Real}}, 
+\mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097a19a3145cadc4b5a085d2bea0a6ff798b}{Hi\+Easy\+X\+::\+D\+M\+\_\+\+Normal}}, 
+\mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097ab7b369dbf50422be36e62d6d7406eda9}{Hi\+Easy\+X\+::\+D\+M\+\_\+\+Fast}}, 
+\mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097a5838835dbef4a0f6a6df29a6183ad537}{Hi\+Easy\+X\+::\+D\+M\+\_\+\+Very\+Fast}}, 
+\newline
+\mbox{\hyperlink{namespace_hi_easy_x_aadd191826ef50747dda8a364644e7097ac1919e768deedb405576941306825bac}{Hi\+Easy\+X\+::\+D\+M\+\_\+\+Fastest}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+W\+ND \mbox{\hyperlink{namespace_hi_easy_x_a39a857bd99bbe509b37dedee8f290868}{Hi\+Easy\+X\+::initgraph\+\_\+win32}} (int w, int h, int flag, L\+P\+C\+T\+S\+TR lpsz\+Wnd\+Title, W\+N\+D\+P\+R\+OC Window\+Process, H\+W\+ND h\+Parent)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a780793ee78f08d05d38f8dd45b60272d}{Hi\+Easy\+X\+::closegraph\+\_\+win32}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a2f9ef900492c7d6a35545207973d4d39}{Hi\+Easy\+X\+::\+Set\+Wnd\+Proc\+Func}} (H\+W\+ND h\+Wnd, W\+N\+D\+P\+R\+OC Window\+Process)
+\item 
+H\+W\+ND \mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{Hi\+Easy\+X\+::\+Get\+H\+Wnd\+\_\+win32}} ()
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a46e006040fc59669f3eaa4887ce3c5cf}{Hi\+Easy\+X\+::init\+\_\+end}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a28ee4b16feccc01e9cb795b384517217}{Hi\+Easy\+X\+::\+Auto\+Exit}} ()
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_a319bb50ddd51052f27a797d2c835c7b1}{Hi\+Easy\+X\+::is\+Any\+Window}} ()
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_ab75e1092a2d436b351898820a8dc74d9}{Hi\+Easy\+X\+::is\+Alive\+Window}} (H\+W\+ND h\+Wnd)
+\item 
+I\+M\+A\+GE $\ast$ \mbox{\hyperlink{namespace_hi_easy_x_aef1fadd4f2841c24a1ec33326b6ba449}{Hi\+Easy\+X\+::\+Get\+Window\+Image}} (H\+W\+ND h\+Wnd)
+\item 
+Canvas $\ast$ \mbox{\hyperlink{namespace_hi_easy_x_aa063a0ea96c7cebe8c74da824cb7ffcf}{Hi\+Easy\+X\+::\+Get\+Window\+Canvas}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a22942e051c7e8ff9a3cc97bf8d54794e}{Hi\+Easy\+X\+::\+Bind\+Window\+Canvas}} (Canvas $\ast$p\+Canvas, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a563f8e51b3da33fffe4c9c21dca9d428}{Hi\+Easy\+X\+::\+Flush\+Drawing\+To\+Wnd}} (I\+M\+A\+GE $\ast$p\+Img, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_adb8ad6d9b9d1e044442d5985438dda1c}{Hi\+Easy\+X\+::\+Wait\+For\+Task}} (H\+W\+ND h\+Wnd)
+\item 
+Easy\+Window \mbox{\hyperlink{namespace_hi_easy_x_ae800610a5a5d75425ffb801404231bbb}{Hi\+Easy\+X\+::\+Get\+Working\+Window}} ()
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_abdbf556090a9b66992e10a2ce6030625}{Hi\+Easy\+X\+::\+Set\+Working\+Window}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a29e90de4a3a2b193a80d1a56da557a92}{Hi\+Easy\+X\+::\+Quick\+Draw}} (U\+I\+NT n\+Skip\+Pixels, H\+W\+ND h\+Wnd)
+\item 
+Draw\+Mode \mbox{\hyperlink{namespace_hi_easy_x_aa2a189aa8623f48469fea3858ea72243}{Hi\+Easy\+X\+::\+Get\+Draw\+Mode}} ()
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a4d02f8a1e56f0dddf577972bbd8d9392}{Hi\+Easy\+X\+::\+Set\+Draw\+Mode}} (Draw\+Mode mode)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_aa0c521889af1f43694a54158b4f2d209}{Hi\+Easy\+X\+::\+Enforce\+Redraw}} (H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_ad2be09f1a9241d3d9fcb8fe3f309fd9b}{Hi\+Easy\+X\+::\+Begin\+Task}} ()
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_aa8e73888f951524c8b166f37aa5a85a3}{Hi\+Easy\+X\+::\+End\+Task}} (bool flush)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_aa19375362333b9d68879e7b88df0a4b7}{Hi\+Easy\+X\+::is\+In\+Task}} (H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_a633b4d6de4137de9bfc7b43f4df66260}{Hi\+Easy\+X\+::is\+Window\+Size\+Changed}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a768004588ac478fc4ec78fa86ad2d212}{Hi\+Easy\+X\+::\+Create\+Tray}} (L\+P\+C\+T\+S\+TR lpsz\+Tray\+Name, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a5549e5fbc998894b219ecefd2cdb78d4}{Hi\+Easy\+X\+::\+Delete\+Tray}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_ae683b24f5b07e0fde073c756104e5453}{Hi\+Easy\+X\+::\+Set\+Tray\+Menu}} (H\+M\+E\+NU h\+Menu, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_aa451e61615d55f60bbcc2ec31c99f8a6}{Hi\+Easy\+X\+::\+Set\+Tray\+Menu\+Proc\+Func}} (void($\ast$p\+Func)(U\+I\+NT), H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_aaade17c552443cad553fb19691dc8335}{Hi\+Easy\+X\+::\+Get\+Custom\+Icon\+State}} ()
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a17246af9b5eaf8176083d1bb31755036}{Hi\+Easy\+X\+::\+Set\+Custom\+Icon}} (int n\+Icon, int n\+Icon\+Sm)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a233e933d28090253dcf2857190d9018b}{Hi\+Easy\+X\+::\+Pre\+Set\+Window\+Style}} (long l\+Style)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_ad47076b9329e9b1050e1373e9d179791}{Hi\+Easy\+X\+::\+Pre\+Set\+Window\+Pos}} (int x, int y)
+\item 
+int \mbox{\hyperlink{namespace_hi_easy_x_aca5460f44b6abbbffdbcea978080d2e0}{Hi\+Easy\+X\+::\+Set\+Window\+Style}} (long l\+New\+Style, H\+W\+ND h\+Wnd)
+\item 
+int \mbox{\hyperlink{namespace_hi_easy_x_a4e2229772e327083fda1ac945815f51b}{Hi\+Easy\+X\+::\+Set\+Window\+Ex\+Style}} (long l\+New\+Ex\+Style, H\+W\+ND h\+Wnd)
+\item 
+P\+O\+I\+NT \mbox{\hyperlink{namespace_hi_easy_x_a551298b06fdced41937c132e903a5df1}{Hi\+Easy\+X\+::\+Get\+Window\+Pos}} (H\+W\+ND h\+Wnd)
+\item 
+S\+I\+ZE \mbox{\hyperlink{namespace_hi_easy_x_a4568204d1ec8daa6d4a24f489e9e253a}{Hi\+Easy\+X\+::\+Get\+Window\+Size}} (H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a720782c6bf0d4421945e7b0b960d5f42}{Hi\+Easy\+X\+::\+Move\+Window}} (int x, int y, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a325db7c012fadf2793f3fd97f7ab190e}{Hi\+Easy\+X\+::\+Move\+Window\+Rel}} (int dx, int dy, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a8cb74a49183e10ece85a6321ead6a297}{Hi\+Easy\+X\+::\+Resize\+Window}} (int w, int h, H\+W\+ND h\+Wnd)
+\item 
+Ex\+Message \mbox{\hyperlink{namespace_hi_easy_x_ad6e89c04f7d2348f669818bee558f251}{Hi\+Easy\+X\+::getmessage\+\_\+win32}} (B\+Y\+TE filter, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_aae8425e312c0ec8a4c5a3a5344224c7f}{Hi\+Easy\+X\+::getmessage\+\_\+win32}} (Ex\+Message $\ast$msg, B\+Y\+TE filter, H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_aeee44f2592fd20c7ed1afb147992fc43}{Hi\+Easy\+X\+::peekmessage\+\_\+win32}} (Ex\+Message $\ast$msg, B\+Y\+TE filter, bool removemsg, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a22afa962f6630c209f3743c1eef93240}{Hi\+Easy\+X\+::flushmessage\+\_\+win32}} (B\+Y\+TE filter, H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_a54ab3d88f8cfc63af470d9f70ac667a9}{Hi\+Easy\+X\+::\+Mouse\+Hit\+\_\+win32}} (H\+W\+ND h\+Wnd)
+\item 
+M\+O\+U\+S\+E\+M\+SG \mbox{\hyperlink{namespace_hi_easy_x_aaa06c939dfd7628aea9fdb6bb485f264}{Hi\+Easy\+X\+::\+Get\+Mouse\+Msg\+\_\+win32}} (H\+W\+ND h\+Wnd)
+\item 
+bool \mbox{\hyperlink{namespace_hi_easy_x_a1bb16eb736f85fae74d4beb7dc7b77d4}{Hi\+Easy\+X\+::\+Peek\+Mouse\+Msg\+\_\+win32}} (M\+O\+U\+S\+E\+M\+SG $\ast$p\+Msg, bool b\+Remove\+Msg, H\+W\+ND h\+Wnd)
+\item 
+void \mbox{\hyperlink{namespace_hi_easy_x_a8deabadc5837351f0cc993002a12e61d}{Hi\+Easy\+X\+::\+Flush\+Mouse\+Msg\+Buffer\+\_\+win32}} (H\+W\+ND h\+Wnd)
+\item 
+Ex\+Message \mbox{\hyperlink{namespace_hi_easy_x_a7a260c9691e3046c4b1a30c4cbcbc4b6}{Hi\+Easy\+X\+::\+To\+\_\+\+Ex\+Message}} (M\+O\+U\+S\+E\+M\+SG msg)
+\item 
+M\+O\+U\+S\+E\+M\+SG \mbox{\hyperlink{namespace_hi_easy_x_a155fe36f9caf548016c581a54ef300eb}{Hi\+Easy\+X\+::\+To\+\_\+\+Mouse\+Msg}} (Ex\+Message msg\+Ex)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_hi_window_8h_af14a141cf3e2b9b96e44486f2cccd856}\label{_hi_window_8h_af14a141cf3e2b9b96e44486f2cccd856}} 
+\index{HiWindow.h@{HiWindow.h}!\_\_HIWINDOW\_H\_\_@{\_\_HIWINDOW\_H\_\_}}
+\index{\_\_HIWINDOW\_H\_\_@{\_\_HIWINDOW\_H\_\_}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{\_\_HIWINDOW\_H\_\_}{\_\_HIWINDOW\_H\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+I\+W\+I\+N\+D\+O\+W\+\_\+\+H\+\_\+\+\_\+}
+
+
+
+Definition at line 17 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_ab23a70286e0ac0c9000b2279603a1d70}\label{_hi_window_8h_ab23a70286e0ac0c9000b2279603a1d70}} 
+\index{HiWindow.h@{HiWindow.h}!BEGIN\_TASK@{BEGIN\_TASK}}
+\index{BEGIN\_TASK@{BEGIN\_TASK}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{BEGIN\_TASK}{BEGIN\_TASK}}
+{\footnotesize\ttfamily \#define B\+E\+G\+I\+N\+\_\+\+T\+A\+SK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{namespace_hi_easy_x_abdbf556090a9b66992e10a2ce6030625}{HiEasyX::SetWorkingWindow}}(\textcolor{keyword}{nullptr}))\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{namespace_hi_easy_x_ad2be09f1a9241d3d9fcb8fe3f309fd9b}{HiEasyX::BeginTask}}())\(\backslash\)}
+\DoxyCodeLine{        \{(0)    \textcolor{comment}{/* 此处强制要求加分号 */}}
+
+\end{DoxyCode}
+
+
+Definition at line 461 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a1f391430f662d94ab71c9d502f72e86b}\label{_hi_window_8h_a1f391430f662d94ab71c9d502f72e86b}} 
+\index{HiWindow.h@{HiWindow.h}!BEGIN\_TASK\_WND@{BEGIN\_TASK\_WND}}
+\index{BEGIN\_TASK\_WND@{BEGIN\_TASK\_WND}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{BEGIN\_TASK\_WND}{BEGIN\_TASK\_WND}}
+{\footnotesize\ttfamily \#define B\+E\+G\+I\+N\+\_\+\+T\+A\+S\+K\+\_\+\+W\+ND(\begin{DoxyParamCaption}\item[{}]{h\+Wnd }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* 设置工作窗口时将自动等待任务 */}\(\backslash\)}
+\DoxyCodeLine{    if (\mbox{\hyperlink{namespace_hi_easy_x_abdbf556090a9b66992e10a2ce6030625}{HiEasyX::SetWorkingWindow}}(hWnd))\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{namespace_hi_easy_x_ad2be09f1a9241d3d9fcb8fe3f309fd9b}{HiEasyX::BeginTask}}())\(\backslash\)}
+\DoxyCodeLine{        \{(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 468 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_aeed98cb0cace45f4d56a99382c968bc4}\label{_hi_window_8h_aeed98cb0cace45f4d56a99382c968bc4}} 
+\index{HiWindow.h@{HiWindow.h}!BeginBatchDraw@{BeginBatchDraw}}
+\index{BeginBatchDraw@{BeginBatchDraw}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{BeginBatchDraw}{BeginBatchDraw}}
+{\footnotesize\ttfamily \#define Begin\+Batch\+Draw(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 519 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_ad9bb6730860f6ba4763370ad10eb7eb0}\label{_hi_window_8h_ad9bb6730860f6ba4763370ad10eb7eb0}} 
+\index{HiWindow.h@{HiWindow.h}!closegraph@{closegraph}}
+\index{closegraph@{closegraph}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{closegraph}{closegraph}}
+{\footnotesize\ttfamily \#define closegraph~\mbox{\hyperlink{namespace_hi_easy_x_a14d43cb89d29b6e59ee49bb47f07f01d}{Hi\+Easy\+X\+::closegraph\+\_\+win32}}}
+
+
+
+Definition at line 516 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a0d110a7a9d3d85a5d3e1a2ce7955a633}\label{_hi_window_8h_a0d110a7a9d3d85a5d3e1a2ce7955a633}} 
+\index{HiWindow.h@{HiWindow.h}!DisableResizing@{DisableResizing}}
+\index{DisableResizing@{DisableResizing}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{DisableResizing}{DisableResizing}}
+{\footnotesize\ttfamily \#define Disable\+Resizing(\begin{DoxyParamCaption}\item[{}]{hwnd,  }\item[{}]{state }\end{DoxyParamCaption})~\mbox{\hyperlink{_hi_window_8h_a07feaed93cedd3b3e3484b60ec025c54}{Enable\+Resizing}}(hwnd, !state)}
+
+
+
+Definition at line 490 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_abe7280b56ee37d9ebfa25a9824251348}\label{_hi_window_8h_abe7280b56ee37d9ebfa25a9824251348}} 
+\index{HiWindow.h@{HiWindow.h}!DisableSystemMenu@{DisableSystemMenu}}
+\index{DisableSystemMenu@{DisableSystemMenu}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{DisableSystemMenu}{DisableSystemMenu}}
+{\footnotesize\ttfamily \#define Disable\+System\+Menu(\begin{DoxyParamCaption}\item[{}]{hwnd,  }\item[{}]{state }\end{DoxyParamCaption})~\mbox{\hyperlink{_hi_window_8h_a9c0e47b8a17065c5528f716dcae29014}{Enable\+System\+Menu}}(hwnd, !state)}
+
+
+
+Definition at line 496 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a07feaed93cedd3b3e3484b60ec025c54}\label{_hi_window_8h_a07feaed93cedd3b3e3484b60ec025c54}} 
+\index{HiWindow.h@{HiWindow.h}!EnableResizing@{EnableResizing}}
+\index{EnableResizing@{EnableResizing}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{EnableResizing}{EnableResizing}}
+{\footnotesize\ttfamily \#define Enable\+Resizing(\begin{DoxyParamCaption}\item[{}]{hwnd,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(state ? \mbox{\hyperlink{namespace_hi_easy_x_aca5460f44b6abbbffdbcea978080d2e0}{HiEasyX::SetWindowStyle}}(GetWindowStyle(hwnd) | WS\_SIZEBOX | WS\_MAXIMIZEBOX) :\(\backslash\)}
+\DoxyCodeLine{                                        \mbox{\hyperlink{namespace_hi_easy_x}{HiEasyX}}::\mbox{\hyperlink{namespace_hi_easy_x_aca5460f44b6abbbffdbcea978080d2e0}{SetWindowStyle}}(GetWindowStyle(hwnd) \& ~WS\_SIZEBOX \& ~WS\_MAXIMIZEBOX))}
+
+\end{DoxyCode}
+
+
+Definition at line 487 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a9c0e47b8a17065c5528f716dcae29014}\label{_hi_window_8h_a9c0e47b8a17065c5528f716dcae29014}} 
+\index{HiWindow.h@{HiWindow.h}!EnableSystemMenu@{EnableSystemMenu}}
+\index{EnableSystemMenu@{EnableSystemMenu}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{EnableSystemMenu}{EnableSystemMenu}}
+{\footnotesize\ttfamily \#define Enable\+System\+Menu(\begin{DoxyParamCaption}\item[{}]{hwnd,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(state ? \mbox{\hyperlink{namespace_hi_easy_x_aca5460f44b6abbbffdbcea978080d2e0}{HiEasyX::SetWindowStyle}}(GetWindowStyle(hwnd) | WS\_SYSMENU) :\(\backslash\)}
+\DoxyCodeLine{                                        \mbox{\hyperlink{namespace_hi_easy_x}{HiEasyX}}::\mbox{\hyperlink{namespace_hi_easy_x_aca5460f44b6abbbffdbcea978080d2e0}{SetWindowStyle}}(GetWindowStyle(hwnd) \& ~WS\_SYSMENU))}
+
+\end{DoxyCode}
+
+
+Definition at line 493 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a71f27678a31970eda77c938332702a27}\label{_hi_window_8h_a71f27678a31970eda77c938332702a27}} 
+\index{HiWindow.h@{HiWindow.h}!EnableToolWindowStyle@{EnableToolWindowStyle}}
+\index{EnableToolWindowStyle@{EnableToolWindowStyle}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{EnableToolWindowStyle}{EnableToolWindowStyle}}
+{\footnotesize\ttfamily \#define Enable\+Tool\+Window\+Style(\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(state ? \mbox{\hyperlink{namespace_hi_easy_x_a4e2229772e327083fda1ac945815f51b}{HiEasyX::SetWindowExStyle}}(GetWindowExStyle(\mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{HiEasyX::GetHWnd\_win32}}()) | WS\_EX\_TOOLWINDOW) :\(\backslash\)}
+\DoxyCodeLine{                                        \mbox{\hyperlink{namespace_hi_easy_x}{HiEasyX}}::\mbox{\hyperlink{namespace_hi_easy_x_a4e2229772e327083fda1ac945815f51b}{SetWindowExStyle}}(GetWindowExStyle(\mbox{\hyperlink{namespace_hi_easy_x}{HiEasyX}}::\mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{GetHWnd\_win32}}()) \& ~WS\_EX\_TOOLWINDOW))}
+
+\end{DoxyCode}
+
+
+Definition at line 499 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_acfe8f2881bf3efdc4627b2f2d287f489}\label{_hi_window_8h_acfe8f2881bf3efdc4627b2f2d287f489}} 
+\index{HiWindow.h@{HiWindow.h}!END\_TASK@{END\_TASK}}
+\index{END\_TASK@{END\_TASK}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{END\_TASK}{END\_TASK}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+T\+A\+SK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_hi_easy_x_aa8e73888f951524c8b166f37aa5a85a3}{HiEasyX::EndTask}}();\(\backslash\)}
+\DoxyCodeLine{        \}\(\backslash\)}
+\DoxyCodeLine{    \}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 476 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a12d9f690479a4e9c13624d51bff8b11e}\label{_hi_window_8h_a12d9f690479a4e9c13624d51bff8b11e}} 
+\index{HiWindow.h@{HiWindow.h}!EndBatchDraw@{EndBatchDraw}}
+\index{EndBatchDraw@{EndBatchDraw}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{EndBatchDraw}{EndBatchDraw}}
+{\footnotesize\ttfamily \#define End\+Batch\+Draw(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{_hi_window_8h_a61051e5730386effb47800799b18fa78}{F\+L\+U\+S\+H\+\_\+\+D\+R\+AW}}()}
+
+
+
+Definition at line 521 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_aa08e357fa976894b15d6f5964abe597d}\label{_hi_window_8h_aa08e357fa976894b15d6f5964abe597d}} 
+\index{HiWindow.h@{HiWindow.h}!EW\_NORMAL@{EW\_NORMAL}}
+\index{EW\_NORMAL@{EW\_NORMAL}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{EW\_NORMAL}{EW\_NORMAL}}
+{\footnotesize\ttfamily \#define E\+W\+\_\+\+N\+O\+R\+M\+AL~0}
+
+
+
+Definition at line 21 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a61051e5730386effb47800799b18fa78}\label{_hi_window_8h_a61051e5730386effb47800799b18fa78}} 
+\index{HiWindow.h@{HiWindow.h}!FLUSH\_DRAW@{FLUSH\_DRAW}}
+\index{FLUSH\_DRAW@{FLUSH\_DRAW}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{FLUSH\_DRAW}{FLUSH\_DRAW}}
+{\footnotesize\ttfamily \#define F\+L\+U\+S\+H\+\_\+\+D\+R\+AW(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{namespace_hi_easy_x_aa0c521889af1f43694a54158b4f2d209}{Hi\+Easy\+X\+::\+Enforce\+Redraw}}()}
+
+
+
+Definition at line 482 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a2959db99a44d0f584a876927a8eb99f8}\label{_hi_window_8h_a2959db99a44d0f584a876927a8eb99f8}} 
+\index{HiWindow.h@{HiWindow.h}!FlushBatchDraw@{FlushBatchDraw}}
+\index{FlushBatchDraw@{FlushBatchDraw}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{FlushBatchDraw}{FlushBatchDraw}}
+{\footnotesize\ttfamily \#define Flush\+Batch\+Draw(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{_hi_window_8h_a61051e5730386effb47800799b18fa78}{F\+L\+U\+S\+H\+\_\+\+D\+R\+AW}}()}
+
+
+
+Definition at line 520 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_aa958fd853f11ce25149edbb4bcbe8908}\label{_hi_window_8h_aa958fd853f11ce25149edbb4bcbe8908}} 
+\index{HiWindow.h@{HiWindow.h}!flushmessage@{flushmessage}}
+\index{flushmessage@{flushmessage}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{flushmessage}{flushmessage}}
+{\footnotesize\ttfamily \#define flushmessage~\mbox{\hyperlink{namespace_hi_easy_x_a22afa962f6630c209f3743c1eef93240}{Hi\+Easy\+X\+::flushmessage\+\_\+win32}}}
+
+
+
+Definition at line 527 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_ab1d19c665d3722a5969b65e5497c2d77}\label{_hi_window_8h_ab1d19c665d3722a5969b65e5497c2d77}} 
+\index{HiWindow.h@{HiWindow.h}!FlushMouseMsgBuffer@{FlushMouseMsgBuffer}}
+\index{FlushMouseMsgBuffer@{FlushMouseMsgBuffer}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{FlushMouseMsgBuffer}{FlushMouseMsgBuffer}}
+{\footnotesize\ttfamily \#define Flush\+Mouse\+Msg\+Buffer~\mbox{\hyperlink{namespace_hi_easy_x_a8deabadc5837351f0cc993002a12e61d}{Hi\+Easy\+X\+::\+Flush\+Mouse\+Msg\+Buffer\+\_\+win32}}}
+
+
+
+Definition at line 532 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a438d4c23c04ce43cd76de38c8fbbe92f}\label{_hi_window_8h_a438d4c23c04ce43cd76de38c8fbbe92f}} 
+\index{HiWindow.h@{HiWindow.h}!GetHWnd@{GetHWnd}}
+\index{GetHWnd@{GetHWnd}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{GetHWnd}{GetHWnd}}
+{\footnotesize\ttfamily \#define Get\+H\+Wnd~\mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{Hi\+Easy\+X\+::\+Get\+H\+Wnd\+\_\+win32}}}
+
+
+
+Definition at line 523 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a2dabe3f34636fddeef2f698ea1e4e2c1}\label{_hi_window_8h_a2dabe3f34636fddeef2f698ea1e4e2c1}} 
+\index{HiWindow.h@{HiWindow.h}!getmessage@{getmessage}}
+\index{getmessage@{getmessage}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{getmessage}{getmessage}}
+{\footnotesize\ttfamily \#define getmessage~\mbox{\hyperlink{namespace_hi_easy_x_ad6e89c04f7d2348f669818bee558f251}{Hi\+Easy\+X\+::getmessage\+\_\+win32}}}
+
+
+
+Definition at line 525 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_ac50c0e0e941f879aa15e26b88242fa35}\label{_hi_window_8h_ac50c0e0e941f879aa15e26b88242fa35}} 
+\index{HiWindow.h@{HiWindow.h}!GetMouseMsg@{GetMouseMsg}}
+\index{GetMouseMsg@{GetMouseMsg}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{GetMouseMsg}{GetMouseMsg}}
+{\footnotesize\ttfamily \#define Get\+Mouse\+Msg~\mbox{\hyperlink{namespace_hi_easy_x_aaa06c939dfd7628aea9fdb6bb485f264}{Hi\+Easy\+X\+::\+Get\+Mouse\+Msg\+\_\+win32}}}
+
+
+
+Definition at line 530 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a9afcf922352ddb6d093557b948c0af70}\label{_hi_window_8h_a9afcf922352ddb6d093557b948c0af70}} 
+\index{HiWindow.h@{HiWindow.h}!HIWINDOW\_DEFAULT\_PROC@{HIWINDOW\_DEFAULT\_PROC}}
+\index{HIWINDOW\_DEFAULT\_PROC@{HIWINDOW\_DEFAULT\_PROC}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{HIWINDOW\_DEFAULT\_PROC}{HIWINDOW\_DEFAULT\_PROC}}
+{\footnotesize\ttfamily \#define H\+I\+W\+I\+N\+D\+O\+W\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+R\+OC~(L\+R\+E\+S\+U\+LT)(-\/10086)}
+
+
+
+Definition at line 27 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a4c09b71f211e2f8e29758ea49356232b}\label{_hi_window_8h_a4c09b71f211e2f8e29758ea49356232b}} 
+\index{HiWindow.h@{HiWindow.h}!initgraph@{initgraph}}
+\index{initgraph@{initgraph}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{initgraph}{initgraph}}
+{\footnotesize\ttfamily \#define initgraph(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_hi_easy_x_a39a857bd99bbe509b37dedee8f290868}{HiEasyX::initgraph\_win32}}(\_\_VA\_ARGS\_\_);\mbox{\hyperlink{namespace_hi_easy_x_a28ee4b16feccc01e9cb795b384517217}{\(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_hi_easy_x_a28ee4b16feccc01e9cb795b384517217}{                                HiEasyX::AutoExit}}()}
+
+\end{DoxyCode}
+
+
+Definition at line 513 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a39ed1218cbe6649d63285616c639acb9}\label{_hi_window_8h_a39ed1218cbe6649d63285616c639acb9}} 
+\index{HiWindow.h@{HiWindow.h}!KEY\_DOWN@{KEY\_DOWN}}
+\index{KEY\_DOWN@{KEY\_DOWN}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN}{KEY\_DOWN}}
+{\footnotesize\ttfamily \#define K\+E\+Y\+\_\+\+D\+O\+WN(\begin{DoxyParamCaption}\item[{}]{V\+K\+\_\+\+N\+O\+N\+A\+ME }\end{DoxyParamCaption})~((Get\+Async\+Key\+State(V\+K\+\_\+\+N\+O\+N\+A\+ME) \& 0x8000) ? 1\+:0)}
+
+
+
+Definition at line 505 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a0a4a6911b56077a5b8285b55095911d0}\label{_hi_window_8h_a0a4a6911b56077a5b8285b55095911d0}} 
+\index{HiWindow.h@{HiWindow.h}!KEY\_DOWN\_WND@{KEY\_DOWN\_WND}}
+\index{KEY\_DOWN\_WND@{KEY\_DOWN\_WND}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_WND}{KEY\_DOWN\_WND}}
+{\footnotesize\ttfamily \#define K\+E\+Y\+\_\+\+D\+O\+W\+N\+\_\+\+W\+ND(\begin{DoxyParamCaption}\item[{}]{V\+K\+\_\+\+N\+O\+N\+A\+ME }\end{DoxyParamCaption})~(Get\+Foreground\+Window() == \mbox{\hyperlink{namespace_hi_easy_x_a1c54c28e01a5009c735aa12dc8cad59c}{Hi\+Easy\+X\+::\+Get\+H\+Wnd\+\_\+win32}}() \&\& \mbox{\hyperlink{_hi_window_8h_a39ed1218cbe6649d63285616c639acb9}{K\+E\+Y\+\_\+\+D\+O\+WN}}(V\+K\+\_\+\+N\+O\+N\+A\+ME))}
+
+
+
+Definition at line 508 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a5af1652731768bcb10a6f74ec386630c}\label{_hi_window_8h_a5af1652731768bcb10a6f74ec386630c}} 
+\index{HiWindow.h@{HiWindow.h}!MouseHit@{MouseHit}}
+\index{MouseHit@{MouseHit}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{MouseHit}{MouseHit}}
+{\footnotesize\ttfamily \#define Mouse\+Hit~\mbox{\hyperlink{namespace_hi_easy_x_a54ab3d88f8cfc63af470d9f70ac667a9}{Hi\+Easy\+X\+::\+Mouse\+Hit\+\_\+win32}}}
+
+
+
+Definition at line 529 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a84c163038896afa780149de502db4e31}\label{_hi_window_8h_a84c163038896afa780149de502db4e31}} 
+\index{HiWindow.h@{HiWindow.h}!NO\_WINDOW\_INDEX@{NO\_WINDOW\_INDEX}}
+\index{NO\_WINDOW\_INDEX@{NO\_WINDOW\_INDEX}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{NO\_WINDOW\_INDEX}{NO\_WINDOW\_INDEX}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+I\+N\+D\+EX~-\/1}
+
+
+
+Definition at line 24 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_aba7e39ba456baa77d6ef5db677adbd31}\label{_hi_window_8h_aba7e39ba456baa77d6ef5db677adbd31}} 
+\index{HiWindow.h@{HiWindow.h}!peekmessage@{peekmessage}}
+\index{peekmessage@{peekmessage}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{peekmessage}{peekmessage}}
+{\footnotesize\ttfamily \#define peekmessage~\mbox{\hyperlink{namespace_hi_easy_x_aeee44f2592fd20c7ed1afb147992fc43}{Hi\+Easy\+X\+::peekmessage\+\_\+win32}}}
+
+
+
+Definition at line 526 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a773d70a0163b6b01df079b92571e87b3}\label{_hi_window_8h_a773d70a0163b6b01df079b92571e87b3}} 
+\index{HiWindow.h@{HiWindow.h}!PeekMouseMsg@{PeekMouseMsg}}
+\index{PeekMouseMsg@{PeekMouseMsg}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{PeekMouseMsg}{PeekMouseMsg}}
+{\footnotesize\ttfamily \#define Peek\+Mouse\+Msg~\mbox{\hyperlink{namespace_hi_easy_x_a1bb16eb736f85fae74d4beb7dc7b77d4}{Hi\+Easy\+X\+::\+Peek\+Mouse\+Msg\+\_\+win32}}}
+
+
+
+Definition at line 531 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_ac24af045bde462f45130dcba02ffb936}\label{_hi_window_8h_ac24af045bde462f45130dcba02ffb936}} 
+\index{HiWindow.h@{HiWindow.h}!WM\_SYSCTRL\_CREATE@{WM\_SYSCTRL\_CREATE}}
+\index{WM\_SYSCTRL\_CREATE@{WM\_SYSCTRL\_CREATE}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{WM\_SYSCTRL\_CREATE}{WM\_SYSCTRL\_CREATE}}
+{\footnotesize\ttfamily \#define W\+M\+\_\+\+S\+Y\+S\+C\+T\+R\+L\+\_\+\+C\+R\+E\+A\+TE~(W\+M\+\_\+\+U\+S\+ER + 9338)}
+
+
+
+Definition at line 35 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a13eff6f9ec525326e2fe2d9824777ce1}\label{_hi_window_8h_a13eff6f9ec525326e2fe2d9824777ce1}} 
+\index{HiWindow.h@{HiWindow.h}!WM\_SYSCTRL\_DELETE@{WM\_SYSCTRL\_DELETE}}
+\index{WM\_SYSCTRL\_DELETE@{WM\_SYSCTRL\_DELETE}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{WM\_SYSCTRL\_DELETE}{WM\_SYSCTRL\_DELETE}}
+{\footnotesize\ttfamily \#define W\+M\+\_\+\+S\+Y\+S\+C\+T\+R\+L\+\_\+\+D\+E\+L\+E\+TE~(W\+M\+\_\+\+U\+S\+ER + 9339)}
+
+
+
+Definition at line 39 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a016976fd8db083a06b4658a34bd4734c}\label{_hi_window_8h_a016976fd8db083a06b4658a34bd4734c}} 
+\index{HiWindow.h@{HiWindow.h}!WM\_TRAY@{WM\_TRAY}}
+\index{WM\_TRAY@{WM\_TRAY}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{WM\_TRAY}{WM\_TRAY}}
+{\footnotesize\ttfamily \#define W\+M\+\_\+\+T\+R\+AY~(W\+M\+\_\+\+U\+S\+ER + 9337)}
+
+
+
+Definition at line 30 of file Hi\+Window.\+h.
+
+\mbox{\Hypertarget{_hi_window_8h_a1b8b0e9a917b3802a0680321cf2c4893}\label{_hi_window_8h_a1b8b0e9a917b3802a0680321cf2c4893}} 
+\index{HiWindow.h@{HiWindow.h}!WM\_USER\_REDRAW@{WM\_USER\_REDRAW}}
+\index{WM\_USER\_REDRAW@{WM\_USER\_REDRAW}!HiWindow.h@{HiWindow.h}}
+\doxysubsubsection{\texorpdfstring{WM\_USER\_REDRAW}{WM\_USER\_REDRAW}}
+{\footnotesize\ttfamily \#define W\+M\+\_\+\+U\+S\+E\+R\+\_\+\+R\+E\+D\+R\+AW~(W\+M\+\_\+\+U\+S\+ER + 9340)}
+
+
+
+Definition at line 43 of file Hi\+Window.\+h.
+

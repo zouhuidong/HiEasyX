@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_hi_easy_x_1_1_easy_window" kind="struct" language="C++" prot="public">
+    <compoundname>HiEasyX::EasyWindow</compoundname>
+    <includes refid="_hi_window_8h" local="no">HiWindow.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a2269803221f80d58069c0cd78d8f3395" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::isAlive</definition>
+        <argsstring></argsstring>
+        <name>isAlive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="98" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ac28954486f1afeeb94f96e3324f5e67f" prot="public" static="no" mutable="no">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::EasyWindow::hWnd</definition>
+        <argsstring></argsstring>
+        <name>hWnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="100" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1aa39b10e2ad2b1257b943feb3888310f5" prot="public" static="no" mutable="no">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::EasyWindow::hParent</definition>
+        <argsstring></argsstring>
+        <name>hParent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="101" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ab7ca6551259b82fedcd03d37123e63af" prot="public" static="no" mutable="no">
+        <type>IMAGE *</type>
+        <definition>IMAGE* HiEasyX::EasyWindow::pImg</definition>
+        <argsstring></argsstring>
+        <name>pImg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="103" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a74199abe1a8551b0332ca9fc7168961d" prot="public" static="no" mutable="no">
+        <type>IMAGE *</type>
+        <definition>IMAGE* HiEasyX::EasyWindow::pBufferImg</definition>
+        <argsstring></argsstring>
+        <name>pBufferImg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="104" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ad1ce946444c3887dd8b6580ffe2abb49" prot="public" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_canvas" kindref="compound">Canvas</ref> *</type>
+        <definition>Canvas* HiEasyX::EasyWindow::pBufferImgCanvas</definition>
+        <argsstring></argsstring>
+        <name>pBufferImgCanvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="105" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a94201a62d26e45b44b7f3201d0dbcc3a" prot="public" static="no" mutable="no">
+        <type>WNDPROC</type>
+        <definition>WNDPROC HiEasyX::EasyWindow::funcWndProc</definition>
+        <argsstring></argsstring>
+        <name>funcWndProc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="107" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a3f0f4bdf672f602346b43245a66ffdaf" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; ExMessage &gt;</type>
+        <definition>std::vector&lt;ExMessage&gt; HiEasyX::EasyWindow::vecMessage</definition>
+        <argsstring></argsstring>
+        <name>vecMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="109" column="13" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a00417e6fcb1ef0cc801bc158834a450e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::isUseTray</definition>
+        <argsstring></argsstring>
+        <name>isUseTray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="111" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a568359bc178cdafc545a8613e650661e" prot="public" static="no" mutable="no">
+        <type>NOTIFYICONDATA</type>
+        <definition>NOTIFYICONDATA HiEasyX::EasyWindow::nid</definition>
+        <argsstring></argsstring>
+        <name>nid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="112" column="16" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ad7209f098495dccc18792ab3c3aa1bce" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::isUseTrayMenu</definition>
+        <argsstring></argsstring>
+        <name>isUseTrayMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="113" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ab67dea6acc8fe2005fe0b616126d9036" prot="public" static="no" mutable="no">
+        <type>HMENU</type>
+        <definition>HMENU HiEasyX::EasyWindow::hTrayMenu</definition>
+        <argsstring></argsstring>
+        <name>hTrayMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="114" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a6fd983c40310cb01bf3f3631426f8270" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* HiEasyX::EasyWindow::funcTrayMenuProc) (UINT)</definition>
+        <argsstring>)(UINT)</argsstring>
+        <name>funcTrayMenuProc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="116" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1afd73c9304cbda5dc953cbf60178eb420" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::isNewSize</definition>
+        <argsstring></argsstring>
+        <name>isNewSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="120" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a6a61c4e03119042f085f9b9ed8bedd8c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::isBusyProcessing</definition>
+        <argsstring></argsstring>
+        <name>isBusyProcessing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="121" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a1fd7608d40b28dc6fd98f1ddf53347fd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::EasyWindow::nSkipPixels</definition>
+        <argsstring></argsstring>
+        <name>nSkipPixels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="123" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1a99c482b8525448ec0cc8d5a8f5ead0df" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_hi_easy_x_1_1_sys_control_base" kindref="compound">SysControlBase</ref> * &gt;</type>
+        <definition>std::vector&lt;SysControlBase*&gt; HiEasyX::EasyWindow::vecSysCtrl</definition>
+        <argsstring></argsstring>
+        <name>vecSysCtrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="125" column="13" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hi_easy_x_1_1_easy_window_1ac359322f8d79b0fa247d6cf4a7896419" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::EasyWindow::bHasCtrl</definition>
+        <argsstring></argsstring>
+        <name>bHasCtrl</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="126" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>HiEasyX::EasyWindow</label>
+        <link refid="struct_hi_easy_x_1_1_easy_window"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pBufferImgCanvas</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HiEasyX::Canvas</label>
+        <link refid="class_hi_easy_x_1_1_canvas"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_property</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IMAGE</label>
+      </node>
+      <node id="4">
+        <label>HiEasyX::DrawingProperty</label>
+        <link refid="class_hi_easy_x_1_1_drawing_property"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" line="97" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" bodystart="96" bodyend="127"/>
+    <listofallmembers>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ac359322f8d79b0fa247d6cf4a7896419" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>bHasCtrl</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a6fd983c40310cb01bf3f3631426f8270" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>funcTrayMenuProc</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a94201a62d26e45b44b7f3201d0dbcc3a" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>funcWndProc</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1aa39b10e2ad2b1257b943feb3888310f5" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>hParent</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ab67dea6acc8fe2005fe0b616126d9036" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>hTrayMenu</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ac28954486f1afeeb94f96e3324f5e67f" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>hWnd</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a2269803221f80d58069c0cd78d8f3395" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>isAlive</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a6a61c4e03119042f085f9b9ed8bedd8c" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>isBusyProcessing</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1afd73c9304cbda5dc953cbf60178eb420" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>isNewSize</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a00417e6fcb1ef0cc801bc158834a450e" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>isUseTray</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ad7209f098495dccc18792ab3c3aa1bce" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>isUseTrayMenu</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a568359bc178cdafc545a8613e650661e" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>nid</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a1fd7608d40b28dc6fd98f1ddf53347fd" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>nSkipPixels</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a74199abe1a8551b0332ca9fc7168961d" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>pBufferImg</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ad1ce946444c3887dd8b6580ffe2abb49" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>pBufferImgCanvas</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1ab7ca6551259b82fedcd03d37123e63af" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>pImg</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a3f0f4bdf672f602346b43245a66ffdaf" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>vecMessage</name></member>
+      <member refid="struct_hi_easy_x_1_1_easy_window_1a99c482b8525448ec0cc8d5a8f5ead0df" prot="public" virt="non-virtual"><scope>HiEasyX::EasyWindow</scope><name>vecSysCtrl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

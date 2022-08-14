@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_layer" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::Layer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::list&lt; ImageBlock * &gt;</basecompoundref>
+    <includes refid="_hi_canvas_8h" local="no">HiCanvas.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_layer_1ac19a64b418902fd44acd4479d09ca5e4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_drawing_property" kindref="compound">DrawingProperty</ref></type>
+        <definition>DrawingProperty HiEasyX::Layer::m_property[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>m_property</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="553" column="17" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="553" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_layer_1a610c7212c01b7b403595894f68aa9175" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Layer::bVisible</definition>
+        <argsstring></argsstring>
+        <name>bVisible</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="556" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="556" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_layer_1aff8a2767d191af3e71c30c1be07856f0" prot="public" static="no" mutable="no">
+        <type>BYTE</type>
+        <definition>BYTE HiEasyX::Layer::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="557" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="557" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_layer_1a47f2be3f43f59c86fe879032c22c6115" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Layer::bOutline</definition>
+        <argsstring></argsstring>
+        <name>bOutline</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="558" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="558" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_layer_1a9471a011e2b79d40e53df57087a1cbfb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Layer::bText</definition>
+        <argsstring></argsstring>
+        <name>bText</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="559" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="559" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_layer_1a86677bc596da8b7cb1ffa2fbb99dcc90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Layer::Render</definition>
+        <argsstring>(IMAGE *pImg=nullptr, bool bShowOutline=false, bool bShowText=true, std::wstring wstrAddedText=L&quot;&quot;)</argsstring>
+        <name>Render</name>
+        <param>
+          <type>IMAGE *</type>
+          <declname>pImg</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bShowOutline</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bShowText</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>wstrAddedText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="564" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" bodystart="1660" bodyend="1733"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::list&lt; ImageBlock * &gt;</label>
+      </node>
+      <node id="1">
+        <label>HiEasyX::Layer</label>
+        <link refid="class_hi_easy_x_1_1_layer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::list&lt; ImageBlock * &gt;</label>
+      </node>
+      <node id="1">
+        <label>HiEasyX::Layer</label>
+        <link refid="class_hi_easy_x_1_1_layer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" line="551" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" bodystart="550" bodyend="565"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_layer_1aff8a2767d191af3e71c30c1be07856f0" prot="public" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>alpha</name></member>
+      <member refid="class_hi_easy_x_1_1_layer_1a47f2be3f43f59c86fe879032c22c6115" prot="public" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>bOutline</name></member>
+      <member refid="class_hi_easy_x_1_1_layer_1a9471a011e2b79d40e53df57087a1cbfb" prot="public" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>bText</name></member>
+      <member refid="class_hi_easy_x_1_1_layer_1a610c7212c01b7b403595894f68aa9175" prot="public" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>bVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_layer_1ac19a64b418902fd44acd4479d09ca5e4" prot="private" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>m_property</name></member>
+      <member refid="class_hi_easy_x_1_1_layer_1a86677bc596da8b7cb1ffa2fbb99dcc90" prot="public" virt="non-virtual"><scope>HiEasyX::Layer</scope><name>Render</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

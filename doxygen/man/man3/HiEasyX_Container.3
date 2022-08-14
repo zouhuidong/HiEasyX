@@ -1,0 +1,168 @@
+.TH "HiEasyX::Container" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Container
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiContainer\&.h>\fP
+.PP
+Inherited by \fBHiEasyX::ControlBase\fP, and \fBHiEasyX::SysControlBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContainer\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Container\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBUpdateRect\fP (RECT rctOld)"
+.br
+.ti -1c
+.RI "RECT \fBGetRect\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetRect\fP (int x, int y, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBSetRect\fP (RECT rct)"
+.br
+.ti -1c
+.RI "POINT \fBGetPos\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetX\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetY\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBSetPos\fP (POINT pt)"
+.br
+.ti -1c
+.RI "void \fBMove\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBMoveRel\fP (int dx, int dy)"
+.br
+.ti -1c
+.RI "int \fBGetWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetWidth\fP (int w)"
+.br
+.ti -1c
+.RI "int \fBGetHeight\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetHeight\fP (int h)"
+.br
+.ti -1c
+.RI "void \fBResize\fP (int w, int h)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "RECT \fBm_rct\fP = { 0 }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file HiContainer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::Container::Container ()"
+
+.PP
+Definition at line 5 of file HiContainer\&.cpp\&.
+.SS "HiEasyX::Container::~Container ()\fC [virtual]\fP"
+
+.PP
+Definition at line 9 of file HiContainer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int HiEasyX::Container::GetHeight () const\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file HiContainer\&.h\&.
+.SS "POINT HiEasyX::Container::GetPos () const\fC [inline]\fP"
+
+.PP
+Definition at line 38 of file HiContainer\&.h\&.
+.SS "RECT HiEasyX::Container::GetRect () const\fC [inline]\fP"
+
+.PP
+Definition at line 30 of file HiContainer\&.h\&.
+.SS "int HiEasyX::Container::GetWidth () const\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file HiContainer\&.h\&.
+.SS "int HiEasyX::Container::GetX () const\fC [inline]\fP"
+
+.PP
+Definition at line 40 of file HiContainer\&.h\&.
+.SS "int HiEasyX::Container::GetY () const\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file HiContainer\&.h\&.
+.SS "void HiEasyX::Container::Move (int x, int y)\fC [inline]\fP"
+
+.PP
+Definition at line 48 of file HiContainer\&.h\&.
+.SS "void HiEasyX::Container::MoveRel (int dx, int dy)"
+
+.PP
+Definition at line 56 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::Resize (int w, int h)"
+
+.PP
+Definition at line 51 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetHeight (int h)"
+
+.PP
+Definition at line 46 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetPos (int x, int y)"
+
+.PP
+Definition at line 31 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetPos (POINT pt)"
+
+.PP
+Definition at line 36 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetRect (int x, int y, int w, int h)"
+
+.PP
+Definition at line 26 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetRect (RECT rct)"
+
+.PP
+Definition at line 17 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::SetWidth (int w)"
+
+.PP
+Definition at line 41 of file HiContainer\&.cpp\&.
+.SS "void HiEasyX::Container::UpdateRect (RECT rctOld)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBHiEasyX::ScrollBar\fP, \fBHiEasyX::ControlBase\fP, and \fBHiEasyX::SysControlBase\fP\&.
+.PP
+Definition at line 13 of file HiContainer\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "RECT HiEasyX::Container::m_rct = { 0 }\fC [protected]\fP"
+
+.PP
+Definition at line 18 of file HiContainer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

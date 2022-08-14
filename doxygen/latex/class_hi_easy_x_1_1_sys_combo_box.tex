@@ -1,0 +1,274 @@
+\hypertarget{class_hi_easy_x_1_1_sys_combo_box}{}\doxysection{Hi\+EasyX\+::Sys\+Combo\+Box Class Reference}
+\label{class_hi_easy_x_1_1_sys_combo_box}\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+
+
+{\ttfamily \#include $<$Sys\+Combo\+Box.\+h$>$}
+
+Inheritance diagram for Hi\+EasyX\+::Sys\+Combo\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hi_easy_x_1_1_sys_combo_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_aaf0e970a3df2ccb09e4f3195b5b73274}{Sys\+Combo\+Box}} ()
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a9f6babde098506bd28774ca33c9a64e9}{Sys\+Combo\+Box}} (H\+W\+ND h\+Parent, R\+E\+CT rct, std\+::wstring str\+Text=L\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a690d4bb96b24b0b301ebb8519a6a9736}{Sys\+Combo\+Box}} (H\+W\+ND h\+Parent, int x, int y, int w, int h, std\+::wstring str\+Text=L\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a2f30482c2b0f346f095908eab7f70ea6}{Pre\+Set\+Etyle}} (bool always\+\_\+show\+\_\+list, bool editable, bool sort)
+\item 
+L\+R\+E\+S\+U\+LT \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_ae7553dad096696b11d595b50dd60d89e}{Update\+Message}} (U\+I\+NT msg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param, bool \&b\+Ret) override
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a6a56d1201818ff53416ee2190ee8d975}{Register\+Sel\+Message}} (void($\ast$p\+Func)(int sel, std\+::wstring wstr\+Sel\+Text))
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a5b30ad53bcbfc876e8e381e6ec71ebf6}{Register\+Edit\+Message}} (void($\ast$p\+Func)(std\+::wstring wstr\+Text))
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a166ff6aaa3f301674ce88f98de28f6a5}{Get\+Sel}} () const
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_ab76968fdf11335f72e8714ee1054bd28}{Set\+Sel}} (int sel)
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_aeee8a49380614432db092e5a4e2414ac}{Select\+String}} (std\+::wstring wstr\+Text)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_aa62f9397866276459e9586514f0b9888}{Add\+String}} (std\+::wstring wstr\+Text)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a2a3db9320d4319155f53993aef6d8dab}{Insert\+String}} (int index, std\+::wstring wstr\+Text)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_acc5db76cebf598844cf0ca4c8fc8b663}{Delete\+String}} (int index)
+\item 
+int \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a770503375385960570271be6ac364848}{Get\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a2f67607c26f96b251b8ccfb9ddc508d5}{Clear}} ()
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a2d19d61576ab4455df7d7bf5a09985f9}{Show\+Dropdown}} (bool enable)
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a802ccb23ef4a2e2675ad89a57f11fbd5}{is\+Sel\+Changed}} ()
+\item 
+bool \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a0e78a97d3b3f58e978f89962a6a26c27}{is\+Edited}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_sys_combo_box_a2ef99a070a6c7658a0000dc9913a1d5b}{Real\+Create}} (H\+W\+ND h\+Parent) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file Sys\+Combo\+Box.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_aaf0e970a3df2ccb09e4f3195b5b73274}\label{class_hi_easy_x_1_1_sys_combo_box_aaf0e970a3df2ccb09e4f3195b5b73274}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!SysComboBox@{SysComboBox}}
+\index{SysComboBox@{SysComboBox}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{SysComboBox()}{SysComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Sys\+Combo\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a9f6babde098506bd28774ca33c9a64e9}\label{class_hi_easy_x_1_1_sys_combo_box_a9f6babde098506bd28774ca33c9a64e9}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!SysComboBox@{SysComboBox}}
+\index{SysComboBox@{SysComboBox}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{SysComboBox()}{SysComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Sys\+Combo\+Box (\begin{DoxyParamCaption}\item[{H\+W\+ND}]{h\+Parent,  }\item[{R\+E\+CT}]{rct,  }\item[{std\+::wstring}]{str\+Text = {\ttfamily L\char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a690d4bb96b24b0b301ebb8519a6a9736}\label{class_hi_easy_x_1_1_sys_combo_box_a690d4bb96b24b0b301ebb8519a6a9736}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!SysComboBox@{SysComboBox}}
+\index{SysComboBox@{SysComboBox}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{SysComboBox()}{SysComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Sys\+Combo\+Box (\begin{DoxyParamCaption}\item[{H\+W\+ND}]{h\+Parent,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{std\+::wstring}]{str\+Text = {\ttfamily L\char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Sys\+Combo\+Box.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_aa62f9397866276459e9586514f0b9888}\label{class_hi_easy_x_1_1_sys_combo_box_aa62f9397866276459e9586514f0b9888}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!AddString@{AddString}}
+\index{AddString@{AddString}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{AddString()}{AddString()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Add\+String (\begin{DoxyParamCaption}\item[{std\+::wstring}]{wstr\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 122 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a2f67607c26f96b251b8ccfb9ddc508d5}\label{class_hi_easy_x_1_1_sys_combo_box_a2f67607c26f96b251b8ccfb9ddc508d5}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!Clear@{Clear}}
+\index{Clear@{Clear}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_acc5db76cebf598844cf0ca4c8fc8b663}\label{class_hi_easy_x_1_1_sys_combo_box_acc5db76cebf598844cf0ca4c8fc8b663}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!DeleteString@{DeleteString}}
+\index{DeleteString@{DeleteString}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{DeleteString()}{DeleteString()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Delete\+String (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 132 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a770503375385960570271be6ac364848}\label{class_hi_easy_x_1_1_sys_combo_box_a770503375385960570271be6ac364848}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{GetCount()}{GetCount()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 137 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a166ff6aaa3f301674ce88f98de28f6a5}\label{class_hi_easy_x_1_1_sys_combo_box_a166ff6aaa3f301674ce88f98de28f6a5}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!GetSel@{GetSel}}
+\index{GetSel@{GetSel}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{GetSel()}{GetSel()}}
+{\footnotesize\ttfamily int Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Get\+Sel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 56 of file Sys\+Combo\+Box.\+h.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a2a3db9320d4319155f53993aef6d8dab}\label{class_hi_easy_x_1_1_sys_combo_box_a2a3db9320d4319155f53993aef6d8dab}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!InsertString@{InsertString}}
+\index{InsertString@{InsertString}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{InsertString()}{InsertString()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Insert\+String (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{std\+::wstring}]{wstr\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a0e78a97d3b3f58e978f89962a6a26c27}\label{class_hi_easy_x_1_1_sys_combo_box_a0e78a97d3b3f58e978f89962a6a26c27}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!isEdited@{isEdited}}
+\index{isEdited@{isEdited}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{isEdited()}{isEdited()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::is\+Edited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 159 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a802ccb23ef4a2e2675ad89a57f11fbd5}\label{class_hi_easy_x_1_1_sys_combo_box_a802ccb23ef4a2e2675ad89a57f11fbd5}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!isSelChanged@{isSelChanged}}
+\index{isSelChanged@{isSelChanged}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{isSelChanged()}{isSelChanged()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::is\+Sel\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a2f30482c2b0f346f095908eab7f70ea6}\label{class_hi_easy_x_1_1_sys_combo_box_a2f30482c2b0f346f095908eab7f70ea6}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!PreSetEtyle@{PreSetEtyle}}
+\index{PreSetEtyle@{PreSetEtyle}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{PreSetEtyle()}{PreSetEtyle()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Pre\+Set\+Etyle (\begin{DoxyParamCaption}\item[{bool}]{always\+\_\+show\+\_\+list,  }\item[{bool}]{editable,  }\item[{bool}]{sort }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a2ef99a070a6c7658a0000dc9913a1d5b}\label{class_hi_easy_x_1_1_sys_combo_box_a2ef99a070a6c7658a0000dc9913a1d5b}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!RealCreate@{RealCreate}}
+\index{RealCreate@{RealCreate}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{RealCreate()}{RealCreate()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Real\+Create (\begin{DoxyParamCaption}\item[{H\+W\+ND}]{h\+Parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_hi_easy_x_1_1_sys_control_base_a698b117f3192aa2c4e2cfb41ff550c64}{Hi\+Easy\+X\+::\+Sys\+Control\+Base}}.
+
+
+
+Definition at line 5 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a5b30ad53bcbfc876e8e381e6ec71ebf6}\label{class_hi_easy_x_1_1_sys_combo_box_a5b30ad53bcbfc876e8e381e6ec71ebf6}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!RegisterEditMessage@{RegisterEditMessage}}
+\index{RegisterEditMessage@{RegisterEditMessage}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{RegisterEditMessage()}{RegisterEditMessage()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Register\+Edit\+Message (\begin{DoxyParamCaption}\item[{void($\ast$)(std\+::wstring wstr\+Text)}]{p\+Func }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a6a56d1201818ff53416ee2190ee8d975}\label{class_hi_easy_x_1_1_sys_combo_box_a6a56d1201818ff53416ee2190ee8d975}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!RegisterSelMessage@{RegisterSelMessage}}
+\index{RegisterSelMessage@{RegisterSelMessage}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{RegisterSelMessage()}{RegisterSelMessage()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Register\+Sel\+Message (\begin{DoxyParamCaption}\item[{void($\ast$)(int sel, std\+::wstring wstr\+Sel\+Text)}]{p\+Func }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_aeee8a49380614432db092e5a4e2414ac}\label{class_hi_easy_x_1_1_sys_combo_box_aeee8a49380614432db092e5a4e2414ac}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!SelectString@{SelectString}}
+\index{SelectString@{SelectString}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{SelectString()}{SelectString()}}
+{\footnotesize\ttfamily bool Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Select\+String (\begin{DoxyParamCaption}\item[{std\+::wstring}]{wstr\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_ab76968fdf11335f72e8714ee1054bd28}\label{class_hi_easy_x_1_1_sys_combo_box_ab76968fdf11335f72e8714ee1054bd28}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!SetSel@{SetSel}}
+\index{SetSel@{SetSel}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{SetSel()}{SetSel()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Set\+Sel (\begin{DoxyParamCaption}\item[{int}]{sel }\end{DoxyParamCaption})}
+
+
+
+Definition at line 111 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_a2d19d61576ab4455df7d7bf5a09985f9}\label{class_hi_easy_x_1_1_sys_combo_box_a2d19d61576ab4455df7d7bf5a09985f9}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!ShowDropdown@{ShowDropdown}}
+\index{ShowDropdown@{ShowDropdown}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{ShowDropdown()}{ShowDropdown()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Show\+Dropdown (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Definition at line 147 of file Sys\+Combo\+Box.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_sys_combo_box_ae7553dad096696b11d595b50dd60d89e}\label{class_hi_easy_x_1_1_sys_combo_box_ae7553dad096696b11d595b50dd60d89e}} 
+\index{HiEasyX::SysComboBox@{HiEasyX::SysComboBox}!UpdateMessage@{UpdateMessage}}
+\index{UpdateMessage@{UpdateMessage}!HiEasyX::SysComboBox@{HiEasyX::SysComboBox}}
+\doxysubsubsection{\texorpdfstring{UpdateMessage()}{UpdateMessage()}}
+{\footnotesize\ttfamily L\+R\+E\+S\+U\+LT Hi\+Easy\+X\+::\+Sys\+Combo\+Box\+::\+Update\+Message (\begin{DoxyParamCaption}\item[{U\+I\+NT}]{msg,  }\item[{W\+P\+A\+R\+AM}]{w\+Param,  }\item[{L\+P\+A\+R\+AM}]{l\+Param,  }\item[{bool \&}]{b\+Ret }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_sys_control_base_a7e00e2fee946dfa3b72eeec838c35ee0}{Hi\+Easy\+X\+::\+Sys\+Control\+Base}}.
+
+
+
+Definition at line 66 of file Sys\+Combo\+Box.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Sys\+G\+U\+I/\mbox{\hyperlink{_sys_combo_box_8h}{Sys\+Combo\+Box.\+h}}\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Sys\+G\+U\+I/\mbox{\hyperlink{_sys_combo_box_8cpp}{Sys\+Combo\+Box.\+cpp}}\end{DoxyCompactItemize}

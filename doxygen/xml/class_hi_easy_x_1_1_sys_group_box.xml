@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_sys_group_box" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::SysGroupBox</compoundname>
+    <basecompoundref refid="class_hi_easy_x_1_1_sys_control_base" prot="public" virt="non-virtual">HiEasyX::SysControlBase</basecompoundref>
+    <includes refid="_sys_group_box_8h" local="no">SysGroupBox.h</includes>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_group_box_1aa2654190666b41d52a3a6f53621a75c3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysGroupBox::RealCreate</definition>
+        <argsstring>(HWND hParent) override</argsstring>
+        <name>RealCreate</name>
+        <reimplements refid="class_hi_easy_x_1_1_sys_control_base_1a698b117f3192aa2c4e2cfb41ff550c64">RealCreate</reimplements>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" line="19" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.cpp" bodystart="5" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_group_box_1a7bb0e4760249cdd92e2f3029ca79304b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysGroupBox::SysGroupBox</definition>
+        <argsstring>()</argsstring>
+        <name>SysGroupBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" line="23" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_group_box_1a3fe0a849ad4530abebe41bfec39ca980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysGroupBox::SysGroupBox</definition>
+        <argsstring>(HWND hParent, RECT rct, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>SysGroupBox</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>RECT</type>
+          <declname>rct</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" line="25" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_group_box_1a00fa0e49256eb8686b9c678f519b513f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysGroupBox::SysGroupBox</definition>
+        <argsstring>(HWND hParent, int x, int y, int w, int h, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>SysGroupBox</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" line="27" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysGroupBox</label>
+        <link refid="class_hi_easy_x_1_1_sys_group_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysGroupBox</label>
+        <link refid="class_hi_easy_x_1_1_sys_group_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" line="16" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysGroupBox.h" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae44040f6572dd6567c82a129e1e87067" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a428c70ca68c9a7bfec8a26fd2a37a51d" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>CreateControl</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab4f18c3ffb2e663c59a434af6b2e6717" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Enable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a511bd33b572404898ae1e9416e3148d5" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetControlType</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a36cb0e1213a57f4e2665d16a2c936d14" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetHandle</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a12290adca76a6e347ceac23a7a776355" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetID</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abd6a7c40a42be25296cb77a0f27a297d" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetText</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a6150babce62991699adb6f1891ead51f" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetTextLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetX</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>GetY</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a90e891fa87e6f9fde3f1577425eeb651" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>isEnable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae954d865c8e97af3b07ec5cab33d0f11" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>isFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5992d48230ed5dca0178fdbb0f3b2379" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>isVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a393ce1732fdb4af99cc64a1bd78878dc" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>m_hParent</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a7d8e8af5403957970ad4af3d34a3a3bb" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>m_hWnd</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a734cac701eb87304901aa3c6949501c5" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>m_nID</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>m_rct</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5431636eff2980cc74afbd71a1a39505" prot="protected" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>m_type</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_group_box_1aa2654190666b41d52a3a6f53621a75c3" prot="protected" virt="virtual"><scope>HiEasyX::SysGroupBox</scope><name>RealCreate</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a607665057737234d46307f8c4dd8c4e1" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetFocus</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a1dab4bb5df0da3253fdf8c7d25ef282f" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetText</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a916cc336c9b6b78c52077c8ecbf3fc89" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>Show</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a8626720b4004d98493d925982513b404" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SysControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_group_box_1a7bb0e4760249cdd92e2f3029ca79304b" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SysGroupBox</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_group_box_1a3fe0a849ad4530abebe41bfec39ca980" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SysGroupBox</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_group_box_1a00fa0e49256eb8686b9c678f519b513f" prot="public" virt="non-virtual"><scope>HiEasyX::SysGroupBox</scope><name>SysGroupBox</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a7e00e2fee946dfa3b72eeec838c35ee0" prot="public" virt="virtual"><scope>HiEasyX::SysGroupBox</scope><name>UpdateMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab76320fa65ac35b4d367c54f852b33e2" prot="public" virt="virtual"><scope>HiEasyX::SysGroupBox</scope><name>UpdateRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" prot="public" virt="virtual"><scope>HiEasyX::SysGroupBox</scope><name>~Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abed767fbf3903d0ffad4a91b510d4ddd" prot="public" virt="virtual"><scope>HiEasyX::SysGroupBox</scope><name>~SysControlBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

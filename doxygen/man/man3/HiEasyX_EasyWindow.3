@@ -1,0 +1,149 @@
+.TH "HiEasyX::EasyWindow" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::EasyWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiWindow\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisAlive\fP"
+.br
+.ti -1c
+.RI "HWND \fBhWnd\fP"
+.br
+.ti -1c
+.RI "HWND \fBhParent\fP"
+.br
+.ti -1c
+.RI "IMAGE * \fBpImg\fP"
+.br
+.ti -1c
+.RI "IMAGE * \fBpBufferImg\fP"
+.br
+.ti -1c
+.RI "\fBCanvas\fP * \fBpBufferImgCanvas\fP"
+.br
+.ti -1c
+.RI "WNDPROC \fBfuncWndProc\fP"
+.br
+.ti -1c
+.RI "std::vector< ExMessage > \fBvecMessage\fP"
+.br
+.ti -1c
+.RI "bool \fBisUseTray\fP"
+.br
+.ti -1c
+.RI "NOTIFYICONDATA \fBnid\fP"
+.br
+.ti -1c
+.RI "bool \fBisUseTrayMenu\fP"
+.br
+.ti -1c
+.RI "HMENU \fBhTrayMenu\fP"
+.br
+.ti -1c
+.RI "void(* \fBfuncTrayMenuProc\fP )(UINT)"
+.br
+.ti -1c
+.RI "bool \fBisNewSize\fP"
+.br
+.ti -1c
+.RI "bool \fBisBusyProcessing\fP"
+.br
+.ti -1c
+.RI "int \fBnSkipPixels\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBSysControlBase\fP * > \fBvecSysCtrl\fP"
+.br
+.ti -1c
+.RI "bool \fBbHasCtrl\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 96 of file HiWindow\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool HiEasyX::EasyWindow::bHasCtrl = false"
+
+.PP
+Definition at line 126 of file HiWindow\&.h\&.
+.SS "void(* HiEasyX::EasyWindow::funcTrayMenuProc) (UINT)"
+
+.PP
+Definition at line 116 of file HiWindow\&.h\&.
+.SS "WNDPROC HiEasyX::EasyWindow::funcWndProc"
+
+.PP
+Definition at line 107 of file HiWindow\&.h\&.
+.SS "HWND HiEasyX::EasyWindow::hParent"
+
+.PP
+Definition at line 101 of file HiWindow\&.h\&.
+.SS "HMENU HiEasyX::EasyWindow::hTrayMenu"
+
+.PP
+Definition at line 114 of file HiWindow\&.h\&.
+.SS "HWND HiEasyX::EasyWindow::hWnd"
+
+.PP
+Definition at line 100 of file HiWindow\&.h\&.
+.SS "bool HiEasyX::EasyWindow::isAlive"
+
+.PP
+Definition at line 98 of file HiWindow\&.h\&.
+.SS "bool HiEasyX::EasyWindow::isBusyProcessing"
+
+.PP
+Definition at line 121 of file HiWindow\&.h\&.
+.SS "bool HiEasyX::EasyWindow::isNewSize"
+
+.PP
+Definition at line 120 of file HiWindow\&.h\&.
+.SS "bool HiEasyX::EasyWindow::isUseTray"
+
+.PP
+Definition at line 111 of file HiWindow\&.h\&.
+.SS "bool HiEasyX::EasyWindow::isUseTrayMenu"
+
+.PP
+Definition at line 113 of file HiWindow\&.h\&.
+.SS "NOTIFYICONDATA HiEasyX::EasyWindow::nid"
+
+.PP
+Definition at line 112 of file HiWindow\&.h\&.
+.SS "int HiEasyX::EasyWindow::nSkipPixels"
+
+.PP
+Definition at line 123 of file HiWindow\&.h\&.
+.SS "IMAGE* HiEasyX::EasyWindow::pBufferImg"
+
+.PP
+Definition at line 104 of file HiWindow\&.h\&.
+.SS "\fBCanvas\fP* HiEasyX::EasyWindow::pBufferImgCanvas"
+
+.PP
+Definition at line 105 of file HiWindow\&.h\&.
+.SS "IMAGE* HiEasyX::EasyWindow::pImg"
+
+.PP
+Definition at line 103 of file HiWindow\&.h\&.
+.SS "std::vector<ExMessage> HiEasyX::EasyWindow::vecMessage"
+
+.PP
+Definition at line 109 of file HiWindow\&.h\&.
+.SS "std::vector<\fBSysControlBase\fP*> HiEasyX::EasyWindow::vecSysCtrl"
+
+.PP
+Definition at line 125 of file HiWindow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

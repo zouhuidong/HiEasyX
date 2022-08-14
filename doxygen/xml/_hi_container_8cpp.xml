@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_hi_container_8cpp" kind="file" language="C++">
+    <compoundname>HiContainer.cpp</compoundname>
+    <includes refid="_hi_container_8h" local="yes">HiContainer.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Windows.h</label>
+      </node>
+      <node id="2">
+        <label>HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.cpp</label>
+        <link refid="_hi_container_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_container_8h" kindref="compound">HiContainer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5" refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" kindref="member">Container::Container</ref>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" kindref="member">Container::~Container</ref>()</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_hi_easy_x_1_1_container_1a76c0f6f36e51a3cd11828ad64240b293" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a76c0f6f36e51a3cd11828ad64240b293" kindref="member">Container::UpdateRect</ref>(RECT<sp/>rctOld)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">Container::SetRect</ref>(RECT<sp/>rct)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RECT<sp/>old<sp/>=<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref><sp/>=<sp/>rct;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.bottom<sp/>&lt;<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top)<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.bottom<sp/>=<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.right<sp/>&lt;<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left)<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.right<sp/>=<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1a76c0f6f36e51a3cd11828ad64240b293" kindref="member">UpdateRect</ref>(old);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">Container::SetRect</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/>x,y,x<sp/>+<sp/>w,y<sp/>+<sp/>h<sp/>});</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" kindref="member">Container::SetPos</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/>x,y,x<sp/>+<sp/><ref refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" kindref="member">GetWidth</ref>(),y<sp/>+<sp/><ref refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" kindref="member">GetHeight</ref>()<sp/>});</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" kindref="member">Container::SetPos</ref>(POINT<sp/>pt)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/>pt.x,pt.y,pt.x<sp/>+<sp/><ref refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" kindref="member">GetWidth</ref>(),pt.y<sp/>+<sp/><ref refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" kindref="member">GetHeight</ref>()<sp/>});</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" kindref="member">Container::SetWidth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left<sp/>+<sp/>w,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.bottom<sp/>});</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" kindref="member">Container::SetHeight</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.right,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top<sp/>+<sp/>h<sp/>});</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" kindref="member">Container::Resize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left<sp/>+<sp/>w,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top<sp/>+<sp/>h<sp/>});</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" kindref="member">Container::MoveRel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dy)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dx<sp/>||<sp/>dy)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" kindref="member">SetRect</ref>({<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.left<sp/>+<sp/>dx,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.top<sp/>+<sp/>dy,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.right<sp/>+<sp/>dx,<sp/><ref refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" kindref="member">m_rct</ref>.bottom<sp/>+<sp/>dy<sp/>});</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiContainer.cpp"/>
+  </compounddef>
+</doxygen>

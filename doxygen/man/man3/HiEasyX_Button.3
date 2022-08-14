@@ -1,0 +1,180 @@
+.TH "HiEasyX::Button" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Button
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Button\&.h>\fP
+.PP
+Inherits \fBHiEasyX::ControlBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBButton\fP ()"
+.br
+.ti -1c
+.RI "\fBButton\fP (int x, int y, int w, int h, std::wstring wstrText=L'')"
+.br
+.ti -1c
+.RI "void \fBSetEnable\fP (bool enable) override"
+.br
+.ti -1c
+.RI "virtual void \fBEnableClassicStyle\fP (bool enable)"
+.br
+.ti -1c
+.RI "void \fBUpdateMessage\fP (ExMessage msg) override"
+.br
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Normal\fP = \fBMODERN_BORDER_GRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Normal\fP = \fBMODERN_FILL_GRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Hovered\fP = \fBMODERN_BORDER_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Hovered\fP = \fBMODERN_FILL_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Pressed\fP = \fBMODERN_BORDER_PRESSED_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Pressed\fP = \fBMODERN_FILL_PRESSED_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cText_Disabled\fP = LIGHTGRAY"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Disabled\fP = \fBGRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Disabled\fP = \fBGRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cClassicNormalBorder3D\fP = \fBGRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cClassicPressedBorder3D\fP = LIGHTGRAY"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInitColor\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_bEnableClassicStyle\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file Button\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::Button::Button ()"
+
+.PP
+Definition at line 11 of file Button\&.cpp\&.
+.SS "HiEasyX::Button::Button (int x, int y, int w, int h, std::wstring wstrText = \fCL''\fP)"
+
+.PP
+Definition at line 16 of file Button\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void HiEasyX::Button::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 73 of file Button\&.cpp\&.
+.SS "void HiEasyX::Button::EnableClassicStyle (bool enable)\fC [virtual]\fP"
+
+.PP
+Definition at line 64 of file Button\&.cpp\&.
+.SS "void HiEasyX::Button::InitColor ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 5 of file Button\&.cpp\&.
+.SS "void HiEasyX::Button::SetEnable (bool enable)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 23 of file Button\&.cpp\&.
+.SS "void HiEasyX::Button::UpdateMessage (ExMessage msg)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 38 of file Button\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool HiEasyX::Button::m_bEnableClassicStyle = false\fC [protected]\fP"
+
+.PP
+Definition at line 18 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Disabled = \fBGRAY\fP"
+
+.PP
+Definition at line 34 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Hovered = \fBMODERN_FILL_BLUE\fP"
+
+.PP
+Definition at line 28 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Normal = \fBMODERN_FILL_GRAY\fP"
+
+.PP
+Definition at line 26 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Pressed = \fBMODERN_FILL_PRESSED_BLUE\fP"
+
+.PP
+Definition at line 30 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Disabled = \fBGRAY\fP"
+
+.PP
+Definition at line 33 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Hovered = \fBMODERN_BORDER_BLUE\fP"
+
+.PP
+Definition at line 27 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Normal = \fBMODERN_BORDER_GRAY\fP"
+
+.PP
+Definition at line 25 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Pressed = \fBMODERN_BORDER_PRESSED_BLUE\fP"
+
+.PP
+Definition at line 29 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cClassicNormalBorder3D = \fBGRAY\fP"
+
+.PP
+Definition at line 36 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cClassicPressedBorder3D = LIGHTGRAY"
+
+.PP
+Definition at line 37 of file Button\&.h\&.
+.SS "COLORREF HiEasyX::Button::m_cText_Disabled = LIGHTGRAY"
+
+.PP
+Definition at line 32 of file Button\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

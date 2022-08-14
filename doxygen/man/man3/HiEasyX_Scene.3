@@ -1,0 +1,53 @@
+.TH "HiEasyX::Scene" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Scene
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiCanvas\&.h>\fP
+.PP
+Inherits vector< Layer * >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBLayer\fP * > \fBGetAllLayer\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBGetAllLayerSize\fP () const"
+.br
+.ti -1c
+.RI "\fBLayer\fP * \fBGetSpecialLayer\fP (int order)"
+.br
+.ti -1c
+.RI "void \fBRender\fP (IMAGE *pImg=nullptr, bool bShowAllOutline=false, bool bShowAllText=true)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 579 of file HiCanvas\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBLayer\fP * > HiEasyX::Scene::GetAllLayer ()"
+
+.PP
+Definition at line 1735 of file HiCanvas\&.cpp\&.
+.SS "size_t HiEasyX::Scene::GetAllLayerSize () const"
+
+.PP
+Definition at line 1746 of file HiCanvas\&.cpp\&.
+.SS "\fBLayer\fP * HiEasyX::Scene::GetSpecialLayer (int order)"
+
+.PP
+Definition at line 1752 of file HiCanvas\&.cpp\&.
+.SS "void HiEasyX::Scene::Render (IMAGE * pImg = \fCnullptr\fP, bool bShowAllOutline = \fCfalse\fP, bool bShowAllText = \fCtrue\fP)"
+
+.PP
+Definition at line 1766 of file HiCanvas\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

@@ -1,0 +1,408 @@
+\hypertarget{_hi_macro_8h}{}\doxysection{E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Macro.h File Reference}
+\label{_hi_macro_8h}\index{E:/\_MYC/\_VS\_Project/HiEasyX/HiEasyX/HiEasyX/HiMacro.h@{E:/\_MYC/\_VS\_Project/HiEasyX/HiEasyX/HiEasyX/HiMacro.h}}
+{\ttfamily \#include $<$graphics.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_aba32782053c6a2b01e3706d632d77895}{R\+G\+BA}}(r,  g,  b,  a)~(C\+O\+L\+O\+R\+R\+EF)( ((b)$<$$<$16) $\vert$ ((g)$<$$<$8) $\vert$ (r) $\vert$ ((a)$<$$<$24) )
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a2b915bc86f9cc2eb5b24c9399b2c4f2e}{Get\+A\+Value}}(rgba)~(B\+Y\+TE)( ((rgba)$>$$>$24) \& 0x\+FF )
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_afd8b9d252f47856d2fcba92008a611c8}{R\+E\+M\+O\+V\+E\+\_\+\+A\+L\+P\+HA}}(rgba)~(C\+O\+L\+O\+R\+R\+EF)( rgba $\vert$ 0x\+F\+F000000 )
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_ae0757e52119c7afbc3a076ec9b3fc7ef}{S\+E\+T\+\_\+\+A\+L\+P\+HA}}(rgb,  a)~(C\+O\+L\+O\+R\+R\+EF)( ((rgb) \& 0x\+F\+F\+F\+F\+FF) $\vert$ ((a)$<$$<$24) )
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a5e6403bdc746e43eae773949f62e31bb}{G\+R\+A\+Y\+\_\+\+C\+O\+L\+OR}}(gray)~R\+GB(gray, gray, gray)
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_aedf666ee631ee9da5d0f68f1d97c68df}{G\+R\+A\+Y\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+L\+P\+HA}}(gray,  a)~\mbox{\hyperlink{_hi_macro_8h_aba32782053c6a2b01e3706d632d77895}{R\+G\+BA}}(gray, gray, gray, a)
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a5d9c09e97600ea7bd6ee668b04b185df}{rectangle\+\_\+\+R\+E\+CT}}(rct)~rectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_aebe6006096f72fb287a25809f7c7ae6f}{fillrectangle\+\_\+\+R\+E\+CT}}(rct)~fillrectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a1a2325b212a7a138bb0007a4e1231a3b}{solidrectangle\+\_\+\+R\+E\+CT}}(rct)~solidrectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+1415926535
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_ad540ce250f119316f259dcca527e995a}{E\+X\+P\+A\+N\+D\+\_\+\+R\+E\+CT}}(rct,  d)
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_aad502c92908cba6bc72965e69ab03c3f}{R\+E\+D\+U\+C\+E\+\_\+\+R\+E\+CT}}(rct,  d)
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_a5cbcaea5bbee88ef60d09da2823f9d00}{I\+S\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+CT}}(rct\+Parent,  rct\+Child)
+\item 
+\#define \mbox{\hyperlink{_hi_macro_8h_ad3098e0747e7c7a143dd685dbbb4e2dd}{M\+O\+V\+E\+\_\+\+R\+E\+CT}}(rct,  dx,  dy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1a}{E\+X\+T\+R\+A\+\_\+\+C\+O\+L\+O\+RS}} \{ \newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabfc89dc8dc5c91a35a6e3d347b7c9baa}{D\+A\+R\+K\+B\+L\+UE}} = R\+GB(0x00, 0x00, 0x8B), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa85a80bd1f305c0dc3188e5d1b2ac86c1}{D\+A\+R\+K\+C\+Y\+AN}} = R\+GB(0x00, 0x8B, 0x8B), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa1ee5549aa5966d1fe205c265843d0271}{D\+A\+R\+K\+G\+O\+L\+D\+E\+N\+R\+OD}} = R\+GB(0x\+B8, 0x86, 0x0B), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaf79adcdefe686bdc500ad2733af34c36}{D\+A\+R\+K\+G\+R\+E\+EN}} = R\+GB(0x00, 0x64, 0x00), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabe740b28cdb8bf307e639f4a37e48fb0}{D\+A\+R\+K\+R\+ED}} = R\+GB(0x8B, 0x00, 0x00), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa549b40c2aa4831cd04d2b2f558b5d9d4}{D\+E\+E\+P\+P\+I\+NK}} = R\+GB(0x\+FF, 0x14, 0x93), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aab7852f177adedb2732c44b4556349dbc}{D\+E\+E\+P\+S\+K\+Y\+B\+L\+UE}} = R\+GB(0x00, 0x\+BF, 0x\+FF), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa05626fe1355f15bb15c487c0d433304f}{F\+O\+R\+E\+S\+T\+G\+R\+E\+EN}} = R\+GB(0x22, 0x8B, 0x22), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa7790837e9c1f7cb78b55743b9a67623}{G\+O\+LD}} = R\+GB(0x\+FF, 0x\+D7, 0x00), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac}{G\+R\+AY}} = R\+GB(0x80, 0x80, 0x80), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac8b2237ea7e6ad54bce99a76499df222}{G\+R\+E\+E\+N\+Y\+E\+L\+L\+OW}} = R\+GB(0x\+AD, 0x\+FF, 0x2F), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa53343085b7a79691d8f1ed1b94d594c}{L\+I\+G\+H\+T\+P\+I\+NK}} = R\+GB(0x\+FF, 0x\+B6, 0x\+C1), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aada80a5da49c1159771b48917bdb6fcd3}{L\+I\+G\+H\+T\+S\+K\+Y\+B\+L\+UE}} = R\+GB(0x87, 0x\+CE, 0x\+FA), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa83b21f0c4fad21a5b08f2fa1e1856ca9}{L\+I\+G\+H\+T\+Y\+E\+L\+L\+OW}} = R\+GB(0x\+FF, 0x\+FF, 0x\+E0), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0311c0ecb97a3f42f678481a61ef6c95}{D\+A\+R\+K\+Y\+E\+L\+L\+OW}} = R\+GB(255, 201, 14), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aace9ee4c1a6b777940c7f3a766a9a88d4}{O\+R\+A\+N\+GE}} = R\+GB(0x\+FF, 0x\+A5, 0x00), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa988ffd0ba106bbe78939d7fd87a3e390}{O\+R\+A\+N\+G\+E\+R\+ED}} = R\+GB(0x\+FF, 0x45, 0x00), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa186598537092d140eaa60720ec7e0821}{P\+I\+NK}} = R\+GB(0x\+FF, 0x\+C0, 0x\+CB), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa463b1dd732c1b22cf38de407ef625dcf}{P\+I\+N\+K\+W\+H\+I\+TE}} = R\+GB(255, 230, 250), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2772ad7cd64f03c2aed60f91c69fa69d}{P\+U\+R\+P\+LE}} = R\+GB(0x80, 0x00, 0x80), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa6b5583180d340207fa6ec3bc994affe2}{S\+K\+Y\+B\+L\+UE}} = R\+GB(0x87, 0x\+CE, 0x\+EB), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa9e6e4a865dcb327f484752cf5af49846}{S\+N\+OW}} = R\+GB(0x\+FF, 0x\+FA, 0x\+FA), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aae2c63a08bb02dd6e3eaf9a23a4d72d9e}{S\+P\+R\+I\+N\+G\+G\+R\+E\+EN}} = R\+GB(0x00, 0x\+FF, 0x7F), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa06a8fb1c768d7118536f6ecbeb70034a}{S\+T\+E\+E\+L\+B\+L\+UE}} = R\+GB(0x46, 0x82, 0x\+B4), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aad33b63d0785dea260ce0adef44264ece}{T\+O\+M\+A\+TO}} = R\+GB(0x\+FF, 0x63, 0x47), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa41e6bd0c39180aac288192b6204f2ca9}{W\+H\+I\+T\+E\+S\+M\+O\+KE}} = R\+GB(0x\+F5, 0x\+F5, 0x\+F5), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa202248f35077c579779560981145c897}{Y\+E\+L\+L\+O\+W\+G\+R\+E\+EN}} = R\+GB(0x9A, 0x\+CD, 0x32), 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b}{C\+L\+A\+S\+S\+I\+C\+G\+R\+AY}} = R\+GB(0x\+F0, 0x\+F0, 0x\+F0), 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68}{M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+G\+R\+AY}} = 0xadadad, 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa63616c786a8a9240c19852684cdd4403}{M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+G\+R\+AY}} = 0xe1e1e1, 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa8cc811a079ad9c0b08c4f86ab1f7ef83}{M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+B\+L\+UE}} = 0xd77800, 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2b5d9aa5c55b206b1d567bbe7075400c}{M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+B\+L\+UE}} = 0xfbf1e5, 
+\newline
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0a70e51a2ff201ec52c7fa81990f1a53}{M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+P\+R\+E\+S\+S\+E\+D\+\_\+\+B\+L\+UE}} = 0x995400, 
+\mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac4781ed71a7008d0468720b8ce6b1cd1}{M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+P\+R\+E\+S\+S\+E\+D\+\_\+\+B\+L\+UE}} = 0xf7e4cc
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_hi_macro_8h_ad540ce250f119316f259dcca527e995a}\label{_hi_macro_8h_ad540ce250f119316f259dcca527e995a}} 
+\index{HiMacro.h@{HiMacro.h}!EXPAND\_RECT@{EXPAND\_RECT}}
+\index{EXPAND\_RECT@{EXPAND\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{EXPAND\_RECT}{EXPAND\_RECT}}
+{\footnotesize\ttfamily \#define E\+X\+P\+A\+N\+D\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(rct).left      -\/= d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).top       -\/= d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).right     += d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).bottom    += d}
+
+\end{DoxyCode}
+
+
+Definition at line 47 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_aebe6006096f72fb287a25809f7c7ae6f}\label{_hi_macro_8h_aebe6006096f72fb287a25809f7c7ae6f}} 
+\index{HiMacro.h@{HiMacro.h}!fillrectangle\_RECT@{fillrectangle\_RECT}}
+\index{fillrectangle\_RECT@{fillrectangle\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{fillrectangle\_RECT}{fillrectangle\_RECT}}
+{\footnotesize\ttfamily \#define fillrectangle\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct }\end{DoxyParamCaption})~fillrectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);}
+
+
+
+Definition at line 36 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a2b915bc86f9cc2eb5b24c9399b2c4f2e}\label{_hi_macro_8h_a2b915bc86f9cc2eb5b24c9399b2c4f2e}} 
+\index{HiMacro.h@{HiMacro.h}!GetAValue@{GetAValue}}
+\index{GetAValue@{GetAValue}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{GetAValue}{GetAValue}}
+{\footnotesize\ttfamily \#define Get\+A\+Value(\begin{DoxyParamCaption}\item[{}]{rgba }\end{DoxyParamCaption})~(B\+Y\+TE)( ((rgba)$>$$>$24) \& 0x\+FF )}
+
+
+
+Definition at line 19 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a5e6403bdc746e43eae773949f62e31bb}\label{_hi_macro_8h_a5e6403bdc746e43eae773949f62e31bb}} 
+\index{HiMacro.h@{HiMacro.h}!GRAY\_COLOR@{GRAY\_COLOR}}
+\index{GRAY\_COLOR@{GRAY\_COLOR}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{GRAY\_COLOR}{GRAY\_COLOR}}
+{\footnotesize\ttfamily \#define G\+R\+A\+Y\+\_\+\+C\+O\+L\+OR(\begin{DoxyParamCaption}\item[{}]{gray }\end{DoxyParamCaption})~R\+GB(gray, gray, gray)}
+
+
+
+Definition at line 28 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_aedf666ee631ee9da5d0f68f1d97c68df}\label{_hi_macro_8h_aedf666ee631ee9da5d0f68f1d97c68df}} 
+\index{HiMacro.h@{HiMacro.h}!GRAY\_COLOR\_ALPHA@{GRAY\_COLOR\_ALPHA}}
+\index{GRAY\_COLOR\_ALPHA@{GRAY\_COLOR\_ALPHA}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{GRAY\_COLOR\_ALPHA}{GRAY\_COLOR\_ALPHA}}
+{\footnotesize\ttfamily \#define G\+R\+A\+Y\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+L\+P\+HA(\begin{DoxyParamCaption}\item[{}]{gray,  }\item[{}]{a }\end{DoxyParamCaption})~\mbox{\hyperlink{_hi_macro_8h_aba32782053c6a2b01e3706d632d77895}{R\+G\+BA}}(gray, gray, gray, a)}
+
+
+
+Definition at line 31 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a5cbcaea5bbee88ef60d09da2823f9d00}\label{_hi_macro_8h_a5cbcaea5bbee88ef60d09da2823f9d00}} 
+\index{HiMacro.h@{HiMacro.h}!IS\_INCLUDE\_RECT@{IS\_INCLUDE\_RECT}}
+\index{IS\_INCLUDE\_RECT@{IS\_INCLUDE\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{IS\_INCLUDE\_RECT}{IS\_INCLUDE\_RECT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct\+Parent,  }\item[{}]{rct\+Child }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(   (rctChild).left     >= (rctParent).left     \(\backslash\)}
+\DoxyCodeLine{                                                \&\&  (rctChild).right    <= (rctParent).right    \(\backslash\)}
+\DoxyCodeLine{                                                \&\&  (rctChild).top      >= (rctParent).top      \(\backslash\)}
+\DoxyCodeLine{                                                \&\&  (rctChild).bottom   <= (rctParent).bottom   )}
+
+\end{DoxyCode}
+
+
+Definition at line 59 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_ad3098e0747e7c7a143dd685dbbb4e2dd}\label{_hi_macro_8h_ad3098e0747e7c7a143dd685dbbb4e2dd}} 
+\index{HiMacro.h@{HiMacro.h}!MOVE\_RECT@{MOVE\_RECT}}
+\index{MOVE\_RECT@{MOVE\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{MOVE\_RECT}{MOVE\_RECT}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct,  }\item[{}]{dx,  }\item[{}]{dy }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(rct).left      += dx;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).top       += dy;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).right     += dx;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).bottom    += dy}
+
+\end{DoxyCode}
+
+
+Definition at line 65 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a598a3330b3c21701223ee0ca14316eca}\label{_hi_macro_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{HiMacro.h@{HiMacro.h}!PI@{PI}}
+\index{PI@{PI}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+1415926535}
+
+
+
+Definition at line 42 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a5d9c09e97600ea7bd6ee668b04b185df}\label{_hi_macro_8h_a5d9c09e97600ea7bd6ee668b04b185df}} 
+\index{HiMacro.h@{HiMacro.h}!rectangle\_RECT@{rectangle\_RECT}}
+\index{rectangle\_RECT@{rectangle\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{rectangle\_RECT}{rectangle\_RECT}}
+{\footnotesize\ttfamily \#define rectangle\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct }\end{DoxyParamCaption})~rectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);}
+
+
+
+Definition at line 35 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_aad502c92908cba6bc72965e69ab03c3f}\label{_hi_macro_8h_aad502c92908cba6bc72965e69ab03c3f}} 
+\index{HiMacro.h@{HiMacro.h}!REDUCE\_RECT@{REDUCE\_RECT}}
+\index{REDUCE\_RECT@{REDUCE\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{REDUCE\_RECT}{REDUCE\_RECT}}
+{\footnotesize\ttfamily \#define R\+E\+D\+U\+C\+E\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(rct).left      += d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).top       += d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).right     -\/= d;\(\backslash\)}
+\DoxyCodeLine{                                        (rct).bottom    -\/= d}
+
+\end{DoxyCode}
+
+
+Definition at line 53 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_afd8b9d252f47856d2fcba92008a611c8}\label{_hi_macro_8h_afd8b9d252f47856d2fcba92008a611c8}} 
+\index{HiMacro.h@{HiMacro.h}!REMOVE\_ALPHA@{REMOVE\_ALPHA}}
+\index{REMOVE\_ALPHA@{REMOVE\_ALPHA}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{REMOVE\_ALPHA}{REMOVE\_ALPHA}}
+{\footnotesize\ttfamily \#define R\+E\+M\+O\+V\+E\+\_\+\+A\+L\+P\+HA(\begin{DoxyParamCaption}\item[{}]{rgba }\end{DoxyParamCaption})~(C\+O\+L\+O\+R\+R\+EF)( rgba $\vert$ 0x\+F\+F000000 )}
+
+
+
+Definition at line 22 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_aba32782053c6a2b01e3706d632d77895}\label{_hi_macro_8h_aba32782053c6a2b01e3706d632d77895}} 
+\index{HiMacro.h@{HiMacro.h}!RGBA@{RGBA}}
+\index{RGBA@{RGBA}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{RGBA}{RGBA}}
+{\footnotesize\ttfamily \#define R\+G\+BA(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b,  }\item[{}]{a }\end{DoxyParamCaption})~(C\+O\+L\+O\+R\+R\+EF)( ((b)$<$$<$16) $\vert$ ((g)$<$$<$8) $\vert$ (r) $\vert$ ((a)$<$$<$24) )}
+
+
+
+Definition at line 16 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_ae0757e52119c7afbc3a076ec9b3fc7ef}\label{_hi_macro_8h_ae0757e52119c7afbc3a076ec9b3fc7ef}} 
+\index{HiMacro.h@{HiMacro.h}!SET\_ALPHA@{SET\_ALPHA}}
+\index{SET\_ALPHA@{SET\_ALPHA}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{SET\_ALPHA}{SET\_ALPHA}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+A\+L\+P\+HA(\begin{DoxyParamCaption}\item[{}]{rgb,  }\item[{}]{a }\end{DoxyParamCaption})~(C\+O\+L\+O\+R\+R\+EF)( ((rgb) \& 0x\+F\+F\+F\+F\+FF) $\vert$ ((a)$<$$<$24) )}
+
+
+
+Definition at line 25 of file Hi\+Macro.\+h.
+
+\mbox{\Hypertarget{_hi_macro_8h_a1a2325b212a7a138bb0007a4e1231a3b}\label{_hi_macro_8h_a1a2325b212a7a138bb0007a4e1231a3b}} 
+\index{HiMacro.h@{HiMacro.h}!solidrectangle\_RECT@{solidrectangle\_RECT}}
+\index{solidrectangle\_RECT@{solidrectangle\_RECT}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{solidrectangle\_RECT}{solidrectangle\_RECT}}
+{\footnotesize\ttfamily \#define solidrectangle\+\_\+\+R\+E\+CT(\begin{DoxyParamCaption}\item[{}]{rct }\end{DoxyParamCaption})~solidrectangle(rct.\+left,rct.\+top,rct.\+right,rct.\+bottom);}
+
+
+
+Definition at line 37 of file Hi\+Macro.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1a}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1a}} 
+\index{HiMacro.h@{HiMacro.h}!EXTRA\_COLORS@{EXTRA\_COLORS}}
+\index{EXTRA\_COLORS@{EXTRA\_COLORS}!HiMacro.h@{HiMacro.h}}
+\doxysubsubsection{\texorpdfstring{EXTRA\_COLORS}{EXTRA\_COLORS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1a}{E\+X\+T\+R\+A\+\_\+\+C\+O\+L\+O\+RS}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKBLUE@{DARKBLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKBLUE@{DARKBLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabfc89dc8dc5c91a35a6e3d347b7c9baa}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabfc89dc8dc5c91a35a6e3d347b7c9baa}} 
+D\+A\+R\+K\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKCYAN@{DARKCYAN}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKCYAN@{DARKCYAN}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa85a80bd1f305c0dc3188e5d1b2ac86c1}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa85a80bd1f305c0dc3188e5d1b2ac86c1}} 
+D\+A\+R\+K\+C\+Y\+AN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKGOLDENROD@{DARKGOLDENROD}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKGOLDENROD@{DARKGOLDENROD}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa1ee5549aa5966d1fe205c265843d0271}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa1ee5549aa5966d1fe205c265843d0271}} 
+D\+A\+R\+K\+G\+O\+L\+D\+E\+N\+R\+OD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKGREEN@{DARKGREEN}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKGREEN@{DARKGREEN}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaf79adcdefe686bdc500ad2733af34c36}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaf79adcdefe686bdc500ad2733af34c36}} 
+D\+A\+R\+K\+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKRED@{DARKRED}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKRED@{DARKRED}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabe740b28cdb8bf307e639f4a37e48fb0}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aabe740b28cdb8bf307e639f4a37e48fb0}} 
+D\+A\+R\+K\+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEEPPINK@{DEEPPINK}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DEEPPINK@{DEEPPINK}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa549b40c2aa4831cd04d2b2f558b5d9d4}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa549b40c2aa4831cd04d2b2f558b5d9d4}} 
+D\+E\+E\+P\+P\+I\+NK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEEPSKYBLUE@{DEEPSKYBLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DEEPSKYBLUE@{DEEPSKYBLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aab7852f177adedb2732c44b4556349dbc}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aab7852f177adedb2732c44b4556349dbc}} 
+D\+E\+E\+P\+S\+K\+Y\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORESTGREEN@{FORESTGREEN}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!FORESTGREEN@{FORESTGREEN}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa05626fe1355f15bb15c487c0d433304f}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa05626fe1355f15bb15c487c0d433304f}} 
+F\+O\+R\+E\+S\+T\+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOLD@{GOLD}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!GOLD@{GOLD}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa7790837e9c1f7cb78b55743b9a67623}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa7790837e9c1f7cb78b55743b9a67623}} 
+G\+O\+LD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAY@{GRAY}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!GRAY@{GRAY}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac}} 
+G\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREENYELLOW@{GREENYELLOW}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!GREENYELLOW@{GREENYELLOW}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac8b2237ea7e6ad54bce99a76499df222}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac8b2237ea7e6ad54bce99a76499df222}} 
+G\+R\+E\+E\+N\+Y\+E\+L\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHTPINK@{LIGHTPINK}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!LIGHTPINK@{LIGHTPINK}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa53343085b7a79691d8f1ed1b94d594c}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa53343085b7a79691d8f1ed1b94d594c}} 
+L\+I\+G\+H\+T\+P\+I\+NK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHTSKYBLUE@{LIGHTSKYBLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!LIGHTSKYBLUE@{LIGHTSKYBLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aada80a5da49c1159771b48917bdb6fcd3}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aada80a5da49c1159771b48917bdb6fcd3}} 
+L\+I\+G\+H\+T\+S\+K\+Y\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHTYELLOW@{LIGHTYELLOW}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!LIGHTYELLOW@{LIGHTYELLOW}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa83b21f0c4fad21a5b08f2fa1e1856ca9}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa83b21f0c4fad21a5b08f2fa1e1856ca9}} 
+L\+I\+G\+H\+T\+Y\+E\+L\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DARKYELLOW@{DARKYELLOW}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!DARKYELLOW@{DARKYELLOW}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0311c0ecb97a3f42f678481a61ef6c95}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0311c0ecb97a3f42f678481a61ef6c95}} 
+D\+A\+R\+K\+Y\+E\+L\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ORANGE@{ORANGE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!ORANGE@{ORANGE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aace9ee4c1a6b777940c7f3a766a9a88d4}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aace9ee4c1a6b777940c7f3a766a9a88d4}} 
+O\+R\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ORANGERED@{ORANGERED}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!ORANGERED@{ORANGERED}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa988ffd0ba106bbe78939d7fd87a3e390}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa988ffd0ba106bbe78939d7fd87a3e390}} 
+O\+R\+A\+N\+G\+E\+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PINK@{PINK}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!PINK@{PINK}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa186598537092d140eaa60720ec7e0821}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa186598537092d140eaa60720ec7e0821}} 
+P\+I\+NK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PINKWHITE@{PINKWHITE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!PINKWHITE@{PINKWHITE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa463b1dd732c1b22cf38de407ef625dcf}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa463b1dd732c1b22cf38de407ef625dcf}} 
+P\+I\+N\+K\+W\+H\+I\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PURPLE@{PURPLE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!PURPLE@{PURPLE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2772ad7cd64f03c2aed60f91c69fa69d}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2772ad7cd64f03c2aed60f91c69fa69d}} 
+P\+U\+R\+P\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKYBLUE@{SKYBLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!SKYBLUE@{SKYBLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa6b5583180d340207fa6ec3bc994affe2}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa6b5583180d340207fa6ec3bc994affe2}} 
+S\+K\+Y\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SNOW@{SNOW}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!SNOW@{SNOW}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa9e6e4a865dcb327f484752cf5af49846}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa9e6e4a865dcb327f484752cf5af49846}} 
+S\+N\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPRINGGREEN@{SPRINGGREEN}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!SPRINGGREEN@{SPRINGGREEN}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aae2c63a08bb02dd6e3eaf9a23a4d72d9e}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aae2c63a08bb02dd6e3eaf9a23a4d72d9e}} 
+S\+P\+R\+I\+N\+G\+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STEELBLUE@{STEELBLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!STEELBLUE@{STEELBLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa06a8fb1c768d7118536f6ecbeb70034a}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa06a8fb1c768d7118536f6ecbeb70034a}} 
+S\+T\+E\+E\+L\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOMATO@{TOMATO}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!TOMATO@{TOMATO}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aad33b63d0785dea260ce0adef44264ece}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aad33b63d0785dea260ce0adef44264ece}} 
+T\+O\+M\+A\+TO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITESMOKE@{WHITESMOKE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!WHITESMOKE@{WHITESMOKE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa41e6bd0c39180aac288192b6204f2ca9}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa41e6bd0c39180aac288192b6204f2ca9}} 
+W\+H\+I\+T\+E\+S\+M\+O\+KE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOWGREEN@{YELLOWGREEN}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!YELLOWGREEN@{YELLOWGREEN}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa202248f35077c579779560981145c897}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa202248f35077c579779560981145c897}} 
+Y\+E\+L\+L\+O\+W\+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLASSICGRAY@{CLASSICGRAY}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!CLASSICGRAY@{CLASSICGRAY}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aaa1be8de6cb4200bcdfb495b088e58a2b}} 
+C\+L\+A\+S\+S\+I\+C\+G\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_BORDER\_GRAY@{MODERN\_BORDER\_GRAY}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_BORDER\_GRAY@{MODERN\_BORDER\_GRAY}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68}} 
+M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+G\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_FILL\_GRAY@{MODERN\_FILL\_GRAY}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_FILL\_GRAY@{MODERN\_FILL\_GRAY}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa63616c786a8a9240c19852684cdd4403}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa63616c786a8a9240c19852684cdd4403}} 
+M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+G\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_BORDER\_BLUE@{MODERN\_BORDER\_BLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_BORDER\_BLUE@{MODERN\_BORDER\_BLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa8cc811a079ad9c0b08c4f86ab1f7ef83}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa8cc811a079ad9c0b08c4f86ab1f7ef83}} 
+M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_FILL\_BLUE@{MODERN\_FILL\_BLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_FILL\_BLUE@{MODERN\_FILL\_BLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2b5d9aa5c55b206b1d567bbe7075400c}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa2b5d9aa5c55b206b1d567bbe7075400c}} 
+M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_BORDER\_PRESSED\_BLUE@{MODERN\_BORDER\_PRESSED\_BLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_BORDER\_PRESSED\_BLUE@{MODERN\_BORDER\_PRESSED\_BLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0a70e51a2ff201ec52c7fa81990f1a53}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aa0a70e51a2ff201ec52c7fa81990f1a53}} 
+M\+O\+D\+E\+R\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+P\+R\+E\+S\+S\+E\+D\+\_\+\+B\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODERN\_FILL\_PRESSED\_BLUE@{MODERN\_FILL\_PRESSED\_BLUE}!HiMacro.h@{HiMacro.h}}\index{HiMacro.h@{HiMacro.h}!MODERN\_FILL\_PRESSED\_BLUE@{MODERN\_FILL\_PRESSED\_BLUE}}}\mbox{\Hypertarget{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac4781ed71a7008d0468720b8ce6b1cd1}\label{_hi_macro_8h_abe7480432985b9d42c700776b78a3e1aac4781ed71a7008d0468720b8ce6b1cd1}} 
+M\+O\+D\+E\+R\+N\+\_\+\+F\+I\+L\+L\+\_\+\+P\+R\+E\+S\+S\+E\+D\+\_\+\+B\+L\+UE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 72 of file Hi\+Macro.\+h.
+

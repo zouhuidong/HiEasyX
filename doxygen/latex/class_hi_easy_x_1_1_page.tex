@@ -1,0 +1,179 @@
+\hypertarget{class_hi_easy_x_1_1_page}{}\doxysection{Hi\+EasyX\+::Page Class Reference}
+\label{class_hi_easy_x_1_1_page}\index{HiEasyX::Page@{HiEasyX::Page}}
+
+
+{\ttfamily \#include $<$Page.\+h$>$}
+
+Inheritance diagram for Hi\+EasyX\+::Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hi_easy_x_1_1_page}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_page_aad54d61e0e66dff83cd4e2dc49bb4877}{Page}} ()
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_page_ad4dfc03471eab45a30f11bd4c8898e77}{Page}} (int w, int h, C\+O\+L\+O\+R\+R\+EF c\+Bk=W\+H\+I\+TE)
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_page_a354f5ebc43fd593df63fb66d08cf097d}{Page}} (\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$p\+Canvas)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_page_ab4042e6d045fc380e91a3cef45fef031}{Bind\+To\+Canvas}} (\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$p\+Canvas)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_page_a72a9493951b84f3811ff3415876aa0ea}{push}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p\+Ctrl, int offset\+\_\+x=0, int offset\+\_\+y=0)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_page_a1c57815a0fd454af2856082da46584e4}{push}} (const std\+::list$<$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ $>$ list)
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_page_a7d83705f40f7746e05faa56d4c18a88b}{remove}} (\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$p\+Ctrl)
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_page_ab6c79c6a2a61bf73d50999aceb036d91}{Render}} (\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$dst=nullptr, R\+E\+CT $\ast$p\+Rct=nullptr, int $\ast$p\+Count=0) override
+\item 
+void \mbox{\hyperlink{class_hi_easy_x_1_1_page_abf72c43e61481fab90895b7b34d120a5}{Update\+Image}} (\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$p\+Canvas=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_hi_easy_x_1_1_page_a883084caef7c13fcc51a2c6dd076ea41}{Init}} (C\+O\+L\+O\+R\+R\+EF c\+Bk=W\+H\+I\+TE)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$ \mbox{\hyperlink{class_hi_easy_x_1_1_page_aa1e7ace85fdc4899cde93f109187449a}{m\+\_\+p\+Canvas}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Page.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_aad54d61e0e66dff83cd4e2dc49bb4877}\label{class_hi_easy_x_1_1_page_aad54d61e0e66dff83cd4e2dc49bb4877}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!Page@{Page}}
+\index{Page@{Page}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Page\+::\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_ad4dfc03471eab45a30f11bd4c8898e77}\label{class_hi_easy_x_1_1_page_ad4dfc03471eab45a30f11bd4c8898e77}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!Page@{Page}}
+\index{Page@{Page}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Page\+::\+Page (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{c\+Bk = {\ttfamily WHITE} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_a354f5ebc43fd593df63fb66d08cf097d}\label{class_hi_easy_x_1_1_page_a354f5ebc43fd593df63fb66d08cf097d}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!Page@{Page}}
+\index{Page@{Page}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hi\+Easy\+X\+::\+Page\+::\+Page (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$}]{p\+Canvas }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file Page.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_ab4042e6d045fc380e91a3cef45fef031}\label{class_hi_easy_x_1_1_page_ab4042e6d045fc380e91a3cef45fef031}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!BindToCanvas@{BindToCanvas}}
+\index{BindToCanvas@{BindToCanvas}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{BindToCanvas()}{BindToCanvas()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::\+Bind\+To\+Canvas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$}]{p\+Canvas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 34 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_a883084caef7c13fcc51a2c6dd076ea41}\label{class_hi_easy_x_1_1_page_a883084caef7c13fcc51a2c6dd076ea41}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!Init@{Init}}
+\index{Init@{Init}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::\+Init (\begin{DoxyParamCaption}\item[{C\+O\+L\+O\+R\+R\+EF}]{c\+Bk = {\ttfamily WHITE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 7 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_a1c57815a0fd454af2856082da46584e4}\label{class_hi_easy_x_1_1_page_a1c57815a0fd454af2856082da46584e4}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!push@{push}}
+\index{push@{push}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::push (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$ $>$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 46 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_a72a9493951b84f3811ff3415876aa0ea}\label{class_hi_easy_x_1_1_page_a72a9493951b84f3811ff3415876aa0ea}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!push@{push}}
+\index{push@{push}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p\+Ctrl,  }\item[{int}]{offset\+\_\+x = {\ttfamily 0},  }\item[{int}]{offset\+\_\+y = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 41 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_a7d83705f40f7746e05faa56d4c18a88b}\label{class_hi_easy_x_1_1_page_a7d83705f40f7746e05faa56d4c18a88b}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!remove@{remove}}
+\index{remove@{remove}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_control_base}{Control\+Base}} $\ast$}]{p\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 52 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_ab6c79c6a2a61bf73d50999aceb036d91}\label{class_hi_easy_x_1_1_page_ab6c79c6a2a61bf73d50999aceb036d91}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!Render@{Render}}
+\index{Render@{Render}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$}]{dst = {\ttfamily nullptr},  }\item[{R\+E\+CT $\ast$}]{p\+Rct = {\ttfamily nullptr},  }\item[{int $\ast$}]{p\+Count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hi_easy_x_1_1_control_base_a01a9afff183b9f0cda0d83dbb767a0b8}{Hi\+Easy\+X\+::\+Control\+Base}}.
+
+
+
+Definition at line 57 of file Page.\+cpp.
+
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_abf72c43e61481fab90895b7b34d120a5}\label{class_hi_easy_x_1_1_page_abf72c43e61481fab90895b7b34d120a5}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!UpdateImage@{UpdateImage}}
+\index{UpdateImage@{UpdateImage}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{UpdateImage()}{UpdateImage()}}
+{\footnotesize\ttfamily void Hi\+Easy\+X\+::\+Page\+::\+Update\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}} $\ast$}]{p\+Canvas = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file Page.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hi_easy_x_1_1_page_aa1e7ace85fdc4899cde93f109187449a}\label{class_hi_easy_x_1_1_page_aa1e7ace85fdc4899cde93f109187449a}} 
+\index{HiEasyX::Page@{HiEasyX::Page}!m\_pCanvas@{m\_pCanvas}}
+\index{m\_pCanvas@{m\_pCanvas}!HiEasyX::Page@{HiEasyX::Page}}
+\doxysubsubsection{\texorpdfstring{m\_pCanvas}{m\_pCanvas}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hi_easy_x_1_1_canvas}{Canvas}}$\ast$ Hi\+Easy\+X\+::\+Page\+::m\+\_\+p\+Canvas = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file Page.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_page_8h}{Page.\+h}}\item 
+E\+:/\+\_\+\+M\+Y\+C/\+\_\+\+V\+S\+\_\+\+Project/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+Easy\+X/\+Hi\+G\+U\+I/\mbox{\hyperlink{_page_8cpp}{Page.\+cpp}}\end{DoxyCompactItemize}

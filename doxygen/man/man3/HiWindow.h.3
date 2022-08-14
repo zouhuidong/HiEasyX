@@ -1,0 +1,467 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiDef\&.h'\fP
+.br
+\fC#include 'HiFunc\&.h'\fP
+.br
+\fC#include <graphics\&.h>\fP
+.br
+\fC#include <windowsx\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <thread>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBHiEasyX::EasyWindow\fP"
+.br
+.ti -1c
+.RI "class \fBHiEasyX::Window\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__HIWINDOW_H__\fP"
+.br
+.ti -1c
+.RI "#define \fBEW_NORMAL\fP   0"
+.br
+.ti -1c
+.RI "#define \fBNO_WINDOW_INDEX\fP   \-1"
+.br
+.ti -1c
+.RI "#define \fBHIWINDOW_DEFAULT_PROC\fP   (LRESULT)(\-10086)"
+.br
+.ti -1c
+.RI "#define \fBWM_TRAY\fP   (WM_USER + 9337)"
+.br
+.ti -1c
+.RI "#define \fBWM_SYSCTRL_CREATE\fP   (WM_USER + 9338)"
+.br
+.ti -1c
+.RI "#define \fBWM_SYSCTRL_DELETE\fP   (WM_USER + 9339)"
+.br
+.ti -1c
+.RI "#define \fBWM_USER_REDRAW\fP   (WM_USER + 9340)"
+.br
+.ti -1c
+.RI "#define \fBBEGIN_TASK\fP()"
+.br
+.ti -1c
+.RI "#define \fBBEGIN_TASK_WND\fP(hWnd)"
+.br
+.ti -1c
+.RI "#define \fBEND_TASK\fP()"
+.br
+.ti -1c
+.RI "#define \fBFLUSH_DRAW\fP()   \fBHiEasyX::EnforceRedraw\fP()"
+.br
+.ti -1c
+.RI "#define \fBEnableResizing\fP(hwnd,  state)"
+.br
+.ti -1c
+.RI "#define \fBDisableResizing\fP(hwnd,  state)   \fBEnableResizing\fP(hwnd, !state)"
+.br
+.ti -1c
+.RI "#define \fBEnableSystemMenu\fP(hwnd,  state)"
+.br
+.ti -1c
+.RI "#define \fBDisableSystemMenu\fP(hwnd,  state)   \fBEnableSystemMenu\fP(hwnd, !state)"
+.br
+.ti -1c
+.RI "#define \fBEnableToolWindowStyle\fP(state)"
+.br
+.ti -1c
+.RI "#define \fBKEY_DOWN\fP(VK_NONAME)   ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)"
+.br
+.ti -1c
+.RI "#define \fBKEY_DOWN_WND\fP(VK_NONAME)   (GetForegroundWindow() == \fBHiEasyX::GetHWnd_win32\fP() && \fBKEY_DOWN\fP(VK_NONAME))"
+.br
+.ti -1c
+.RI "#define \fBinitgraph\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBclosegraph\fP   \fBHiEasyX::closegraph_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBBeginBatchDraw\fP()"
+.br
+.ti -1c
+.RI "#define \fBFlushBatchDraw\fP()   \fBFLUSH_DRAW\fP()"
+.br
+.ti -1c
+.RI "#define \fBEndBatchDraw\fP()   \fBFLUSH_DRAW\fP()"
+.br
+.ti -1c
+.RI "#define \fBGetHWnd\fP   \fBHiEasyX::GetHWnd_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBgetmessage\fP   \fBHiEasyX::getmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBpeekmessage\fP   \fBHiEasyX::peekmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBflushmessage\fP   \fBHiEasyX::flushmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBMouseHit\fP   \fBHiEasyX::MouseHit_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBGetMouseMsg\fP   \fBHiEasyX::GetMouseMsg_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBPeekMouseMsg\fP   \fBHiEasyX::PeekMouseMsg_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBFlushMouseMsgBuffer\fP   \fBHiEasyX::FlushMouseMsgBuffer_win32\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHiEasyX::DrawMode\fP { \fBHiEasyX::DM_Real\fP, \fBHiEasyX::DM_Normal\fP, \fBHiEasyX::DM_Fast\fP, \fBHiEasyX::DM_VeryFast\fP, \fBHiEasyX::DM_Fastest\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBHiEasyX::initgraph_win32\fP (int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::closegraph_win32\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::SetWndProcFunc\fP (HWND hWnd, WNDPROC WindowProcess)"
+.br
+.ti -1c
+.RI "HWND \fBHiEasyX::GetHWnd_win32\fP ()"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::init_end\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::AutoExit\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::isAnyWindow\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::isAliveWindow\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "IMAGE * \fBHiEasyX::GetWindowImage\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "Canvas * \fBHiEasyX::GetWindowCanvas\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::BindWindowCanvas\fP (Canvas *pCanvas, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::FlushDrawingToWnd\fP (IMAGE *pImg, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::WaitForTask\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "EasyWindow \fBHiEasyX::GetWorkingWindow\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::SetWorkingWindow\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::QuickDraw\fP (UINT nSkipPixels, HWND hWnd)"
+.br
+.ti -1c
+.RI "DrawMode \fBHiEasyX::GetDrawMode\fP ()"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::SetDrawMode\fP (DrawMode mode)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::EnforceRedraw\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::BeginTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::EndTask\fP (bool flush)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::isInTask\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::isWindowSizeChanged\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::CreateTray\fP (LPCTSTR lpszTrayName, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::DeleteTray\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::SetTrayMenu\fP (HMENU hMenu, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::SetTrayMenuProcFunc\fP (void(*pFunc)(UINT), HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::GetCustomIconState\fP ()"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::SetCustomIcon\fP (int nIcon, int nIconSm)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowStyle\fP (long lStyle)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "int \fBHiEasyX::SetWindowStyle\fP (long lNewStyle, HWND hWnd)"
+.br
+.ti -1c
+.RI "int \fBHiEasyX::SetWindowExStyle\fP (long lNewExStyle, HWND hWnd)"
+.br
+.ti -1c
+.RI "POINT \fBHiEasyX::GetWindowPos\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "SIZE \fBHiEasyX::GetWindowSize\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::MoveWindow\fP (int x, int y, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::MoveWindowRel\fP (int dx, int dy, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::ResizeWindow\fP (int w, int h, HWND hWnd)"
+.br
+.ti -1c
+.RI "ExMessage \fBHiEasyX::getmessage_win32\fP (BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::getmessage_win32\fP (ExMessage *msg, BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::peekmessage_win32\fP (ExMessage *msg, BYTE filter, bool removemsg, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::flushmessage_win32\fP (BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::MouseHit_win32\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "MOUSEMSG \fBHiEasyX::GetMouseMsg_win32\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::PeekMouseMsg_win32\fP (MOUSEMSG *pMsg, bool bRemoveMsg, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::FlushMouseMsgBuffer_win32\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "ExMessage \fBHiEasyX::To_ExMessage\fP (MOUSEMSG msg)"
+.br
+.ti -1c
+.RI "MOUSEMSG \fBHiEasyX::To_MouseMsg\fP (ExMessage msgEx)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __HIWINDOW_H__"
+
+.PP
+Definition at line 17 of file HiWindow\&.h\&.
+.SS "#define BEGIN_TASK()"
+\fBValue:\fP
+.PP
+.nf
+if (HiEasyX::SetWorkingWindow(nullptr))\
+    {\
+        if (HiEasyX::BeginTask())\
+        {(0)    /* 此处强制要求加分号 */
+.fi
+.PP
+Definition at line 461 of file HiWindow\&.h\&.
+.SS "#define BEGIN_TASK_WND(hWnd)"
+\fBValue:\fP
+.PP
+.nf
+/* 设置工作窗口时将自动等待任务 */\
+    if (HiEasyX::SetWorkingWindow(hWnd))\
+    {\
+        if (HiEasyX::BeginTask())\
+        {(0)
+.fi
+.PP
+Definition at line 468 of file HiWindow\&.h\&.
+.SS "#define BeginBatchDraw()"
+
+.PP
+Definition at line 519 of file HiWindow\&.h\&.
+.SS "#define closegraph   \fBHiEasyX::closegraph_win32\fP"
+
+.PP
+Definition at line 516 of file HiWindow\&.h\&.
+.SS "#define DisableResizing(hwnd, state)   \fBEnableResizing\fP(hwnd, !state)"
+
+.PP
+Definition at line 490 of file HiWindow\&.h\&.
+.SS "#define DisableSystemMenu(hwnd, state)   \fBEnableSystemMenu\fP(hwnd, !state)"
+
+.PP
+Definition at line 496 of file HiWindow\&.h\&.
+.SS "#define EnableResizing(hwnd, state)"
+\fBValue:\fP
+.PP
+.nf
+(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SIZEBOX | WS_MAXIMIZEBOX) :\
+                                        HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX))
+.fi
+.PP
+Definition at line 487 of file HiWindow\&.h\&.
+.SS "#define EnableSystemMenu(hwnd, state)"
+\fBValue:\fP
+.PP
+.nf
+(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SYSMENU) :\
+                                        HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SYSMENU))
+.fi
+.PP
+Definition at line 493 of file HiWindow\&.h\&.
+.SS "#define EnableToolWindowStyle(state)"
+\fBValue:\fP
+.PP
+.nf
+(state ? HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) | WS_EX_TOOLWINDOW) :\
+                                        HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) & ~WS_EX_TOOLWINDOW))
+.fi
+.PP
+Definition at line 499 of file HiWindow\&.h\&.
+.SS "#define END_TASK()"
+\fBValue:\fP
+.PP
+.nf
+HiEasyX::EndTask();\
+        }\
+    }(0)
+.fi
+.PP
+Definition at line 476 of file HiWindow\&.h\&.
+.SS "#define EndBatchDraw()   \fBFLUSH_DRAW\fP()"
+
+.PP
+Definition at line 521 of file HiWindow\&.h\&.
+.SS "#define EW_NORMAL   0"
+
+.PP
+Definition at line 21 of file HiWindow\&.h\&.
+.SS "#define FLUSH_DRAW()   \fBHiEasyX::EnforceRedraw\fP()"
+
+.PP
+Definition at line 482 of file HiWindow\&.h\&.
+.SS "#define FlushBatchDraw()   \fBFLUSH_DRAW\fP()"
+
+.PP
+Definition at line 520 of file HiWindow\&.h\&.
+.SS "#define flushmessage   \fBHiEasyX::flushmessage_win32\fP"
+
+.PP
+Definition at line 527 of file HiWindow\&.h\&.
+.SS "#define FlushMouseMsgBuffer   \fBHiEasyX::FlushMouseMsgBuffer_win32\fP"
+
+.PP
+Definition at line 532 of file HiWindow\&.h\&.
+.SS "#define GetHWnd   \fBHiEasyX::GetHWnd_win32\fP"
+
+.PP
+Definition at line 523 of file HiWindow\&.h\&.
+.SS "#define getmessage   \fBHiEasyX::getmessage_win32\fP"
+
+.PP
+Definition at line 525 of file HiWindow\&.h\&.
+.SS "#define GetMouseMsg   \fBHiEasyX::GetMouseMsg_win32\fP"
+
+.PP
+Definition at line 530 of file HiWindow\&.h\&.
+.SS "#define HIWINDOW_DEFAULT_PROC   (LRESULT)(\-10086)"
+
+.PP
+Definition at line 27 of file HiWindow\&.h\&.
+.SS "#define initgraph( \&.\&.\&.)"
+\fBValue:\fP
+.PP
+.nf
+HiEasyX::initgraph_win32(__VA_ARGS__);\\
+								HiEasyX::AutoExit()
+.fi
+.PP
+Definition at line 513 of file HiWindow\&.h\&.
+.SS "#define KEY_DOWN(VK_NONAME)   ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)"
+
+.PP
+Definition at line 505 of file HiWindow\&.h\&.
+.SS "#define KEY_DOWN_WND(VK_NONAME)   (GetForegroundWindow() == \fBHiEasyX::GetHWnd_win32\fP() && \fBKEY_DOWN\fP(VK_NONAME))"
+
+.PP
+Definition at line 508 of file HiWindow\&.h\&.
+.SS "#define MouseHit   \fBHiEasyX::MouseHit_win32\fP"
+
+.PP
+Definition at line 529 of file HiWindow\&.h\&.
+.SS "#define NO_WINDOW_INDEX   \-1"
+
+.PP
+Definition at line 24 of file HiWindow\&.h\&.
+.SS "#define peekmessage   \fBHiEasyX::peekmessage_win32\fP"
+
+.PP
+Definition at line 526 of file HiWindow\&.h\&.
+.SS "#define PeekMouseMsg   \fBHiEasyX::PeekMouseMsg_win32\fP"
+
+.PP
+Definition at line 531 of file HiWindow\&.h\&.
+.SS "#define WM_SYSCTRL_CREATE   (WM_USER + 9338)"
+
+.PP
+Definition at line 35 of file HiWindow\&.h\&.
+.SS "#define WM_SYSCTRL_DELETE   (WM_USER + 9339)"
+
+.PP
+Definition at line 39 of file HiWindow\&.h\&.
+.SS "#define WM_TRAY   (WM_USER + 9337)"
+
+.PP
+Definition at line 30 of file HiWindow\&.h\&.
+.SS "#define WM_USER_REDRAW   (WM_USER + 9340)"
+
+.PP
+Definition at line 43 of file HiWindow\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

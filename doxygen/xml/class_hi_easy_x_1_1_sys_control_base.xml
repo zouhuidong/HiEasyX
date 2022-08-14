@@ -1,0 +1,626 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_sys_control_base" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>HiEasyX::SysControlBase</compoundname>
+    <basecompoundref refid="class_hi_easy_x_1_1_container" prot="public" virt="non-virtual">HiEasyX::Container</basecompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_button" prot="public" virt="non-virtual">HiEasyX::SysButton</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_check_box" prot="public" virt="non-virtual">HiEasyX::SysCheckBox</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_combo_box" prot="public" virt="non-virtual">HiEasyX::SysComboBox</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_edit" prot="public" virt="non-virtual">HiEasyX::SysEdit</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_group" prot="public" virt="non-virtual">HiEasyX::SysGroup</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_group_box" prot="public" virt="non-virtual">HiEasyX::SysGroupBox</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_radio_button" prot="public" virt="non-virtual">HiEasyX::SysRadioButton</derivedcompoundref>
+    <derivedcompoundref refid="class_hi_easy_x_1_1_sys_static" prot="public" virt="non-virtual">HiEasyX::SysStatic</derivedcompoundref>
+    <includes refid="_sys_control_base_8h" local="no">SysControlBase.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_control_base_1ab0289b08e7ab1fd25d217e5960ef933b" prot="private" static="no" mutable="no">
+        <type>HFONT</type>
+        <definition>HFONT HiEasyX::SysControlBase::m_hFont</definition>
+        <argsstring></argsstring>
+        <name>m_hFont</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="34" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_control_base_1a7d8e8af5403957970ad4af3d34a3a3bb" prot="protected" static="no" mutable="no">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::m_hWnd</definition>
+        <argsstring></argsstring>
+        <name>m_hWnd</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="38" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_control_base_1a393ce1732fdb4af99cc64a1bd78878dc" prot="protected" static="no" mutable="no">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::m_hParent</definition>
+        <argsstring></argsstring>
+        <name>m_hParent</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="39" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_control_base_1a734cac701eb87304901aa3c6949501c5" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::SysControlBase::m_nID</definition>
+        <argsstring></argsstring>
+        <name>m_nID</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="40" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_control_base_1a5431636eff2980cc74afbd71a1a39505" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespace_hi_easy_x_1abf3107850ee180e3b75ab16cf237e6a6" kindref="member">SysControlType</ref></type>
+        <definition>SysControlType HiEasyX::SysControlBase::m_type</definition>
+        <argsstring></argsstring>
+        <name>m_type</name>
+        <initializer>= <ref refid="namespace_hi_easy_x_1abf3107850ee180e3b75ab16cf237e6a6a017fcb7b88ee1024150286b71baf79d0" kindref="member">SCT_Unknown</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="41" column="16" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a428c70ca68c9a7bfec8a26fd2a37a51d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::CreateControl</definition>
+        <argsstring>(HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)</argsstring>
+        <name>CreateControl</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszClassName</declname>
+        </param>
+        <param>
+          <type>LPCTSTR</type>
+          <declname>lpszWindowName</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>dwStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="44" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="7" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a698b117f3192aa2c4e2cfb41ff550c64" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void HiEasyX::SysControlBase::RealCreate</definition>
+        <argsstring>(HWND hParent)=0</argsstring>
+        <name>RealCreate</name>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_group_1a4409b40e861485ef5e7611efa7cb8f00">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_static_1a95c28916b4031adca85e119d99ba45b0">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_group_box_1aa2654190666b41d52a3a6f53621a75c3">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_radio_button_1a1696810df107561f0f6e7cefb17449be">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_check_box_1a0babcd01d51840fbcb548d2a54d08659">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_button_1aeb285f3be7feec3c45009c4ffd98fc42">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_combo_box_1a2ef99a070a6c7658a0000dc9913a1d5b">RealCreate</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_edit_1a32cff157235b39f1b7bd084baf27c225">RealCreate</reimplementedby>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="47" column="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a8626720b4004d98493d925982513b404" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysControlBase::SysControlBase</definition>
+        <argsstring>()</argsstring>
+        <name>SysControlBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="51" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1abed767fbf3903d0ffad4a91b510d4ddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>HiEasyX::SysControlBase::~SysControlBase</definition>
+        <argsstring>()</argsstring>
+        <name>~SysControlBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="53" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="33" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ab76320fa65ac35b4d367c54f852b33e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::UpdateRect</definition>
+        <argsstring>(RECT rctOld) override</argsstring>
+        <name>UpdateRect</name>
+        <reimplements refid="class_hi_easy_x_1_1_container_1a76c0f6f36e51a3cd11828ad64240b293">UpdateRect</reimplements>
+        <param>
+          <type>RECT</type>
+          <declname>rctOld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="55" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a7e00e2fee946dfa3b72eeec838c35ee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LRESULT</type>
+        <definition>LRESULT HiEasyX::SysControlBase::UpdateMessage</definition>
+        <argsstring>(UINT msg, WPARAM wParam, LPARAM lParam, bool &amp;bRet)</argsstring>
+        <name>UpdateMessage</name>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_radio_button_1afdb14543470a4d33cbffd641e4bf8bab">UpdateMessage</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_check_box_1af52543b29675369b3d90918213e2154a">UpdateMessage</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_button_1ab221809987c93a912d7c22b6b318cfef">UpdateMessage</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_combo_box_1ae7553dad096696b11d595b50dd60d89e">UpdateMessage</reimplementedby>
+        <reimplementedby refid="class_hi_easy_x_1_1_sys_edit_1ac64be7d44c0f34798a626b6f8a68e178">UpdateMessage</reimplementedby>
+        <param>
+          <type>UINT</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>WPARAM</type>
+          <declname>wParam</declname>
+        </param>
+        <param>
+          <type>LPARAM</type>
+          <declname>lParam</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>bRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="59" column="17" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::Create</definition>
+        <argsstring>(HWND hParent, RECT rct, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>RECT</type>
+          <declname>rct</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="62" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="53" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ae44040f6572dd6567c82a129e1e87067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::Create</definition>
+        <argsstring>(HWND hParent, int x, int y, int w, int h, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="65" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="64" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>HWND</type>
+        <definition>HWND HiEasyX::SysControlBase::GetHandle</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="67" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a511bd33b572404898ae1e9416e3148d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespace_hi_easy_x_1abf3107850ee180e3b75ab16cf237e6a6" kindref="member">SysControlType</ref></type>
+        <definition>SysControlType HiEasyX::SysControlBase::GetControlType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetControlType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="70" column="16" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a90e891fa87e6f9fde3f1577425eeb651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::SysControlBase::isEnable</definition>
+        <argsstring>()</argsstring>
+        <name>isEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="72" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ab4f18c3ffb2e663c59a434af6b2e6717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::Enable</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>Enable</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="74" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a5992d48230ed5dca0178fdbb0f3b2379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::SysControlBase::isVisible</definition>
+        <argsstring>()</argsstring>
+        <name>isVisible</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="76" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a916cc336c9b6b78c52077c8ecbf3fc89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::Show</definition>
+        <argsstring>(bool show)</argsstring>
+        <name>Show</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="78" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ae954d865c8e97af3b07ec5cab33d0f11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::SysControlBase::isFocused</definition>
+        <argsstring>()</argsstring>
+        <name>isFocused</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="80" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="95" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a607665057737234d46307f8c4dd8c4e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::SetFocus</definition>
+        <argsstring>(bool focused)</argsstring>
+        <name>SetFocus</name>
+        <param>
+          <type>bool</type>
+          <declname>focused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="82" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a6150babce62991699adb6f1891ead51f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::SysControlBase::GetTextLength</definition>
+        <argsstring>()</argsstring>
+        <name>GetTextLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="84" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1abd6a7c40a42be25296cb77a0f27a297d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring HiEasyX::SysControlBase::GetText</definition>
+        <argsstring>()</argsstring>
+        <name>GetText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="86" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="115" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a1dab4bb5df0da3253fdf8c7d25ef282f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::SetText</definition>
+        <argsstring>(std::wstring wstr)</argsstring>
+        <name>SetText</name>
+        <param>
+          <type>std::wstring</type>
+          <declname>wstr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="88" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a36cb0e1213a57f4e2665d16a2c936d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HFONT</type>
+        <definition>HFONT HiEasyX::SysControlBase::GetFont</definition>
+        <argsstring>()</argsstring>
+        <name>GetFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="90" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysControlBase::SetFont</definition>
+        <argsstring>(int h, int w=0, std::wstring typeface=L&quot;&quot;)</argsstring>
+        <name>SetFont</name>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>typeface</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="92" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="136" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_control_base_1a12290adca76a6e347ceac23a7a776355" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::SysControlBase::GetID</definition>
+        <argsstring>()</argsstring>
+        <name>GetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="94" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.cpp" bodystart="157" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>HiEasyX::SysStatic</label>
+        <link refid="class_hi_easy_x_1_1_sys_static"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="3">
+        <label>HiEasyX::SysButton</label>
+        <link refid="class_hi_easy_x_1_1_sys_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>HiEasyX::SysGroup</label>
+        <link refid="class_hi_easy_x_1_1_sys_group"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>HiEasyX::SysGroupBox</label>
+        <link refid="class_hi_easy_x_1_1_sys_group_box"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>HiEasyX::SysComboBox</label>
+        <link refid="class_hi_easy_x_1_1_sys_combo_box"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>HiEasyX::SysRadioButton</label>
+        <link refid="class_hi_easy_x_1_1_sys_radio_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>HiEasyX::SysCheckBox</label>
+        <link refid="class_hi_easy_x_1_1_sys_check_box"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>HiEasyX::SysEdit</label>
+        <link refid="class_hi_easy_x_1_1_sys_edit"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" line="31" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysControlBase.h" bodystart="30" bodyend="96"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae44040f6572dd6567c82a129e1e87067" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a428c70ca68c9a7bfec8a26fd2a37a51d" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>CreateControl</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab4f18c3ffb2e663c59a434af6b2e6717" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Enable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a511bd33b572404898ae1e9416e3148d5" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetControlType</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a36cb0e1213a57f4e2665d16a2c936d14" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetHandle</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a12290adca76a6e347ceac23a7a776355" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetID</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abd6a7c40a42be25296cb77a0f27a297d" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetText</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a6150babce62991699adb6f1891ead51f" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetTextLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetX</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>GetY</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a90e891fa87e6f9fde3f1577425eeb651" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>isEnable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae954d865c8e97af3b07ec5cab33d0f11" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>isFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5992d48230ed5dca0178fdbb0f3b2379" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>isVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab0289b08e7ab1fd25d217e5960ef933b" prot="private" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_hFont</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a393ce1732fdb4af99cc64a1bd78878dc" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_hParent</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a7d8e8af5403957970ad4af3d34a3a3bb" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_hWnd</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a734cac701eb87304901aa3c6949501c5" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_nID</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_rct</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5431636eff2980cc74afbd71a1a39505" prot="protected" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>m_type</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a698b117f3192aa2c4e2cfb41ff550c64" prot="protected" virt="pure-virtual"><scope>HiEasyX::SysControlBase</scope><name>RealCreate</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a607665057737234d46307f8c4dd8c4e1" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetFocus</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a1dab4bb5df0da3253fdf8c7d25ef282f" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetText</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a916cc336c9b6b78c52077c8ecbf3fc89" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>Show</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a8626720b4004d98493d925982513b404" prot="public" virt="non-virtual"><scope>HiEasyX::SysControlBase</scope><name>SysControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a7e00e2fee946dfa3b72eeec838c35ee0" prot="public" virt="virtual"><scope>HiEasyX::SysControlBase</scope><name>UpdateMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab76320fa65ac35b4d367c54f852b33e2" prot="public" virt="virtual"><scope>HiEasyX::SysControlBase</scope><name>UpdateRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" prot="public" virt="virtual"><scope>HiEasyX::SysControlBase</scope><name>~Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abed767fbf3903d0ffad4a91b510d4ddd" prot="public" virt="virtual"><scope>HiEasyX::SysControlBase</scope><name>~SysControlBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

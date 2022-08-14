@@ -1,0 +1,766 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_sys_edit" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::SysEdit</compoundname>
+    <basecompoundref refid="class_hi_easy_x_1_1_sys_control_base" prot="public" virt="non-virtual">HiEasyX::SysControlBase</basecompoundref>
+    <includes refid="_sys_edit_8h" local="no">SysEdit.h</includes>
+    <innerclass refid="struct_hi_easy_x_1_1_sys_edit_1_1_property" prot="private">HiEasyX::SysEdit::Property</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a3942d5d166c4c1c0e590ad4333492795" prot="private" static="no" mutable="no">
+        <type>struct HiEasyX::SysEdit::Property</type>
+        <definition>struct HiEasyX::SysEdit::Property  HiEasyX::SysEdit::m_property</definition>
+        <argsstring></argsstring>
+        <name>m_property</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="29" column="12"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a72ad52ea63a77f4668a728e2b467d6d3" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long HiEasyX::SysEdit::m_lBasicStyle</definition>
+        <argsstring></argsstring>
+        <name>m_lBasicStyle</name>
+        <initializer>= WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="31" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a31864c5c3af213f3fff37fbdbf14b157" prot="private" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* HiEasyX::SysEdit::m_pFunc) (std::wstring wstrText)</definition>
+        <argsstring>)(std::wstring wstrText)</argsstring>
+        <name>m_pFunc</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="32" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1ad217fdebcdc408061da06ebbdb596bcb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::SysEdit::m_bEdited</definition>
+        <argsstring></argsstring>
+        <name>m_bEdited</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="33" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a734e8cec41fa589ae29af02d3d126e1d" prot="private" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::SysEdit::m_cBk</definition>
+        <argsstring></argsstring>
+        <name>m_cBk</name>
+        <initializer>= WHITE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="35" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a503d34f9cf48e09e12b448d8c06dc287" prot="private" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::SysEdit::m_cTextBk</definition>
+        <argsstring></argsstring>
+        <name>m_cTextBk</name>
+        <initializer>= WHITE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="36" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a5f6ff7c67e57f79b7ad409241a465dae" prot="private" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::SysEdit::m_cText</definition>
+        <argsstring></argsstring>
+        <name>m_cText</name>
+        <initializer>= BLACK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="37" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_sys_edit_1a94d36ec3c079c7512850f87e95c031e0" prot="private" static="no" mutable="no">
+        <type>HBRUSH</type>
+        <definition>HBRUSH HiEasyX::SysEdit::hBk</definition>
+        <argsstring></argsstring>
+        <name>hBk</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="38" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a3a977240e0655976e544323b4c30c52d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::ApplyProperty</definition>
+        <argsstring>()</argsstring>
+        <name>ApplyProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="41" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="94" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a32cff157235b39f1b7bd084baf27c225" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::RealCreate</definition>
+        <argsstring>(HWND hParent) override</argsstring>
+        <name>RealCreate</name>
+        <reimplements refid="class_hi_easy_x_1_1_sys_control_base_1a698b117f3192aa2c4e2cfb41ff550c64">RealCreate</reimplements>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="45" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="5" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a6291d03776ced1b65cc03c6264facdfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysEdit::SysEdit</definition>
+        <argsstring>()</argsstring>
+        <name>SysEdit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="49" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1aa96169100c733b54dcc8da4e9417871a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysEdit::SysEdit</definition>
+        <argsstring>(HWND hParent, RECT rct, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>SysEdit</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>RECT</type>
+          <declname>rct</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="51" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a3097b21863fdfc9492f0d9558c1a8b2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysEdit::SysEdit</definition>
+        <argsstring>(HWND hParent, int x, int y, int w, int h, std::wstring strText=L&quot;&quot;)</argsstring>
+        <name>SysEdit</name>
+        <param>
+          <type>HWND</type>
+          <declname>hParent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>strText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="53" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a989c0c2c59c5013e5cf6dbe3415c00fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::SysEdit::~SysEdit</definition>
+        <argsstring>() override</argsstring>
+        <name>~SysEdit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="55" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a121bedc28a86b3c965df0d6094518ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::PreSetStyle</definition>
+        <argsstring>(bool multiline, bool center_text=false, bool vscroll=false, bool auto_vscroll=false, bool hscroll=false, bool auto_hscroll=false)</argsstring>
+        <name>PreSetStyle</name>
+        <param>
+          <type>bool</type>
+          <declname>multiline</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>center_text</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>vscroll</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>auto_vscroll</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hscroll</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>auto_hscroll</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="58" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1ac64be7d44c0f34798a626b6f8a68e178" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LRESULT</type>
+        <definition>LRESULT HiEasyX::SysEdit::UpdateMessage</definition>
+        <argsstring>(UINT msg, WPARAM wParam, LPARAM lParam, bool &amp;bRet) override</argsstring>
+        <name>UpdateMessage</name>
+        <reimplements refid="class_hi_easy_x_1_1_sys_control_base_1a7e00e2fee946dfa3b72eeec838c35ee0">UpdateMessage</reimplements>
+        <param>
+          <type>UINT</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>WPARAM</type>
+          <declname>wParam</declname>
+        </param>
+        <param>
+          <type>LPARAM</type>
+          <declname>lParam</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>bRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="67" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="53" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a0cc4e870dea7fcafc618fb44a561d337" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::RegisterMessage</definition>
+        <argsstring>(void(*pFunc)(std::wstring wstrText))</argsstring>
+        <name>RegisterMessage</name>
+        <param>
+          <type>void(*)(std::wstring wstrText)</type>
+          <declname>pFunc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="70" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a7c2d5bf732d9c8867a8a4272ec69ac99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::RightAlign</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>RightAlign</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="73" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a5ae7735d57094cb4a65b7e76754b9c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Uppercase</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>Uppercase</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="76" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="124" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a0da4b46ac9a8265d6ea318fbd436ea29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Lowercase</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>Lowercase</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="79" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="131" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1ac802669cb1e61f20bb65af20eb72e173" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Password</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>Password</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="82" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a5c8008152f249d794aae23e19ccc483d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::ReadOnly</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>ReadOnly</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="85" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="144" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a982effd68dd8874fb0d82efe5a923651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::NumberOnly</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>NumberOnly</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="88" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="150" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1acaf3548266aee839838828805ab5ef04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::SysEdit::GetMaxTextLength</definition>
+        <argsstring>()</argsstring>
+        <name>GetMaxTextLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="91" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1ac4fb99f415a012e9d8f1951df4195218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::SetMaxTextLength</definition>
+        <argsstring>(int len)</argsstring>
+        <name>SetMaxTextLength</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="94" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1abdf60709dfccd3b86b293e6cc33e208c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::SetBkColor</definition>
+        <argsstring>(COLORREF color)</argsstring>
+        <name>SetBkColor</name>
+        <param>
+          <type>COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="97" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="166" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1aaaaf75ecc4347a01758a478648e4c49e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::SetTextBkColor</definition>
+        <argsstring>(COLORREF color)</argsstring>
+        <name>SetTextBkColor</name>
+        <param>
+          <type>COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="100" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="175" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a116408aea4f792f8338de3649486aa84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::SetTextColor</definition>
+        <argsstring>(COLORREF color)</argsstring>
+        <name>SetTextColor</name>
+        <param>
+          <type>COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="103" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="181" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a67ac47c19cbff94d54588905ee2f4c4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::GetSel</definition>
+        <argsstring>(int *begin, int *end)</argsstring>
+        <name>GetSel</name>
+        <param>
+          <type>int *</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="106" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a14a13b40c9c872c5f78bc2de73cb45f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::SetSel</definition>
+        <argsstring>(int begin, int end)</argsstring>
+        <name>SetSel</name>
+        <param>
+          <type>int</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="110" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1afd959c344130c439d73fd1bf091d7e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Copy</definition>
+        <argsstring>()</argsstring>
+        <name>Copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="113" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="197" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a389c27627a8fa2ffb89b8204a993a2ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Cut</definition>
+        <argsstring>()</argsstring>
+        <name>Cut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="116" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="202" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a297f5e842302fea55a19dbac30d95d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Paste</definition>
+        <argsstring>()</argsstring>
+        <name>Paste</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="119" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1ae7bf88133eba3b5f87f370f41f39ae61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Delete</definition>
+        <argsstring>()</argsstring>
+        <name>Delete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="122" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a24aed61b5ffe56759fc3ad312fb7d522" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::SysEdit::Replace</definition>
+        <argsstring>(std::wstring wstrText)</argsstring>
+        <name>Replace</name>
+        <param>
+          <type>std::wstring</type>
+          <declname>wstrText</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="125" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_sys_edit_1a64c5ef60b83e34e21fdd71c09cd10c95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::SysEdit::isEdited</definition>
+        <argsstring>()</argsstring>
+        <name>isEdited</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="128" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.cpp" bodystart="222" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysEdit</label>
+        <link refid="class_hi_easy_x_1_1_sys_edit"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::SysControlBase</label>
+        <link refid="class_hi_easy_x_1_1_sys_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::SysEdit</label>
+        <link refid="class_hi_easy_x_1_1_sys_edit"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" line="16" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiSysGUI/SysEdit.h" bodystart="15" bodyend="129"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a3a977240e0655976e544323b4c30c52d" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>ApplyProperty</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1afd959c344130c439d73fd1bf091d7e7a" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Copy</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1af48127f089d5f354dbe8ee9d43ad67ff" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae44040f6572dd6567c82a129e1e87067" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Create</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a428c70ca68c9a7bfec8a26fd2a37a51d" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>CreateControl</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a389c27627a8fa2ffb89b8204a993a2ef" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Cut</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1ae7bf88133eba3b5f87f370f41f39ae61" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Delete</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab4f18c3ffb2e663c59a434af6b2e6717" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Enable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a511bd33b572404898ae1e9416e3148d5" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetControlType</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a36cb0e1213a57f4e2665d16a2c936d14" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ac4400db4bbb465f29cd3b67f4073b695" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetHandle</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a12290adca76a6e347ceac23a7a776355" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetID</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1acaf3548266aee839838828805ab5ef04" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetMaxTextLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a67ac47c19cbff94d54588905ee2f4c4b" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetSel</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abd6a7c40a42be25296cb77a0f27a297d" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetText</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a6150babce62991699adb6f1891ead51f" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetTextLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetX</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>GetY</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a94d36ec3c079c7512850f87e95c031e0" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>hBk</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a64c5ef60b83e34e21fdd71c09cd10c95" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>isEdited</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a90e891fa87e6f9fde3f1577425eeb651" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>isEnable</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ae954d865c8e97af3b07ec5cab33d0f11" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>isFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5992d48230ed5dca0178fdbb0f3b2379" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>isVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a0da4b46ac9a8265d6ea318fbd436ea29" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Lowercase</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1ad217fdebcdc408061da06ebbdb596bcb" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_bEdited</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a734e8cec41fa589ae29af02d3d126e1d" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_cBk</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a5f6ff7c67e57f79b7ad409241a465dae" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_cText</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a503d34f9cf48e09e12b448d8c06dc287" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_cTextBk</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a393ce1732fdb4af99cc64a1bd78878dc" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_hParent</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a7d8e8af5403957970ad4af3d34a3a3bb" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_hWnd</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a72ad52ea63a77f4668a728e2b467d6d3" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_lBasicStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a734cac701eb87304901aa3c6949501c5" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_nID</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a31864c5c3af213f3fff37fbdbf14b157" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_pFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a3942d5d166c4c1c0e590ad4333492795" prot="private" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_property</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_rct</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a5431636eff2980cc74afbd71a1a39505" prot="protected" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>m_type</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a982effd68dd8874fb0d82efe5a923651" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>NumberOnly</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1ac802669cb1e61f20bb65af20eb72e173" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Password</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a297f5e842302fea55a19dbac30d95d9e" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Paste</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a121bedc28a86b3c965df0d6094518ff1" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>PreSetStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a5c8008152f249d794aae23e19ccc483d" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>ReadOnly</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a32cff157235b39f1b7bd084baf27c225" prot="protected" virt="virtual"><scope>HiEasyX::SysEdit</scope><name>RealCreate</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a0cc4e870dea7fcafc618fb44a561d337" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>RegisterMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a24aed61b5ffe56759fc3ad312fb7d522" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Replace</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a7c2d5bf732d9c8867a8a4272ec69ac99" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>RightAlign</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1abdf60709dfccd3b86b293e6cc33e208c" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a607665057737234d46307f8c4dd8c4e1" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetFocus</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ada785a0c542a6670f64c5d87504f768d" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetFont</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1ac4fb99f415a012e9d8f1951df4195218" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetMaxTextLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a14a13b40c9c872c5f78bc2de73cb45f4" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetSel</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a1dab4bb5df0da3253fdf8c7d25ef282f" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetText</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1aaaaf75ecc4347a01758a478648e4c49e" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetTextBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a116408aea4f792f8338de3649486aa84" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetTextColor</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a916cc336c9b6b78c52077c8ecbf3fc89" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Show</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1a8626720b4004d98493d925982513b404" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SysControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a6291d03776ced1b65cc03c6264facdfd" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SysEdit</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1aa96169100c733b54dcc8da4e9417871a" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SysEdit</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a3097b21863fdfc9492f0d9558c1a8b2f" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>SysEdit</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1ac64be7d44c0f34798a626b6f8a68e178" prot="public" virt="virtual"><scope>HiEasyX::SysEdit</scope><name>UpdateMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1ab76320fa65ac35b4d367c54f852b33e2" prot="public" virt="virtual"><scope>HiEasyX::SysEdit</scope><name>UpdateRect</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a5ae7735d57094cb4a65b7e76754b9c41" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>Uppercase</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" prot="public" virt="virtual"><scope>HiEasyX::SysEdit</scope><name>~Container</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_control_base_1abed767fbf3903d0ffad4a91b510d4ddd" prot="public" virt="virtual"><scope>HiEasyX::SysEdit</scope><name>~SysControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_sys_edit_1a989c0c2c59c5013e5cf6dbe3415c00fd" prot="public" virt="non-virtual"><scope>HiEasyX::SysEdit</scope><name>~SysEdit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

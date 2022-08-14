@@ -1,0 +1,162 @@
+.TH "HiEasyX::Static" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Static
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Static\&.h>\fP
+.PP
+Inherits \fBHiEasyX::ControlBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBChar\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStatic\fP ()"
+.br
+.ti -1c
+.RI "\fBStatic\fP (int x, int y, int w, int h, std::wstring wstrText=L'')"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBChar\fP > \fBConvert\fP (std::wstring wstrText)"
+.br
+.ti -1c
+.RI "virtual std::wstring \fBConvert\fP (std::vector< \fBChar\fP > vecText)"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBChar\fP > & \fBGetTextVector\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBClearText\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBAddText\fP (std::wstring wstr, bool isSetTextColor=false, COLORREF cText=0, bool isSetBkColor=false, COLORREF cBk=0)"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (std::wstring wstrText) override"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (std::vector< \fBChar\fP > vecText)"
+.br
+.ti -1c
+.RI "virtual \fBImageBlock\fP * \fBGetImage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetImage\fP (\fBImageBlock\fP *pImgBlockmg)"
+.br
+.ti -1c
+.RI "void \fBDraw_Text\fP (int nTextOffsetX=0, int nTextOffsetY=0) override"
+.br
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBChar\fP > \fBm_vecText\fP"
+.br
+.ti -1c
+.RI "\fBImageBlock\fP * \fBm_pImgBlock\fP = nullptr"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file Static\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::Static::Static ()"
+
+.PP
+Definition at line 11 of file Static\&.cpp\&.
+.SS "HiEasyX::Static::Static (int x, int y, int w, int h, std::wstring wstrText = \fCL''\fP)"
+
+.PP
+Definition at line 16 of file Static\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void HiEasyX::Static::AddText (std::wstring wstr, bool isSetTextColor = \fCfalse\fP, COLORREF cText = \fC0\fP, bool isSetBkColor = \fCfalse\fP, COLORREF cBk = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+Definition at line 53 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::ClearText ()\fC [virtual]\fP"
+
+.PP
+Definition at line 45 of file Static\&.cpp\&.
+.SS "std::wstring HiEasyX::Static::Convert (std::vector< \fBChar\fP > vecText)\fC [virtual]\fP"
+
+.PP
+Definition at line 34 of file Static\&.cpp\&.
+.SS "std::vector< \fBStatic::Char\fP > HiEasyX::Static::Convert (std::wstring wstrText)\fC [virtual]\fP"
+
+.PP
+Definition at line 23 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 101 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::Draw_Text (int nTextOffsetX = \fC0\fP, int nTextOffsetY = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 82 of file Static\&.cpp\&.
+.SS "virtual \fBImageBlock\fP* HiEasyX::Static::GetImage ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 60 of file Static\&.h\&.
+.SS "virtual std::vector<\fBChar\fP>& HiEasyX::Static::GetTextVector ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 42 of file Static\&.h\&.
+.SS "void HiEasyX::Static::Init ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 5 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::SetImage (\fBImageBlock\fP * pImgBlockmg)\fC [virtual]\fP"
+
+.PP
+Definition at line 126 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::SetText (std::vector< \fBChar\fP > vecText)"
+
+.PP
+Definition at line 74 of file Static\&.cpp\&.
+.SS "void HiEasyX::Static::SetText (std::wstring wstrText)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBHiEasyX::ControlBase\fP\&.
+.PP
+Definition at line 66 of file Static\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBImageBlock\fP* HiEasyX::Static::m_pImgBlock = nullptr\fC [protected]\fP"
+
+.PP
+Definition at line 28 of file Static\&.h\&.
+.SS "std::vector<\fBChar\fP> HiEasyX::Static::m_vecText\fC [protected]\fP"
+
+.PP
+Definition at line 27 of file Static\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.

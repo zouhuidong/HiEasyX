@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_button" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::Button</compoundname>
+    <basecompoundref refid="class_hi_easy_x_1_1_control_base" prot="public" virt="non-virtual">HiEasyX::ControlBase</basecompoundref>
+    <includes refid="_button_8h" local="no">Button.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a966aad811bb86b1d67bc5a99798fbe19" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::Button::m_bEnableClassicStyle</definition>
+        <argsstring></argsstring>
+        <name>m_bEnableClassicStyle</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="18" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1af3377ffb80980c89c62c8357fdbd42e2" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBorder_Normal</definition>
+        <argsstring></argsstring>
+        <name>m_cBorder_Normal</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68" kindref="member">MODERN_BORDER_GRAY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="25" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1af9afc7d76febeff0b0bdcced6e113b42" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBackground_Normal</definition>
+        <argsstring></argsstring>
+        <name>m_cBackground_Normal</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa63616c786a8a9240c19852684cdd4403" kindref="member">MODERN_FILL_GRAY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="26" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1ace15381d0142fac92aa94b9e37b5a13a" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBorder_Hovered</definition>
+        <argsstring></argsstring>
+        <name>m_cBorder_Hovered</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa8cc811a079ad9c0b08c4f86ab1f7ef83" kindref="member">MODERN_BORDER_BLUE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="27" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1ad4b4e9fae1a429d8ed1b3a239330ad4f" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBackground_Hovered</definition>
+        <argsstring></argsstring>
+        <name>m_cBackground_Hovered</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa2b5d9aa5c55b206b1d567bbe7075400c" kindref="member">MODERN_FILL_BLUE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="28" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a99df9c16043ea02c55a609c193b26c0d" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBorder_Pressed</definition>
+        <argsstring></argsstring>
+        <name>m_cBorder_Pressed</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa0a70e51a2ff201ec52c7fa81990f1a53" kindref="member">MODERN_BORDER_PRESSED_BLUE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="29" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a340e048c7dfdf505b9f26878064490d4" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBackground_Pressed</definition>
+        <argsstring></argsstring>
+        <name>m_cBackground_Pressed</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aac4781ed71a7008d0468720b8ce6b1cd1" kindref="member">MODERN_FILL_PRESSED_BLUE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="30" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1ab0850bf9c3ee76316d05562773fdf0a8" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cText_Disabled</definition>
+        <argsstring></argsstring>
+        <name>m_cText_Disabled</name>
+        <initializer>= LIGHTGRAY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="32" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a7f46062e3336c081a47a7718e0cad908" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBorder_Disabled</definition>
+        <argsstring></argsstring>
+        <name>m_cBorder_Disabled</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="33" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a906bd90e74b4fca3af7802a5f97638bc" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cBackground_Disabled</definition>
+        <argsstring></argsstring>
+        <name>m_cBackground_Disabled</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="34" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a829d2a3418bdcdfd4475f38cec353c36" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cClassicNormalBorder3D</definition>
+        <argsstring></argsstring>
+        <name>m_cClassicNormalBorder3D</name>
+        <initializer>= <ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="36" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_button_1a856eb5b821e0e1e84a75b0357cc83092" prot="public" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF HiEasyX::Button::m_cClassicPressedBorder3D</definition>
+        <argsstring></argsstring>
+        <name>m_cClassicPressedBorder3D</name>
+        <initializer>= LIGHTGRAY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="37" column="10" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1a09e5d498cacaa5bcc922b26ba1fe9f93" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Button::InitColor</definition>
+        <argsstring>()</argsstring>
+        <name>InitColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="20" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1a633fe3b5482709b92df800671b38ff65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::Button::Button</definition>
+        <argsstring>()</argsstring>
+        <name>Button</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="39" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1a35f23b562e8bbbf0de1efa998afd8b77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::Button::Button</definition>
+        <argsstring>(int x, int y, int w, int h, std::wstring wstrText=L&quot;&quot;)</argsstring>
+        <name>Button</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>wstrText</declname>
+          <defval>L&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="41" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1aefe32680d115e7937e15ae3f6ddd9b83" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Button::SetEnable</definition>
+        <argsstring>(bool enable) override</argsstring>
+        <name>SetEnable</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1a6ce290712b6fff9d80eae26fa8eced06">SetEnable</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="43" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="23" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1a1a18658efeaebd833f18f4397c168b95" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Button::EnableClassicStyle</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>EnableClassicStyle</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="45" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="64" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1a195a1c4c28c1bc4efa00d43fc76d4d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Button::UpdateMessage</definition>
+        <argsstring>(ExMessage msg) override</argsstring>
+        <name>UpdateMessage</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1ac50c2510107edcd0003ec609d896fb7a">UpdateMessage</reimplements>
+        <param>
+          <type>ExMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="47" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="38" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_button_1ad8ee2b9caafd1b1ac59f1d401181edc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::Button::Draw</definition>
+        <argsstring>(bool draw_child=true) override</argsstring>
+        <name>Draw</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1ac3a8b32c92d5a6e4a251fe0db5080796">Draw</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>draw_child</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="49" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp" bodystart="73" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::ControlBase</label>
+        <link refid="class_hi_easy_x_1_1_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HiEasyX::Button</label>
+        <link refid="class_hi_easy_x_1_1_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::ControlBase</label>
+        <link refid="class_hi_easy_x_1_1_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_canvas</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_pParent</edgelabel>
+          <edgelabel>m_funcMessageProc_Class</edgelabel>
+          <edgelabel>m_funcMessageProc</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>HiEasyX::Canvas</label>
+        <link refid="class_hi_easy_x_1_1_canvas"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_property</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IMAGE</label>
+      </node>
+      <node id="6">
+        <label>HiEasyX::DrawingProperty</label>
+        <link refid="class_hi_easy_x_1_1_drawing_property"/>
+      </node>
+      <node id="1">
+        <label>HiEasyX::Button</label>
+        <link refid="class_hi_easy_x_1_1_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" line="15" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h" bodystart="14" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_control_base_1a75cdabdaa297155395d0420a11da4599" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>AddChild</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a633fe3b5482709b92df800671b38ff65" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>Button</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a35f23b562e8bbbf0de1efa998afd8b77" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>Button</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1adfafda8974eb9211f7ddee264d58ac04" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>CallUserMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a709cbc231405929ae9d4c8f01dd97287" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>ChildRectChanged</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>Container</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae76f7599a28302ad10bcea03596cd4f4" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a93c329b48a1d3ced2f8b01df809b094e" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a878d5f05839dad41c6192fd45b7d0089" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1ad8ee2b9caafd1b1ac59f1d401181edc7" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>Draw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a416db1040e5caa28d86f618bd9c5cd1c" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>Draw_Text</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1af0373d28a9f56e4c9e04920ec2727b2d" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>DrawChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a67e8affaf474d4f9441d3e72dac4d1f1" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>EnableAutoRedraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a68665d8347eee65d0b57d3afd8d916c7" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>EnableAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a69d07e6ca0fcb597a0704cc67beddd6b" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>EnableBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a1a18658efeaebd833f18f4397c168b95" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>EnableClassicStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a86595b70b389d8c8382f5b5a0a613d79" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>GetAutoRedrawState</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2749c6a3a556f93174f9ca6e9dbf3829" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>GetBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a89fd69ef31bd91b7eeca590686c0637e" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>GetCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ab7d753c89838202ff5c37612a8f9715f" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetChildCount</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1a01c4a70d14f9649887d8fbeb3e05ed" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetChildList</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aad00f0df715ce907b84141b4ac7d9f71" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a97bef5dfe261c7eaf6116ca16676fd00" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>GetText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a172ae71e2be303acb30c83f83ad4d064" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>GetTextColor</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetX</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>GetY</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a09e5d498cacaa5bcc922b26ba1fe9f93" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>InitColor</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a72c682d658053588916fdf12bd8d3f56" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a462628b9679c4ebc935c3c5ce5f24222" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isEnabled</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6e30e0745734a8a246c33249ae6e8443" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a522e6e3676e6f1ffe15f70371f676d5b" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isHovered</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2b7c5f2614e457ee54b22baee0bb06a4" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isPressed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a7e533b346d6e96e57ec1cd8f6e0b055a" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>isVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aef9fc2d0d6365a371c9ce13ff86752b9" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_alpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a50af68164c7790b3f06af11301a866b0" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bAlwaysRedrawAndRender</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5b0539e21f7013d44646d3ca2838ed33" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bAutoRedrawWhenReceiveMsg</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a3c7d5df0c1558c0ec993ad3890e18c79" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae404f7e5aab1fbfd611776c7995996d5" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bClear</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ac3032416bb487fb5ee04160f2f2b3bd5" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bCompleteFirstSetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae0ec54aca4911bd3eeb388c77917cb38" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bEnableBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a966aad811bb86b1d67bc5a99798fbe19" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bEnableClassicStyle</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ac32c07be0d613b508c36220ba7938d06" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bEnabled</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aa96b30a60cd8d93ea0b49b2d787233c9" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ab407e304413acc7d4c9a88e8c9c94849" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bHovered</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aac1e82098ce1faacec3eb1f5666ec0ea" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bPressed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a206af1bbabb242872b6128e84972f256" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bRedraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a4cfe720d3e77a2c15d87b4da565a1c37" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bRender</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6b0caf2ebbdd099e6d36fba2d1e38e1c" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bUseCanvasAlpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5199ab6ebcf3bef6fd601f60310550fe" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_bVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae95bbe48d81bb21b7e760ff792af059a" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_canvas</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a56ef733920e54f454c990fd1aebfac1f" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBackground</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a906bd90e74b4fca3af7802a5f97638bc" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBackground_Disabled</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1ad4b4e9fae1a429d8ed1b3a239330ad4f" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBackground_Hovered</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1af9afc7d76febeff0b0bdcced6e113b42" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBackground_Normal</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a340e048c7dfdf505b9f26878064490d4" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBackground_Pressed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aebce31b4e9be410a4d0a247616c16ad4" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a7f46062e3336c081a47a7718e0cad908" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBorder_Disabled</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1ace15381d0142fac92aa94b9e37b5a13a" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBorder_Hovered</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1af3377ffb80980c89c62c8357fdbd42e2" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBorder_Normal</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a99df9c16043ea02c55a609c193b26c0d" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cBorder_Pressed</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a829d2a3418bdcdfd4475f38cec353c36" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cClassicNormalBorder3D</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a856eb5b821e0e1e84a75b0357cc83092" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cClassicPressedBorder3D</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aaaecf1b442d34f7674a4f3da49cb1ea7" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cText</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1ab0850bf9c3ee76316d05562773fdf0a8" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_cText_Disabled</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6a3797dd102a11dc00a7c36581b22daa" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_funcMessageProc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a240d262fc1e65624813a9a8ef39c0ad5" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_funcMessageProc_Class</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a255c9dc0ff8db31e4371006e3dd2364d" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_isAlphaCalculated</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1fb286838bbb30c2fa2daa64c1277939" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_listChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aef9e13f82ff2956fc0d34e1de4713e8c" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_nBorderThickness</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1abf130d8b75dbe3762567a0c3f82791bd" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_pCalledClass</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae762452f0d6e75a1f3b215c29a1d2cbe" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_pParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_rct</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6bbf7e24f18391620d371e05892ad8d7" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_rctClear</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a0f51d324623ae83c706c6c3a9a6c9d3b" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>m_wstrText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2172a2e6a76a652f90882b941fc1d127" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>MarkNeedClearRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" prot="protected" virt="non-virtual"><scope>HiEasyX::Button</scope><name>MarkNeedRedrawAndRender</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aeb5ceed0aa8e63ab2610ea2abedc4bc3" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>Redraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1234eaab74c2b51dbb9197b697429993" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>RemoveChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a01a9afff183b9f0cda0d83dbb767a0b8" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>Render</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ade3f9e1097c4607a2fd8c9cc74153e95" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetAlpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aeb9bc2b20dbcf0dea4ac3ab32706bdc3" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1aefe32680d115e7937e15ae3f6ddd9b83" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetEnable</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a83fa7686f91675a89235205335aab92f" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ad01c8bbd6a40e56459d2faba5fab4b3d" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1acd99a2375080ebc29af5ec5a78e8ceb0" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a73821ac5c9e46196df1e3dd922d96d35" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aa200c0d27e4a88df9833ff5e8b29e33e" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetTextColor</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1e58bdfc56f0781bdd500cf4013a6d86" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>SetVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" prot="public" virt="non-virtual"><scope>HiEasyX::Button</scope><name>SetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5bd403fbd8682259a33f3301531ddf41" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>TransformMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_button_1a195a1c4c28c1bc4efa00d43fc76d4d1f" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>UpdateMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a82f6680093e218339da20daa750c6839" prot="protected" virt="virtual"><scope>HiEasyX::Button</scope><name>UpdateRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>~Container</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aea4f802233d392dd4302479a428f97de" prot="public" virt="virtual"><scope>HiEasyX::Button</scope><name>~ControlBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

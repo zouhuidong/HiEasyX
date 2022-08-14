@@ -1,0 +1,780 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_hi_func_8cpp" kind="file" language="C++">
+    <compoundname>HiFunc.cpp</compoundname>
+    <includes refid="_hi_func_8h" local="yes">HiFunc.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">time.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>graphics.h</label>
+      </node>
+      <node id="3">
+        <label>Windows.h</label>
+      </node>
+      <node id="4">
+        <label>WinUser.h</label>
+      </node>
+      <node id="2">
+        <label>HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>time.h</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp</label>
+        <link refid="_hi_func_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_hi_func_8cpp_1abe06d2c82003bb4e0ce6ae43a8e70ce2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_screen_size" kindref="compound">ScreenSize</ref></type>
+        <definition>ScreenSize GetScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetScreenSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="6" column="12" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="6" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1ac7dee424cf4ab044e4f9dc42a8f62ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GetImageSize</definition>
+        <argsstring>(IMAGE *pImg, int &amp;width, int &amp;height)</argsstring>
+        <name>GetImageSize</name>
+        <param>
+          <type>IMAGE *</type>
+          <declname>pImg</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="17" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="17" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1a4a99ff5c68bcf5b9aa1ace836ebb589a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD *</type>
+        <definition>DWORD* ReverseAlpha</definition>
+        <argsstring>(DWORD *pBuf, int size)</argsstring>
+        <name>ReverseAlpha</name>
+        <param>
+          <type>DWORD *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="37" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1a6e1ffaed1db4fff865e2cd8310d1fe5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HBITMAP</type>
+        <definition>HBITMAP Image2Bitmap</definition>
+        <argsstring>(IMAGE *img, bool enable_alpha)</argsstring>
+        <name>Image2Bitmap</name>
+        <param>
+          <type>IMAGE *</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable_alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="47" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="47" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1a0afdc4e822f973b53342d1d6cb6a5d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HICON</type>
+        <definition>HICON Bitmap2Icon</definition>
+        <argsstring>(HBITMAP hBmp)</argsstring>
+        <name>Bitmap2Icon</name>
+        <param>
+          <type>HBITMAP</type>
+          <declname>hBmp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="60" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="60" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1af1adf00f3f67186ea614843c7a914d2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HpSleep</definition>
+        <argsstring>(int ms)</argsstring>
+        <name>HpSleep</name>
+        <param>
+          <type>int</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="78" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="78" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1a297b4dfbb9a45066dbf15547b85544a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isInRect</definition>
+        <argsstring>(int x, int y, RECT rct)</argsstring>
+        <name>isInRect</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>RECT</type>
+          <declname>rct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="93" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="93" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="_hi_func_8cpp_1a418329622e6caf9d65af338e0c831925" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UINT</type>
+        <definition>UINT GetExMessageType</definition>
+        <argsstring>(ExMessage msg)</argsstring>
+        <name>GetExMessageType</name>
+        <param>
+          <type>ExMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" line="100" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" bodystart="100" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hi_func_8h" kindref="compound">HiFunc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="_hi_func_8h_1abe06d2c82003bb4e0ce6ae43a8e70ce2" refkind="member"><highlight class="normal"><ref refid="struct_screen_size" kindref="compound">ScreenSize</ref><sp/><ref refid="_hi_func_8cpp_1abe06d2c82003bb4e0ce6ae43a8e70ce2" kindref="member">GetScreenSize</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>GetSystemMetrics(SM_XVIRTUALSCREEN);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>GetSystemMetrics(SM_YVIRTUALSCREEN);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w<sp/>=<sp/>GetSystemMetrics(SM_CXVIRTUALSCREEN);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h<sp/>=<sp/>GetSystemMetrics(SM_CYVIRTUALSCREEN);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>left,top,w,h<sp/>};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>获取图像尺寸 //<sp/>可以方便地处理<sp/>IMAGE<sp/>指针为空，即指向主绘图窗口的情况
+void<sp/>GetImageSize(IMAGE*<sp/>pImg,<sp/>int&amp;<sp/>width,<sp/>int&amp;<sp/>height)
+{
+<sp/><sp/><sp/>//<sp/>普通<sp/>IMAGE<sp/>指针
+<sp/>if<sp/>(pImg)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>pImg-&gt;getwidth();
+<sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>pImg-&gt;getheight();
+<sp/><sp/><sp/><sp/>}
+
+<sp/>//<sp/>nullptr<sp/>对应绘图窗口
+<sp/><sp/><sp/>else
+<sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>IMAGE*<sp/>pOld<sp/>=<sp/>GetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>getwidth();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>getheight();
+<sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage(pOld);
+<sp/>}
+}
+
+DWORD*<sp/>ReverseAlpha(DWORD*<sp/>pBuf,<sp/>int<sp/>size)
+{
+<sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(pBuf[i]<sp/>&amp;<sp/>0xff000000)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/><sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>|=<sp/>0xff000000;
+<sp/>return<sp/>pBuf;
+}
+
+HBITMAP<sp/>Image2Bitmap(IMAGE*<sp/>img,<sp/>bool<sp/>enable_alpha)
+{
+<sp/><sp/>//<sp/>测试结论
+<sp/><sp/><sp/><sp/>//<sp/>若图像中有任何像素 alpha<sp/>不为<sp/>0，则启用<sp/>alpha
+<sp/><sp/><sp/><sp/>//<sp/>若图像<sp/>alpha<sp/>全部为<sp/>0，则表示完全不透明
+
+<sp/><sp/><sp/>DWORD*<sp/>pBuf<sp/>=<sp/>GetImageBuffer(img);
+<sp/>if<sp/>(!enable_alpha)
+<sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>img-&gt;getwidth()<sp/>*<sp/>img-&gt;getheight();<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/>return<sp/>CreateBitmap(img-&gt;getwidth(),<sp/>img-&gt;getheight(),<sp/>1,<sp/>32,<sp/>pBuf);
+}
+
+HICON<sp/>Bitmap2Icon(HBITMAP<sp/>hBmp)
+{
+<sp/><sp/>BITMAP<sp/>bmp<sp/>=<sp/>{};
+<sp/><sp/><sp/>GetObject(hBmp,<sp/>sizeof(BITMAP),<sp/>&amp;bmp);
+
+<sp/><sp/><sp/><sp/>HBITMAP<sp/>hbmMask<sp/>=<sp/>CreateCompatibleBitmap(GetDC(nullptr),<sp/>bmp.bmWidth,<sp/>bmp.bmHeight);
+
+<sp/><sp/>ICONINFO<sp/>ii<sp/>=<sp/>{<sp/>0<sp/>};
+<sp/><sp/><sp/>ii.fIcon<sp/>=<sp/>TRUE;
+<sp/><sp/><sp/>ii.hbmColor<sp/>=<sp/>hBmp;
+<sp/><sp/><sp/><sp/>ii.hbmMask<sp/>=<sp/>hbmMask;
+
+<sp/>HICON<sp/>hIcon<sp/>=<sp/>CreateIconIndirect(&amp;ii);
+<sp/>DeleteObject(hbmMask);
+
+<sp/><sp/><sp/><sp/>return<sp/>hIcon;
+}
+
+void<sp/>HpSleep(int<sp/>ms)
+{
+<sp/><sp/><sp/><sp/>static<sp/>clock_t<sp/>oldclock<sp/>=<sp/>clock();<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>静态变量，记录上一次 tick
+<sp/>static<sp/>int<sp/>c<sp/>=<sp/>CLOCKS_PER_SEC<sp/>/<sp/>1000;
+
+<sp/>oldclock<sp/>+=<sp/>ms<sp/>*<sp/>c;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更新 tick
+
+<sp/><sp/><sp/><sp/>if<sp/>(clock()<sp/>&gt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>如果已经超时，无需延时
+<sp/><sp/><sp/><sp/><sp/><sp/>oldclock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(clock()<sp/>&lt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>延时
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>释放 CPU<sp/>控制权，降低 CPU<sp/>占用率
+//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更高精度、更高 CPU<sp/>占用率
+}
+
+bool<sp/>isInRect(int<sp/>x,<sp/>int<sp/>y,<sp/>RECT<sp/>rct)
+{
+<sp/><sp/><sp/><sp/>if<sp/>(rct.left<sp/>&gt;<sp/>rct.right)<sp/><sp/><sp/><sp/>std::swap(rct.left,<sp/>rct.right);
+<sp/><sp/><sp/>if<sp/>(rct.top<sp/>&gt;<sp/>rct.bottom)<sp/><sp/><sp/><sp/>std::swap(rct.top,<sp/>rct.bottom);
+<sp/><sp/><sp/>return<sp/>x<sp/>&gt;=<sp/>rct.left<sp/>&amp;&amp;<sp/>x<sp/>&lt;=<sp/>rct.right<sp/>&amp;&amp;<sp/>y<sp/>&gt;=<sp/>rct.top<sp/>&amp;&amp;<sp/>y<sp/>&lt;=<sp/>rct.bottom;
+}
+
+UINT<sp/>GetExMessageType(ExMessage<sp/>msg)
+{
+<sp/><sp/><sp/>switch<sp/>(msg.message)
+<sp/><sp/><sp/>{
+<sp/><sp/>case<sp/>WM_MOUSEMOVE:
+<sp/>case<sp/>WM_MOUSEWHEEL:
+<sp/><sp/><sp/><sp/>case<sp/>WM_LBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_LBUTTONUP:
+<sp/>case<sp/>WM_LBUTTONDBLCLK:
+<sp/>case<sp/>WM_MBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_MBUTTONUP:
+<sp/>case<sp/>WM_MBUTTONDBLCLK:
+<sp/>case<sp/>WM_RBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_RBUTTONUP:
+<sp/>case<sp/>WM_RBUTTONDBLCLK:
+<sp/><sp/><sp/><sp/><sp/>return<sp/>EM_MOUSE;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_KEYDOWN:
+<sp/><sp/><sp/>case<sp/>WM_KEYUP:
+<sp/>case<sp/>WM_SYSKEYDOWN:
+<sp/><sp/><sp/><sp/>case<sp/>WM_SYSKEYUP:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_KEY;
+<sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_CHAR:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_CHAR;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_ACTIVATE:
+<sp/><sp/>case<sp/>WM_MOVE:
+<sp/><sp/>case<sp/>WM_SIZE:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_WINDOW;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>default:
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>可以方便地处理<sp/>IMAGE<sp/>指针为空，即指向主绘图窗口的情况 void<sp/>GetImageSize(IMAGE*<sp/>pImg,<sp/>int&amp;<sp/>width,<sp/>int&amp;<sp/>height)
+{
+<sp/><sp/>//<sp/>普通<sp/>IMAGE<sp/>指针
+<sp/>if<sp/>(pImg)
+<sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>pImg-&gt;getwidth();
+<sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>pImg-&gt;getheight();
+<sp/><sp/><sp/><sp/>}
+
+<sp/>//<sp/>nullptr<sp/>对应绘图窗口
+<sp/><sp/><sp/>else
+<sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>IMAGE*<sp/>pOld<sp/>=<sp/>GetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>getwidth();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>getheight();
+<sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage(pOld);
+<sp/>}
+}
+
+DWORD*<sp/>ReverseAlpha(DWORD*<sp/>pBuf,<sp/>int<sp/>size)
+{
+<sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(pBuf[i]<sp/>&amp;<sp/>0xff000000)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/><sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>|=<sp/>0xff000000;
+<sp/>return<sp/>pBuf;
+}
+
+HBITMAP<sp/>Image2Bitmap(IMAGE*<sp/>img,<sp/>bool<sp/>enable_alpha)
+{
+<sp/><sp/>//<sp/>测试结论
+<sp/><sp/><sp/><sp/>//<sp/>若图像中有任何像素 alpha<sp/>不为<sp/>0，则启用<sp/>alpha
+<sp/><sp/><sp/><sp/>//<sp/>若图像<sp/>alpha<sp/>全部为<sp/>0，则表示完全不透明
+
+<sp/><sp/><sp/>DWORD*<sp/>pBuf<sp/>=<sp/>GetImageBuffer(img);
+<sp/>if<sp/>(!enable_alpha)
+<sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>img-&gt;getwidth()<sp/>*<sp/>img-&gt;getheight();<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/>return<sp/>CreateBitmap(img-&gt;getwidth(),<sp/>img-&gt;getheight(),<sp/>1,<sp/>32,<sp/>pBuf);
+}
+
+HICON<sp/>Bitmap2Icon(HBITMAP<sp/>hBmp)
+{
+<sp/><sp/>BITMAP<sp/>bmp<sp/>=<sp/>{};
+<sp/><sp/><sp/>GetObject(hBmp,<sp/>sizeof(BITMAP),<sp/>&amp;bmp);
+
+<sp/><sp/><sp/><sp/>HBITMAP<sp/>hbmMask<sp/>=<sp/>CreateCompatibleBitmap(GetDC(nullptr),<sp/>bmp.bmWidth,<sp/>bmp.bmHeight);
+
+<sp/><sp/>ICONINFO<sp/>ii<sp/>=<sp/>{<sp/>0<sp/>};
+<sp/><sp/><sp/>ii.fIcon<sp/>=<sp/>TRUE;
+<sp/><sp/><sp/>ii.hbmColor<sp/>=<sp/>hBmp;
+<sp/><sp/><sp/><sp/>ii.hbmMask<sp/>=<sp/>hbmMask;
+
+<sp/>HICON<sp/>hIcon<sp/>=<sp/>CreateIconIndirect(&amp;ii);
+<sp/>DeleteObject(hbmMask);
+
+<sp/><sp/><sp/><sp/>return<sp/>hIcon;
+}
+
+void<sp/>HpSleep(int<sp/>ms)
+{
+<sp/><sp/><sp/><sp/>static<sp/>clock_t<sp/>oldclock<sp/>=<sp/>clock();<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>静态变量，记录上一次 tick
+<sp/>static<sp/>int<sp/>c<sp/>=<sp/>CLOCKS_PER_SEC<sp/>/<sp/>1000;
+
+<sp/>oldclock<sp/>+=<sp/>ms<sp/>*<sp/>c;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更新 tick
+
+<sp/><sp/><sp/><sp/>if<sp/>(clock()<sp/>&gt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>如果已经超时，无需延时
+<sp/><sp/><sp/><sp/><sp/><sp/>oldclock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(clock()<sp/>&lt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>延时
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>释放 CPU<sp/>控制权，降低 CPU<sp/>占用率
+//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更高精度、更高 CPU<sp/>占用率
+}
+
+bool<sp/>isInRect(int<sp/>x,<sp/>int<sp/>y,<sp/>RECT<sp/>rct)
+{
+<sp/><sp/><sp/><sp/>if<sp/>(rct.left<sp/>&gt;<sp/>rct.right)<sp/><sp/><sp/><sp/>std::swap(rct.left,<sp/>rct.right);
+<sp/><sp/><sp/>if<sp/>(rct.top<sp/>&gt;<sp/>rct.bottom)<sp/><sp/><sp/><sp/>std::swap(rct.top,<sp/>rct.bottom);
+<sp/><sp/><sp/>return<sp/>x<sp/>&gt;=<sp/>rct.left<sp/>&amp;&amp;<sp/>x<sp/>&lt;=<sp/>rct.right<sp/>&amp;&amp;<sp/>y<sp/>&gt;=<sp/>rct.top<sp/>&amp;&amp;<sp/>y<sp/>&lt;=<sp/>rct.bottom;
+}
+
+UINT<sp/>GetExMessageType(ExMessage<sp/>msg)
+{
+<sp/><sp/><sp/>switch<sp/>(msg.message)
+<sp/><sp/><sp/>{
+<sp/><sp/>case<sp/>WM_MOUSEMOVE:
+<sp/>case<sp/>WM_MOUSEWHEEL:
+<sp/><sp/><sp/><sp/>case<sp/>WM_LBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_LBUTTONUP:
+<sp/>case<sp/>WM_LBUTTONDBLCLK:
+<sp/>case<sp/>WM_MBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_MBUTTONUP:
+<sp/>case<sp/>WM_MBUTTONDBLCLK:
+<sp/>case<sp/>WM_RBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_RBUTTONUP:
+<sp/>case<sp/>WM_RBUTTONDBLCLK:
+<sp/><sp/><sp/><sp/><sp/>return<sp/>EM_MOUSE;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_KEYDOWN:
+<sp/><sp/><sp/>case<sp/>WM_KEYUP:
+<sp/>case<sp/>WM_SYSKEYDOWN:
+<sp/><sp/><sp/><sp/>case<sp/>WM_SYSKEYUP:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_KEY;
+<sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_CHAR:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_CHAR;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_ACTIVATE:
+<sp/><sp/>case<sp/>WM_MOVE:
+<sp/><sp/>case<sp/>WM_SIZE:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_WINDOW;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>default:
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="_hi_func_8h_1ac7dee424cf4ab044e4f9dc42a8f62ab0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_hi_func_8cpp_1ac7dee424cf4ab044e4f9dc42a8f62ab0" kindref="member">GetImageSize</ref>(IMAGE*<sp/>pImg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>height)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>普通<sp/>IMAGE<sp/>指针</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pImg)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>pImg-&gt;getwidth();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>pImg-&gt;getheight();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>nullptr<sp/>对应绘图窗口 <sp/><sp/><sp/>else
+<sp/><sp/><sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>IMAGE*<sp/>pOld<sp/>=<sp/>GetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage();
+<sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>getwidth();
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>getheight();
+<sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage(pOld);
+<sp/>}
+}
+
+DWORD*<sp/>ReverseAlpha(DWORD*<sp/>pBuf,<sp/>int<sp/>size)
+{
+<sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/>if<sp/>(pBuf[i]<sp/>&amp;<sp/>0xff000000)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/><sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>|=<sp/>0xff000000;
+<sp/>return<sp/>pBuf;
+}
+
+HBITMAP<sp/>Image2Bitmap(IMAGE*<sp/>img,<sp/>bool<sp/>enable_alpha)
+{
+<sp/><sp/>//<sp/>测试结论
+<sp/><sp/><sp/><sp/>//<sp/>若图像中有任何像素 alpha<sp/>不为<sp/>0，则启用<sp/>alpha
+<sp/><sp/><sp/><sp/>//<sp/>若图像<sp/>alpha<sp/>全部为<sp/>0，则表示完全不透明
+
+<sp/><sp/><sp/>DWORD*<sp/>pBuf<sp/>=<sp/>GetImageBuffer(img);
+<sp/>if<sp/>(!enable_alpha)
+<sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>img-&gt;getwidth()<sp/>*<sp/>img-&gt;getheight();<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/>return<sp/>CreateBitmap(img-&gt;getwidth(),<sp/>img-&gt;getheight(),<sp/>1,<sp/>32,<sp/>pBuf);
+}
+
+HICON<sp/>Bitmap2Icon(HBITMAP<sp/>hBmp)
+{
+<sp/><sp/>BITMAP<sp/>bmp<sp/>=<sp/>{};
+<sp/><sp/><sp/>GetObject(hBmp,<sp/>sizeof(BITMAP),<sp/>&amp;bmp);
+
+<sp/><sp/><sp/><sp/>HBITMAP<sp/>hbmMask<sp/>=<sp/>CreateCompatibleBitmap(GetDC(nullptr),<sp/>bmp.bmWidth,<sp/>bmp.bmHeight);
+
+<sp/><sp/>ICONINFO<sp/>ii<sp/>=<sp/>{<sp/>0<sp/>};
+<sp/><sp/><sp/>ii.fIcon<sp/>=<sp/>TRUE;
+<sp/><sp/><sp/>ii.hbmColor<sp/>=<sp/>hBmp;
+<sp/><sp/><sp/><sp/>ii.hbmMask<sp/>=<sp/>hbmMask;
+
+<sp/>HICON<sp/>hIcon<sp/>=<sp/>CreateIconIndirect(&amp;ii);
+<sp/>DeleteObject(hbmMask);
+
+<sp/><sp/><sp/><sp/>return<sp/>hIcon;
+}
+
+void<sp/>HpSleep(int<sp/>ms)
+{
+<sp/><sp/><sp/><sp/>static<sp/>clock_t<sp/>oldclock<sp/>=<sp/>clock();<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>静态变量，记录上一次 tick
+<sp/>static<sp/>int<sp/>c<sp/>=<sp/>CLOCKS_PER_SEC<sp/>/<sp/>1000;
+
+<sp/>oldclock<sp/>+=<sp/>ms<sp/>*<sp/>c;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更新 tick
+
+<sp/><sp/><sp/><sp/>if<sp/>(clock()<sp/>&gt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>如果已经超时，无需延时
+<sp/><sp/><sp/><sp/><sp/><sp/>oldclock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(clock()<sp/>&lt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>延时
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>释放 CPU<sp/>控制权，降低 CPU<sp/>占用率
+//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更高精度、更高 CPU<sp/>占用率
+}
+
+bool<sp/>isInRect(int<sp/>x,<sp/>int<sp/>y,<sp/>RECT<sp/>rct)
+{
+<sp/><sp/><sp/><sp/>if<sp/>(rct.left<sp/>&gt;<sp/>rct.right)<sp/><sp/><sp/><sp/>std::swap(rct.left,<sp/>rct.right);
+<sp/><sp/><sp/>if<sp/>(rct.top<sp/>&gt;<sp/>rct.bottom)<sp/><sp/><sp/><sp/>std::swap(rct.top,<sp/>rct.bottom);
+<sp/><sp/><sp/>return<sp/>x<sp/>&gt;=<sp/>rct.left<sp/>&amp;&amp;<sp/>x<sp/>&lt;=<sp/>rct.right<sp/>&amp;&amp;<sp/>y<sp/>&gt;=<sp/>rct.top<sp/>&amp;&amp;<sp/>y<sp/>&lt;=<sp/>rct.bottom;
+}
+
+UINT<sp/>GetExMessageType(ExMessage<sp/>msg)
+{
+<sp/><sp/><sp/>switch<sp/>(msg.message)
+<sp/><sp/><sp/>{
+<sp/><sp/>case<sp/>WM_MOUSEMOVE:
+<sp/>case<sp/>WM_MOUSEWHEEL:
+<sp/><sp/><sp/><sp/>case<sp/>WM_LBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_LBUTTONUP:
+<sp/>case<sp/>WM_LBUTTONDBLCLK:
+<sp/>case<sp/>WM_MBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_MBUTTONUP:
+<sp/>case<sp/>WM_MBUTTONDBLCLK:
+<sp/>case<sp/>WM_RBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_RBUTTONUP:
+<sp/>case<sp/>WM_RBUTTONDBLCLK:
+<sp/><sp/><sp/><sp/><sp/>return<sp/>EM_MOUSE;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_KEYDOWN:
+<sp/><sp/><sp/>case<sp/>WM_KEYUP:
+<sp/>case<sp/>WM_SYSKEYDOWN:
+<sp/><sp/><sp/><sp/>case<sp/>WM_SYSKEYUP:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_KEY;
+<sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_CHAR:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_CHAR;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_ACTIVATE:
+<sp/><sp/>case<sp/>WM_MOVE:
+<sp/><sp/>case<sp/>WM_SIZE:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_WINDOW;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>default:
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IMAGE*<sp/>pOld<sp/>=<sp/>GetWorkingImage();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>getwidth();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>getheight();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWorkingImage(pOld);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="_hi_func_8h_1a4a99ff5c68bcf5b9aa1ace836ebb589a" refkind="member"><highlight class="normal">DWORD*<sp/><ref refid="_hi_func_8cpp_1a4a99ff5c68bcf5b9aa1ace836ebb589a" kindref="member">ReverseAlpha</ref>(DWORD*<sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>[i]<sp/>&amp;<sp/>0xff000000)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>[i]<sp/>&amp;=<sp/>0x00ffffff;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>[i]<sp/>|=<sp/>0xff000000;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_hi_func_8h_1a6e1ffaed1db4fff865e2cd8310d1fe5d" refkind="member"><highlight class="normal">HBITMAP<sp/><ref refid="_hi_func_8cpp_1a6e1ffaed1db4fff865e2cd8310d1fe5d" kindref="member">Image2Bitmap</ref>(IMAGE*<sp/>img,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable_alpha)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>测试结论 <sp/><sp/><sp/><sp/>//<sp/>若图像中有任何像素 alpha<sp/>不为<sp/>0，则启用<sp/>alpha
+<sp/><sp/><sp/><sp/>//<sp/>若图像<sp/>alpha<sp/>全部为<sp/>0，则表示完全不透明
+
+<sp/><sp/><sp/>DWORD*<sp/>pBuf<sp/>=<sp/>GetImageBuffer(img);
+<sp/>if<sp/>(!enable_alpha)
+<sp/><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>img-&gt;getwidth()<sp/>*<sp/>img-&gt;getheight();<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>&amp;=<sp/>0x00ffffff;
+<sp/>return<sp/>CreateBitmap(img-&gt;getwidth(),<sp/>img-&gt;getheight(),<sp/>1,<sp/>32,<sp/>pBuf);
+}
+
+HICON<sp/>Bitmap2Icon(HBITMAP<sp/>hBmp)
+{
+<sp/><sp/>BITMAP<sp/>bmp<sp/>=<sp/>{};
+<sp/><sp/><sp/>GetObject(hBmp,<sp/>sizeof(BITMAP),<sp/>&amp;bmp);
+
+<sp/><sp/><sp/><sp/>HBITMAP<sp/>hbmMask<sp/>=<sp/>CreateCompatibleBitmap(GetDC(nullptr),<sp/>bmp.bmWidth,<sp/>bmp.bmHeight);
+
+<sp/><sp/>ICONINFO<sp/>ii<sp/>=<sp/>{<sp/>0<sp/>};
+<sp/><sp/><sp/>ii.fIcon<sp/>=<sp/>TRUE;
+<sp/><sp/><sp/>ii.hbmColor<sp/>=<sp/>hBmp;
+<sp/><sp/><sp/><sp/>ii.hbmMask<sp/>=<sp/>hbmMask;
+
+<sp/>HICON<sp/>hIcon<sp/>=<sp/>CreateIconIndirect(&amp;ii);
+<sp/>DeleteObject(hbmMask);
+
+<sp/><sp/><sp/><sp/>return<sp/>hIcon;
+}
+
+void<sp/>HpSleep(int<sp/>ms)
+{
+<sp/><sp/><sp/><sp/>static<sp/>clock_t<sp/>oldclock<sp/>=<sp/>clock();<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>静态变量，记录上一次 tick
+<sp/>static<sp/>int<sp/>c<sp/>=<sp/>CLOCKS_PER_SEC<sp/>/<sp/>1000;
+
+<sp/>oldclock<sp/>+=<sp/>ms<sp/>*<sp/>c;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更新 tick
+
+<sp/><sp/><sp/><sp/>if<sp/>(clock()<sp/>&gt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>如果已经超时，无需延时
+<sp/><sp/><sp/><sp/><sp/><sp/>oldclock<sp/>=<sp/>clock();
+<sp/><sp/><sp/><sp/>else
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(clock()<sp/>&lt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>延时
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>释放 CPU<sp/>控制权，降低 CPU<sp/>占用率
+//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更高精度、更高 CPU<sp/>占用率
+}
+
+bool<sp/>isInRect(int<sp/>x,<sp/>int<sp/>y,<sp/>RECT<sp/>rct)
+{
+<sp/><sp/><sp/><sp/>if<sp/>(rct.left<sp/>&gt;<sp/>rct.right)<sp/><sp/><sp/><sp/>std::swap(rct.left,<sp/>rct.right);
+<sp/><sp/><sp/>if<sp/>(rct.top<sp/>&gt;<sp/>rct.bottom)<sp/><sp/><sp/><sp/>std::swap(rct.top,<sp/>rct.bottom);
+<sp/><sp/><sp/>return<sp/>x<sp/>&gt;=<sp/>rct.left<sp/>&amp;&amp;<sp/>x<sp/>&lt;=<sp/>rct.right<sp/>&amp;&amp;<sp/>y<sp/>&gt;=<sp/>rct.top<sp/>&amp;&amp;<sp/>y<sp/>&lt;=<sp/>rct.bottom;
+}
+
+UINT<sp/>GetExMessageType(ExMessage<sp/>msg)
+{
+<sp/><sp/><sp/>switch<sp/>(msg.message)
+<sp/><sp/><sp/>{
+<sp/><sp/>case<sp/>WM_MOUSEMOVE:
+<sp/>case<sp/>WM_MOUSEWHEEL:
+<sp/><sp/><sp/><sp/>case<sp/>WM_LBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_LBUTTONUP:
+<sp/>case<sp/>WM_LBUTTONDBLCLK:
+<sp/>case<sp/>WM_MBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_MBUTTONUP:
+<sp/>case<sp/>WM_MBUTTONDBLCLK:
+<sp/>case<sp/>WM_RBUTTONDOWN:
+<sp/><sp/><sp/>case<sp/>WM_RBUTTONUP:
+<sp/>case<sp/>WM_RBUTTONDBLCLK:
+<sp/><sp/><sp/><sp/><sp/>return<sp/>EM_MOUSE;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_KEYDOWN:
+<sp/><sp/><sp/>case<sp/>WM_KEYUP:
+<sp/>case<sp/>WM_SYSKEYDOWN:
+<sp/><sp/><sp/><sp/>case<sp/>WM_SYSKEYUP:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_KEY;
+<sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_CHAR:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_CHAR;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>case<sp/>WM_ACTIVATE:
+<sp/><sp/>case<sp/>WM_MOVE:
+<sp/><sp/>case<sp/>WM_SIZE:
+<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>EM_WINDOW;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>default:
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;
+<sp/><sp/><sp/><sp/><sp/><sp/>break;
+<sp/>}
+}
+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>若图像中有任何像素 alpha<sp/>不为<sp/>0，则启用<sp/>alpha</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>若图像<sp/>alpha<sp/>全部为<sp/>0，则表示完全不透明</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>DWORD*<sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref><sp/>=<sp/>GetImageBuffer(img);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!enable_alpha)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>img-&gt;getwidth()<sp/>*<sp/>img-&gt;getheight();<sp/>i++)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>[i]<sp/>&amp;=<sp/>0x00ffffff;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateBitmap(img-&gt;getwidth(),<sp/>img-&gt;getheight(),<sp/>1,<sp/>32,<sp/><ref refid="_hi_icon_8cpp_1a92b53d2b80fae89ced937e9da8792c14" kindref="member">pBuf</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_hi_func_8h_1a0afdc4e822f973b53342d1d6cb6a5d60" refkind="member"><highlight class="normal">HICON<sp/><ref refid="_hi_func_8cpp_1a0afdc4e822f973b53342d1d6cb6a5d60" kindref="member">Bitmap2Icon</ref>(HBITMAP<sp/>hBmp)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>BITMAP<sp/>bmp<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>GetObject(hBmp,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(BITMAP),<sp/>&amp;bmp);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>HBITMAP<sp/>hbmMask<sp/>=<sp/>CreateCompatibleBitmap(GetDC(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">),<sp/>bmp.bmWidth,<sp/>bmp.bmHeight);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>ICONINFO<sp/>ii<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>ii.fIcon<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>ii.hbmColor<sp/>=<sp/>hBmp;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>ii.hbmMask<sp/>=<sp/>hbmMask;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>HICON<sp/>hIcon<sp/>=<sp/>CreateIconIndirect(&amp;ii);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>DeleteObject(hbmMask);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hIcon;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_hi_func_8h_1af1adf00f3f67186ea614843c7a914d2d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_hi_func_8cpp_1af1adf00f3f67186ea614843c7a914d2d" kindref="member">HpSleep</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ms)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>clock_t<sp/>oldclock<sp/>=<sp/>clock();<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>静态变量，记录上一次 tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>CLOCKS_PER_SEC<sp/>/<sp/>1000;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>oldclock<sp/>+=<sp/>ms<sp/>*<sp/>c;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>更新 tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clock()<sp/>&gt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>如果已经超时，无需延时</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldclock<sp/>=<sp/>clock();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(clock()<sp/>&lt;<sp/>oldclock)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>延时</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>释放 CPU<sp/>控制权，降低 CPU<sp/>占用率</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>更高精度、更高 CPU<sp/>占用率</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_hi_func_8h_1a297b4dfbb9a45066dbf15547b85544a3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_hi_func_8cpp_1a297b4dfbb9a45066dbf15547b85544a3" kindref="member">isInRect</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>RECT<sp/>rct)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rct.left<sp/>&gt;<sp/>rct.right)<sp/><sp/><sp/><sp/>std::swap(rct.left,<sp/>rct.right);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rct.top<sp/>&gt;<sp/>rct.bottom)<sp/><sp/><sp/><sp/>std::swap(rct.top,<sp/>rct.bottom);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>&gt;=<sp/>rct.left<sp/>&amp;&amp;<sp/>x<sp/>&lt;=<sp/>rct.right<sp/>&amp;&amp;<sp/>y<sp/>&gt;=<sp/>rct.top<sp/>&amp;&amp;<sp/>y<sp/>&lt;=<sp/>rct.bottom;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_hi_func_8h_1a418329622e6caf9d65af338e0c831925" refkind="member"><highlight class="normal">UINT<sp/><ref refid="_hi_func_8cpp_1a418329622e6caf9d65af338e0c831925" kindref="member">GetExMessageType</ref>(ExMessage<sp/>msg)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(msg.message)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MOUSEMOVE:</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MOUSEWHEEL:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_LBUTTONDOWN:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_LBUTTONUP:</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_LBUTTONDBLCLK:</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MBUTTONDOWN:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MBUTTONUP:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MBUTTONDBLCLK:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_RBUTTONDOWN:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_RBUTTONUP:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_RBUTTONDBLCLK:</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EM_MOUSE;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_KEYDOWN:</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_KEYUP:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_SYSKEYDOWN:</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_SYSKEYUP:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EM_KEY;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_CHAR:</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EM_CHAR;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_ACTIVATE:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_MOVE:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WM_SIZE:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EM_WINDOW;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_button_8h" kind="file" language="C++">
+    <compoundname>Button.h</compoundname>
+    <includes refid="_control_base_8h" local="yes">ControlBase.h</includes>
+    <includedby refid="_button_8cpp" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp</includedby>
+    <includedby refid="_hi_g_u_i_8h" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/HiGUI.h</includedby>
+    <includedby refid="_scroll_bar_8h" local="yes">E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>list</label>
+      </node>
+      <node id="6">
+        <label>graphics.h</label>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>WinUser.h</label>
+      </node>
+      <node id="3">
+        <label>../HiContainer.h</label>
+        <link refid="_hi_container_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HiDrawingProperty.h</label>
+        <link refid="_hi_drawing_property_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+      <node id="7">
+        <label>../HiFunc.h</label>
+        <link refid="_hi_func_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../HiCanvas.h</label>
+        <link refid="_hi_canvas_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../HiMacro.h</label>
+        <link refid="_hi_macro_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ControlBase.h</label>
+        <link refid="_control_base_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h</label>
+        <link refid="_scroll_bar_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX.h</label>
+        <link refid="_hi_easy_x_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/HiGUI.h</label>
+        <link refid="_hi_g_u_i_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.cpp</label>
+        <link refid="_button_8cpp"/>
+      </node>
+      <node id="1">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp</label>
+        <link refid="_scroll_bar_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_hi_easy_x_1_1_button" prot="public">HiEasyX::Button</innerclass>
+    <innernamespace refid="namespace_hi_easy_x">HiEasyX</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Button.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>HiGUI<sp/>控件分支：按钮控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_control_base_8h" kindref="compound">ControlBase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_hi_easy_x" kindref="compound">HiEasyX</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>按钮控件</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_hi_easy_x_1_1_button" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_control_base" kindref="compound">ControlBase</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_hi_easy_x_1_1_button_1a966aad811bb86b1d67bc5a99798fbe19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1a966aad811bb86b1d67bc5a99798fbe19" kindref="member">m_bEnableClassicStyle</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>是否使用经典样式</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1a09e5d498cacaa5bcc922b26ba1fe9f93" kindref="member">InitColor</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>按钮颜色设置（现代样式）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_hi_easy_x_1_1_button_1af3377ffb80980c89c62c8357fdbd42e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1af3377ffb80980c89c62c8357fdbd42e2" kindref="member">m_cBorder_Normal</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa686c9886dae71099b9e3d527ec953f68" kindref="member">MODERN_BORDER_GRAY</ref>;</highlight></codeline>
+<codeline lineno="26" refid="class_hi_easy_x_1_1_button_1af9afc7d76febeff0b0bdcced6e113b42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1af9afc7d76febeff0b0bdcced6e113b42" kindref="member">m_cBackground_Normal</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa63616c786a8a9240c19852684cdd4403" kindref="member">MODERN_FILL_GRAY</ref>;</highlight></codeline>
+<codeline lineno="27" refid="class_hi_easy_x_1_1_button_1ace15381d0142fac92aa94b9e37b5a13a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1ace15381d0142fac92aa94b9e37b5a13a" kindref="member">m_cBorder_Hovered</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa8cc811a079ad9c0b08c4f86ab1f7ef83" kindref="member">MODERN_BORDER_BLUE</ref>;</highlight></codeline>
+<codeline lineno="28" refid="class_hi_easy_x_1_1_button_1ad4b4e9fae1a429d8ed1b3a239330ad4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1ad4b4e9fae1a429d8ed1b3a239330ad4f" kindref="member">m_cBackground_Hovered</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa2b5d9aa5c55b206b1d567bbe7075400c" kindref="member">MODERN_FILL_BLUE</ref>;</highlight></codeline>
+<codeline lineno="29" refid="class_hi_easy_x_1_1_button_1a99df9c16043ea02c55a609c193b26c0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a99df9c16043ea02c55a609c193b26c0d" kindref="member">m_cBorder_Pressed</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa0a70e51a2ff201ec52c7fa81990f1a53" kindref="member">MODERN_BORDER_PRESSED_BLUE</ref>;</highlight></codeline>
+<codeline lineno="30" refid="class_hi_easy_x_1_1_button_1a340e048c7dfdf505b9f26878064490d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a340e048c7dfdf505b9f26878064490d4" kindref="member">m_cBackground_Pressed</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aac4781ed71a7008d0468720b8ce6b1cd1" kindref="member">MODERN_FILL_PRESSED_BLUE</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_hi_easy_x_1_1_button_1ab0850bf9c3ee76316d05562773fdf0a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1ab0850bf9c3ee76316d05562773fdf0a8" kindref="member">m_cText_Disabled</ref><sp/>=<sp/>LIGHTGRAY;</highlight></codeline>
+<codeline lineno="33" refid="class_hi_easy_x_1_1_button_1a7f46062e3336c081a47a7718e0cad908" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a7f46062e3336c081a47a7718e0cad908" kindref="member">m_cBorder_Disabled</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>;</highlight></codeline>
+<codeline lineno="34" refid="class_hi_easy_x_1_1_button_1a906bd90e74b4fca3af7802a5f97638bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a906bd90e74b4fca3af7802a5f97638bc" kindref="member">m_cBackground_Disabled</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_hi_easy_x_1_1_button_1a829d2a3418bdcdfd4475f38cec353c36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a829d2a3418bdcdfd4475f38cec353c36" kindref="member">m_cClassicNormalBorder3D</ref><sp/>=<sp/><ref refid="_hi_macro_8h_1abe7480432985b9d42c700776b78a3e1aa3fb6c4ad00f4ad98553e01229d1803ac" kindref="member">GRAY</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>未按下时的 3D<sp/>边框颜色（经典样式）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_hi_easy_x_1_1_button_1a856eb5b821e0e1e84a75b0357cc83092" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COLORREF<sp/><ref refid="class_hi_easy_x_1_1_button_1a856eb5b821e0e1e84a75b0357cc83092" kindref="member">m_cClassicPressedBorder3D</ref><sp/>=<sp/>LIGHTGRAY;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>按下时的 3D<sp/>边框颜色（经典样式）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_button_1a633fe3b5482709b92df800671b38ff65" kindref="member">Button</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hi_easy_x_1_1_button_1a633fe3b5482709b92df800671b38ff65" kindref="member">Button</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/>std::wstring<sp/>wstrText<sp/>=<sp/>L</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1aefe32680d115e7937e15ae3f6ddd9b83" kindref="member">SetEnable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1a1a18658efeaebd833f18f4397c168b95" kindref="member">EnableClassicStyle</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1a195a1c4c28c1bc4efa00d43fc76d4d1f" kindref="member">UpdateMessage</ref>(ExMessage<sp/>msg)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hi_easy_x_1_1_button_1ad8ee2b9caafd1b1ac59f1d401181edc7" kindref="member">Draw</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>draw_child<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/Button.h"/>
+  </compounddef>
+</doxygen>

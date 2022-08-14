@@ -1,0 +1,1067 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_hi_easy_x_1_1_scroll_bar" kind="class" language="C++" prot="public">
+    <compoundname>HiEasyX::ScrollBar</compoundname>
+    <basecompoundref refid="class_hi_easy_x_1_1_control_base" prot="public" virt="non-virtual">HiEasyX::ControlBase</basecompoundref>
+    <includes refid="_scroll_bar_8h" local="no">ScrollBar.h</includes>
+    <innerclass refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info" prot="public">HiEasyX::ScrollBar::ScrollBarInfo</innerclass>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a5494c374438756bc787c1ea9d513966b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nBtnHeight</definition>
+        <argsstring></argsstring>
+        <name>m_nBtnHeight</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="33" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a41dfc762e642bac48b61d94dd6ffc94c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nBtnWidth</definition>
+        <argsstring></argsstring>
+        <name>m_nBtnWidth</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="34" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1adae16869df37041b3666ea61242578c8" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::m_bHorizontal</definition>
+        <argsstring></argsstring>
+        <name>m_bHorizontal</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="36" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1adbda470bf4235592bdfd4313ff30c3df" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nDrawInterval</definition>
+        <argsstring></argsstring>
+        <name>m_nDrawInterval</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="38" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a23f91b05982f82cf336a3e6bf603ef9b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref></type>
+        <definition>Button HiEasyX::ScrollBar::m_btnTop</definition>
+        <argsstring></argsstring>
+        <name>m_btnTop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="41" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a3bc1b7044bf0a7978962f4d309ddee5e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref></type>
+        <definition>Button HiEasyX::ScrollBar::m_btnUp</definition>
+        <argsstring></argsstring>
+        <name>m_btnUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="42" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1ac6e344b7e690b6673e5e75f777824fcc" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref></type>
+        <definition>Button HiEasyX::ScrollBar::m_btnDown</definition>
+        <argsstring></argsstring>
+        <name>m_btnDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="43" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a6b7e32c5fe82714f433b9034693e8ba7" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref></type>
+        <definition>Button HiEasyX::ScrollBar::m_btnBottom</definition>
+        <argsstring></argsstring>
+        <name>m_btnBottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="44" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1abe6fe4b1940f6919f6bc2964d0f61b52" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_button" kindref="compound">Button</ref></type>
+        <definition>Button HiEasyX::ScrollBar::m_btnDrag</definition>
+        <argsstring></argsstring>
+        <name>m_btnDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="45" column="8" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a5c8ac3bef60e28526be5314a01024ada" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_hi_easy_x_1_1_mouse_drag" kindref="compound">MouseDrag</ref></type>
+        <definition>MouseDrag HiEasyX::ScrollBar::m_MouseDrag</definition>
+        <argsstring></argsstring>
+        <name>m_MouseDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="46" column="11" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a162d5a0d668bb095fffa10b9bfa45989" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::m_bDragging</definition>
+        <argsstring></argsstring>
+        <name>m_bDragging</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="47" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1aaf957e1158ac61af16d328a2f221cf75" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nSliderSpeed</definition>
+        <argsstring></argsstring>
+        <name>m_nSliderSpeed</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="48" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1ade3e15910d03cb0fb72584818262b03e" prot="protected" static="no" mutable="no">
+        <type>clock_t</type>
+        <definition>clock_t HiEasyX::ScrollBar::m_tPressed</definition>
+        <argsstring></argsstring>
+        <name>m_tPressed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="49" column="9" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a48243ad11257b9622550f194ed14b040" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HiEasyX::ScrollBar::m_fPos</definition>
+        <argsstring></argsstring>
+        <name>m_fPos</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="51" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a64bc90f52af04e6409bb0d3eb1714edd" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nLen</definition>
+        <argsstring></argsstring>
+        <name>m_nLen</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="52" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1af97f294df770c43b0234ef4244e22698" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HiEasyX::ScrollBar::m_fPosRatio</definition>
+        <argsstring></argsstring>
+        <name>m_fPosRatio</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="53" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a02f5d311e36594ec22dd2a2ccac8260a" prot="protected" static="no" mutable="no">
+        <type><ref refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info" kindref="compound">ScrollBarInfo</ref></type>
+        <definition>ScrollBarInfo HiEasyX::ScrollBar::m_info</definition>
+        <argsstring></argsstring>
+        <name>m_info</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="55" column="15" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a94d36d5dc8877a596b20d8fd99b6acc9" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::m_nViewLen</definition>
+        <argsstring></argsstring>
+        <name>m_nViewLen</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="57" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1ae77a1db18649a83f4a01fe4c7f09e078" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HiEasyX::ScrollBar::m_fViewRatio</definition>
+        <argsstring></argsstring>
+        <name>m_fViewRatio</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="58" column="7" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a5c734bb7eee56efaa47ea99f5c326b24" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::m_bSliderPosChanged</definition>
+        <argsstring></argsstring>
+        <name>m_bSliderPosChanged</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="60" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1aea8bf401df2fff62d926c79c7cf84568" prot="protected" static="no" mutable="no">
+        <type>RECT</type>
+        <definition>RECT HiEasyX::ScrollBar::m_rctOnWheel</definition>
+        <argsstring></argsstring>
+        <name>m_rctOnWheel</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="62" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hi_easy_x_1_1_scroll_bar_1a5a097f29f356cbafab76d629c62ae8e1" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::m_bSetOnWheelRct</definition>
+        <argsstring></argsstring>
+        <name>m_bSetOnWheelRct</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="63" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1aa5a7ec2588e350858ed56bf2831c6971" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="66" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="54" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a633e119f07639b733d18e05ffb9f87c2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::OnNormalButtonMsg</definition>
+        <argsstring>()</argsstring>
+        <name>OnNormalButtonMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="72" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="24" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ad4b86cbe6e2edd43246c76479105643d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdateSliderRect</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateSliderRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="75" column="14" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="68" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a06d851bbbda5f14786549b02bef46b51" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdatePosRatio</definition>
+        <argsstring>()</argsstring>
+        <name>UpdatePosRatio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="78" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="82" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a80865edc4bb6e14204055c97afcea325" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdateViewRatio</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateViewRatio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="81" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="94" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a7d140d0508b11ddd99c1d51cc757e573" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdateScrollBarInfo</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateScrollBarInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="84" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="107" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ab463ca59afa189d331f1a95825fbf083" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::OnSpecialButtonMsg</definition>
+        <argsstring>(void *pThis, ControlBase *pCtrl, int msgid, ExMessage msg)</argsstring>
+        <name>OnSpecialButtonMsg</name>
+        <param>
+          <type>void *</type>
+          <declname>pThis</declname>
+        </param>
+        <param>
+          <type><ref refid="class_hi_easy_x_1_1_control_base" kindref="compound">ControlBase</ref> *</type>
+          <declname>pCtrl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msgid</declname>
+        </param>
+        <param>
+          <type>ExMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="69" column="13" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="5" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a73600745b8b71a680365ecb2f32ba181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ScrollBar::ScrollBar</definition>
+        <argsstring>()</argsstring>
+        <name>ScrollBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="88" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a6a3c85c603f9a544bb8f4bd4e2b491c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HiEasyX::ScrollBar::ScrollBar</definition>
+        <argsstring>(int x, int y, int w, int h, int len, int pos, bool bHorizontal=false)</argsstring>
+        <name>ScrollBar</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bHorizontal</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="90" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="146" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a2b82c461ff89c4a8f29e2b7c18650f0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetButtonHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetButtonHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="92" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a33bf88b76e447a6b1704659d60e43bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetButtonHeight</definition>
+        <argsstring>(int h)</argsstring>
+        <name>SetButtonHeight</name>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="95" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="127" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a54d6c8b18f572eb3fccf9be6ff194963" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetButtonWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetButtonWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="97" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a0775d779625ae2433147179f2be59d66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetButtonWidth</definition>
+        <argsstring>(int w)</argsstring>
+        <name>SetButtonWidth</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="100" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ada3889208916c9a04183c52fdbcc12a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::isDragging</definition>
+        <argsstring>() const</argsstring>
+        <name>isDragging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="103" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a458d2d14e2d4f06681cee2119ca6f291" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetSliderLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSliderLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="106" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a98080f314d8f04564063b6469db3be86" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetSliderContentPos</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSliderContentPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="109" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a8f9e4b8f0c67d86c9edc153398804aa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetSliderContentPos</definition>
+        <argsstring>(float pos)</argsstring>
+        <name>SetSliderContentPos</name>
+        <param>
+          <type>float</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="112" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="155" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a1822514e21dcaba2ffda20e79ab0dc98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::MoveSlider</definition>
+        <argsstring>(float d)</argsstring>
+        <name>MoveSlider</name>
+        <param>
+          <type>float</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="115" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1aecb5546bfbd3096c6e14d9eea177224f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetContentLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetContentLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="118" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ae31dac3450a0c927be524f8fa94c7621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetContentLength</definition>
+        <argsstring>(int len)</argsstring>
+        <name>SetContentLength</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="121" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="178" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a85be49928569c3933f091781f6224740" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetViewLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="123" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ad5304ed42295e7105a56e1099c1f37a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetViewLength</definition>
+        <argsstring>(int len)</argsstring>
+        <name>SetViewLength</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="126" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="186" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1adf2d83d5154cda31fb7eb0f6bf7cbaf6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int HiEasyX::ScrollBar::GetSliderSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSliderSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="128" column="5" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a8475086ee53e0294b6b972e9445af3ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetSliderSpeed</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>SetSliderSpeed</name>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="131" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="193" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ad36113990a43a19226b75c9d53182d48" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::isHorizontal</definition>
+        <argsstring>() const</argsstring>
+        <name>isHorizontal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="133" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a18dad71c6c51565b1c92167f8f536b19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::EnableHorizontal</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>EnableHorizontal</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="136" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="370" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a73c62ef7794bb17da5ceb84f037ce97b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HiEasyX::ScrollBar::isSliderPosChanged</definition>
+        <argsstring>()</argsstring>
+        <name>isSliderPosChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="139" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="357" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ae1a9673851b1908ff80872f86e7da75e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>RECT</type>
+        <definition>RECT HiEasyX::ScrollBar::GetOnWheelRect</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOnWheelRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="142" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1a9fb3156cf34e99a6edc2cb84db7594af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::SetOnWheelRect</definition>
+        <argsstring>(RECT rct)</argsstring>
+        <name>SetOnWheelRect</name>
+        <param>
+          <type>RECT</type>
+          <declname>rct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="145" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="364" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ade529f6a1f17a7ebd55ea89d250c2742" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdateRect</definition>
+        <argsstring>(RECT rctOld) override</argsstring>
+        <name>UpdateRect</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1a82f6680093e218339da20daa750c6839">UpdateRect</reimplements>
+        <param>
+          <type>RECT</type>
+          <declname>rctOld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="147" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="198" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1acf7a3985b8391ad91226c5c2c17c3b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::UpdateMessage</definition>
+        <argsstring>(ExMessage msg) override</argsstring>
+        <name>UpdateMessage</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1ac50c2510107edcd0003ec609d896fb7a">UpdateMessage</reimplements>
+        <param>
+          <type>ExMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="149" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="222" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hi_easy_x_1_1_scroll_bar_1ae8cae5756a14d5996988bcb7dcddfe95" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HiEasyX::ScrollBar::Draw</definition>
+        <argsstring>(bool draw_child=true) override</argsstring>
+        <name>Draw</name>
+        <reimplements refid="class_hi_easy_x_1_1_control_base_1ac3a8b32c92d5a6e4a251fe0db5080796">Draw</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>draw_child</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="151" column="6" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.cpp" bodystart="272" bodyend="355"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="1">
+        <label>HiEasyX::ScrollBar</label>
+        <link refid="class_hi_easy_x_1_1_scroll_bar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HiEasyX::ControlBase</label>
+        <link refid="class_hi_easy_x_1_1_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>HiEasyX::Container</label>
+        <link refid="class_hi_easy_x_1_1_container"/>
+      </node>
+      <node id="1">
+        <label>HiEasyX::ScrollBar</label>
+        <link refid="class_hi_easy_x_1_1_scroll_bar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_btnDrag</edgelabel>
+          <edgelabel>m_btnUp</edgelabel>
+          <edgelabel>m_btnTop</edgelabel>
+          <edgelabel>m_btnBottom</edgelabel>
+          <edgelabel>m_btnDown</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_MouseDrag</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>HiEasyX::ScrollBar::ScrollBarInfo</label>
+        <link refid="struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info"/>
+      </node>
+      <node id="2">
+        <label>HiEasyX::ControlBase</label>
+        <link refid="class_hi_easy_x_1_1_control_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_canvas</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_pParent</edgelabel>
+          <edgelabel>m_funcMessageProc_Class</edgelabel>
+          <edgelabel>m_funcMessageProc</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>HiEasyX::MouseDrag</label>
+        <link refid="class_hi_easy_x_1_1_mouse_drag"/>
+      </node>
+      <node id="4">
+        <label>HiEasyX::Canvas</label>
+        <link refid="class_hi_easy_x_1_1_canvas"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_property</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IMAGE</label>
+      </node>
+      <node id="6">
+        <label>HiEasyX::DrawingProperty</label>
+        <link refid="class_hi_easy_x_1_1_drawing_property"/>
+      </node>
+      <node id="7">
+        <label>HiEasyX::Button</label>
+        <link refid="class_hi_easy_x_1_1_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" line="19" column="1" bodyfile="E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ScrollBar.h" bodystart="18" bodyend="153"/>
+    <listofallmembers>
+      <member refid="class_hi_easy_x_1_1_control_base_1a75cdabdaa297155395d0420a11da4599" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>AddChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1adfafda8974eb9211f7ddee264d58ac04" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>CallUserMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a709cbc231405929ae9d4c8f01dd97287" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>ChildRectChanged</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a27d94e1ee882c7f8f9d1e91427c2200f" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>Container</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae76f7599a28302ad10bcea03596cd4f4" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a93c329b48a1d3ced2f8b01df809b094e" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a878d5f05839dad41c6192fd45b7d0089" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>ControlBase</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ae8cae5756a14d5996988bcb7dcddfe95" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>Draw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a416db1040e5caa28d86f618bd9c5cd1c" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>Draw_Text</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1af0373d28a9f56e4c9e04920ec2727b2d" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>DrawChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a67e8affaf474d4f9441d3e72dac4d1f1" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>EnableAutoRedraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a68665d8347eee65d0b57d3afd8d916c7" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>EnableAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a69d07e6ca0fcb597a0704cc67beddd6b" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>EnableBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a18dad71c6c51565b1c92167f8f536b19" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>EnableHorizontal</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a86595b70b389d8c8382f5b5a0a613d79" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>GetAutoRedrawState</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2749c6a3a556f93174f9ca6e9dbf3829" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>GetBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a2b82c461ff89c4a8f29e2b7c18650f0e" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetButtonHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a54d6c8b18f572eb3fccf9be6ff194963" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetButtonWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a89fd69ef31bd91b7eeca590686c0637e" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>GetCanvas</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ab7d753c89838202ff5c37612a8f9715f" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetChildCount</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1a01c4a70d14f9649887d8fbeb3e05ed" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetChildList</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1aecb5546bfbd3096c6e14d9eea177224f" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetContentLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1af0d5b1105271e2511afaebeaba1a91b1" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ae1a9673851b1908ff80872f86e7da75e" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetOnWheelRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aad00f0df715ce907b84141b4ac7d9f71" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1acb286de3bb9f3f3af5e7487e03178526" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ac16dcae09f8b3a39a0df82eefd60a882" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a98080f314d8f04564063b6469db3be86" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetSliderContentPos</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a458d2d14e2d4f06681cee2119ca6f291" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetSliderLength</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1adf2d83d5154cda31fb7eb0f6bf7cbaf6" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetSliderSpeed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a97bef5dfe261c7eaf6116ca16676fd00" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>GetText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a172ae71e2be303acb30c83f83ad4d064" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>GetTextColor</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a85be49928569c3933f091781f6224740" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetViewLength</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a0fd32b60bb0f39c74cabfcf74ec9a3df" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1abad6eb4bc1b32ff0ed92a8ab06c8c6df" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetX</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a8c8d93902d110955ec08f3d4d398854e" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>GetY</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1aa5a7ec2588e350858ed56bf2831c6971" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>Init</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a72c682d658053588916fdf12bd8d3f56" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ada3889208916c9a04183c52fdbcc12a2" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>isDragging</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a462628b9679c4ebc935c3c5ce5f24222" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isEnabled</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6e30e0745734a8a246c33249ae6e8443" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ad36113990a43a19226b75c9d53182d48" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>isHorizontal</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a522e6e3676e6f1ffe15f70371f676d5b" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isHovered</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2b7c5f2614e457ee54b22baee0bb06a4" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isPressed</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a73c62ef7794bb17da5ceb84f037ce97b" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>isSliderPosChanged</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a7e533b346d6e96e57ec1cd8f6e0b055a" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>isVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aef9fc2d0d6365a371c9ce13ff86752b9" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_alpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a50af68164c7790b3f06af11301a866b0" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bAlwaysRedrawAndRender</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5b0539e21f7013d44646d3ca2838ed33" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bAutoRedrawWhenReceiveMsg</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a3c7d5df0c1558c0ec993ad3890e18c79" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bAutoSizeForChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae404f7e5aab1fbfd611776c7995996d5" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bClear</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ac3032416bb487fb5ee04160f2f2b3bd5" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bCompleteFirstSetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a162d5a0d668bb095fffa10b9bfa45989" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bDragging</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae0ec54aca4911bd3eeb388c77917cb38" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bEnableBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ac32c07be0d613b508c36220ba7938d06" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bEnabled</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aa96b30a60cd8d93ea0b49b2d787233c9" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bFocused</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1adae16869df37041b3666ea61242578c8" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bHorizontal</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ab407e304413acc7d4c9a88e8c9c94849" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bHovered</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aac1e82098ce1faacec3eb1f5666ec0ea" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bPressed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a206af1bbabb242872b6128e84972f256" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bRedraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a4cfe720d3e77a2c15d87b4da565a1c37" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bRender</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a5a097f29f356cbafab76d629c62ae8e1" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bSetOnWheelRct</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a5c734bb7eee56efaa47ea99f5c326b24" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bSliderPosChanged</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a6b7e32c5fe82714f433b9034693e8ba7" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_btnBottom</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ac6e344b7e690b6673e5e75f777824fcc" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_btnDown</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1abe6fe4b1940f6919f6bc2964d0f61b52" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_btnDrag</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a23f91b05982f82cf336a3e6bf603ef9b" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_btnTop</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a3bc1b7044bf0a7978962f4d309ddee5e" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_btnUp</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6b0caf2ebbdd099e6d36fba2d1e38e1c" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bUseCanvasAlpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5199ab6ebcf3bef6fd601f60310550fe" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_bVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae95bbe48d81bb21b7e760ff792af059a" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_canvas</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a56ef733920e54f454c990fd1aebfac1f" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_cBackground</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aebce31b4e9be410a4d0a247616c16ad4" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_cBorder</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aaaecf1b442d34f7674a4f3da49cb1ea7" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_cText</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a48243ad11257b9622550f194ed14b040" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_fPos</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1af97f294df770c43b0234ef4244e22698" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_fPosRatio</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6a3797dd102a11dc00a7c36581b22daa" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_funcMessageProc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a240d262fc1e65624813a9a8ef39c0ad5" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_funcMessageProc_Class</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ae77a1db18649a83f4a01fe4c7f09e078" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_fViewRatio</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a02f5d311e36594ec22dd2a2ccac8260a" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_info</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a255c9dc0ff8db31e4371006e3dd2364d" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_isAlphaCalculated</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1fb286838bbb30c2fa2daa64c1277939" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_listChild</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a5c8ac3bef60e28526be5314a01024ada" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_MouseDrag</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aef9e13f82ff2956fc0d34e1de4713e8c" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nBorderThickness</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a5494c374438756bc787c1ea9d513966b" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nBtnHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a41dfc762e642bac48b61d94dd6ffc94c" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nBtnWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1adbda470bf4235592bdfd4313ff30c3df" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nDrawInterval</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a64bc90f52af04e6409bb0d3eb1714edd" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nLen</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1aaf957e1158ac61af16d328a2f221cf75" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nSliderSpeed</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a94d36d5dc8877a596b20d8fd99b6acc9" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_nViewLen</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1abf130d8b75dbe3762567a0c3f82791bd" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_pCalledClass</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ae762452f0d6e75a1f3b215c29a1d2cbe" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_pParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab5981ae102e6d9cfe6421f8479627971" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_rct</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6bbf7e24f18391620d371e05892ad8d7" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_rctClear</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1aea8bf401df2fff62d926c79c7cf84568" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_rctOnWheel</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ade3e15910d03cb0fb72584818262b03e" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_tPressed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a0f51d324623ae83c706c6c3a9a6c9d3b" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>m_wstrText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a2172a2e6a76a652f90882b941fc1d127" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>MarkNeedClearRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a81ff0b42ffbcb7c3a7cd4030c0d94cba" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>MarkNeedRedrawAndRender</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a57e4844c5812808599046e64f5df2e4c" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>Move</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aaaca3cc4413c1c2746a83ba9749b9124" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>MoveRel</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a1822514e21dcaba2ffda20e79ab0dc98" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>MoveSlider</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a633e119f07639b733d18e05ffb9f87c2" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>OnNormalButtonMsg</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ab463ca59afa189d331f1a95825fbf083" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>OnSpecialButtonMsg</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aeb5ceed0aa8e63ab2610ea2abedc4bc3" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>Redraw</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1234eaab74c2b51dbb9197b697429993" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>RemoveChild</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a01a9afff183b9f0cda0d83dbb767a0b8" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>Render</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a235a56a0c9e116af33a13abcb4276088" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>Resize</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a73600745b8b71a680365ecb2f32ba181" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>ScrollBar</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a6a3c85c603f9a544bb8f4bd4e2b491c3" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>ScrollBar</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ade3f9e1097c4607a2fd8c9cc74153e95" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetAlpha</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aeb9bc2b20dbcf0dea4ac3ab32706bdc3" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetBkColor</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a33bf88b76e447a6b1704659d60e43bfc" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetButtonHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a0775d779625ae2433147179f2be59d66" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetButtonWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ae31dac3450a0c927be524f8fa94c7621" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetContentLength</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a6ce290712b6fff9d80eae26fa8eced06" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetEnable</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1aedd746a2ff014b16c8b2267134b13c69" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetHeight</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a83fa7686f91675a89235205335aab92f" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1ad01c8bbd6a40e56459d2faba5fab4b3d" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetMsgProcFunc</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a9fb3156cf34e99a6edc2cb84db7594af" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetOnWheelRect</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1acd99a2375080ebc29af5ec5a78e8ceb0" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetParent</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a1c722739eefaf5d2f04eb7378109864c" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1a73176eb200bdff2e72778c1f3e79d441" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetPos</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ab08df67455722b0acb62ce5e623a3b0d" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1affa7e7a9a60c518ac210485b7f049889" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetRect</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a8f9e4b8f0c67d86c9edc153398804aa0" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetSliderContentPos</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a8475086ee53e0294b6b972e9445af3ee" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetSliderSpeed</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a73821ac5c9e46196df1e3dd922d96d35" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetText</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aa200c0d27e4a88df9833ff5e8b29e33e" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetTextColor</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ad5304ed42295e7105a56e1099c1f37a7" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetViewLength</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a1e58bdfc56f0781bdd500cf4013a6d86" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>SetVisible</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1afc7f3e15a2070b93af0db185976829e2" prot="public" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>SetWidth</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1a5bd403fbd8682259a33f3301531ddf41" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>TransformMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1acf7a3985b8391ad91226c5c2c17c3b2a" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdateMessage</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a06d851bbbda5f14786549b02bef46b51" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdatePosRatio</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ade529f6a1f17a7ebd55ea89d250c2742" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdateRect</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a7d140d0508b11ddd99c1d51cc757e573" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdateScrollBarInfo</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1ad4b86cbe6e2edd43246c76479105643d" prot="protected" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdateSliderRect</name></member>
+      <member refid="class_hi_easy_x_1_1_scroll_bar_1a80865edc4bb6e14204055c97afcea325" prot="protected" virt="non-virtual"><scope>HiEasyX::ScrollBar</scope><name>UpdateViewRatio</name></member>
+      <member refid="class_hi_easy_x_1_1_container_1ada5d0c737c3152ed10714738d3ce355e" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>~Container</name></member>
+      <member refid="class_hi_easy_x_1_1_control_base_1aea4f802233d392dd4302479a428f97de" prot="public" virt="virtual"><scope>HiEasyX::ScrollBar</scope><name>~ControlBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,270 @@
+.TH "HiEasyX::Gif" 3 "Sat Aug 13 2022" "Version Ver0.2(alpha)" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Gif
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiGif\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGif\fP (const WCHAR *gifFileName=nullptr, HDC hdc=GetImageHDC())"
+.br
+.ti -1c
+.RI "\fBGif\fP (const \fBGif\fP &gif)"
+.br
+.ti -1c
+.RI "virtual \fB~Gif\fP ()"
+.br
+.ti -1c
+.RI "\fBGif\fP & \fBoperator=\fP (const \fBGif\fP &gif)"
+.br
+.ti -1c
+.RI "void \fBload\fP (const WCHAR *gifFileName)"
+.br
+.ti -1c
+.RI "void \fBbind\fP (HDC hdc)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "int \fBgetX\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetY\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetOrginWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetOrginHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetFrameCount\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetCurFrame\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetDelayTime\fP (int frame) const"
+.br
+.ti -1c
+.RI "void \fBsetDelayTime\fP (int frame, long time_ms)"
+.br
+.ti -1c
+.RI "void \fBsetAllDelayTime\fP (long time_ms)"
+.br
+.ti -1c
+.RI "void \fBupdateTime\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBdrawFrame\fP (int frame)"
+.br
+.ti -1c
+.RI "void \fBdrawFrame\fP (int frame, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBgetimage\fP (IMAGE *pimg, int frame)"
+.br
+.ti -1c
+.RI "void \fBplay\fP ()"
+.br
+.ti -1c
+.RI "void \fBpause\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoggle\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisPlaying\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBisVisible\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisAnimation\fP () const"
+.br
+.ti -1c
+.RI "void \fBresetPlayState\fP ()"
+.br
+.ti -1c
+.RI "void \fBinfo\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file HiGif\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HiEasyX::Gif::Gif (const WCHAR * gifFileName = \fCnullptr\fP, HDC hdc = \fCGetImageHDC()\fP)"
+
+.PP
+Definition at line 8 of file HiGif\&.cpp\&.
+.SS "HiEasyX::Gif::Gif (const \fBGif\fP & gif)"
+
+.PP
+Definition at line 17 of file HiGif\&.cpp\&.
+.SS "HiEasyX::Gif::~Gif ()\fC [virtual]\fP"
+
+.PP
+Definition at line 23 of file HiGif\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void HiEasyX::Gif::bind (HDC hdc)"
+
+.PP
+Definition at line 67 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::clear ()"
+
+.PP
+Definition at line 76 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::draw ()"
+
+.PP
+Definition at line 120 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::draw (int x, int y)"
+
+.PP
+Definition at line 126 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::drawFrame (int frame)"
+
+.PP
+Definition at line 133 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::drawFrame (int frame, int x, int y)"
+
+.PP
+Definition at line 139 of file HiGif\&.cpp\&.
+.SS "int HiEasyX::Gif::getCurFrame () const\fC [inline]\fP"
+
+.PP
+Definition at line 87 of file HiGif\&.h\&.
+.SS "int HiEasyX::Gif::getDelayTime (int frame) const"
+
+.PP
+Definition at line 182 of file HiGif\&.cpp\&.
+.SS "int HiEasyX::Gif::getFrameCount () const\fC [inline]\fP"
+
+.PP
+Definition at line 86 of file HiGif\&.h\&.
+.SS "int HiEasyX::Gif::getHeight () const\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file HiGif\&.h\&.
+.SS "void HiEasyX::Gif::getimage (IMAGE * pimg, int frame)"
+
+.PP
+Definition at line 156 of file HiGif\&.cpp\&.
+.SS "int HiEasyX::Gif::getOrginHeight () const"
+
+.PP
+Definition at line 99 of file HiGif\&.cpp\&.
+.SS "int HiEasyX::Gif::getOrginWidth () const"
+
+.PP
+Definition at line 91 of file HiGif\&.cpp\&.
+.SS "int HiEasyX::Gif::getWidth () const\fC [inline]\fP"
+
+.PP
+Definition at line 78 of file HiGif\&.h\&.
+.SS "int HiEasyX::Gif::getX () const\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file HiGif\&.h\&.
+.SS "int HiEasyX::Gif::getY () const\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file HiGif\&.h\&.
+.SS "void HiEasyX::Gif::info () const"
+
+.PP
+Definition at line 247 of file HiGif\&.cpp\&.
+.SS "bool HiEasyX::Gif::isAnimation () const\fC [inline]\fP"
+
+.PP
+Definition at line 116 of file HiGif\&.h\&.
+.SS "bool HiEasyX::Gif::isPlaying () const\fC [inline]\fP"
+
+.PP
+Definition at line 111 of file HiGif\&.h\&.
+.SS "bool HiEasyX::Gif::isVisible () const\fC [inline]\fP"
+
+.PP
+Definition at line 114 of file HiGif\&.h\&.
+.SS "void HiEasyX::Gif::load (const WCHAR * gifFileName)"
+
+.PP
+Definition at line 58 of file HiGif\&.cpp\&.
+.SS "\fBGif\fP & HiEasyX::Gif::operator= (const \fBGif\fP & gif)"
+
+.PP
+Definition at line 31 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::pause ()"
+
+.PP
+Definition at line 223 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::play ()"
+
+.PP
+Definition at line 209 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::resetPlayState ()"
+
+.PP
+Definition at line 238 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::setAllDelayTime (long time_ms)"
+
+.PP
+Definition at line 202 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::setDelayTime (int frame, long time_ms)"
+
+.PP
+Definition at line 192 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::setPos (int x, int y)"
+
+.PP
+Definition at line 106 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::setSize (int width, int height)"
+
+.PP
+Definition at line 113 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::setVisible (bool enable)\fC [inline]\fP"
+
+.PP
+Definition at line 113 of file HiGif\&.h\&.
+.SS "void HiEasyX::Gif::toggle ()"
+
+.PP
+Definition at line 232 of file HiGif\&.cpp\&.
+.SS "void HiEasyX::Gif::updateTime ()"
+
+.PP
+Definition at line 304 of file HiGif\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HiEasyX from the source code\&.
