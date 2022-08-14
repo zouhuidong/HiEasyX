@@ -18,36 +18,36 @@ namespace HiEasyX
 	////////////****** 全局变量 ******////////////
 
 
-	WNDCLASSEX				g_WndClassEx;								// 窗口类
-	wchar_t					g_lpszClassName[] = L"HiEasyX";				// 窗口类名
-	ScreenSize				g_screenSize;								// 显示器信息
-	HWND					g_hConsole;									// 控制台句柄
-	HINSTANCE				g_hInstance = GetModuleHandle(0);			// 程序实例
+	WNDCLASSEX				g_WndClassEx;								///< 窗口类
+	wchar_t					g_lpszClassName[] = L"HiEasyX";				///< 窗口类名
+	ScreenSize				g_screenSize;								///< 显示器信息
+	HWND					g_hConsole;									///< 控制台句柄
+	HINSTANCE				g_hInstance = GetModuleHandle(0);			///< 程序实例
 
-	std::vector<EasyWindow>	g_vecWindows;								// 窗口表（管理多窗口）
-	int						g_nFocusWindowIndex = NO_WINDOW_INDEX;		// 当前操作焦点窗口索引
+	std::vector<EasyWindow>	g_vecWindows;								///< 窗口表（管理多窗口）
+	int						g_nFocusWindowIndex = NO_WINDOW_INDEX;		///< 当前操作焦点窗口索引
 
-	const int				g_nTypesNum = 4;							// 消息类型数量
-	BYTE					g_pMsgTypes[g_nTypesNum] = {				// 消息类型数组
+	const int				g_nTypesNum = 4;							///< 消息类型数量
+	BYTE					g_pMsgTypes[g_nTypesNum] = {				///< 消息类型数组
 		EM_MOUSE, EM_KEY, EM_CHAR, EM_WINDOW
 	};
 
-	bool					g_isInTask = false;							// 标记处于任务中
+	bool					g_isInTask = false;							///< 标记处于任务中
 
-	HICON					g_hIconDefault;								// 默认程序图标
-	int						g_nCustomIcon = 0;							// 自定义程序图标资源 ID，为 0 表示不使用
-	int						g_nCustomIconSm = 0;
-	HICON					g_hCustomIcon;								// 自定义程序图标
+	HICON					g_hIconDefault;								///< 默认程序图标
+	LPCTSTR					g_lpszCustomIcon = nullptr;					///< 自定义程序图标资源，为空表示不使用
+	LPCTSTR					g_lpszCustomIconSm = nullptr;
+	HICON					g_hCustomIcon;								///< 自定义程序图标
 	HICON					g_hCustomIconSm;
 
-	bool					g_isPreStyle = false;						// 是否预设窗口样式
-	bool					g_isPrePos = false;							// 是否预设窗口位置
-	long					g_lPreStyle;								// 创建窗口前的预设样式
-	POINT					g_pPrePos;									// 创建窗口前的预设窗口位置
+	bool					g_isPreStyle = false;						///< 是否预设窗口样式
+	bool					g_isPrePos = false;							///< 是否预设窗口位置
+	long					g_lPreStyle;								///< 创建窗口前的预设样式
+	POINT					g_pPrePos;									///< 创建窗口前的预设窗口位置
 
-	DrawMode				g_fDrawMode = DM_Normal;					// 全局绘制模式
+	DrawMode				g_fDrawMode = DM_Normal;					///< 全局绘制模式
 
-	UINT					g_uWM_TASKBARCREATED;						// 系统任务栏消息代码
+	UINT					g_uWM_TASKBARCREATED;						///< 系统任务栏消息代码
 
 	////////////****** 函数定义 ******////////////
 
@@ -503,8 +503,10 @@ namespace HiEasyX
 		if (isAliveWindow(index))
 		{
 			HICON hIcon = g_hIconDefault;
-			if (g_nCustomIconSm)		hIcon = g_hCustomIconSm;
-			else if (g_nCustomIcon)		hIcon = g_hCustomIcon;
+			if (g_lpszCustomIconSm)
+				hIcon = g_hCustomIconSm;
+			else if (g_lpszCustomIcon)
+				hIcon = g_hCustomIcon;
 
 			g_vecWindows[index].isUseTray = true;
 			g_vecWindows[index].nid.cbSize = sizeof(NOTIFYICONDATA);
@@ -586,15 +588,15 @@ namespace HiEasyX
 
 	bool GetCustomIconState()
 	{
-		return g_nCustomIcon;
+		return g_lpszCustomIcon;
 	}
 
-	void SetCustomIcon(int nIcon, int nIconSm)
+	void SetCustomIcon(LPCTSTR lpszIcon, LPCTSTR lpszIconSm)
 	{
-		g_nCustomIcon = nIcon;
-		g_nCustomIconSm = nIconSm;
-		g_hCustomIcon = LoadIcon(g_hInstance, MAKEINTRESOURCE(g_nCustomIcon));
-		g_hCustomIconSm = LoadIcon(g_hInstance, MAKEINTRESOURCE(g_nCustomIconSm));
+		g_lpszCustomIcon = lpszIcon;
+		g_lpszCustomIconSm = lpszIconSm;
+		g_hCustomIcon = LoadIcon(g_hInstance, lpszIcon);
+		g_hCustomIconSm = LoadIcon(g_hInstance, lpszIconSm);
 	}
 
 	// 获取消息容器
@@ -1257,8 +1259,10 @@ namespace HiEasyX
 	{
 		HICON hIcon = g_hIconDefault;
 		HICON hIconSm = g_hIconDefault;
-		if (g_nCustomIcon)		hIcon = g_hCustomIcon;
-		if (g_nCustomIconSm)	hIconSm = g_hCustomIconSm;
+		if (g_lpszCustomIcon)
+			hIcon = g_hCustomIcon;
+		if (g_lpszCustomIconSm)
+			hIconSm = g_hCustomIconSm;
 
 		g_WndClassEx.cbSize = sizeof WNDCLASSEX;
 		g_WndClassEx.style = CS_VREDRAW | CS_HREDRAW;

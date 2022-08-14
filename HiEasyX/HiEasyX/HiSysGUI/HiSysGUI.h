@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	HiSysGUI.h
-//	HiEasyX 库的系统图形用户界面模块
-//
+/**
+ * @file	HiSysGUI.h
+ * @brief	HiEasyX 库的系统图形用户界面模块
+ * @author	huidong
+*/
 
 #pragma once
 

@@ -1,16 +1,17 @@
-////////////////////////////////////////////////////
-//
-//	HiEasyX.h
-//	HiEasyX 库头文件
-//	该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
-//
-//	版　　本：Ver 0.2 (alpha)
-//	作　　者：huidong <mailhuid@163.com>
-//	编译环境：VisualStudio 2022 | EasyX_20220610 | Windows 10 
-//	项目地址：https://github.com/zouhuidong/HiEasyX
-//	创建日期：2022.07.20
-//	最后修改：2022.08.11
-//
+/**
+ * @file	HiEasyX.h
+ * @brief	HiEasyX 库头文件
+ * @note	该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
+ * 
+ * @version	Ver 0.2 (alpha)
+ * @envir	VisualStudio 2022 | EasyX_20220610 | Windows 10
+ * @site	https://github.com/zouhuidong/HiEasyX
+ * 
+ * @author	huidong
+ * @email	mailhuid@163.com
+ * @create	2022.07.20
+ * @date	2022.08.11
+*/
 
 #pragma once
 

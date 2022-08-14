@@ -103,7 +103,6 @@ void Blur(DWORD* pMem)
 	}
 }
 
-// 主函数
 void HiEasyX::RenderStartScene()
 {
 	initgraph(640, 480);				// 创建绘图窗口

@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	SysEdit.h
-//	HiSysGUI 控件分支：输入框
-//
+/**
+ * @file	SysEdit.h
+ * @brief	HiSysGUI 控件分支：输入框
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -12,20 +12,25 @@
 
 namespace HiEasyX
 {
+	/**
+	 * @brief 系统输入框控件
+	*/
 	class SysEdit : public SysControlBase
 	{
 	private:
 
-		// 编辑框属性
+		/**
+		 * @brief 编辑框属性
+		*/
 		struct Property
 		{
-			bool left_align = true;			// 文字左对齐
-			bool right_align = false;		// 文字右对齐
-			bool uppercase = false;			// 输入内容转大写
-			bool lowercase = false;			// 输入内容转小写
-			bool password = false;			// 密码框
-			bool read_only = false;			// 只读
-			bool number_only = false;		// 仅数字输入
+			bool left_align = true;			///< 文字左对齐
+			bool right_align = false;		///< 文字右对齐
+			bool uppercase = false;			///< 输入内容转大写
+			bool lowercase = false;			///< 输入内容转小写
+			bool password = false;			///< 密码框
+			bool read_only = false;			///< 只读
+			bool number_only = false;		///< 仅数字输入
 		} m_property;
 
 		long m_lBasicStyle = WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER;
@@ -37,7 +42,9 @@ namespace HiEasyX
 		COLORREF m_cText = BLACK;
 		HBRUSH hBk = nullptr;
 
-		// 应用设置的属性
+		/**
+		 * @brief 应用设置的属性
+		*/
 		void ApplyProperty();
 
 	protected:
@@ -54,77 +61,140 @@ namespace HiEasyX
 
 		~SysEdit() override;
 
-		// 在创建控件前预设样式
+		/**
+		 * @brief 在创建控件前预设控件样式
+		 * @param [in] multiline			多行文本
+		 * @param [in] center_text		文本居中
+		 * @param [in] vscroll			拥有垂直滚动条
+		 * @param [in] auto_vscroll		自动垂直滚动
+		 * @param [in] hscroll			拥有水平滚动条
+		 * @param [in] auto_hscroll		自动水平滚动
+		*/
 		void PreSetStyle(
-			bool multiline,					// 多行文本
-			bool center_text = false,		// 文本居中
-			bool vscroll = false,			// 拥有垂直滚动条
-			bool auto_vscroll = false,		// 自动垂直滚动
-			bool hscroll = false,			// 拥有水平滚动条
-			bool auto_hscroll = false		// 自动水平滚动
+			bool multiline,
+			bool center_text = false,
+			bool vscroll = false,
+			bool auto_vscroll = false,
+			bool hscroll = false,
+			bool auto_hscroll = false
 		);
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 
-		// 注册输入消息
+		/**
+		 * @brief 注册输入消息
+		 * @param [in] pFunc 消息响应函数
+		*/
 		void RegisterMessage(void (*pFunc)(std::wstring wstrText));
 
-		// 设置文本右对齐
+		/**
+		 * @brief 设置文本右对齐
+		 * @param [in] enable 是否启用右对齐
+		*/
 		void RightAlign(bool enable);
 
-		// 自动转大写
+		/**
+		 * @brief 自动转大写
+		 * @param [in] enable 是否启用转大写
+		*/
 		void Uppercase(bool enable);
 
-		// 自动转小写
+		/**
+		 * @brief 自动转小写
+		 * @param [in] enable 是否启用转小写
+		*/
 		void Lowercase(bool enable);
 
-		// 密码框
+		/**
+		 * @brief 设置密码框
+		 * @param [in] enable 是否启用密码框
+		*/
 		void Password(bool enable);
 
-		// 只读
+		/**
+		 * @brief 设置只读
+		 * @param [in] enable 是否启用只读
+		*/
 		void ReadOnly(bool enable);
 
-		// 仅数字
+		/**
+		 * @brief 设置仅数字
+		 * @param [in] enable 是否启用仅数字输入
+		*/
 		void NumberOnly(bool enable);
 
-		// 获取最大输入长度
+		/**
+		 * @brief 获取最大输入长度
+		*/
 		int GetMaxTextLength();
 
-		// 限制最大输入长度
+		/**
+		 * @brief 限制最大输入长度
+		 * @param [in] len 最大输入长度
+		*/
 		void SetMaxTextLength(int len);
 
-		// 设置控件背景色
+		/**
+		 * @brief 设置控件背景色
+		 * @param [in] color 控件背景色 
+		*/
 		void SetBkColor(COLORREF color);
 
-		// 设置文本背景色
+		/**
+		 * @brief 设置文本背景色
+		 * @param [in] color 文本背景色
+		*/
 		void SetTextBkColor(COLORREF color);
 
-		// 设置文本颜色
+		/**
+		 * @brief 设置文本颜色
+		 * @param [in] color 文本颜色 
+		*/
 		void SetTextColor(COLORREF color);
 
-		// 获取光标选择区域
+		/**
+		 * @brief 获取光标选择区域
+		 * @param [out] begin	光标起始位置
+		 * @param [out] end		选择结束位置
+		*/
 		void GetSel(int* begin, int* end);
 
-		// 设置关闭选择区域
-		// end 为 -1 可表示结尾
+		/**
+		 * @brief 设置光标选择区域
+		 * @param [in] begin 	光标起始位置
+		 * @param [in] end 		选择结束位置（为 -1 可表示结尾）
+		*/
 		void SetSel(int begin, int end);
 
-		// 复制选中的文本
+		/**
+		 * @brief 复制选中的文本
+		*/
 		void Copy();
 
-		// 剪切选中的文本
+		/**
+		 * @brief 剪切选中的文本
+		*/
 		void Cut();
 
-		// 从剪切板黏贴文本到当前位置
+		/**
+		 * @brief 从剪切板黏贴文本到当前位置
+		*/
 		void Paste();
 
-		// 删除选中的文本
+		/**
+		 * @brief 删除选中的文本
+		*/
 		void Delete();
 
-		// 替换选中的文本
+		/**
+		 * @brief 替换选中的文本
+		 * @param [in] wstrText 替换文本
+		*/
 		void Replace(std::wstring wstrText);
 
-		// 是否被编辑
+		/**
+		 * @brief 判断是否被编辑
+		*/
 		bool isEdited();
 	};
 }

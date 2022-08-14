@@ -69,6 +69,4 @@ namespace HiEasyX
 		Draw();
 		Render(pCanvas);
 	}
-
-
 }

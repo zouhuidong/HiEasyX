@@ -1,8 +1,8 @@
-////////////////////////////
-//
-//	HiDrawingProperty.h
-//	HiEasyX 库的绘图属性存储模块
-//
+/**
+ * @file	HiDrawingProperty.h
+ * @brief	HiEasyX 库的绘图属性存储模块
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,9 +10,10 @@
 
 namespace HiEasyX
 {
-
-	// 绘图属性
-	// setorigin 和 setcliprgn 是对于绘图设备来说的，故不保存
+	/**
+	 * @brief 绘图属性
+	 * @note EasyX 目前无法获取 setorigin 和 setcliprgn 的值
+	*/
 	class DrawingProperty
 	{
 	private:
@@ -32,13 +33,35 @@ namespace HiEasyX
 		COLORREF m_cText;
 		LOGFONT m_font;
 
-		void SaveProperty();				// 保存当前所有的绘图属性
-		void SaveWorkingImageOnly();		// 只保存当前绘图对象
-		void ApplyProperty();				// 应用保存的所有绘图属性
-		void ApplyWorkingImageOnly();		// 只恢复绘图对象
-		bool isSaved();						// 是否保存了绘图属性
-		void Reset();						// 重置保存状态
+		/**
+		 * @brief 保存当前所有的绘图属性
+		*/
+		void SaveProperty();
 
+		/**
+		 * @brief 只保存当前绘图对象
+		*/
+		void SaveWorkingImageOnly();
+
+		/**
+		 * @brief 应用保存的所有绘图属性
+		*/
+		void ApplyProperty();
+
+		/**
+		 * @brief 只恢复绘图对象
+		*/
+		void ApplyWorkingImageOnly();
+
+		/**
+		 * @brief 判断是否保存了绘图属性
+		*/
+		bool isSaved();
+
+		/**
+		 * @brief 重置保存状态
+		*/
+		void Reset();
 	};
 
 };

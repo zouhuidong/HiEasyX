@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	SysGroupBox.h
-//	HiSysGUI 控件分支：分组框
-//
+/**
+ * @file	SysGroupBox.h
+ * @brief	HiSysGUI 控件分支：分组框
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,8 +10,14 @@
 
 namespace HiEasyX
 {
-	// 注意：分组框背景绘制有 Bug，请斟酌使用
-	// 创建控件时不要将此控件作为父控件，否则无法创建控件
+	/**
+	 * @brief 系统分组框控件
+	 * @bug
+	 *		分组框背景绘制有 Bug，请斟酌使用
+	 * 
+	 * @attention
+	 *		创建控件时不要将此控件作为父控件，否则无法创建控件
+	*/
 	class SysGroupBox : public SysControlBase
 	{
 	protected:

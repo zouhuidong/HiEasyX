@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	SysGroup.h
-//	HiSysGUI 控件分支：分组器
-//
+/**
+ * @file	SysGroup.h
+ * @brief	HiSysGUI 控件分支：分组标志
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,6 +10,9 @@
 
 namespace HiEasyX
 {
+	/**
+	 * @brief 系统控件分组标志
+	*/
 	class SysGroup : public SysControlBase
 	{
 	protected:

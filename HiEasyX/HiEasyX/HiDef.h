@@ -1,8 +1,8 @@
-////////////////////////////
-//
-//	HiDef.h
-//	HiEasyX 库的配置定义
-//
+/**
+ * @file	HiDef.h
+ * @brief	HiEasyX 库的配置定义
+ * @author	huidong
+*/
 
 // 版本定义
 #define _HIEASYX_VER_STR_	L"Ver 0.2 (alpha)"

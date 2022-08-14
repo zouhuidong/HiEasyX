@@ -1,8 +1,8 @@
-////////////////////////////
-//
-//	HiMacro.h
-//	HiEasyX 库的常用宏定义模块
-//
+/**
+ * @file	HiMacro.h
+ * @brief	HiEasyX 库的常用宏定义模块
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -67,8 +67,9 @@
 										(rct).right		+= dx;\
 										(rct).bottom	+= dy
 
-
-// 常用色彩扩展
+/**
+ * @brief 常用色彩扩展
+*/
 enum EXTRA_COLORS
 {
 	DARKBLUE = RGB(0x00, 0x00, 0x8B),
@@ -99,15 +100,15 @@ enum EXTRA_COLORS
 	WHITESMOKE = RGB(0xF5, 0xF5, 0xF5),
 	YELLOWGREEN = RGB(0x9A, 0xCD, 0x32),
 	
-	CLASSICGRAY = RGB(0xF0, 0xF0, 0xF0),			// Windows 经典灰
+	CLASSICGRAY = RGB(0xF0, 0xF0, 0xF0),			///< Windows 经典灰
 
-	MODERN_BORDER_GRAY = 0xadadad,					// 现代边框灰
-	MODERN_FILL_GRAY = 0xe1e1e1,					// 现代填充灰
+	MODERN_BORDER_GRAY = 0xadadad,					///< 现代边框灰
+	MODERN_FILL_GRAY = 0xe1e1e1,					///< 现代填充灰
 
-	MODERN_BORDER_BLUE = 0xd77800,					// 现代边框蓝
-	MODERN_FILL_BLUE = 0xfbf1e5,					// 现代填充蓝
+	MODERN_BORDER_BLUE = 0xd77800,					///< 现代边框蓝
+	MODERN_FILL_BLUE = 0xfbf1e5,					///< 现代填充蓝
 
-	MODERN_BORDER_PRESSED_BLUE = 0x995400,			// 现代边框蓝（按下）
-	MODERN_FILL_PRESSED_BLUE = 0xf7e4cc,			// 现代填充蓝（按下）
+	MODERN_BORDER_PRESSED_BLUE = 0x995400,			///< 现代边框蓝（按下）
+	MODERN_FILL_PRESSED_BLUE = 0xf7e4cc,			///< 现代填充蓝（按下）
 };
 

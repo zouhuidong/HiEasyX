@@ -1,7 +1,7 @@
 ﻿/**
  * @file	HiCanvas.h
- * @author	huidong
  * @brief	HiEasyX 库的画布模块
+ * @author	huidong
 */
 
 #pragma once
@@ -15,35 +15,35 @@ namespace HiEasyX
 {
 	/**
 	 * @brief 根据透明度混合颜色
-	 * @param cDst			原位置像素点
-	 * @param cSrc			待输出像素点（根据该点的透明度进行混合）
-	 * @param isCalculated	待输出像素点是否已经混合过颜色
-	 * @param alpha			叠加透明度（默认为 255，即不叠加）
+	 * @param [in] cDst				原位置像素点
+	 * @param [in] cSrc				待输出像素点（根据该点的透明度进行混合）
+	 * @param [in] isCalculated		待输出像素点是否已经混合过颜色
+	 * @param [in] alpha			叠加透明度（默认为 255，即不叠加）
 	 * @return 混合后的颜色（不含透明信息）
 	*/
 	COLORREF MixAlphaColor(COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha = 255);
 
 	/**
 	 * @brief 快速复制图像（可开启透明通道）
-	 * @param x				图像输出 x 坐标
-	 * @param y				图像输出 y 坐标
-	 * @param pDst			载体图像指针
-	 * @param wDst			载体图像宽
-	 * @param hDst			载体图像高
-	 * @param pSrc			待输出图像指针
-	 * @param wSrc			待输出图像宽
-	 * @param hSrc			待输出图像高
-	 * @param crop			待输出图像裁剪区域（right 或 bottom 为 0 表示不裁剪）
-	 * @param alpha			叠加透明度（透明 0 ~ 255 不透明）
-	 * @param bUseSrcAlpha	是否使用待输出图像透明度进行混合（须保证 IMAGE 中含有透明度信息）
-	 *							EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。
-	 *							通常只有 png 图像，或是特地生成的图像才含有透明度信息。
-	 * @param isCalculated	标记待输出图像是否已经计算好混合后的颜色（启用图像透明度时有效）
-	 *							注意，png 图像像素颜色都已进行过混合运算
-	 *							开启后，原图像便不再计算混合颜色，只有载体图像参与计算。
+	 * @param [in] x				图像输出 x 坐标
+	 * @param [in] y				图像输出 y 坐标
+	 * @param [in] pDst				载体图像指针
+	 * @param [in] wDst				载体图像宽
+	 * @param [in] hDst				载体图像高
+	 * @param [in] pSrc				待输出图像指针
+	 * @param [in] wSrc				待输出图像宽
+	 * @param [in] hSrc				待输出图像高
+	 * @param [in] crop				待输出图像裁剪区域（right 或 bottom 为 0 表示不裁剪）
+	 * @param [in] alpha			叠加透明度（透明 0 ~ 255 不透明）
+	 * @param [in] bUseSrcAlpha		是否使用待输出图像透明度进行混合（须保证 IMAGE 中含有透明度信息）<p>
+	 *								EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。<p>
+	 *								通常只有 png 图像，或是特地生成的图像才含有透明度信息。<p>
+	 * @param [in] isCalculated		标记待输出图像是否已经计算好混合后的颜色（启用图像透明度时有效）<p>
+	 *								注意，png 图像像素颜色都已进行过混合运算 <p>
+	 *								开启后，原图像便不再计算混合颜色，只有载体图像参与计算。<p>
 	 * @note
-	 *		若未启用任何透明通道，等同于直接复制图像，在此情况下将保留原图像的透明度信息，
-	 *		否则不保留透明度信息。
+	 *		若未启用任何透明通道，等同于直接复制图像，在此情况下将保留原图像的透明度信息，<p>
+	 *		否则不保留透明度信息。<p>
 	*/
 	void CopyImage_Alpha(
 		int x, int y,
@@ -57,9 +57,9 @@ namespace HiEasyX
 
 	/**
 	 * @brief 旋转图像（保留透明信息，自适应大小）
-	 * @param pImg		原图像
-	 * @param radian	旋转弧度
-	 * @param bkcolor	背景填充颜色
+	 * @param [in] pImg			原图像
+	 * @param [in] radian		旋转弧度
+	 * @param [in] bkcolor		背景填充颜色
 	 * @return	旋转后的图像
 	*/
 	IMAGE RotateImage_Alpha(IMAGE* pImg, double radian, COLORREF bkcolor = BLACK);
@@ -67,18 +67,18 @@ namespace HiEasyX
 	/**
 	 * @brief	缩放图像（保留透明度信息）
 	 * @author	豆焰 <beanflame@qq.com>（有改动）
-	 * @param srcimg	原图像
-	 * @param width		目标宽度
-	 * @param height	目标高度
+	 * @param [in] srcimg		原图像
+	 * @param [in] width		目标宽度
+	 * @param [in] height		目标高度
 	 * @return 缩放后的图像
 	*/
 	IMAGE ZoomImage_Alpha(IMAGE* srcimg, int width, int height);
 
 	/**
 	 * @brief	图像缩放（基于 Win32 API，保留透明度信息）
-	 * @param srcimg	原图像
-	 * @param width		目标宽度
-	 * @param height	目标高度
+	 * @param [in] srcimg		原图像
+	 * @param [in] width		目标宽度
+	 * @param [in] height		目标高度
 	 * @return 缩放后的图像
 	*/
 	IMAGE ZoomImage_Win32_Alpha(IMAGE* pImg, int width, int height);
@@ -142,14 +142,14 @@ namespace HiEasyX
 
 		/**
 		 * @brief 复制图像内容（绑定图像指针请调用 BindToImage）
-		 * @param pImg 原图像
+		 * @param [in] pImg 原图像
 		*/
 		Canvas(IMAGE* pImg);
 		Canvas(IMAGE img);
 
 		/**
 		 * @brief 复制图像内容（绑定图像指针请调用 BindToImage）
-		 * @param pImg 原图像
+		 * @param [in] pImg 原图像
 		*/
 		Canvas& operator= (IMAGE* pImg);
 		Canvas& operator= (IMAGE img);
@@ -162,26 +162,20 @@ namespace HiEasyX
 
 		/**
 		 * @brief 重设画布大小（若绑定了窗口，则不建议调用）
-		 * @param w 目标宽度
-		 * @param h 目标高度
+		 * @param [in] w 目标宽度
+		 * @param [in] h 目标高度
 		*/
 		void Resize(int w, int h) override;
-
-		// 绑定到图像指针
-		// 注意：
-		//		
-		//		
-		//		
 
 		/**
 		 * @brief 绑定到图像指针
 		 * @attention
-		 *		绑定到图像指针后：
-		 *		如果在外部调整了图像大小，则需要调用 UpdateSizeInfo 重新加载图像信息
-		 *		如果要在外部使用图像指针，则需要调用 GetImagePointer
-		 *		如果要绑定到窗口，请使用 BindWindowCanvas
+		 *		绑定到图像指针后：<p>
+		 *		如果在外部调整了图像大小，则需要调用 UpdateSizeInfo 重新加载图像信息 <p>
+		 *		如果要在外部使用图像指针，则需要调用 GetImagePointer <p>
+		 *		如果要绑定到窗口，请使用 BindWindowCanvas <p>
 		 *
-		 * @param pImg 目标图像指针
+		 * @param [in] pImg 目标图像指针
 		 * @return 此画布
 		*/
 		Canvas& BindToImage(IMAGE* pImg);
@@ -189,33 +183,29 @@ namespace HiEasyX
 		/**
 		 * @brief 将画布绑定到窗口（画布大小随窗口自动调整）
 		 * @attention 此函数禁止用户调用，请使用 BindWindowCanvas
-		 * @param hWnd 目标窗口
-		 * @param pImg 窗口图像缓冲区
+		 * @param [in] hWnd 目标窗口
+		 * @param [in] pImg 窗口图像缓冲区
 		 * @return 此画布
 		*/
 		Canvas& BindToWindow(HWND hWnd, IMAGE* pImg);
 
 		/**
 		 * @brief 获取画布 IMAGE 指针
-		 * @return 画布指针
 		*/
 		IMAGE* GetImagePointer() { return m_bBindToImgPointer ? m_pImg : this; }
 
 		/**
 		 * @brief 获取图像缓冲区指针
-		 * @return 图像缓冲区指针
 		*/
 		DWORD* GetBuffer() const { return m_bBindToImgPointer ? GetImageBuffer(m_pImg) : m_pBuf; }
 
 		/**
 		 * @brief 获取图像缓冲区大小，即图像面积（宽 * 高）
-		 * @return 图像缓冲区大小
 		*/
 		int GetBufferSize() const { return m_nBufSize; }
 
 		/**
 		 * @brief 获取画布的 HDC
-		 * @return 画布 HDC
 		*/
 		HDC GetHDC() { return GetImageHDC(GetImagePointer()); }
 
@@ -243,27 +233,24 @@ namespace HiEasyX
 
 		/// 绘图函数
 
-		// 
-		// pIndex 返回该点的数组索引
-
 		/**
 		 * @brief 判断某点是否位于图像中
-		 * @param x 坐标
-		 * @param y 坐标
-		 * @param[out] pIndex 返回该点数组索引
+		 * @param [in] x 坐标
+		 * @param [in] y 坐标
+		 * @param [out] pIndex 返回该点数组索引
 		 * @return 是否位于图像中
 		*/
 		bool isValidPoint(int x, int y, int* pIndex = nullptr);
 
 		/**
 		 * @brief 将该画布的图像绘制到另一画布中
-		 * @param x				绘制位置
-		 * @param y				绘制位置
-		 * @param pImg			目标绘制画布
-		 * @param crop			裁剪区域（默认不裁剪）
-		 * @param alpha			叠加透明度
-		 * @param bUseSrcAlpha	是否使用此画布透明度
-		 * @param isCalculated	画布像素是否已经透明混合
+		 * @param [in] x				绘制位置
+		 * @param [in] y				绘制位置
+		 * @param [in] pImg				目标绘制画布
+		 * @param [in] crop				裁剪区域（默认不裁剪）
+		 * @param [in] alpha			叠加透明度
+		 * @param [in] bUseSrcAlpha		是否使用此画布透明度
+		 * @param [in] isCalculated		画布像素是否已经透明混合
 		*/
 		void Render(
 			int x, int y,
@@ -330,25 +317,25 @@ namespace HiEasyX
 
 		/**
 		 * @brief  直接操作显存快速获取点
-		 * @param x 位置
-		 * @param y 位置
+		 * @param [in] x 位置
+		 * @param [in] y 位置
 		 * @return 目标点颜色
 		*/
 		COLORREF GetPixel_Fast(int x, int y);
 
 		/**
 		 * @brief 直接操作显存快速绘制点
-		 * @param x 位置
-		 * @param y 位置
-		 * @param c 目标点颜色
+		 * @param [in] x 位置
+		 * @param [in] y 位置
+		 * @param [in] c 目标点颜色
 		*/
 		void PutPixel_Fast(int x, int y, COLORREF c);
 
 		/**
 		 * @brief 绘制带有透明度的点，透明度信息在 COLORREF 中
-		 * @param x 位置
-		 * @param y 位置
-		 * @param c 目标点颜色
+		 * @param [in] x 位置
+		 * @param [in] y 位置
+		 * @param [in] c 目标点颜色
 		*/
 		void PutPixel_Fast_Alpha(int x, int y, COLORREF c);
 
@@ -446,24 +433,24 @@ namespace HiEasyX
 
 		/**
 		 * @brief 填充某区域
-		 * @param x				填充起始位置
-		 * @param y				填充起始位置
-		 * @param color			填充颜色
-		 * @param filltype		填充模式
-		 *							FLOODFILLBORDER		指定 color 为填充边界颜色，即遇到此颜色后停止填充
-		 *							FLOODFILLSURFACE	指定 color 为填充表面颜色，即只覆盖此颜色
-		 * @param isSetColor	是否设置填充颜色
-		 * @param cFill			填充颜色
+		 * @param [in] x				填充起始位置
+		 * @param [in] y				填充起始位置
+		 * @param [in] color			填充颜色
+		 * @param [in] filltype			填充模式 <p>
+		 *									FLOODFILLBORDER		指定 color 为填充边界颜色，即遇到此颜色后停止填充 <p>
+		 *									FLOODFILLSURFACE	指定 color 为填充表面颜色，即只覆盖此颜色 <p>
+		 * @param [in] isSetColor		是否设置填充颜色
+		 * @param [in] cFill			填充颜色
 		*/
 		void FloodFill(int x, int y, COLORREF color, int filltype = FLOODFILLBORDER, bool isSetColor = false, COLORREF cFill = 0);
 
 		/**
 		 * @brief 在指定位置输出文本
-		 * @param x				位置
-		 * @param y				位置
-		 * @param lpszText		文本
-		 * @param isSetColor	是否设置颜色
-		 * @param c				文本颜色
+		 * @param [in] x				位置
+		 * @param [in] y				位置
+		 * @param [in] lpszText			文本
+		 * @param [in] isSetColor		是否设置颜色
+		 * @param [in] c				文本颜色
 		 * @return 文本像素宽度
 		*/
 		int OutTextXY(int x, int y, LPCTSTR lpszText, bool isSetColor = false, COLORREF c = 0);
@@ -472,18 +459,18 @@ namespace HiEasyX
 
 		/**
 		 * @brief 在指定位置输出格式化文本
-		 * @param x			位置
-		 * @param y			位置
-		 * @param _Size		格式化文本最大长度
-		 * @param _Format	格式化字符串
-		 * @param			不定参数
+		 * @param [in] x			位置
+		 * @param [in] y			位置
+		 * @param [in] _Size		格式化文本最大长度
+		 * @param [in] _Format		格式化字符串
+		 * @param [in]				不定参数
 		 * @return 文本像素宽度
 		*/
 		int OutTextXY_Format(int x, int y, int _Size, LPCTSTR _Format, ...);
 
 		/**
 		 * @brief 获取文本像素宽度
-		 * @param lpszText 文本
+		 * @param [in] lpszText 文本
 		 * @return 获取文本像素宽度
 		*/
 		int TextWidth(LPCTSTR lpszText);
@@ -500,18 +487,18 @@ namespace HiEasyX
 
 		/**
 		 * @brief 在某区域居中输出文字
-		 * @param lpszText		文本
-		 * @param rct			输出区域，默认为画布区域
-		 * @param isSetColor	是否设置颜色
-		 * @param c				文本颜色
+		 * @param [in] lpszText			文本
+		 * @param [in] rct				输出区域，默认为画布区域
+		 * @param [in] isSetColor		是否设置颜色
+		 * @param [in] c				文本颜色
 		*/
 		void CenterText(LPCTSTR lpszText, RECT rct = { -1 }, bool isSetColor = false, COLORREF c = 0);
 
 		/**
 		 * @brief 居中输出格式化文本
-		 * @param _Size		格式化文本最大长度
-		 * @param _Format	格式化字符串
-		 * @param			不定参数
+		 * @param [in] _Size		格式化文本最大长度
+		 * @param [in] _Format		格式化字符串
+		 * @param [in]				不定参数
 		*/
 		void CenterText_Format(int _Size, LPCTSTR _Format, ...);
 
@@ -527,62 +514,61 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置字体大小
-		 * @param nHeight	高度
-		 * @param nWidth	宽度（为 0 时，自动与高度匹配）
+		 * @param [in] nHeight	高度
+		 * @param [in] nWidth	宽度（为 0 时，自动与高度匹配）
 		*/
 		void SetFont(int nHeight, int nWidth = 0);
 
 		/**
 		 * @brief 设置使用字体的名称
-		 * @param lpsz 字体名称
+		 * @param [in] lpsz 字体名称
 		*/
 		void SetTypeface(LPCTSTR lpsz);
 
 		/**
 		 * @brief 设置字符串的书写角度（单位 0.1 度）
-		 * @param lfEscapement 角度
+		 * @param [in] lfEscapement 角度
 		*/
 		void SetTextEscapement(LONG lfEscapement);
 
 		/**
 		 * @brief 设置每个字符的书写角度（单位 0.1 度）
-		 * @param lfOrientation 角度
+		 * @param [in] lfOrientation 角度
 		*/
 		void SetTextOrientation(LONG lfOrientation);
 
 		/**
 		 * @brief 设置字符的笔画粗细（范围 默认 0 ~ 1000 最粗）
-		 * @param lfWeight 粗细
+		 * @param [in] lfWeight 粗细
 		*/
 		void SetTextWeight(LONG lfWeight);
 
 		/**
 		 * @brief 设置字体是否为斜体
-		 * @param lfItalic 是否斜体
+		 * @param [in] lfItalic 是否斜体
 		*/
 		void SetTextItalic(bool lfItalic);
 
 		/**
 		 * @brief 设置字体是否有下划线
-		 * @param lfUnderline 是否下划线
+		 * @param [in] lfUnderline 是否下划线
 		*/
 		void SetTextUnderline(bool lfUnderline);
 
 		/**
 		 * @brief 设置字体是否有删除线
-		 * @param lfStrikeOut 是否删除项
+		 * @param [in] lfStrikeOut 是否删除项
 		*/
 		void SetTextStrikeOut(bool lfStrikeOut);
 
 		/**
 		 * @brief 获取前景色
-		 * @return 前景色
 		*/
 		COLORREF GetColor();
 
 		/**
 		 * @brief 设置前景色
-		 * @param color 前景色
+		 * @param [in] color 前景色
 		*/
 		void SetColor(COLORREF color);
 
@@ -604,23 +590,23 @@ namespace HiEasyX
 
 		/**
 		 * @brief 输出格式化文本
-		 * @param _Size		格式化文本最大长度
-		 * @param _Format	格式化字符串
-		 * @param			不定参数
+		 * @param [in] _Size		格式化文本最大长度
+		 * @param [in] _Format		格式化字符串
+		 * @param [in]				不定参数
 		 * @return 文本像素宽度
 		*/
 		int OutText_Format(int _Size, LPCTSTR _Format, ...);
 
 		/**
 		 * @brief 加载图片文件到画布
-		 * @param lpszImgFile	图像文件路径
-		 * @param x				输出到画布的位置
-		 * @param y				输出到画布的位置
-		 * @param bResize		是否调整画布大小以正好容纳图像
-		 * @param nWidth		图像目标拉伸尺寸，为 0 表示不拉伸
-		 * @param nHeight		图像目标拉伸尺寸，为 0 表示不拉伸
-		 * @param alpha			叠加透明度
-		 * @param bUseSrcAlpha	是否使用原图的透明度信息进行混合（仅支持有透明度信息的 png 图像）
+		 * @param [in] lpszImgFile		图像文件路径
+		 * @param [in] x				输出到画布的位置
+		 * @param [in] y				输出到画布的位置
+		 * @param [in] bResize			是否调整画布大小以正好容纳图像
+		 * @param [in] nWidth			图像目标拉伸尺寸，为 0 表示不拉伸
+		 * @param [in] nHeight			图像目标拉伸尺寸，为 0 表示不拉伸
+		 * @param [in] alpha			叠加透明度
+		 * @param [in] bUseSrcAlpha		是否使用原图的透明度信息进行混合（仅支持有透明度信息的 png 图像）
 		 * @return 读取到的 IMAGE 对象
 		 *
 		 * @note 若开启透明通道，则会丢失原图像的透明度信息
@@ -636,13 +622,13 @@ namespace HiEasyX
 
 		/**
 		 * @brief 绘制图像到该画布
-		 * @param x				图像输入位置
-		 * @param y				图像输入位置
-		 * @param pImg			待输入图像
-		 * @param crop			裁剪区域
-		 * @param alpha			叠加透明度
-		 * @param bUseSrcAlpha	是否使用原图透明度
-		 * @param isCalculated	原图是否已经混合透明度
+		 * @param [in] x				图像输入位置
+		 * @param [in] y				图像输入位置
+		 * @param [in] pImg				待输入图像
+		 * @param [in] crop				裁剪区域
+		 * @param [in] alpha			叠加透明度
+		 * @param [in] bUseSrcAlpha		是否使用原图透明度
+		 * @param [in] isCalculated		原图是否已经混合透明度
 		*/
 		void PutImageIn_Alpha(
 			int x, int y,
@@ -655,31 +641,31 @@ namespace HiEasyX
 
 		/**
 		 * @brief EasyX 原生旋转函数
-		 * @param radian		旋转弧度
-		 * @param bkcolor		填充背景色
-		 * @param autosize		是否自适应旋转图像大小
-		 * @param highquality	高质量
+		 * @param [in] radian		旋转弧度
+		 * @param [in] bkcolor		填充背景色
+		 * @param [in] autosize		是否自适应旋转图像大小
+		 * @param [in] highquality	高质量
 		*/
 		void RotateImage(double radian, COLORREF bkcolor = BLACK, bool autosize = false, bool highquality = true);
 
 		/**
 		 * @brief 旋转图像（保留 Alpha 信息）
-		 * @param radian	旋转弧度
-		 * @param bkcolor	填充背景色
+		 * @param [in] radian	旋转弧度
+		 * @param [in] bkcolor	填充背景色
 		*/
 		void RotateImage_Alpha(double radian, COLORREF bkcolor = BLACK);
 
 		/**
 		 * @brief 缩放图像
-		 * @param nW	目标宽度
-		 * @param nH	目标高度
+		 * @param [in] nW	目标宽度
+		 * @param [in] nH	目标高度
 		*/
 		void ZoomImage_Alpha(int nW, int nH);
 
 		/**
 		 * @brief 缩放图像（基于 Win32 API）
-		 * @param nW	目标宽度
-		 * @param nH	目标高度
+		 * @param [in] nW	目标宽度
+		 * @param [in] nH	目标高度
 		*/
 		void ZoomImage_Win32_Alpha(int nW, int nH);
 
@@ -714,11 +700,11 @@ namespace HiEasyX
 
 		/**
 		 * @brief 新建画布
-		 * @param _x	位置
-		 * @param _y	位置
-		 * @param w		宽度
-		 * @param h		高度
-		 * @param cBk	背景色
+		 * @param [in] _x		位置
+		 * @param [in] _y		位置
+		 * @param [in] w		宽度
+		 * @param [in] h		高度
+		 * @param [in] cBk		背景色
 		*/
 		ImageBlock(int _x, int _y, int w, int h, COLORREF cBk = 0);
 
@@ -726,9 +712,9 @@ namespace HiEasyX
 
 		/**
 		 * @brief 不绑定外部画布，直接新建画布
-		 * @param w		宽度
-		 * @param h		高度
-		 * @param cBk	背景色
+		 * @param [in] w		宽度
+		 * @param [in] h		高度
+		 * @param [in] cBk		背景色
 		 * @return 画布
 		*/
 		Canvas* CreateCanvas(int w, int h, COLORREF cBk = 0);
@@ -747,8 +733,8 @@ namespace HiEasyX
 
 		/**
 		 * @brief 绘制到画布
-		 * @param pImg	目标绘制画布
-		 * @param alpha	叠加透明度
+		 * @param [in] pImg		目标绘制画布
+		 * @param [in] alpha	叠加透明度
 		*/
 		virtual void Render(IMAGE* pImg, BYTE alpha);
 	};
@@ -769,10 +755,10 @@ namespace HiEasyX
 
 		/**
 		 * @brief 渲染到画布
-		 * @param pImg			目标绘制画布
-		 * @param bShowOutline	是否显示轮廓
-		 * @param bShowText		是否显示轮廓文本
-		 * @param wstrAddedText	附加轮廓文本
+		 * @param [in] pImg				目标绘制画布
+		 * @param [in] bShowOutline		是否显示轮廓
+		 * @param [in] bShowText		是否显示轮廓文本
+		 * @param [in] wstrAddedText	附加轮廓文本
 		*/
 		void Render(IMAGE* pImg = nullptr, bool bShowOutline = false, bool bShowText = true, std::wstring wstrAddedText = L"");
 	};
@@ -816,23 +802,22 @@ namespace HiEasyX
 
 		/**
 		 * @brief 获取所有图层的总数
-		 * @return 图层总数
 		*/
 		size_t GetAllLayerSize() const;
 
 		/**
 		 * @brief 获取特殊图层（除了普通图层外的其他图层，见 LayerOrder）
 		 * @note 不建议滥用特殊图层
-		 * @param order 特殊图层索引
+		 * @param [in] order 特殊图层索引
 		 * @return 特殊图层
 		*/
 		Layer* GetSpecialLayer(LayerOrder order);
 
 		/**
 		 * @brief 渲染到画布
-		 * @param pImg				目标绘制画布
-		 * @param bShowAllOutline	是否显示轮廓
-		 * @param bShowAllText		是否显示轮廓文本
+		 * @param [in] pImg				目标绘制画布
+		 * @param [in] bShowAllOutline	是否显示轮廓
+		 * @param [in] bShowAllText		是否显示轮廓文本
 		*/
 		void Render(IMAGE* pImg = nullptr, bool bShowAllOutline = false, bool bShowAllText = true);
 	};

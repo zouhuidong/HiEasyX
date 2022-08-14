@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	Container.h
-//	HiGUI 控件分支：基础容器
-//
+/**
+ * @file	Container.h
+ * @brief	HiEasyX 库的基础容器
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,12 +10,14 @@
 
 namespace HiEasyX
 {
-	// 基础容器
+	/**
+	 * @brief 基础容器
+	*/
 	class Container
 	{
 	protected:
 
-		RECT m_rct = { 0 };					// 容器区域
+		RECT m_rct = { 0 };					///< 容器区域
 
 	public:
 
@@ -23,16 +25,27 @@ namespace HiEasyX
 
 		virtual ~Container();
 
-		// 响应更新区域消息
-		// rctOld	旧的区域
+		/**
+		 * @brief 响应更新区域消息
+		 * @param [in] rctOld 旧的区域
+		*/
 		virtual void UpdateRect(RECT rctOld);
 
 		RECT GetRect() const { return m_rct; }
 
-		// 设置位置和宽高
+		/**
+		 * @brief 设置位置和宽高
+		 * @param [in] x	位置
+		 * @param [in] y	位置
+		 * @param [in] w	宽
+		 * @param [in] h	高
+		*/
 		void SetRect(int x, int y, int w, int h);
 
-		// 设置矩形区域
+		/**
+		 * @brief 设置矩形区域
+		 * @param [in] rct 区域
+		*/
 		void SetRect(RECT rct);
 
 		POINT GetPos() const { return { m_rct.left,m_rct.top }; }

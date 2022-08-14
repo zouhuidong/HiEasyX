@@ -2,7 +2,6 @@
 
 namespace HiEasyX
 {
-
 	void DrawingProperty::SaveProperty()
 	{
 		m_pImg = GetWorkingImage();
@@ -63,5 +62,4 @@ namespace HiEasyX
 	{
 		m_isSaved = false;
 	}
-
 };

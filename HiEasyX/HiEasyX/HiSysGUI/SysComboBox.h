@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	SysComboBox.h
-//	HiSysGUI 控件分支：组合框
-//
+/**
+ * @file	SysComboBox.h
+ * @brief	HiSysGUI 控件分支：组合框
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,6 +10,9 @@
 
 namespace HiEasyX
 {
+	/**
+	 * @brief 系统组合框控件
+	*/
 	class SysComboBox : public SysControlBase
 	{
 	private:
@@ -21,8 +24,10 @@ namespace HiEasyX
 		void (*m_pFuncSel)(int sel, std::wstring wstrSelText) = nullptr;
 		void (*m_pFuncEdit)(std::wstring wstrText) = nullptr;
 
-		// 用户设置了 CBS_SIMPLE 同时禁用输入
-		// 此情况需要特殊实现
+		/**
+		 * @brief	标记用户设置了 CBS_SIMPLE 同时禁用输入
+		 *			此需求需要特殊实现
+		*/
 		bool m_bSimple_No_Edit = false;
 
 	protected:
@@ -35,55 +40,95 @@ namespace HiEasyX
 
 		SysComboBox(HWND hParent, RECT rct, std::wstring strText = L"");
 
-		SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+		SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L""); 
 
-		// 在创建控件前预设样式
+		/**
+		 * @brief 在创建控件前预设样式
+		 * @param [in] always_show_list	是否总是显示列表
+		 * @param [in] editable			是否可编辑
+		 * @param [in] sort				是否自动排序
+		*/
 		void PreSetEtyle(
-			bool always_show_list,	// 是否总是显示列表
-			bool editable,			// 是否可编辑
-			bool sort				// 是否自动排序
+			bool always_show_list,
+			bool editable,
+			bool sort
 		);
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 
-		// 注册选择消息
+		/**
+		 * @brief 注册选择消息
+		 * @param [in] pFunc 消息响应函数
+		*/
 		void RegisterSelMessage(void (*pFunc)(int sel, std::wstring wstrSelText));
 
-		// 注册编辑消息
+		/**
+		 * @brief 注册编辑消息
+		 * @param [in] pFunc 消息响应函数
+		*/
 		void RegisterEditMessage(void (*pFunc)(std::wstring wstrText));
 
-		// 获取选中的索引
+		/**
+		 * @brief 获取选中的索引
+		*/
 		int GetSel() const { return m_nSel; }
 
-		// 设置选中的索引
+		/**
+		 * @brief 设置选中的索引
+		 * @param [in] sel 选中的索引
+		*/
 		void SetSel(int sel);
 
-		// 选择具有指定文本的一项
-		// 返回是否选择成功
+		/**
+		 * @brief 选择具有指定文本的一项
+		 * @param [in] wstrText 指定文本
+		 * @return 是否选择成功
+		*/
 		bool SelectString(std::wstring wstrText);
 
-		// 增加项
+		/**
+		 * @brief 增加项
+		 * @param [in] wstrText 项文本
+		*/
 		void AddString(std::wstring wstrText);
 
-		// 插入项
+		/**
+		 * @brief 插入项
+		 * @param [in] index		插入位置 
+		 * @param [in] wstrText	项文本
+		*/
 		void InsertString(int index, std::wstring wstrText);
 
-		// 删除项
+		/**
+		 * @brief 删除项
+		 * @param [in] index	项索引 
+		*/
 		void DeleteString(int index);
 
-		// 获取列表内容数量
+		/**
+		 * @brief 获取列表内容数量
+		*/
 		int GetCount();
 		
-		// 清空列表
+		/**
+		 * @brief 清空列表
+		*/
 		void Clear();
 
-		// 显示列表
+		/**
+		 * @brief 显示列表
+		 * @param [in] enable 是否显示列表
+		*/
 		void ShowDropdown(bool enable);
 
-		// 选择项是否变化
+		/**
+		 * @brief 判断选择项是否变化
+		*/
 		bool isSelChanged();
 
-		// 是否被编辑
+		/**
+		 * @brief 判断是否被编辑
+		*/
 		bool isEdited();
 	};
 }

@@ -1,8 +1,8 @@
-////////////////////////////////////
-//
-//	Static.h
-//	HiGUI 控件分支：静态控件
-//
+/**
+ * @file	Static.h
+ * @brief	HiGUI 控件分支：静态控件
+ * @author	huidong
+*/
 
 #pragma once
 
@@ -10,7 +10,9 @@
 
 namespace HiEasyX
 {
-	// 静态（文本、图像）控件
+	/**
+	 * @brief 静态（文本、图像）控件
+	*/
 	class Static : public ControlBase
 	{
 	public:
@@ -43,7 +45,14 @@ namespace HiEasyX
 
 		virtual void ClearText();
 
-		// 添加文本（可设置颜色，若不设置则使用当前颜色）
+		/**
+		 * @brief 添加文本
+		 * @param [in] wstr				文本
+		 * @param [in] isSetTextColor	是否设置此文本颜色
+		 * @param [in] cText				文本颜色
+		 * @param [in] isSetBkColor		是否设置此文本背景颜色
+		 * @param [in] cBk				文本背景色
+		*/
 		virtual void AddText(
 			std::wstring wstr,
 			bool isSetTextColor = false,
@@ -56,10 +65,15 @@ namespace HiEasyX
 
 		void SetText(std::vector<Char> vecText);
 
-		// 获取缓存的图像
+		/**
+		 * @brief 获取缓存的图像
+		*/
 		virtual ImageBlock* GetImage() { return m_pImgBlock; }
 
-		// 设置显示图像
+		/**
+		 * @brief 设置显示图像
+		 * @param [in] pImgBlockmg 要显示的图像块
+		*/
 		virtual void SetImage(ImageBlock* pImgBlockmg);
 
 		void Draw_Text(int nTextOffsetX = 0, int nTextOffsetY = 0) override;

@@ -1,7 +1,7 @@
 /**
  * @file	Button.h
- * @author	huidong
  * @brief	HiGUI 控件分支：按钮控件
+ * @author	huidong
 */
 
 #pragma once
@@ -44,25 +44,25 @@ namespace HiEasyX
 
 		/**
 		 * @brief 启用控件
-		 * @param enable 是否启用
+		 * @param [in] enable 是否启用
 		*/
 		void SetEnable(bool enable) override;
 
 		/**
 		 * @brief 是否启用经典样式
-		 * @param enable 是否启用
+		 * @param [in] enable 是否启用
 		*/
 		virtual void EnableClassicStyle(bool enable);
 		
 		/**
 		 * @brief 更新消息
-		 * @param msg 消息
+		 * @param [in] msg 消息
 		*/
 		void UpdateMessage(ExMessage msg) override;
 
 		/**
 		 * @brief 绘制
-		 * @param draw_child 是否绘制子控件
+		 * @param [in] draw_child 是否绘制子控件
 		*/
 		void Draw(bool draw_child = true) override;
 	};
