@@ -1,7 +1,8 @@
-////////////////////////////
-//
-//	创建托盘图标示例
-//
+/**
+ * @brief 	创建托盘图标示例
+ * @author 	huidong <mailhuid@163.com>
+ * @date 	2022.08.14
+*/
 
 #include "HiEasyX.h"
 

@@ -1,9 +1,8 @@
-////////////////////////////////
-//
-//	总览 HiEasyX 的功能
-// 
-//	提示：窗口可拉伸
-//
+/**
+ * @brief	总览 HiEasyX 的功能
+ * @author	huidong <mailhuid@163.com>
+ * @date	2022.8.14
+*/
 
 #include "HiEasyX.h"
 #include <map>
@@ -20,10 +19,14 @@
 #define CHECKBOX_X 140
 #define CHECKBOX_Y 435
 
+#define STATIC_X 260
+#define STATIC_Y 440
+
 hiex::Canvas canvas_main;
 hiex::SysEdit edit;
 hiex::SysButton btn;
 hiex::SysCheckBox checkbox;
+hiex::SysStatic text;
 
 void OutInfo(hiex::Canvas& canvas)
 {
@@ -97,6 +100,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 		btn.Move(BTN_X, BTN_Y + dy);
 		checkbox.Move(CHECKBOX_X, CHECKBOX_Y + dy);
+		text.Move(STATIC_X, STATIC_Y + dy);
 
 		break;
 	}
@@ -255,6 +259,9 @@ int main()
 
 	checkbox.Create(hwnd, CHECKBOX_X, CHECKBOX_Y, 100, 20, L"Read only");
 	checkbox.RegisterMessage(OnCheck);
+
+	text.Create(hwnd, STATIC_X, STATIC_Y, 230, 20, L"Tip: Window can be stretched.");
+	text.Enable(false);
 
 	hiex::init_end(hwnd);
 

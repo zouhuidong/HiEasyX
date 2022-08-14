@@ -1,8 +1,8 @@
-////////////////////////////
-//
-//	演示 HiEasyX 的自绘 GUI
-//
-//
+/**
+ * @brief 	演示 HiEasyX 的自绘 GUI
+ * @author 	huidong <mailhuid@163.com>
+ * @date 	2022.08.14
+*/
 
 #include "HiEasyX.h"
 

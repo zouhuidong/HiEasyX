@@ -1,20 +1,11 @@
-////////////////////////////////////////
-//	
-//	程　　序：基于 EasyX 的文本框 + 按钮控件
-//	作　　者：BestAns
-//	编译环境：VS2019，EasyX_20211109
-//	编写日期：2021-10-28
-//	最后修改：2021-11-20
-// 
-//	修　　改: huidong <mailhuid@163.com>
-//	修改内容: 将 HiEasyX 应用到程序
-//	修改日期：2022-08-13
-// 
-//	此示例将演示 HiEasyX 对鼠标消息和键盘消息的支持
-//
+/**
+ * @brief 	基于 EasyX 的文本框 + 按钮控件
+ * @note 	此示例将演示 HiEasyX 对鼠标消息和键盘消息的支持
+ * @author 	BestAns, huidong（修改）
+ * @date 	2022.08.14
+*/
 
 #include "HiEasyX.h"
-
 
 // 实现文本框控件
 class EasyTextBox

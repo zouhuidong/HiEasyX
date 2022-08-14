@@ -1,7 +1,8 @@
-/////////////////////////
-//
-//	演示播放 gif 动图
-//
+/**
+ * @brief 	演示播放 gif 动图
+ * @author 	huidong <mailhuid@163.com>
+ * @date 	2022.08.14
+*/
 
 #include "HiEasyX.h"
 

@@ -1,7 +1,8 @@
-////////////////////////////////////////
-//
-//	简单演示 HiEasyX 中系统 GUI 的调用方式
-//
+/**
+ * @brief 	简单演示 HiEasyX 中系统 GUI 的调用方式
+ * @author 	huidong <mailhuid@163.com>
+ * @date 	2022.08.14
+*/
 
 #include "HiEasyX.h"
 

@@ -1,11 +1,8 @@
-///////////////////////////////////////////////////////////
-//
-//	程序：比较原生 EasyX 和 HiEasyX 的绘图效率
-//
-//	作者：huidong <mailhuid@163.com>
-//	环境：VisualStudio 2022 | EasyX_20220610 | Windows 10
-//	日期：2022.08.12
-//
+/**
+ * @brief 	比较原生 EasyX 和 HiEasyX 的绘图效率
+ * @author 	huidong <mailhuid@163.com>
+ * @date 	2022.08.14
+*/
 
 // 定义此宏以使用原生 EasyX，否则使用 HiEasyX
 //#define EASYX
@@ -16,10 +13,10 @@
 #include <math.h>
 #define BEGIN_TASK()
 #define END_TASK()
-#define TITLE L"A moving ball [ EasyX ]"
+#define TITLE L"Native EasyX"
 #else
 #include "HiEasyX.h"
-#define TITLE L"A moving ball [ HiEasyX ]"
+#define TITLE L"HiEasyX"
 #endif // EASYX
 
 #ifndef EASYX
@@ -33,7 +30,7 @@ void OnBtn()
 	index++;
 	if (index == 5)
 		index = 0;
-	
+
 	btn.SetText(lpszMode[index]);
 	hiex::SetDrawMode((hiex::DrawMode)index);
 }
