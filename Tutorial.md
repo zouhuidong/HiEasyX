@@ -20,4 +20,4 @@ HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展�
 
 ## 开始 HiEasyX
 
-请确保您已经在 Visual Studio 项目中配置好 HiEasyX，如果还没有，请看 [README.md](./readme.md#配置此库)
+请确保您已经在 Visual Studio 项目中配置好 HiEasyX，如果还没有，请看 [README.md](./README.md#配置此库)
