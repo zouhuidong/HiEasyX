@@ -98,6 +98,11 @@ int main()
 以下的示例程序源码可以在 `./Samples/` 中找到
 
 <div align=center>
+<img src="./screenshot/start.png"><br>
+<b>Release 模式启动动画效果</b>
+</div><br>
+
+<div align=center>
 <img src="./screenshot/overview.png"><br>
 <b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
 </div><br>
