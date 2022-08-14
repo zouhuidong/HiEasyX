@@ -118,3 +118,7 @@ int main()
 <img src="./screenshot/gui.png"><br>
 <b>自绘控件</b>
 </div><br>
+
+## 立即开始
+
+> [上手 HiEasyX](./Tutorial.md)
