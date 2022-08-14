@@ -50,13 +50,22 @@
 
 `HiEasyX` 完全抛弃了 `EasyX` 原生的创建绘图窗口的方式，自己调用 Win32 API 创建窗口，而这个管理窗口的模块，就是 `HiWindow`。
 
-`HiWindow` 通过自行创建窗口，实现了对多绘图窗口和 Win32 GUI 的支持。
+因此，`HiWindow` 支持多绘图窗口和 Win32 GUI。
 
-`HiWindow` 使用宏定义覆盖了原生 EasyX 的窗口相关函数，所以您仍可以使用 `initgraph` 创建窗口。
+您仍可以使用 `initgraph()` 创建窗口，一切都有宏定义为您保驾护航。换句话说，原生的 EasyX 函数都可以使用。
 
-但是，`HiWindow` 有另一种更推荐的创建窗口方式，那就是 `hiex::Window`
+但是，使用 `hiex::Window`——窗口类对象来管理窗口，是个更好的选择。
 
-您可以这样创建窗口
+您可以这样创建窗口：
+
+```cpp
+hiex::Window wnd(640, 480);
+```
+或者
+```cpp
+hiex::Window wnd;
+wnd.Create(640, 480);
+```
 
 
 ---
