@@ -6,13 +6,9 @@
 ![Forks](https://img.shields.io/github/forks/zouhuidong/仓库名)
 ![Downloads](https://img.shields.io/github/downloads/zouhuidong/仓库名/total)
 
-EasyX 全面扩展库
+该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
 
 > 前身：[EasyWin32](github.com/zouhuidong/EasyWin32)
-
-## 简介
-
-该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
 
 * HiEasyX
   + HiWindow：窗口支持
