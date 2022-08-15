@@ -734,9 +734,9 @@ namespace HiEasyX
 		/**
 		 * @brief 绘制到画布
 		 * @param [in] pImg		目标绘制画布
-		 * @param [in] alpha	叠加透明度
+		 * @param [in] _alpha	叠加透明度
 		*/
-		virtual void Render(IMAGE* pImg, BYTE alpha);
+		virtual void Render(IMAGE* pImg, BYTE _alpha);
 	};
 
 	/**

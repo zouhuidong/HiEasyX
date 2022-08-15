@@ -1644,7 +1644,7 @@ namespace HiEasyX
 		y = _y;
 	}
 
-	void ImageBlock::Render(IMAGE* pImg, BYTE alpha)
+	void ImageBlock::Render(IMAGE* pImg, BYTE _alpha)
 	{
 		if (m_pCanvas)
 		{
@@ -1652,7 +1652,7 @@ namespace HiEasyX
 				x, y,
 				pImg,
 				rctCrop,
-				(BYTE)(alpha * (alpha == 255 ? 1 : alpha / 255.0f)),
+				(BYTE)(alpha * (_alpha == 255 ? 1 : _alpha / 255.0f)),
 				bUseSrcAlpha, isAlphaCalculated
 			);
 		}
@@ -1680,6 +1680,8 @@ namespace HiEasyX
 				canvas.SetTextStyle(16, 0, L"Arial");
 			}
 
+			wstrAddedText = L" " + wstrAddedText;
+
 			size_t i = 0;
 			for (auto& element : *this)
 			{
@@ -1702,7 +1704,6 @@ namespace HiEasyX
 					// »æÖÆÎÄ±¾
 					if (flagText)
 					{
-						wstrAddedText = L" " + wstrAddedText;
 						std::wstring wstrOriginText = L" Block[" + std::to_wstring(i) + L"]";
 						std::wstring wstrAllText = wstrAddedText + wstrOriginText;
 
