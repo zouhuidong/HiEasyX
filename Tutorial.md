@@ -557,9 +557,45 @@ int main()
 <b>创建编辑框</b>
 </div><br>
 
-此处不再展开，详情请参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
+加上按钮，获取文本：
 
-如果想更深入了解 HiSysGUI，可以参考下面这个示例：
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(300, 200);
+
+	// 编辑框
+	hiex::SysEdit edit;
+	edit.PreSetStyle(true, false, true, true);
+	edit.Create(wnd.GetHandle(), 10, 10, 280, 140, L"Type here~");
+	edit.SetFont(24, 0, L"微软雅黑");
+
+	// 按钮
+	hiex::SysButton btn;
+	btn.Create(wnd.GetHandle(), 190, 160, 100, 30,L"Submit");
+
+	while (wnd.isAlive())
+	{
+		// 按下按钮时，弹窗显示输入的文本
+		if (btn.isClicked())
+			MessageBox(wnd.GetHandle(), edit.GetText().c_str(), L"Submit", MB_OK);
+		Sleep(50);
+	}
+
+	return 0;
+}
+```
+
+<div align=center>
+<img src="./screenshot/fast_edit_2.png"><br>
+<b>获取编辑框文本</b>
+</div><br>
+
+还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
+
+下面这个示例用到的控件比较全面，可以帮您更深入地了解 HiSysGUI：
 
 <div align=center>
 <img src="./screenshot/overview.png"><br>
@@ -567,6 +603,8 @@ int main()
 </div><br>
 
 在此查看此示例的 [源代码](./Samples/Recommend/OverviewSample.cpp)
+
+##
 
 ## 迁移篇：在原有 EasyX 项目上使用 HiEasyX
 
