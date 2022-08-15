@@ -69,9 +69,9 @@ int main()
 
 ### 创建绘图窗口
 
-HiEasyX 支持创建多个绘图窗口，调用 Win32 控件。HiEasyX 的窗口模块叫 `HiWindow`。
+HiEasyX 支持创建多个绘图窗口，创建、管理窗口的模块名为 `HiWindow`。
 
-像这样创建一个窗口：
+可以像这样创建一个窗口：
 
 ```cpp
 hiex::initgraph_win32(640, 480);
@@ -92,6 +92,8 @@ hiex::Window wnd(640, 480);
 hiex::Window wnd;
 wnd.Create(640, 480);
 ```
+
+如果想要创建多个窗口，如法炮制即可。
 
 > **想使用原生 EasyX ？**
 >
