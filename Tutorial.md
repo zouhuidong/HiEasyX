@@ -337,6 +337,58 @@ HiEasyX 定义了如下宏用于快速设置窗口样式
 
 等等。更多请参见 [文档](https://zouhuidong.github.io) 和 `HiWindow.h`。
 
+## 画布篇：使用 Canvas 绘图
+
+`hiex::Canvas` 是对 EasyX 绘图函数的封装和扩展。
+
+使用 `hiex::Canvas` 很简单，像使用 `IMAGE` 对象一样，不同的是，绘制对象时不需要 `SetWorkingImage`，可以直接调用对象方法进行绘制。
+
+例如：
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(640, 480);			// 创建窗口
+
+	hiex::Canvas canvas(60, 60);		// 创建画布对象
+
+	canvas.Circle(30, 30, 30);			// 绘制画布对象
+
+	if (wnd.BeginTask())				// 启动窗口任务
+	{
+		putimage(100, 100, &canvas);	// 将画布内容输出到窗口
+
+		wnd.EndTask();					// 结束窗口任务
+		wnd.Redraw();					// 重绘窗口
+	}
+
+	hiex::init_end();					// 阻塞等待窗口关闭
+	return 0;
+}
+```
+
+Canvas 还可以和 HiWindow 更好地融合，可以直接将窗口和画布绑定，这样，在绘制时甚至不需要启动窗口任务，例如：
+
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(640, 480);			// 创建窗口
+	hiex::Canvas canvas;				// 创建画布对象
+
+	wnd.BindCanvas(&canvas);			// 将窗口和画布绑定
+
+	canvas.Circle(130, 130, 30);		// 绘制画布对象
+	wnd.Redraw();						// 重绘窗口
+
+	hiex::init_end();					// 阻塞等待窗口关闭
+	return 0;
+}
+```
+
+
 ## 迁移篇：在原有 EasyX 项目上使用 HiEasyX
 
 
