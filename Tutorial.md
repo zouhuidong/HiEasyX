@@ -437,7 +437,19 @@ canvas.BindToImage(_Your_Image_Pointer_);
 
 ## 控件篇：使用更完善的 Win32 UI 库
 
-HiEasyX 封装了部分常用 Win32 控件，这个控件模块被称为 HiSysGUI。
+HiEasyX 封装了常用 Win32 控件，这个控件模块被称为 HiSysGUI。
+
+目前支持的控件类型（此文档可能更新不及时）：
+
+* 分组框
+* 静态文本（图像）
+* 按钮
+* 复选框
+* 单选框
+* 编辑框
+* 组合框
+
+一般情况下，这些控件已经足够。而且，您也可以自定义窗口过程函数，直接调用其它 Win32 控件。
 
 ### 体验 HiSysGUI 的极速构建
 
@@ -457,7 +469,23 @@ int main()
 }
 ```
 
+<div align=center>
+<img src="./screenshot/fast_btn.png"><br>
+<b>创建按钮</b>
+</div><br>
 
+很好！使用按钮就是这么容易。其它的控件调用方式也很相似。
+
+如果要响应按钮消息，可以使用 `RegisterMessage` 方法，或者使用 `GetClickCount` 函数获取按钮点击次数，此处不再展开，详情请参阅 [文档](https://zouhuidong.github.io/HiEasyX)。
+
+如果想更深入了解 HiSysGUI，可以参考下面这个示例：
+
+<div align=center>
+<img src="./screenshot/overview.png"><br>
+<b>控件示例</b>
+</div><br>
+
+在此查看此示例的 [源代码](./Samples/Recommend/OverviewSample.cpp)
 
 ## 迁移篇：在原有 EasyX 项目上使用 HiEasyX
 
