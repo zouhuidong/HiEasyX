@@ -103,7 +103,9 @@ hiex::Window wnd;
 wnd.Create(640, 480);
 ```
 
-如果想要在项目中使用原生的 EasyX 窗口，请在 `HiDef.h` 中定义 `_NATIVE_EASYX_` 宏。
+> **想使用原生 EasyX ？**
+>
+> 在 `HiDef.h` 中定义 `_NATIVE_EASYX_` 宏后，`initgraph` 函数将创建原生的 EasyX 窗口。但是，这也意味着不再支持 HiEasyX 的许多扩展功能。
 
 ### 确定窗口是否还存在
 
@@ -139,7 +141,7 @@ EasyX 的用户可能早已习惯不判断绘图窗口是否还存在，因为�
 
 `HiWindow` 支持多窗口。操作多窗口的逻辑和 EasyX 中的 `SetWorkingImage()` 类似，也就是在操作某个窗口前，将这个窗口设置为活动窗口。
 
-通过 `hiex::SetWorkingWindow()` 设置当前活动窗口。
+通过 `hiex::SetWorkingWindow()` 设置当前活动窗口，同时，当前工作绘图对象（WorkingImage）也会被设置到活动窗口的 IMAGE 对象。
 
 ### 窗口任务
 
@@ -175,6 +177,10 @@ EasyX 原生的 `FlushBatchDraw()` 和 `EndBatchDraw()` 函数都被宏定义为
 由于绘图代码在窗口任务中执行，故每次窗口任务结束时将默认输出绘图缓冲。
 
 但是，如果不是在窗口过程函数的 `WM_PAINT` 消息中绘图，就还需要在结束窗口任务后调用 `FLUSH_DRAW()` 宏发送窗口重绘消息（它也等同于 `hiex::EnforceRedraw()`），这样才能将绘制内容刷新到屏幕上。
+
+> **注意：**
+>
+> 由于支持窗口拉伸，缓冲区 `IMAGE` 对象在窗口拉伸时会自动调整大小。如果您保存了缓冲区 `IMAGE` 对象的显存指针，则一定要检测窗口是否被拉伸（使用 `hiex::isWindowSizeChanged()` 或 `hiex::Window::isSizeChanged()`），然后更新显存指针。
 
 ### 消息事件
 
@@ -337,13 +343,26 @@ HiEasyX 定义了如下宏用于快速设置窗口样式
 
 等等。更多请参见 [文档](https://zouhuidong.github.io) 和 `HiWindow.h`。
 
-## 画布篇：使用 Canvas 绘图
+## 绘图篇：HiCanvas 绘图模块
 
-`hiex::Canvas` 是对 EasyX 绘图函数的封装和扩展。
+### 概念
 
-使用 `hiex::Canvas` 很简单，像使用 `IMAGE` 对象一样，不同的是，绘制对象时不需要 `SetWorkingImage`，可以直接调用对象方法进行绘制。
+**画布**（`hiex::Canvas`）是对 EasyX 绘图函数的封装和扩展。它的使用方法和 `IMAGE` 对象一样，不同的是，使用画布绘制时不需要 `SetWorkingImage`，可以直接调用对象方法进行绘制，而且它支持透明通道。
 
-例如：
+**图像块**（`hiex::ImageBlock`）是 `hiex::Canvas` 的扩展，它保存了画布的位置，透明通道信息，可以更方便地存储在图层中。 
+
+**图层**（`hiex::Layer`）中存储有若干个图像块，图层的透明度可以叠加到所有图像块上。
+
+**场景**（`hiex::Scene`）中存储有若干个图层，以及一些特殊图层。渲染整个场景时，可以使图层按次序渲染。
+
+### 使用 Canvas 绘制
+
+您可以创建一个画布对象，然后直接调用它的成员方法进行绘制。它们和 EasyX 原生绘图函数名称很像，区别仅在于它们使用驼峰命名法。
+
+此外，Canvas 还提供一些更方便的绘制方式。例如：调用 Canvas 的绘图函数时可以选择直接设置绘制颜色，直接操作显存绘制或获取像素，支持透明通道的图片加载、缩放、旋转，直接设置字体名称（而不必设置字体大小）、字符（串）的绘制角度，格式化输出文本，等等。 
+
+示例代码：
+
 ```cpp
 #include "HiEasyX.h"
 
@@ -353,7 +372,7 @@ int main()
 
 	hiex::Canvas canvas(60, 60);		// 创建画布对象
 
-	canvas.Circle(30, 30, 30);			// 绘制画布对象
+	canvas.Circle(30, 30, 30);			// 绘制画布
 
 	if (wnd.BeginTask())				// 启动窗口任务
 	{
@@ -368,7 +387,9 @@ int main()
 }
 ```
 
-Canvas 还可以和 HiWindow 更好地融合，可以直接将窗口和画布绑定，这样，在绘制时甚至不需要启动窗口任务，例如：
+### 使用 Canvas 绑定窗口或 IMAGE 对象
+
+Canvas 还可以和 HiWindow 更好地融合，可以直接将窗口和画布绑定，这样，在绘制时甚至不需要启动窗口任务，直接调用画布的绘制方法即可。例如：
 
 ```cpp
 #include "HiEasyX.h"
@@ -387,6 +408,55 @@ int main()
 	return 0;
 }
 ```
+
+也可以将一个 Canvas 对象绑定到已有的 IMAGE 对象，让 Canvas 为其绘制，只需要：
+
+```cpp
+canvas.BindToImage(_Your_Image_Pointer_);
+```
+
+> **注意：**
+>
+> 一旦画布绑定窗口，或者绑定到其他 `IMAGE` 对象，请不要再使用 `&canvas` 的方式获取画布指针，请使用 `hiex::Canvas::GetImagePointer()`，这很重要。
+
+### 应用场景、图层、Alpha 通道
+
+它们都很易于使用，您可以看下面的一个例子：
+
+<div align=center>
+<img src="./screenshot/balls1.png"><br>
+<b>小球示例（1）</b>
+</div><br>
+
+<div align=center>
+<img src="./screenshot/balls2.png"><br>
+<b>小球示例（2）</b>
+</div><br>
+
+为了缩短篇幅，请您在此查看 [源代码](./Samples/Recommend/Balls.cpp)
+
+## 控件篇：使用更完善的 Win32 UI 库
+
+HiEasyX 封装了部分常用 Win32 控件，这个控件模块被称为 HiSysGUI。
+
+### 体验 HiSysGUI 的极速构建
+
+请看这个例子：
+
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(300, 200);
+
+	hiex::SysButton btn(wnd.GetHandle(), 100, 85, 100, 30, L"Button");
+
+	hiex::init_end();
+	return 0;
+}
+```
+
 
 
 ## 迁移篇：在原有 EasyX 项目上使用 HiEasyX

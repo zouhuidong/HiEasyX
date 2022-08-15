@@ -105,6 +105,16 @@ int main()
 </div><br>
 
 <div align=center>
+<img src="./screenshot/balls1.png"><br>
+<b>小球示例（1）</b>
+</div><br>
+
+<div align=center>
+<img src="./screenshot/balls2.png"><br>
+<b>小球示例（2）</b>
+</div><br>
+
+<div align=center>
 <img src="./screenshot/overview.png"><br>
 <b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
 </div><br>
@@ -121,4 +131,4 @@ int main()
 
 ## 立即开始
 
-> [上手 HiEasyX](./Tutorial.md)
+> [开始使用 HiEasyX](./Tutorial.md)
