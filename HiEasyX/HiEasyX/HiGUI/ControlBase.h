@@ -35,9 +35,9 @@ namespace HiEasyX
 
 	/**
 	 * @brief 控件消息处理函数
-	 * @param [in] _Ctrl	传入控件指针
-	 * @param [in] _MsgId	传入消息标识代码
-	 * @param [in] _ExMsg	传入消息（鼠标坐标已变换到控件）
+	 * @param[in] _Ctrl	传入控件指针
+	 * @param[in] _MsgId	传入消息标识代码
+	 * @param[in] _ExMsg	传入消息（鼠标坐标已变换到控件）
 	*/
 	typedef void (*MESSAGE_PROC_FUNC)(ControlBase* _Ctrl, int _MsgId, ExMessage _ExMsg);
 
@@ -95,7 +95,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 更新区域消息处理
-		 * @param [in] rctOld 旧区域
+		 * @param[in] rctOld 旧区域
 		*/
 		void UpdateRect(RECT rctOld) override;
 
@@ -106,7 +106,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 标记需要清空矩形区域
-		 * @param [in] rct 需要清空的区域
+		 * @param[in] rct 需要清空的区域
 		*/
 		void MarkNeedClearRect(RECT rct);
 
@@ -124,14 +124,14 @@ namespace HiEasyX
 
 		/**
 		 * @brief 分发消息到用户函数
-		 * @param [in] msgid	消息 ID
-		 * @param [in] msg		消息内容
+		 * @param[in] msgid	消息 ID
+		 * @param[in] msg		消息内容
 		*/
 		virtual void CallUserMsgProcFunc(int msgid, ExMessage msg);
 
 		/**
 		 * @brief 子控件区域变更
-		 * @param [in] pChild 区域变更的子控件
+		 * @param[in] pChild 区域变更的子控件
 		*/
 		virtual void ChildRectChanged(ControlBase* pChild);
 
@@ -153,7 +153,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置父控件（父控件调用 AddChild）
-		 * @param [in] p 父控件
+		 * @param[in] p 父控件
 		*/
 		virtual void SetParent(ControlBase* p);
 
@@ -161,7 +161,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 为子控件自动改变大小以容纳控件（不容纳负坐标部分）
-		 * @param [in] enable 是否启用
+		 * @param[in] enable 是否启用
 		*/
 		virtual void EnableAutoSizeForChild(bool enable);
 
@@ -188,7 +188,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 启用自动重绘（接受到基础消息事件时自动标识需要重绘）
-		 * @param [in] enable 是否启用
+		 * @param[in] enable 是否启用
 		*/
 		virtual void EnableAutoRedraw(bool enable);
 
@@ -219,34 +219,34 @@ namespace HiEasyX
 
 		/**
 		 * @brief 绘制控件
-		 * @param [in] draw_child 是否绘制子控件
+		 * @param[in] draw_child 是否绘制子控件
 		*/
 		virtual void Draw(bool draw_child = true);
 
 		/**
 		 * @brief 渲染控件到外部
-		 * @param [in] dst			渲染目标
-		 * @param [in] pRct			内部使用，传入父控件渲染区域数组
+		 * @param[in] dst			渲染目标
+		 * @param[in] pRct			内部使用，传入父控件渲染区域数组
 		 * @param [in, out] pCount	内部使用，传入父控件渲染区域数量指针
 		*/
 		virtual void Render(Canvas* dst, RECT* pRct = nullptr, int* pCount = 0);
 
 		/**
 		 * @brief 设置消息响应函数
-		 * @param [in] func 消息响应函数
+		 * @param[in] func 消息响应函数
 		*/
 		virtual void SetMsgProcFunc(MESSAGE_PROC_FUNC func);
 
 		/**
 		 * @brief 设置消息响应函数为静态类函数
-		 * @param [in] static_class_func		消息响应函数（静态类函数）
-		 * @param [in] _this					类指针
+		 * @param[in] static_class_func		消息响应函数（静态类函数）
+		 * @param[in] _this					类指针
 		*/
 		virtual void SetMsgProcFunc(MESSAGE_PROC_FUNC_CLASS static_class_func, void* _this);
 
 		/**
 		 * @brief 更新消息
-		 * @param [in] msg 新消息
+		 * @param[in] msg 新消息
 		*/
 		virtual void UpdateMessage(ExMessage msg);
 

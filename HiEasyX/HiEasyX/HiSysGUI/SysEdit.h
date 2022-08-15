@@ -63,12 +63,12 @@ namespace HiEasyX
 
 		/**
 		 * @brief 在创建控件前预设控件样式
-		 * @param [in] multiline			多行文本
-		 * @param [in] center_text		文本居中
-		 * @param [in] vscroll			拥有垂直滚动条
-		 * @param [in] auto_vscroll		自动垂直滚动
-		 * @param [in] hscroll			拥有水平滚动条
-		 * @param [in] auto_hscroll		自动水平滚动
+		 * @param[in] multiline			多行文本
+		 * @param[in] center_text		文本居中
+		 * @param[in] vscroll			拥有垂直滚动条
+		 * @param[in] auto_vscroll		自动垂直滚动
+		 * @param[in] hscroll			拥有水平滚动条
+		 * @param[in] auto_hscroll		自动水平滚动
 		*/
 		void PreSetStyle(
 			bool multiline,
@@ -83,43 +83,43 @@ namespace HiEasyX
 
 		/**
 		 * @brief 注册输入消息
-		 * @param [in] pFunc 消息响应函数
+		 * @param[in] pFunc 消息响应函数
 		*/
 		void RegisterMessage(void (*pFunc)(std::wstring wstrText));
 
 		/**
 		 * @brief 设置文本右对齐
-		 * @param [in] enable 是否启用右对齐
+		 * @param[in] enable 是否启用右对齐
 		*/
 		void RightAlign(bool enable);
 
 		/**
 		 * @brief 自动转大写
-		 * @param [in] enable 是否启用转大写
+		 * @param[in] enable 是否启用转大写
 		*/
 		void Uppercase(bool enable);
 
 		/**
 		 * @brief 自动转小写
-		 * @param [in] enable 是否启用转小写
+		 * @param[in] enable 是否启用转小写
 		*/
 		void Lowercase(bool enable);
 
 		/**
 		 * @brief 设置密码框
-		 * @param [in] enable 是否启用密码框
+		 * @param[in] enable 是否启用密码框
 		*/
 		void Password(bool enable);
 
 		/**
 		 * @brief 设置只读
-		 * @param [in] enable 是否启用只读
+		 * @param[in] enable 是否启用只读
 		*/
 		void ReadOnly(bool enable);
 
 		/**
 		 * @brief 设置仅数字
-		 * @param [in] enable 是否启用仅数字输入
+		 * @param[in] enable 是否启用仅数字输入
 		*/
 		void NumberOnly(bool enable);
 
@@ -130,25 +130,25 @@ namespace HiEasyX
 
 		/**
 		 * @brief 限制最大输入长度
-		 * @param [in] len 最大输入长度
+		 * @param[in] len 最大输入长度
 		*/
 		void SetMaxTextLength(int len);
 
 		/**
 		 * @brief 设置控件背景色
-		 * @param [in] color 控件背景色 
+		 * @param[in] color 控件背景色 
 		*/
 		void SetBkColor(COLORREF color);
 
 		/**
 		 * @brief 设置文本背景色
-		 * @param [in] color 文本背景色
+		 * @param[in] color 文本背景色
 		*/
 		void SetTextBkColor(COLORREF color);
 
 		/**
 		 * @brief 设置文本颜色
-		 * @param [in] color 文本颜色 
+		 * @param[in] color 文本颜色 
 		*/
 		void SetTextColor(COLORREF color);
 
@@ -161,8 +161,8 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置光标选择区域
-		 * @param [in] begin 	光标起始位置
-		 * @param [in] end 		选择结束位置（为 -1 可表示结尾）
+		 * @param[in] begin 	光标起始位置
+		 * @param[in] end 		选择结束位置（为 -1 可表示结尾）
 		*/
 		void SetSel(int begin, int end);
 
@@ -188,7 +188,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 替换选中的文本
-		 * @param [in] wstrText 替换文本
+		 * @param[in] wstrText 替换文本
 		*/
 		void Replace(std::wstring wstrText);
 

@@ -73,10 +73,10 @@ namespace HiEasyX
 
 		/**
 		 * @brief 响应特殊按钮消息（Top 和 Bottom）
-		 * @param [in] pThis	类指针
-		 * @param [in] pCtrl	控件
-		 * @param [in] msgid	消息 ID
-		 * @param [in] msg	消息内容
+		 * @param[in] pThis	类指针
+		 * @param[in] pCtrl	控件
+		 * @param[in] msgid	消息 ID
+		 * @param[in] msg	消息内容
 		*/
 		static void OnSpecialButtonMsg(void* pThis, ControlBase* pCtrl, int msgid, ExMessage msg);
 
@@ -115,7 +115,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置按钮高度（竖直放置时生效）
-		 * @param [in] h 高度
+		 * @param[in] h 高度
 		*/
 		void SetButtonHeight(int h);
 
@@ -123,7 +123,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置按钮宽度（水平放置时生效）
-		 * @param [in] w 宽度
+		 * @param[in] w 宽度
 		*/
 		void SetButtonWidth(int w);
 
@@ -144,13 +144,13 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置滑块内容位置
-		 * @param [in] pos 滑块位置
+		 * @param[in] pos 滑块位置
 		*/
 		void SetSliderContentPos(float pos);
 
 		/**
 		 * @brief 相对移动滑块的内容位置
-		 * @param [in] d 滑块位置
+		 * @param[in] d 滑块位置
 		*/
 		void MoveSlider(float d);
 
@@ -161,7 +161,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置滚动条内容长度
-		 * @param [in] len 内容长度
+		 * @param[in] len 内容长度
 		*/
 		void SetContentLength(int len);
 
@@ -169,7 +169,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置视野内容长度
-		 * @param [in] len 视野内容长度
+		 * @param[in] len 视野内容长度
 		*/
 		void SetViewLength(int len);
 
@@ -177,7 +177,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置按下按钮时滑块的运行速度
-		 * @param [in] speed 运行速度（每秒经过的内容长度）
+		 * @param[in] speed 运行速度（每秒经过的内容长度）
 		*/
 		void SetSliderSpeed(int speed);
 
@@ -185,7 +185,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 启用水平放置
-		 * @param [in] enable 是否启用
+		 * @param[in] enable 是否启用
 		*/
 		void EnableHorizontal(bool enable);
 
@@ -201,7 +201,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置响应滚轮消息的区域（客户区坐标）
-		 * @param [in] rct 消息响应区域
+		 * @param[in] rct 消息响应区域
 		*/
 		void SetOnWheelRect(RECT rct);
 

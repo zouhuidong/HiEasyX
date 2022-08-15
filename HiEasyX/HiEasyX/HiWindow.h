@@ -268,12 +268,12 @@ namespace HiEasyX
 
 	/**
 	 * @brief 创建 Win32 绘图窗口
-	 * @param [in] w					窗口宽
-	 * @param [in] h					窗口高
-	 * @param [in] flag					窗口样式（EW_ 系列宏，默认为 EW_NORMAL）
-	 * @param [in] lpszWndTitle			窗口标题
-	 * @param [in] WindowProcess		窗口过程函数
-	 * @param [in] hParent				父窗口句柄
+	 * @param[in] w					窗口宽
+	 * @param[in] h					窗口高
+	 * @param[in] flag					窗口样式（EW_ 系列宏，默认为 EW_NORMAL）
+	 * @param[in] lpszWndTitle			窗口标题
+	 * @param[in] WindowProcess		窗口过程函数
+	 * @param[in] hParent				父窗口句柄
 	 * @return 创建的窗口句柄
 	 *
 	 * @note
@@ -335,14 +335,14 @@ namespace HiEasyX
 
 	/**
 	 * @brief 关闭某一绘图窗口
-	 * @param [in] hWnd 窗口句柄（为空代表所有绘图窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表所有绘图窗口）
 	*/
 	void closegraph_win32(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 设置某窗口的过程函数
-	 * @param [in] hWnd 窗口句柄（为空标识当前活动窗口）
-	 * @param [in] WindowProcess 新的过程函数
+	 * @param[in] hWnd 窗口句柄（为空标识当前活动窗口）
+	 * @param[in] WindowProcess 新的过程函数
 	*/
 	void SetWndProcFunc(HWND hWnd, WNDPROC WindowProcess);
 
@@ -353,7 +353,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 初始化窗口结束后，可以用此函数阻塞等待目标窗口被关闭，然后函数返回
-	 * @param [in] hWnd 目标窗口（为空代表所有窗口）
+	 * @param[in] hWnd 目标窗口（为空代表所有窗口）
 	*/
 	void init_end(HWND hWnd = nullptr);
 
@@ -369,21 +369,21 @@ namespace HiEasyX
 
 	/**
 	 * @brief 判断一窗口是否还存在（未被关闭）
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否存在
 	*/
 	bool isAliveWindow(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取某窗口的图像指针
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 缓冲区图像指针
 	*/
 	IMAGE* GetWindowImage(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取窗口画布指针
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 画布指针，若未绑定画布则返回空
 	*/
 	Canvas* GetWindowCanvas(HWND hWnd = nullptr);
@@ -392,15 +392,15 @@ namespace HiEasyX
 	 * @brief 绑定窗口画布指针
 	 * @note 绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
 	 * @attention 绑定画布后，如在外部操作画布，则必须先启动窗口任务
-	 * @param [in] pCanvas 画布指针
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] pCanvas 画布指针
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
 	void BindWindowCanvas(Canvas* pCanvas, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 将绘制在图像中的内容显示到目标窗口上（任意窗口，不局限于 HiWindow 窗口）
-	 * @param [in] pImg	图像
-	 * @param [in] hWnd	目标窗口
+	 * @param[in] pImg	图像
+	 * @param[in] hWnd	目标窗口
 	*/
 	void FlushDrawingToWnd(IMAGE* pImg, HWND hWnd);
 
@@ -411,7 +411,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 等待当前任务完成并设置活动窗口
-	 * @param [in] hWnd 新的活动窗口句柄
+	 * @param[in] hWnd 新的活动窗口句柄
 	 * @return 是否设置成功
 	*/
 	bool SetWorkingWindow(HWND hWnd);
@@ -419,8 +419,8 @@ namespace HiEasyX
 	/**
 	 * @brief 设置加速绘制跳过多少像素点
 	 * @warning 此加速效果是有损的，加速效果与跳过的像素点数正相关
-	 * @param [in] nSkipPixels 跳过的像素点数目
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] nSkipPixels 跳过的像素点数目
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
 	void QuickDraw(UINT nSkipPixels, HWND hWnd = nullptr);
 
@@ -431,13 +431,13 @@ namespace HiEasyX
 
 	/**
 	 * @brief 设置全局绘制模式
-	 * @param [in] mode 全局绘制模式
+	 * @param[in] mode 全局绘制模式
 	*/
 	void SetDrawMode(DrawMode mode);
 
 	/**
 	 * @brief 重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数）
-	 * @param [in] hWnd 要重绘的窗口
+	 * @param[in] hWnd 要重绘的窗口
 	*/
 	void EnforceRedraw(HWND hWnd = nullptr);
 
@@ -450,13 +450,13 @@ namespace HiEasyX
 
 	/**
 	 * @brief 终止当前任务
-	 * @param [in] flush 是否输出绘图缓冲（但不会自动刷新窗口）
+	 * @param[in] flush 是否输出绘图缓冲（但不会自动刷新窗口）
 	*/
 	void EndTask(bool flush = true);
 
 	/**
 	 * @brief 判断某窗口是否在任务中
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否在任务中
 	 * @note 窗口任务是队列式的，只有活动窗口可能处在任务中。故若传入窗口不是活动窗口，将直接返回 false
 	*/
@@ -464,42 +464,42 @@ namespace HiEasyX
 
 	/**
 	 * @brief 阻塞等待某窗口任务完成
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
 	void WaitForTask(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 判断某窗口的大小是否改变
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 窗口的大小是否改变
 	*/
 	bool isWindowSizeChanged(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 为窗口创建一个托盘
-	 * @param [in] lpszTrayName 托盘提示文本
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] lpszTrayName 托盘提示文本
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @attention 每个窗口仅能稳定占有一个托盘
 	*/
 	void CreateTray(LPCTSTR lpszTrayName, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 删除某窗口的托盘
-	 * @param [in] hWnd 窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
 	void DeleteTray(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 设置托盘菜单（允许在任何时候设置）
-	 * @param [in] hMenu	菜单
-	 * @param [in] hWnd	窗口句柄（为空表示当前活动窗口）
+	 * @param[in] hMenu	菜单
+	 * @param[in] hWnd	窗口句柄（为空表示当前活动窗口）
 	*/
 	void SetTrayMenu(HMENU hMenu, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 设置托盘菜单消息处理函数
-	 * @param [in] pFunc	消息处理函数
-	 * @param [in] hWnd	窗口句柄（为空表示当前活动窗口）
+	 * @param[in] pFunc	消息处理函数
+	 * @param[in] hWnd	窗口句柄（为空表示当前活动窗口）
 	*/
 	void SetTrayMenuProcFunc(void(*pFunc)(UINT), HWND hWnd = nullptr);
 
@@ -511,8 +511,8 @@ namespace HiEasyX
 	/**
 	 * @brief 使用自定义图标资源作为程序图标
 	 * @note 必须在第一次创建窗口前就调用该函数才能生效
-	 * @param [in] lpszIcon		大图标资源
-	 * @param [in] lpszIconSm	小图标资源
+	 * @param[in] lpszIcon		大图标资源
+	 * @param[in] lpszIconSm	小图标资源
 	 * @see 使用 MAKEINTRESOURCE 将资源 ID 转为字符串
 	*/
 	void SetCustomIcon(LPCTSTR lpszIcon, LPCTSTR lpszIconSm);
@@ -520,68 +520,68 @@ namespace HiEasyX
 	/**
 	 * @brief 在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
 	 * @attention 新窗口的所有样式都将被当前样式覆盖
-	 * @param [in] lStyle 新样式
+	 * @param[in] lStyle 新样式
 	*/
 	void PreSetWindowStyle(long lStyle);
 
 	/**
 	 * @brief 在创建窗口前设置窗口位置，仅对此操作后首个新窗口生效
-	 * @param [in] x	位置
-	 * @param [in] y	位置
+	 * @param[in] x	位置
+	 * @param[in] y	位置
 	*/
 	void PreSetWindowPos(int x, int y);
 
 	/**
 	 * @brief 设置某窗口样式
-	 * @param [in] lNewStyle 新样式
-	 * @param [in] hWnd		窗口句柄（为空代表当前活动窗口）
+	 * @param[in] lNewStyle 新样式
+	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	 * @return 返回上一次设置的窗口样式，失败返回 0
 	*/
 	int SetWindowStyle(long lNewStyle, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 设置某窗口扩展样式
-	 * @param [in] lNewExStyle	新样式
-	 * @param [in] hWnd 			窗口句柄（为空代表当前活动窗口）
+	 * @param[in] lNewExStyle	新样式
+	 * @param[in] hWnd 			窗口句柄（为空代表当前活动窗口）
 	 * @return 返回上一次设置的窗口样式，失败返回 0
 	*/
 	int SetWindowExStyle(long lNewExStyle, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取窗口位置
-	 * @param [in] hWnd 窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表当前活动窗口）
 	 * @return 窗口位置
 	*/
 	POINT GetWindowPos(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取窗口大小
-	 * @param [in] hWnd 窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表当前活动窗口）
 	 * @return 窗口大小
 	*/
 	SIZE GetWindowSize(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 移动窗口
-	 * @param [in] x		位置
-	 * @param [in] y		位置
-	 * @param [in] hWnd	窗口句柄（为空代表当前活动窗口）
+	 * @param[in] x		位置
+	 * @param[in] y		位置
+	 * @param[in] hWnd	窗口句柄（为空代表当前活动窗口）
 	*/
 	void MoveWindow(int x, int y, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 相对移动窗口
-	 * @param [in] dx	相对位移
-	 * @param [in] dy	相对位移
-	 * @param [in] hWnd	窗口句柄（为空代表当前活动窗口）
+	 * @param[in] dx	相对位移
+	 * @param[in] dy	相对位移
+	 * @param[in] hWnd	窗口句柄（为空代表当前活动窗口）
 	*/
 	void MoveWindowRel(int dx, int dy, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 重设窗口大小
-	 * @param [in] w		窗口宽
-	 * @param [in] h		窗口高
-	 * @param [in] hWnd	窗口句柄（为空代表当前活动窗口）
+	 * @param[in] w		窗口宽
+	 * @param[in] h		窗口高
+	 * @param[in] hWnd	窗口句柄（为空代表当前活动窗口）
 	*/
 	void ResizeWindow(int w, int h, HWND hWnd = nullptr);
 
@@ -592,8 +592,8 @@ namespace HiEasyX
 
 	/**
 	 * @brief 阻塞等待，直到获取到一个新消息
-	 * @param [in] filter	消息筛选方式
-	 * @param [in] hWnd		窗口句柄（为空代表当前活动窗口）
+	 * @param[in] filter	消息筛选方式
+	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	 * @return 获取到的消息
 	*/
 	ExMessage getmessage_win32(BYTE filter = -1, HWND hWnd = nullptr);
@@ -601,25 +601,25 @@ namespace HiEasyX
 	/**
 	 * @brief 阻塞等待，直到获取到一个新消息
 	 * @param [out] msg	返回获取到的消息
-	 * @param [in] filter	消息筛选方式
-	 * @param [in] hWnd		窗口句柄（为空代表当前活动窗口）
+	 * @param[in] filter	消息筛选方式
+	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	*/
 	void getmessage_win32(ExMessage* msg, BYTE filter = -1, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取一个消息，立即返回是否获取成功
 	 * @param [out] msg	返回获取到的消息
-	 * @param [in] filter	消息筛选方式
-	 * @param [in] removemsg	获取消息后是否将其移除
-	 * @param [in] hWnd		窗口句柄（为空代表当前活动窗口）
+	 * @param[in] filter	消息筛选方式
+	 * @param[in] removemsg	获取消息后是否将其移除
+	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	 * @return 是否获取到消息
 	*/
 	bool peekmessage_win32(ExMessage* msg, BYTE filter = -1, bool removemsg = true, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 清除所有消息记录
-	 * @param [in] filter	消息筛选方式
-	 * @param [in] hWnd		窗口句柄（为空代表当前活动窗口）
+	 * @param[in] filter	消息筛选方式
+	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	*/
 	void flushmessage_win32(BYTE filter = -1, HWND hWnd = nullptr);
 
@@ -627,14 +627,14 @@ namespace HiEasyX
 
 	/**
 	 * @brief 检查是否存在鼠标消息
-	 * @param [in] hWnd 窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表当前活动窗口）
 	 * @return 是否存在鼠标消息
 	*/
 	bool MouseHit_win32(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 阻塞等待，直到获取到一个新的鼠标消息
-	 * @param [in] hWnd 窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表当前活动窗口）
 	 * @return 鼠标消息
 	*/
 	MOUSEMSG GetMouseMsg_win32(HWND hWnd = nullptr);
@@ -642,15 +642,15 @@ namespace HiEasyX
 	/**
 	 * @brief 获取一个新的鼠标消息，立即返回是否获取成功
 	 * @param [out] pMsg		返回获取到的消息
-	 * @param [in] bRemoveMsg	获取消息后是否将其移除
-	 * @param [in] hWnd			窗口句柄（为空代表当前活动窗口）
+	 * @param[in] bRemoveMsg	获取消息后是否将其移除
+	 * @param[in] hWnd			窗口句柄（为空代表当前活动窗口）
 	 * @return 是否获取到消息
 	*/
 	bool PeekMouseMsg_win32(MOUSEMSG* pMsg, bool bRemoveMsg = true, HWND hWnd = nullptr);
 
 	/**
 	 * @brief 清空鼠标消息
-	 * @param [in] hWnd 窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd 窗口句柄（为空代表当前活动窗口）
 	*/
 	void FlushMouseMsgBuffer_win32(HWND hWnd = nullptr);
 
@@ -658,14 +658,14 @@ namespace HiEasyX
 
 	/**
 	 * @brief MOUSEMSG 转 ExMessage
-	 * @param [in] msg MOUSEMSG 消息
+	 * @param[in] msg MOUSEMSG 消息
 	 * @return ExMessage 消息
 	*/
 	ExMessage To_ExMessage(MOUSEMSG msg);
 
 	/**
 	 * @brief ExMessage 转 MOUSEMSG
-	 * @param [in] msgEx ExMessage 消息
+	 * @param[in] msgEx ExMessage 消息
 	 * @return MOUSEMSG 消息
 	*/
 	MOUSEMSG To_MouseMsg(ExMessage msgEx);

@@ -27,7 +27,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 响应更新区域消息
-		 * @param [in] rctOld 旧的区域
+		 * @param[in] rctOld 旧的区域
 		*/
 		virtual void UpdateRect(RECT rctOld);
 
@@ -35,16 +35,16 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置位置和宽高
-		 * @param [in] x	位置
-		 * @param [in] y	位置
-		 * @param [in] w	宽
-		 * @param [in] h	高
+		 * @param[in] x	位置
+		 * @param[in] y	位置
+		 * @param[in] w	宽
+		 * @param[in] h	高
 		*/
 		void SetRect(int x, int y, int w, int h);
 
 		/**
 		 * @brief 设置矩形区域
-		 * @param [in] rct 区域
+		 * @param[in] rct 区域
 		*/
 		void SetRect(RECT rct);
 

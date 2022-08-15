@@ -37,15 +37,15 @@ namespace HiEasyX
 
 		/**
 		 * @brief 注册点击消息
-		 * @param [in] pFunc 消息处理函数
+		 * @param[in] pFunc 消息处理函数
 		*/
 		void RegisterMessage(void (*pFunc)());
 
 		/**
 		 * @brief 设置图片
-		 * @param [in] enable		是否启用按钮图片
-		 * @param [in] img			图片
-		 * @param [in] reserve_text	是否保留按钮中的文字
+		 * @param[in] enable		是否启用按钮图片
+		 * @param[in] img			图片
+		 * @param[in] reserve_text	是否保留按钮中的文字
 		*/
 		void Image(bool enable, IMAGE* img = nullptr, bool reserve_text = false);
 

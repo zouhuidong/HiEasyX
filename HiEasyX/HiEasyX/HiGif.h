@@ -61,13 +61,13 @@ namespace HiEasyX
 
 		/**
 		 * @brief 加载图像
-		 * @param [in] gifFileName 图像文件路径
+		 * @param[in] gifFileName 图像文件路径
 		*/
 		void load(const WCHAR* gifFileName);
 
 		/**
 		 * @brief 绑定设备
-		 * @param [in] hdc 绘图设备
+		 * @param[in] hdc 绘图设备
 		*/
 		void bind(HDC hdc);
 
@@ -111,8 +111,8 @@ namespace HiEasyX
 
 		/**
 		 * @brief 获取图像
-		 * @param [in] pimg		载体
-		 * @param [in] frame	帧索引
+		 * @param[in] pimg		载体
+		 * @param[in] frame	帧索引
 		*/
 		void getimage(IMAGE* pimg, int frame);
 

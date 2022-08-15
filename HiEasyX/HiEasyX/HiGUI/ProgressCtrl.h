@@ -53,7 +53,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置内容长度
-		 * @param [in] len 内容长度
+		 * @param[in] len 内容长度
 		*/
 		virtual void SetContentLength(int len);
 
@@ -64,7 +64,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置进度（内容长度即为总进度）
-		 * @param [in] pos 进度
+		 * @param[in] pos 进度
 		*/
 		virtual void SetProcess(int pos);
 
@@ -80,7 +80,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置进度条颜色
-		 * @param [in] cBar 进度条颜色
+		 * @param[in] cBar 进度条颜色
 		*/
 		virtual void SetBarColor(COLORREF cBar);
 
@@ -91,7 +91,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置是否启用动画
-		 * @param [in] enable 是否启用
+		 * @param[in] enable 是否启用
 		*/
 		virtual void EnableAnimation(bool enable);
 

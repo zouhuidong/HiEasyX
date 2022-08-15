@@ -44,9 +44,9 @@ namespace HiEasyX
 
 		/**
 		 * @brief 在创建控件前预设样式
-		 * @param [in] always_show_list	是否总是显示列表
-		 * @param [in] editable			是否可编辑
-		 * @param [in] sort				是否自动排序
+		 * @param[in] always_show_list	是否总是显示列表
+		 * @param[in] editable			是否可编辑
+		 * @param[in] sort				是否自动排序
 		*/
 		void PreSetEtyle(
 			bool always_show_list,
@@ -58,13 +58,13 @@ namespace HiEasyX
 
 		/**
 		 * @brief 注册选择消息
-		 * @param [in] pFunc 消息响应函数
+		 * @param[in] pFunc 消息响应函数
 		*/
 		void RegisterSelMessage(void (*pFunc)(int sel, std::wstring wstrSelText));
 
 		/**
 		 * @brief 注册编辑消息
-		 * @param [in] pFunc 消息响应函数
+		 * @param[in] pFunc 消息响应函数
 		*/
 		void RegisterEditMessage(void (*pFunc)(std::wstring wstrText));
 
@@ -75,33 +75,33 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置选中的索引
-		 * @param [in] sel 选中的索引
+		 * @param[in] sel 选中的索引
 		*/
 		void SetSel(int sel);
 
 		/**
 		 * @brief 选择具有指定文本的一项
-		 * @param [in] wstrText 指定文本
+		 * @param[in] wstrText 指定文本
 		 * @return 是否选择成功
 		*/
 		bool SelectString(std::wstring wstrText);
 
 		/**
 		 * @brief 增加项
-		 * @param [in] wstrText 项文本
+		 * @param[in] wstrText 项文本
 		*/
 		void AddString(std::wstring wstrText);
 
 		/**
 		 * @brief 插入项
-		 * @param [in] index		插入位置 
-		 * @param [in] wstrText	项文本
+		 * @param[in] index		插入位置 
+		 * @param[in] wstrText	项文本
 		*/
 		void InsertString(int index, std::wstring wstrText);
 
 		/**
 		 * @brief 删除项
-		 * @param [in] index	项索引 
+		 * @param[in] index	项索引 
 		*/
 		void DeleteString(int index);
 
@@ -117,7 +117,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 显示列表
-		 * @param [in] enable 是否显示列表
+		 * @param[in] enable 是否显示列表
 		*/
 		void ShowDropdown(bool enable);
 

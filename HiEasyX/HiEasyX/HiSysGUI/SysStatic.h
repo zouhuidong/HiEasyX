@@ -31,14 +31,14 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置文本居中
-		 * @param [in] center 是否居中
+		 * @param[in] center 是否居中
 		*/
 		void Center(bool center);
 
 		/**
 		 * @brief 设置图片
-		 * @param [in] enable	是否启用图像
-		 * @param [in] img		图像
+		 * @param[in] enable	是否启用图像
+		 * @param[in] img		图像
 		*/
 		void Image(bool enable, IMAGE* img = nullptr);
 	};

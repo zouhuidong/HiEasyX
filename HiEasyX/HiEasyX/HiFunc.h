@@ -29,7 +29,7 @@ ScreenSize GetScreenSize();
 /**
  * @brief 获取图像尺寸
  * @note 可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
- * @param [in] pImg			目标图像
+ * @param[in] pImg			目标图像
  * @param [out] width		返回图像宽
  * @param [out] height		返回图像高
 */
@@ -41,15 +41,15 @@ void GetImageSize(IMAGE* pImg, int& width, int& height);
  *		将 alpha 值不为 0 的一切像素的 alpha 设为 0， <p>
  *		同时将 alpha 值为 0 的一切像素的 alpha 设为 255 <p>
  * @param [in, out] pBuf		显存指针
- * @param [in] size				显存大小 
+ * @param[in] size				显存大小 
  * @return 显存指针（和原来一样）
 */
 DWORD* ReverseAlpha(DWORD* pBuf, int size);
 
 /**
  * @brief 得到 IMAGE 对象的 HBITMAP
- * @param [in] img				目标图像
- * @param [in] enable_alpha		是否允许图像的 alpha 信息 <p>
+ * @param[in] img				目标图像
+ * @param[in] enable_alpha		是否允许图像的 alpha 信息 <p>
  *								注意，若图像 alpha 值全为 0，则表示不启用透明混合 <p>
  * @return 转换得到的位图句柄
 */
@@ -57,7 +57,7 @@ HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha);
 
 /**
  * @brief HBITMAP 转 HICON
- * @param [in] hBmp 位图句柄
+ * @param[in] hBmp 位图句柄
  * @return 图标句柄
 */
 HICON Bitmap2Icon(HBITMAP hBmp);
@@ -66,22 +66,22 @@ HICON Bitmap2Icon(HBITMAP hBmp);
  * @brief 精确延时函数（可以精确到 1ms，精度 ±1ms）
  * @author yangw80 <yw80@qq.com>
  * @date 2011-5-4
- * @param [in] ms 延时长度（单位：毫秒）
+ * @param[in] ms 延时长度（单位：毫秒）
 */
 void HpSleep(int ms);
 
 /**
  * @brief 点是否位于矩形内
- * @param [in] x		位置
- * @param [in] y		位置
- * @param [in] rct		矩形
+ * @param[in] x		位置
+ * @param[in] y		位置
+ * @param[in] rct		矩形
  * @return 点是否位于矩形内
 */
 bool isInRect(int x, int y, RECT rct);
 
 /**
  * @brief 获取 ExMessage 的消息类型
- * @param [in] msg 消息
+ * @param[in] msg 消息
  * @return EM_ 消息类型中的一种，若失败返回 0
 */
 UINT GetExMessageType(ExMessage msg);

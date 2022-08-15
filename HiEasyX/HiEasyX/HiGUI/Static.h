@@ -47,11 +47,11 @@ namespace HiEasyX
 
 		/**
 		 * @brief 添加文本
-		 * @param [in] wstr				文本
-		 * @param [in] isSetTextColor	是否设置此文本颜色
-		 * @param [in] cText				文本颜色
-		 * @param [in] isSetBkColor		是否设置此文本背景颜色
-		 * @param [in] cBk				文本背景色
+		 * @param[in] wstr				文本
+		 * @param[in] isSetTextColor	是否设置此文本颜色
+		 * @param[in] cText				文本颜色
+		 * @param[in] isSetBkColor		是否设置此文本背景颜色
+		 * @param[in] cBk				文本背景色
 		*/
 		virtual void AddText(
 			std::wstring wstr,
@@ -72,7 +72,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置显示图像
-		 * @param [in] pImgBlockmg 要显示的图像块
+		 * @param[in] pImgBlockmg 要显示的图像块
 		*/
 		virtual void SetImage(ImageBlock* pImgBlockmg);
 

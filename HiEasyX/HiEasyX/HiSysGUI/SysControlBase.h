@@ -47,17 +47,17 @@ namespace HiEasyX
 
 		/**
 		 * @brief 创建控件
-		 * @param [in] hParent			父控件 
-		 * @param [in] lpszClassName		窗口类名
-		 * @param [in] lpszWindowName	窗口名
-		 * @param [in] dwStyle			窗口样式
+		 * @param[in] hParent			父控件 
+		 * @param[in] lpszClassName		窗口类名
+		 * @param[in] lpszWindowName	窗口名
+		 * @param[in] dwStyle			窗口样式
 		 * @return 窗口句柄
 		*/
 		HWND CreateControl(HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle);
 
 		/**
 		 * @brief 实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件）
-		 * @param [in] hParent 父控件句柄
+		 * @param[in] hParent 父控件句柄
 		*/
 		virtual void RealCreate(HWND hParent) = 0;
 
@@ -71,9 +71,9 @@ namespace HiEasyX
 
 		/**
 		 * @brief 更新消息，此函数无需用户调用
-		 * @param [in] msg		新消息
-		 * @param [in] wParam	参数
-		 * @param [in] lParam	参数
+		 * @param[in] msg		新消息
+		 * @param[in] wParam	参数
+		 * @param[in] lParam	参数
 		 * @param [out] bRet 标记是否返回值
 		 * @return 不定返回值
 		*/
@@ -82,9 +82,9 @@ namespace HiEasyX
 		/**
 		 * @brief 创建控件
 		 * @attention 控件只能创建一次
-		 * @param [in] hParent	父窗口句柄
-		 * @param [in] rct		控件区域
-		 * @param [in] strText	控件文本
+		 * @param[in] hParent	父窗口句柄
+		 * @param[in] rct		控件区域
+		 * @param[in] strText	控件文本
 		 * @return 控件窗口句柄
 		*/
 		HWND Create(HWND hParent, RECT rct, std::wstring strText = L"");

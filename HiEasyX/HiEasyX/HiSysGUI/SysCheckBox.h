@@ -35,7 +35,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 注册点击消息
-		 * @param [in] pFunc 消息响应函数
+		 * @param[in] pFunc 消息响应函数
 		*/
 		void RegisterMessage(void (*pFunc)(bool checked));
 
