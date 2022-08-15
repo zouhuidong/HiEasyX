@@ -86,7 +86,7 @@ HiEasyX 支持创建多个绘图窗口，调用 Win32 控件。HiEasyX 的窗口
 ```cpp
 hiex::initgraph_win32(640, 480);
 ```
-还有一些可选参数，此处不赘述，请查阅文档或头文件。
+还有一些可选参数，此处不赘述，请查阅 [文档](https://zouhuidong.github.io) 或头文件。
 
 当然也支持 EasyX 原生的创建窗口函数，它被宏定义了，所以照样能用：
 ```cpp
@@ -273,9 +273,53 @@ int main()
 
 ```
 
-只要在托盘菜单里面点击某一项，程序就会作出反应。
+运行此示例代码，将会在托盘中创建您的程序图标。只要在托盘菜单里面点击某一项，程序就会作出反应。
 
-### 添加程序图标
+### 自定义程序图标
+
+HiEasyX 默认为程序加载 HiEasyX 图标。在 EasyX 中，只要在 Visual Studio 项目中加入图标资源，程序就会自动加载您的图标。
+
+在 HiEasyX 中，您加入图标资源后，还需要在第一次创建窗口前调用一次 `hiex::SetCustomIcon()`，即可。
+
+下面列举两种在 Visual Studio 中添加图标资源的方法：
+
+**方法一：** 在资源视图中右键项目 -> 【添加】 -> 【资源】，选择图标资源。
+
+**方法二：** 在项目中创建 resource.h 和 【项目名】.rc。
+
+在 resource.h 中：
+
+```cpp
+#define IDI_ICON1	101
+```
+
+在 【项目名】.rc 中：
+
+```cpp
+#include "resource.h"
+IDI_ICON1	ICON	"icon.ico" /* 修改为你的图标文件路径 */
+```
+
+然后可以使用如下示例代码测试：
+
+```cpp
+#include "resource.h"
+#include "HiEasyX.h"
+
+int main()
+{
+	// 在创建窗口前设置图标
+	hiex::SetCustomIcon(MAKEINTRESOURCE(IDI_ICON1), MAKEINTRESOURCE(IDI_ICON1));
+
+	hiex::Window wnd;
+	wnd.Create();
+
+	hiex::init_end();
+	return 0;
+}
+```
+
+即可自定义图标。
 
 ### 在原有 EasyX 项目上使用 HiEasyX
 
