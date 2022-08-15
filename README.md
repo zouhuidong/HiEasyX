@@ -131,4 +131,4 @@ int main()
 
 ## 立即开始
 
-> [上手 HiEasyX](./Tutorial.md)
+> [开始使用 HiEasyX](./Tutorial.md)
