@@ -34,6 +34,8 @@ HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展�
 
 见 `./doc/index.html`，或在此浏览 [在线版](https://zouhuidong.github.io/HiEasyX)
 
+> 由于在线文档中的有些页面会出现 404，所以建议下载仓库后在本地浏览文档。
+
 **原有项目使用 HiEasyX**
 
 HiEasyX 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 HiEasyX。 [详细教程](#在原有-easyx-项目上使用-hieasyx)
@@ -86,7 +88,7 @@ HiEasyX 支持创建多个绘图窗口，调用 Win32 控件。HiEasyX 的窗口
 ```cpp
 hiex::initgraph_win32(640, 480);
 ```
-还有一些可选参数，此处不赘述，请查阅 [文档](https://zouhuidong.github.io) 或头文件。
+还有一些可选参数，此处不赘述，请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
 
 当然也支持 EasyX 原生的创建窗口函数，它被宏定义了，所以照样能用：
 ```cpp
@@ -476,7 +478,7 @@ int main()
 
 很好！使用按钮就是这么容易。其它的控件调用方式也很相似。
 
-如果要响应按钮消息，可以使用 `RegisterMessage` 方法，或者使用 `GetClickCount` 函数获取按钮点击次数，此处不再展开，详情请参阅 [文档](https://zouhuidong.github.io/HiEasyX)。
+如果要响应按钮消息，可以使用 `RegisterMessage` 方法，或者使用 `GetClickCount` 函数获取按钮点击次数，此处不再展开，详情请参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
 
 如果想更深入了解 HiSysGUI，可以参考下面这个示例：
 
