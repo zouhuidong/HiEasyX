@@ -65,8 +65,8 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
     - 支持透明通道
     - 和 HiWindow 完美融合
     - 使用更加方便
-  + HiGif：动图支持
-  + HiMusicMCI：声音 API 封装
+  + HiGif：动图支持（改编自：依稀_yixy）
+  + HiMusicMCI：声音 API 封装（原作者：悠远的苍穹 <2237505658@qq.com>）
   + HiMouseDrag：鼠标拖动消息封装
     
 ## 编译环境
