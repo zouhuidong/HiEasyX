@@ -6,7 +6,9 @@
 ![Forks](https://img.shields.io/github/forks/zouhuidong/仓库名)
 ![Downloads](https://img.shields.io/github/downloads/zouhuidong/仓库名/total)
 
-该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
+HiEasyX 的目的只有一个——让 EasyX 更易用。
+
+HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级。
 
 > [查看教程](./Tutorial.md)
 
