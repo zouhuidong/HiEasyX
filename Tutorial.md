@@ -20,25 +20,38 @@ EasyX 从设计之初，它就仅仅是一个图形库，不涉及其它方面�
 
 您想用 EasyX 更高效地制作软件或游戏吗？HiEasyX 或许是适合您的选择。
 
-HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展库，它使用 C++，或许不适合 EasyX 的初学者。
+> HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展库，它使用 C++，或许不适合 EasyX 的初学者。
 
 ## 准备 HiEasyX
 
-**配置库**
+### 配置库
 
 请确保您已经在 Visual Studio 项目中配置好 HiEasyX，如果还没有，请看 [README.md](./README.md#配置此库)
 
 推荐使用新版 Visual Studio 编译项目，详见编译环境 [README.md](./README.md#编译环境)
 
-**库函数文档**
+**包含此库**
+
+只需要
+```cpp
+#include "HiEasyX.h"
+```
+
+**命名空间**
+
+HiEasyX 在代码中使用 `HiEasyX` 命名空间，缩写 `hiex`，兼容旧版命名空间 `EasyWin32`。
+
+**原有项目使用 HiEasyX**
+
+HiEasyX 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 HiEasyX。
+
+> [详细教程](#在原有-easyx-项目上使用-hieasyx)
+
+### 库函数文档
 
 见 `./doc/index.html`，或在此浏览 [在线版](https://zouhuidong.github.io/HiEasyX)
 
 > 由于在线文档中的有些页面会出现 404，所以建议下载仓库后在本地浏览文档。
-
-**原有项目使用 HiEasyX**
-
-HiEasyX 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 HiEasyX。 [详细教程](#在原有-easyx-项目上使用-hieasyx)
 
 ## 窗口篇：HiWindow 窗口模块
 
@@ -67,17 +80,6 @@ int main()
 ```
 
 接下来我为您解释如何使用 HiEasyX。
-
-### 包含此库
-
-只需要
-```cpp
-#include "HiEasyX.h"
-```
-
-### 命名空间
-
-HiEasyX 在代码中使用 HiEasyX 命名空间，缩写 `hiex`，兼容旧版命名空间 `EasyWin32`。
 
 ### 创建绘图窗口
 
@@ -435,7 +437,7 @@ canvas.BindToImage(_Your_Image_Pointer_);
 <b>小球示例（2）</b>
 </div><br>
 
-为了缩短篇幅，请您在此查看 [源代码](./Samples/Recommend/Balls.cpp)
+> 为了缩短篇幅，请您在此查看 [源代码](./Samples/Recommend/Balls.cpp)
 
 ## 控件篇：使用更完善的 Win32 UI 库
 
@@ -593,7 +595,9 @@ int main()
 <b>获取编辑框文本</b>
 </div><br>
 
-还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
+还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。
+
+> 参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
 
 下面这个示例用到的控件比较全面，可以帮您更深入地了解 HiSysGUI：
 
@@ -602,7 +606,7 @@ int main()
 <b>控件示例</b>
 </div><br>
 
-在此查看此示例的 [源代码](./Samples/Recommend/OverviewSample.cpp)
+> 在此查看此示例的 [源代码](./Samples/Recommend/OverviewSample.cpp)
 
 ##
 
