@@ -38,7 +38,7 @@ HiEasyX 不是独立的一个库，它依赖 EasyX，是 EasyX 充分的扩展�
 
 HiEasyX 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 HiEasyX。 [详细教程](#在原有-easyx-项目上使用-hieasyx)
 
-## 使用 HiEasyX
+## 窗口篇：HiWindow 窗口模块
 
 我们先从一个简单示例开始：
 
@@ -321,8 +321,24 @@ int main()
 
 即可自定义图标。
 
-### 在原有 EasyX 项目上使用 HiEasyX
-
 ### 自定义窗口样式
+
+如果您想改变窗口样式，例如取消最大化按钮，禁止用户拉伸窗口，您可以使用 Win32 API `SetWindowLong` 函数，这需要一些 Win32 知识。
+
+还有更简便的方式，直接使用 `hiex::SetWindowStyle()` 或 `hiex::Window::SetStyle()`。
+
+HiEasyX 定义了如下宏用于快速设置窗口样式
+
+`EnableResizing` 设置是否允许窗口拉伸
+
+`EnableSystemMenu` 设置是否启用系统标题栏按钮
+
+`EnableToolWindowStyle` 设置是否启用窗口的工具栏样式
+
+等等。更多请参见 [文档](https://zouhuidong.github.io) 和 `HiWindow.h`。
+
+## 迁移篇：在原有 EasyX 项目上使用 HiEasyX
+
+
 
 ### 代码中的常见问题整合
