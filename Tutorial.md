@@ -41,6 +41,14 @@ EasyX 从设计之初，它就仅仅是一个图形库，不涉及其它方面�
 
 HiEasyX 在代码中使用 `HiEasyX` 命名空间，缩写 `hiex`，兼容旧版命名空间 `EasyWin32`。
 
+**库全局设置**
+
+在 `HiDef.h` 中有控制库全局设置的宏定义，可以自行设置，此处不展开。
+
+> **提示：**
+>
+> HiEasyX 默认在 Release 模式下启用程序开场动画，如需关闭，请在 HiDef.h 中设置。
+
 **原有项目使用 HiEasyX**
 
 HiEasyX 的高兼容性支持您轻松地将原先的 EasyX 项目配置上 HiEasyX。
@@ -459,6 +467,11 @@ HiEasyX 封装了常用 Win32 控件，这个控件模块被称为 HiSysGUI。
 
 请看这个例子：
 
+<div align=center>
+<img src="./screenshot/fast_btn.png"><br>
+<b>创建按钮</b>
+</div><br>
+
 ```cpp
 #include "HiEasyX.h"
 
@@ -472,11 +485,6 @@ int main()
 	return 0;
 }
 ```
-
-<div align=center>
-<img src="./screenshot/fast_btn.png"><br>
-<b>创建按钮</b>
-</div><br>
 
 很好！使用按钮就是这么容易。
 
@@ -534,6 +542,11 @@ int main()
 
 像这样：
 
+<div align=center>
+<img src="./screenshot/fast_edit.png"><br>
+<b>创建编辑框</b>
+</div><br>
+
 ```cpp
 #include "HiEasyX.h"
 
@@ -554,12 +567,12 @@ int main()
 }
 ```
 
-<div align=center>
-<img src="./screenshot/fast_edit.png"><br>
-<b>创建编辑框</b>
-</div><br>
-
 加上按钮，获取文本：
+
+<div align=center>
+<img src="./screenshot/fast_edit_2.png"><br>
+<b>获取编辑框文本</b>
+</div><br>
 
 ```cpp
 #include "HiEasyX.h"
@@ -590,11 +603,6 @@ int main()
 }
 ```
 
-<div align=center>
-<img src="./screenshot/fast_edit_2.png"><br>
-<b>获取编辑框文本</b>
-</div><br>
-
 还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。
 
 > 参阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_sys_control_base.html)。
@@ -608,10 +616,22 @@ int main()
 
 > 在此查看此示例的 [源代码](./Samples/Recommend/OverviewSample.cpp)
 
-##
-
 ## 迁移篇：在原有 EasyX 项目上使用 HiEasyX
 
 
 
-### 代码中的常见问题整合
+## 代码中的常见问题整合
+
+## 尾声
+
+HiEasyX 还有一些实用但零碎的功能，在此恐不能详述。例如：
+
+* `HiMacro.h` 宏定义相关
+* `HiFunc.h` HiEasyX 常用杂项函数
+* `HiFPS.h` 帧率相关
+* `HiDrawingProperty.h` 保存绘图属性功能
+* `HiMouseDrag.h` 更方便快捷地处理鼠标拖动消息
+* `HiMusicMCI.h` 声音相关
+* `HiGif.h` 动图相关
+
+如您感兴趣，可以自行查阅头文件和文档。
