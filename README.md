@@ -6,13 +6,15 @@
 ![Forks](https://img.shields.io/github/forks/zouhuidong/仓库名)
 ![Downloads](https://img.shields.io/github/downloads/zouhuidong/仓库名/total)
 
-EasyX 全面扩展库
-
-> 前身：[EasyWin32](github.com/zouhuidong/EasyWin32)
-
-## 简介
-
 该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
+
+> [查看教程](./Tutorial.md)
+
+> [更新日志](./Changelog.md)
+
+*前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
+
+## 支持功能
 
 * HiEasyX
   + HiWindow：窗口支持
@@ -98,6 +100,11 @@ int main()
 以下的示例程序源码可以在 `./Samples/` 中找到
 
 <div align=center>
+<img src="./screenshot/start.png"><br>
+<b>Release 模式启动动画效果</b>
+</div><br>
+
+<div align=center>
 <img src="./screenshot/overview.png"><br>
 <b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
 </div><br>
@@ -111,3 +118,7 @@ int main()
 <img src="./screenshot/gui.png"><br>
 <b>自绘控件</b>
 </div><br>
+
+## 立即开始
+
+> [上手 HiEasyX](./Tutorial.md)
