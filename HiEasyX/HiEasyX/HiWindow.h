@@ -705,7 +705,7 @@ namespace HiEasyX
 
 #define DisableResizing(hwnd, state)	EnableResizing(hwnd, !state)
 
-// 是否启用某窗口的系统菜单
+// 是否启用某窗口的系统标题栏按钮
 #define EnableSystemMenu(hwnd, state)	(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SYSMENU) :\
 										HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SYSMENU))
 
