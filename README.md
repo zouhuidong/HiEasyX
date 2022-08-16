@@ -12,7 +12,7 @@ HiEasyX 的目的只有一个——让 EasyX 更易用。
 
 > [查看教程](./Tutorial.md)
 
-> [更新日志](./Changelog.md)
+> [更新日志](./ChangeLog.md)
 
 *前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
 
