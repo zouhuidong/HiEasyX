@@ -69,29 +69,28 @@ int main()
 
 ### 创建绘图窗口
 
-HiEasyX 支持创建多个绘图窗口，创建、管理窗口的模块名为 `HiWindow`。
+由于 HiEasyX 完全重写了 EasyX 的绘图窗口实现，所以可以支持创建多窗口，也支持自定义窗口过程函数。
 
-可以像这样创建一个窗口：
+在 HiEasyx 中，创建、管理窗口的模块名为 `HiWindow`。
+
+创建窗口的正确方式：
 
 ```cpp
-hiex::initgraph_win32(640, 480);
-```
-还有一些可选参数，此处不赘述，请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
-
-当然也支持 EasyX 原生的创建窗口函数，它被宏定义了，所以照样能用：
-```cpp
+// 方法 1：直接使用 initgraph，它实际上被宏定义为 HiEasyX 的窗口创建函数
 initgraph(640, 480);
-```
 
-更推荐您使用 `hiex::Window` 类：
-```cpp
+// 方法 2：调用 HiEasyX 的窗口创建函数
+hiex::initgraph_win32(640, 480);
+
+// 方法 3：使用 HiEasyX 的窗口类创建窗口
 hiex::Window wnd(640, 480);
-```
-或者
-```cpp
+
+// 也可以这样使用窗口类创建窗口
 hiex::Window wnd;
 wnd.Create(640, 480);
 ```
+
+创建窗口时还有一些可选参数，例如窗口名称、窗口属性、过程函数、父窗口句柄，详情请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
 
 如果想要创建多个窗口，如法炮制即可。
 
