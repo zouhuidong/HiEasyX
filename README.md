@@ -1,10 +1,10 @@
 # HiEasyX
-![Release](https://img.shields.io/github/v/release/zouhuidong/仓库名)
+![Release](https://img.shields.io/github/v/release/zouhuidong/HiEasyX)
 [![Blog](https://img.shields.io/badge/blog-huidong.xyz-green.svg)](http://huidong.xyz)
 [![EasyX](https://img.shields.io/badge/graphics-EasyX-orange.svg)](https://easyx.cn)
-![Stars](https://img.shields.io/github/stars/zouhuidong/仓库名)
-![Forks](https://img.shields.io/github/forks/zouhuidong/仓库名)
-![Downloads](https://img.shields.io/github/downloads/zouhuidong/仓库名/total)
+![Stars](https://img.shields.io/github/stars/zouhuidong/HiEasyX)
+![Forks](https://img.shields.io/github/forks/zouhuidong/HiEasyX)
+![Downloads](https://img.shields.io/github/downloads/zouhuidong/HiEasyX/total)
 
 HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级。
 

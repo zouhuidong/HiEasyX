@@ -69,7 +69,7 @@ int main()
 
 ### 创建绘图窗口
 
-由于 HiEasyX 完全重写了 EasyX 的绘图窗口实现，所以可以支持创建多窗口，也支持自定义窗口过程函数。
+由于 HiEasyX 完全重写了 EasyX 的绘图窗口实现，所以可以支持创建多窗口、拉伸窗口，也支持自定义窗口过程函数。
 
 在 HiEasyx 中，创建、管理窗口的模块名为 `HiWindow`。
 
@@ -422,13 +422,15 @@ canvas.BindToImage(_Your_Image_Pointer_);
 
 <div align=center>
 <img src="./screenshot/balls1.png"><br>
-<b>小球示例（1）</b>
+<b>透明通道 - 小球示例（1）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/balls2.png"><br>
-<b>小球示例（2）</b>
+<b>透明通道 - 小球示例（2）</b>
 </div><br>
+
+示例中，透明小球在窗口中运动，在碰到边界时反弹。
 
 > 为了缩短篇幅，请您在此查看 [源代码](./Samples/Recommend/Balls.cpp)
 
@@ -452,11 +454,6 @@ HiEasyX 封装了常用 Win32 控件，这个控件模块被称为 HiSysGUI。
 
 请看这个例子：
 
-<div align=center>
-<img src="./screenshot/fast_btn.png"><br>
-<b>创建按钮</b>
-</div><br>
-
 ```cpp
 #include "HiEasyX.h"
 
@@ -471,11 +468,48 @@ int main()
 }
 ```
 
-很好！使用按钮就是这么容易。
+<div align=center>
+<img src="./screenshot/fast_btn.png"><br>
+<b>创建按钮</b>
+</div><br>
+
+没错！使用按钮就是这么容易。
+
+还可以在按钮中添加图片，像这样：
+
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(300, 200);
+	hiex::SysButton btn(wnd.GetHandle(), 100, 85, 100, 30, L"Button");
+
+	// 创建画布，绘制绿色填充圆
+	hiex::Canvas canvas(30, 22);
+	canvas.Clear(true, 0xe1e1e1);
+	canvas.SolidCircle(15, 10, 10, true, GREEN);
+
+	// 添加按钮图像
+	btn.Image(true, &canvas, true);
+
+	hiex::init_end();
+	return 0;
+}
+```
+
+<div align=center>
+<img src="./screenshot/fast_btn_2.png"><br>
+<b>添加按钮图片</b>
+</div><br>
+
+> **提示：**
+> 
+> 代码中使用了 Canvas 绘制按钮图像，如果使用 IMAGE 同样可以。
 
 如果要响应按钮消息，可以使用 `RegisterMessage` 方法，或者使用 `GetClickCount` 函数获取按钮点击次数。
 
-例如，使用 `GetClickCount` 函数：
+例如，使用 `GetClickCount` 函数获取按钮点击次数：
 
 ```cpp
 #include "HiEasyX.h"
@@ -486,8 +520,10 @@ int main()
 
 	hiex::SysButton btn(wnd.GetHandle(), 100, 85, 100, 30, L"Button");
 	
+	// 窗口存在时，程序才保持运行
 	while (wnd.isAlive())
 	{
+		// 如果按钮的点击次数不为 0，说明用户已点击按钮
 		if (btn.GetClickCount())
 		{
 			// 处理点击消息
@@ -527,11 +563,6 @@ int main()
 
 像这样：
 
-<div align=center>
-<img src="./screenshot/fast_edit.png"><br>
-<b>创建编辑框</b>
-</div><br>
-
 ```cpp
 #include "HiEasyX.h"
 
@@ -552,12 +583,12 @@ int main()
 }
 ```
 
-加上按钮，获取文本：
-
 <div align=center>
-<img src="./screenshot/fast_edit_2.png"><br>
-<b>获取编辑框文本</b>
+<img src="./screenshot/fast_edit.png"><br>
+<b>创建编辑框</b>
 </div><br>
+
+加上按钮，获取文本：
 
 ```cpp
 #include "HiEasyX.h"
@@ -587,6 +618,11 @@ int main()
 	return 0;
 }
 ```
+
+<div align=center>
+<img src="./screenshot/fast_edit_2.png"><br>
+<b>获取编辑框文本</b>
+</div><br>
 
 还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。
 
@@ -645,6 +681,10 @@ END_TASK();
 
 即可。窗口任务相关内容已在前文交代清楚，故不再重复。注意不要将不必要的代码也放入窗口任务中，详见 [上文](#窗口任务)。
 
+## Release 模式的程序启动动画
+
+HiEasyX 默认在 Release 模式下开启程序启动动画，此动画改编自慢羊羊的《艺术字系列：冰封的 EasyX》。如需关闭，请在 `HiDef.h` 中按照注释指示定义相应的宏取消开场动画。
+
 ## 常见问题整合
 
 * 创建窗口后没有判断窗口是否被关闭
@@ -654,7 +694,7 @@ END_TASK();
 * 窗口响应卡顿，可能是因为窗口任务中存在不必要的延时代码（如 `Sleep` 语句）、耗时的计算、死循环等等，或在两个任务之间几乎无间隙
 * `BEGIN_TASK()` 有极小概率启动任务失败，如果失败，窗口任务中的代码将不会被执行。如果代码没有成功执行会对后续代码运行产生影响，则应当使用 `BEGIN_TASK()` 宏的展开形式，判断是否启动任务成功
 
-## 尾声
+## 结语
 
 HiEasyX 还有一些实用但零碎的功能，在此恐不能详述。例如：
 
