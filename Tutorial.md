@@ -471,7 +471,7 @@ int main()
 }
 ```
 
-很好！使用按钮就是这么容易。
+没错！使用按钮就是这么容易。
 
 还可以在按钮中添加图片，像这样：
 
@@ -518,8 +518,10 @@ int main()
 
 	hiex::SysButton btn(wnd.GetHandle(), 100, 85, 100, 30, L"Button");
 	
+	// 窗口存在时，程序才保持运行
 	while (wnd.isAlive())
 	{
+		// 如果按钮的点击次数不为 0，说明用户已点击按钮
 		if (btn.GetClickCount())
 		{
 			// 处理点击消息
