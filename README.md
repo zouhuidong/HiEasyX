@@ -8,7 +8,7 @@
 
 HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级。
 
-HiEasyX 的目的只有一个——让 EasyX 更易用。
+HiEasyX 只有一个目的——让 EasyX 更易用。
 
 > [查看教程](./Tutorial.md)
 
