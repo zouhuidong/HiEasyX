@@ -473,9 +473,41 @@ int main()
 
 很好！使用按钮就是这么容易。
 
+还可以在按钮中添加图片，像这样：
+
+<div align=center>
+<img src="./screenshot/fast_btn_2.png"><br>
+<b>添加按钮图片</b>
+</div><br>
+
+```cpp
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd(300, 200);
+	hiex::SysButton btn(wnd.GetHandle(), 100, 85, 100, 30, L"Button");
+
+	// 创建画布，绘制绿色填充圆
+	hiex::Canvas canvas(30, 22);
+	canvas.Clear(true, 0xe1e1e1);
+	canvas.SolidCircle(15, 10, 10, true, GREEN);
+
+	// 添加按钮图像
+	btn.Image(true, &canvas, true);
+
+	hiex::init_end();
+	return 0;
+}
+```
+
+> **提示：**
+> 
+> 代码中使用了 Canvas 绘制按钮图像，如果使用 IMAGE 同样可以。
+
 如果要响应按钮消息，可以使用 `RegisterMessage` 方法，或者使用 `GetClickCount` 函数获取按钮点击次数。
 
-例如，使用 `GetClickCount` 函数：
+例如，使用 `GetClickCount` 函数获取按钮点击次数：
 
 ```cpp
 #include "HiEasyX.h"
