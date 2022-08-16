@@ -14,6 +14,8 @@ HiEasyX 的目的只有一个——让 EasyX 更易用。
 
 > [更新日志](./ChangeLog.md)
 
+> [在线文档](https://zouhuidong.github.io/HiEasyX)
+
 *前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
 
 ## Why HiEasyX
