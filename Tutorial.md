@@ -92,7 +92,7 @@ wnd.Create(640, 480);
 
 创建窗口时还有一些可选参数，例如窗口名称、窗口属性、过程函数、父窗口句柄，等等。详情请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
 
-如果想要创建多个窗口，如法炮制即可。
+如果想要创建多个窗口，再次调用创建窗口函数即可。
 
 > **想使用原生 EasyX ？**
 >
@@ -130,9 +130,9 @@ EasyX 的用户可能早已习惯不判断绘图窗口是否还存在，因为�
 
 ### 活动窗口的概念
 
-`HiWindow` 支持多窗口。操作多窗口的逻辑和 EasyX 中的 `SetWorkingImage()` 类似，也就是在操作某个窗口前，将这个窗口设置为活动窗口。
+由于 `HiWindow` 支持多窗口，所以操作窗口时要指定目标操作窗口。而 HiEasyX 操作多窗口的逻辑和 EasyX 中的 `SetWorkingImage()` 类似，也就是在操作某个窗口前，将这个窗口设置为活动窗口，然后再对其进行操作。
 
-通过 `hiex::SetWorkingWindow()` 设置当前活动窗口，同时，当前工作绘图对象（WorkingImage）也会被设置到活动窗口的 IMAGE 对象。
+可以通过 `hiex::SetWorkingWindow()` 设置当前活动窗口，同时，当前工作绘图对象（WorkingImage）也会被设置到活动窗口的 IMAGE 对象。
 
 ### 窗口任务
 
