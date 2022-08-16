@@ -452,11 +452,6 @@ HiEasyX 封装了常用 Win32 控件，这个控件模块被称为 HiSysGUI。
 
 请看这个例子：
 
-<div align=center>
-<img src="./screenshot/fast_btn.png"><br>
-<b>创建按钮</b>
-</div><br>
-
 ```cpp
 #include "HiEasyX.h"
 
@@ -471,14 +466,14 @@ int main()
 }
 ```
 
+<div align=center>
+<img src="./screenshot/fast_btn.png"><br>
+<b>创建按钮</b>
+</div><br>
+
 没错！使用按钮就是这么容易。
 
 还可以在按钮中添加图片，像这样：
-
-<div align=center>
-<img src="./screenshot/fast_btn_2.png"><br>
-<b>添加按钮图片</b>
-</div><br>
 
 ```cpp
 #include "HiEasyX.h"
@@ -500,6 +495,11 @@ int main()
 	return 0;
 }
 ```
+
+<div align=center>
+<img src="./screenshot/fast_btn_2.png"><br>
+<b>添加按钮图片</b>
+</div><br>
 
 > **提示：**
 > 
@@ -561,11 +561,6 @@ int main()
 
 像这样：
 
-<div align=center>
-<img src="./screenshot/fast_edit.png"><br>
-<b>创建编辑框</b>
-</div><br>
-
 ```cpp
 #include "HiEasyX.h"
 
@@ -586,12 +581,12 @@ int main()
 }
 ```
 
-加上按钮，获取文本：
-
 <div align=center>
-<img src="./screenshot/fast_edit_2.png"><br>
-<b>获取编辑框文本</b>
+<img src="./screenshot/fast_edit.png"><br>
+<b>创建编辑框</b>
 </div><br>
+
+加上按钮，获取文本：
 
 ```cpp
 #include "HiEasyX.h"
@@ -621,6 +616,11 @@ int main()
 	return 0;
 }
 ```
+
+<div align=center>
+<img src="./screenshot/fast_edit_2.png"><br>
+<b>获取编辑框文本</b>
+</div><br>
 
 还可以设置文字颜色、背景颜色、密码框、左中右对齐方式、仅数字输入、禁用控件，等等，不一一列举。这个教程不可能面面俱到，也有可能更新延迟，如果您想具体了解每个控件，可以看看它们的声明，此处不再展开。
 
