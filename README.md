@@ -12,7 +12,7 @@ HiEasyX 的目的只有一个——让 EasyX 更易用。
 
 > [查看教程](./Tutorial.md)
 
-> [更新日志](./Changelog.md)
+> [更新日志](./ChangeLog.md)
 
 *前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
 
@@ -70,7 +70,15 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
   + HiGif：动图支持（改编自：依稀_yixy）
   + HiMusicMCI：声音 API 封装（原作者：悠远的苍穹 <2237505658@qq.com>）
   + HiMouseDrag：鼠标拖动消息封装
-    
+
+以上模块如非原创，均已特别标注。
+
+### 鸣谢
+
+依稀_yixy
+
+悠远的苍穹
+
 ## 编译环境
 
 * Windows 10
@@ -131,17 +139,17 @@ int main()
 
 <div align=center>
 <img src="./screenshot/balls1.png"><br>
-<b>小球示例（1）</b>
+<b>透明通道 - 小球示例（1）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/balls2.png"><br>
-<b>小球示例（2）</b>
+<b>透明通道 - 小球示例（2）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/overview.png"><br>
-<b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
+<b>多窗口 & Win32 控件 & Canvas 绘图效果</b>
 </div><br>
 
 <div align=center>
@@ -151,7 +159,7 @@ int main()
 
 <div align=center>
 <img src="./screenshot/gui.png"><br>
-<b>自绘控件</b>
+<b>部分自绘控件</b>
 </div><br>
 
 ## 立即开始
