@@ -69,7 +69,7 @@ int main()
 
 ### 创建绘图窗口
 
-由于 HiEasyX 完全重写了 EasyX 的绘图窗口实现，所以可以支持创建多窗口，也支持自定义窗口过程函数。
+由于 HiEasyX 完全重写了 EasyX 的绘图窗口实现，所以可以支持创建多窗口、拉伸窗口，也支持自定义窗口过程函数。
 
 在 HiEasyx 中，创建、管理窗口的模块名为 `HiWindow`。
 
@@ -422,13 +422,15 @@ canvas.BindToImage(_Your_Image_Pointer_);
 
 <div align=center>
 <img src="./screenshot/balls1.png"><br>
-<b>小球示例（1）</b>
+<b>透明通道 - 小球示例（1）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/balls2.png"><br>
-<b>小球示例（2）</b>
+<b>透明通道 - 小球示例（2）</b>
 </div><br>
+
+示例中，透明小球在窗口中运动，在碰到边界时反弹。
 
 > 为了缩短篇幅，请您在此查看 [源代码](./Samples/Recommend/Balls.cpp)
 
