@@ -90,7 +90,7 @@ hiex::Window wnd;
 wnd.Create(640, 480);
 ```
 
-创建窗口时还有一些可选参数，例如窗口名称、窗口属性、过程函数、父窗口句柄，详情请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
+创建窗口时还有一些可选参数，例如窗口名称、窗口属性、过程函数、父窗口句柄，等等。详情请查阅 [文档](https://zouhuidong.github.io/HiEasyX/doxygen/html/class_hi_easy_x_1_1_window.html) 或头文件。
 
 如果想要创建多个窗口，如法炮制即可。
 
