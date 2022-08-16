@@ -131,17 +131,17 @@ int main()
 
 <div align=center>
 <img src="./screenshot/balls1.png"><br>
-<b>小球示例（1）</b>
+<b>透明通道 - 小球示例（1）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/balls2.png"><br>
-<b>小球示例（2）</b>
+<b>透明通道 - 小球示例（2）</b>
 </div><br>
 
 <div align=center>
 <img src="./screenshot/overview.png"><br>
-<b>总览多窗口 & Win32 控件 & Canvas 绘图效果</b>
+<b>多窗口 & Win32 控件 & Canvas 绘图效果</b>
 </div><br>
 
 <div align=center>
@@ -151,7 +151,7 @@ int main()
 
 <div align=center>
 <img src="./screenshot/gui.png"><br>
-<b>自绘控件</b>
+<b>部分自绘控件</b>
 </div><br>
 
 ## 立即开始
