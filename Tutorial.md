@@ -437,7 +437,7 @@ canvas.BindToImage(_Your_Image_Pointer_);
 
 HiEasyX 封装了常用 Win32 控件，这个控件模块被称为 HiSysGUI。
 
-目前支持的控件类型（此文档可能更新不及时）：
+目前支持的控件类型 *（此文档可能更新不及时）* ：
 
 * 分组框
 * 静态文本（图像）
