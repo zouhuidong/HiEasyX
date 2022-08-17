@@ -16,7 +16,7 @@ HiEasyX 只有一个目的——让 EasyX 更易用。
 
 > [在线文档](https://zouhuidong.github.io/HiEasyX)
 
-*前身：[EasyWin32](github.com/zouhuidong/EasyWin32)*
+*前身：[EasyWin32](https://github.com/zouhuidong/EasyWin32)*
 
 ## Why HiEasyX
 
