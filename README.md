@@ -82,13 +82,17 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 
 ## 编译环境
 
-* Windows 10
-* VisualStudio 2022
-* EasyX_20220610
+* Windows
+* Visual Studio
+* EasyX
 
+> *需要 C++ 11 及以上版本。*
+> 
+> *需要 unicode 字符集，且并不支持 MBCS 字符集。*
+> 
 > *您必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn*
 
-**注意：暂不支持 MinGW 编译器，请使用 Visual Studio 编译项目。**
+**注意：暂不支持 MinGW 等 GCC 编译器，请使用 Visual Studio 编译项目。**
 
 ## 配置此库
 
@@ -97,7 +101,7 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 1. 下载仓库到本地
 2. 创建一个 Visual Studio 项目
 3. 复制仓库项目中的 `./HiEasyX/HiEasyX.h` 和 `./HiEasyX/HiEasyX/` 整个文件夹到您的项目目录下
-4. 将刚才复制的文件和文件夹加入到您的 Visual Studio 项目中（拖入 Visual Studio 的项目资源管理器即可）
+4. 将刚才复制的文件和文件夹加入到您的 Visual Studio 项目中（拖入 Visual Studio 的项目资源管理器即可，或可以手动添加）
 5. 编写代码，编译运行
 
 > **温馨提示**
