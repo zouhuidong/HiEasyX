@@ -82,9 +82,9 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 
 ## 编译环境
 
-* Windows
-* Visual Studio
-* EasyX
+* Windows 7 及以上 以及 Windows Sever 2008 R2 及以上 （推荐使用 Windows 10/11）
+* Visual Studio 2012 及以上 （推荐使用 Visual Studio 2022）
+* EasyX_20220610
 
 > *需要 C++ 11 及以上版本。*
 > 
