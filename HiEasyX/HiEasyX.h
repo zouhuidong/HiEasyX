@@ -3,7 +3,7 @@
  * @brief	HiEasyX 库头文件
  * @note	该库基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级
  * 
- * @version	Ver 0.2 (alpha)
+ * @version	Ver 0.2.1
  * @envir	VisualStudio 2022 | EasyX_20220610 | Windows 10
  * @site	https://github.com/zouhuidong/HiEasyX
  * 
