@@ -700,21 +700,49 @@ namespace HiEasyX
 
 ////////////****** 窗口样式宏定义 ******////////////
 
+// 启用某属性
+// 此宏为模板宏
+#define EnableSomeStyle(hwnd, state, exstyle, enable_style, disable_style)\
+			(exstyle ?\
+				(state ?\
+					HiEasyX::SetWindowExStyle(\
+						(long)GetWindowExStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) | (enable_style),\
+						hwnd\
+					) :\
+					HiEasyX::SetWindowExStyle(\
+						(long)GetWindowExStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) & (disable_style),\
+						hwnd\
+					)\
+				) :\
+				(state ?\
+					HiEasyX::SetWindowStyle(\
+						(long)GetWindowStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) | (enable_style),\
+						hwnd\
+					) :\
+					HiEasyX::SetWindowStyle(\
+						(long)GetWindowStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) & (disable_style),\
+						hwnd\
+					)\
+				)\
+			)
+
 // 是否允许某窗口改变大小
-#define EnableResizing(hwnd, state)		(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SIZEBOX | WS_MAXIMIZEBOX) :\
-										HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SIZEBOX & ~WS_MAXIMIZEBOX))
+#define EnableResizing(hwnd, state)\
+			EnableSomeStyle(hwnd, state, false, WS_SIZEBOX | WS_MAXIMIZEBOX, ~WS_SIZEBOX & ~WS_MAXIMIZEBOX)
 
 #define DisableResizing(hwnd, state)	EnableResizing(hwnd, !state)
 
 // 是否启用某窗口的系统标题栏按钮
-#define EnableSystemMenu(hwnd, state)	(state ? HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) | WS_SYSMENU) :\
-										HiEasyX::SetWindowStyle(GetWindowStyle(hwnd) & ~WS_SYSMENU))
+#define EnableSystemMenu(hwnd, state)\
+			EnableSomeStyle(hwnd, state, false, WS_SYSMENU, ~WS_SYSMENU)
 
 #define DisableSystemMenu(hwnd, state)	EnableSystemMenu(hwnd, !state)
 
 // 是否启用当前窗口的工具栏样式
-#define EnableToolWindowStyle(state)	(state ? HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) | WS_EX_TOOLWINDOW) :\
-										HiEasyX::SetWindowExStyle(GetWindowExStyle(HiEasyX::GetHWnd_win32()) & ~WS_EX_TOOLWINDOW))
+#define EnableToolWindowStyle(hwnd, state)\
+		EnableSomeStyle(hwnd, state, true, WS_EX_TOOLWINDOW, ~WS_EX_TOOLWINDOW)
+
+#define DisableToolWindowStyle(hwnd, state)	EnableToolWindowStyle(hwnd, !state)
 
 ////////////****** 键盘消息宏定义 ******////////////
 
