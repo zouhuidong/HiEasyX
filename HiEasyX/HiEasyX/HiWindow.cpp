@@ -698,7 +698,7 @@ namespace HiEasyX
 
 	MOUSEMSG GetMouseMsg_win32(HWND hWnd)
 	{
-		ExMessage msgEx = GetNextMessage(EM_MOUSE, hWnd);
+		ExMessage msgEx = getmessage_win32(EM_MOUSE, hWnd);
 		return To_MouseMsg(msgEx);
 	}
 
@@ -733,15 +733,18 @@ namespace HiEasyX
 	MOUSEMSG To_MouseMsg(ExMessage msgEx)
 	{
 		MOUSEMSG msg = {};
-		msg.uMsg = msgEx.message;
-		msg.mkCtrl = msgEx.ctrl;
-		msg.mkShift = msgEx.shift;
-		msg.mkLButton = msgEx.lbutton;
-		msg.mkMButton = msgEx.mbutton;
-		msg.mkRButton = msgEx.rbutton;
-		msg.x = msgEx.x;
-		msg.y = msgEx.y;
-		msg.wheel = msgEx.wheel;
+		if (GetExMessageType(msgEx) == EM_MOUSE)
+		{
+			msg.uMsg = msgEx.message;
+			msg.mkCtrl = msgEx.ctrl;
+			msg.mkShift = msgEx.shift;
+			msg.mkLButton = msgEx.lbutton;
+			msg.mkMButton = msgEx.mbutton;
+			msg.mkRButton = msgEx.rbutton;
+			msg.x = msgEx.x;
+			msg.y = msgEx.y;
+			msg.wheel = msgEx.wheel;
+		}
 		return msg;
 	}
 
@@ -1519,6 +1522,7 @@ namespace HiEasyX
 				setfillcolor(BLACK);
 				cleardevice();
 				EndTask();
+				EnforceRedraw();
 			}
 			return hWnd;
 		}

@@ -665,6 +665,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief ExMessage 转 MOUSEMSG
+	 * @note ExMessage 消息类型若不是 EM_MOUSE，则返回空
 	 * @param[in] msgEx ExMessage 消息
 	 * @return MOUSEMSG 消息
 	*/
