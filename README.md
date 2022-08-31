@@ -9,7 +9,7 @@ HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面�
 
 HiEasyX 只有一个目的——让 EasyX 更易用。
 
-> [查看教程](./Tutorial.md)
+> [快速攻略](https://hiex.netlify.app/introduction/tutorial/)
 
 > [更新日志](./ChangeLog.md)
 
@@ -169,4 +169,4 @@ int main()
 
 ## 立即开始
 
-> [开始使用 HiEasyX](./Tutorial.md)
+> [开始使用 HiEasyX](https://hiex.netlify.app/introduction/tutorial/)
