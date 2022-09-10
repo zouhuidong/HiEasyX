@@ -9,11 +9,13 @@ HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面�
 
 HiEasyX 只有一个目的——让 EasyX 更易用。
 
-> [查看教程](./Tutorial.md)
-
-> [更新日志](./ChangeLog.md)
+> [快速教程](./Tutorial.md)
+>
+> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)
 
 > [在线文档](https://zouhuidong.github.io/HiEasyX)
+
+> [更新日志](./ChangeLog.md)
 
 *前身：[EasyWin32](https://github.com/zouhuidong/EasyWin32)*
 
@@ -169,4 +171,6 @@ int main()
 
 ## 立即开始
 
-> [开始使用 HiEasyX](./Tutorial.md)
+> [快速教程](./Tutorial.md)
+>
+> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)
