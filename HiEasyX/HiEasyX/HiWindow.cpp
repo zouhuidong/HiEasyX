@@ -41,9 +41,13 @@ namespace HiEasyX
 	HICON					g_hCustomIconSm;
 
 	bool					g_isPreStyle = false;						///< 是否预设窗口样式
+	bool					g_isPreStyleEx = false;						///< 是否预设窗口扩展样式
 	bool					g_isPrePos = false;							///< 是否预设窗口位置
+	bool					g_isPreShowState = false;					///< 是否预设窗口显示状态
 	long					g_lPreStyle;								///< 创建窗口前的预设样式
+	long					g_lPreStyleEx;								///< 创建窗口前的预设扩展样式
 	POINT					g_pPrePos;									///< 创建窗口前的预设窗口位置
+	int						g_nPreCmdShow;								///< 创建窗口前的预设显示状态
 
 	DrawMode				g_fDrawMode = DM_Normal;					///< 全局绘制模式
 
@@ -522,33 +526,16 @@ namespace HiEasyX
 
 	void DeleteTray(HWND hWnd)
 	{
-		// 请勿随意修改
-		int index;
-		if (hWnd == nullptr)
-		{
-			if (!isFocusWindowExisted())
-			{
-				return;
-			}
-			else
-			{
-				index = g_nFocusWindowIndex;
-			}
-		}
-		else
-		{
-			index = GetWindowIndex(hWnd);
+		int index = GetWindowIndex(hWnd);
 
-			// 死窗口删除时会调用该函数，所以不判断窗口死活
-			if (!isValidWindowIndex(index))
-			{
-				return;
-			}
-		}
-		if (g_vecWindows[index].isUseTray)
+		// 死窗口删除时会调用该函数，所以不判断窗口死活，只需要判断窗口是否存在
+		if (isValidWindowIndex(index))
 		{
-			g_vecWindows[index].isUseTray = false;
-			Shell_NotifyIcon(NIM_DELETE, &g_vecWindows[index].nid);
+			if (g_vecWindows[index].isUseTray)
+			{
+				g_vecWindows[index].isUseTray = false;
+				Shell_NotifyIcon(NIM_DELETE, &g_vecWindows[index].nid);
+			}
 		}
 	}
 
@@ -606,7 +593,7 @@ namespace HiEasyX
 		int index = GetWindowIndex(hWnd);
 		if (isAliveWindow(index))
 		{
-			return GetFocusWindow().vecMessage;
+			return g_vecWindows[index].vecMessage;
 		}
 		else
 		{
@@ -618,7 +605,10 @@ namespace HiEasyX
 	// 移除当前消息
 	void RemoveMessage(HWND hWnd)
 	{
-		GetMsgVector(hWnd).erase(GetMsgVector(hWnd).begin());
+		if (GetMsgVector(hWnd).size())
+		{
+			GetMsgVector(hWnd).erase(GetMsgVector(hWnd).begin());
+		}
 	}
 
 	// 清空消息
@@ -754,10 +744,22 @@ namespace HiEasyX
 		g_lPreStyle = lStyle;
 	}
 
+	void PreSetWindowStyleEx(long lStyleEx)
+	{
+		g_isPreStyleEx = true;
+		g_lPreStyleEx = lStyleEx;
+	}
+
 	void PreSetWindowPos(int x, int y)
 	{
 		g_isPrePos = true;
 		g_pPrePos = { x,y };
+	}
+
+	void PreSetWindowShowState(int nCmdShow)
+	{
+		g_isPreShowState = true;
+		g_nPreCmdShow = nCmdShow;
 	}
 
 	int SetWindowStyle(long lNewStyle, HWND hWnd)
@@ -1320,6 +1322,21 @@ namespace HiEasyX
 		EasyWindow wnd;				// 窗口信息
 		int nFrameW, nFrameH;		// 窗口标题栏宽高（各个窗口可能不同）
 
+		// 可能多个窗口同时在创建，为了防止预设窗口属性交叉，先备份数据，让出全局变量
+		bool isPreStyle = g_isPreStyle;
+		bool isPreStyleEx = g_isPreStyleEx;
+		bool isPrePos = g_isPrePos;
+		bool isPreShowState = g_isPreShowState;
+		long lPreStyle = g_lPreStyle;
+		long lPreStyleEx = g_lPreStyleEx;
+		POINT pPrePos = g_pPrePos;
+		int nPreCmdShow= g_nPreCmdShow;
+
+		g_isPreStyle = false;
+		g_isPreStyleEx = false;
+		g_isPrePos = false;
+		g_isPreShowState = false;
+
 		// 未设置标题
 		if (lstrlen(lpszWndTitle) == 0)
 		{
@@ -1373,7 +1390,8 @@ namespace HiEasyX
 			ShowWindow(g_hConsole, flag & SW_NORMAL);
 		}
 
-		int user_style = WS_OVERLAPPEDWINDOW;
+		// 用户在创建窗口时设置的窗口属性
+		long user_style = WS_OVERLAPPEDWINDOW;
 		if (flag & EW_NOMINIMIZE)	// 剔除最小化按钮
 		{
 			user_style &= ~WS_MINIMIZEBOX & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX;
@@ -1395,10 +1413,19 @@ namespace HiEasyX
 		// 创建窗口
 		for (int i = 0;; i++)
 		{
-			int final_style = g_isPreStyle ? g_lPreStyle : user_style;
-			final_style |= WS_CLIPCHILDREN;
+			// 最终确定使用的窗口样式
+			long final_style = user_style;
+			if (isPreStyle)
+				final_style = lPreStyle;
+			final_style |= WS_CLIPCHILDREN;	// 必须加入此样式
+
+			// 最终确定使用的窗口扩展样式
+			long final_style_ex = WS_EX_WINDOWEDGE;
+			if (isPreStyleEx)
+				final_style_ex = lPreStyleEx;
+
 			wnd.hWnd = CreateWindowEx(
-				WS_EX_WINDOWEDGE,
+				final_style_ex,
 				g_lpszClassName,
 				wstrTitle.c_str(),
 				final_style,
@@ -1458,23 +1485,20 @@ namespace HiEasyX
 		nFrameH = (rcWnd.bottom - rcWnd.top) - rcClient.bottom;
 
 		int px = 0, py = 0;
-		if (g_isPrePos)
+		if (isPrePos)
 		{
-			px = g_pPrePos.x;
-			py = g_pPrePos.y;
+			px = pPrePos.x;
+			py = pPrePos.y;
 		}
 		SetWindowPos(
 			wnd.hWnd,
 			HWND_TOP,
 			px, py,
 			w + nFrameW, h + nFrameH,
-			g_isPrePos ? 0 : SWP_NOMOVE
+			isPrePos ? 0 : SWP_NOMOVE
 		);
 
-		g_isPreStyle = false;
-		g_isPrePos = false;
-
-		ShowWindow(wnd.hWnd, SW_SHOWNORMAL);
+		ShowWindow(wnd.hWnd, isPreShowState ? nPreCmdShow : SW_SHOWNORMAL);
 		UpdateWindow(wnd.hWnd);
 
 		// 消息派发，阻塞
@@ -1502,7 +1526,7 @@ namespace HiEasyX
 
 		std::thread(InitWindow, w, h, flag, lpszWndTitle, WindowProcess, hParent, &nDoneFlag, &hWnd).detach();
 
-		while (nDoneFlag == 0)	Sleep(10);		// 等待窗口创建完成
+		while (nDoneFlag == 0)	Sleep(50);		// 等待窗口创建完成
 		if (nDoneFlag == -1)
 		{
 			if (hParent)						// 创建子窗口失败，则使父窗口恢复正常
@@ -1524,6 +1548,7 @@ namespace HiEasyX
 				EndTask();
 				EnforceRedraw();
 			}
+
 			return hWnd;
 		}
 	}
@@ -1545,6 +1570,12 @@ namespace HiEasyX
 	{
 		if (!m_isCreated)
 		{
+			// 预设窗口属性
+			if (m_isPreStyle)		PreSetWindowStyle(m_lPreStyle);
+			if (m_isPreStyleEx)		PreSetWindowStyleEx(m_lPreStyleEx);
+			if (m_isPrePos)			PreSetWindowPos(m_pPrePos.x, m_pPrePos.y);
+			if (m_isPreShowState)	PreSetWindowShowState(m_nPreCmdShow);
+
 			HWND hwnd = initgraph_win32(w, h, flag, lpszWndTitle, WindowProcess, hParent);
 			int index = GetWindowIndex(hwnd);
 			m_nWindowIndex = index;
@@ -1667,10 +1698,22 @@ namespace HiEasyX
 		m_lPreStyle = lStyle;
 	}
 
+	void Window::PreSetStyleEx(long lStyleEx)
+	{
+		m_isPreStyleEx = true;
+		m_lPreStyleEx = lStyleEx;
+	}
+
 	void Window::PreSetPos(int x, int y)
 	{
 		m_isPrePos = true;
 		m_pPrePos = { x,y };
+	}
+
+	void Window::PreSetShowState(int nCmdShow)
+	{
+		m_isPreShowState = true;
+		m_nPreCmdShow = nCmdShow;
 	}
 
 	void Window::SetQuickDraw(UINT nSkipPixels)

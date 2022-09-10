@@ -7,17 +7,30 @@ namespace HiEasyX
 {
 	COLORREF MixAlphaColor(COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha)
 	{
-		float fRatioAlpha = ((alpha == 255) ? 1 : (alpha / 255.0f));		// 透明度比例
-		float fRatioSrc = GetAValue(cSrc) / 255.0f;							// 原像素比例
-		float fRatioSrcAlpha = fRatioSrc * fRatioAlpha;						// 原像素比例叠加透明度比例
-		float fRatioDst = 1 - fRatioSrcAlpha;								// 目标像素比例
-		if (isCalculated)	fRatioSrc = fRatioAlpha;						// 若原像素已经混合过，则设为透明度比例
-		else				fRatioSrc = fRatioSrcAlpha;						// 若原像素未混合过，则设为两个透明通道的叠加比例
-		return RGB(
-			GetRValue(cSrc) * fRatioSrc + GetRValue(cDst) * fRatioDst,
-			GetGValue(cSrc) * fRatioSrc + GetGValue(cDst) * fRatioDst,
-			GetBValue(cSrc) * fRatioSrc + GetBValue(cDst) * fRatioDst
-		);
+		float fSrc = GetAValue(cSrc) / 255.0f;	// 待绘制像素的透明度
+		if (alpha != 255)						// 叠加透明度
+			fSrc *= alpha / 255.0f;
+		if (fSrc == 0.0f)						// 绘制透明度为 0 时不做任何处理
+			return cDst;
+		float fDst = 1 - fSrc;					// 原位置像素应乘透明度
+
+		if (isCalculated)
+		{
+			return RGB(
+				GetRValue(cSrc) + GetRValue(cDst) * fDst,
+				GetGValue(cSrc) + GetGValue(cDst) * fDst,
+				GetBValue(cSrc) + GetBValue(cDst) * fDst
+			);
+		}
+		else
+		{
+			return RGB(
+				GetRValue(cSrc) * fSrc + GetRValue(cDst) * fDst,
+				GetGValue(cSrc) * fSrc + GetGValue(cDst) * fDst,
+				GetBValue(cSrc) * fSrc + GetBValue(cDst) * fDst
+			);
+		}
+
 	}
 
 	void CopyImage_Alpha(int x, int y, DWORD* pDst, int wDst, int hDst, DWORD* pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
@@ -131,25 +144,15 @@ namespace HiEasyX
 		float w_scale_rate = (float)src_width / width;
 		float h_scale_rate = (float)src_height / height;
 
-		DWORD* p = src;
-		int psc_width = srcimg->getwidth();
-
 		for (int iy = 0; iy < height; iy++)
 		{
 			for (int ix = 0; ix < width; ix++)
 			{
 				// 计算原图相应坐标
-				int i_scale = (int)(h_scale_rate * iy);
-				int j_scale = (int)(w_scale_rate * ix);
-				DWORD* pp = p;
-				for (int iy = 0; iy < i_scale; iy++)
-				{
-					pp += psc_width;
-				}
-				dst[ix] = pp[j_scale];
+				int x_scale = (int)(w_scale_rate * ix);
+				int y_scale = (int)(h_scale_rate * iy);
+				dst[ix + iy * width] = src[(int)(x_scale + y_scale * src_width)];
 			}
-			dst += dst_width;
-			src += src_width;
 		}
 
 		return dstImage;

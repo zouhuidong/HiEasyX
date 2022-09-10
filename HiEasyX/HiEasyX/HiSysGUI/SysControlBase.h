@@ -38,6 +38,11 @@ namespace HiEasyX
 
 		HFONT m_hFont = nullptr;
 
+		/**
+		 * @brief 内部析构函数
+		*/
+		void Destory();
+
 	protected:
 
 		HWND m_hWnd = nullptr;
@@ -90,6 +95,11 @@ namespace HiEasyX
 		HWND Create(HWND hParent, RECT rct, std::wstring strText = L"");
 
 		HWND Create(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+
+		/**
+		 * @brief 移除控件
+		*/
+		void Remove();
 
 		HWND GetHandle() const { return m_hWnd; }
 

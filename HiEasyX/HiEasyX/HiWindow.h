@@ -111,10 +111,16 @@ namespace HiEasyX
 
 		int m_nWindowIndex = NO_WINDOW_INDEX;
 		bool m_isCreated = false;
+		
 		bool m_isPreStyle = false;
+		bool m_isPreStyleEx = false;
 		bool m_isPrePos = false;
+		bool m_isPreShowState = false;
+
 		long m_lPreStyle;
+		long m_lPreStyleEx;
 		POINT m_pPrePos;
+		int m_nPreCmdShow;
 
 	public:
 
@@ -207,7 +213,11 @@ namespace HiEasyX
 
 		void PreSetStyle(long lStyle);
 
+		void PreSetStyleEx(long lStyleEx);
+
 		void PreSetPos(int x, int y);
+
+		void PreSetShowState(int nCmdShow);
 
 		long GetStyle();
 
@@ -519,10 +529,17 @@ namespace HiEasyX
 
 	/**
 	 * @brief 在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
-	 * @attention 新窗口的所有样式都将被当前样式覆盖
+	 * @attention 新窗口的所有普通样式都将被当前样式覆盖
 	 * @param[in] lStyle 新样式
 	*/
 	void PreSetWindowStyle(long lStyle);
+
+	/**
+	 * @brief 在创建窗口前设置窗口扩展样式，仅对此操作后首个新窗口生效
+	 * @attention 新窗口的所有扩展样式都将被当前样式覆盖
+	 * @param[in] lStyleEx 新样式
+	*/
+	void PreSetWindowStyleEx(long lStyleEx);
 
 	/**
 	 * @brief 在创建窗口前设置窗口位置，仅对此操作后首个新窗口生效
@@ -530,6 +547,12 @@ namespace HiEasyX
 	 * @param[in] y	位置
 	*/
 	void PreSetWindowPos(int x, int y);
+
+	/**
+	 * @brief 在创建窗口前设置窗口显示状态，仅对此操作后首个新窗口生效
+	 * @param[in] nCmdShow 显示状态（和 ShowWindow 用法一致）
+	*/
+	void PreSetWindowShowState(int nCmdShow);
 
 	/**
 	 * @brief 设置某窗口样式

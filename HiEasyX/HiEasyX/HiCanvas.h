@@ -15,10 +15,12 @@ namespace HiEasyX
 {
 	/**
 	 * @brief 根据透明度混合颜色
-	 * @param[in] cDst				原位置像素点
-	 * @param[in] cSrc				待输出像素点（根据该点的透明度进行混合）
-	 * @param[in] isCalculated		待输出像素点是否已经混合过颜色
-	 * @param[in] alpha			叠加透明度（默认为 255，即不叠加）
+	 * @param[in] cDst				原位置像素
+	 * @param[in] cSrc				待绘制像素（根据其透明度混合颜色）
+	 * @param[in] isCalculated		待绘制像素点是否已经乘以它的透明度 <p>
+	 *								例如，透明 png 图像中的像素就是已经乘过透明度的。<p>
+	 *								但是一般在程序中创建的颜色是没用乘过的。<p>
+	 * @param[in] alpha				叠加在 src 上的透明度（默认为 255，即不叠加）
 	 * @return 混合后的颜色（不含透明信息）
 	*/
 	COLORREF MixAlphaColor(COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha = 255);
@@ -34,7 +36,7 @@ namespace HiEasyX
 	 * @param[in] wSrc				待输出图像宽
 	 * @param[in] hSrc				待输出图像高
 	 * @param[in] crop				待输出图像裁剪区域（right 或 bottom 为 0 表示不裁剪）
-	 * @param[in] alpha			叠加透明度（透明 0 ~ 255 不透明）
+	 * @param[in] alpha				叠加透明度（透明 0 ~ 255 不透明）
 	 * @param[in] bUseSrcAlpha		是否使用待输出图像透明度进行混合（须保证 IMAGE 中含有透明度信息）<p>
 	 *								EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。<p>
 	 *								通常只有 png 图像，或是特地生成的图像才含有透明度信息。<p>
@@ -66,7 +68,6 @@ namespace HiEasyX
 
 	/**
 	 * @brief	缩放图像（保留透明度信息）
-	 * @author	豆焰 <beanflame@qq.com>（有改动）
 	 * @param[in] srcimg		原图像
 	 * @param[in] width		目标宽度
 	 * @param[in] height		目标高度

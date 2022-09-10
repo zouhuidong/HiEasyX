@@ -4,6 +4,16 @@
 
 namespace HiEasyX
 {
+	void SysControlBase::Destory()
+	{
+		if (m_hFont)
+		{
+			DeleteFont(m_hFont);
+			m_hFont = nullptr;
+		}
+		SendMessage(m_hParent, WM_SYSCTRL_DELETE, (WPARAM)this, 0);
+	}
+
 	HWND SysControlBase::CreateControl(HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)
 	{
 		m_hParent = hParent;
@@ -32,12 +42,7 @@ namespace HiEasyX
 
 	SysControlBase::~SysControlBase()
 	{
-		if (m_hFont)
-		{
-			DeleteFont(m_hFont);
-			m_hFont = nullptr;
-		}
-		SendMessage(m_hParent, WM_SYSCTRL_DELETE, (WPARAM)this, 0);
+		Destory();
 	}
 
 	void SysControlBase::UpdateRect(RECT rctOld)
@@ -70,6 +75,12 @@ namespace HiEasyX
 			SetText(strText);
 		}
 		return GetHandle();
+	}
+
+	void SysControlBase::Remove()
+	{
+		Destory();
+		SendMessage(m_hWnd, WM_CLOSE, 0, 0);
 	}
 
 	bool SysControlBase::isEnable()
