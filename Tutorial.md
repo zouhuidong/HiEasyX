@@ -104,15 +104,21 @@ EasyX 的用户可能早已习惯不判断绘图窗口是否还存在，因为�
 
 但是 HiEasyX 给您更多的选择。
 
-如果使用 `initgraph` 创建窗口，则所有窗口被关闭后，程序将自动退出。
+#### 使用 `initgraph` 创建窗口
 
-如果使用 `hiex::initgraph_win32` 或 `hiex::Window` 创建窗口，则不会自动退出程序。
+所有窗口被关闭后，程序将自动退出。
 
-对于第二种情况，您可以随时使用 `hiex::isAnyWindow()` 检测是否还存在任何窗口，然后再选择是否退出程序。
+#### 使用 `hiex::initgraph_win32` 或 `hiex::Window` 创建窗口
 
-如果想检测某一窗口是否存在，可以使用 `hiex::isAliveWindow()` 或 `hiex::Window::isAlive()`。
+所有窗口被关闭后，不会自动退出程序（若创建窗口后调用 `hiex::AutoExit()`，则会自动退出程序）。
 
-如果想设置所有窗口关闭时，程序自动退出，可以调用一次 `AutoExit()`，即可。
+您可以随时使用 `hiex::isAnyWindow()` 检测是否还存在任何窗口。
+
+也可以使用 `hiex::isAliveWindow()` 或 `hiex::Window::isAlive()` 检测某一窗口是否存在。
+
+> **特别注意！** 
+> 
+> 以此方式创建窗口，如果不判断窗口是否关闭，则窗口被关闭后程序会一直在后台运行。
 
 ### IMAGE* 的空指针
 
