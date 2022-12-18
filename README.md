@@ -4,6 +4,7 @@
 [![EasyX](https://img.shields.io/badge/graphics-EasyX-orange.svg)](https://easyx.cn)
 ![Stars](https://img.shields.io/github/stars/zouhuidong/HiEasyX)
 ![Forks](https://img.shields.io/github/forks/zouhuidong/HiEasyX)
+![Downloads](https://img.shields.io/github/downloads/zouhuidong/HiEasyX/total)
 
 HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级。
 
