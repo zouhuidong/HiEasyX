@@ -1,16 +1,20 @@
 /**
  * @file	HiGdiPlus.h
- * @brief	HiEasyX 库的 Gdi+ 绘图模块
+ * @brief	HiEasyX 库的 GDI+ 绘图模块
  * @author	huidong
 */
 
 #pragma once
 
-#include <Windows.h>
+#include <graphics.h>
 #include <gdiplus.h>
 
 namespace HiEasyX
 {
+	/////// GDI+ 环境配置 ///////
+
+	/// 注意，必须先启动 GDI+，才能使用下面的绘图函数
+
 	/**
 	 * @brief 启动 GDI+
 	*/
@@ -21,13 +25,7 @@ namespace HiEasyX
 	*/
 	void Gdiplus_Shutdown();
 
-	/**
-	 * @brief 转换 COLORREF 到 Gdiplus::Color
-	 * @param[in] color				原颜色
-	 * @param[in] reserve_alpha		是否保留 COLORREF 中的 alpha 值
-	 * @return 转换后的 Gdiplus::Color 色值
-	*/
-	Gdiplus::Color ConvertToGdiplusColor(COLORREF color, bool reserve_alpha = false);
+	/////// GDI+ 基础封装 ///////
 	
 	/**
 	 * @brief 画线
@@ -38,21 +36,365 @@ namespace HiEasyX
 		float y1,
 		float x2,
 		float y2,
-		Gdiplus::Color color,
-		float width,
+		Gdiplus::Color linecolor,
+		float linewidth,
 		Gdiplus::SmoothingMode smoothing_mode
 	);
 
+	/**
+	 * @brief 画多边形
+	*/
 	void Gdiplus_Polygon(
 		HDC hdc, 
 		int points_num, 
 		Gdiplus::PointF* points,
-		Gdiplus::Color color, 
-		float width, 
+		Gdiplus::Color linecolor, 
+		float linewidth, 
 		Gdiplus::SmoothingMode smoothing_mode
 	);
 
-	void Gdiplus_Rectangle(HDC hdc, float x, float y, float w, float h, Gdiplus::Color color, float width, Gdiplus::SmoothingMode smoothing_mode);
+	/**
+	 * @brief 画无边框填充多边形
+	*/
+	void Gdiplus_SolidPolygon(
+		HDC hdc,
+		int points_num,
+		Gdiplus::PointF* points,
+		Gdiplus::Color fillcolor,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
 
+	/**
+	 * @brief 画矩形
+	*/
+	void Gdiplus_Rectangle(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		Gdiplus::Color linecolor,
+		float linewidth,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画无边框填充矩形
+	*/
+	void Gdiplus_SolidRectangle(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		Gdiplus::Color fillcolor,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画椭圆
+	*/
+	void Gdiplus_Ellipse(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		Gdiplus::Color linecolor,
+		float linewidth,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画无边框填充椭圆
+	*/
+	void Gdiplus_SolidEllipse(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		Gdiplus::Color fillcolor,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画饼状图（传入顺时针角度）
+	*/
+	void Gdiplus_Pie(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		Gdiplus::Color linecolor,
+		float linewidth,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画无边框填充饼状图（传入顺时针角度）
+	*/
+	void Gdiplus_SolidPie(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		Gdiplus::Color fillcolor,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/**
+	 * @brief 画圆弧
+	*/
+	void Gdiplus_Arc(
+		HDC hdc,
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		Gdiplus::Color linecolor,
+		float linewidth,
+		Gdiplus::SmoothingMode smoothing_mode
+	);
+
+	/////// EasyX 风格的 GDI+ 封装 ///////
+
+	////////////////////////////////////////////////////////////////
+	//
+	// 注：以下 EasyX 风格接口中
+	//		
+	//		enable_alpha	表示是否使用传入颜色的 alpha 值
+	//		enable_aa		表示是否开启抗锯齿
+	//		pImg			表示目标绘制画布
+	//
+	////////////////////////////////////////////////////////////////
+
+	/**
+	 * @brief 转换 COLORREF 到 Gdiplus::Color
+	 * @param[in] color				原颜色
+	 * @param[in] reserve_alpha		是否保留 COLORREF 中的 alpha 值
+	 * @return 转换后的 Gdiplus::Color 色值
+	*/
+	Gdiplus::Color ConvertToGdiplusColor(COLORREF color, bool reserve_alpha = false);
+
+	/**
+	 * @brief 画直线
+	*/
+	void EasyX_Gdiplus_Line(
+		float x1,
+		float y1,
+		float x2,
+		float y2,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画多边形
+	*/
+	void EasyX_Gdiplus_Polygon(
+		int points_num,
+		POINT* points,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画无边框填充多边形
+	*/
+	void EasyX_Gdiplus_SolidPolygon(
+		int points_num,
+		POINT* points,
+		COLORREF fillcolor,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画有边框填充多边形
+	*/
+	void EasyX_Gdiplus_FillPolygon(
+		int points_num,
+		POINT* points,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画矩形
+	*/
+	void EasyX_Gdiplus_Rectangle(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画无边框填充矩形
+	*/
+	void EasyX_Gdiplus_SolidRectangle(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF fillcolor,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画有边框填充矩形
+	*/
+	void EasyX_Gdiplus_FillRectangle(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画椭圆
+	*/
+	void EasyX_Gdiplus_Ellipse(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画无边框填充椭圆
+	*/
+	void EasyX_Gdiplus_SolidEllipse(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF fillcolor,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画有边框填充椭圆
+	*/
+	void EasyX_Gdiplus_FillEllipse(
+		float x,
+		float y,
+		float w,
+		float h,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画饼状图（传入逆时针角度）
+	*/
+	void EasyX_Gdiplus_Pie(
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画无边框填充饼状图（传入逆时针角度）
+	*/
+	void EasyX_Gdiplus_SolidPie(
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		COLORREF fillcolor,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画有边框填充饼状图（传入逆时针角度）
+	*/
+	void EasyX_Gdiplus_FillPie(
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief 画圆弧
+	*/
+	void EasyX_Gdiplus_Arc(
+		float x,
+		float y,
+		float w,
+		float h,
+		float stangle,
+		float endangle,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		bool enable_aa = false,
+		IMAGE* pImg = nullptr
+	);
 
 };

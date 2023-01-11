@@ -218,7 +218,7 @@ namespace HiEasyX
 		 * @brief <pre>
 		 *		绑定到图像指针
 		 *
-		 *	重要：
+		 *	注意：
 		 *		绑定到图像指针后，如果在外部调整了图像大小，则需要调用 UpdateSizeInfo 重新加载图像信息
 		 * </pre>
 		 * 
@@ -722,6 +722,10 @@ namespace HiEasyX
 		 * @param[in] nH	目标高度
 		*/
 		void ZoomImage_Win32_Alpha(int nW, int nH);
+
+		/////// 以下为 ///////
+
+		//void Line
 
 	};
 

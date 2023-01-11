@@ -14,20 +14,7 @@ int main()
 
 	hiex::Gdiplus_Starup();
 
-	Gdiplus::Color color(100, 200, 0, 0);
-
-	hiex::Gdiplus_Line(canvas.GetHDC(), 200, 200, 500, 300, color, 10, Gdiplus::SmoothingModeAntiAlias);
-
-	POINT pp[] = { {100,100},{120,150},{200,230} };
-	Gdiplus::PointF* pPts = new Gdiplus::PointF[3];
-	for (int i = 0; i < 3; i++)
-	{
-		pPts[i].X = (float)pp[i].x;
-		pPts[i].Y = (float)pp[i].y;
-	}
-
-	hiex::Gdiplus_Polygon(canvas.GetHDC(), 3, pPts, color, 10, Gdiplus::SmoothingModeAntiAlias);
-
+	hiex::EasyX_Gdiplus_Line(10, 10, 400, 300, RGBA(0, 200, 200, 100), 50, true, true, GetWorkingImage());
 
 	hiex::Gdiplus_Shutdown();
 
