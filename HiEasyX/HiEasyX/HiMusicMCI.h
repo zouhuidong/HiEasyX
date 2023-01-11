@@ -11,11 +11,10 @@
 namespace HiEasyX
 {
 	/**
-	 * @brief MusicMCI
-	 * @note
-	 *		音乐播放操作层
-	 *		进行底层音乐播放
-	 *		暂停，关闭，设置音量，获取播放时间等操作
+	 * @brief <pre>
+	 *		MusicMCI（音乐播放操作层）
+	 *		支持播放、暂停、设置音量、获取播放时间等操作
+	 * </pre>
 	*/
 	class MusicMCI
 	{

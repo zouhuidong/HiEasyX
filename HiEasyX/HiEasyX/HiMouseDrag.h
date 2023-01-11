@@ -11,12 +11,14 @@
 namespace HiEasyX
 {
 	/**
-	 * @brief 鼠标拖动
-	 * @note
-	 *		调用方法
-	 *		需要在鼠标消息循环中每次都调用 UpdateMessage 更新鼠标消息
-	 *		调用 isLeftDrag，isMiddleDrag，isRightDrag 函数判断正在拖动的鼠标按键
-	 *		调用 GetDragX，GetDragY 获取鼠标拖动时鼠标坐标的变化量
+	 * @brief <pre>
+	 *		鼠标拖动事件处理器
+	 *	
+	 *	调用方法：
+	 *		1. 调用 UpdateMessage 更新鼠标消息
+	 *		2. 调用 isLeftDrag，isMiddleDrag，isRightDrag 函数判断正在拖动的鼠标按键
+	 *		3. 调用 GetDragX，GetDragY 获取鼠标拖动时鼠标坐标的变化量
+	 * </pre>
 	*/
 	class MouseDrag
 	{

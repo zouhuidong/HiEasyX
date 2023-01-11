@@ -74,10 +74,13 @@ namespace HiEasyX
 		HMENU hTrayMenu;							///< 托盘菜单
 
 		/**
-		 * @brief 托盘菜单消息处理函数指针
-		 * @note
-		 *		给出此函数是为了方便响应托盘的菜单消息 <p>
-		 *		如需响应完整的托盘消息，请自定义窗口过程函数并处理 WM_TRAY 消息 <p>
+		 * @brief <pre>
+		 *		托盘菜单消息处理函数指针
+		 * 
+		 * 备注：
+		 *		给出此函数是为了方便响应托盘的菜单消息
+		 *		如需响应完整的托盘消息，请自定义窗口过程函数并处理 WM_TRAY 消息
+		 * </pre>
 		*/
 		void(*funcTrayMenuProc)(UINT);
 
@@ -277,23 +280,25 @@ namespace HiEasyX
 	////////////****** 窗体相关函数 ******////////////
 
 	/**
-	 * @brief 创建 Win32 绘图窗口
+	 * @brief <pre>
+	 *		创建 Win32 绘图窗口（异于原生 EasyX 窗口）
+	 * 
+	 *	备注：
+	 *		窗口默认支持双击消息、调整大小（使用 EnableResizing 宏设置是否可以调整大小）
+	 * </pre>
+	 * 
 	 * @param[in] w					窗口宽
 	 * @param[in] h					窗口高
-	 * @param[in] flag					窗口样式（EW_ 系列宏，默认为 EW_NORMAL）
-	 * @param[in] lpszWndTitle			窗口标题
+	 * @param[in] flag				窗口样式（EW_ 系列宏，默认为 EW_NORMAL）
+	 * @param[in] lpszWndTitle		窗口标题
 	 * @param[in] WindowProcess		窗口过程函数
-	 * @param[in] hParent				父窗口句柄
+	 * @param[in] hParent			父窗口句柄
 	 * @return 创建的窗口句柄
-	 *
-	 * @note
-	 *		调用此函数将跳过 EasyX 原生窗口创建的步骤
-	 *		窗口默认支持双击消息
 	 *
 	 * @bug
 	 *		不建议大批量创建绘图窗口，如果必要，请适当添加延时，否则可能导致未知问题。
 	 *
-	 * @par 窗口过程函数规范
+	 * @par 窗口过程函数规范 <pre>
 	 *
 	 *		函数签名：
 	 *			LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -333,6 +338,7 @@ namespace HiEasyX
 					return 0;
 				}
 	 * @endcode
+	 * </pre>
 	*/
 	HWND initgraph_win32(
 		int w = 640,
@@ -399,9 +405,13 @@ namespace HiEasyX
 	Canvas* GetWindowCanvas(HWND hWnd = nullptr);
 
 	/**
-	 * @brief 绑定窗口画布指针
-	 * @note 绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
-	 * @attention 绑定画布后，如在外部操作画布，则必须先启动窗口任务
+	 * @brief <pre>
+	 *		绑定窗口画布指针
+	 *
+	 *	备注：
+	 *		绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
+	 * </pre>
+	 * 
 	 * @param[in] pCanvas 画布指针
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
@@ -452,8 +462,13 @@ namespace HiEasyX
 	void EnforceRedraw(HWND hWnd = nullptr);
 
 	/**
-	 * @brief 为当前活动窗口启动任务
-	 * @note 调用 EasyX 函数进行绘图或获取消息时，都应当启动任务。
+	 * @brief <pre>
+	 *		为当前活动窗口启动任务
+	 *
+	 *	备注：
+	 *		调用 EasyX 函数进行绘图或获取消息时，都应当启动任务。
+	 * </pre>
+	 * 
 	 * @return 是否启动成功（若已在任务中也返回 true）
 	*/
 	bool BeginTask();
@@ -465,10 +480,16 @@ namespace HiEasyX
 	void EndTask(bool flush = true);
 
 	/**
-	 * @brief 判断某窗口是否在任务中
+	 * @brief <pre>
+	 *		判断某窗口是否在任务中
+	 * 
+	 *	备注：
+	 *		窗口任务是队列式的，只有活动窗口可能处在任务中。
+	 *		故若传入窗口不是活动窗口，将直接返回 false。
+	 * </pre>
+	 * 
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否在任务中
-	 * @note 窗口任务是队列式的，只有活动窗口可能处在任务中。故若传入窗口不是活动窗口，将直接返回 false
 	*/
 	bool isInTask(HWND hWnd = nullptr);
 
@@ -486,10 +507,15 @@ namespace HiEasyX
 	bool isWindowSizeChanged(HWND hWnd = nullptr);
 
 	/**
-	 * @brief 为窗口创建一个托盘
+	 * @brief <pre>
+	 *		为窗口创建一个托盘
+	 * 
+	 *	注意：
+	 *		在 HiEasyX 中，每个窗口仅能稳定占有一个托盘
+	 * </pre>
+	 * 
 	 * @param[in] lpszTrayName 托盘提示文本
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
-	 * @attention 每个窗口仅能稳定占有一个托盘
 	*/
 	void CreateTray(LPCTSTR lpszTrayName, HWND hWnd = nullptr);
 
@@ -519,24 +545,39 @@ namespace HiEasyX
 	bool GetCustomIconState();
 
 	/**
-	 * @brief 使用自定义图标资源作为程序图标
-	 * @note 必须在第一次创建窗口前就调用该函数才能生效
+	 * @brief <pre>
+	 *		使用自定义图标资源作为程序图标
+	 *
+	 *	备注：
+	 *		必须在第一次创建窗口前就调用该函数才能生效。
+	 *		使用 MAKEINTRESOURCE 宏可以将资源 ID 转为字符串。
+	 * </pre>
+	 * 
 	 * @param[in] lpszIcon		大图标资源
 	 * @param[in] lpszIconSm	小图标资源
-	 * @see 使用 MAKEINTRESOURCE 将资源 ID 转为字符串
 	*/
 	void SetCustomIcon(LPCTSTR lpszIcon, LPCTSTR lpszIconSm);
 
 	/**
-	 * @brief 在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
-	 * @attention 新窗口的所有普通样式都将被当前样式覆盖
+	 * @brief <pre>
+	 *		在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
+	 *
+	 *	注意：
+	 *		新窗口的所有普通样式都将被当前样式覆盖
+	 * </pre>
+	 * 
 	 * @param[in] lStyle 新样式
 	*/
 	void PreSetWindowStyle(long lStyle);
 
 	/**
-	 * @brief 在创建窗口前设置窗口扩展样式，仅对此操作后首个新窗口生效
-	 * @attention 新窗口的所有扩展样式都将被当前样式覆盖
+	 * @brief <pre>
+	 *		在创建窗口前设置窗口扩展样式，仅对此操作后首个新窗口生效
+	 *
+	 *	注意：
+	 *		新窗口的所有扩展样式都将被当前样式覆盖
+	 * </pre>
+	 * 
 	 * @param[in] lStyleEx 新样式
 	*/
 	void PreSetWindowStyleEx(long lStyleEx);
@@ -623,7 +664,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 阻塞等待，直到获取到一个新消息
-	 * @param [out] msg	返回获取到的消息
+	 * @param[out] msg	返回获取到的消息
 	 * @param[in] filter	消息筛选方式
 	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
 	*/
@@ -631,7 +672,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 获取一个消息，立即返回是否获取成功
-	 * @param [out] msg	返回获取到的消息
+	 * @param[out] msg	返回获取到的消息
 	 * @param[in] filter	消息筛选方式
 	 * @param[in] removemsg	获取消息后是否将其移除
 	 * @param[in] hWnd		窗口句柄（为空代表当前活动窗口）
@@ -664,7 +705,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 获取一个新的鼠标消息，立即返回是否获取成功
-	 * @param [out] pMsg		返回获取到的消息
+	 * @param[out] pMsg		返回获取到的消息
 	 * @param[in] bRemoveMsg	获取消息后是否将其移除
 	 * @param[in] hWnd			窗口句柄（为空代表当前活动窗口）
 	 * @return 是否获取到消息
@@ -687,8 +728,13 @@ namespace HiEasyX
 	ExMessage To_ExMessage(MOUSEMSG msg);
 
 	/**
-	 * @brief ExMessage 转 MOUSEMSG
-	 * @note ExMessage 消息类型若不是 EM_MOUSE，则返回空
+	 * @brief <pre>
+	 *		ExMessage 转 MOUSEMSG
+	 * 
+	 *	备注：
+	 *		ExMessage 消息类型若不是 EM_MOUSE，则返回空
+	 * </pre>
+	 * 
 	 * @param[in] msgEx ExMessage 消息
 	 * @return MOUSEMSG 消息
 	*/

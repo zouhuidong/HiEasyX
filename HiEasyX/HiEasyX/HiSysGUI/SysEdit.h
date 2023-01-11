@@ -154,8 +154,8 @@ namespace HiEasyX
 
 		/**
 		 * @brief 获取光标选择区域
-		 * @param [out] begin	光标起始位置
-		 * @param [out] end		选择结束位置
+		 * @param[out] begin	光标起始位置
+		 * @param[out] end		选择结束位置
 		*/
 		void GetSel(int* begin, int* end);
 

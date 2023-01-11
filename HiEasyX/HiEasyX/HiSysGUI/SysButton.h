@@ -55,8 +55,12 @@ namespace HiEasyX
 		int GetClickCount();
 
 		/**
-		 * @brief 判断是否点击按键
-		 * @note 建议使用 GetClickCount，使用此函数可能丢失点击次数信息
+		 * @brief <pre>
+		 *		判断是否点击按键
+		 * 
+		 *	备注：
+		 *		建议使用 GetClickCount，使用此函数可能丢失点击次数信息
+		 * </pre>
 		*/
 		bool isClicked();
 	};

@@ -117,7 +117,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 转换消息
-		 * @param [in, out] msg 要转换的消息
+		 * @param[in, out] msg 要转换的消息
 		 * @return 转换后的消息
 		*/
 		virtual ExMessage& TransformMessage(ExMessage& msg);
@@ -227,7 +227,7 @@ namespace HiEasyX
 		 * @brief 渲染控件到外部
 		 * @param[in] dst			渲染目标
 		 * @param[in] pRct			内部使用，传入父控件渲染区域数组
-		 * @param [in, out] pCount	内部使用，传入父控件渲染区域数量指针
+		 * @param[in, out] pCount	内部使用，传入父控件渲染区域数量指针
 		*/
 		virtual void Render(Canvas* dst, RECT* pRct = nullptr, int* pCount = 0);
 

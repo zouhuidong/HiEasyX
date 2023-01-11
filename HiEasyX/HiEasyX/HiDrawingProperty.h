@@ -11,8 +11,12 @@
 namespace HiEasyX
 {
 	/**
-	 * @brief 绘图属性
-	 * @note EasyX 目前无法获取 setorigin 和 setcliprgn 的值
+	 * @brief <pre>
+	 *		绘图属性总控单元
+	 *
+	 *	备注：
+	 *		EasyX 目前无法获取 setorigin 和 setcliprgn 所设置的值
+	 * </pre>
 	*/
 	class DrawingProperty
 	{

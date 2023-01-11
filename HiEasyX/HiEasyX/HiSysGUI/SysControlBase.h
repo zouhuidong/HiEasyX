@@ -79,14 +79,19 @@ namespace HiEasyX
 		 * @param[in] msg		新消息
 		 * @param[in] wParam	参数
 		 * @param[in] lParam	参数
-		 * @param [out] bRet 标记是否返回值
+		 * @param[out] bRet 标记是否返回值
 		 * @return 不定返回值
 		*/
 		virtual LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet);
 
 		/**
-		 * @brief 创建控件
-		 * @attention 控件只能创建一次
+		 * @brief <pre>
+		 *		创建控件（从控件对象创建出 UI 实体）
+		 *
+		 *	注意：
+		 *		同一个控件对象不能反复创建 UI 实体
+		 * </pre>
+		 * 
 		 * @param[in] hParent	父窗口句柄
 		 * @param[in] rct		控件区域
 		 * @param[in] strText	控件文本

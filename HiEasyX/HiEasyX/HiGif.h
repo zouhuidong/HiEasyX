@@ -14,17 +14,22 @@
 namespace HiEasyX
 {
 	/**
-	 * @brief Gif 动图
-	 * @par	使用方法 <p>
-	 *		1. load 加载图像 <p>
-	 *		2. bind 绑定输出 HDC <p>
-	 *		3. （可选）setPos 设置位置 <p>
-	 *		4. （可选）setSize 设置缩放大小（为 0 表示原图大小） <p>
-	 *		5. play 开始播放 <p>
-	 *		6. draw 绘制到 HDC <p>
-	 * @bug
-	 *		1. 释放时可能崩溃 <p>
-	 *		2. 对绑定的 HDC 调整大小可能导致崩溃 <p>
+	 * @brief <pre>
+	 *		Gif 动图
+	 *
+	 *	使用方法：
+	 *		1. load 加载图像
+	 *		2. bind 绑定输出 HDC
+	 *		3. （可选）setPos 设置位置
+	 *		4. （可选）setSize 设置缩放大小（为 0 表示原图大小）
+	 *		5. play 开始播放
+	 *		6. draw 绘制到 HDC
+	 * </pre>
+	 * 
+	 * @bug <pre>
+	 *		1. 释放时可能崩溃
+	 *		2. 对绑定的 HDC 调整大小可能导致崩溃
+	 * </pre>
 	*/
 	class Gif
 	{

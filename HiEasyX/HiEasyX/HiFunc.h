@@ -27,30 +27,45 @@ struct ScreenSize
 ScreenSize GetScreenSize();
 
 /**
- * @brief 获取图像尺寸
- * @note 可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
+ * @brief <pre>
+ *		获取图像尺寸
+ * 
+ *	备注：
+ *		可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
+ * </pre>
+ * 
  * @param[in] pImg			目标图像
- * @param [out] width		返回图像宽
- * @param [out] height		返回图像高
+ * @param[out] width		返回图像宽
+ * @param[out] height		返回图像高
 */
 void GetImageSize(IMAGE* pImg, int& width, int& height);
 
 /**
- * @brief 反转图像 Alpha 值
- * @note
- *		将 alpha 值不为 0 的一切像素的 alpha 设为 0， <p>
- *		同时将 alpha 值为 0 的一切像素的 alpha 设为 255 <p>
- * @param [in, out] pBuf		显存指针
- * @param[in] size				显存大小 
+ * @brief <pre>
+ *		反转图像 Alpha 值
+ *	
+ *	备注：
+ *		将 alpha 值不为 0 的一切像素的 alpha 设为 0，
+ *		同时将 alpha 值为 0 的一切像素的 alpha 设为 255。
+ * </pre>
+ * 
+ * @param[in, out] pBuf		显存指针
+ * @param[in] size			显存大小 
  * @return 显存指针（和原来一样）
 */
 DWORD* ReverseAlpha(DWORD* pBuf, int size);
 
 /**
  * @brief 得到 IMAGE 对象的 HBITMAP
- * @param[in] img				目标图像
- * @param[in] enable_alpha		是否允许图像的 alpha 信息 <p>
- *								注意，若图像 alpha 值全为 0，则表示不启用透明混合 <p>
+ * @param[in] img			目标图像
+ *
+ * @param[in] enable_alpha <pre>
+ *		是否允许图像的 alpha 信息
+ *
+ *	注意：
+ *		若图像 alpha 值全为 0，则表示不启用透明混合
+ * </pre>
+ * 
  * @return 转换得到的位图句柄
 */
 HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha);
