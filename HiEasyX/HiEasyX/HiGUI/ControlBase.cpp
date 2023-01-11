@@ -398,7 +398,7 @@ namespace HiEasyX
 			bool msg_worth_redraw = false;
 
 			// 鼠标在区域内
-			if (isInRect(msg.x, msg.y, { 0,0,GetWidth(),GetHeight() }))
+			if (IsInRect(msg.x, msg.y, { 0,0,GetWidth(),GetHeight() }))
 			{
 				// 鼠标移入
 				if (!m_bHovered)

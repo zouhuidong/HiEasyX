@@ -56,22 +56,22 @@ namespace HiEasyX
 	////////////****** 函数定义 ******////////////
 
 	// 检验窗口索引是否合法
-	bool isValidWindowIndex(int index)
+	bool IsValidWindowIndex(int index)
 	{
 		return index >= 0 && index < (int)g_vecWindows.size();
 	}
 
 	// 当前是否存在操作焦点窗口（若存在，则一定是活窗口）
-	bool isFocusWindowExisted()
+	bool IsFocusWindowExisted()
 	{
-		return isValidWindowIndex(g_nFocusWindowIndex);
+		return IsValidWindowIndex(g_nFocusWindowIndex);
 	}
 
 	// 获取当前操作焦点窗口
 	EasyWindow& GetFocusWindow()
 	{
 		static EasyWindow wndEmpty;
-		if (isFocusWindowExisted())
+		if (IsFocusWindowExisted())
 		{
 			return g_vecWindows[g_nFocusWindowIndex];
 		}
@@ -103,7 +103,7 @@ namespace HiEasyX
 		return index;
 	}
 
-	bool isAnyWindow()
+	bool IsAnyWindow()
 	{
 		for (EasyWindow& i : g_vecWindows)
 			if (i.isAlive)
@@ -111,12 +111,12 @@ namespace HiEasyX
 		return false;
 	}
 
-	bool isAliveWindow(HWND hWnd)
+	bool IsAliveWindow(HWND hWnd)
 	{
 		if (hWnd)
 		{
 			int index = GetWindowIndex(hWnd);
-			if (isValidWindowIndex(index))
+			if (IsValidWindowIndex(index))
 			{
 				return g_vecWindows[index].isAlive;
 			}
@@ -127,20 +127,20 @@ namespace HiEasyX
 		}
 		else
 		{
-			return isFocusWindowExisted();
+			return IsFocusWindowExisted();
 		}
 	}
 
-	bool isAliveWindow(int index)
+	bool IsAliveWindow(int index)
 	{
-		return isValidWindowIndex(index) && g_vecWindows[index].isAlive;
+		return IsValidWindowIndex(index) && g_vecWindows[index].isAlive;
 	}
 
 	// 等待窗口内部消息处理完成
 	void WaitForProcessing(int index)
 	{
 		// 死窗口可能正在销毁，故不用 isAliveWindow
-		if (isValidWindowIndex(index))
+		if (IsValidWindowIndex(index))
 		{
 			while (g_vecWindows[index].isBusyProcessing)
 			{
@@ -162,7 +162,7 @@ namespace HiEasyX
 	void WaitForTask(HWND hWnd)
 	{
 		// 未设置句柄时只需要等待，若设置了则需要判断该句柄是否对应活动窗口
-		if (!hWnd || (isFocusWindowExisted() && GetFocusWindow().hWnd == hWnd))
+		if (!hWnd || (IsFocusWindowExisted() && GetFocusWindow().hWnd == hWnd))
 		{
 			while (g_isInTask)
 			{
@@ -174,7 +174,7 @@ namespace HiEasyX
 	// 释放窗口内存
 	void FreeWindow(int index)
 	{
-		if (!isValidWindowIndex(index))
+		if (!IsValidWindowIndex(index))
 		{
 			return;
 		}
@@ -202,7 +202,7 @@ namespace HiEasyX
 	// 重要：此函数仅可在 WndProc 线程中调用，否则无法关闭窗口
 	void closegraph_win32(int index)
 	{
-		if (!isAliveWindow(index))
+		if (!IsAliveWindow(index))
 		{
 			return;
 		}
@@ -251,7 +251,7 @@ namespace HiEasyX
 				}
 			}
 		}
-		else if (isAliveWindow(hWnd))
+		else if (IsAliveWindow(hWnd))
 		{
 			SendMessage(hWnd, WM_DESTROY, 1, 0);
 		}
@@ -260,7 +260,7 @@ namespace HiEasyX
 	void SetWndProcFunc(HWND hWnd, WNDPROC WindowProcess)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			g_vecWindows[index].funcWndProc = WindowProcess;
 		}
@@ -269,7 +269,7 @@ namespace HiEasyX
 	IMAGE* GetWindowImage(HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			return g_vecWindows[index].pBufferImg;
 		}
@@ -282,7 +282,7 @@ namespace HiEasyX
 	Canvas* GetWindowCanvas(HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			return g_vecWindows[index].pBufferImgCanvas;
 		}
@@ -295,7 +295,7 @@ namespace HiEasyX
 	void BindWindowCanvas(Canvas* pCanvas, HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			g_vecWindows[index].pBufferImgCanvas = pCanvas;
 			pCanvas->BindToWindow(g_vecWindows[index].hWnd, g_vecWindows[index].pBufferImg);
@@ -307,11 +307,11 @@ namespace HiEasyX
 		if (hWnd)
 		{
 			int index = GetWindowIndex(hWnd);
-			while (isAliveWindow(index))
+			while (IsAliveWindow(index))
 				Sleep(100);
 		}
 		else
-			while (isAnyWindow())
+			while (IsAnyWindow())
 				Sleep(100);
 	}
 
@@ -325,7 +325,7 @@ namespace HiEasyX
 
 	HWND GetHWnd_win32()
 	{
-		return isFocusWindowExisted() ? GetFocusWindow().hWnd : nullptr;
+		return IsFocusWindowExisted() ? GetFocusWindow().hWnd : nullptr;
 	}
 
 	EasyWindow GetWorkingWindow()
@@ -345,7 +345,7 @@ namespace HiEasyX
 		}
 
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			WaitForTask();
 			WaitForProcessing(index);
@@ -363,7 +363,7 @@ namespace HiEasyX
 	void QuickDraw(UINT nSkipPixels, HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 			g_vecWindows[index].nSkipPixels = nSkipPixels;
 	}
 
@@ -419,7 +419,7 @@ namespace HiEasyX
 	// 复制缓冲画布内容到窗口画布（不向外提供这个函数，一般用不上，况且需要 index）
 	void FlushDrawing(int index)
 	{
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			int w = g_vecWindows[index].pImg->getwidth();
 			int h = g_vecWindows[index].pImg->getheight();
@@ -457,7 +457,7 @@ namespace HiEasyX
 	bool BeginTask()
 	{
 		// 不做窗口匹配判断，只检验是否处于任务中
-		if (!g_isInTask && isFocusWindowExisted())
+		if (!g_isInTask && IsFocusWindowExisted())
 		{
 			WaitForProcessing(g_nFocusWindowIndex);
 			g_isInTask = true;
@@ -469,7 +469,7 @@ namespace HiEasyX
 	{
 		if (g_isInTask)
 		{
-			if (flush && isFocusWindowExisted())
+			if (flush && IsFocusWindowExisted())
 			{
 				FlushDrawing(g_nFocusWindowIndex);
 			}
@@ -478,7 +478,7 @@ namespace HiEasyX
 		}
 	}
 
-	bool isInTask(HWND hWnd)
+	bool IsInTask(HWND hWnd)
 	{
 		return g_isInTask && (hWnd ? GetFocusWindow().hWnd == hWnd : true);
 	}
@@ -486,7 +486,7 @@ namespace HiEasyX
 	// 重新调整窗口画布大小
 	void ResizeWindowImage(int index, RECT rct)
 	{
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			g_vecWindows[index].pImg->Resize(rct.right, rct.bottom);
 			g_vecWindows[index].pBufferImg->Resize(rct.right, rct.bottom);
@@ -504,7 +504,7 @@ namespace HiEasyX
 		static int id = 0;
 
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			HICON hIcon = g_hIconDefault;
 			if (g_lpszCustomIconSm)
@@ -529,7 +529,7 @@ namespace HiEasyX
 		int index = GetWindowIndex(hWnd);
 
 		// 死窗口删除时会调用该函数，所以不判断窗口死活，只需要判断窗口是否存在
-		if (isValidWindowIndex(index))
+		if (IsValidWindowIndex(index))
 		{
 			if (g_vecWindows[index].isUseTray)
 			{
@@ -542,7 +542,7 @@ namespace HiEasyX
 	void SetTrayMenu(HMENU hMenu, HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			g_vecWindows[index].isUseTrayMenu = true;
 			g_vecWindows[index].hTrayMenu = hMenu;
@@ -552,16 +552,16 @@ namespace HiEasyX
 	void SetTrayMenuProcFunc(void(*pFunc)(UINT), HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			g_vecWindows[index].funcTrayMenuProc = pFunc;
 		}
 	}
 
-	bool isWindowSizeChanged(HWND hWnd)
+	bool IsWindowSizeChanged(HWND hWnd)
 	{
 		int index = GetWindowIndex(hWnd);
-		if (isValidWindowIndex(index))
+		if (IsValidWindowIndex(index))
 		{
 			bool b = g_vecWindows[index].isNewSize;
 			g_vecWindows[index].isNewSize = false;
@@ -591,7 +591,7 @@ namespace HiEasyX
 	{
 		static std::vector<ExMessage> vec;
 		int index = GetWindowIndex(hWnd);
-		if (isAliveWindow(index))
+		if (IsAliveWindow(index))
 		{
 			return g_vecWindows[index].vecMessage;
 		}
@@ -622,7 +622,7 @@ namespace HiEasyX
 
 	// 是否有新消息
 	// 支持混合消息类型
-	bool isNewMessage(BYTE filter, HWND hWnd)
+	bool IsNewMessage(BYTE filter, HWND hWnd)
 	{
 		for (auto& element : GetMsgVector(hWnd))
 			if (filter & GetExMessageType(element))
@@ -634,7 +634,7 @@ namespace HiEasyX
 	// 支持混合消息类型
 	ExMessage GetNextMessage(BYTE filter, HWND hWnd)
 	{
-		if (isNewMessage(filter, hWnd))
+		if (IsNewMessage(filter, hWnd))
 		{
 			for (size_t i = 0; i < GetMsgVector(hWnd).size(); i++)
 			{
@@ -653,7 +653,7 @@ namespace HiEasyX
 
 	ExMessage getmessage_win32(BYTE filter, HWND hWnd)
 	{
-		while (!isNewMessage(filter, hWnd))	HpSleep(1);
+		while (!IsNewMessage(filter, hWnd))	HpSleep(1);
 		ExMessage msg = GetNextMessage(filter, hWnd);
 		RemoveMessage(hWnd);
 		return msg;
@@ -667,7 +667,7 @@ namespace HiEasyX
 
 	bool peekmessage_win32(ExMessage* msg, BYTE filter, bool removemsg, HWND hWnd)
 	{
-		if (isNewMessage(filter, hWnd))
+		if (IsNewMessage(filter, hWnd))
 		{
 			if (msg)		*msg = GetNextMessage(filter, hWnd);
 			if (removemsg)	RemoveMessage(hWnd);
@@ -683,7 +683,7 @@ namespace HiEasyX
 
 	bool MouseHit_win32(HWND hWnd)
 	{
-		return isNewMessage(EM_MOUSE, hWnd);
+		return IsNewMessage(EM_MOUSE, hWnd);
 	}
 
 	MOUSEMSG GetMouseMsg_win32(HWND hWnd)
@@ -1126,7 +1126,7 @@ namespace HiEasyX
 		int indexWnd = GetWindowIndex(hWnd);				// 该窗口在已记录列表中的索引
 
 		// 调用窗口不在窗口列表内，则使用默认方法进行处理（无需检查窗口死活）
-		if (!isValidWindowIndex(indexWnd))
+		if (!IsValidWindowIndex(indexWnd))
 		{
 			// 也有可能正在接收 WM_CREATE 消息，此时窗口还未加入列表，则调用用户过程函数
 			if (msg == WM_CREATE)
@@ -1173,7 +1173,7 @@ namespace HiEasyX
 			break;
 		}
 
-		if (isAliveWindow(indexWnd))
+		if (IsAliveWindow(indexWnd))
 		{
 			// 登记消息
 			RegisterExMessage(indexWnd, msg, wParam, lParam);
@@ -1615,9 +1615,9 @@ namespace HiEasyX
 		return g_vecWindows[m_nWindowIndex];
 	}
 
-	bool Window::isAlive()
+	bool Window::IsAlive()
 	{
-		return isAliveWindow(m_nWindowIndex);
+		return IsAliveWindow(m_nWindowIndex);
 	}
 
 	IMAGE* Window::GetImage()
@@ -1662,14 +1662,14 @@ namespace HiEasyX
 		HiEasyX::EndTask(flush);
 	}
 
-	bool Window::isInTask()
+	bool Window::IsInTask()
 	{
-		return HiEasyX::isInTask(g_vecWindows[m_nWindowIndex].hWnd);
+		return HiEasyX::IsInTask(g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
-	bool Window::isSizeChanged()
+	bool Window::IsSizeChanged()
 	{
-		return isWindowSizeChanged(g_vecWindows[m_nWindowIndex].hWnd);
+		return IsWindowSizeChanged(g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
 	void Window::CreateTray(LPCTSTR lpszTrayName)
@@ -1787,7 +1787,7 @@ namespace HiEasyX
 		ResizeWindow(w, h, g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
-	bool Window::isForegroundWindow()
+	bool Window::IsForegroundWindow()
 	{
 		return GetForegroundWindow() == g_vecWindows[m_nWindowIndex].hWnd;
 	}

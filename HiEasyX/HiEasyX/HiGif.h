@@ -126,12 +126,12 @@ namespace HiEasyX
 		void pause();
 		void toggle();
 
-		bool isPlaying()const { return playing; }
+		bool IsPlaying()const { return playing; }
 
 		void setVisible(bool enable) { visible = enable; }
-		bool isVisible() const { return visible; }
+		bool IsVisible() const { return visible; }
 
-		bool isAnimation() const { return frameCount > 1; }
+		bool IsAnimation() const { return frameCount > 1; }
 
 		/**
 		 * @brief ÖØÖÃ²¥·Å×´Ì¬

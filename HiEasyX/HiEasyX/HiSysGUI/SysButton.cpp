@@ -76,7 +76,7 @@ namespace HiEasyX
 		return c;
 	}
 
-	bool SysButton::isClicked()
+	bool SysButton::IsClicked()
 	{
 		return GetClickCount();
 	}

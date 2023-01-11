@@ -130,7 +130,7 @@ namespace HiEasyX
 		/**
 		 * @brief 判断是否正在拖动
 		*/
-		bool isDragging() const { return m_bDragging; }
+		bool IsDragging() const { return m_bDragging; }
 
 		/**
 		 * @brief 获取滑块像素长度
@@ -181,7 +181,7 @@ namespace HiEasyX
 		*/
 		void SetSliderSpeed(int speed);
 
-		bool isHorizontal() const { return m_bHorizontal; }
+		bool IsHorizontal() const { return m_bHorizontal; }
 
 		/**
 		 * @brief 启用水平放置
@@ -192,7 +192,7 @@ namespace HiEasyX
 		/**
 		 * @brief 判断滑块位置是否改变
 		*/
-		bool isSliderPosChanged();
+		bool IsSliderPosChanged();
 
 		/**
 		 * @brief 获取响应滚轮消息的区域（未自定义时返回空区域）

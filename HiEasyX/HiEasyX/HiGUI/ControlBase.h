@@ -157,7 +157,7 @@ namespace HiEasyX
 		*/
 		virtual void SetParent(ControlBase* p);
 
-		virtual bool isAutoSizeForChild() const { return m_bAutoSizeForChild; }
+		virtual bool IsAutoSizeForChild() const { return m_bAutoSizeForChild; }
 
 		/**
 		 * @brief 为子控件自动改变大小以容纳控件（不容纳负坐标部分）
@@ -176,11 +176,11 @@ namespace HiEasyX
 
 		virtual void RemoveChild(ControlBase* p);
 
-		virtual bool isEnabled() const { return m_bEnabled; }
+		virtual bool IsEnabled() const { return m_bEnabled; }
 
 		virtual void SetEnable(bool enable);
 
-		virtual bool isVisible() const { return m_bVisible; }
+		virtual bool IsVisible() const { return m_bVisible; }
 
 		virtual void SetVisible(bool visible);
 
@@ -253,17 +253,17 @@ namespace HiEasyX
 		/**
 		 * @brief 判断鼠标是否悬停
 		*/
-		virtual bool isHovered() const { return m_bHovered; }
+		virtual bool IsHovered() const { return m_bHovered; }
 
 		/**
 		 * @brief 判断是否拥有焦点
 		*/
-		virtual bool isFocused() const { return m_bFocused; }
+		virtual bool IsFocused() const { return m_bFocused; }
 
 		/**
 		 * @brief 判断是否按下
 		*/
-		virtual bool isPressed() const { return m_bPressed; }
+		virtual bool IsPressed() const { return m_bPressed; }
 	};
 }
 

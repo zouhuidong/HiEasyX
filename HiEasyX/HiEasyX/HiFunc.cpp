@@ -90,7 +90,7 @@ void HpSleep(int ms)
 //			Sleep(0);						// 更高精度、更高 CPU 占用率
 }
 
-bool isInRect(int x, int y, RECT rct)
+bool IsInRect(int x, int y, RECT rct)
 {
 	if (rct.left > rct.right)    std::swap(rct.left, rct.right);
 	if (rct.top > rct.bottom)    std::swap(rct.top, rct.bottom);

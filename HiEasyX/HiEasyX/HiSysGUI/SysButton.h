@@ -62,6 +62,6 @@ namespace HiEasyX
 		 *		建议使用 GetClickCount，使用此函数可能丢失点击次数信息
 		 * </pre>
 		*/
-		bool isClicked();
+		bool IsClicked();
 	};
 }

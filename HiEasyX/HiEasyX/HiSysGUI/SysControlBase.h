@@ -113,15 +113,15 @@ namespace HiEasyX
 		*/
 		SysControlType GetControlType() const { return m_type; }
 
-		bool isEnable();
+		bool IsEnable();
 
 		void Enable(bool enable);
 
-		bool isVisible();
+		bool IsVisible();
 
 		void Show(bool show);
 
-		bool isFocused();
+		bool IsFocused();
 
 		void SetFocus(bool focused);
 

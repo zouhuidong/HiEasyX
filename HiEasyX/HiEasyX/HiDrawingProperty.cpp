@@ -53,7 +53,7 @@ namespace HiEasyX
 		}
 	}
 
-	bool DrawingProperty::isSaved()
+	bool DrawingProperty::IsSaved()
 	{
 		return m_isSaved;
 	}

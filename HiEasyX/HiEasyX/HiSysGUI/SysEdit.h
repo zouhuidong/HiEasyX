@@ -195,6 +195,6 @@ namespace HiEasyX
 		/**
 		 * @brief ≈–∂œ «∑Ò±ª±‡º≠
 		*/
-		bool isEdited();
+		bool IsEdited();
 	};
 }

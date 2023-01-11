@@ -124,11 +124,11 @@ namespace HiEasyX
 		/**
 		 * @brief 判断选择项是否变化
 		*/
-		bool isSelChanged();
+		bool IsSelChanged();
 
 		/**
 		 * @brief 判断是否被编辑
 		*/
-		bool isEdited();
+		bool IsEdited();
 	};
 }

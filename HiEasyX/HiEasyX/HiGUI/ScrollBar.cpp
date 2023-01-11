@@ -25,7 +25,7 @@ namespace HiEasyX
 	{
 		clock_t tNow = clock();
 		float move_len = (float)(tNow - m_tPressed) / CLOCKS_PER_SEC * m_nSliderSpeed;
-		if (m_btnUp.isPressed())
+		if (m_btnUp.IsPressed())
 		{
 			if (m_tPressed != 0)
 			{
@@ -35,7 +35,7 @@ namespace HiEasyX
 
 			MarkNeedRedrawAndRender();
 		}
-		else if (m_btnDown.isPressed())
+		else if (m_btnDown.IsPressed())
 		{
 			if (m_tPressed != 0)
 			{
@@ -230,7 +230,7 @@ namespace HiEasyX
 
 			// 检查拖动状态
 			m_MouseDrag.UpdateMessage(msg);
-			if (m_btnDrag.isPressed())
+			if (m_btnDrag.IsPressed())
 			{
 				m_bDragging = true;
 			}
@@ -240,7 +240,7 @@ namespace HiEasyX
 			}
 
 			// 拖动消息
-			if (m_bDragging && m_MouseDrag.isLeftDrag())
+			if (m_bDragging && m_MouseDrag.IsLeftDrag())
 			{
 				if (m_info.slider_move_len)
 				{
@@ -252,7 +252,7 @@ namespace HiEasyX
 			// 滚轮消息响应区域
 			RECT rctWheel = m_bSetOnWheelRct ? m_rctOnWheel : m_rct;
 			bool bWheel = false;
-			if (isInRect(msg.x, msg.y, rctWheel) || m_bDragging)
+			if (IsInRect(msg.x, msg.y, rctWheel) || m_bDragging)
 			{
 				if (msg.wheel)
 				{
@@ -354,7 +354,7 @@ namespace HiEasyX
 		}
 	}
 
-	bool ScrollBar::isSliderPosChanged()
+	bool ScrollBar::IsSliderPosChanged()
 	{
 		bool r = m_bSliderPosChanged;
 		m_bSliderPosChanged = false;

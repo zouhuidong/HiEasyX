@@ -60,7 +60,7 @@ namespace HiEasyX
 		/**
 		 * @brief 判断是否保存了绘图属性
 		*/
-		bool isSaved();
+		bool IsSaved();
 
 		/**
 		 * @brief 重置保存状态

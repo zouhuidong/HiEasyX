@@ -11,7 +11,7 @@ int g_nHeight;     // 文字的高度
 int g_nCount;      // 点集包含的点的数量
 
 // 是否为边缘点
-bool isEdgePoint(int x, int y)
+bool IsEdgePoint(int x, int y)
 {
 	//return getpixel(x, y) == WHITE;
 
@@ -57,7 +57,7 @@ void GetDstPoints()
 	g_nCount = 0;
 	for (x = 0; x < g_nWidth; x++)
 		for (y = 0; y < g_nHeight; y++)
-			if (isEdgePoint(x, y))
+			if (IsEdgePoint(x, y))
 				g_nCount++;
 
 	// 计算目标数据
@@ -65,7 +65,7 @@ void GetDstPoints()
 	int i = 0;
 	for (x = 0; x < g_nWidth; x++)
 		for (y = 0; y < g_nHeight; y++)
-			if (isEdgePoint(x, y))
+			if (IsEdgePoint(x, y))
 			{
 				g_pDst[i].x = x + (640 - g_nWidth) / 2;
 				g_pDst[i].y = y + (480 - g_nHeight) / 2 - 20;

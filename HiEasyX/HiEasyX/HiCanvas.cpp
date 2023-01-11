@@ -2,6 +2,7 @@
 
 #include "HiMacro.h"
 #include "HiWindow.h"
+#include "HiGdiplus.h"
 
 namespace HiEasyX
 {
@@ -229,7 +230,7 @@ namespace HiEasyX
 		// 批量绘制模式下，不退出绘图目标
 		if (!m_bBatchDraw && !m_bDoNotEndDrawing)
 		{
-			if (m_property.isSaved())
+			if (m_property.IsSaved())
 			{
 				m_property.ApplyWorkingImageOnly();
 				m_property.Reset();
@@ -363,7 +364,7 @@ namespace HiEasyX
 		}
 	}
 
-	bool Canvas::isValidPoint(int x, int y, int* pIndex)
+	bool Canvas::IsValidPoint(int x, int y, int* pIndex)
 	{
 		if (x < 0 || y < 0 || x >= m_nWidth || y >= m_nHeight)
 			return false;
@@ -681,7 +682,7 @@ namespace HiEasyX
 		{
 			c = BGR(c);
 			int index = 0;
-			if (isValidPoint(x, y, &index))
+			if (IsValidPoint(x, y, &index))
 				m_pBuf[index] = c;
 
 			EndWindowTask();
@@ -694,7 +695,7 @@ namespace HiEasyX
 		{
 			c = BGR(c);
 			int index = 0;
-			if (isValidPoint(x, y, &index))
+			if (IsValidPoint(x, y, &index))
 			{
 				m_pBuf[index] = MixAlphaColor(m_pBuf[index], c, false);
 			}
@@ -1580,6 +1581,41 @@ namespace HiEasyX
 		else
 		{
 			operator=(HiEasyX::ZoomImage_Win32_Alpha(this, nW, nH));
+		}
+	}
+
+	void Canvas::GP_SetLineColor(COLORREF color)
+	{
+		m_cGPLineColor = color;
+	}
+
+	void Canvas::GP_SetFillColor(COLORREF color)
+	{
+		m_cGPFillColor = color;
+	}
+
+	void Canvas::GP_SetLineWidth(int width)
+	{
+		m_nGPLineWidth = width;
+	}
+
+	void Canvas::GP_EnableAlpha(bool enable)
+	{
+		m_bGPAlpha = enable;
+	}
+
+	void Canvas::GP_EnableAA(bool enable)
+	{
+		m_bGPAA = enable;
+	}
+
+	void Canvas::GP_Line(float x1, float y1, float x2, float y2, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Line(x1, y1, x2, y2, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, this);
+			EndWindowTask();
 		}
 	}
 

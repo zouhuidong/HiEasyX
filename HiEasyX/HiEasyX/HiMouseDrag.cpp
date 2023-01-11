@@ -53,21 +53,21 @@ namespace HiEasyX
 		rdrag = UpdateDragInfo(rbtn, WM_RBUTTONDOWN, WM_RBUTTONUP);
 	}
 
-	bool MouseDrag::isLeftDrag()
+	bool MouseDrag::IsLeftDrag()
 	{
 		bool r = ldrag;
 		ldrag = false;
 		return r;
 	}
 
-	bool MouseDrag::isMiddleDrag()
+	bool MouseDrag::IsMiddleDrag()
 	{
 		bool r = mdrag;
 		mdrag = false;
 		return r;
 	}
 
-	bool MouseDrag::isRightDrag()
+	bool MouseDrag::IsRightDrag()
 	{
 		bool r = rdrag;
 		rdrag = false;

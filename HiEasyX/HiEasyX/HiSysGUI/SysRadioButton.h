@@ -42,7 +42,7 @@ namespace HiEasyX
 		/**
 		 * @brief 获取选中状态
 		*/
-		bool isChecked() const { return m_bChecked; }
+		bool IsChecked() const { return m_bChecked; }
 
 		void Check(bool check);
 	};

@@ -92,7 +92,7 @@ void HpSleep(int ms);
  * @param[in] rct		矩形
  * @return 点是否位于矩形内
 */
-bool isInRect(int x, int y, RECT rct);
+bool IsInRect(int x, int y, RECT rct);
 
 /**
  * @brief 获取 ExMessage 的消息类型

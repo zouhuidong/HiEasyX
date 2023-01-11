@@ -196,7 +196,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -209,7 +209,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -221,7 +221,7 @@ namespace HiEasyX
 		POINT* points,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -235,7 +235,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -250,7 +250,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -264,7 +264,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -280,7 +280,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -295,7 +295,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -309,7 +309,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -325,7 +325,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -342,7 +342,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -358,7 +358,7 @@ namespace HiEasyX
 		float endangle,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -376,7 +376,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 
@@ -393,7 +393,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = false,
+		bool enable_aa = true,
 		IMAGE* pImg = nullptr
 	);
 

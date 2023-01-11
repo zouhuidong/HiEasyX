@@ -149,14 +149,14 @@ namespace HiEasyX
 		ComboBox_ShowDropdown(GetHandle(), enable);
 	}
 
-	bool SysComboBox::isSelChanged()
+	bool SysComboBox::IsSelChanged()
 	{
 		bool r = m_bSelChanged;
 		m_bSelChanged = false;
 		return r;
 	}
 
-	bool SysComboBox::isEdited()
+	bool SysComboBox::IsEdited()
 	{
 		bool r = m_bEdited;
 		m_bEdited = false;

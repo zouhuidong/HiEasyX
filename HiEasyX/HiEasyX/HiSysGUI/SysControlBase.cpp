@@ -83,7 +83,7 @@ namespace HiEasyX
 		SendMessage(m_hWnd, WM_CLOSE, 0, 0);
 	}
 
-	bool SysControlBase::isEnable()
+	bool SysControlBase::IsEnable()
 	{
 		return IsWindowEnabled(GetHandle());
 	}
@@ -93,7 +93,7 @@ namespace HiEasyX
 		EnableWindow(GetHandle(), enable);
 	}
 
-	bool SysControlBase::isVisible()
+	bool SysControlBase::IsVisible()
 	{
 		return IsWindowVisible(GetHandle());
 	}
@@ -103,7 +103,7 @@ namespace HiEasyX
 		ShowWindow(GetHandle(), show ? SW_SHOW : SW_HIDE);
 	}
 
-	bool SysControlBase::isFocused()
+	bool SysControlBase::IsFocused()
 	{
 		DWORD SelfThreadId = GetCurrentThreadId();						// 获取自身线程 ID
 		DWORD ForeThreadId = GetWindowThreadProcessId(m_hParent, NULL);	// 根据窗口句柄获取线程 ID

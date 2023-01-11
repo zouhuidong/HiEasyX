@@ -35,9 +35,9 @@ namespace HiEasyX
 
 		void UpdateMessage(ExMessage m);	///< 更新鼠标消息
 
-		bool isLeftDrag();					///< 鼠标左键是否拖动
-		bool isMiddleDrag();				///< 鼠标中键是否拖动
-		bool isRightDrag();					///< 鼠标右键是否拖动
+		bool IsLeftDrag();					///< 鼠标左键是否拖动
+		bool IsMiddleDrag();				///< 鼠标中键是否拖动
+		bool IsRightDrag();					///< 鼠标右键是否拖动
 
 		int GetDragX();						///< 获取拖动的 x 坐标偏移量
 		int GetDragY();						///< 获取拖动的 y 坐标偏移量

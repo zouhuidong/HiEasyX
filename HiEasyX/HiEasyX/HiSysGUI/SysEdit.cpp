@@ -219,7 +219,7 @@ namespace HiEasyX
 		SendMessage(GetHandle(), EM_REPLACESEL, true, (LPARAM)wstrText.c_str());
 	}
 
-	bool SysEdit::isEdited()
+	bool SysEdit::IsEdited()
 	{
 		bool r = m_bEdited;
 		m_bEdited = false;

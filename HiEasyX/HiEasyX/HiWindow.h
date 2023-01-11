@@ -174,7 +174,7 @@ namespace HiEasyX
 
 		EasyWindow GetInfo();
 
-		bool isAlive();
+		bool IsAlive();
 
 		IMAGE* GetImage();
 
@@ -202,9 +202,9 @@ namespace HiEasyX
 
 		void EndTask(bool flush = true);
 
-		bool isInTask();
+		bool IsInTask();
 
-		bool isSizeChanged();
+		bool IsSizeChanged();
 
 		void CreateTray(LPCTSTR lpszTrayName);
 
@@ -266,7 +266,7 @@ namespace HiEasyX
 		/**
 		 * @brief 判断此窗口是否为用户正在使用的窗口
 		*/
-		bool isForegroundWindow();
+		bool IsForegroundWindow();
 
 		ExMessage Get_Message(BYTE filter = -1);
 
@@ -381,14 +381,14 @@ namespace HiEasyX
 	/**
 	 * @brief 是否还存在未销毁的绘图窗口
 	*/
-	bool isAnyWindow();
+	bool IsAnyWindow();
 
 	/**
 	 * @brief 判断一窗口是否还存在（未被关闭）
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否存在
 	*/
-	bool isAliveWindow(HWND hWnd = nullptr);
+	bool IsAliveWindow(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 获取某窗口的图像指针
@@ -491,7 +491,7 @@ namespace HiEasyX
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否在任务中
 	*/
-	bool isInTask(HWND hWnd = nullptr);
+	bool IsInTask(HWND hWnd = nullptr);
 
 	/**
 	 * @brief 阻塞等待某窗口任务完成
@@ -504,7 +504,7 @@ namespace HiEasyX
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 窗口的大小是否改变
 	*/
-	bool isWindowSizeChanged(HWND hWnd = nullptr);
+	bool IsWindowSizeChanged(HWND hWnd = nullptr);
 
 	/**
 	 * @brief <pre>
