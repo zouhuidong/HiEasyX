@@ -32,6 +32,7 @@
 #include "HiEasyX/HiSysGUI/HiSysGUI.h"
 #endif /* _NATIVE_EASYX_ */
 
+#include "HiEasyX/HiGdiplus.h"
 #include "HiEasyX/HiCanvas.h"
 #include "HiEasyX/HiGUI/HiGUI.h"
 

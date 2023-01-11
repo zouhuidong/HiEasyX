@@ -99,6 +99,9 @@
     <ClCompile Include="HiEasyX\HiIcon.cpp">
       <Filter>HiEasyX</Filter>
     </ClCompile>
+    <ClCompile Include="HiEasyX\HiGdiplus.cpp">
+      <Filter>HiEasyX</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HiEasyX.h">
@@ -192,6 +195,9 @@
       <Filter>HiEasyX</Filter>
     </ClInclude>
     <ClInclude Include="HiEasyX\HiIcon.h">
+      <Filter>HiEasyX</Filter>
+    </ClInclude>
+    <ClInclude Include="HiEasyX\HiGdiplus.h">
       <Filter>HiEasyX</Filter>
     </ClInclude>
   </ItemGroup>

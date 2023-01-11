@@ -416,7 +416,7 @@ namespace HiEasyX
 		}
 	}
 
-	// 复制缓冲区
+	// 复制缓冲画布内容到窗口画布（不向外提供这个函数，一般用不上，况且需要 index）
 	void FlushDrawing(int index)
 	{
 		if (isAliveWindow(index))

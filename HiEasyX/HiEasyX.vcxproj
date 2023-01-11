@@ -132,6 +132,7 @@
     <ClCompile Include="HiEasyX\HiDrawingProperty.cpp" />
     <ClCompile Include="HiEasyX\HiFPS.cpp" />
     <ClCompile Include="HiEasyX\HiFunc.cpp" />
+    <ClCompile Include="HiEasyX\HiGdiplus.cpp" />
     <ClCompile Include="HiEasyX\HiGif.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\Button.cpp" />
     <ClCompile Include="HiEasyX\HiGUI\ControlBase.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="HiEasyX\HiDrawingProperty.h" />
     <ClInclude Include="HiEasyX\HiFPS.h" />
     <ClInclude Include="HiEasyX\HiFunc.h" />
+    <ClInclude Include="HiEasyX\HiGdiplus.h" />
     <ClInclude Include="HiEasyX\HiGif.h" />
     <ClInclude Include="HiEasyX\HiGUI\Button.h" />
     <ClInclude Include="HiEasyX\HiGUI\ControlBase.h" />
