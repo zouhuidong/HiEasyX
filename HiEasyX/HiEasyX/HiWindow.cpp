@@ -1254,17 +1254,6 @@ namespace HiEasyX
 			OnTray(indexWnd, lParam);
 			break;
 
-			// 用户重绘消息，处理完直接返回
-			// 也无需调用系统重绘方法
-		case WM_USER_REDRAW:
-		{
-			HDC hdc = GetDC(hWnd);
-			OnPaint(indexWnd, hdc);
-			ReleaseDC(hWnd, hdc);
-			return 0;
-			break;
-		}
-
 		default:
 			// 系统任务栏重新创建，此时可能需要重新创建托盘
 			if (msg == g_uWM_TASKBARCREATED)
@@ -1296,7 +1285,19 @@ namespace HiEasyX
 		// 善后工作
 		switch (msg)
 		{
-			// 因为用户可能在过程函数中绘图，要在他之后输出缓存
+			// 用户重绘消息，处理完直接返回
+			// 也无需调用系统重绘方法
+			// 放着是为了让用户也能处理到这个消息
+		case WM_USER_REDRAW:
+		{
+			HDC hdc = GetDC(hWnd);
+			OnPaint(indexWnd, hdc);
+			ReleaseDC(hWnd, hdc);
+			return 0;
+			break;
+		}
+
+		// 因为用户可能在过程函数中绘图，要在他之后输出缓存
 		case WM_PAINT:
 		{
 			HDC			hdc;
@@ -1490,7 +1491,7 @@ namespace HiEasyX
 
 			// 获取系统任务栏自定义的消息代码
 			g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
-	}
+		}
 
 		// 如果现在不存在任何窗口
 		if (!IsAnyWindow())
@@ -1624,7 +1625,7 @@ namespace HiEasyX
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
 		}
-}
+	}
 
 	HWND initgraph_win32(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)
 	{

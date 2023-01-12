@@ -1,7 +1,7 @@
 /**
  * @brief 	创建托盘图标示例
  * @author 	huidong <mailhuid@163.com>
- * @date 	2022.08.14
+ * @date 	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -22,6 +22,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 		// 处理绘图消息
 	case WM_PAINT:
+	case WM_USER_REDRAW:
 		if (hiex::SetWorkingWindow(hWnd))
 		{
 			hiex::BeginTask();
@@ -48,7 +49,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			// 左键按下托盘图标
 		case WM_LBUTTONDOWN:
 			flag = true;					// 标记按下
-			hiex::EnforceRedraw();		// 立即重绘
+			hiex::RedrawWindow();			// 立即重绘
 			break;
 		}
 	}
@@ -108,7 +109,7 @@ int main()
 	hiex::initgraph_win32(200, 120, EW_NORMAL, L"The Second Window");
 
 	// 此时存在两个窗口，为防止冲突，启动任务
-	if(hiex::BeginTask())
+	if (hiex::BeginTask())
 	{
 		setbkcolor(LIGHTSKYBLUE);
 		cleardevice();
@@ -122,9 +123,9 @@ int main()
 		hiex::CreateTray(L"The second");				// 创建托盘
 		hiex::SetTrayMenu(hMenu2);						// 设置托盘菜单
 		hiex::SetTrayMenuProcFunc(OnMenu);				// 设置托盘菜单响应函数
-	
+
 		hiex::EndTask();
-		hiex::EnforceRedraw();
+		hiex::RedrawWindow();
 	}
 
 	hiex::SetWorkingWindow(hWnd1);						// 将任务权交还第一个窗口
