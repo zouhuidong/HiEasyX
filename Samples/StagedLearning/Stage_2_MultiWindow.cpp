@@ -3,9 +3,9 @@
  * @note
  * 			此例将 EasyX 官网的两个示例分别运行在两个绘图窗口中 <p>
  *			它们分别是“字符阵”和“鼠标操作” <p>
- * 
+ *
  * @author 	huidong <mailhuid@163.com>
- * @date 	2022.08.14
+ * @date 	2023.01.13
 */
 
 #include "HiEasyX.h"
@@ -83,25 +83,25 @@ int main()
 	while (true)
 	{
 		// 若窗口 1 未被关闭
-		if (hiex::isAliveWindow(hWnd1))
+		if (hiex::IsAliveWindow(hWnd1))
 		{
 			BEGIN_TASK_WND(hWnd1);	// 设置窗口 1 为目标绘图窗口，并启动一个绘图任务
 			CharacterArray();		// 绘制
 			END_TASK();				// 结束任务
-			FLUSH_DRAW();			// 刷新绘制内容到窗口
+			REDRAW_WINDOW();		// 刷新绘制内容到窗口
 		}
 
 		// 若窗口 2 未被关闭
-		if (hiex::isAliveWindow(hWnd2))
+		if (hiex::IsAliveWindow(hWnd2))
 		{
 			BEGIN_TASK_WND(hWnd2);
 			OnMouse();
 			END_TASK();
-			FLUSH_DRAW();
+			REDRAW_WINDOW();
 		}
 
 		// 若所有窗口都被关闭，则结束程序
-		if (!hiex::isAnyWindow())
+		if (!hiex::IsAnyWindow())
 		{
 			break;
 		}

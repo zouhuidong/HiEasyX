@@ -1,33 +1,134 @@
 /**
- * @brief 	第 0 阶段：开始绘制
- * @note
- * 			此例中，以最简洁的方式展现了 HiEasyX 的调用方式 <p>
- *			在后面的例子中，将不再解释 BEGIN_TASK() 系列宏 <p>
- *
- * @attention
- *			BEGIN_TASK() 是直接为当前工作窗口启动任务 <p>
- *			当开启多个窗口时，需要使用 BEGIN_TASK_WND() 启动任务，并指定任务窗口 <p>
- *
- * @author 	huidong <mailhuid@163.com>
- * @date 	2023.01.12
+ * @brief	透明小球边界碰撞示例
+ * @note	此示例用于演示 HiCanvas 的透明通道、场景和图层
+ * @author	huidong <mailhuid@163.com>
+ * @date	2023.01.12
 */
 
-#include "HiEasyX.h"		// 包含 HiEasyX 头文件
+#include "HiEasyX.h"
+
+// 小球数量
+#define BALL_NUM 14
+
+// 小球半径
+#define RADIUS 70
+
+// 球体
+struct Ball
+{
+	hiex::ImageBlock img;
+	float x, y;
+	float vx, vy;
+};
+
+hiex::SysButton btn;			// 按钮
+bool show_outline = false;		// 是否显示轮廓
 
 int main()
 {
-	initgraph();			// 初始化窗口
+	hiex::Window wnd(640, 480);			// 创建窗口
+	hiex::Canvas canvas;				// 创建画布对象
+	wnd.BindCanvas(&canvas);			// 将窗口和画布绑定
 
-	BEGIN_TASK();			// （不同于 EasyX）启动任务，标识开始绘制
+	// 手动刷新双缓冲
+	//hiex::EnableAutoFlush(false);
 
-	circle(320, 240, 100);	// 画圆
+	canvas.Clear(true, BLACK);			// 设置背景色为黑色，清空画布
 
-	END_TASK();				// （不同于 EasyX）完成绘制，结束任务
+	// 创建按钮，用于点击设置是否显示轮廓
+	btn.Create(wnd.GetHandle(), 50, 50, 120, 30, L"Hide outline");
+	btn.RegisterMessage([]() {
+		show_outline = !show_outline;
+	btn.SetText(show_outline ? L"Show outline" : L"Hide outline");
+		});
 
-	REDRAW_WINDOW();		// （不同于 EasyX）刷新屏幕，使刚才绘制的内容显示出来
+	// 初始化随机数
+	srand((UINT)time(nullptr));
 
-	getmessage(EM_KEY);		// 任意键退出
+	hiex::Scene scene;		// 场景
+	hiex::Layer layer;		// 图层
 
-	closegraph();			// 关闭窗口
+	Ball balls[BALL_NUM];	// 小球
+
+	// 初始化小球
+	for (auto& i : balls)
+	{
+		// 位置和速度的初始化
+		i.x = (float)(rand() % canvas.GetWidth());
+		i.y = (float)(rand() % canvas.GetHeight());
+		i.vx = rand() % 5 * (rand() % 2 ? 2.0f : -2.0f);
+		i.vy = rand() % 5 * (rand() % 2 ? 2.0f : -2.0f);
+		if (i.vx == 0)
+			i.vx = 3;
+		if (i.vy == 0)
+			i.vy = 3;
+
+		// 小球的图像块设置
+		i.img.CreateCanvas(RADIUS * 2, RADIUS * 2);
+		i.img.GetCanvas()->Clear();
+		i.img.GetCanvas()->SolidCircle(RADIUS, RADIUS, RADIUS, true, rand() % 0xffffff);
+		ReverseAlpha(i.img.GetCanvas()->GetBuffer(), i.img.GetCanvas()->GetBufferSize());
+
+		// 设置图像块透明度
+		i.img.alpha = 200;
+		i.img.bUseSrcAlpha = true;
+
+		// 加入图像块到图层
+		layer.push_back(&i.img);
+	}
+
+	// 加入图层到场景
+	scene.push_back(&layer);
+
+	// 主循环（窗口关闭或按下按键时退出）
+	while (wnd.IsAlive() && !peekmessage(nullptr, EM_CHAR))
+	{
+		for (auto& i : balls)
+		{
+			i.x += i.vx;
+			i.y += i.vy;
+
+			// 碰撞判定
+			if (i.x - RADIUS < 0)
+			{
+				i.x = RADIUS;
+				i.vx = -i.vx;
+			}
+			if (i.x + RADIUS > canvas.GetWidth())
+			{
+				i.x = (float)canvas.GetWidth() - RADIUS;
+				i.vx = -i.vx;
+			}
+			if (i.y - RADIUS < 0)
+			{
+				i.y = RADIUS;
+				i.vy = -i.vy;
+			}
+			if (i.y + RADIUS > canvas.GetHeight())
+			{
+				i.y = (float)canvas.GetHeight() - RADIUS;
+				i.vy = -i.vy;
+			}
+
+			// 更新位置
+			i.img.SetPos((int)i.x - RADIUS, (int)i.y - RADIUS);
+		}
+
+		if (wnd.BeginTask())
+		{
+			// 渲染场景
+			scene.Render(canvas.GetImagePointer(), show_outline);
+
+			// 手动刷新双缓冲
+			//wnd.FlushDrawing();
+
+			wnd.EndTask();
+			wnd.Redraw();
+		}
+
+		// 平衡帧率
+		hiex::DelayFPS(24);
+	}
+
 	return 0;
 }

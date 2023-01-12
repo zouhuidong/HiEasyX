@@ -6,9 +6,9 @@
  *			如果您还想进一步了解 HiEasyX，可以看看其余示例，查阅文档。 <p>
  *			我的 QQ 是 1442701429，您可以在任何一个 EasyX 交流群中 @huidong 找到我。 <p>
  *			期待和您交流。 <p>
- * 
+ *
  * @author 	梦萤花火，huidong（修改）
- * @date 	2022.08.14
+ * @date 	2023.01.13
 */
 
 #include "HiEasyX.h"
@@ -76,7 +76,7 @@ int main()
 {
 	// 创建绘图窗口，并指定窗口过程函数
 	hiex::initgraph_win32(w, h, false, L"", WndProc);
-	
+
 	hiex::AutoExit();	// 窗口关闭时，自动退出程序
 
 	while (true)
@@ -84,9 +84,9 @@ int main()
 		BEGIN_TASK();
 		Draw();
 		END_TASK();
-		FLUSH_DRAW();
+		REDRAW_WINDOW();
 
-		while (!hiex::isWindowSizeChanged())
+		while (!hiex::IsWindowSizeChanged())
 			Sleep(50);
 	}
 }
