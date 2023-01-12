@@ -96,12 +96,17 @@ namespace HiEasyX
 	};
 
 	/**
-	 * @brief 绘制模式（从缓冲区绘制到窗口）
+	 * @brief <pre>
+	 *		绘制模式（从缓冲区绘制到窗口）
+	 * 
+	 *	备注：
+	 *		一般使用 DM_Normal 即可。
+	 * </pre>
 	*/
 	enum DrawMode
 	{
 		DM_Real,		///< 完全按实际绘制（每次要求重绘都立即执行，可能导致程序卡顿）
-		DM_Normal,		///< 正常绘制（默认，发送 WM_PAINT 消息）
+		DM_Normal,		///< 正常绘制（现在和 DM_Real 是等价了）
 		DM_Fast,		///< 快速绘制（发送 WM_USER_REDRAW 消息，可能跳过部分绘制）
 		DM_VeryFast,	///< 极速绘制（发送 WM_USER_REDRAW 消息，可能跳过很多绘制）
 		DM_Fastest,		///< 最快的绘制方式（发送 WM_USER_REDRAW 消息，可能跳过大部分绘制）
@@ -468,6 +473,20 @@ namespace HiEasyX
 
 	/**
 	 * @brief <pre>
+	 *		是否启用自动刷新双缓冲
+	 * 
+	 *	备注：
+	 *		默认情况下是自动刷新双缓冲的，即每次结束窗口任务时，EndTask 会根据传入的参数，
+	 *		决定要不要标记“需要刷新双缓冲”，标记后，窗口将会在下一次遇到重绘消息的时候刷新双缓冲。
+	 *		
+	 *		但是，在频繁重绘的情况下，由于多线程协调问题，自动刷新的效率可能会变低。
+	 *		所以你可以关闭自动刷新双缓冲，相应地，你需要使用 FlushDrawing 函数手动刷新双缓冲。
+	 * </pre>
+	*/
+	void EnableAutoFlush(bool enable);
+
+	/**
+	 * @brief <pre>
 	 *		为当前活动窗口启动任务
 	 *
 	 *	备注：
@@ -480,7 +499,7 @@ namespace HiEasyX
 
 	/**
 	 * @brief 终止当前窗口任务
-	 * @param[in] flush 是否更新双缓冲（但不会自动刷新窗口）
+	 * @param[in] flush 是否标记需要更新双缓冲（但不会自动刷新窗口）
 	*/
 	void EndTask(bool flush = true);
 

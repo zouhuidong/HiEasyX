@@ -2,7 +2,7 @@
  * @brief	透明小球边界碰撞示例
  * @note	此示例用于演示 HiCanvas 的透明通道、场景和图层
  * @author	huidong <mailhuid@163.com>
- * @date	2022.08.15
+ * @date	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -30,13 +30,16 @@ int main()
 	hiex::Canvas canvas;				// 创建画布对象
 	wnd.BindCanvas(&canvas);			// 将窗口和画布绑定
 
+	// 手动刷新双缓冲
+	//hiex::EnableAutoFlush(false);
+
 	canvas.Clear(true, BLACK);			// 设置背景色为黑色，清空画布
 
 	// 创建按钮，用于点击设置是否显示轮廓
 	btn.Create(wnd.GetHandle(), 50, 50, 120, 30, L"Hide outline");
 	btn.RegisterMessage([]() {
 		show_outline = !show_outline;
-		btn.SetText(show_outline ? L"Show outline" : L"Hide outline");
+	btn.SetText(show_outline ? L"Show outline" : L"Hide outline");
 		});
 
 	// 初始化随机数
@@ -53,8 +56,8 @@ int main()
 		// 位置和速度的初始化
 		i.x = (float)(rand() % canvas.GetWidth());
 		i.y = (float)(rand() % canvas.GetHeight());
-		i.vx = rand() % 5 * (rand() % 2 ? 1.0f : -1.0f);
-		i.vy = rand() % 5 * (rand() % 2 ? 1.0f : -1.0f);
+		i.vx = rand() % 5 * (rand() % 2 ? 2.0f : -2.0f);
+		i.vy = rand() % 5 * (rand() % 2 ? 2.0f : -2.0f);
 		if (i.vx == 0)
 			i.vx = 3;
 		if (i.vy == 0)
@@ -78,7 +81,7 @@ int main()
 	scene.push_back(&layer);
 
 	// 主循环（窗口关闭或按下按键时退出）
-	while (wnd.isAlive() && !peekmessage(nullptr, EM_CHAR))
+	while (wnd.IsAlive() && !peekmessage(nullptr, EM_CHAR))
 	{
 		for (auto& i : balls)
 		{
@@ -115,13 +118,16 @@ int main()
 		{
 			// 渲染场景
 			scene.Render(canvas.GetImagePointer(), show_outline);
-			
+
+			// 手动刷新双缓冲
+			//wnd.FlushDrawing();
+
 			wnd.EndTask();
 			wnd.Redraw();
 		}
 
 		// 平衡帧率
-		hiex::DelayFPS(80);
+		hiex::DelayFPS(24);
 	}
 
 	return 0;

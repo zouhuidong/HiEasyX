@@ -1,7 +1,7 @@
 /**
- * @brief	总览 HiEasyX 的功能
+ * @brief	展示 HiEasyX 的 GUI 模块
  * @author	huidong <mailhuid@163.com>
- * @date	2022.8.14
+ * @date	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -112,10 +112,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-void OnClick()
+void OptionsWnd(bool* running)
 {
-	static bool running = false;
-
 	static std::map<std::wstring, COLORREF> color_map = {
 				{L"black", BLACK},
 				{L"white", WHITE},
@@ -133,89 +131,91 @@ void OnClick()
 		L"system", L"Arial", L"Consolas", L"微软雅黑", L"宋体", L"仿宋", L"黑体"
 	};
 
+	hiex::Window wnd_option(300, 300);
+	SetWindowText(wnd_option.GetHandle(), L"Option");
+	hiex::Canvas canvas;
+	wnd_option.BindCanvas(&canvas);
+	OutInfo(canvas);
+	canvas.SetTypeface(L"System");
+
+	DisableResizing(wnd_option.GetHandle(), true);
+
+	hiex::SysComboBox combobox_ctext;
+	hiex::SysComboBox combobox_cbk;
+	hiex::SysComboBox combobox_typeface;
+	hiex::SysRadioButton radio[2];
+
+	canvas.SetTextColor(GRAY);
+	canvas.OutTextXY(20, 20, L"Select text color");
+
+	combobox_ctext.PreSetStyle({ false, false, true });
+	combobox_ctext.Create(wnd_option.GetHandle(), 20, 40, 260, 200);
+
+	canvas.OutTextXY(20, 80, L"Select background color");
+	combobox_cbk.PreSetStyle({ false, false, true });
+	combobox_cbk.Create(wnd_option.GetHandle(), 20, 100, 260, 200);
+
+	canvas.OutTextXY(20, 140, L"Select typeface");
+	combobox_typeface.PreSetStyle({ false, true, true });
+	combobox_typeface.Create(wnd_option.GetHandle(), 20, 160, 260, 200);
+
+	for (auto& color : color_map)
+	{
+		combobox_ctext.AddString(color.first);
+		combobox_cbk.AddString(color.first);
+	}
+
+	for (auto& name : typeface)
+	{
+		combobox_typeface.AddString(name);
+	}
+
+	combobox_ctext.SetSel(0);
+	combobox_ctext.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
+		edit.SetTextColor(color_map[wstrSelText]);
+		});
+
+	combobox_cbk.SelectString(L"white");	// 通过字符串选择项
+	combobox_cbk.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
+		edit.SetTextBkColor(color_map[wstrSelText]);
+	edit.SetBkColor(color_map[wstrSelText]);
+		});
+
+	combobox_typeface.SelectString(L"微软雅黑");
+	combobox_typeface.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
+		edit.SetFont(26, 0, wstrSelText);
+		});
+	combobox_typeface.RegisterEditMessage([](std::wstring wstrText) {
+		edit.SetFont(26, 0, wstrText);
+		});
+
+	radio[0].Create(wnd_option.GetHandle(), 20, 200, 100, 30, L"Left align");
+	radio[1].Create(wnd_option.GetHandle(), 20, 230, 100, 30, L"Right align");
+
+	radio[0].Check(true);
+	radio[0].RegisterMessage([](bool checked) {
+		if (checked)
+		edit.RightAlign(false);
+		});
+	radio[1].RegisterMessage([](bool checked) {
+		if (checked)
+		edit.RightAlign(true);
+		});
+
+	wnd_option.Redraw();
+	hiex::init_end(wnd_option.GetHandle());
+	*running = false;
+}
+
+void OnClick()
+{
+	static bool running = false;
+
 	if (!running)
 	{
 		running = true;
-
-		std::thread([]() {
-
-			hiex::Window wnd_option(300, 300);
-			SetWindowText(wnd_option.GetHandle(), L"Option");
-			hiex::Canvas canvas;
-			wnd_option.BindCanvas(&canvas);
-			OutInfo(canvas);
-			canvas.SetTypeface(L"system");
-
-			DisableResizing(wnd_option.GetHandle(), true);
-
-			hiex::SysComboBox combobox_ctext;
-			hiex::SysComboBox combobox_cbk;
-			hiex::SysComboBox combobox_typeface;
-			hiex::SysRadioButton radio[2];
-
-			canvas.SetTextColor(GRAY);
-			canvas.OutTextXY(20, 20, L"Select text color");
-
-			combobox_ctext.PreSetEtyle(false, false, true);
-			combobox_ctext.Create(wnd_option.GetHandle(), 20, 40, 260, 200);
-
-			canvas.OutTextXY(20, 80, L"Select background color");
-			combobox_cbk.PreSetEtyle(false, false, true);
-			combobox_cbk.Create(wnd_option.GetHandle(), 20, 100, 260, 200);
-
-			canvas.OutTextXY(20, 140, L"Select typeface");
-			combobox_typeface.PreSetEtyle(false, true, true);
-			combobox_typeface.Create(wnd_option.GetHandle(), 20, 160, 260, 200);
-
-			for (auto& color : color_map)
-			{
-				combobox_ctext.AddString(color.first);
-				combobox_cbk.AddString(color.first);
-			}
-
-			for (auto& name : typeface)
-			{
-				combobox_typeface.AddString(name);
-			}
-
-			combobox_ctext.SetSel(0);
-			combobox_ctext.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
-				edit.SetTextColor(color_map[wstrSelText]);
-				});
-
-			combobox_cbk.SelectString(L"white");	// 通过字符串选择项
-			combobox_cbk.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
-				edit.SetTextBkColor(color_map[wstrSelText]);
-				edit.SetBkColor(color_map[wstrSelText]);
-				});
-
-			combobox_typeface.SelectString(L"微软雅黑");
-			combobox_typeface.RegisterSelMessage([](int nSel, std::wstring wstrSelText) {
-				edit.SetFont(26, 0, wstrSelText);
-				});
-			combobox_typeface.RegisterEditMessage([](std::wstring wstrText) {
-				edit.SetFont(26, 0, wstrText);
-				});
-
-			radio[0].Create(wnd_option.GetHandle(), 20, 200, 100, 30, L"Left align");
-			radio[1].Create(wnd_option.GetHandle(), 20, 230, 100, 30, L"Right align");
-
-			radio[0].Check(true);
-			radio[0].RegisterMessage([](bool checked) {
-				if (checked)
-					edit.RightAlign(false);
-				});
-			radio[1].RegisterMessage([](bool checked) {
-				if (checked)
-					edit.RightAlign(true);
-				});
-
-			hiex::init_end(wnd_option.GetHandle());
-			running = false;
-
-			}).detach();
+		std::thread(OptionsWnd, &running).detach();
 	}
-
 }
 
 void OnCheck(bool checked)
@@ -232,7 +232,7 @@ int main()
 
 	HWND hwnd = wnd.GetHandle();
 
-	edit.PreSetStyle(true, false, true);
+	edit.PreSetStyle({ true, false, true });
 	edit.Create(hwnd, 20, 20, EDIT_W, EDIT_H,
 		L"Welcome to HiEasyX !\r\n"
 		L"\r\n"

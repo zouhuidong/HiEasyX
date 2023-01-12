@@ -1,7 +1,7 @@
 /**
  * @brief 	ÑÝÊ¾²¥·Å gif ¶¯Í¼
  * @author 	huidong <mailhuid@163.com>
- * @date 	2022.08.14
+ * @date 	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -48,7 +48,7 @@ int main()
 
 		window.Redraw();
 
-		if (!window.isAlive())
+		if (!window.IsAlive())
 		{
 			exit(0);
 		}

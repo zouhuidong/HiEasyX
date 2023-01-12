@@ -1,7 +1,7 @@
 /**
  * @brief 	简单演示 HiEasyX 中系统 GUI 的调用方式
  * @author 	huidong <mailhuid@163.com>
- * @date 	2022.08.14
+ * @date 	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -107,7 +107,7 @@ int main()
 	radio[0][0].Check(true);
 
 	HiEasyX::SysEdit edit;
-	edit.PreSetStyle(true, false, true, true);
+	edit.PreSetStyle({ true, false, true, true });
 	edit.Create(wnd.GetHandle(), { 200,300,500,450 },
 		L"News !\r\n"
 		L"Use HiEasyX right now, for a better experience !\r\n"
@@ -123,7 +123,7 @@ int main()
 	//edit.SetTextBkColor(PURPLE);
 
 	HiEasyX::SysComboBox combobox;
-	combobox.PreSetEtyle(false, false, true);
+	combobox.PreSetStyle({ false, false, true });
 	combobox.Create(wnd.GetHandle(), 150, 50, 200, 200, L"");
 	TCHAR Planets[9][10] = {
 		TEXT("Mercury"), TEXT("Venus"), TEXT("Terra"), TEXT("Mars"),
@@ -147,10 +147,10 @@ int main()
 	wnd2.Redraw();
 
 	int i = 0;
-	while (wnd.isAlive())
+	while (wnd.IsAlive())
 	{
 		int c = btn.GetClickCount();
-		if (c || wnd.isSizeChanged())
+		if (c || wnd.IsSizeChanged())
 		{
 			i += c;
 			canvas.Clear();
@@ -173,7 +173,7 @@ int main()
 			wnd.Redraw();
 		}
 
-		if (edit.isEdited())
+		if (edit.IsEdited())
 		{
 			wnd2.Redraw();
 		}

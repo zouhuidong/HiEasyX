@@ -1,7 +1,7 @@
 /**
  * @brief 	演示 HiEasyX 的自绘 GUI
  * @author 	huidong <mailhuid@163.com>
- * @date 	2022.08.14
+ * @date 	2023.01.12
 */
 
 #include "HiEasyX.h"
@@ -93,17 +93,17 @@ int main()
 	pic.SetMsgProcFunc([](HiEasyX::ControlBase* ctrl, int id, ExMessage msg) {
 
 		HiEasyX::Canvas* pCanvas = ((HiEasyX::Static*)ctrl)->GetImage()->GetCanvas();
-		pCanvas->Clear();
+	pCanvas->Clear();
 
-		int w = ctrl->GetWidth() - 1;
-		int h = ctrl->GetHeight() - 1;
+	int w = ctrl->GetWidth() - 1;
+	int h = ctrl->GetHeight() - 1;
 
-		if (ctrl->isPressed())
-			pCanvas->FillPie({ 0,0,w,h }, 0, PI * 2, true, GREEN, WHITE);
-		else if (ctrl->isHovered())
-			pCanvas->FillPie({ 0,0,w,h }, 1, PI * 2, true, GREEN, WHITE);
-		else
-			pCanvas->FillPie({ 0,0,w,h }, 2, PI * 2, true, GREEN, WHITE);
+	if (ctrl->IsPressed())
+		pCanvas->FillPie({ 0,0,w,h }, 0, PI * 2, true, GREEN, WHITE);
+	else if (ctrl->IsHovered())
+		pCanvas->FillPie({ 0,0,w,h }, 1, PI * 2, true, GREEN, WHITE);
+	else
+		pCanvas->FillPie({ 0,0,w,h }, 2, PI * 2, true, GREEN, WHITE);
 
 		});
 
@@ -135,14 +135,14 @@ int main()
 	HiEasyX::SysButton sys_btn(window.GetHandle(), 200, 200, 100, 30, L"Sys Btn");
 
 	ExMessage msg;
-	while (window.isAlive())
+	while (window.IsAlive())
 	{
 		while (window.Peek_Message(&msg, EM_MOUSE))
 		{
 			page.UpdateMessage(msg);
 		}
 
-		if (window.isSizeChanged())
+		if (window.IsSizeChanged())
 		{
 			int interval = 25;
 			int w = window.GetClientWidth();
@@ -153,7 +153,7 @@ int main()
 			scrollbar_horizon.SetWidth(w - scrollbar_horizon.GetX() - interval);
 		}
 
-		if (progress.isPressed())
+		if (progress.IsPressed())
 		{
 			progress.Step();
 		}
@@ -168,7 +168,7 @@ int main()
 		window.Redraw();
 
 		// 固定帧率，并在非活动窗口时释放 CPU 占用
-		HiEasyX::DelayFPS(24, !window.isForegroundWindow());
+		HiEasyX::DelayFPS(24, !window.IsForegroundWindow());
 	}
 
 	return 0;

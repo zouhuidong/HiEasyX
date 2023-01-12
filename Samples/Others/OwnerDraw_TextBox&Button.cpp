@@ -65,7 +65,7 @@ public:
 		setfillcolor(oldfillcolor);
 
 		END_TASK();
-		FLUSH_DRAW();
+		REDRAW_WINDOW();
 	}
 
 	void OnMessage()
@@ -91,7 +91,7 @@ public:
 		bool binput = true;				// 是否输入中
 
 		hiex::EndTask();
-		hiex::EnforceRedraw();
+		REDRAW_WINDOW();
 
 		ExMessage msg;
 		while (binput)
@@ -140,7 +140,7 @@ public:
 				}
 				peekmessage(NULL, EM_MOUSE | EM_CHAR);				// 从消息队列抛弃刚刚处理过的一个消息
 				END_TASK();
-				FLUSH_DRAW();
+				REDRAW_WINDOW();
 
 				Sleep(10);
 			}
@@ -155,7 +155,7 @@ public:
 				clearrectangle(left + 10 + width + 1, top + 3, left + 10 + width + 1, bottom - 3);		// 擦光标
 
 			END_TASK();
-			FLUSH_DRAW();
+			REDRAW_WINDOW();
 
 			// 延时 20ms
 			Sleep(20);
@@ -170,7 +170,7 @@ public:
 		setfillcolor(oldfillcolor);
 
 		END_TASK();
-		FLUSH_DRAW();
+		REDRAW_WINDOW();
 
 		Show();
 	}
@@ -229,7 +229,7 @@ public:
 		setfillcolor(oldfillcolor);
 
 		END_TASK();
-		FLUSH_DRAW();
+		REDRAW_WINDOW();
 	}
 
 	void OnMessage()
@@ -270,7 +270,7 @@ int main()
 	initgraph(640, 480);
 
 	BEGIN_TASK();
-	
+
 	// 简单绘制界面
 	setbkcolor(0xeeeeee);
 	cleardevice();
@@ -282,7 +282,7 @@ int main()
 	btnOK.Create(320, 150, 400, 175, L"OK", On_btnOk_Click);	// 创建按钮控件
 
 	END_TASK();
-	FLUSH_DRAW();
+	REDRAW_WINDOW();
 
 	ExMessage msg;
 	while (true)

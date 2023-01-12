@@ -46,6 +46,7 @@ namespace HiEasyX
 	int						g_nPreCmdShow;								///< 创建窗口前的预设显示状态
 
 	DrawMode				g_fDrawMode = DM_Normal;					///< 全局绘制模式
+	bool					g_bAutoFlush = true;						///< 是否自动刷新双缓冲
 
 	UINT					g_uWM_TASKBARCREATED;						///< 系统任务栏消息代码
 
@@ -400,21 +401,23 @@ namespace HiEasyX
 			break;
 
 		case DM_Normal:
-			InvalidateRect(hWnd, nullptr, false);
+			// 这个太慢了
+			//InvalidateRect(hWnd, nullptr, false);
+			SendUserRedrawMsg(hWnd);
 			break;
 
 		case DM_Fast:
-			if (!(clock() % 9))
+			if (!(clock() % 2))
 				SendUserRedrawMsg(hWnd);
 			break;
 
 		case DM_VeryFast:
-			if (!(clock() % 13))
+			if (!(clock() % 5))
 				SendUserRedrawMsg(hWnd);
 			break;
 
 		case DM_Fastest:
-			if (!(clock() % 17))
+			if (!(clock() % 9))
 				SendUserRedrawMsg(hWnd);
 			break;
 
@@ -517,6 +520,11 @@ namespace HiEasyX
 		{
 			FlushDrawing(g_nFocusWindowIndex, rct);
 		}
+	}
+
+	void EnableAutoFlush(bool enable)
+	{
+		g_bAutoFlush = enable;
 	}
 
 	bool BeginTask()
@@ -1078,11 +1086,18 @@ namespace HiEasyX
 	// 绘制用户内容
 	void OnPaint(int indexWnd, HDC hdc)
 	{
-		// 如果需要更新双缓冲
-		if (g_vecWindows[indexWnd].isNeedFlush)
+		// 在开启自动刷新双缓冲的情况下，处理双缓冲的刷新任务
+		if (g_bAutoFlush && g_vecWindows[indexWnd].isNeedFlush)
 		{
+			WaitForProcessing(indexWnd);
+			g_vecWindows[indexWnd].isBusyProcessing = true;		// 不能再启动任务
+			WaitForTask(g_vecWindows[indexWnd].hWnd);			// 等待最后一个任务完成
+
+			// 更新双缓冲
 			FlushDrawing(indexWnd);
 			g_vecWindows[indexWnd].isNeedFlush = false;
+
+			g_vecWindows[indexWnd].isBusyProcessing = false;
 		}
 
 		// 将绘图内容输出到窗口 HDC
@@ -1259,6 +1274,7 @@ namespace HiEasyX
 			break;
 		}
 
+		// 活窗口的一般事件处理
 		if (IsAliveWindow(indexWnd))
 		{
 			// 登记消息
@@ -1412,6 +1428,7 @@ namespace HiEasyX
 		std::wstring wstrTitle;		// 窗口标题
 		EasyWindow wnd;				// 窗口信息
 		int nFrameW, nFrameH;		// 窗口标题栏宽高（各个窗口可能不同）
+		int nIndexWnd = nWndCount;	// 记录这个窗口的 id
 
 		// 可能多个窗口同时在创建，为了防止预设窗口属性交叉，先备份数据，让出全局变量
 		bool isPreStyle = g_isPreStyle;
