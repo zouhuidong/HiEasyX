@@ -10,16 +10,15 @@ int main()
 
 	canvas.CenterText_Format(64, L"Hello, %ls", L"world");
 
-	BEGIN_TASK();
+	canvas.GP_SetLineColor(RGBA(20, 20, 200, 100));
+	canvas.GP_SetLineWidth(20);
+	canvas.GP_EnableAlpha(true);
 
-	hiex::Gdiplus_Starup();
-
-	hiex::EasyX_Gdiplus_Line(10, 10, 400, 300, RGBA(0, 200, 200, 100), 50, true, true, GetWorkingImage());
-
-	hiex::Gdiplus_Shutdown();
-
-	//hiex::FlushDrawingToWnd();
-	END_TASK();
+	canvas.GP_Line(200, 200, 300, 300);
+	
+	//hiex::Gdiplus_Starup();
+	canvas.GP_Line(300, 200, 300, 300);
+	//hiex::Gdiplus_Shutdown();
 
 	_getch();
 

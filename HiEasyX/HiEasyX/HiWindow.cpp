@@ -809,6 +809,11 @@ namespace HiEasyX
 		SetWindowPos(hWnd, HWND_TOP, 0, 0, w, h, SWP_NOMOVE);
 	}
 
+	void SetWindowTitle(LPCTSTR lpszTitle, HWND hwnd)
+	{
+
+	}
+
 	// 获取默认窗口图标
 	HICON GetDefaultAppIcon()
 	{

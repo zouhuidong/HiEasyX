@@ -1614,7 +1614,153 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Line(x1, y1, x2, y2, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, this);
+			EasyX_Gdiplus_Line(x1, y1, x2, y2, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_Polygon(int points_num, POINT* points, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Polygon(points_num, points, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_SolidPolygon(int points_num, POINT* points, bool isSetColor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetFillColor(fillcolor);
+			EasyX_Gdiplus_SolidPolygon(points_num, points, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_FillPolygon(int points_num, POINT* points, bool isSetColor, COLORREF linecolor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)
+			{
+				GP_SetLineColor(linecolor);
+				GP_SetFillColor(fillcolor);
+			}
+			EasyX_Gdiplus_FillPolygon(points_num, points, m_cGPLineColor, m_cGPFillColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_Rectangle(float x, float y, float w, float h, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Rectangle(x, y, w, h, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_SolidRectangle(float x, float y, float w, float h, bool isSetColor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetFillColor(fillcolor);
+			EasyX_Gdiplus_SolidRectangle(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_FillRectangle(float x, float y, float w, float h, bool isSetColor, COLORREF linecolor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)
+			{
+				GP_SetLineColor(linecolor);
+				GP_SetFillColor(fillcolor);
+			}
+			EasyX_Gdiplus_FillRectangle(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_Ellipse(float x, float y, float w, float h, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Ellipse(x, y, w, h, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_SolidEllipse(float x, float y, float w, float h, bool isSetColor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetFillColor(fillcolor);
+			EasyX_Gdiplus_SolidEllipse(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_FillEllipse(float x, float y, float w, float h, bool isSetColor, COLORREF linecolor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)
+			{
+				GP_SetLineColor(linecolor);
+				GP_SetFillColor(fillcolor);
+			}
+			EasyX_Gdiplus_FillEllipse(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_Pie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_SolidPie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetFillColor(fillcolor);
+			EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_FillPie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor, COLORREF linecolor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)
+			{
+				GP_SetLineColor(linecolor);
+				GP_SetFillColor(fillcolor);
+			}
+			EasyX_Gdiplus_FillPie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_cGPFillColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_Arc(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_Arc(x, y, w, h, stangle, endangle, m_cGPLineColor, m_nGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
 			EndWindowTask();
 		}
 	}

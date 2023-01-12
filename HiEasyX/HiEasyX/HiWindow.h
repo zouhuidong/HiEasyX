@@ -94,7 +94,7 @@ namespace HiEasyX
 	};
 
 	/**
-	 * @brief 绘制模式
+	 * @brief 绘制模式（从缓冲区绘制到窗口）
 	*/
 	enum DrawMode
 	{
@@ -171,19 +171,14 @@ namespace HiEasyX
 		void SetProcFunc(WNDPROC WindowProcess);
 
 		HWND GetHandle();
-
 		EasyWindow GetInfo();
-
 		bool IsAlive();
 
 		IMAGE* GetImage();
-
 		Canvas* GetCanvas();
-
 		void BindCanvas(Canvas* pCanvas);
 
 		void WaitMyTask();
-
 		bool SetWorkingWindow();
 
 		void SetQuickDraw(UINT nSkipPixels);
@@ -199,35 +194,24 @@ namespace HiEasyX
 		void Redraw();
 
 		bool BeginTask();
-
 		void EndTask(bool flush = true);
-
 		bool IsInTask();
 
 		bool IsSizeChanged();
 
 		void CreateTray(LPCTSTR lpszTrayName);
-
 		void DeleteTray();
-
 		void SetTrayMenu(HMENU hMenu);
-
 		void SetTrayMenuProcFunc(void(*pFunc)(UINT));
 
 		void PreSetStyle(long lStyle);
-
 		void PreSetStyleEx(long lStyleEx);
-
 		void PreSetPos(int x, int y);
-
 		void PreSetShowState(int nCmdShow);
 
 		long GetStyle();
-
 		int SetStyle(long lNewStyle);
-
 		long GetExStyle();
-
 		int	SetExStyle(long lNewExStyle);
 
 		POINT GetPos();
@@ -258,7 +242,6 @@ namespace HiEasyX
 		int GetClientHeight();
 
 		void Move(int x, int y);
-
 		void MoveRel(int dx, int dy);
 
 		void Resize(int w, int h);
@@ -269,11 +252,8 @@ namespace HiEasyX
 		bool IsForegroundWindow();
 
 		ExMessage Get_Message(BYTE filter = -1);
-
 		void Get_Message(ExMessage* msg, BYTE filter = -1);
-
 		bool Peek_Message(ExMessage* msg, BYTE filter = -1, bool removemsg = true);
-
 		void Flush_Message(BYTE filter = -1);
 	};
 
@@ -649,6 +629,12 @@ namespace HiEasyX
 	*/
 	void ResizeWindow(int w, int h, HWND hWnd = nullptr);
 
+	/**
+	 * @brief 设置窗口标题文本
+	 * @param[in] lpszTitle		新的窗口标题
+	 * @param[in] hwnd			窗口句柄（为空代表当前活动窗口）
+	*/
+	void SetWindowTitle(LPCTSTR lpszTitle, HWND hwnd = nullptr);
 
 	////////////****** 消息相关函数 ******////////////
 

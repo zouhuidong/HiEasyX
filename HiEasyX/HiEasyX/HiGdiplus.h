@@ -16,9 +16,9 @@ namespace HiEasyX
 	/// 注意，必须先启动 GDI+，才能使用下面的绘图函数
 
 	/**
-	 * @brief 启动 GDI+
+	 * @brief 启动 GDI+，如果已经启动则直接返回
 	*/
-	void Gdiplus_Starup();
+	void Gdiplus_Try_Starup();
 
 	/**
 	 * @brief 关闭 GDI+

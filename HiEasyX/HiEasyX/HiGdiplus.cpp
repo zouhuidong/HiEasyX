@@ -9,7 +9,7 @@ ULONG_PTR						g_Token;
 
 namespace HiEasyX
 {
-	void Gdiplus_Starup()
+	void Gdiplus_Try_Starup()
 	{
 		if (!g_bStarup)
 		{
@@ -48,6 +48,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 
@@ -65,6 +66,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 
@@ -81,6 +83,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::SolidBrush brush(fillcolor);
 
@@ -100,6 +103,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 
@@ -118,6 +122,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::SolidBrush brush(fillcolor);
 
@@ -137,6 +142,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 
@@ -155,6 +161,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::SolidBrush brush(fillcolor);
 
@@ -176,6 +183,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 
@@ -196,6 +204,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::SolidBrush brush(fillcolor);
 
@@ -217,6 +226,7 @@ namespace HiEasyX
 		Gdiplus::SmoothingMode smoothing_mode
 	)
 	{
+		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(hdc);
 		Gdiplus::Pen pen(linecolor, linewidth);
 

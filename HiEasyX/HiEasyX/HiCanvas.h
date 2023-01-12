@@ -238,9 +238,19 @@ namespace HiEasyX
 		Canvas& BindToImage(IMAGE* pImg);
 
 		/**
-		 * @brief 获取画布 IMAGE 指针
+		 * @brief <pre>
+		 *		获取画布 IMAGE 指针
+		 * 
+		 *	注意：
+		 *		有的时候画布绑定了别的 IMAGE，所以绘图时不能直接使用 this，必须调用此函数。
+		 * </pre>
 		*/
 		IMAGE* GetImagePointer() { return m_bBindToImgPointer ? m_pImg : this; }
+
+		/**
+		 * @brief 等价于 GetImagePointer()
+		*/
+		IMAGE* Pt() { return m_bBindToImgPointer ? m_pImg : this; }
 
 		/**
 		 * @brief 获取图像缓冲区指针
@@ -314,31 +324,45 @@ namespace HiEasyX
 			bool isCalculated = true
 		);
 
-		LINESTYLE GetLineStyle();
 		void Clear(bool isSetColor = false, COLORREF bkcolor = BLACK);
+		
+		LINESTYLE GetLineStyle();
 		void SetLineStyle(LINESTYLE style);
 		void SetLineStyle(int style, int thickness = 1, const DWORD* puserstyle = nullptr, DWORD userstylecount = 0);
 		void SetLineThickness(int thickness);
 		int GetLineThickness();
+		
 		FILLSTYLE GetFillStyle();
 		void SetFillStyle(FILLSTYLE style);
 		void SetFillStyle(int style, long hatch = 0, IMAGE* ppattern = nullptr);
 		void SetFillStyle(BYTE* ppattern8x8);
+		
 		int GetRop2();
 		void SetRop2(int mode);
+		
 		int GetPolyFillMode();
 		void SetPolyFillMode(int mode);
-		void SetDefault();
+		
 		COLORREF GetLineColor();
 		void SetLineColor(COLORREF color);
+		
 		COLORREF GetTextColor();
 		void SetTextColor(COLORREF color);
+		
 		COLORREF GetFillColor();
 		void SetFillColor(COLORREF color);
+		
 		COLORREF GetBkColor();
 		void SetBkColor(COLORREF color);
+		
 		int GetBkMode();
 		void SetBkMode(int mode);
+
+		/**
+		 * @brief 设置绘图状态为原始状态
+		*/
+		void SetDefault();
+
 		COLORREF GetPixel(int x, int y);
 		void PutPixel(int x, int y, COLORREF c);
 
@@ -368,6 +392,7 @@ namespace HiEasyX
 
 		void Line(int x1, int y1, int x2, int y2, bool isSetColor = false, COLORREF c = 0);
 		void Line(POINT pt1, POINT pt2, bool isSetColor = false, COLORREF c = 0);
+		
 		void Rectangle(int left, int top, int right, int bottom, bool isSetColor = false, COLORREF c = 0);
 		void Rectangle(RECT rct, bool isSetColor = false, COLORREF c = 0);
 		void FillRectangle(int left, int top, int right, int bottom, bool isSetColor = false, COLORREF cLine = 0, COLORREF cFill = 0);
@@ -376,10 +401,12 @@ namespace HiEasyX
 		void SolidRectangle(RECT rct, bool isSetColor = false, COLORREF c = 0);
 		void ClearRectangle(int left, int top, int right, int bottom);
 		void ClearRectangle(RECT rct);
+		
 		void Circle(int x, int y, int radius, bool isSetColor = false, COLORREF c = 0);
 		void FillCircle(int x, int y, int radius, bool isSetColor = false, COLORREF cLine = 0, COLORREF cFill = 0);
 		void SolidCircle(int x, int y, int radius, bool isSetColor = false, COLORREF c = 0);
 		void ClearCircle(int x, int y, int radius);
+		
 		void Ellipse(int left, int top, int right, int bottom, bool isSetColor = false, COLORREF c = 0);
 		void Ellipse(RECT rct, bool isSetColor = false, COLORREF c = 0);
 		void FillEllipse(int left, int top, int right, int bottom, bool isSetColor = false, COLORREF cLine = 0, COLORREF cFill = 0);
@@ -388,6 +415,7 @@ namespace HiEasyX
 		void SolidEllipse(RECT rct, bool isSetColor = false, COLORREF c = 0);
 		void ClearEllipse(int left, int top, int right, int bottom);
 		void ClearEllipse(RECT rct);
+		
 		void RoundRect(int left, int top, int right, int bottom, int ellipsewidth, int ellipseheight, bool isSetColor = false, COLORREF c = 0);
 		void RoundRect(RECT rct, int ellipsewidth, int ellipseheight, bool isSetColor = false, COLORREF c = 0);
 		void FillRoundRect(int left, int top, int right, int bottom, int ellipsewidth, int ellipseheight, bool isSetColor = false, COLORREF cLine = 0, COLORREF cFill = 0);
@@ -396,6 +424,7 @@ namespace HiEasyX
 		void SolidRoundRect(RECT rct, int ellipsewidth, int ellipseheight, bool isSetColor = false, COLORREF c = 0);
 		void ClearRoundRect(int left, int top, int right, int bottom, int ellipsewidth, int ellipseheight);
 		void ClearRoundRect(RECT rct, int ellipsewidth, int ellipseheight);
+		
 		void Arc(int left, int top, int right, int bottom, double stangle, double endangle, bool isSetColor = false, COLORREF c = 0);
 		void Arc(RECT rct, double stangle, double endangle, bool isSetColor = false, COLORREF c = 0);
 		void Pie(int left, int top, int right, int bottom, double stangle, double endangle, bool isSetColor = false, COLORREF c = 0);
@@ -406,11 +435,13 @@ namespace HiEasyX
 		void SolidPie(RECT rct, double stangle, double endangle, bool isSetColor = false, COLORREF c = 0);
 		void ClearPie(int left, int top, int right, int bottom, double stangle, double endangle);
 		void ClearPie(RECT rct, double stangle, double endangle);
+		
 		void Polyline(const POINT* points, int num, bool isSetColor = false, COLORREF c = 0);
 		void Polygon(const POINT* points, int num, bool isSetColor = false, COLORREF c = 0);
 		void FillPolygon(const POINT* points, int num, bool isSetColor = false, COLORREF cLine = 0, COLORREF cFill = 0);
 		void SolidPolygon(const POINT* points, int num, bool isSetColor = false, COLORREF c = 0);
 		void ClearPolygon(const POINT* points, int num);
+		
 		void PolyBezier(const POINT* points, int num, bool isSetColor = false, COLORREF c = 0);
 
 		/**
@@ -472,13 +503,13 @@ namespace HiEasyX
 		 * @param[in] lpszText			文本
 		 * @param[in] rct				输出区域，默认为画布区域
 		 * @param[in] isSetColor		是否设置颜色
-		 * @param[in] c				文本颜色
+		 * @param[in] c					文本颜色
 		*/
 		void CenterText(LPCTSTR lpszText, RECT rct = { -1 }, bool isSetColor = false, COLORREF c = 0);
 
 		/**
 		 * @brief 居中输出格式化文本
-		 * @param[in] _Size		格式化文本最大长度
+		 * @param[in] _Size			格式化文本最大长度
 		 * @param[in] _Format		格式化字符串
 		 * @param[in]				不定参数
 		*/
@@ -523,19 +554,19 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置字体是否为斜体
-		 * @param[in] lfItalic 是否斜体
+		 * @param[in] lfItalic 是否使用斜体
 		*/
 		void SetTextItalic(bool lfItalic);
 
 		/**
 		 * @brief 设置字体是否有下划线
-		 * @param[in] lfUnderline 是否下划线
+		 * @param[in] lfUnderline 是否使用下划线
 		*/
 		void SetTextUnderline(bool lfUnderline);
 
 		/**
 		 * @brief 设置字体是否有删除线
-		 * @param[in] lfStrikeOut 是否删除项
+		 * @param[in] lfStrikeOut 是否使用删除线
 		*/
 		void SetTextStrikeOut(bool lfStrikeOut);
 
@@ -552,10 +583,13 @@ namespace HiEasyX
 
 		int GetX();
 		int GetY();
+		
 		void MoveTo(int x, int y);
 		void MoveRel(int dx, int dy);
+		
 		void LineTo(int x, int y, bool isSetColor = false, COLORREF c = 0);
 		void LineRel(int dx, int dy, bool isSetColor = false, COLORREF c = 0);
+		
 		void OutText(LPCTSTR lpszText, bool isSetColor = false, COLORREF c = 0);
 		void OutText(TCHAR ch, bool isSetColor = false, COLORREF c = 0);
 
@@ -573,7 +607,7 @@ namespace HiEasyX
 		 *		加载图片文件到画布
 		 *
 		 *	备注：
-		 *		若开启透明通道，则会丢失原图像的透明度信息
+		 *		若开启透明通道，则复制到画布上的内容不会保留原图像的透明度信息
 		 * </pre>
 		 *
 		 * @param[in] lpszImgFile		图像文件路径
@@ -649,8 +683,10 @@ namespace HiEasyX
 		////////////////////////////////////////////////////////////////////
 		//
 		// 注意：
-		//		GDI+ 绘图函数不和 EasyX 原生函数共享同样的绘图颜色
-		//		这是因为 GDI+ 的绘图函数支持透明，而 EasyX 原生函数不支持
+		//		GDI+ 绘图函数不和 EasyX 原生函数共享同样的绘图颜色，
+		//		这是因为 GDI+ 的绘图函数支持透明，而 EasyX 原生函数不支持。
+		// 
+		//		可以使用 RGBA 宏设置带透明度的颜色
 		// 
 		////////////////////////////////////////////////////////////////////
 
@@ -676,9 +712,24 @@ namespace HiEasyX
 		bool GP_IsEnbaleAA() const { return m_bGPAA; }
 
 		void GP_Line(float x1, float y1, float x2, float y2, bool isSetColor = false, COLORREF linecolor = 0);
+		
 		void GP_Polygon(int points_num, POINT* points, bool isSetColor = false, COLORREF linecolor = 0);
-		void GP_SolidPolygon(int points_num, POINT* points, bool isSetColor = false, COLORREF linecolor = 0);
-
+		void GP_SolidPolygon(int points_num, POINT* points, bool isSetColor = false, COLORREF fillcolor = 0);
+		void GP_FillPolygon(int points_num, POINT* points, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
+		
+		void GP_Rectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0);
+		void GP_SolidRectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF fillcolor = 0);
+		void GP_FillRectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
+		
+		void GP_Ellipse(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0);
+		void GP_SolidEllipse(float x, float y, float w, float h, bool isSetColor = false, COLORREF fillcolor = 0);
+		void GP_FillEllipse(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
+		
+		void GP_Pie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor = false, COLORREF linecolor = 0);
+		void GP_SolidPie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor = false, COLORREF fillcolor = 0);
+		void GP_FillPie(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
+		
+		void GP_Arc(float x, float y, float w, float h, float stangle, float endangle, bool isSetColor = false, COLORREF linecolor = 0);
 	};
 
 	/**
