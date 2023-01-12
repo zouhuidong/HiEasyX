@@ -130,7 +130,7 @@ namespace HiEasyX
 
 		COLORREF m_cGPLineColor = WHITE;	///< GDI+ 绘图时使用的线条颜色
 		COLORREF m_cGPFillColor = WHITE;	///< GDI+ 绘图时使用的填充颜色
-		int m_nGPLineWidth = 1;				///< GDI+ 绘图时的线条宽度
+		float m_fGPLineWidth = 1.f;			///< GDI+ 绘图时的线条宽度
 		bool m_bGPAlpha = false;			///< GDI+ 绘图时是否启用透明度
 		bool m_bGPAA = true;				///< GDI+ 绘图时是否抗锯齿
 
@@ -692,11 +692,11 @@ namespace HiEasyX
 
 		void GP_SetLineColor(COLORREF color);
 		void GP_SetFillColor(COLORREF color);
-		void GP_SetLineWidth(int width);
+		void GP_SetLineWidth(float width);
 
 		COLORREF GP_GetLineColor() const { return m_cGPLineColor; }
 		COLORREF GP_GetFillColor() const { return m_cGPFillColor; }
-		int GP_GetLineWidth() const { return m_nGPLineWidth; }
+		float GP_GetLineWidth() const { return m_fGPLineWidth; }
 
 		/**
 		 * @brief 设置 GDI+ 绘制时是否使用透明度

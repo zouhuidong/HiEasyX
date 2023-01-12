@@ -8,20 +8,18 @@ int main()
 	hiex::Canvas canvas;
 	hiex::BindWindowCanvas(&canvas);
 
-	canvas.CenterText_Format(64, L"Hello, %ls", L"world");
-
 	canvas.GP_SetLineColor(RGBA(20, 20, 200, 100));
-	canvas.GP_SetLineWidth(20);
+	canvas.GP_SetLineWidth(22);
 	canvas.GP_EnableAlpha(true);
 
-	canvas.GP_Line(200, 200, 300, 300);
-	
-	//hiex::Gdiplus_Starup();
-	canvas.GP_Line(300, 200, 300, 300);
-	//hiex::Gdiplus_Shutdown();
+	canvas.GP_Line(240, 250, 400, 250);
+
+	canvas.SetTypeface(L"黑体");
+	canvas.SetFont(32);
+	canvas.SetBkMode(TRANSPARENT);
+	canvas.CenterText(L"一级标题");
 
 	_getch();
-
 
 	closegraph();
 	return 0;

@@ -150,7 +150,7 @@ namespace HiEasyX
 	);
 
 	/**
-	 * @brief 画圆弧
+	 * @brief 画圆弧（传入顺时针角度）
 	*/
 	void Gdiplus_Arc(
 		HDC hdc,
@@ -381,7 +381,7 @@ namespace HiEasyX
 	);
 
 	/**
-	 * @brief 画圆弧
+	 * @brief 画圆弧（传入逆时针角度）
 	*/
 	void EasyX_Gdiplus_Arc(
 		float x,

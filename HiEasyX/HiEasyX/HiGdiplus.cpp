@@ -459,7 +459,7 @@ namespace HiEasyX
 	{
 		Gdiplus_Pie(
 			GetImageHDC(pImg),
-			x, y, w, h, stangle, -endangle,
+			x, y, w, h, -stangle, -endangle,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
@@ -481,7 +481,7 @@ namespace HiEasyX
 	{
 		Gdiplus_SolidPie(
 			GetImageHDC(pImg),
-			x, y, w, h, stangle, -endangle,
+			x, y, w, h, -stangle, -endangle,
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
 		);
@@ -522,7 +522,7 @@ namespace HiEasyX
 	{
 		Gdiplus_Arc(
 			GetImageHDC(pImg),
-			x, y, w, h, stangle, endangle,
+			x, y, w, h, -stangle, -endangle,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
