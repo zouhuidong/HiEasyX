@@ -87,7 +87,8 @@ namespace HiEasyX
 		float fSin = (float)sin(radian), fCos = (float)cos(radian);				// 存储三角函数值
 		float fNSin = (float)sin(-radian), fNCos = (float)cos(-radian);
 		int left = 0, top = 0, right = 0, bottom = 0;							// 旋转后图像顶点
-		int w = pImg->getwidth(), h = pImg->getheight();
+		int w, h;
+		GetImageSize(pImg, &w, &h);
 		DWORD* pBuf = GetImageBuffer(pImg);
 		POINT points[4] = { { 0, 0 },{ w, 0 },{ 0, h },{ w, h } };				// 存储图像顶点
 		for (int j = 0; j < 4; j++)												// 旋转图像顶点，搜索旋转后的图像边界
@@ -128,19 +129,22 @@ namespace HiEasyX
 		return img;
 	}
 
-	IMAGE ZoomImage_Alpha(IMAGE* srcimg, int width, int height)
+	IMAGE ZoomImage_Rough_Alpha(IMAGE* srcimg, int width, int height)
 	{
-		// 初始化新图
+		int src_width, src_height;
+		GetImageSize(srcimg, &src_width, &src_height);
+
+		// 自动缩放
+		if (height == 0)
+		{
+			height = width * src_height / src_width;
+		}
+
 		IMAGE dstImage(width, height);
 		IMAGE* dstimg = &dstImage;
 
 		DWORD* dst = GetImageBuffer(dstimg);
 		DWORD* src = GetImageBuffer(srcimg);
-
-		int src_width = srcimg->getwidth();
-		int src_height = srcimg->getheight();
-
-		int dst_width = (!dstimg ? getwidth() : dstimg->getwidth());
 
 		float w_scale_rate = (float)src_width / width;
 		float h_scale_rate = (float)src_height / height;
@@ -159,14 +163,69 @@ namespace HiEasyX
 		return dstImage;
 	}
 
-	IMAGE ZoomImage_Win32_Alpha(IMAGE* pImg, int width, int height)
+	IMAGE ZoomImage_Alpha(IMAGE* srcimg, int width, int height)
 	{
-		IMAGE img(width, height);
+		int old_w, old_h;
+		GetImageSize(srcimg, &old_w, &old_h);
+
+		// 自动缩放
+		if (height == 0)
+		{
+			height = width * old_h / old_w;
+		}
+
+		IMAGE output(width, height);
+		DWORD* src = GetImageBuffer(srcimg);
+		DWORD* dst = GetImageBuffer(&output);
+
+		// 双线性插值（因为向下取样，所以 w, h 都要减一避免越界）
+		for (int i = 0; i < height - 1; i++)
+		{
+			for (int j = 0; j < width - 1; j++)
+			{
+				int xt = j * old_w / width;		// 新图坐标映射到原图上的位置
+				int yt = i * old_h / height;
+
+				// 实现逐行加载图片
+				byte r = (
+					GetRValue(src[xt + yt * old_w]) +
+					GetRValue(src[xt + yt * old_w + 1]) +
+					GetRValue(src[xt + (yt + 1) * old_w]) +
+					GetRValue(src[xt + (yt + 1) * old_w + 1])) / 4;
+				byte g = (
+					GetGValue(src[xt + yt * old_w]) +
+					GetGValue(src[xt + yt * old_w] + 1) +
+					GetGValue(src[xt + (yt + 1) * old_w]) +
+					GetGValue(src[xt + (yt + 1) * old_w]) + 1) / 4;
+				byte b = (
+					GetBValue(src[xt + yt * old_w]) +
+					GetBValue(src[xt + yt * old_w] + 1) +
+					GetBValue(src[xt + (yt + 1) * old_w]) +
+					GetBValue(src[xt + (yt + 1) * old_w + 1])) / 4;
+
+				// 赋值，保留 alpha
+				dst[i * width + j] = RGBA(r, g, b, GetAValue(src[xt + yt * old_w]));
+			}
+		}
+
+		return output;
+	}
+
+	IMAGE ZoomImage_Win32_Alpha(IMAGE* srcimg, int width, int height)
+	{
 		int w, h;
-		GetImageSize(pImg, w, h);
+		GetImageSize(srcimg, &w, &h);
+
+		// 自动缩放
+		if (height == 0)
+		{
+			height = width * h / w;
+		}
+
+		IMAGE img(width, height);
 		StretchBlt(
 			GetImageHDC(&img), 0, 0, width, height,
-			GetImageHDC(pImg), 0, 0,
+			GetImageHDC(srcimg), 0, 0,
 			w, h, SRCCOPY
 		);
 		return img;
@@ -182,7 +241,6 @@ namespace HiEasyX
 		m_bBindToImgPointer = false;
 		m_pImg = nullptr;
 		m_bBatchDraw = false;
-		m_bDoNotEndDrawing = false;
 		m_hBindWindow = nullptr;
 	}
 
@@ -210,7 +268,7 @@ namespace HiEasyX
 	{
 		if (m_hBindWindow)
 		{
-			HiEasyX::EndTask();
+			HiEasyX::EndTask(m_bAutoMarkFlushWindow);
 		}
 	}
 
@@ -228,7 +286,7 @@ namespace HiEasyX
 	void Canvas::EndDrawing()
 	{
 		// 批量绘制模式下，不退出绘图目标
-		if (!m_bBatchDraw && !m_bDoNotEndDrawing)
+		if (!m_bBatchDraw)
 		{
 			if (m_property.IsSaved())
 			{
@@ -271,7 +329,7 @@ namespace HiEasyX
 	{
 		CleanUpSettings();
 		int w, h;
-		GetImageSize(pImg, w, h);
+		GetImageSize(pImg, &w, &h);
 
 		if (BeginWindowTask())
 		{
@@ -297,7 +355,7 @@ namespace HiEasyX
 
 		if (m_bBindToImgPointer)
 		{
-			GetImageSize(m_pImg, m_nWidth, m_nHeight);
+			GetImageSize(m_pImg, &m_nWidth, &m_nHeight);
 		}
 		else
 		{
@@ -347,6 +405,11 @@ namespace HiEasyX
 		return *this;
 	}
 
+	void Canvas::EnableAutoMarkFlushWindow(bool enable)
+	{
+		m_bAutoMarkFlushWindow = enable;
+	}
+
 	void Canvas::BeginBatchDrawing()
 	{
 		if (BeginDrawing())
@@ -375,7 +438,7 @@ namespace HiEasyX
 	void Canvas::Render(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
 		int w, h;	// 目标输出画布尺寸
-		GetImageSize(pImg, w, h);
+		GetImageSize(pImg, &w, &h);
 		if (BeginWindowTask())
 		{
 			CopyImage_Alpha(
@@ -404,26 +467,23 @@ namespace HiEasyX
 
 	void Canvas::Clear(bool isSetColor, COLORREF bkcolor)
 	{
-		if (BeginWindowTask())
-		{
-			m_bDoNotEndDrawing = true;
+		Clear_Alpha(isSetColor, bkcolor, true);
+	}
 
-			COLORREF c;
-			if (isSetColor)
-			{
-				SetBkColor(bkcolor);
-				c = bkcolor;
-			}
-			else
-			{
-				c = GetBkColor();
-			}
+	void Canvas::Clear_Alpha(bool isSetColor, COLORREF bkcolor, bool ignore_alpha)
+	{
+		if (BeginDrawing())
+		{
+			if (isSetColor)	setbkcolor(bkcolor);
+			DWORD bk_bgr = BGR(getbkcolor());
+
+			if (ignore_alpha)		// 设置背景透明度为 255（不透明）
+				bk_bgr |= 0xFF000000;
 
 			for (int i = 0; i < m_nBufSize; i++)
-				m_pBuf[i] = BGR(c) | 0xFF000000;
+				m_pBuf[i] = bk_bgr;
 
-			m_bDoNotEndDrawing = false;
-			EndWindowTask();
+			EndDrawing();
 		}
 	}
 
@@ -1520,7 +1580,7 @@ namespace HiEasyX
 	void Canvas::PutImageIn_Alpha(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
 		int w, h;	// 原图像尺寸
-		GetImageSize(pImg, w, h);
+		GetImageSize(pImg, &w, &h);
 		if (BeginWindowTask())
 		{
 			CopyImage_Alpha(
@@ -1548,6 +1608,24 @@ namespace HiEasyX
 	void Canvas::RotateImage_Alpha(double radian, COLORREF bkcolor)
 	{
 		operator=(HiEasyX::RotateImage_Alpha(GetImagePointer(), radian, bkcolor));
+	}
+
+	void Canvas::ZoomImage_Rough_Alpha(int nW, int nH)
+	{
+		if (m_bBindToImgPointer)
+		{
+			if (BeginWindowTask())
+			{
+				*m_pImg = HiEasyX::ZoomImage_Rough_Alpha(m_pImg, nW, nH);
+				UpdateSizeInfo();
+
+				EndWindowTask();
+			}
+		}
+		else
+		{
+			operator=(HiEasyX::ZoomImage_Rough_Alpha(this, nW, nH));
+		}
 	}
 
 	void Canvas::ZoomImage_Alpha(int nW, int nH)

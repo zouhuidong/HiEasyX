@@ -28,11 +28,6 @@ namespace HiEasyX
 	std::vector<EasyWindow>	g_vecWindows;								///< 窗口表（管理多窗口）
 	int						g_nFocusWindowIndex = NO_WINDOW_INDEX;		///< 当前操作焦点窗口索引
 
-	const int				g_nTypesNum = 4;							///< 消息类型数量
-	BYTE					g_pMsgTypes[g_nTypesNum] = {				///< 消息类型数组
-		EM_MOUSE, EM_KEY, EM_CHAR, EM_WINDOW
-	};
-
 	bool					g_isInTask = false;							///< 标记处于任务中
 
 	HICON					g_hIconDefault;								///< 默认程序图标
@@ -150,14 +145,16 @@ namespace HiEasyX
 		}
 	}
 
-	void FlushDrawingToWnd(IMAGE* pImg, HWND hWnd)
+	// 将 IMAGE 内容复制到 HDC 上
+	// pImg		原图像
+	// hdc		绘制的 HDC
+	// rct		在 HDC 上的绘制区域
+	void CopyImageToHDC(IMAGE* pImg, HDC hdc, RECT rct)
 	{
-		HDC hdc = GetDC(hWnd);
+		//HDC hdc = GetDC(hWnd);
 		HDC hdcImg = GetImageHDC(pImg);
-		RECT rctWnd;
-		GetClientRect(hWnd, &rctWnd);
-		BitBlt(hdc, 0, 0, rctWnd.right, rctWnd.bottom, hdcImg, 0, 0, SRCCOPY);
-		ReleaseDC(hWnd, hdc);
+		BitBlt(hdc, rct.left, rct.top, rct.right, rct.bottom, hdcImg, 0, 0, SRCCOPY);
+		//ReleaseDC(hWnd, hdc);
 	}
 
 	void WaitForTask(HWND hWnd)
@@ -391,7 +388,7 @@ namespace HiEasyX
 		SendMessage(hWnd, WM_USER_REDRAW, 0, 0);
 	}
 
-	void EnforceRedraw(HWND hWnd)
+	void RedrawWindow(HWND hWnd)
 	{
 		if (!hWnd)
 			hWnd = GetFocusWindow().hWnd;
@@ -424,41 +421,101 @@ namespace HiEasyX
 		}
 	}
 
-	// 复制缓冲画布内容到窗口画布（不向外提供这个函数，一般用不上，况且需要 index）
-	void FlushDrawing(int index)
+	// 更新窗口画布的双缓冲
+	// rct 更新区域（坐标都为 0 表示全部区域）
+	void FlushDrawing(int index, RECT rct = { 0 })
 	{
-		if (IsAliveWindow(index))
+		if (!IsAliveWindow(index))
 		{
-			int w = g_vecWindows[index].pImg->getwidth();
-			int h = g_vecWindows[index].pImg->getheight();
+			return;
+		}
 
-			if (g_vecWindows[index].nSkipPixels == 0)
+		int w = g_vecWindows[index].pImg->getwidth();
+		int h = g_vecWindows[index].pImg->getheight();
+
+		// 是否全部更新
+		bool isAllFlush = !(rct.left && rct.top && rct.right && rct.bottom);
+
+		// 双缓冲的两层画布
+		DWORD* dst = GetImageBuffer(g_vecWindows[index].pImg);
+		DWORD* src = GetImageBuffer(g_vecWindows[index].pBufferImg);
+
+		// 部分重绘时，修正重绘区域
+		RECT rctCorrected = rct;
+		if (!isAllFlush)
+		{
+			if (rct.left < 0)		rctCorrected.left = 0;
+			if (rct.top < 0)		rctCorrected.top = 0;
+			if (rct.right > w)		rctCorrected.right = w;
+			if (rct.bottom > h)		rctCorrected.bottom = h;
+		}
+
+		// 不跳过像素的模式
+		if (g_vecWindows[index].nSkipPixels == 0)
+		{
+			// 全部更新
+			if (isAllFlush)
 			{
 				// fastest
-				memcpy(
-					GetImageBuffer(g_vecWindows[index].pImg),
-					GetImageBuffer(g_vecWindows[index].pBufferImg),
-					sizeof(DWORD) * w * h
-				);
+				memcpy(dst, src, sizeof(DWORD) * w * h);
 			}
+			// 部分更新
 			else
 			{
-				int len = w * h;
-				DWORD* buf[2] = {
-					GetImageBuffer(g_vecWindows[index].pImg) ,
-					GetImageBuffer(g_vecWindows[index].pBufferImg)
-				};
-				for (int i = 0; i < len; i++)
+				for (int x = rctCorrected.left; x < rctCorrected.right; x++)
 				{
-					if (buf[0][i] == buf[1][i])
+					for (int y = rctCorrected.top; y < rctCorrected.bottom; y++)
+					{
+						int index = x + y * w;
+						dst[index] = src[index];
+					}
+				}
+			}
+		}
+		// 跳过像素的模式
+		else
+		{
+			// 全部更新
+			if (isAllFlush)
+			{
+				int len = w * h;
+				for (int i = 0; i < len; i++)		// 线性遍历画布
+				{
+					if (dst[i] == src[i])			// 若两画布某位置色彩重叠，则跳过接下来的 n 个像素点
 					{
 						i += g_vecWindows[index].nSkipPixels;
 						continue;
 					}
-					buf[0][i] = buf[1][i];
-					buf[0][i] = buf[1][i];
+					dst[i] = src[i];
 				}
 			}
+			// 部分更新
+			else
+			{
+				for (int y = rctCorrected.top; y < rctCorrected.bottom; y++)	// 在矩形区域内遍历画布
+				{
+					for (int x = rctCorrected.left; x < rctCorrected.right; x++)
+					{
+						int index = x + y * w;
+						if (dst[index] == src[index])	// 若两画布某位置色彩重叠，则在 x 方向上跳过接下来的 n 个像素点
+						{
+							x += g_vecWindows[index].nSkipPixels;
+							continue;
+						}
+						dst[index] = src[index];
+					}
+				}
+			}
+		}
+	}// FlushDrawing
+
+	// 提供给用户的接口
+	void FlushDrawing(RECT rct)
+	{
+		// 为了防止用户更新双缓冲时窗口拉伸导致画布冲突，必须在窗口任务内调用此函数
+		if (IsInTask())
+		{
+			FlushDrawing(g_nFocusWindowIndex, rct);
 		}
 	}
 
@@ -479,7 +536,8 @@ namespace HiEasyX
 		{
 			if (flush && IsFocusWindowExisted())
 			{
-				FlushDrawing(g_nFocusWindowIndex);
+				GetFocusWindow().isNeedFlush = true;
+				//FlushDrawing(g_nFocusWindowIndex);
 			}
 
 			g_isInTask = false;
@@ -1018,10 +1076,19 @@ namespace HiEasyX
 	}
 
 	// 绘制用户内容
-	void OnPaint(int indexWnd, HWND hWnd)
+	void OnPaint(int indexWnd, HDC hdc)
 	{
-		// 映射绘图缓存到窗口
-		FlushDrawingToWnd(g_vecWindows[indexWnd].pImg, hWnd);
+		// 如果需要更新双缓冲
+		if (g_vecWindows[indexWnd].isNeedFlush)
+		{
+			FlushDrawing(indexWnd);
+			g_vecWindows[indexWnd].isNeedFlush = false;
+		}
+
+		// 将绘图内容输出到窗口 HDC
+		RECT rctWnd;
+		GetClientRect(g_vecWindows[indexWnd].hWnd, &rctWnd);
+		CopyImageToHDC(g_vecWindows[indexWnd].pImg, hdc, rctWnd);
 	}
 
 	void OnMove(HWND hWnd)
@@ -1145,9 +1212,10 @@ namespace HiEasyX
 			// 也有可能正在接收 WM_CREATE 消息，此时窗口还未加入列表，则调用用户过程函数
 			if (msg == WM_CREATE)
 			{
-				indexWnd = (int)g_vecWindows.size() - 1;
-				OnCreate(indexWnd, hWnd, lParam);
-				WNDPROC proc = g_vecWindows[indexWnd].funcWndProc;
+				// 此时需要修正 index
+				int indexReal = (int)g_vecWindows.size() - 1;
+				OnCreate(indexReal, hWnd, lParam);
+				WNDPROC proc = g_vecWindows[indexReal].funcWndProc;
 				if (proc)
 				{
 					proc(hWnd, msg, wParam, lParam);
@@ -1174,9 +1242,13 @@ namespace HiEasyX
 			// 用户重绘消息，处理完直接返回
 			// 也无需调用系统重绘方法
 		case WM_USER_REDRAW:
-			OnPaint(indexWnd, hWnd);
+		{
+			HDC hdc = GetDC(hWnd);
+			OnPaint(indexWnd, hdc);
+			ReleaseDC(hWnd, hdc);
 			return 0;
 			break;
+		}
 
 		default:
 			// 系统任务栏重新创建，此时可能需要重新创建托盘
@@ -1210,13 +1282,17 @@ namespace HiEasyX
 		{
 			// 因为用户可能在过程函数中绘图，要在他之后输出缓存
 		case WM_PAINT:
-
-			OnPaint(indexWnd, hWnd);
+		{
+			HDC			hdc;
+			PAINTSTRUCT	ps;
+			hdc = BeginPaint(hWnd, &ps);
+			OnPaint(indexWnd, hdc);
+			EndPaint(hWnd, &ps);
 
 			// WM_PAINT 消息中需要调用系统绘制方法
 			DefWindowProc(hWnd, WM_PAINT, 0, 0);
-
 			break;
+		}
 
 		case WM_MOVE:
 			OnMove(hWnd);
@@ -1314,6 +1390,7 @@ namespace HiEasyX
 		wnd.pImg = new IMAGE(w, h);
 		wnd.pBufferImg = new IMAGE(w, h);
 		wnd.pBufferImgCanvas = nullptr;
+		wnd.isNeedFlush = false;
 		wnd.funcWndProc = WindowProcess;
 		wnd.vecMessage.reserve(MSG_RESERVE_SIZE);
 		wnd.isUseTray = false;
@@ -1567,7 +1644,7 @@ namespace HiEasyX
 				setfillcolor(BLACK);
 				cleardevice();
 				EndTask();
-				EnforceRedraw();
+				RedrawWindow();
 			}
 
 			return hWnd;
@@ -1666,6 +1743,14 @@ namespace HiEasyX
 		return HiEasyX::SetWorkingWindow(g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
+	void Window::FlushDrawing(RECT rct)
+	{
+		if (IsInTask())
+		{
+			HiEasyX::FlushDrawing(rct);
+		}
+	}
+
 	bool Window::BeginTask()
 	{
 		if (SetWorkingWindow())
@@ -1742,15 +1827,9 @@ namespace HiEasyX
 		QuickDraw(nSkipPixels, g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
-	void Window::FlushDrawing()
-	{
-		BeginTask();
-		EndTask();
-	}
-
 	void Window::Redraw()
 	{
-		EnforceRedraw(g_vecWindows[m_nWindowIndex].hWnd);
+		RedrawWindow(g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
 	long Window::GetStyle()

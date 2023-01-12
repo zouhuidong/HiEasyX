@@ -38,7 +38,7 @@ ScreenSize GetScreenSize();
  * @param[out] width		·µ»ØÍ¼Ïñ¿í
  * @param[out] height		·µ»ØÍ¼Ïñ¸ß
 */
-void GetImageSize(IMAGE* pImg, int& width, int& height);
+void GetImageSize(IMAGE* pImg, int* width, int* height);
 
 /**
  * @brief <pre>

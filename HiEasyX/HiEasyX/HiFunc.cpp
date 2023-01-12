@@ -14,13 +14,13 @@ ScreenSize GetScreenSize()
 
 // 获取图像尺寸
 // 可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
-void GetImageSize(IMAGE* pImg, int& width, int& height)
+void GetImageSize(IMAGE* pImg, int* width, int* height)
 {
 	// 普通 IMAGE 指针
 	if (pImg)
 	{
-		width = pImg->getwidth();
-		height = pImg->getheight();
+		*width = pImg->getwidth();
+		*height = pImg->getheight();
 	}
 
 	// nullptr 对应绘图窗口
@@ -28,8 +28,8 @@ void GetImageSize(IMAGE* pImg, int& width, int& height)
 	{
 		IMAGE* pOld = GetWorkingImage();
 		SetWorkingImage();
-		width = getwidth();
-		height = getheight();
+		*width = getwidth();
+		*height = getheight();
 		SetWorkingImage(pOld);
 	}
 }

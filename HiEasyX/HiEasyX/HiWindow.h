@@ -51,7 +51,8 @@ namespace HiEasyX
 	////////////****** 类型定义 ******////////////
 
 	/**
-	 * @brief 窗口
+	 * @brief	窗口
+	 * @note	在 InitWindowStruct 函数中初始化此结构体
 	*/
 	struct EasyWindow
 	{
@@ -63,6 +64,7 @@ namespace HiEasyX
 		IMAGE* pImg;								///< 窗口图像
 		IMAGE* pBufferImg;							///< 图像缓冲区
 		Canvas* pBufferImgCanvas;					///< 图像缓冲区绑定的画布指针
+		bool isNeedFlush;							///< 是否需要输出绘图缓冲
 
 		WNDPROC funcWndProc;						///< 窗口消息处理函数
 
@@ -76,7 +78,7 @@ namespace HiEasyX
 		/**
 		 * @brief <pre>
 		 *		托盘菜单消息处理函数指针
-		 * 
+		 *
 		 * 备注：
 		 *		给出此函数是为了方便响应托盘的菜单消息
 		 *		如需响应完整的托盘消息，请自定义窗口过程函数并处理 WM_TRAY 消息
@@ -114,7 +116,7 @@ namespace HiEasyX
 
 		int m_nWindowIndex = NO_WINDOW_INDEX;
 		bool m_isCreated = false;
-		
+
 		bool m_isPreStyle = false;
 		bool m_isPreStyleEx = false;
 		bool m_isPrePos = false;
@@ -184,14 +186,19 @@ namespace HiEasyX
 		void SetQuickDraw(UINT nSkipPixels);
 
 		/**
-		 * @brief 输出绘图缓冲（并非重绘窗口）
-		*/
-		void FlushDrawing();
-
-		/**
 		 * @brief 重绘窗口
 		*/
 		void Redraw();
+
+		/**
+		 * @brief <pre>
+		 *		更新窗口的双缓冲
+		 * 
+		 *	注意：
+		 *		必须在窗口任务内调用此函数，详见 hiex::FlushDrawing
+		 * </pre>
+		*/
+		void FlushDrawing(RECT rct = { 0 });
 
 		bool BeginTask();
 		void EndTask(bool flush = true);
@@ -264,11 +271,11 @@ namespace HiEasyX
 	/**
 	 * @brief <pre>
 	 *		创建 Win32 绘图窗口（异于原生 EasyX 窗口）
-	 * 
+	 *
 	 *	备注：
 	 *		窗口默认支持双击消息、调整大小（使用 EnableResizing 宏设置是否可以调整大小）
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] w					窗口宽
 	 * @param[in] h					窗口高
 	 * @param[in] flag				窗口样式（EW_ 系列宏，默认为 EW_NORMAL）
@@ -393,18 +400,11 @@ namespace HiEasyX
 	 *	备注：
 	 *		绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] pCanvas 画布指针
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
 	void BindWindowCanvas(Canvas* pCanvas, HWND hWnd = nullptr);
-
-	/**
-	 * @brief 将绘制在图像中的内容显示到目标窗口上（任意窗口，不局限于 HiWindow 窗口）
-	 * @param[in] pImg	图像
-	 * @param[in] hWnd	目标窗口
-	*/
-	void FlushDrawingToWnd(IMAGE* pImg, HWND hWnd);
 
 	/**
 	 * @brief 得到当前绘图窗口的详细信息
@@ -438,10 +438,33 @@ namespace HiEasyX
 	void SetDrawMode(DrawMode mode);
 
 	/**
-	 * @brief 重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数）
+	 * @brief 通知重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数）
 	 * @param[in] hWnd 要重绘的窗口
 	*/
-	void EnforceRedraw(HWND hWnd = nullptr);
+	void RedrawWindow(HWND hWnd = nullptr);
+
+	/**
+	 * @brief <pre>
+	 *		更新当前活动窗口的双缓冲
+	 * 
+	 *	注意：
+	 *		由于安全性问题，必须在窗口任务内调用此函数，否则不会更新双缓冲。
+	 * 
+	 *	备注：
+	 *		若要重绘窗口请使用 RedrawWindow
+	 * 
+	 *	示例：
+	 * @code
+			BEGIN_TASK();
+			hiex::FlushDrawing({ 200,200,300,300 });
+			END_TASK(false);	// 注意，结束任务时标记 false 表示不更新双缓冲，因为上面已经更新过了
+			REDRAW_WINDOW();
+	 * @endcode
+	 * </pre>
+	 * 
+	 * @param[in] rct	双缓冲更新区域（坐标都为 0 表示全部区域）
+	*/
+	void FlushDrawing(RECT rct = { 0 });
 
 	/**
 	 * @brief <pre>
@@ -450,26 +473,26 @@ namespace HiEasyX
 	 *	备注：
 	 *		调用 EasyX 函数进行绘图或获取消息时，都应当启动任务。
 	 * </pre>
-	 * 
+	 *
 	 * @return 是否启动成功（若已在任务中也返回 true）
 	*/
 	bool BeginTask();
 
 	/**
-	 * @brief 终止当前任务
-	 * @param[in] flush 是否输出绘图缓冲（但不会自动刷新窗口）
+	 * @brief 终止当前窗口任务
+	 * @param[in] flush 是否更新双缓冲（但不会自动刷新窗口）
 	*/
 	void EndTask(bool flush = true);
 
 	/**
 	 * @brief <pre>
 	 *		判断某窗口是否在任务中
-	 * 
+	 *
 	 *	备注：
 	 *		窗口任务是队列式的，只有活动窗口可能处在任务中。
 	 *		故若传入窗口不是活动窗口，将直接返回 false。
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	 * @return 是否在任务中
 	*/
@@ -491,11 +514,11 @@ namespace HiEasyX
 	/**
 	 * @brief <pre>
 	 *		为窗口创建一个托盘
-	 * 
+	 *
 	 *	注意：
 	 *		在 HiEasyX 中，每个窗口仅能稳定占有一个托盘
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] lpszTrayName 托盘提示文本
 	 * @param[in] hWnd 窗口句柄（为空表示当前活动窗口）
 	*/
@@ -534,7 +557,7 @@ namespace HiEasyX
 	 *		必须在第一次创建窗口前就调用该函数才能生效。
 	 *		使用 MAKEINTRESOURCE 宏可以将资源 ID 转为字符串。
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] lpszIcon		大图标资源
 	 * @param[in] lpszIconSm	小图标资源
 	*/
@@ -547,7 +570,7 @@ namespace HiEasyX
 	 *	注意：
 	 *		新窗口的所有普通样式都将被当前样式覆盖
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] lStyle 新样式
 	*/
 	void PreSetWindowStyle(long lStyle);
@@ -559,7 +582,7 @@ namespace HiEasyX
 	 *	注意：
 	 *		新窗口的所有扩展样式都将被当前样式覆盖
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] lStyleEx 新样式
 	*/
 	void PreSetWindowStyleEx(long lStyleEx);
@@ -718,11 +741,11 @@ namespace HiEasyX
 	/**
 	 * @brief <pre>
 	 *		ExMessage 转 MOUSEMSG
-	 * 
+	 *
 	 *	备注：
 	 *		ExMessage 消息类型若不是 EM_MOUSE，则返回空
 	 * </pre>
-	 * 
+	 *
 	 * @param[in] msgEx ExMessage 消息
 	 * @return MOUSEMSG 消息
 	*/
@@ -747,13 +770,13 @@ namespace HiEasyX
 		{(0)
 
 // 结束一段（绘图）任务，并输出绘图缓存（须与 BEGIN_TASK 连用）
-#define END_TASK()\
-			HiEasyX::EndTask();\
+#define END_TASK(...)\
+			HiEasyX::EndTask(__VA_ARGS__);\
 		}\
 	}(0)
 
 // 要求窗口重绘
-#define FLUSH_DRAW()			HiEasyX::EnforceRedraw()
+#define REDRAW_WINDOW(...)		HiEasyX::RedrawWindow(__VA_ARGS__)
 
 ////////////****** 窗口样式宏定义 ******////////////
 
@@ -819,8 +842,8 @@ namespace HiEasyX
 
 // 默认使用双缓冲，故 BeginBatchDraw 无意义
 #define BeginBatchDraw()
-#define FlushBatchDraw()		FLUSH_DRAW()
-#define EndBatchDraw()			FLUSH_DRAW()
+#define FlushBatchDraw()		REDRAW_WINDOW()
+#define EndBatchDraw()			REDRAW_WINDOW()
 
 #define GetHWnd					HiEasyX::GetHWnd_win32
 
@@ -832,3 +855,8 @@ namespace HiEasyX
 #define GetMouseMsg				HiEasyX::GetMouseMsg_win32
 #define PeekMouseMsg			HiEasyX::PeekMouseMsg_win32
 #define FlushMouseMsgBuffer		HiEasyX::FlushMouseMsgBuffer_win32
+
+////////////****** 已经废弃的宏 ******////////////
+
+// 此宏已经弃用，请使用 REDRAW_WINDOW 宏
+#define FLUSH_DRAW() (This_macro_is_deprecated___Please_use_macro__REDRAW_WINDOW__)
