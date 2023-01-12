@@ -26,7 +26,7 @@ namespace HiEasyX
 	 * </pre>
 	 *
 	 * @param[in] alpha		叠加在 src 上的透明度（默认为 255，即不叠加）
-	 * @return 混合后的颜色（不含透明信息）
+	 * @return 混合后的颜色（不含 alpha 值）
 	*/
 	COLORREF MixAlphaColor(COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha = 255);
 
@@ -72,7 +72,7 @@ namespace HiEasyX
 		RECT crop = { 0 },
 		BYTE alpha = 255,
 		bool bUseSrcAlpha = false,
-		bool isCalculated = true
+		bool isCalculated = false
 	);
 
 	/**
@@ -652,7 +652,7 @@ namespace HiEasyX
 			RECT crop = { 0 },
 			BYTE alpha = 255,
 			bool bUseSrcAlpha = false,
-			bool isCalculated = true
+			bool isCalculated = false
 		);
 
 		/**
@@ -671,7 +671,7 @@ namespace HiEasyX
 			RECT crop = { 0 },
 			BYTE alpha = 255,
 			bool bUseSrcAlpha = false,
-			bool isCalculated = true
+			bool isCalculated = false
 		);
 
 		/**
@@ -927,4 +927,43 @@ namespace HiEasyX
 	};
 
 }
+
+
+////////////////********* 宏定义 *********////////////////
+
+//
+// 准备绘制透明图形（先绘制图形到临时画布中，然后再输出到需要绘制的地方）
+// nGraphW, nGraphH		所绘制透明图形的宽高
+//
+// 注意：需要配合 DRAW_TNS_RENDER_TO 宏使用
+// 
+// 例如：
+/*
+	// 准备绘制透明图形
+	DRAW_TNS_INIT_GRAPHICS(201, 201);
+	{
+		// 在代码块中使用普通绘图函数进行绘制即可
+		graphics.SetLineThickness(5);
+		graphics.FillRoundRect(0, 0, 200, 200, 20, 20, true, GREEN, PURPLE);
+	}
+	DRAW_TNS_RENDER_TO(yourImagePointer, 120, 120, 100);		// 最后以一定的透明度输出绘制的图形
+*/
+//
+#define DRAW_TNS_INIT_GRAPHICS(nGraphW, nGraphH) \
+	{\
+		hiex::Canvas graphics(nGraphW, nGraphH);(0)
+
+//
+// 完成绘制透明图形，并输出绘制的图形
+// nRenderX		输出位置 X 坐标
+// nRenderY		输出位置 Y 坐标
+// pDstImg		透明图形输出的目标画布（IMAGE*）
+// alpha		输出图形时使用的透明度（完全透明 0 ~ 255 不透明）
+//
+// 注意：需要配合 DRAW_TNS_INIT_GRAPHICS 宏使用 
+//
+#define DRAW_TNS_RENDER_TO(nRenderX, nRenderY, pDstImg, alpha) \
+		ReverseAlpha(graphics.GetBuffer(), graphics.GetBufferSize());\
+		graphics.RenderTo(nRenderX, nRenderY, pDstImg, { 0 }, alpha, true);\
+	}(0)
 
