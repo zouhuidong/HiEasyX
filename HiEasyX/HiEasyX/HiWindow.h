@@ -246,6 +246,8 @@ namespace HiEasyX
 
 		void Resize(int w, int h);
 
+		void SetTitle(LPCTSTR lpszTitle);
+
 		/**
 		 * @brief 判断此窗口是否为用户正在使用的窗口
 		*/
@@ -632,9 +634,9 @@ namespace HiEasyX
 	/**
 	 * @brief 设置窗口标题文本
 	 * @param[in] lpszTitle		新的窗口标题
-	 * @param[in] hwnd			窗口句柄（为空代表当前活动窗口）
+	 * @param[in] hWnd			窗口句柄（为空代表当前活动窗口）
 	*/
-	void SetWindowTitle(LPCTSTR lpszTitle, HWND hwnd = nullptr);
+	void SetWindowTitle(LPCTSTR lpszTitle, HWND hWnd = nullptr);
 
 	////////////****** 消息相关函数 ******////////////
 

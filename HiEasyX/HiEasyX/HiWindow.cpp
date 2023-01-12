@@ -3,6 +3,7 @@
 #include "HiMacro.h"
 #include "HiIcon.h"
 #include "HiStart.h"
+#include "HiGdiplus.h"
 #include "HiCanvas.h"
 #include "HiSysGUI/SysControlBase.h"
 
@@ -105,7 +106,7 @@ namespace HiEasyX
 
 	bool IsAnyWindow()
 	{
-		for (EasyWindow& i : g_vecWindows)
+		for (auto& i : g_vecWindows)
 			if (i.isAlive)
 				return true;
 		return false;
@@ -233,6 +234,13 @@ namespace HiEasyX
 
 		// 关闭忙碌标识
 		g_vecWindows[index].isBusyProcessing = false;
+
+		// 如果关闭此窗口后不存在任何窗口
+		if (!IsAnyWindow())
+		{
+			// 关闭 GDI+ 绘图环境
+			Gdiplus_Shutdown();
+		}
 	}
 
 	// 此函数用于外部调用，只是向目标窗口线程发送关闭窗口消息
@@ -319,7 +327,7 @@ namespace HiEasyX
 	{
 		std::thread([]() {
 			init_end();
-			exit(0);
+		exit(0);
 			}).detach();
 	}
 
@@ -809,9 +817,10 @@ namespace HiEasyX
 		SetWindowPos(hWnd, HWND_TOP, 0, 0, w, h, SWP_NOMOVE);
 	}
 
-	void SetWindowTitle(LPCTSTR lpszTitle, HWND hwnd)
+	void SetWindowTitle(LPCTSTR lpszTitle, HWND hWnd)
 	{
-
+		if (!hWnd)	hWnd = GetFocusWindow().hWnd;
+		SetWindowText(hWnd, lpszTitle);
 	}
 
 	// 获取默认窗口图标
@@ -1335,7 +1344,7 @@ namespace HiEasyX
 		long lPreStyle = g_lPreStyle;
 		long lPreStyleEx = g_lPreStyleEx;
 		POINT pPrePos = g_pPrePos;
-		int nPreCmdShow= g_nPreCmdShow;
+		int nPreCmdShow = g_nPreCmdShow;
 
 		g_isPreStyle = false;
 		g_isPreStyleEx = false;
@@ -1345,10 +1354,10 @@ namespace HiEasyX
 		// 未设置标题
 		if (lstrlen(lpszWndTitle) == 0)
 		{
-			wstrTitle = L"HiEasyX_" _HIEASYX_VER_STR_ + (std::wstring)L"  EasyX_" + GetEasyXVer();
+			wstrTitle = L"EasyX_" + (std::wstring)GetEasyXVer() + L" HiEasyX (" _HIEASYX_VER_STR_ + L")";
 			if (nWndCount != 0)
 			{
-				wstrTitle += L" (" + std::to_wstring(nWndCount + 1) + L")";
+				wstrTitle += L" ( WindowID: " + std::to_wstring(nWndCount + 1) + L" )";
 			}
 		}
 		else
@@ -1387,6 +1396,13 @@ namespace HiEasyX
 
 			// 获取系统任务栏自定义的消息代码
 			g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
+		}
+
+		// 如果现在不存在任何窗口
+		if (!IsAnyWindow())
+		{
+			// 初始化 GDI+ 绘图环境
+			Gdiplus_Try_Starup();
 		}
 
 		// 控制台
@@ -1790,6 +1806,11 @@ namespace HiEasyX
 	void Window::Resize(int w, int h)
 	{
 		ResizeWindow(w, h, g_vecWindows[m_nWindowIndex].hWnd);
+	}
+
+	void Window::SetTitle(LPCTSTR lpszTitle)
+	{
+		SetWindowTitle(lpszTitle, g_vecWindows[m_nWindowIndex].hWnd);
 	}
 
 	bool Window::IsForegroundWindow()
