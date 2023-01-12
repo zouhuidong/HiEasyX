@@ -86,11 +86,11 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 
 * Windows 7 及以上 以及 Windows Sever 2008 R2 及以上 （推荐使用 Windows 10/11）
 * Visual Studio 2012 及以上 （推荐使用 Visual Studio 2022）
-* EasyX_20220610
+* EasyX_20220901
 
 > *需要 C++ 11 及以上版本。*
 > 
-> *需要 unicode 字符集，且并不支持 MBCS 字符集。*
+> *需要 UNICODE 字符集，且并不支持 MBCS 字符集。*
 > 
 > *您必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn*
 
