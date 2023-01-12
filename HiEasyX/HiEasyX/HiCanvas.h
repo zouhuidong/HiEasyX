@@ -316,7 +316,7 @@ namespace HiEasyX
 		*/
 		void EndBatchDrawing();
 
-		/////// EasyX 原生绘图函数 ///////
+		/////// EasyX 风格的基础绘图函数 ///////
 
 		/**
 		 * @brief 判断某点是否位于图像中
@@ -326,25 +326,6 @@ namespace HiEasyX
 		 * @return 是否位于图像中
 		*/
 		bool IsValidPoint(int x, int y, int* pIndex = nullptr);
-
-		/**
-		 * @brief 将该画布的图像绘制到另一画布中
-		 * @param[in] x				绘制位置
-		 * @param[in] y				绘制位置
-		 * @param[in] pImg			目标绘制画布
-		 * @param[in] crop			裁剪区域（默认不裁剪）
-		 * @param[in] alpha			叠加透明度
-		 * @param[in] bUseSrcAlpha	是否使用此画布透明度
-		 * @param[in] isCalculated	画布像素是否已经透明混合
-		*/
-		void Render(
-			int x, int y,
-			IMAGE* pImg = nullptr,
-			RECT crop = { 0 },
-			BYTE alpha = 255,
-			bool bUseSrcAlpha = false,
-			bool isCalculated = true
-		);
 
 		/**
 		 * @brief <pre>
@@ -675,6 +656,25 @@ namespace HiEasyX
 		);
 
 		/**
+		 * @brief 将该画布的图像绘制到另一画布中
+		 * @param[in] x				绘制位置
+		 * @param[in] y				绘制位置
+		 * @param[in] pImg			目标绘制画布
+		 * @param[in] crop			裁剪区域（默认不裁剪）
+		 * @param[in] alpha			叠加透明度
+		 * @param[in] bUseSrcAlpha	是否使用此画布透明度
+		 * @param[in] isCalculated	画布像素是否已经透明混合
+		*/
+		void RenderTo(
+			int x, int y,
+			IMAGE* pImg = nullptr,
+			RECT crop = { 0 },
+			BYTE alpha = 255,
+			bool bUseSrcAlpha = false,
+			bool isCalculated = true
+		);
+
+		/**
 		 * @brief EasyX 原生旋转函数
 		 * @param[in] radian		旋转弧度
 		 * @param[in] bkcolor		填充背景色
@@ -814,15 +814,11 @@ namespace HiEasyX
 		Canvas* CreateCanvas(int w, int h, COLORREF cBk = 0);
 
 		Canvas* GetCanvas() const { return m_pCanvas; }
-
 		void SetCanvas(Canvas* pCanvas);
 
 		int GetWidth() const { return m_pCanvas ? m_pCanvas->GetWidth() : 0; }
-
 		int GetHeight() const { return m_pCanvas ? m_pCanvas->GetHeight() : 0; }
-
 		POINT GetPos() const { return { x,y }; }
-
 		void SetPos(int _x, int _y);
 
 		/**

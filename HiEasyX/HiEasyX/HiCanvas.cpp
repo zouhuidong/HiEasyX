@@ -308,11 +308,8 @@ namespace HiEasyX
 	{
 		CleanUpSettings();
 		Resize(w, h);
-		if (cBk != BLACK)
-		{
-			SetBkColor(cBk);
-			Clear();
-		}
+		SetBkColor(cBk);
+		Clear();
 	}
 
 	Canvas::Canvas(IMAGE* pImg)
@@ -435,7 +432,7 @@ namespace HiEasyX
 		return true;
 	}
 
-	void Canvas::Render(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
+	void Canvas::RenderTo(int x, int y, IMAGE* pImg, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
 		int w, h;	// 目标输出画布尺寸
 		GetImageSize(pImg, &w, &h);
@@ -1911,7 +1908,7 @@ namespace HiEasyX
 	{
 		if (m_pCanvas)
 		{
-			m_pCanvas->Render(
+			m_pCanvas->RenderTo(
 				x, y,
 				pImg,
 				rctCrop,
