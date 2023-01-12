@@ -53,6 +53,19 @@ namespace HiEasyX
 
 	public:
 
+		/**
+		 * @brief 编辑框预设样式（必须在创建前设置才有效）
+		*/
+		struct PreStyle
+		{
+			bool multiline = false;			///< 多行文本
+			bool center_text = false;		///< 文本居中
+			bool vscroll = false;			///< 拥有垂直滚动条
+			bool auto_vscroll = false;		///< 自动垂直滚动
+			bool hscroll = false;			///< 拥有水平滚动条
+			bool auto_hscroll = false;		///< 自动水平滚动
+		};
+
 		SysEdit();
 
 		SysEdit(HWND hParent, RECT rct, std::wstring strText = L"");
@@ -63,21 +76,8 @@ namespace HiEasyX
 
 		/**
 		 * @brief 在创建控件前预设控件样式
-		 * @param[in] multiline			多行文本
-		 * @param[in] center_text		文本居中
-		 * @param[in] vscroll			拥有垂直滚动条
-		 * @param[in] auto_vscroll		自动垂直滚动
-		 * @param[in] hscroll			拥有水平滚动条
-		 * @param[in] auto_hscroll		自动水平滚动
 		*/
-		void PreSetStyle(
-			bool multiline,
-			bool center_text = false,
-			bool vscroll = false,
-			bool auto_vscroll = false,
-			bool hscroll = false,
-			bool auto_hscroll = false
-		);
+		void PreSetStyle(PreStyle pre_style);
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 

@@ -36,18 +36,18 @@ namespace HiEasyX
 		Create(hParent, x, y, w, h, strText);
 	}
 
-	void SysComboBox::PreSetEtyle(bool always_show_list, bool editable, bool sort)
+	void SysComboBox::PreSetEtyle(PreStyle pre_style)
 	{
-		if (always_show_list)
+		if (pre_style.always_show_list)
 		{
 			m_lBasicStyle |= CBS_SIMPLE;
 			m_lBasicStyle &= ~CBS_DROPDOWN;
-			if (!editable)
+			if (!pre_style.editable)
 				m_bSimple_No_Edit = true;
 		}
 		else
 		{
-			if (editable)
+			if (pre_style.editable)
 			{
 				m_lBasicStyle |= CBS_DROPDOWN;
 			}
@@ -57,7 +57,7 @@ namespace HiEasyX
 			}
 		}
 
-		if (sort)
+		if (pre_style.sort)
 			m_lBasicStyle |= CBS_SORT;
 		else
 			m_lBasicStyle &= ~CBS_SORT;

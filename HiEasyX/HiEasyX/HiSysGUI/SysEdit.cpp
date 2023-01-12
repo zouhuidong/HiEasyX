@@ -38,15 +38,15 @@ namespace HiEasyX
 			DeleteBrush(hBk);
 	}
 
-	void SysEdit::PreSetStyle(bool multiline, bool center_text, bool vscroll, bool auto_vscroll, bool hscroll, bool auto_hscroll)
+	void SysEdit::PreSetStyle(PreStyle pre_style)
 	{
 		m_lBasicStyle |= (
-			(multiline ? ES_MULTILINE : 0)
-			| (center_text ? ES_CENTER : 0)
-			| (vscroll ? WS_VSCROLL : 0)
-			| (auto_vscroll ? ES_AUTOVSCROLL : 0)
-			| (hscroll ? WS_HSCROLL : 0)
-			| (auto_hscroll ? ES_AUTOHSCROLL : 0)
+			(pre_style.multiline ? ES_MULTILINE : 0)
+			| (pre_style.center_text ? ES_CENTER : 0)
+			| (pre_style.vscroll ? WS_VSCROLL : 0)
+			| (pre_style.auto_vscroll ? ES_AUTOVSCROLL : 0)
+			| (pre_style.hscroll ? WS_HSCROLL : 0)
+			| (pre_style.auto_hscroll ? ES_AUTOHSCROLL : 0)
 			);
 	}
 

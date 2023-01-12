@@ -40,9 +40,16 @@ int main()
 
 	canvas.PutImageIn_Alpha(0, 0, &img, { 0 }, 180);
 
-	canvas.ZoomImage_Rough_Alpha(220);
+	//canvas.ZoomImage_Rough_Alpha(220);
 
 	REDRAW_WINDOW();
+
+	hiex::SysEdit edit;
+	hiex::SysEdit::PreStyle prestyle;
+	prestyle.center_text = true;
+	edit.PreSetStyle(prestyle);
+	edit.Create(GetHWnd(), 100, 100, 300, 200, L"aaa");
+
 
 	_getch();
 

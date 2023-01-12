@@ -36,23 +36,26 @@ namespace HiEasyX
 
 	public:
 
+		/**
+		 * @brief 组合框控件预设样式（必须在创建前设置才有效）
+		*/
+		struct PreStyle
+		{
+			bool always_show_list = false;		///< 是否总是显示列表
+			bool editable = false;				///< 是否可编辑
+			bool sort = false;					///< 是否自动排序
+		};
+
 		SysComboBox();
 
 		SysComboBox(HWND hParent, RECT rct, std::wstring strText = L"");
 
-		SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L""); 
+		SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
 
 		/**
 		 * @brief 在创建控件前预设样式
-		 * @param[in] always_show_list	是否总是显示列表
-		 * @param[in] editable			是否可编辑
-		 * @param[in] sort				是否自动排序
 		*/
-		void PreSetEtyle(
-			bool always_show_list,
-			bool editable,
-			bool sort
-		);
+		void PreSetEtyle(PreStyle pre_style);
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 
@@ -94,14 +97,14 @@ namespace HiEasyX
 
 		/**
 		 * @brief 插入项
-		 * @param[in] index		插入位置 
+		 * @param[in] index		插入位置
 		 * @param[in] wstrText	项文本
 		*/
 		void InsertString(int index, std::wstring wstrText);
 
 		/**
 		 * @brief 删除项
-		 * @param[in] index	项索引 
+		 * @param[in] index	项索引
 		*/
 		void DeleteString(int index);
 
@@ -109,7 +112,7 @@ namespace HiEasyX
 		 * @brief 获取列表内容数量
 		*/
 		int GetCount();
-		
+
 		/**
 		 * @brief 清空列表
 		*/
