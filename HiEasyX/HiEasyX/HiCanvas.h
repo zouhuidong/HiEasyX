@@ -937,21 +937,32 @@ namespace HiEasyX
 //
 // 注意：需要配合 DRAW_TNS_RENDER_TO 宏使用
 // 
-// 例如：
+// 使用方法：
+//		在 DRAW_TNS_INIT_GRAPHICS 宏和 DRAW_TNS_RENDER_TO 宏之间，插入一个代码块。
+//		在这个代码块中使用 Canvas 变量 graphics 进行绘制。
+//		绘制时调用 Canvas 的普通绘图函数即可，无需 GDI+ 系列封装函数（带 "GP_" 前缀的函数）
+//		或者直接使用原生 EasyX 函数进行绘制也可以。
+// 
+// 使用示例：
 /*
-	// 准备绘制透明图形
+	// 准备绘制透明图形（设置图形的宽高）
 	DRAW_TNS_INIT_GRAPHICS(201, 201);
 	{
-		// 在代码块中使用普通绘图函数进行绘制即可
+		// 在代码块中使用 Canvas 的普通绘图函数进行绘制即可
 		graphics.SetLineThickness(5);
 		graphics.FillRoundRect(0, 0, 200, 200, 20, 20, true, GREEN, PURPLE);
+
+		// 像这样使用 EasyX 原生函数绘制也可以
+		line(20, 20, 50, 50);
 	}
-	DRAW_TNS_RENDER_TO(yourImagePointer, 120, 120, 100);		// 最后以一定的透明度输出绘制的图形
+	// 最后选择将这个透明图形绘制到哪里，并设置绘制透明度
+	DRAW_TNS_RENDER_TO(120, 120, yourImagePointer, 100);
 */
 //
 #define DRAW_TNS_INIT_GRAPHICS(nGraphW, nGraphH) \
 	{\
-		hiex::Canvas graphics(nGraphW, nGraphH);(0)
+		hiex::Canvas graphics(nGraphW, nGraphH);\
+		graphics.BeginBatchDrawing();(0)
 
 //
 // 完成绘制透明图形，并输出绘制的图形
@@ -960,9 +971,10 @@ namespace HiEasyX
 // pDstImg		透明图形输出的目标画布（IMAGE*）
 // alpha		输出图形时使用的透明度（完全透明 0 ~ 255 不透明）
 //
-// 注意：需要配合 DRAW_TNS_INIT_GRAPHICS 宏使用 
+// 注意：需要配合 DRAW_TNS_INIT_GRAPHICS 宏使用，具体用法见 DRAW_TNS_INIT_GRAPHICS 宏的注释
 //
 #define DRAW_TNS_RENDER_TO(nRenderX, nRenderY, pDstImg, alpha) \
+		graphics.EndBatchDrawing();\
 		ReverseAlpha(graphics.GetBuffer(), graphics.GetBufferSize());\
 		graphics.RenderTo(nRenderX, nRenderY, pDstImg, { 0 }, alpha, true);\
 	}(0)
