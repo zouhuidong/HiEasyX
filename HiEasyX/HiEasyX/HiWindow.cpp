@@ -1490,7 +1490,7 @@ namespace HiEasyX
 
 			// 获取系统任务栏自定义的消息代码
 			g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
-		}
+	}
 
 		// 如果现在不存在任何窗口
 		if (!IsAnyWindow())
@@ -1624,7 +1624,7 @@ namespace HiEasyX
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
 		}
-	}
+}
 
 	HWND initgraph_win32(int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)
 	{
