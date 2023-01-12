@@ -367,28 +367,19 @@ namespace HiEasyX
 		void PutPixel(int x, int y, COLORREF c);
 
 		/**
-		 * @brief  直接操作显存快速获取点
-		 * @param[in] x 位置
-		 * @param[in] y 位置
-		 * @return 目标点颜色
+		 * @brief  直接操作显存获取点
 		*/
-		COLORREF GetPixel_Fast(int x, int y);
+		COLORREF GetPixel_Direct(int x, int y);
 
 		/**
-		 * @brief 直接操作显存快速绘制点
-		 * @param[in] x 位置
-		 * @param[in] y 位置
-		 * @param[in] c 目标点颜色
+		 * @brief 直接操作显存绘制点
 		*/
-		void PutPixel_Fast(int x, int y, COLORREF c);
+		void PutPixel_Direct(int x, int y, COLORREF c);
 
 		/**
-		 * @brief 绘制带有透明度的点，透明度信息在 COLORREF 中
-		 * @param[in] x 位置
-		 * @param[in] y 位置
-		 * @param[in] c 目标点颜色
+		 * @brief 直接操作显存绘制带有透明度的点（使用 COLORREF 中的透明度）
 		*/
-		void PutPixel_Fast_Alpha(int x, int y, COLORREF c);
+		void PutPixel_Direct_Alpha(int x, int y, COLORREF c);
 
 		void Line(int x1, int y1, int x2, int y2, bool isSetColor = false, COLORREF c = 0);
 		void Line(POINT pt1, POINT pt2, bool isSetColor = false, COLORREF c = 0);

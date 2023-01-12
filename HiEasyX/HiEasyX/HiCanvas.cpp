@@ -665,7 +665,7 @@ namespace HiEasyX
 		}
 	}
 
-	COLORREF Canvas::GetPixel_Fast(int x, int y)
+	COLORREF Canvas::GetPixel_Direct(int x, int y)
 	{
 		if (BeginWindowTask())
 		{
@@ -676,7 +676,7 @@ namespace HiEasyX
 		return 0;
 	}
 
-	void Canvas::PutPixel_Fast(int x, int y, COLORREF c)
+	void Canvas::PutPixel_Direct(int x, int y, COLORREF c)
 	{
 		if (BeginWindowTask())
 		{
@@ -689,7 +689,7 @@ namespace HiEasyX
 		}
 	}
 
-	void Canvas::PutPixel_Fast_Alpha(int x, int y, COLORREF c)
+	void Canvas::PutPixel_Direct_Alpha(int x, int y, COLORREF c)
 	{
 		if (BeginWindowTask())
 		{
