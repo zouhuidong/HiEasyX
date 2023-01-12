@@ -55,7 +55,7 @@ namespace HiEasyX
 		/**
 		 * @brief 在创建控件前预设样式
 		*/
-		void PreSetEtyle(PreStyle pre_style);
+		void PreSetStyle(PreStyle pre_style);
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 

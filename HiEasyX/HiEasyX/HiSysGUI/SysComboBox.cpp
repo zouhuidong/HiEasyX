@@ -36,7 +36,7 @@ namespace HiEasyX
 		Create(hParent, x, y, w, h, strText);
 	}
 
-	void SysComboBox::PreSetEtyle(PreStyle pre_style)
+	void SysComboBox::PreSetStyle(PreStyle pre_style)
 	{
 		if (pre_style.always_show_list)
 		{
