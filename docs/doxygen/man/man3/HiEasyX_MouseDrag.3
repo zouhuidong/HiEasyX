@@ -1,0 +1,148 @@
+.TH "HiEasyX::MouseDrag" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::MouseDrag
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiMouseDrag\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateMessage\fP (ExMessage m)"
+.br
+.RI "更新鼠标消息 "
+.ti -1c
+.RI "bool \fBIsLeftDrag\fP ()"
+.br
+.RI "鼠标左键是否拖动 "
+.ti -1c
+.RI "bool \fBIsMiddleDrag\fP ()"
+.br
+.RI "鼠标中键是否拖动 "
+.ti -1c
+.RI "bool \fBIsRightDrag\fP ()"
+.br
+.RI "鼠标右键是否拖动 "
+.ti -1c
+.RI "int \fBGetDragX\fP ()"
+.br
+.RI "获取拖动的 x 坐标偏移量 "
+.ti -1c
+.RI "int \fBGetDragY\fP ()"
+.br
+.RI "获取拖动的 y 坐标偏移量 "
+.in -1c
+.SH "详细描述"
+.PP 
+
+.PP
+.nf
+
+    鼠标拖动事件处理器
+.fi
+.PP
+.PP
+.PP
+.nf
+ 调用方法：
+    1\&. 调用 UpdateMessage 更新鼠标消息
+    2\&. 调用 isLeftDrag，isMiddleDrag，isRightDrag 函数判断正在拖动的鼠标按键
+    3\&. 调用 GetDragX，GetDragY 获取鼠标拖动时鼠标坐标的变化量
+.fi
+.PP
+ 
+.PP
+在文件 HiMouseDrag\&.h 第 23 行定义\&.
+.SH "成员函数说明"
+.PP 
+.SS "int HiEasyX::MouseDrag::GetDragX ()"
+
+.PP
+获取拖动的 x 坐标偏移量 
+.PP
+在文件 HiMouseDrag\&.cpp 第 77 行定义\&.
+.PP
+.nf
+78     {
+79         return dx;
+80     }
+.fi
+.SS "int HiEasyX::MouseDrag::GetDragY ()"
+
+.PP
+获取拖动的 y 坐标偏移量 
+.PP
+在文件 HiMouseDrag\&.cpp 第 82 行定义\&.
+.PP
+.nf
+83     {
+84         return dy;
+85     }
+.fi
+.SS "bool HiEasyX::MouseDrag::IsLeftDrag ()"
+
+.PP
+鼠标左键是否拖动 
+.PP
+在文件 HiMouseDrag\&.cpp 第 56 行定义\&.
+.PP
+.nf
+57     {
+58         bool r = ldrag;
+59         ldrag = false;
+60         return r;
+61     }
+.fi
+.SS "bool HiEasyX::MouseDrag::IsMiddleDrag ()"
+
+.PP
+鼠标中键是否拖动 
+.PP
+在文件 HiMouseDrag\&.cpp 第 63 行定义\&.
+.PP
+.nf
+64     {
+65         bool r = mdrag;
+66         mdrag = false;
+67         return r;
+68     }
+.fi
+.SS "bool HiEasyX::MouseDrag::IsRightDrag ()"
+
+.PP
+鼠标右键是否拖动 
+.PP
+在文件 HiMouseDrag\&.cpp 第 70 行定义\&.
+.PP
+.nf
+71     {
+72         bool r = rdrag;
+73         rdrag = false;
+74         return r;
+75     }
+.fi
+.SS "void HiEasyX::MouseDrag::UpdateMessage (ExMessage m)"
+
+.PP
+更新鼠标消息 
+.PP
+在文件 HiMouseDrag\&.cpp 第 47 行定义\&.
+.PP
+.nf
+48     {
+49         msg = m;
+50         newmsg = true;
+51         ldrag = UpdateDragInfo(lbtn, WM_LBUTTONDOWN, WM_LBUTTONUP);
+52         mdrag = UpdateDragInfo(mbtn, WM_MBUTTONDOWN, WM_MBUTTONUP);
+53         rdrag = UpdateDragInfo(rbtn, WM_RBUTTONDOWN, WM_RBUTTONUP);
+54     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

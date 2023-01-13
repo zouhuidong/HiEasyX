@@ -1,0 +1,1385 @@
+.TH "HiEasyX::ControlBase" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::ControlBase \- 控件基础  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ControlBase\&.h>\fP
+.PP
+继承自 \fBHiEasyX::Container\fP \&.
+.PP
+被 \fBHiEasyX::Button\fP, \fBHiEasyX::Page\fP, \fBHiEasyX::ProgressCtrl\fP, \fBHiEasyX::ScrollBar\fP , 以及 \fBHiEasyX::Static\fP 继承\&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBControlBase\fP ()"
+.br
+.ti -1c
+.RI "\fBControlBase\fP (std::wstring wstrText)"
+.br
+.ti -1c
+.RI "\fBControlBase\fP (int x, int y, int w=0, int h=0, std::wstring wstrText=L'')"
+.br
+.ti -1c
+.RI "virtual \fB~ControlBase\fP ()"
+.br
+.ti -1c
+.RI "\fBControlBase\fP * \fBGetParent\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetParent\fP (\fBControlBase\fP *p)"
+.br
+.RI "设置父控件（父控件调用 AddChild） "
+.ti -1c
+.RI "virtual bool \fBIsAutoSizeForChild\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBEnableAutoSizeForChild\fP (bool enable)"
+.br
+.RI "为子控件自动改变大小以容纳控件（不容纳负坐标部分） "
+.ti -1c
+.RI "std::list< \fBControlBase\fP * > & \fBGetChildList\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBGetChildCount\fP ()"
+.br
+.RI "获取子控件总数 "
+.ti -1c
+.RI "virtual void \fBAddChild\fP (\fBControlBase\fP *p, int offset_x=0, int offset_y=0)"
+.br
+.ti -1c
+.RI "virtual void \fBRemoveChild\fP (\fBControlBase\fP *p)"
+.br
+.ti -1c
+.RI "virtual bool \fBIsEnabled\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetEnable\fP (bool enable)"
+.br
+.ti -1c
+.RI "virtual bool \fBIsVisible\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetVisible\fP (bool visible)"
+.br
+.ti -1c
+.RI "virtual bool \fBGetAutoRedrawState\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBEnableAutoRedraw\fP (bool enable)"
+.br
+.RI "启用自动重绘（接受到基础消息事件时自动标识需要重绘） "
+.ti -1c
+.RI "virtual \fBCanvas\fP & \fBGetCanvas\fP ()"
+.br
+.ti -1c
+.RI "virtual COLORREF \fBGetBkColor\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetBkColor\fP (COLORREF color)"
+.br
+.ti -1c
+.RI "virtual COLORREF \fBGetTextColor\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetTextColor\fP (COLORREF color)"
+.br
+.ti -1c
+.RI "virtual void \fBEnableBorder\fP (bool bEnableBorder, COLORREF color=BLACK, int thickness=1)"
+.br
+.ti -1c
+.RI "virtual void \fBSetAlpha\fP (BYTE alpha, bool bUseCanvasAlpha, bool isAlphaCalculated)"
+.br
+.ti -1c
+.RI "virtual std::wstring \fBGetText\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBSetText\fP (std::wstring wstr)"
+.br
+.ti -1c
+.RI "virtual void \fBDraw_Text\fP (int nTextOffsetX=0, int nTextOffsetY=0)"
+.br
+.ti -1c
+.RI "virtual void \fBRedraw\fP ()"
+.br
+.RI "重绘控件 "
+.ti -1c
+.RI "virtual void \fBDraw\fP (bool draw_child=true)"
+.br
+.RI "绘制控件 "
+.ti -1c
+.RI "virtual void \fBRender\fP (\fBCanvas\fP *dst, RECT *pRct=nullptr, int *pCount=0)"
+.br
+.RI "渲染控件到外部 "
+.ti -1c
+.RI "virtual void \fBSetMsgProcFunc\fP (\fBMESSAGE_PROC_FUNC\fP func)"
+.br
+.RI "设置消息响应函数 "
+.ti -1c
+.RI "virtual void \fBSetMsgProcFunc\fP (\fBMESSAGE_PROC_FUNC_CLASS\fP static_class_func, void *_this)"
+.br
+.RI "设置消息响应函数为静态类函数 "
+.ti -1c
+.RI "virtual void \fBUpdateMessage\fP (ExMessage msg)"
+.br
+.RI "更新消息 "
+.ti -1c
+.RI "virtual bool \fBIsHovered\fP () const"
+.br
+.RI "判断鼠标是否悬停 "
+.ti -1c
+.RI "virtual bool \fBIsFocused\fP () const"
+.br
+.RI "判断是否拥有焦点 "
+.ti -1c
+.RI "virtual bool \fBIsPressed\fP () const"
+.br
+.RI "判断是否按下 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateRect\fP (RECT rctOld) override"
+.br
+.RI "更新区域消息处理 "
+.ti -1c
+.RI "void \fBMarkNeedRedrawAndRender\fP ()"
+.br
+.RI "标记需要重绘和渲染 "
+.ti -1c
+.RI "void \fBMarkNeedClearRect\fP (RECT rct)"
+.br
+.RI "标记需要清空矩形区域 "
+.ti -1c
+.RI "virtual void \fBDrawChild\fP ()"
+.br
+.RI "绘制子控件 "
+.ti -1c
+.RI "virtual ExMessage & \fBTransformMessage\fP (ExMessage &msg)"
+.br
+.RI "转换消息 "
+.ti -1c
+.RI "virtual void \fBCallUserMsgProcFunc\fP (int msgid, ExMessage msg)"
+.br
+.RI "分发消息到用户函数 "
+.ti -1c
+.RI "virtual void \fBChildRectChanged\fP (\fBControlBase\fP *pChild)"
+.br
+.RI "子控件区域变更 "
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_bEnabled\fP = true"
+.br
+.RI "是否可用 "
+.ti -1c
+.RI "bool \fBm_bVisible\fP = true"
+.br
+.RI "是否可见 "
+.ti -1c
+.RI "bool \fBm_bAutoRedrawWhenReceiveMsg\fP = true"
+.br
+.RI "当默认消息处理函数接受到消息时，是否自动标识重绘和渲染 "
+.ti -1c
+.RI "bool \fBm_bRedraw\fP = true"
+.br
+.RI "标识需要重绘 "
+.ti -1c
+.RI "bool \fBm_bRender\fP = true"
+.br
+.RI "标识需要渲染 "
+.ti -1c
+.RI "bool \fBm_bClear\fP = false"
+.br
+.RI "标识需要清空某区域 "
+.ti -1c
+.RI "RECT \fBm_rctClear\fP = { 0 }"
+.br
+.RI "记录需要清空的区域 "
+.ti -1c
+.RI "bool \fBm_bAlwaysRedrawAndRender\fP = false"
+.br
+.RI "总是重绘和渲染（占用更高） "
+.ti -1c
+.RI "std::wstring \fBm_wstrText\fP"
+.br
+.RI "控件文本 "
+.ti -1c
+.RI "\fBCanvas\fP \fBm_canvas\fP"
+.br
+.RI "画布 "
+.ti -1c
+.RI "BYTE \fBm_alpha\fP = 255"
+.br
+.RI "透明度 "
+.ti -1c
+.RI "bool \fBm_bUseCanvasAlpha\fP = false"
+.br
+.RI "是否使用画布自身的透明度信息 "
+.ti -1c
+.RI "bool \fBm_isAlphaCalculated\fP = false"
+.br
+.RI "画布是否已经计算透明混合颜色 "
+.ti -1c
+.RI "COLORREF \fBm_cBorder\fP = \fBMODERN_BORDER_GRAY\fP"
+.br
+.RI "边框颜色 "
+.ti -1c
+.RI "COLORREF \fBm_cBackground\fP = \fBCLASSICGRAY\fP"
+.br
+.RI "背景色 "
+.ti -1c
+.RI "COLORREF \fBm_cText\fP = BLACK"
+.br
+.RI "文本颜色 "
+.ti -1c
+.RI "bool \fBm_bEnableBorder\fP = true"
+.br
+.RI "是否绘制边框 "
+.ti -1c
+.RI "int \fBm_nBorderThickness\fP = 1"
+.br
+.RI "边框粗细 "
+.ti -1c
+.RI "bool \fBm_bCompleteFirstSetRect\fP = false"
+.br
+.RI "是否已经完成第一次设置区域 "
+.ti -1c
+.RI "\fBControlBase\fP * \fBm_pParent\fP = nullptr"
+.br
+.RI "父控件 "
+.ti -1c
+.RI "std::list< \fBControlBase\fP * > \fBm_listChild\fP"
+.br
+.RI "子控件 "
+.ti -1c
+.RI "bool \fBm_bAutoSizeForChild\fP = false"
+.br
+.RI "为子控件自动改变大小以容纳控件 "
+.ti -1c
+.RI "\fBMESSAGE_PROC_FUNC\fP \fBm_funcMessageProc\fP = nullptr"
+.br
+.RI "消息处理函数 "
+.ti -1c
+.RI "\fBMESSAGE_PROC_FUNC_CLASS\fP \fBm_funcMessageProc_Class\fP = nullptr"
+.br
+.RI "若绑定的消息处理函数是静态类函数，则记录其地址 "
+.ti -1c
+.RI "void * \fBm_pCalledClass\fP = nullptr"
+.br
+.RI "若绑定的消息处理函数是静态类函数，则记录该类指针 "
+.ti -1c
+.RI "bool \fBm_bHovered\fP = false"
+.br
+.RI "鼠标是否悬停 "
+.ti -1c
+.RI "bool \fBm_bPressed\fP = false"
+.br
+.RI "鼠标是否按下 "
+.ti -1c
+.RI "bool \fBm_bFocused\fP = false"
+.br
+.RI "是否拥有焦点 "
+.in -1c
+.SH "详细描述"
+.PP 
+控件基础 
+.PP
+在文件 ControlBase\&.h 第 52 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::ControlBase::ControlBase ()"
+
+.PP
+在文件 ControlBase\&.cpp 第 14 行定义\&.
+.PP
+.nf
+15     {
+16         Init();
+17     }
+.fi
+.SS "HiEasyX::ControlBase::ControlBase (std::wstring wstrText)"
+
+.PP
+在文件 ControlBase\&.cpp 第 19 行定义\&.
+.PP
+.nf
+20     {
+21         Init();
+22         SetText(wstrText);
+23     }
+.fi
+.SS "HiEasyX::ControlBase::ControlBase (int x, int y, int w = \fC0\fP, int h = \fC0\fP, std::wstring wstrText = \fCL''\fP)"
+
+.PP
+在文件 ControlBase\&.cpp 第 25 行定义\&.
+.PP
+.nf
+26     {
+27         Init();
+28         SetRect(x, y, w, h);
+29         SetText(wstrText);
+30     }
+.fi
+.SS "HiEasyX::ControlBase::~ControlBase ()\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 32 行定义\&.
+.PP
+.nf
+33     {
+34     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::ControlBase::AddChild (\fBControlBase\fP * p, int offset_x = \fC0\fP, int offset_y = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 118 行定义\&.
+.PP
+.nf
+119     {
+120         for (auto& child : m_listChild)
+121             if (child == p)
+122                 return;
+123         p->MoveRel(offset_x, offset_y);
+124         p->m_pParent = this;
+125         m_listChild\&.push_back(p);
+126         ChildRectChanged(p);
+127 
+128         MarkNeedRedrawAndRender();
+129     }
+.fi
+.SS "void HiEasyX::ControlBase::CallUserMsgProcFunc (int msgid, ExMessage msg)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+分发消息到用户函数 
+.PP
+\fB参数\fP
+.RS 4
+\fImsgid\fP 消息 ID 
+.br
+\fImsg\fP 消息内容 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 368 行定义\&.
+.PP
+.nf
+369     {
+370         if (m_funcMessageProc)
+371         {
+372             m_funcMessageProc(this, msgid, msg);
+373         }
+374         else if (m_funcMessageProc_Class)
+375         {
+376             m_funcMessageProc_Class(m_pCalledClass, this, msgid, msg);
+377         }
+378     }
+.fi
+.SS "void HiEasyX::ControlBase::ChildRectChanged (\fBControlBase\fP * pChild)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+子控件区域变更 
+.PP
+\fB参数\fP
+.RS 4
+\fIpChild\fP 区域变更的子控件 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 380 行定义\&.
+.PP
+.nf
+381     {
+382         if (m_bAutoSizeForChild)
+383         {
+384             int _w = GetWidth(), _h = GetHeight();
+385             if (pChild->m_rct\&.right > _w)        _w += pChild->m_rct\&.right - _w;
+386             if (pChild->m_rct\&.bottom > _h)       _h += pChild->m_rct\&.bottom - _h;
+387             Resize(_w, _h);
+388         }
+389     }
+.fi
+.SS "void HiEasyX::ControlBase::Draw (bool draw_child = \fCtrue\fP)\fC [virtual]\fP"
+
+.PP
+绘制控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIdraw_child\fP 是否绘制子控件 
+.RE
+.PP
+
+.PP
+被 \fBHiEasyX::ScrollBar\fP, \fBHiEasyX::ProgressCtrl\fP, \fBHiEasyX::Static\fP , 以及 \fBHiEasyX::Button\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 224 行定义\&.
+.PP
+.nf
+225     {
+226         if (m_bRedraw || m_bAlwaysRedrawAndRender)
+227         {
+228             m_canvas\&.SetLineThickness(m_nBorderThickness);
+229             m_canvas\&.FillRectangle(
+230                 0, 0, GetWidth() - 1, GetHeight() - 1,
+231                 true, m_bEnableBorder ? m_cBorder : m_cBackground, m_cBackground
+232             );
+233 
+234             if (!m_bAlwaysRedrawAndRender)
+235             {
+236                 m_bRedraw = false;
+237             }
+238         }
+239 
+240         if (draw_child)
+241         {
+242             DrawChild();
+243         }
+244     }
+.fi
+.SS "void HiEasyX::ControlBase::Draw_Text (int nTextOffsetX = \fC0\fP, int nTextOffsetY = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+被 \fBHiEasyX::Static\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 205 行定义\&.
+.PP
+.nf
+206     {
+207         m_canvas\&.SetBkColor(m_cBackground);
+208         m_canvas\&.SetTextColor(m_cText);
+209         int w = m_canvas\&.TextWidth(m_wstrText\&.c_str());
+210         int h = m_canvas\&.TextHeight(m_wstrText\&.c_str());
+211         m_canvas\&.OutTextXY(
+212             (GetWidth() - w) / 2 + nTextOffsetX,
+213             (GetHeight() - h) / 2 + nTextOffsetY,
+214             m_wstrText\&.c_str()
+215         );
+216     }
+.fi
+.SS "void HiEasyX::ControlBase::DrawChild ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+绘制子控件 
+.PP
+在文件 ControlBase\&.cpp 第 246 行定义\&.
+.PP
+.nf
+247     {
+248         for (auto& child : m_listChild)
+249         {
+250             child->Draw();
+251         }
+252     }
+.fi
+.SS "void HiEasyX::ControlBase::EnableAutoRedraw (bool enable)\fC [virtual]\fP"
+
+.PP
+启用自动重绘（接受到基础消息事件时自动标识需要重绘） 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 154 行定义\&.
+.PP
+.nf
+155     {
+156         m_bAutoRedrawWhenReceiveMsg = enable;
+157     }
+.fi
+.SS "void HiEasyX::ControlBase::EnableAutoSizeForChild (bool enable)\fC [virtual]\fP"
+
+.PP
+为子控件自动改变大小以容纳控件（不容纳负坐标部分） 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 100 行定义\&.
+.PP
+.nf
+101     {
+102         m_bAutoSizeForChild = enable;
+103     }
+.fi
+.SS "void HiEasyX::ControlBase::EnableBorder (bool bEnableBorder, COLORREF color = \fCBLACK\fP, int thickness = \fC1\fP)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 175 行定义\&.
+.PP
+.nf
+176     {
+177         m_bEnableBorder = bEnableBorder;
+178         if (bEnableBorder)
+179         {
+180             m_cBorder = color;
+181             m_nBorderThickness = thickness;
+182 
+183             m_canvas\&.SetLineColor(m_cBorder);
+184         }
+185 
+186         MarkNeedRedrawAndRender();
+187     }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::GetAutoRedrawState () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 187 行定义\&.
+.PP
+.nf
+187 { return m_bAutoRedrawWhenReceiveMsg; }
+.fi
+.SS "virtual COLORREF HiEasyX::ControlBase::GetBkColor () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 197 行定义\&.
+.PP
+.nf
+197 { return m_cBackground; }
+.fi
+.SS "virtual \fBCanvas\fP& HiEasyX::ControlBase::GetCanvas ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 195 行定义\&.
+.PP
+.nf
+195 { return m_canvas; }
+.fi
+.SS "size_t HiEasyX::ControlBase::GetChildCount ()"
+
+.PP
+获取子控件总数 
+.PP
+在文件 ControlBase\&.cpp 第 110 行定义\&.
+.PP
+.nf
+111     {
+112         size_t sum = m_listChild\&.size();
+113         for (auto& child : m_listChild)
+114             sum += child->GetChildCount();
+115         return sum;
+116     }
+.fi
+.SS "std::list< \fBControlBase\fP * > & HiEasyX::ControlBase::GetChildList ()"
+
+.PP
+在文件 ControlBase\&.cpp 第 105 行定义\&.
+.PP
+.nf
+106     {
+107         return m_listChild;
+108     }
+.fi
+.SS "\fBControlBase\fP* HiEasyX::ControlBase::GetParent ()\fC [inline]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 152 行定义\&.
+.PP
+.nf
+152 { return m_pParent; }
+.fi
+.SS "virtual std::wstring HiEasyX::ControlBase::GetText () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 209 行定义\&.
+.PP
+.nf
+209 { return m_wstrText; }
+.fi
+.SS "virtual COLORREF HiEasyX::ControlBase::GetTextColor () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 201 行定义\&.
+.PP
+.nf
+201 { return m_cText; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsAutoSizeForChild () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 160 行定义\&.
+.PP
+.nf
+160 { return m_bAutoSizeForChild; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsEnabled () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 179 行定义\&.
+.PP
+.nf
+179 { return m_bEnabled; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsFocused () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+判断是否拥有焦点 
+.PP
+在文件 ControlBase\&.h 第 261 行定义\&.
+.PP
+.nf
+261 { return m_bFocused; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsHovered () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+判断鼠标是否悬停 
+.PP
+在文件 ControlBase\&.h 第 256 行定义\&.
+.PP
+.nf
+256 { return m_bHovered; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsPressed () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+判断是否按下 
+.PP
+在文件 ControlBase\&.h 第 266 行定义\&.
+.PP
+.nf
+266 { return m_bPressed; }
+.fi
+.SS "virtual bool HiEasyX::ControlBase::IsVisible () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.h 第 183 行定义\&.
+.PP
+.nf
+183 { return m_bVisible; }
+.fi
+.SS "void HiEasyX::ControlBase::MarkNeedClearRect (RECT rct)\fC [protected]\fP"
+
+.PP
+标记需要清空矩形区域 
+.PP
+\fB参数\fP
+.RS 4
+\fIrct\fP 需要清空的区域 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 72 行定义\&.
+.PP
+.nf
+73     {
+74         m_bClear = true;
+75         m_rctClear = rct;
+76     }
+.fi
+.SS "void HiEasyX::ControlBase::MarkNeedRedrawAndRender ()\fC [protected]\fP"
+
+.PP
+标记需要重绘和渲染 
+.PP
+在文件 ControlBase\&.cpp 第 62 行定义\&.
+.PP
+.nf
+63     {
+64         m_bRedraw = true;
+65         m_bRender = true;
+66 
+67         // 重绘后，渲染时也要渲染子控件，否则会覆盖
+68         for (auto& child : m_listChild)
+69             child->m_bRender = true;
+70     }
+.fi
+.SS "void HiEasyX::ControlBase::Redraw ()\fC [virtual]\fP"
+
+.PP
+重绘控件 
+.PP
+在文件 ControlBase\&.cpp 第 218 行定义\&.
+.PP
+.nf
+219     {
+220         MarkNeedRedrawAndRender();
+221         Draw();
+222     }
+.fi
+.SS "void HiEasyX::ControlBase::RemoveChild (\fBControlBase\fP * p)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 131 行定义\&.
+.PP
+.nf
+132     {
+133         m_listChild\&.remove(p);
+134 
+135         MarkNeedRedrawAndRender();
+136     }
+.fi
+.SS "void HiEasyX::ControlBase::Render (\fBCanvas\fP * dst, RECT * pRct = \fCnullptr\fP, int * pCount = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+渲染控件到外部 
+.PP
+\fB参数\fP
+.RS 4
+\fIdst\fP 渲染目标 
+.br
+\fIpRct\fP 内部使用，传入父控件渲染区域数组 
+.br
+\fIpCount\fP 内部使用，传入父控件渲染区域数量指针 
+.RE
+.PP
+
+.PP
+被 \fBHiEasyX::Page\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 254 行定义\&.
+.PP
+.nf
+255     {
+256         // 当前控件获取到的重绘矩形记录
+257         size_t size = m_bRender ? 1 : GetChildCount();  // 若自身需要绘制，则只需要记录一个矩形
+258         RECT* my_rct = new RECT[size];
+259         int my_count = 0;                               // 当前控件获取到的重绘区域数量统计
+260 
+261         // 为当前控件的子控件执行清除任务
+262         // 必须在 Render 前执行，否则可能覆盖效果
+263         for (auto& child : m_listChild)
+264         {
+265             if (child->m_bClear)
+266             {
+267                 m_canvas\&.ClearRectangle(child->m_rctClear);
+268                 MOVE_RECT(child->m_rctClear, m_rct\&.left, m_rct\&.top);
+269                 dst->ClearRectangle(child->m_rctClear);
+270 
+271                 child->m_bClear = false;
+272                 child->m_rctClear = { 0 };
+273             }
+274         }
+275 
+276         // 控件必须可显示才渲染
+277         if (m_bVisible)
+278         {
+279             // 子控件可能很多，开启批量绘制
+280             m_canvas\&.BeginBatchDrawing();
+281 
+282             // 如果自身需要渲染，则只需要记录自身矩形
+283             if (m_bRender || m_bAlwaysRedrawAndRender)
+284             {
+285                 // 子控件先绘制到此控件画布上，再绘制到 dst
+286                 for (auto& child : m_listChild)
+287                     child->Render(&m_canvas);
+288 
+289                 my_rct[my_count++] = { 0,0,GetWidth(),GetHeight() };
+290 
+291                 if (!m_bAlwaysRedrawAndRender)
+292                     m_bRender = false;
+293             }
+294 
+295             // 若自身不渲染，则必须记录子控件渲染区域
+296             else
+297             {
+298                 for (auto& child : m_listChild)
+299                 {
+300                     child->Render(&m_canvas, my_rct, &my_count);
+301                 }
+302             }
+303 
+304             m_canvas\&.EndBatchDrawing();
+305 
+306             // 渲染有更新的区域
+307             for (int i = 0; i < my_count; i++)
+308             {
+309                 dst->PutImageIn_Alpha(
+310                     m_rct\&.left, m_rct\&.top,
+311                     &m_canvas,
+312                     my_rct[i],
+313                     m_alpha, m_bUseCanvasAlpha, m_isAlphaCalculated
+314                 );
+315             }
+316 
+317             // 为了返回区域信息给父控件，需要转换区域坐标参考系
+318             if (pRct)
+319             {
+320                 for (int i = 0; i < my_count; i++)
+321                 {
+322                     MOVE_RECT(my_rct[i], m_rct\&.left, m_rct\&.top);
+323                     pRct[(*pCount)++] = my_rct[i];
+324                 }
+325             }
+326         }
+327 
+328         delete[] my_rct;
+329 
+330         /*for (auto& child : m_listChild)
+331             child->Render(&m_canvas);
+332         dst->PutImageIn_Alpha(
+333             m_rct\&.left, m_rct\&.top,
+334             &m_canvas,
+335             { 0 },
+336             m_alpha, m_bUseCanvasAlpha, m_isAlphaCalculated
+337         );*/
+338     }
+.fi
+.SS "void HiEasyX::ControlBase::SetAlpha (BYTE alpha, bool bUseCanvasAlpha, bool isAlphaCalculated)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 189 行定义\&.
+.PP
+.nf
+190     {
+191         m_alpha = alpha;
+192         m_bUseCanvasAlpha = bUseCanvasAlpha;
+193         m_isAlphaCalculated = isAlphaCalculated;
+194 
+195         MarkNeedRedrawAndRender();
+196     }
+.fi
+.SS "void HiEasyX::ControlBase::SetBkColor (COLORREF color)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 159 行定义\&.
+.PP
+.nf
+160     {
+161         m_cBackground = color;
+162         m_canvas\&.SetBkColor(color);
+163 
+164         MarkNeedRedrawAndRender();
+165     }
+.fi
+.SS "void HiEasyX::ControlBase::SetEnable (bool enable)\fC [virtual]\fP"
+
+.PP
+被 \fBHiEasyX::Button\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 78 行定义\&.
+.PP
+.nf
+79     {
+80         m_bEnabled = enable;
+81 
+82         MarkNeedRedrawAndRender();
+83     }
+.fi
+.SS "void HiEasyX::ControlBase::SetMsgProcFunc (\fBMESSAGE_PROC_FUNC\fP func)\fC [virtual]\fP"
+
+.PP
+设置消息响应函数 
+.PP
+\fB参数\fP
+.RS 4
+\fIfunc\fP 消息响应函数 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 340 行定义\&.
+.PP
+.nf
+341     {
+342         m_funcMessageProc = func;
+343         m_funcMessageProc_Class = nullptr;
+344         m_pCalledClass = nullptr;
+345     }
+.fi
+.SS "void HiEasyX::ControlBase::SetMsgProcFunc (\fBMESSAGE_PROC_FUNC_CLASS\fP static_class_func, void * _this)\fC [virtual]\fP"
+
+.PP
+设置消息响应函数为静态类函数 
+.PP
+\fB参数\fP
+.RS 4
+\fIstatic_class_func\fP 消息响应函数（静态类函数） 
+.br
+\fI_this\fP 类指针 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 347 行定义\&.
+.PP
+.nf
+348     {
+349         m_funcMessageProc = nullptr;
+350         m_funcMessageProc_Class = static_class_func;
+351         m_pCalledClass = _this;
+352     }
+.fi
+.SS "void HiEasyX::ControlBase::SetParent (\fBControlBase\fP * p)\fC [virtual]\fP"
+
+.PP
+设置父控件（父控件调用 AddChild） 
+.PP
+\fB参数\fP
+.RS 4
+\fIp\fP 父控件 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 85 行定义\&.
+.PP
+.nf
+86     {
+87         if (m_pParent)
+88         {
+89             m_pParent->RemoveChild(this);
+90         }
+91         if (p)
+92         {
+93             m_pParent = p;
+94             p->AddChild(this);
+95         }
+96 
+97         MarkNeedRedrawAndRender();
+98     }
+.fi
+.SS "void HiEasyX::ControlBase::SetText (std::wstring wstr)\fC [virtual]\fP"
+
+.PP
+被 \fBHiEasyX::Static\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 198 行定义\&.
+.PP
+.nf
+199     {
+200         m_wstrText = wstr;
+201 
+202         MarkNeedRedrawAndRender();
+203     }
+.fi
+.SS "void HiEasyX::ControlBase::SetTextColor (COLORREF color)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 167 行定义\&.
+.PP
+.nf
+168     {
+169         m_cText = color;
+170         m_canvas\&.SetTextColor(color);
+171 
+172         MarkNeedRedrawAndRender();
+173     }
+.fi
+.SS "void HiEasyX::ControlBase::SetVisible (bool visible)\fC [virtual]\fP"
+
+.PP
+在文件 ControlBase\&.cpp 第 138 行定义\&.
+.PP
+.nf
+139     {
+140         m_bVisible = bVisible;
+141 
+142         // 设为可见时重新渲染
+143         if (m_bVisible)
+144         {
+145             m_bRender = true;
+146         }
+147         // 设为不可见时清除
+148         else
+149         {
+150             MarkNeedClearRect(m_rct);
+151         }
+152     }
+.fi
+.SS "ExMessage & HiEasyX::ControlBase::TransformMessage (ExMessage & msg)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+转换消息 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 要转换的消息 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+转换后的消息 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.cpp 第 354 行定义\&.
+.PP
+.nf
+355     {
+356         switch (GetExMessageType(msg))
+357         {
+358         case EM_MOUSE:
+359             msg\&.x -= GetX();
+360             msg\&.y -= GetY();
+361             break;
+362         default:
+363             break;
+364         }
+365         return msg;
+366     }
+.fi
+.SS "void HiEasyX::ControlBase::UpdateMessage (ExMessage msg)\fC [virtual]\fP"
+
+.PP
+更新消息 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.RE
+.PP
+
+.PP
+被 \fBHiEasyX::ScrollBar\fP , 以及 \fBHiEasyX::Button\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 391 行定义\&.
+.PP
+.nf
+392     {
+393         if (m_bVisible && m_bEnabled)
+394         {
+395             TransformMessage(msg);
+396 
+397             // 标识该消息是否值得重绘
+398             bool msg_worth_redraw = false;
+399 
+400             // 鼠标在区域内
+401             if (IsInRect(msg\&.x, msg\&.y, { 0,0,GetWidth(),GetHeight() }))
+402             {
+403                 // 鼠标移入
+404                 if (!m_bHovered)
+405                 {
+406                     m_bHovered = true;
+407                     CallUserMsgProcFunc(CM_HOVER, msg);
+408                 }
+409 
+410                 switch (msg\&.message)
+411                 {
+412                 case WM_LBUTTONDOWN:
+413                 {
+414                     m_bPressed = true;
+415                     CallUserMsgProcFunc(CM_PRESS, msg);
+416                     if (!m_bFocused)
+417                     {
+418                         m_bFocused = true;
+419                         CallUserMsgProcFunc(CM_FOCUS, msg);
+420                     }
+421                 }
+422                 break;
+423 
+424                 case WM_LBUTTONUP:
+425                 {
+426                     m_bPressed = false;
+427                     if (m_bFocused)
+428                     {
+429                         CallUserMsgProcFunc(CM_PRESS_OVER, msg);
+430                         CallUserMsgProcFunc(CM_CLICK, msg);
+431                     }
+432                 }
+433                 break;
+434 
+435                 case WM_LBUTTONDBLCLK:
+436                 {
+437                     CallUserMsgProcFunc(CM_DOUBLE_CLICK, msg);
+438                 }
+439                 break;
+440 
+441                 default:
+442                 {
+443                     CallUserMsgProcFunc(CM_OTHER, msg);
+444                 }
+445                 break;
+446 
+447                 }
+448 
+449                 msg_worth_redraw = true;
+450             }
+451 
+452             // 鼠标不在区域内
+453             else
+454             {
+455                 // 移出
+456                 if (m_bHovered)
+457                 {
+458                     m_bHovered = false;
+459                     CallUserMsgProcFunc(CM_HOVER_OVER, msg);
+460 
+461                     msg_worth_redraw = true;
+462                 }
+463 
+464                 // 离开区域，按下失效
+465                 if (m_bPressed)
+466                 {
+467                     m_bPressed = false;
+468                     CallUserMsgProcFunc(CM_PRESS_OVER, msg);
+469 
+470                     msg_worth_redraw = true;
+471                 }
+472 
+473                 switch (msg\&.message)
+474                 {
+475                 case WM_LBUTTONDOWN:
+476                 {
+477                     if (m_bFocused)
+478                     {
+479                         m_bFocused = false;
+480                         CallUserMsgProcFunc(CM_FOCUS_OVER, msg);
+481 
+482                         msg_worth_redraw = true;
+483                     }
+484                 }
+485                 break;
+486 
+487                 default:
+488                 {
+489                     CallUserMsgProcFunc(CM_OTHER, msg);
+490                 }
+491                 break;
+492 
+493                 }
+494             }
+495 
+496             // 默认重绘，且满足条件
+497             if (m_bAutoRedrawWhenReceiveMsg && msg_worth_redraw)
+498             {
+499                 MarkNeedRedrawAndRender();
+500             }
+501 
+502             for (auto& child : m_listChild)
+503             {
+504                 child->UpdateMessage(msg);
+505             }
+506         }
+507     }
+.fi
+.SS "void HiEasyX::ControlBase::UpdateRect (RECT rctOld)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+更新区域消息处理 
+.PP
+\fB参数\fP
+.RS 4
+\fIrctOld\fP 旧区域 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::Container\fP \&.
+.PP
+被 \fBHiEasyX::ScrollBar\fP 重载\&.
+.PP
+在文件 ControlBase\&.cpp 第 36 行定义\&.
+.PP
+.nf
+37     {
+38         Container::UpdateRect(rctOld);
+39 
+40         m_canvas\&.Resize(GetWidth(), GetHeight());
+41 
+42         // 标识重绘和渲染
+43         MarkNeedRedrawAndRender();
+44 
+45         // 不是第一次设置位置时，需要清除旧区域
+46         if (m_bCompleteFirstSetRect)
+47         {
+48             // 标识清空旧区域
+49             MarkNeedClearRect(rctOld);
+50         }
+51         else
+52         {
+53             m_bCompleteFirstSetRect = true;
+54         }
+55 
+56         if (m_pParent)
+57         {
+58             m_pParent->ChildRectChanged(this);
+59         }
+60     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "BYTE HiEasyX::ControlBase::m_alpha = 255\fC [protected]\fP"
+
+.PP
+透明度 
+.PP
+在文件 ControlBase\&.h 第 70 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bAlwaysRedrawAndRender = false\fC [protected]\fP"
+
+.PP
+总是重绘和渲染（占用更高） 
+.PP
+在文件 ControlBase\&.h 第 65 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bAutoRedrawWhenReceiveMsg = true\fC [protected]\fP"
+
+.PP
+当默认消息处理函数接受到消息时，是否自动标识重绘和渲染 
+.PP
+在文件 ControlBase\&.h 第 60 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bAutoSizeForChild = false\fC [protected]\fP"
+
+.PP
+为子控件自动改变大小以容纳控件 
+.PP
+在文件 ControlBase\&.h 第 86 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bClear = false\fC [protected]\fP"
+
+.PP
+标识需要清空某区域 
+.PP
+在文件 ControlBase\&.h 第 63 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bCompleteFirstSetRect = false\fC [protected]\fP"
+
+.PP
+是否已经完成第一次设置区域 
+.PP
+在文件 ControlBase\&.h 第 81 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bEnableBorder = true\fC [protected]\fP"
+
+.PP
+是否绘制边框 
+.PP
+在文件 ControlBase\&.h 第 78 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bEnabled = true\fC [protected]\fP"
+
+.PP
+是否可用 
+.PP
+在文件 ControlBase\&.h 第 56 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bFocused = false\fC [protected]\fP"
+
+.PP
+是否拥有焦点 
+.PP
+在文件 ControlBase\&.h 第 94 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bHovered = false\fC [protected]\fP"
+
+.PP
+鼠标是否悬停 
+.PP
+在文件 ControlBase\&.h 第 92 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bPressed = false\fC [protected]\fP"
+
+.PP
+鼠标是否按下 
+.PP
+在文件 ControlBase\&.h 第 93 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bRedraw = true\fC [protected]\fP"
+
+.PP
+标识需要重绘 
+.PP
+在文件 ControlBase\&.h 第 61 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bRender = true\fC [protected]\fP"
+
+.PP
+标识需要渲染 
+.PP
+在文件 ControlBase\&.h 第 62 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bUseCanvasAlpha = false\fC [protected]\fP"
+
+.PP
+是否使用画布自身的透明度信息 
+.PP
+在文件 ControlBase\&.h 第 71 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_bVisible = true\fC [protected]\fP"
+
+.PP
+是否可见 
+.PP
+在文件 ControlBase\&.h 第 57 行定义\&.
+.SS "\fBCanvas\fP HiEasyX::ControlBase::m_canvas\fC [protected]\fP"
+
+.PP
+画布 
+.PP
+在文件 ControlBase\&.h 第 69 行定义\&.
+.SS "COLORREF HiEasyX::ControlBase::m_cBackground = \fBCLASSICGRAY\fP\fC [protected]\fP"
+
+.PP
+背景色 
+.PP
+在文件 ControlBase\&.h 第 75 行定义\&.
+.SS "COLORREF HiEasyX::ControlBase::m_cBorder = \fBMODERN_BORDER_GRAY\fP\fC [protected]\fP"
+
+.PP
+边框颜色 
+.PP
+在文件 ControlBase\&.h 第 74 行定义\&.
+.SS "COLORREF HiEasyX::ControlBase::m_cText = BLACK\fC [protected]\fP"
+
+.PP
+文本颜色 
+.PP
+在文件 ControlBase\&.h 第 76 行定义\&.
+.SS "\fBMESSAGE_PROC_FUNC\fP HiEasyX::ControlBase::m_funcMessageProc = nullptr\fC [protected]\fP"
+
+.PP
+消息处理函数 
+.PP
+在文件 ControlBase\&.h 第 88 行定义\&.
+.SS "\fBMESSAGE_PROC_FUNC_CLASS\fP HiEasyX::ControlBase::m_funcMessageProc_Class = nullptr\fC [protected]\fP"
+
+.PP
+若绑定的消息处理函数是静态类函数，则记录其地址 
+.PP
+在文件 ControlBase\&.h 第 89 行定义\&.
+.SS "bool HiEasyX::ControlBase::m_isAlphaCalculated = false\fC [protected]\fP"
+
+.PP
+画布是否已经计算透明混合颜色 
+.PP
+在文件 ControlBase\&.h 第 72 行定义\&.
+.SS "std::list<\fBControlBase\fP*> HiEasyX::ControlBase::m_listChild\fC [protected]\fP"
+
+.PP
+子控件 
+.PP
+在文件 ControlBase\&.h 第 84 行定义\&.
+.SS "int HiEasyX::ControlBase::m_nBorderThickness = 1\fC [protected]\fP"
+
+.PP
+边框粗细 
+.PP
+在文件 ControlBase\&.h 第 79 行定义\&.
+.SS "void* HiEasyX::ControlBase::m_pCalledClass = nullptr\fC [protected]\fP"
+
+.PP
+若绑定的消息处理函数是静态类函数，则记录该类指针 
+.PP
+在文件 ControlBase\&.h 第 90 行定义\&.
+.SS "\fBControlBase\fP* HiEasyX::ControlBase::m_pParent = nullptr\fC [protected]\fP"
+
+.PP
+父控件 
+.PP
+在文件 ControlBase\&.h 第 83 行定义\&.
+.SS "RECT HiEasyX::ControlBase::m_rctClear = { 0 }\fC [protected]\fP"
+
+.PP
+记录需要清空的区域 
+.PP
+在文件 ControlBase\&.h 第 64 行定义\&.
+.SS "std::wstring HiEasyX::ControlBase::m_wstrText\fC [protected]\fP"
+
+.PP
+控件文本 
+.PP
+在文件 ControlBase\&.h 第 67 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

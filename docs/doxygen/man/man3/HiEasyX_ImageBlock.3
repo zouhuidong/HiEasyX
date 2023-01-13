@@ -1,0 +1,335 @@
+.TH "HiEasyX::ImageBlock" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::ImageBlock \- 图像块  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiCanvas\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBImageBlock\fP ()"
+.br
+.ti -1c
+.RI "\fBImageBlock\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "\fBImageBlock\fP (int _x, int _y, \fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "\fBImageBlock\fP (int _x, int _y, int w, int h, COLORREF cBk=0)"
+.br
+.RI "新建画布 "
+.ti -1c
+.RI "virtual \fB~ImageBlock\fP ()"
+.br
+.ti -1c
+.RI "\fBCanvas\fP * \fBCreateCanvas\fP (int w, int h, COLORREF cBk=0)"
+.br
+.RI "不绑定外部画布，直接新建画布 "
+.ti -1c
+.RI "\fBCanvas\fP * \fBGetCanvas\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetCanvas\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "int \fBGetWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetHeight\fP () const"
+.br
+.ti -1c
+.RI "POINT \fBGetPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetPos\fP (int _x, int _y)"
+.br
+.ti -1c
+.RI "virtual void \fBRender\fP (IMAGE *pImg, BYTE _alpha)"
+.br
+.RI "绘制到画布 "
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "int \fBx\fP = 0"
+.br
+.ti -1c
+.RI "int \fBy\fP = 0"
+.br
+.RI "图像显示在图层的位置 "
+.ti -1c
+.RI "RECT \fBrctCrop\fP = { 0 }"
+.br
+.RI "裁剪信息 "
+.ti -1c
+.RI "bool \fBbUseSrcAlpha\fP = false"
+.br
+.RI "是否使用图像自身的 alpha 数据 "
+.ti -1c
+.RI "bool \fBisAlphaCalculated\fP = false"
+.br
+.RI "图像色值是否已混合透明度（使用自身透明度时有效） "
+.ti -1c
+.RI "BYTE \fBalpha\fP = 255"
+.br
+.RI "绘制到图层时的叠加透明度 "
+.ti -1c
+.RI "bool \fBbVisible\fP = true"
+.br
+.RI "图像是否可见 "
+.in -1c
+.SH "详细描述"
+.PP 
+图像块 
+.PP
+在文件 HiCanvas\&.h 第 771 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::ImageBlock::ImageBlock ()"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1852 行定义\&.
+.PP
+.nf
+1853     {
+1854     }
+.fi
+.SS "HiEasyX::ImageBlock::ImageBlock (\fBCanvas\fP * pCanvas)"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1856 行定义\&.
+.PP
+.nf
+1857     {
+1858         SetCanvas(pCanvas);
+1859     }
+.fi
+.SS "HiEasyX::ImageBlock::ImageBlock (int _x, int _y, \fBCanvas\fP * pCanvas)"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1861 行定义\&.
+.PP
+.nf
+1862     {
+1863         x = _x;
+1864         y = _y;
+1865         SetCanvas(pCanvas);
+1866     }
+.fi
+.SS "HiEasyX::ImageBlock::ImageBlock (int _x, int _y, int w, int h, COLORREF cBk = \fC0\fP)"
+
+.PP
+新建画布 
+.PP
+\fB参数\fP
+.RS 4
+\fI_x\fP 位置 
+.br
+\fI_y\fP 位置 
+.br
+\fIw\fP 宽度 
+.br
+\fIh\fP 高度 
+.br
+\fIcBk\fP 背景色 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 1868 行定义\&.
+.PP
+.nf
+1869     {
+1870         x = _x;
+1871         y = _y;
+1872         CreateCanvas(w, h, cBk);
+1873     }
+.fi
+.SS "HiEasyX::ImageBlock::~ImageBlock ()\fC [virtual]\fP"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1875 行定义\&.
+.PP
+.nf
+1876     {
+1877         DeleteMyCanvas();
+1878     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "\fBCanvas\fP * HiEasyX::ImageBlock::CreateCanvas (int w, int h, COLORREF cBk = \fC0\fP)"
+
+.PP
+不绑定外部画布，直接新建画布 
+.PP
+\fB参数\fP
+.RS 4
+\fIw\fP 宽度 
+.br
+\fIh\fP 高度 
+.br
+\fIcBk\fP 背景色 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+画布 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 1880 行定义\&.
+.PP
+.nf
+1881     {
+1882         if (m_isCreated)
+1883         {
+1884             m_pCanvas->Resize(w, h);
+1885             m_pCanvas->Clear(cBk);
+1886         }
+1887         else
+1888         {
+1889             m_pCanvas = new Canvas(w, h, cBk);
+1890         }
+1891 
+1892         return m_pCanvas;
+1893     }
+.fi
+.SS "\fBCanvas\fP* HiEasyX::ImageBlock::GetCanvas () const\fC [inline]\fP"
+
+.PP
+在文件 HiCanvas\&.h 第 816 行定义\&.
+.PP
+.nf
+816 { return m_pCanvas; }
+.fi
+.SS "int HiEasyX::ImageBlock::GetHeight () const\fC [inline]\fP"
+
+.PP
+在文件 HiCanvas\&.h 第 820 行定义\&.
+.PP
+.nf
+820 { return m_pCanvas ? m_pCanvas->GetHeight() : 0; }
+.fi
+.SS "POINT HiEasyX::ImageBlock::GetPos () const\fC [inline]\fP"
+
+.PP
+在文件 HiCanvas\&.h 第 821 行定义\&.
+.PP
+.nf
+821 { return { x,y }; }
+.fi
+.SS "int HiEasyX::ImageBlock::GetWidth () const\fC [inline]\fP"
+
+.PP
+在文件 HiCanvas\&.h 第 819 行定义\&.
+.PP
+.nf
+819 { return m_pCanvas ? m_pCanvas->GetWidth() : 0; }
+.fi
+.SS "void HiEasyX::ImageBlock::Render (IMAGE * pImg, BYTE _alpha)\fC [virtual]\fP"
+
+.PP
+绘制到画布 
+.PP
+\fB参数\fP
+.RS 4
+\fIpImg\fP 目标绘制画布 
+.br
+\fI_alpha\fP 叠加透明度 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 1907 行定义\&.
+.PP
+.nf
+1908     {
+1909         if (m_pCanvas)
+1910         {
+1911             m_pCanvas->RenderTo(
+1912                 x, y,
+1913                 pImg,
+1914                 rctCrop,
+1915                 (BYTE)(alpha * (_alpha == 255 ? 1 : _alpha / 255\&.0f)),
+1916                 bUseSrcAlpha, isAlphaCalculated
+1917             );
+1918         }
+1919     }
+.fi
+.SS "void HiEasyX::ImageBlock::SetCanvas (\fBCanvas\fP * pCanvas)"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1895 行定义\&.
+.PP
+.nf
+1896     {
+1897         DeleteMyCanvas();
+1898         m_pCanvas = pCanvas;
+1899     }
+.fi
+.SS "void HiEasyX::ImageBlock::SetPos (int _x, int _y)"
+
+.PP
+在文件 HiCanvas\&.cpp 第 1901 行定义\&.
+.PP
+.nf
+1902     {
+1903         x = _x;
+1904         y = _y;
+1905     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "BYTE HiEasyX::ImageBlock::alpha = 255"
+
+.PP
+绘制到图层时的叠加透明度 
+.PP
+在文件 HiCanvas\&.h 第 786 行定义\&.
+.SS "bool HiEasyX::ImageBlock::bUseSrcAlpha = false"
+
+.PP
+是否使用图像自身的 alpha 数据 
+.PP
+在文件 HiCanvas\&.h 第 782 行定义\&.
+.SS "bool HiEasyX::ImageBlock::bVisible = true"
+
+.PP
+图像是否可见 
+.PP
+在文件 HiCanvas\&.h 第 787 行定义\&.
+.SS "bool HiEasyX::ImageBlock::isAlphaCalculated = false"
+
+.PP
+图像色值是否已混合透明度（使用自身透明度时有效） 
+.PP
+在文件 HiCanvas\&.h 第 784 行定义\&.
+.SS "RECT HiEasyX::ImageBlock::rctCrop = { 0 }"
+
+.PP
+裁剪信息 
+.PP
+在文件 HiCanvas\&.h 第 781 行定义\&.
+.SS "int HiEasyX::ImageBlock::x = 0"
+
+.PP
+在文件 HiCanvas\&.h 第 780 行定义\&.
+.SS "int HiEasyX::ImageBlock::y = 0"
+
+.PP
+图像显示在图层的位置 
+.PP
+在文件 HiCanvas\&.h 第 780 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

@@ -1,0 +1,105 @@
+.TH "HiEasyX::SysGroup" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysGroup \- 系统控件分组标志  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysGroup\&.h>\fP
+.PP
+继承自 \fBHiEasyX::SysControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysGroup\fP ()"
+.br
+.ti -1c
+.RI "\fBSysGroup\fP (HWND hParent)"
+.br
+.ti -1c
+.RI "void \fBCreate\fP (HWND hParent)"
+.br
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRealCreate\fP (HWND hParent) override"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "额外继承的成员函数"
+.SH "详细描述"
+.PP 
+系统控件分组标志 
+.PP
+在文件 SysGroup\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysGroup::SysGroup ()"
+
+.PP
+在文件 SysGroup\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18     }
+.fi
+.SS "HiEasyX::SysGroup::SysGroup (HWND hParent)"
+
+.PP
+在文件 SysGroup\&.cpp 第 20 行定义\&.
+.PP
+.nf
+21     {
+22         Create(hParent);
+23     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::SysGroup::Create (HWND hParent)"
+
+.PP
+在文件 SysGroup\&.cpp 第 25 行定义\&.
+.PP
+.nf
+26     {
+27         RealCreate(hParent);
+28     }
+.fi
+.SS "void HiEasyX::SysGroup::RealCreate (HWND hParent)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+实现了 \fBHiEasyX::SysControlBase\fP\&.
+.PP
+在文件 SysGroup\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_type = SCT_Group;
+8         m_hWnd = CreateControl(
+9             hParent,
+10             L"Button",
+11             L"",
+12             WS_CHILD | WS_GROUP
+13         );
+14     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

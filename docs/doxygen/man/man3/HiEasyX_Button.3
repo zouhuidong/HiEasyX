@@ -1,0 +1,342 @@
+.TH "HiEasyX::Button" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Button \- 按钮控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Button\&.h>\fP
+.PP
+继承自 \fBHiEasyX::ControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBButton\fP ()"
+.br
+.ti -1c
+.RI "\fBButton\fP (int x, int y, int w, int h, std::wstring wstrText=L'')"
+.br
+.ti -1c
+.RI "void \fBSetEnable\fP (bool enable) override"
+.br
+.RI "启用控件 "
+.ti -1c
+.RI "virtual void \fBEnableClassicStyle\fP (bool enable)"
+.br
+.RI "是否启用经典样式 "
+.ti -1c
+.RI "void \fBUpdateMessage\fP (ExMessage msg) override"
+.br
+.RI "更新消息 "
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.RI "绘制 "
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Normal\fP = \fBMODERN_BORDER_GRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Normal\fP = \fBMODERN_FILL_GRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Hovered\fP = \fBMODERN_BORDER_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Hovered\fP = \fBMODERN_FILL_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Pressed\fP = \fBMODERN_BORDER_PRESSED_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Pressed\fP = \fBMODERN_FILL_PRESSED_BLUE\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cText_Disabled\fP = LIGHTGRAY"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBorder_Disabled\fP = \fBGRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cBackground_Disabled\fP = \fBGRAY\fP"
+.br
+.ti -1c
+.RI "COLORREF \fBm_cClassicNormalBorder3D\fP = \fBGRAY\fP"
+.br
+.RI "未按下时的 3D 边框颜色（经典样式） "
+.ti -1c
+.RI "COLORREF \fBm_cClassicPressedBorder3D\fP = LIGHTGRAY"
+.br
+.RI "按下时的 3D 边框颜色（经典样式） "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInitColor\fP ()"
+.br
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_bEnableClassicStyle\fP = false"
+.br
+.RI "是否使用经典样式 "
+.in -1c
+.SH "详细描述"
+.PP 
+按钮控件 
+.PP
+在文件 Button\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Button::Button ()"
+
+.PP
+在文件 Button\&.cpp 第 11 行定义\&.
+.PP
+.nf
+12     {
+13         InitColor();
+14     }
+.fi
+.SS "HiEasyX::Button::Button (int x, int y, int w, int h, std::wstring wstrText = \fCL''\fP)"
+
+.PP
+在文件 Button\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18         SetRect(x, y, w, h);
+19         SetText(wstrText);
+20         InitColor();
+21     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::Button::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+绘制 
+.PP
+\fB参数\fP
+.RS 4
+\fIdraw_child\fP 是否绘制子控件 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Button\&.cpp 第 73 行定义\&.
+.PP
+.nf
+74     {
+75         if (m_bRedraw)
+76         {
+77             ControlBase::Draw(false);
+78 
+79             if (m_bEnableClassicStyle)
+80             {
+81                 if (m_bPressed)
+82                 {
+83                     m_canvas\&.SetLineColor(m_cClassicPressedBorder3D);
+84                     m_canvas\&.Line(1, 1, 1, GetHeight() - 2);
+85                     m_canvas\&.Line(1, 1, GetWidth() - 2, 1);
+86                     Draw_Text(1, 1);
+87                 }
+88                 else
+89                 {
+90                     m_canvas\&.SetLineColor(m_cClassicNormalBorder3D);
+91                     m_canvas\&.Line(GetWidth() - 2, 1, GetWidth() - 2, GetHeight() - 2);
+92                     m_canvas\&.Line(1, GetHeight() - 2, GetWidth() - 2, GetHeight() - 2);
+93                     Draw_Text();
+94                 }
+95             }
+96             else
+97             {
+98                 Draw_Text();
+99             }
+100         }
+101 
+102         if (draw_child)
+103         {
+104             DrawChild();
+105         }
+106     }
+.fi
+.SS "void HiEasyX::Button::EnableClassicStyle (bool enable)\fC [virtual]\fP"
+
+.PP
+是否启用经典样式 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+在文件 Button\&.cpp 第 64 行定义\&.
+.PP
+.nf
+65     {
+66         m_bEnableClassicStyle = enable;
+67         if (enable)
+68         {
+69             m_cBackground = CLASSICGRAY;
+70         }
+71     }
+.fi
+.SS "void HiEasyX::Button::InitColor ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 Button\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_cBorder = m_cBorder_Normal;
+8         m_cBackground = m_cBackground_Normal;
+9     }
+.fi
+.SS "void HiEasyX::Button::SetEnable (bool enable)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+启用控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Button\&.cpp 第 23 行定义\&.
+.PP
+.nf
+24     {
+25         ControlBase::SetEnable(enable);
+26         if (!enable)
+27         {
+28             m_cText = m_cText_Disabled;
+29             m_cBorder = m_cBorder_Disabled;
+30             m_cBackground = m_cBackground_Disabled;
+31         }
+32         else
+33         {
+34             InitColor();
+35         }
+36     }
+.fi
+.SS "void HiEasyX::Button::UpdateMessage (ExMessage msg)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 消息 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Button\&.cpp 第 38 行定义\&.
+.PP
+.nf
+39     {
+40         if (m_bVisible && m_bEnabled)
+41         {
+42             ControlBase::UpdateMessage(msg);
+43 
+44             if (!m_bEnableClassicStyle)
+45             {
+46                 if (m_bPressed)
+47                 {
+48                     m_cBorder = m_cBorder_Pressed;
+49                     m_cBackground = m_cBackground_Pressed;
+50                 }
+51                 else if (m_bHovered)
+52                 {
+53                     m_cBorder = m_cBorder_Hovered;
+54                     m_cBackground = m_cBackground_Hovered;
+55                 }
+56                 else
+57                 {
+58                     InitColor();
+59                 }
+60             }
+61         }
+62     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "bool HiEasyX::Button::m_bEnableClassicStyle = false\fC [protected]\fP"
+
+.PP
+是否使用经典样式 
+.PP
+在文件 Button\&.h 第 20 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Disabled = \fBGRAY\fP"
+
+.PP
+在文件 Button\&.h 第 36 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Hovered = \fBMODERN_FILL_BLUE\fP"
+
+.PP
+在文件 Button\&.h 第 30 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Normal = \fBMODERN_FILL_GRAY\fP"
+
+.PP
+在文件 Button\&.h 第 28 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBackground_Pressed = \fBMODERN_FILL_PRESSED_BLUE\fP"
+
+.PP
+在文件 Button\&.h 第 32 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Disabled = \fBGRAY\fP"
+
+.PP
+在文件 Button\&.h 第 35 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Hovered = \fBMODERN_BORDER_BLUE\fP"
+
+.PP
+在文件 Button\&.h 第 29 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Normal = \fBMODERN_BORDER_GRAY\fP"
+
+.PP
+在文件 Button\&.h 第 27 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cBorder_Pressed = \fBMODERN_BORDER_PRESSED_BLUE\fP"
+
+.PP
+在文件 Button\&.h 第 31 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cClassicNormalBorder3D = \fBGRAY\fP"
+
+.PP
+未按下时的 3D 边框颜色（经典样式） 
+.PP
+在文件 Button\&.h 第 38 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cClassicPressedBorder3D = LIGHTGRAY"
+
+.PP
+按下时的 3D 边框颜色（经典样式） 
+.PP
+在文件 Button\&.h 第 39 行定义\&.
+.SS "COLORREF HiEasyX::Button::m_cText_Disabled = LIGHTGRAY"
+
+.PP
+在文件 Button\&.h 第 34 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

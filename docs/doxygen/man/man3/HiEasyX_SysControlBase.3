@@ -1,0 +1,516 @@
+.TH "HiEasyX::SysControlBase" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysControlBase \- 系统控件基础  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysControlBase\&.h>\fP
+.PP
+继承自 \fBHiEasyX::Container\fP \&.
+.PP
+被 \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysGroup\fP, \fBHiEasyX::SysGroupBox\fP, \fBHiEasyX::SysRadioButton\fP , 以及 \fBHiEasyX::SysStatic\fP 继承\&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysControlBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SysControlBase\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdateRect\fP (RECT rctOld) override"
+.br
+.RI "响应更新区域消息 "
+.ti -1c
+.RI "virtual LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet)"
+.br
+.RI "更新消息，此函数无需用户调用 "
+.ti -1c
+.RI "HWND \fBCreate\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "HWND \fBCreate\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "void \fBRemove\fP ()"
+.br
+.RI "移除控件 "
+.ti -1c
+.RI "HWND \fBGetHandle\fP () const"
+.br
+.ti -1c
+.RI "\fBSysControlType\fP \fBGetControlType\fP () const"
+.br
+.RI "获取此控件类型 "
+.ti -1c
+.RI "bool \fBIsEnable\fP ()"
+.br
+.ti -1c
+.RI "void \fBEnable\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBIsVisible\fP ()"
+.br
+.ti -1c
+.RI "void \fBShow\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBIsFocused\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFocus\fP (bool focused)"
+.br
+.ti -1c
+.RI "int \fBGetTextLength\fP ()"
+.br
+.ti -1c
+.RI "std::wstring \fBGetText\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (std::wstring wstr)"
+.br
+.ti -1c
+.RI "HFONT \fBGetFont\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFont\fP (int h, int w=0, std::wstring typeface=L'')"
+.br
+.ti -1c
+.RI "int \fBGetID\fP ()"
+.br
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBCreateControl\fP (HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)"
+.br
+.RI "创建控件 "
+.ti -1c
+.RI "virtual void \fBRealCreate\fP (HWND hParent)=0"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBm_hWnd\fP = nullptr"
+.br
+.ti -1c
+.RI "HWND \fBm_hParent\fP = nullptr"
+.br
+.ti -1c
+.RI "int \fBm_nID\fP = 0"
+.br
+.ti -1c
+.RI "\fBSysControlType\fP \fBm_type\fP = \fBSCT_Unknown\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+系统控件基础 
+.PP
+在文件 SysControlBase\&.h 第 35 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysControlBase::SysControlBase ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 39 行定义\&.
+.PP
+.nf
+40     {
+41     }
+.fi
+.SS "HiEasyX::SysControlBase::~SysControlBase ()\fC [virtual]\fP"
+
+.PP
+在文件 SysControlBase\&.cpp 第 43 行定义\&.
+.PP
+.nf
+44     {
+45         Destory();
+46     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "HWND HiEasyX::SysControlBase::Create (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 69 行定义\&.
+.PP
+.nf
+70     {
+71         if (!GetHandle())
+72         {
+73             SetRect(x, y, w, h);
+74             RealCreate(hParent);
+75             SetText(strText);
+76         }
+77         return GetHandle();
+78     }
+.fi
+.SS "HWND HiEasyX::SysControlBase::Create (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+.nf
+
+    创建控件（从控件对象创建出 UI 实体）
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    同一个控件对象不能反复创建 UI 实体
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父窗口句柄 
+.br
+\fIrct\fP 控件区域 
+.br
+\fIstrText\fP 控件文本 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+控件窗口句柄 
+.RE
+.PP
+
+.PP
+在文件 SysControlBase\&.cpp 第 58 行定义\&.
+.PP
+.nf
+59     {
+60         if (!GetHandle())
+61         {
+62             SetRect(rct);
+63             RealCreate(hParent);
+64             SetText(strText);
+65         }
+66         return GetHandle();
+67     }
+.fi
+.SS "HWND HiEasyX::SysControlBase::CreateControl (HWND hParent, LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle)\fC [protected]\fP"
+
+.PP
+创建控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件 
+.br
+\fIlpszClassName\fP 窗口类名 
+.br
+\fIlpszWindowName\fP 窗口名 
+.br
+\fIdwStyle\fP 窗口样式 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+窗口句柄 
+.RE
+.PP
+
+.PP
+在文件 SysControlBase\&.cpp 第 17 行定义\&.
+.PP
+.nf
+18     {
+19         m_hParent = hParent;
+20         m_nID = AllocID();
+21 
+22         CREATESTRUCT c;
+23         c\&.lpCreateParams = 0;
+24         c\&.hInstance = 0;
+25         c\&.hMenu = (HMENU)(long long)GetID();
+26         c\&.hwndParent = hParent;
+27         c\&.cy = GetHeight();
+28         c\&.cx = GetWidth();
+29         c\&.y = GetY();
+30         c\&.x = GetX();
+31         c\&.style = dwStyle;
+32         c\&.lpszName = lpszWindowName;
+33         c\&.lpszClass = lpszClassName;
+34         c\&.dwExStyle = 0;
+35 
+36         return (HWND)SendMessage(hParent, WM_SYSCTRL_CREATE, (WPARAM)this, (LPARAM)&c);
+37     }
+.fi
+.SS "void HiEasyX::SysControlBase::Enable (bool enable)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 91 行定义\&.
+.PP
+.nf
+92     {
+93         EnableWindow(GetHandle(), enable);
+94     }
+.fi
+.SS "\fBSysControlType\fP HiEasyX::SysControlBase::GetControlType () const\fC [inline]\fP"
+
+.PP
+获取此控件类型 
+.PP
+在文件 SysControlBase\&.h 第 114 行定义\&.
+.PP
+.nf
+114 { return m_type; }
+.fi
+.SS "HFONT HiEasyX::SysControlBase::GetFont ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 142 行定义\&.
+.PP
+.nf
+143     {
+144         return (HFONT)SendMessage(GetHandle(), WM_GETFONT, 0, 0);
+145     }
+.fi
+.SS "HWND HiEasyX::SysControlBase::GetHandle () const\fC [inline]\fP"
+
+.PP
+在文件 SysControlBase\&.h 第 109 行定义\&.
+.PP
+.nf
+109 { return m_hWnd; }
+.fi
+.SS "int HiEasyX::SysControlBase::GetID ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 168 行定义\&.
+.PP
+.nf
+169     {
+170         return m_nID;
+171     }
+.fi
+.SS "std::wstring HiEasyX::SysControlBase::GetText ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 126 行定义\&.
+.PP
+.nf
+127     {
+128         int len = GetTextLength();
+129         WCHAR* buf = new WCHAR[len + 1];
+130         ZeroMemory(buf, sizeof WCHAR * (len + 1));
+131         GetWindowText(GetHandle(), buf, len + 1);
+132         std::wstring str = buf;
+133         delete[] buf;
+134         return str;
+135     }
+.fi
+.SS "int HiEasyX::SysControlBase::GetTextLength ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 121 行定义\&.
+.PP
+.nf
+122     {
+123         return GetWindowTextLength(GetHandle());;
+124     }
+.fi
+.SS "bool HiEasyX::SysControlBase::IsEnable ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 86 行定义\&.
+.PP
+.nf
+87     {
+88         return IsWindowEnabled(GetHandle());
+89     }
+.fi
+.SS "bool HiEasyX::SysControlBase::IsFocused ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 106 行定义\&.
+.PP
+.nf
+107     {
+108         DWORD SelfThreadId = GetCurrentThreadId();                      // 获取自身线程 ID
+109         DWORD ForeThreadId = GetWindowThreadProcessId(m_hParent, NULL); // 根据窗口句柄获取线程 ID
+110         AttachThreadInput(ForeThreadId, SelfThreadId, true);            // 附加到线程
+111         HWND hWnd = GetFocus();                                         // 获取具有输入焦点的窗口句柄
+112         AttachThreadInput(ForeThreadId, SelfThreadId, false);           // 取消附加到线程
+113         return hWnd == GetHandle();
+114     }
+.fi
+.SS "bool HiEasyX::SysControlBase::IsVisible ()"
+
+.PP
+在文件 SysControlBase\&.cpp 第 96 行定义\&.
+.PP
+.nf
+97     {
+98         return IsWindowVisible(GetHandle());
+99     }
+.fi
+.SS "virtual void HiEasyX::SysControlBase::RealCreate (HWND hParent)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+在 \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysGroupBox\fP, \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP, \fBHiEasyX::SysRadioButton\fP, \fBHiEasyX::SysStatic\fP , 以及 \fBHiEasyX::SysGroup\fP 内被实现\&.
+.SS "void HiEasyX::SysControlBase::Remove ()"
+
+.PP
+移除控件 
+.PP
+在文件 SysControlBase\&.cpp 第 80 行定义\&.
+.PP
+.nf
+81     {
+82         Destory();
+83         SendMessage(m_hWnd, WM_CLOSE, 0, 0);
+84     }
+.fi
+.SS "void HiEasyX::SysControlBase::SetFocus (bool focused)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 116 行定义\&.
+.PP
+.nf
+117     {
+118         SendMessage(GetHandle(), focused ? WM_SETFOCUS : WM_KILLFOCUS, 0, 0);
+119     }
+.fi
+.SS "void HiEasyX::SysControlBase::SetFont (int h, int w = \fC0\fP, std::wstring typeface = \fCL''\fP)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 147 行定义\&.
+.PP
+.nf
+148     {
+149         if (m_hFont)
+150         {
+151             DeleteFont(m_hFont);
+152             m_hFont = nullptr;
+153         }
+154         m_hFont = CreateFont(
+155             h, w,
+156             0, 0, 0, 0, 0, 0,
+157             GB2312_CHARSET,
+158             OUT_DEFAULT_PRECIS,
+159             CLIP_DEFAULT_PRECIS,
+160             DEFAULT_QUALITY,
+161             DEFAULT_PITCH | FF_MODERN,
+162             typeface\&.c_str()
+163         );
+164         SendMessage(GetHandle(), WM_SETFONT, (WPARAM)m_hFont, 0);
+165         InvalidateRect(GetHandle(), nullptr, true);
+166     }
+.fi
+.SS "void HiEasyX::SysControlBase::SetText (std::wstring wstr)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 137 行定义\&.
+.PP
+.nf
+138     {
+139         SetWindowText(GetHandle(), wstr\&.c_str());
+140     }
+.fi
+.SS "void HiEasyX::SysControlBase::Show (bool show)"
+
+.PP
+在文件 SysControlBase\&.cpp 第 101 行定义\&.
+.PP
+.nf
+102     {
+103         ShowWindow(GetHandle(), show ? SW_SHOW : SW_HIDE);
+104     }
+.fi
+.SS "LRESULT HiEasyX::SysControlBase::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [virtual]\fP"
+
+.PP
+更新消息，此函数无需用户调用 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.br
+\fIwParam\fP 参数 
+.br
+\fIlParam\fP 参数 
+.br
+\fIbRet\fP 标记是否返回值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+不定返回值 
+.RE
+.PP
+
+.PP
+被 \fBHiEasyX::SysEdit\fP, \fBHiEasyX::SysComboBox\fP, \fBHiEasyX::SysButton\fP, \fBHiEasyX::SysCheckBox\fP , 以及 \fBHiEasyX::SysRadioButton\fP 重载\&.
+.PP
+在文件 SysControlBase\&.cpp 第 53 行定义\&.
+.PP
+.nf
+54     {
+55         return LRESULT();
+56     }
+.fi
+.SS "void HiEasyX::SysControlBase::UpdateRect (RECT rctOld)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+响应更新区域消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIrctOld\fP 旧的区域 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::Container\fP \&.
+.PP
+在文件 SysControlBase\&.cpp 第 48 行定义\&.
+.PP
+.nf
+49     {
+50         SetWindowPos(GetHandle(), 0, GetX(), GetY(), GetWidth(), GetHeight(), 0);
+51     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "HWND HiEasyX::SysControlBase::m_hParent = nullptr\fC [protected]\fP"
+
+.PP
+在文件 SysControlBase\&.h 第 49 行定义\&.
+.SS "HWND HiEasyX::SysControlBase::m_hWnd = nullptr\fC [protected]\fP"
+
+.PP
+在文件 SysControlBase\&.h 第 48 行定义\&.
+.SS "int HiEasyX::SysControlBase::m_nID = 0\fC [protected]\fP"
+
+.PP
+在文件 SysControlBase\&.h 第 50 行定义\&.
+.SS "\fBSysControlType\fP HiEasyX::SysControlBase::m_type = \fBSCT_Unknown\fP\fC [protected]\fP"
+
+.PP
+在文件 SysControlBase\&.h 第 51 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

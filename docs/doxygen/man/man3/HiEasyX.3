@@ -1,0 +1,4889 @@
+.TH "HiEasyX" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX
+.SH SYNOPSIS
+.br
+.PP
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "class \fBButton\fP"
+.br
+.RI "按钮控件 "
+.ti -1c
+.RI "class \fBCanvas\fP"
+.br
+.RI "画布 "
+.ti -1c
+.RI "class \fBContainer\fP"
+.br
+.RI "基础容器 "
+.ti -1c
+.RI "class \fBControlBase\fP"
+.br
+.RI "控件基础 "
+.ti -1c
+.RI "class \fBDrawingProperty\fP"
+.br
+.ti -1c
+.RI "struct \fBEasyWindow\fP"
+.br
+.RI "窗口 "
+.ti -1c
+.RI "class \fBGif\fP"
+.br
+.ti -1c
+.RI "class \fBImageBlock\fP"
+.br
+.RI "图像块 "
+.ti -1c
+.RI "class \fBLayer\fP"
+.br
+.RI "图层 "
+.ti -1c
+.RI "class \fBMouseDrag\fP"
+.br
+.ti -1c
+.RI "class \fBMusicMCI\fP"
+.br
+.ti -1c
+.RI "class \fBPage\fP"
+.br
+.RI "页控件 "
+.ti -1c
+.RI "class \fBProgressCtrl\fP"
+.br
+.RI "进度条控件 "
+.ti -1c
+.RI "class \fBScene\fP"
+.br
+.ti -1c
+.RI "class \fBScrollBar\fP"
+.br
+.RI "滚动条控件 "
+.ti -1c
+.RI "class \fBStatic\fP"
+.br
+.RI "静态（文本、图像）控件 "
+.ti -1c
+.RI "class \fBSysButton\fP"
+.br
+.RI "系统按钮控件 "
+.ti -1c
+.RI "class \fBSysCheckBox\fP"
+.br
+.RI "系统复选框控件 "
+.ti -1c
+.RI "class \fBSysComboBox\fP"
+.br
+.RI "系统组合框控件 "
+.ti -1c
+.RI "class \fBSysControlBase\fP"
+.br
+.RI "系统控件基础 "
+.ti -1c
+.RI "class \fBSysEdit\fP"
+.br
+.RI "系统输入框控件 "
+.ti -1c
+.RI "class \fBSysGroup\fP"
+.br
+.RI "系统控件分组标志 "
+.ti -1c
+.RI "class \fBSysGroupBox\fP"
+.br
+.ti -1c
+.RI "class \fBSysRadioButton\fP"
+.br
+.RI "系统单选框控件 "
+.ti -1c
+.RI "class \fBSysStatic\fP"
+.br
+.RI "系统静态控件 "
+.ti -1c
+.RI "class \fBWindow\fP"
+.br
+.RI "窗口 "
+.in -1c
+.SS "类型定义"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBMESSAGE_PROC_FUNC\fP) (\fBControlBase\fP *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+.br
+.RI "控件消息处理函数 "
+.ti -1c
+.RI "typedef void(* \fBMESSAGE_PROC_FUNC_CLASS\fP) (void *_This, \fBControlBase\fP *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+.br
+.RI "支持静态类函数作为控件消息处理函数 "
+.in -1c
+.SS "枚举"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLayerOrder\fP { \fBLAYERORDER_BOTTOM_MOST\fP, \fBLAYERORDER_BOTTOM\fP, \fBLAYERORDER_NORMAL\fP, \fBLAYERORDER_TOP\fP, \fBLAYERORDER_TOP_MOST\fP }"
+.br
+.RI "特殊图层顺序标识 "
+.ti -1c
+.RI "enum \fBCtrlMessage\fP { \fBCM_OTHER\fP, \fBCM_HOVER\fP, \fBCM_HOVER_OVER\fP, \fBCM_PRESS\fP, \fBCM_PRESS_OVER\fP, \fBCM_CLICK\fP, \fBCM_DOUBLE_CLICK\fP, \fBCM_FOCUS\fP, \fBCM_FOCUS_OVER\fP }"
+.br
+.RI "控件基础 "
+.ti -1c
+.RI "enum \fBSysControlType\fP { \fBSCT_Unknown\fP, \fBSCT_Group\fP, \fBSCT_GroupBox\fP, \fBSCT_Static\fP, \fBSCT_Button\fP, \fBSCT_CheckBox\fP, \fBSCT_RadioButton\fP, \fBSCT_Edit\fP, \fBSCT_ComboBox\fP }"
+.br
+.RI "支持的系统控件类型 "
+.ti -1c
+.RI "enum \fBDrawMode\fP { \fBDM_Real\fP, \fBDM_Normal\fP, \fBDM_Fast\fP, \fBDM_VeryFast\fP, \fBDM_Fastest\fP }"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBMixAlphaColor\fP (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha=255)"
+.br
+.RI "根据透明度混合颜色 "
+.ti -1c
+.RI "void \fBCopyImage_Alpha\fP (int x, int y, DWORD *pDst, int wDst, int hDst, DWORD *pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)"
+.br
+.ti -1c
+.RI "IMAGE \fBRotateImage_Alpha\fP (IMAGE *pImg, double radian, COLORREF bkcolor=BLACK)"
+.br
+.RI "旋转图像（保留透明信息，自适应大小） "
+.ti -1c
+.RI "IMAGE \fBZoomImage_Rough_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（粗糙的、即不插值的缩放，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBZoomImage_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（双线性插值，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBZoomImage_Win32_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "图像缩放（基于 Win32 API，比较快，保留透明度信息） "
+.ti -1c
+.RI "void \fBDelayFPS\fP (int fps, bool wait_long=false)"
+.br
+.RI "根据目标帧率延时 "
+.ti -1c
+.RI "void \fBGdiplus_Try_Starup\fP ()"
+.br
+.RI "注意，必须先启动 GDI+，才能使用下面的绘图函数 "
+.ti -1c
+.RI "void \fBGdiplus_Shutdown\fP ()"
+.br
+.RI "关闭 GDI+ "
+.ti -1c
+.RI "Gdiplus::Color \fBConvertToGdiplusColor\fP (COLORREF color, bool reserve_alpha=false)"
+.br
+.RI "转换 COLORREF 到 Gdiplus::Color "
+.ti -1c
+.RI "void \fBGdiplus_Line\fP (HDC hdc, float x1, float y1, float x2, float y2, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画线 "
+.ti -1c
+.RI "void \fBGdiplus_Polygon\fP (HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画多边形 "
+.ti -1c
+.RI "void \fBGdiplus_SolidPolygon\fP (HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充多边形 "
+.ti -1c
+.RI "void \fBGdiplus_Rectangle\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画矩形 "
+.ti -1c
+.RI "void \fBGdiplus_SolidRectangle\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充矩形 "
+.ti -1c
+.RI "void \fBGdiplus_Ellipse\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画椭圆 "
+.ti -1c
+.RI "void \fBGdiplus_SolidEllipse\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充椭圆 "
+.ti -1c
+.RI "void \fBGdiplus_Pie\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画饼状图（传入顺时针角度） "
+.ti -1c
+.RI "void \fBGdiplus_SolidPie\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充饼状图（传入顺时针角度） "
+.ti -1c
+.RI "void \fBGdiplus_Arc\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画圆弧（传入顺时针角度） "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Line\fP (float x1, float y1, float x2, float y2, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画直线 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Polygon\fP (int points_num, POINT *points, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画多边形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_SolidPolygon\fP (int points_num, POINT *points, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充多边形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_FillPolygon\fP (int points_num, POINT *points, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充多边形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Rectangle\fP (float x, float y, float w, float h, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画矩形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_SolidRectangle\fP (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充矩形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_FillRectangle\fP (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充矩形 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Ellipse\fP (float x, float y, float w, float h, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画椭圆 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_SolidEllipse\fP (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充椭圆 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_FillEllipse\fP (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充椭圆 "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Pie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_SolidPie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_FillPie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBEasyX_Gdiplus_Arc\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画圆弧（传入逆时针角度） "
+.ti -1c
+.RI "DWORD * \fBGetIconImageBuffer\fP ()"
+.br
+.RI "获取图标显存 "
+.ti -1c
+.RI "IMAGE * \fBGetIconImage\fP ()"
+.br
+.RI "获取图标对象（显存的拷贝） "
+.ti -1c
+.RI "void \fBRenderStartScene\fP ()"
+.br
+.RI "渲染开场动画 "
+.ti -1c
+.RI "int \fBAllocID\fP ()"
+.br
+.RI "自动分配控件 ID "
+.ti -1c
+.RI "bool \fBIsValidWindowIndex\fP (int index)"
+.br
+.ti -1c
+.RI "bool \fBIsFocusWindowExisted\fP ()"
+.br
+.ti -1c
+.RI "\fBEasyWindow\fP & \fBGetFocusWindow\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetWindowIndex\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBIsAnyWindow\fP ()"
+.br
+.RI "是否还存在未销毁的绘图窗口 "
+.ti -1c
+.RI "bool \fBIsAliveWindow\fP (HWND hWnd=nullptr)"
+.br
+.RI "判断一窗口是否还存在（未被关闭） "
+.ti -1c
+.RI "bool \fBIsAliveWindow\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBWaitForProcessing\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBCopyImageToHDC\fP (IMAGE *pImg, HDC hdc, RECT rct)"
+.br
+.ti -1c
+.RI "void \fBWaitForTask\fP (HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待某窗口任务完成 "
+.ti -1c
+.RI "void \fBFreeWindow\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBclosegraph_win32\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBclosegraph_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "关闭某一绘图窗口 "
+.ti -1c
+.RI "void \fBSetWndProcFunc\fP (HWND hWnd, WNDPROC WindowProcess)"
+.br
+.RI "设置某窗口的过程函数 "
+.ti -1c
+.RI "IMAGE * \fBGetWindowImage\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取某窗口的图像指针 "
+.ti -1c
+.RI "\fBCanvas\fP * \fBGetWindowCanvas\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口画布指针 "
+.ti -1c
+.RI "void \fBBindWindowCanvas\fP (\fBCanvas\fP *pCanvas, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBinit_end\fP (HWND hWnd=nullptr)"
+.br
+.RI "初始化窗口结束后，可以用此函数阻塞等待目标窗口被关闭，然后函数返回 "
+.ti -1c
+.RI "void \fBAutoExit\fP ()"
+.br
+.RI "设置：当窗口都被销毁时，自动退出程序 "
+.ti -1c
+.RI "HWND \fBGetHWnd_win32\fP ()"
+.br
+.RI "得到当前活动绘图窗口的句柄 "
+.ti -1c
+.RI "\fBEasyWindow\fP \fBGetWorkingWindow\fP ()"
+.br
+.RI "得到当前绘图窗口的详细信息 "
+.ti -1c
+.RI "bool \fBSetWorkingWindow\fP (HWND hWnd)"
+.br
+.RI "等待当前任务完成并设置活动窗口 "
+.ti -1c
+.RI "void \fBQuickDraw\fP (UINT nSkipPixels, HWND hWnd=nullptr)"
+.br
+.RI "设置加速绘制跳过多少像素点 "
+.ti -1c
+.RI "\fBDrawMode\fP \fBGetDrawMode\fP ()"
+.br
+.RI "获取全局绘制模式 "
+.ti -1c
+.RI "void \fBSetDrawMode\fP (\fBDrawMode\fP mode)"
+.br
+.RI "设置全局绘制模式 "
+.ti -1c
+.RI "void \fBSendUserRedrawMsg\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBRedrawWindow\fP (HWND hWnd=nullptr)"
+.br
+.RI "通知重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数） "
+.ti -1c
+.RI "void \fBFlushDrawing\fP (int index, RECT rct={ 0 })"
+.br
+.ti -1c
+.RI "void \fBFlushDrawing\fP (RECT rct)"
+.br
+.ti -1c
+.RI "void \fBEnableAutoFlush\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBBeginTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBEndTask\fP (bool flush=true)"
+.br
+.RI "终止当前窗口任务 "
+.ti -1c
+.RI "bool \fBIsInTask\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBResizeWindowImage\fP (int index, RECT rct)"
+.br
+.ti -1c
+.RI "void \fBShowTray\fP (NOTIFYICONDATA *nid)"
+.br
+.ti -1c
+.RI "void \fBCreateTray\fP (LPCTSTR lpszTrayName, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBDeleteTray\fP (HWND hWnd=nullptr)"
+.br
+.RI "删除某窗口的托盘 "
+.ti -1c
+.RI "void \fBSetTrayMenu\fP (HMENU hMenu, HWND hWnd=nullptr)"
+.br
+.RI "设置托盘菜单（允许在任何时候设置） "
+.ti -1c
+.RI "void \fBSetTrayMenuProcFunc\fP (void(*pFunc)(UINT), HWND hWnd=nullptr)"
+.br
+.RI "设置托盘菜单消息处理函数 "
+.ti -1c
+.RI "bool \fBIsWindowSizeChanged\fP (HWND hWnd=nullptr)"
+.br
+.RI "判断某窗口的大小是否改变 "
+.ti -1c
+.RI "bool \fBGetCustomIconState\fP ()"
+.br
+.RI "获取自定义程序图标的启用状态 "
+.ti -1c
+.RI "void \fBSetCustomIcon\fP (LPCTSTR lpszIcon, LPCTSTR lpszIconSm)"
+.br
+.ti -1c
+.RI "std::vector< ExMessage > & \fBGetMsgVector\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBRemoveMessage\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBClearMessage\fP (BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "bool \fBIsNewMessage\fP (BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "ExMessage \fBGetNextMessage\fP (BYTE filter, HWND hWnd)"
+.br
+.ti -1c
+.RI "ExMessage \fBgetmessage_win32\fP (BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新消息 "
+.ti -1c
+.RI "void \fBgetmessage_win32\fP (ExMessage *msg, BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新消息 "
+.ti -1c
+.RI "bool \fBpeekmessage_win32\fP (ExMessage *msg, BYTE filter=\-1, bool removemsg=true, HWND hWnd=nullptr)"
+.br
+.RI "获取一个消息，立即返回是否获取成功 "
+.ti -1c
+.RI "void \fBflushmessage_win32\fP (BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "清除所有消息记录 "
+.ti -1c
+.RI "bool \fBMouseHit_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "检查是否存在鼠标消息 "
+.ti -1c
+.RI "MOUSEMSG \fBGetMouseMsg_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新的鼠标消息 "
+.ti -1c
+.RI "bool \fBPeekMouseMsg_win32\fP (MOUSEMSG *pMsg, bool bRemoveMsg=true, HWND hWnd=nullptr)"
+.br
+.RI "获取一个新的鼠标消息，立即返回是否获取成功 "
+.ti -1c
+.RI "void \fBFlushMouseMsgBuffer_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "清空鼠标消息 "
+.ti -1c
+.RI "ExMessage \fBTo_ExMessage\fP (MOUSEMSG msg)"
+.br
+.RI "MOUSEMSG 转 ExMessage "
+.ti -1c
+.RI "MOUSEMSG \fBTo_MouseMsg\fP (ExMessage msgEx)"
+.br
+.ti -1c
+.RI "void \fBPreSetWindowStyle\fP (long lStyle)"
+.br
+.ti -1c
+.RI "void \fBPreSetWindowStyleEx\fP (long lStyleEx)"
+.br
+.ti -1c
+.RI "void \fBPreSetWindowPos\fP (int x, int y)"
+.br
+.RI "在创建窗口前设置窗口位置，仅对此操作后首个新窗口生效 "
+.ti -1c
+.RI "void \fBPreSetWindowShowState\fP (int nCmdShow)"
+.br
+.RI "在创建窗口前设置窗口显示状态，仅对此操作后首个新窗口生效 "
+.ti -1c
+.RI "int \fBSetWindowStyle\fP (long lNewStyle, HWND hWnd=nullptr)"
+.br
+.RI "设置某窗口样式 "
+.ti -1c
+.RI "int \fBSetWindowExStyle\fP (long lNewExStyle, HWND hWnd=nullptr)"
+.br
+.RI "设置某窗口扩展样式 "
+.ti -1c
+.RI "POINT \fBGetWindowPos\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口位置 "
+.ti -1c
+.RI "SIZE \fBGetWindowSize\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口大小 "
+.ti -1c
+.RI "void \fBMoveWindow\fP (int x, int y, HWND hWnd=nullptr)"
+.br
+.RI "移动窗口 "
+.ti -1c
+.RI "void \fBMoveWindowRel\fP (int dx, int dy, HWND hWnd=nullptr)"
+.br
+.RI "相对移动窗口 "
+.ti -1c
+.RI "void \fBResizeWindow\fP (int w, int h, HWND hWnd=nullptr)"
+.br
+.RI "重设窗口大小 "
+.ti -1c
+.RI "void \fBSetWindowTitle\fP (LPCTSTR lpszTitle, HWND hWnd=nullptr)"
+.br
+.RI "设置窗口标题文本 "
+.ti -1c
+.RI "HICON \fBGetDefaultAppIcon\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnSize\fP (int indexWnd)"
+.br
+.ti -1c
+.RI "void \fBOnTray\fP (int indexWnd, LPARAM lParam)"
+.br
+.ti -1c
+.RI "void \fBOnTaskBarCreated\fP (int indexWnd)"
+.br
+.ti -1c
+.RI "void \fBRegisterExMessage\fP (int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+.br
+.ti -1c
+.RI "void \fBOnPaint\fP (int indexWnd, HDC hdc)"
+.br
+.ti -1c
+.RI "void \fBOnMove\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBOnDestroy\fP (int indexWnd, WPARAM wParam)"
+.br
+.ti -1c
+.RI "HWND \fBOnSysCtrlCreate\fP (int indexWnd, WPARAM wParam, LPARAM lParam)"
+.br
+.ti -1c
+.RI "LRESULT \fBSysCtrlProc\fP (int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet)"
+.br
+.ti -1c
+.RI "void \fBOnCreate\fP (int indexWnd, HWND hWnd, LPARAM lParam)"
+.br
+.ti -1c
+.RI "LRESULT CALLBACK \fBWndProc\fP (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+.br
+.ti -1c
+.RI "void \fBRegisterWndClass\fP ()"
+.br
+.ti -1c
+.RI "\fBEasyWindow\fP & \fBInitWindowStruct\fP (\fBEasyWindow\fP &wnd, HWND hParent, int w, int h, WNDPROC WindowProcess)"
+.br
+.ti -1c
+.RI "void \fBInitWindow\fP (int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent, int *nDoneFlag, HWND *hWnd)"
+.br
+.ti -1c
+.RI "HWND \fBinitgraph_win32\fP (int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)"
+.br
+.in -1c
+.SS "变量"
+
+.in +1c
+.ti -1c
+.RI "clock_t \fBtRecord\fP = 0"
+.br
+.ti -1c
+.RI "WNDCLASSEX \fBg_WndClassEx\fP"
+.br
+.RI "窗口类 "
+.ti -1c
+.RI "wchar_t \fBg_lpszClassName\fP [] = L'HiEasyX'"
+.br
+.RI "窗口类名 "
+.ti -1c
+.RI "\fBScreenSize\fP \fBg_screenSize\fP"
+.br
+.RI "显示器信息 "
+.ti -1c
+.RI "HWND \fBg_hConsole\fP"
+.br
+.RI "控制台句柄 "
+.ti -1c
+.RI "HINSTANCE \fBg_hInstance\fP = GetModuleHandle(0)"
+.br
+.RI "程序实例 "
+.ti -1c
+.RI "std::vector< \fBEasyWindow\fP > \fBg_vecWindows\fP"
+.br
+.RI "窗口表（管理多窗口） "
+.ti -1c
+.RI "int \fBg_nFocusWindowIndex\fP = \fBNO_WINDOW_INDEX\fP"
+.br
+.RI "当前操作焦点窗口索引 "
+.ti -1c
+.RI "bool \fBg_isInTask\fP = false"
+.br
+.RI "标记处于任务中 "
+.ti -1c
+.RI "HICON \fBg_hIconDefault\fP"
+.br
+.RI "默认程序图标 "
+.ti -1c
+.RI "LPCTSTR \fBg_lpszCustomIcon\fP = nullptr"
+.br
+.RI "自定义程序图标资源，为空表示不使用 "
+.ti -1c
+.RI "LPCTSTR \fBg_lpszCustomIconSm\fP = nullptr"
+.br
+.ti -1c
+.RI "HICON \fBg_hCustomIcon\fP"
+.br
+.RI "自定义程序图标 "
+.ti -1c
+.RI "HICON \fBg_hCustomIconSm\fP"
+.br
+.ti -1c
+.RI "bool \fBg_isPreStyle\fP = false"
+.br
+.RI "是否预设窗口样式 "
+.ti -1c
+.RI "bool \fBg_isPreStyleEx\fP = false"
+.br
+.RI "是否预设窗口扩展样式 "
+.ti -1c
+.RI "bool \fBg_isPrePos\fP = false"
+.br
+.RI "是否预设窗口位置 "
+.ti -1c
+.RI "bool \fBg_isPreShowState\fP = false"
+.br
+.RI "是否预设窗口显示状态 "
+.ti -1c
+.RI "long \fBg_lPreStyle\fP"
+.br
+.RI "创建窗口前的预设样式 "
+.ti -1c
+.RI "long \fBg_lPreStyleEx\fP"
+.br
+.RI "创建窗口前的预设扩展样式 "
+.ti -1c
+.RI "POINT \fBg_pPrePos\fP"
+.br
+.RI "创建窗口前的预设窗口位置 "
+.ti -1c
+.RI "int \fBg_nPreCmdShow\fP"
+.br
+.RI "创建窗口前的预设显示状态 "
+.ti -1c
+.RI "\fBDrawMode\fP \fBg_fDrawMode\fP = \fBDM_Normal\fP"
+.br
+.RI "全局绘制模式 "
+.ti -1c
+.RI "bool \fBg_bAutoFlush\fP = true"
+.br
+.RI "是否自动刷新双缓冲 "
+.ti -1c
+.RI "UINT \fBg_uWM_TASKBARCREATED\fP"
+.br
+.RI "系统任务栏消息代码 "
+.in -1c
+.SH "类型定义说明"
+.PP 
+.SS "typedef void(* HiEasyX::MESSAGE_PROC_FUNC) (\fBControlBase\fP *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+
+.PP
+控件消息处理函数 
+.PP
+\fB参数\fP
+.RS 4
+\fI_Ctrl\fP 传入控件指针 
+.br
+\fI_MsgId\fP 传入消息标识代码 
+.br
+\fI_ExMsg\fP 传入消息（鼠标坐标已变换到控件） 
+.RE
+.PP
+
+.PP
+在文件 ControlBase\&.h 第 42 行定义\&.
+.SS "typedef void(* HiEasyX::MESSAGE_PROC_FUNC_CLASS) (void *_This, \fBControlBase\fP *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+
+.PP
+支持静态类函数作为控件消息处理函数 
+.PP
+在文件 ControlBase\&.h 第 47 行定义\&.
+.SH "枚举类型说明"
+.PP 
+.SS "enum \fBHiEasyX::CtrlMessage\fP"
+
+.PP
+控件基础 
+.PP
+\fB枚举值\fP
+.in +1c
+.TP
+\fB\fICM_OTHER \fP\fP
+未特殊标识的其它消息 
+.TP
+\fB\fICM_HOVER \fP\fP
+悬停 
+.TP
+\fB\fICM_HOVER_OVER \fP\fP
+悬停结束 
+.TP
+\fB\fICM_PRESS \fP\fP
+按下 
+.TP
+\fB\fICM_PRESS_OVER \fP\fP
+按下结束 
+.TP
+\fB\fICM_CLICK \fP\fP
+单击 
+.TP
+\fB\fICM_DOUBLE_CLICK \fP\fP
+双击 
+.TP
+\fB\fICM_FOCUS \fP\fP
+获取焦点 
+.TP
+\fB\fICM_FOCUS_OVER \fP\fP
+丢失焦点 
+.PP
+在文件 ControlBase\&.h 第 20 行定义\&.
+.PP
+.nf
+21     {
+22         CM_OTHER,                       
+23         CM_HOVER,                       
+24         CM_HOVER_OVER,                  
+25         CM_PRESS,                       
+26         CM_PRESS_OVER,                  
+27         CM_CLICK,                       
+28         CM_DOUBLE_CLICK,                
+29         CM_FOCUS,                       
+30         CM_FOCUS_OVER,                  
+31 
+32     };
+.fi
+.SS "enum \fBHiEasyX::DrawMode\fP"
+
+.PP
+.nf
+
+    绘制模式（从缓冲区绘制到窗口）
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    一般使用 DM_Normal 即可。
+.fi
+.PP
+ 
+.PP
+\fB枚举值\fP
+.in +1c
+.TP
+\fB\fIDM_Real \fP\fP
+完全按实际绘制（每次要求重绘都立即执行，可能导致程序卡顿） 
+.TP
+\fB\fIDM_Normal \fP\fP
+正常绘制（现在和 DM_Real 是等价了） 
+.TP
+\fB\fIDM_Fast \fP\fP
+快速绘制（发送 WM_USER_REDRAW 消息，可能跳过部分绘制） 
+.TP
+\fB\fIDM_VeryFast \fP\fP
+极速绘制（发送 WM_USER_REDRAW 消息，可能跳过很多绘制） 
+.TP
+\fB\fIDM_Fastest \fP\fP
+最快的绘制方式（发送 WM_USER_REDRAW 消息，可能跳过大部分绘制） 
+.PP
+在文件 HiWindow\&.h 第 106 行定义\&.
+.PP
+.nf
+107     {
+108         DM_Real,        
+109         DM_Normal,      
+110         DM_Fast,        
+111         DM_VeryFast,    
+112         DM_Fastest,     
+113     };
+.fi
+.SS "enum \fBHiEasyX::LayerOrder\fP"
+
+.PP
+特殊图层顺序标识 
+.PP
+\fB枚举值\fP
+.in +1c
+.TP
+\fB\fILAYERORDER_BOTTOM_MOST \fP\fP
+.TP
+\fB\fILAYERORDER_BOTTOM \fP\fP
+.TP
+\fB\fILAYERORDER_NORMAL \fP\fP
+.TP
+\fB\fILAYERORDER_TOP \fP\fP
+.TP
+\fB\fILAYERORDER_TOP_MOST \fP\fP
+.PP
+在文件 HiCanvas\&.h 第 859 行定义\&.
+.PP
+.nf
+860     {
+861         LAYERORDER_BOTTOM_MOST,
+862         LAYERORDER_BOTTOM,
+863         LAYERORDER_NORMAL,
+864         LAYERORDER_TOP,
+865         LAYERORDER_TOP_MOST
+866     };
+.fi
+.SS "enum \fBHiEasyX::SysControlType\fP"
+
+.PP
+支持的系统控件类型 
+.PP
+\fB枚举值\fP
+.in +1c
+.TP
+\fB\fISCT_Unknown \fP\fP
+.TP
+\fB\fISCT_Group \fP\fP
+.TP
+\fB\fISCT_GroupBox \fP\fP
+.TP
+\fB\fISCT_Static \fP\fP
+.TP
+\fB\fISCT_Button \fP\fP
+.TP
+\fB\fISCT_CheckBox \fP\fP
+.TP
+\fB\fISCT_RadioButton \fP\fP
+.TP
+\fB\fISCT_Edit \fP\fP
+.TP
+\fB\fISCT_ComboBox \fP\fP
+.PP
+在文件 SysControlBase\&.h 第 19 行定义\&.
+.PP
+.nf
+20     {
+21         SCT_Unknown,
+22         SCT_Group,
+23         SCT_GroupBox,
+24         SCT_Static,
+25         SCT_Button,
+26         SCT_CheckBox,
+27         SCT_RadioButton,
+28         SCT_Edit,
+29         SCT_ComboBox,
+30     };
+.fi
+.SH "函数说明"
+.PP 
+.SS "int HiEasyX::AllocID ()"
+
+.PP
+自动分配控件 ID 
+.PP
+在文件 SysControlBase\&.cpp 第 173 行定义\&.
+.PP
+.nf
+174     {
+175         static int id = 10086;
+176         return id++;
+177     }
+.fi
+.SS "void HiEasyX::AutoExit ()"
+
+.PP
+设置：当窗口都被销毁时，自动退出程序 
+.PP
+在文件 HiWindow\&.cpp 第 324 行定义\&.
+.PP
+.nf
+325     {
+326         std::thread([]() {
+327             init_end();
+328         exit(0);
+329             })\&.detach();
+330     }
+.fi
+.SS "bool HiEasyX::BeginTask ()"
+
+.PP
+.nf
+
+    为当前活动窗口启动任务
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    调用 EasyX 函数进行绘图或获取消息时，都应当启动任务。
+.fi
+.PP
+.PP
+\fB返回\fP
+.RS 4
+是否启动成功（若已在任务中也返回 true） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 530 行定义\&.
+.PP
+.nf
+531     {
+532         // 不做窗口匹配判断，只检验是否处于任务中
+533         if (!g_isInTask && IsFocusWindowExisted())
+534         {
+535             WaitForProcessing(g_nFocusWindowIndex);
+536             g_isInTask = true;
+537         }
+538         return g_isInTask;
+539     }
+.fi
+.SS "void HiEasyX::BindWindowCanvas (\fBCanvas\fP * pCanvas, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+.nf
+
+    绑定窗口画布指针
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    绑定后，使用画布绘图时将自动开启任务，无需用户开启，但不会自动刷新屏幕
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIpCanvas\fP 画布指针 
+.br
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 301 行定义\&.
+.PP
+.nf
+302     {
+303         int index = GetWindowIndex(hWnd);
+304         if (IsAliveWindow(index))
+305         {
+306             g_vecWindows[index]\&.pBufferImgCanvas = pCanvas;
+307             pCanvas->BindToWindow(g_vecWindows[index]\&.hWnd, g_vecWindows[index]\&.pBufferImg);
+308         }
+309     }
+.fi
+.SS "void HiEasyX::ClearMessage (BYTE filter, HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 690 行定义\&.
+.PP
+.nf
+691     {
+692         for (size_t i = 0; i < GetMsgVector(hWnd)\&.size(); i++)
+693             if (filter & GetExMessageType(GetMsgVector(hWnd)[i]))
+694                 GetMsgVector(hWnd)\&.erase(GetMsgVector(hWnd)\&.begin() + i--);
+695     }
+.fi
+.SS "void HiEasyX::closegraph_win32 (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+关闭某一绘图窗口 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表所有绘图窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 245 行定义\&.
+.PP
+.nf
+246     {
+247         // 关闭全部
+248         if (hWnd == nullptr)
+249         {
+250             for (int i = 0; i < (int)g_vecWindows\&.size(); i++)
+251             {
+252                 if (g_vecWindows[i]\&.isAlive)
+253                 {
+254                     // 必须交由原线程 DestroyWindow
+255                     // 发送 WM_DESTROY 时特殊标记 wParam 为 1，表示程序命令销毁窗口
+256                     SendMessage(g_vecWindows[i]\&.hWnd, WM_DESTROY, 1, 0);
+257                 }
+258             }
+259         }
+260         else if (IsAliveWindow(hWnd))
+261         {
+262             SendMessage(hWnd, WM_DESTROY, 1, 0);
+263         }
+264     }
+.fi
+.SS "void HiEasyX::closegraph_win32 (int index)"
+
+.PP
+在文件 HiWindow\&.cpp 第 202 行定义\&.
+.PP
+.nf
+203     {
+204         if (!IsAliveWindow(index))
+205         {
+206             return;
+207         }
+208 
+209         // 先设置窗口死亡，再标识忙碌，等待任务结束
+210         g_vecWindows[index]\&.isAlive = false;
+211         g_vecWindows[index]\&.isBusyProcessing = true;
+212         WaitForTask(g_vecWindows[index]\&.hWnd);
+213 
+214         // 若已设置父窗口为模态窗口，则需要将父窗口恢复正常
+215         if (g_vecWindows[index]\&.hParent != nullptr)
+216         {
+217             EnableWindow(g_vecWindows[index]\&.hParent, true);
+218             SetForegroundWindow(g_vecWindows[index]\&.hParent);
+219         }
+220 
+221         // 卸载托盘
+222         DeleteTray(g_vecWindows[index]\&.hWnd);
+223 
+224         // 如果活动窗口被销毁，则需要重置活动窗口索引
+225         if (index == g_nFocusWindowIndex)
+226         {
+227             g_nFocusWindowIndex = NO_WINDOW_INDEX;
+228         }
+229 
+230         // 释放窗口内存
+231         FreeWindow(index);
+232 
+233         // 关闭忙碌标识
+234         g_vecWindows[index]\&.isBusyProcessing = false;
+235 
+236         // 如果关闭此窗口后不存在任何窗口
+237         if (!IsAnyWindow())
+238         {
+239             // 关闭 GDI+ 绘图环境
+240             Gdiplus_Shutdown();
+241         }
+242     }
+.fi
+.SS "Gdiplus::Color HiEasyX::ConvertToGdiplusColor (COLORREF color, bool reserve_alpha = \fCfalse\fP)"
+
+.PP
+转换 COLORREF 到 Gdiplus::Color 
+.PP
+\fB参数\fP
+.RS 4
+\fIcolor\fP 原颜色 
+.br
+\fIreserve_alpha\fP 是否保留 COLORREF 中的 alpha 值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+转换后的 Gdiplus::Color 色值 
+.RE
+.PP
+
+.PP
+在文件 HiGdiplus\&.cpp 第 30 行定义\&.
+.PP
+.nf
+31     {
+32         return Gdiplus::Color(
+33             reserve_alpha ? GetAValue(color) : 255,
+34             GetRValue(color),
+35             GetGValue(color),
+36             GetBValue(color)
+37         );
+38     }
+.fi
+.SS "void HiEasyX::CopyImage_Alpha (int x, int y, DWORD * pDst, int wDst, int hDst, DWORD * pSrc, int wSrc, int hSrc, RECT crop = \fC{ 0 }\fP, BYTE alpha = \fC255\fP, bool bUseSrcAlpha = \fCfalse\fP, bool isCalculated = \fCfalse\fP)"
+
+.PP
+.nf
+
+    快速复制图像（可开启透明通道）
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    若未启用任何透明通道，等同于直接复制图像。此时将保留原图像的透明度信息，否则不保留透明度信息。
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIx\fP 图像输出 x 坐标 
+.br
+\fIy\fP 图像输出 y 坐标 
+.br
+\fIpDst\fP 载体图像指针 
+.br
+\fIwDst\fP 载体图像宽 
+.br
+\fIhDst\fP 载体图像高 
+.br
+\fIpSrc\fP 待输出图像指针 
+.br
+\fIwSrc\fP 待输出图像宽 
+.br
+\fIhSrc\fP 待输出图像高 
+.br
+\fIcrop\fP 待输出图像裁剪区域（right 或 bottom 为 0 表示不裁剪） 
+.br
+\fIalpha\fP 叠加透明度（透明 0 ~ 255 不透明）
+.br
+\fIbUseSrcAlpha\fP 
+.PP
+.nf
+
+    是否使用待输出图像透明度进行混合（须保证 IMAGE 中含有透明度信息）
+.fi
+.PP
+.RE
+.PP
+备注： EasyX 中的图像一般无透明度（默认设为 0，即全透明），故一般不使用原图透明度。 通常只有 png 图像，或是特地生成的图像才含有透明度信息。 
+.PP
+.PP
+.nf
+\fB参数\fP
+.RS 4
+\fIisCalculated\fP 
+.PP
+.nf
+
+    标记待输出图像是否已经计算好混合后的颜色（启用图像透明度时有效）
+.fi
+.PP
+.RE
+.PP
+注意： png 图像像素颜色都已进行过混合运算。 开启后，原图像便不再计算混合颜色，只有载体图像参与计算。 
+.fi
+.PP
+ 
+.PP
+在文件 HiCanvas\&.cpp 第 37 行定义\&.
+.PP
+.nf
+38     {
+39         // 裁剪起点或终点无效
+40         if (crop\&.left > wSrc || crop\&.top > hSrc || crop\&.right < crop\&.left || crop\&.bottom < crop\&.top)
+41             return;
+42 
+43         // 限制原图宽高
+44         int limit_w = ((crop\&.right && crop\&.right < wSrc) ? crop\&.right : wSrc);
+45         int limit_h = ((crop\&.bottom && crop\&.bottom < hSrc) ? crop\&.bottom : hSrc);
+46 
+47         // 标记不使用任何透明通道
+48         bool bNoAlpha = false;
+49         float fTransparent = alpha / 255\&.0f;
+50         if (alpha == 255 && !bUseSrcAlpha)  bNoAlpha = true;
+51 
+52         // 保证只有在使用原图透明度时，已计算标记才能开启
+53         if (!bUseSrcAlpha)  isCalculated = false;
+54 
+55         // i j -> 原图索引（若输出位置为负，则略过超出范围部分）
+56         // nx ny -> 载体图像索引
+57         for (int i = (x < 0 ? -x : 0) + crop\&.left, nx = i + x; i < limit_w && nx < wDst; i++, nx++)
+58         {
+59             for (int j = (y < 0 ? -y : 0) + crop\&.top, ny = j + y; j < limit_h && ny < hDst; j++, ny++)
+60             {
+61                 int indexSrc = j * wSrc + i;
+62                 int indexDst = ny * wDst + nx;
+63                 if (indexSrc < 0 || indexDst < 0)
+64                 {
+65                     continue;
+66                 }
+67                 if (bNoAlpha)
+68                 {
+69                     pDst[indexDst] = pSrc[indexSrc];
+70                 }
+71                 else
+72                 {
+73                     pDst[indexDst] = MixAlphaColor(
+74                         pDst[indexDst],
+75                         bUseSrcAlpha ? pSrc[indexSrc] : SET_ALPHA(pSrc[indexSrc], 255),
+76                         isCalculated,
+77                         alpha
+78                     );
+79                 }
+80             }
+81         }
+82     }
+.fi
+.SS "void HiEasyX::CopyImageToHDC (IMAGE * pImg, HDC hdc, RECT rct)"
+
+.PP
+在文件 HiWindow\&.cpp 第 153 行定义\&.
+.PP
+.nf
+154     {
+155         //HDC hdc = GetDC(hWnd);
+156         HDC hdcImg = GetImageHDC(pImg);
+157         BitBlt(hdc, rct\&.left, rct\&.top, rct\&.right, rct\&.bottom, hdcImg, 0, 0, SRCCOPY);
+158         //ReleaseDC(hWnd, hdc);
+159     }
+.fi
+.SS "void HiEasyX::CreateTray (LPCTSTR lpszTrayName, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+.nf
+
+    为窗口创建一个托盘
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    在 \fBHiEasyX\fP 中，每个窗口仅能稳定占有一个托盘
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIlpszTrayName\fP 托盘提示文本 
+.br
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 576 行定义\&.
+.PP
+.nf
+577     {
+578         static int id = 0;
+579 
+580         int index = GetWindowIndex(hWnd);
+581         if (IsAliveWindow(index))
+582         {
+583             HICON hIcon = g_hIconDefault;
+584             if (g_lpszCustomIconSm)
+585                 hIcon = g_hCustomIconSm;
+586             else if (g_lpszCustomIcon)
+587                 hIcon = g_hCustomIcon;
+588 
+589             g_vecWindows[index]\&.isUseTray = true;
+590             g_vecWindows[index]\&.nid\&.cbSize = sizeof(NOTIFYICONDATA);
+591             g_vecWindows[index]\&.nid\&.hWnd = g_vecWindows[index]\&.hWnd;
+592             g_vecWindows[index]\&.nid\&.uID = id++;
+593             g_vecWindows[index]\&.nid\&.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+594             g_vecWindows[index]\&.nid\&.uCallbackMessage = WM_TRAY;
+595             g_vecWindows[index]\&.nid\&.hIcon = hIcon;
+596             lstrcpy(g_vecWindows[index]\&.nid\&.szTip, lpszTrayName);
+597             ShowTray(&g_vecWindows[index]\&.nid);
+598         }
+599     }
+.fi
+.SS "void HiEasyX::DelayFPS (int fps, bool wait_long = \fCfalse\fP)"
+
+.PP
+根据目标帧率延时 
+.PP
+\fB参数\fP
+.RS 4
+\fIfps\fP 帧率 
+.br
+\fIwait_long\fP 是否长等待（降低占用） 
+.RE
+.PP
+
+.PP
+在文件 HiFPS\&.cpp 第 11 行定义\&.
+.PP
+.nf
+12     {
+13         if (wait_long)
+14         {
+15             Sleep(500);
+16             return;
+17         }
+18 
+19         clock_t tNow = clock();
+20         if (tRecord)
+21         {
+22             int delay = 1000 / fps - (tNow - tRecord);
+23             if (delay > 0)
+24             {
+25                 HpSleep(delay);
+26             }
+27         }
+28         tRecord = clock();
+29     }
+.fi
+.SS "void HiEasyX::DeleteTray (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+删除某窗口的托盘 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 601 行定义\&.
+.PP
+.nf
+602     {
+603         int index = GetWindowIndex(hWnd);
+604 
+605         // 死窗口删除时会调用该函数，所以不判断窗口死活，只需要判断窗口是否存在
+606         if (IsValidWindowIndex(index))
+607         {
+608             if (g_vecWindows[index]\&.isUseTray)
+609             {
+610                 g_vecWindows[index]\&.isUseTray = false;
+611                 Shell_NotifyIcon(NIM_DELETE, &g_vecWindows[index]\&.nid);
+612             }
+613         }
+614     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Arc (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画圆弧（传入逆时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 509 行定义\&.
+.PP
+.nf
+522     {
+523         Gdiplus_Arc(
+524             GetImageHDC(pImg),
+525             x, y, w, h, -stangle, -endangle,
+526             ConvertToGdiplusColor(linecolor, enable_alpha),
+527             linewidth,
+528             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+529         );
+530     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Ellipse (float x, float y, float w, float h, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画椭圆 
+.PP
+在文件 HiGdiplus\&.cpp 第 389 行定义\&.
+.PP
+.nf
+400     {
+401         Gdiplus_Ellipse(
+402             GetImageHDC(pImg),
+403             x, y, w, h,
+404             ConvertToGdiplusColor(linecolor, enable_alpha),
+405             linewidth,
+406             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+407         );
+408     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_FillEllipse (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画有边框填充椭圆 
+.PP
+在文件 HiGdiplus\&.cpp 第 429 行定义\&.
+.PP
+.nf
+441     {
+442         EasyX_Gdiplus_SolidEllipse(x, y, w, h, fillcolor, enable_alpha, enable_aa, pImg);
+443         EasyX_Gdiplus_Ellipse(x, y, w, h, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+444     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_FillPie (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画有边框填充饼状图（传入逆时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 490 行定义\&.
+.PP
+.nf
+504     {
+505         EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, fillcolor, enable_alpha, enable_aa, pImg);
+506         EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+507     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_FillPolygon (int points_num, POINT * points, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画有边框填充多边形 
+.PP
+在文件 HiGdiplus\&.cpp 第 317 行定义\&.
+.PP
+.nf
+327     {
+328         EasyX_Gdiplus_SolidPolygon(points_num, points, fillcolor, enable_alpha, enable_aa, pImg);
+329         EasyX_Gdiplus_Polygon(points_num, points, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+330     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_FillRectangle (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画有边框填充矩形 
+.PP
+在文件 HiGdiplus\&.cpp 第 372 行定义\&.
+.PP
+.nf
+384     {
+385         EasyX_Gdiplus_SolidRectangle(x, y, w, h, fillcolor, enable_alpha, enable_aa, pImg);
+386         EasyX_Gdiplus_Rectangle(x, y, w, h, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+387     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Line (float x1, float y1, float x2, float y2, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画直线 
+.PP
+在文件 HiGdiplus\&.cpp 第 238 行定义\&.
+.PP
+.nf
+249     {
+250         Gdiplus_Line(
+251             GetImageHDC(pImg),
+252             x1, y1, x2, y2,
+253             ConvertToGdiplusColor(linecolor, enable_alpha),
+254             linewidth,
+255             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+256         );
+257     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Pie (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画饼状图（传入逆时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 446 行定义\&.
+.PP
+.nf
+459     {
+460         Gdiplus_Pie(
+461             GetImageHDC(pImg),
+462             x, y, w, h, -stangle, -endangle,
+463             ConvertToGdiplusColor(linecolor, enable_alpha),
+464             linewidth,
+465             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+466         );
+467     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Polygon (int points_num, POINT * points, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画多边形 
+.PP
+在文件 HiGdiplus\&.cpp 第 259 行定义\&.
+.PP
+.nf
+268     {
+269         // 转换点的类型
+270         Gdiplus::PointF* pPts = new Gdiplus::PointF[points_num];
+271         for (int i = 0; i < points_num; i++)
+272         {
+273             pPts[i]\&.X = (float)points[i]\&.x;
+274             pPts[i]\&.Y = (float)points[i]\&.y;
+275         }
+276 
+277         Gdiplus_Polygon(
+278             GetImageHDC(pImg),
+279             points_num,
+280             pPts,
+281             ConvertToGdiplusColor(linecolor, enable_alpha),
+282             linewidth,
+283             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+284         );
+285 
+286         delete[] pPts;
+287     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_Rectangle (float x, float y, float w, float h, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画矩形 
+.PP
+在文件 HiGdiplus\&.cpp 第 332 行定义\&.
+.PP
+.nf
+343     {
+344         Gdiplus_Rectangle(
+345             GetImageHDC(pImg),
+346             x, y, w, h,
+347             ConvertToGdiplusColor(linecolor, enable_alpha),
+348             linewidth,
+349             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+350         );
+351     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_SolidEllipse (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画无边框填充椭圆 
+.PP
+在文件 HiGdiplus\&.cpp 第 410 行定义\&.
+.PP
+.nf
+420     {
+421         Gdiplus_SolidEllipse(
+422             GetImageHDC(pImg),
+423             x, y, w, h,
+424             ConvertToGdiplusColor(fillcolor, enable_alpha),
+425             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+426         );
+427     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_SolidPie (float x, float y, float w, float h, float stangle, float endangle, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画无边框填充饼状图（传入逆时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 469 行定义\&.
+.PP
+.nf
+481     {
+482         Gdiplus_SolidPie(
+483             GetImageHDC(pImg),
+484             x, y, w, h, -stangle, -endangle,
+485             ConvertToGdiplusColor(fillcolor, enable_alpha),
+486             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+487         );
+488     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_SolidPolygon (int points_num, POINT * points, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画无边框填充多边形 
+.PP
+在文件 HiGdiplus\&.cpp 第 289 行定义\&.
+.PP
+.nf
+297     {
+298         // 转换点的类型
+299         Gdiplus::PointF* pPts = new Gdiplus::PointF[points_num];
+300         for (int i = 0; i < points_num; i++)
+301         {
+302             pPts[i]\&.X = (float)points[i]\&.x;
+303             pPts[i]\&.Y = (float)points[i]\&.y;
+304         }
+305 
+306         Gdiplus_SolidPolygon(
+307             GetImageHDC(pImg),
+308             points_num,
+309             pPts,
+310             ConvertToGdiplusColor(fillcolor, enable_alpha),
+311             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+312         );
+313 
+314         delete[] pPts;
+315     }
+.fi
+.SS "void HiEasyX::EasyX_Gdiplus_SolidRectangle (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE * pImg)"
+
+.PP
+画无边框填充矩形 
+.PP
+在文件 HiGdiplus\&.cpp 第 353 行定义\&.
+.PP
+.nf
+363     {
+364         Gdiplus_SolidRectangle(
+365             GetImageHDC(pImg),
+366             x, y, w, h,
+367             ConvertToGdiplusColor(fillcolor, enable_alpha),
+368             enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+369         );
+370     }
+.fi
+.SS "void HiEasyX::EnableAutoFlush (bool enable)"
+
+.PP
+.nf
+
+    是否启用自动刷新双缓冲
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    默认情况下是自动刷新双缓冲的，即每次结束窗口任务时，EndTask 会根据传入的参数，
+    决定要不要标记“需要刷新双缓冲”，标记后，窗口将会在下一次遇到重绘消息的时候刷新双缓冲。
+.fi
+.PP
+.PP
+.PP
+.nf
+    但是，在频繁重绘的情况下，由于多线程协调问题，自动刷新的效率可能会变低。
+    所以你可以关闭自动刷新双缓冲，相应地，你需要使用 FlushDrawing 函数手动刷新双缓冲。
+.fi
+.PP
+ 
+.PP
+在文件 HiWindow\&.cpp 第 525 行定义\&.
+.PP
+.nf
+526     {
+527         g_bAutoFlush = enable;
+528     }
+.fi
+.SS "void HiEasyX::EndTask (bool flush = \fCtrue\fP)"
+
+.PP
+终止当前窗口任务 
+.PP
+\fB参数\fP
+.RS 4
+\fIflush\fP 是否标记需要更新双缓冲（但不会自动刷新窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 541 行定义\&.
+.PP
+.nf
+542     {
+543         if (g_isInTask)
+544         {
+545             if (flush && IsFocusWindowExisted())
+546             {
+547                 GetFocusWindow()\&.isNeedFlush = true;
+548                 //FlushDrawing(g_nFocusWindowIndex);
+549             }
+550 
+551             g_isInTask = false;
+552         }
+553     }
+.fi
+.SS "void HiEasyX::FlushDrawing (int index, RECT rct = \fC{ 0 }\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 429 行定义\&.
+.PP
+.nf
+429                                             { 0 })
+430     {
+431         if (!IsAliveWindow(index))
+432         {
+433             return;
+434         }
+435 
+436         int w = g_vecWindows[index]\&.pImg->getwidth();
+437         int h = g_vecWindows[index]\&.pImg->getheight();
+438 
+439         // 是否全部更新
+440         bool isAllFlush = !(rct\&.left && rct\&.top && rct\&.right && rct\&.bottom);
+441 
+442         // 双缓冲的两层画布
+443         DWORD* dst = GetImageBuffer(g_vecWindows[index]\&.pImg);
+444         DWORD* src = GetImageBuffer(g_vecWindows[index]\&.pBufferImg);
+445 
+446         // 部分重绘时，修正重绘区域
+447         RECT rctCorrected = rct;
+448         if (!isAllFlush)
+449         {
+450             if (rct\&.left < 0)        rctCorrected\&.left = 0;
+451             if (rct\&.top < 0)     rctCorrected\&.top = 0;
+452             if (rct\&.right > w)       rctCorrected\&.right = w;
+453             if (rct\&.bottom > h)      rctCorrected\&.bottom = h;
+454         }
+455 
+456         // 不跳过像素的模式
+457         if (g_vecWindows[index]\&.nSkipPixels == 0)
+458         {
+459             // 全部更新
+460             if (isAllFlush)
+461             {
+462                 // fastest
+463                 memcpy(dst, src, sizeof(DWORD) * w * h);
+464             }
+465             // 部分更新
+466             else
+467             {
+468                 for (int x = rctCorrected\&.left; x < rctCorrected\&.right; x++)
+469                 {
+470                     for (int y = rctCorrected\&.top; y < rctCorrected\&.bottom; y++)
+471                     {
+472                         int index = x + y * w;
+473                         dst[index] = src[index];
+474                     }
+475                 }
+476             }
+477         }
+478         // 跳过像素的模式
+479         else
+480         {
+481             // 全部更新
+482             if (isAllFlush)
+483             {
+484                 int len = w * h;
+485                 for (int i = 0; i < len; i++)       // 线性遍历画布
+486                 {
+487                     if (dst[i] == src[i])           // 若两画布某位置色彩重叠，则跳过接下来的 n 个像素点
+488                     {
+489                         i += g_vecWindows[index]\&.nSkipPixels;
+490                         continue;
+491                     }
+492                     dst[i] = src[i];
+493                 }
+494             }
+495             // 部分更新
+496             else
+497             {
+498                 for (int y = rctCorrected\&.top; y < rctCorrected\&.bottom; y++)  // 在矩形区域内遍历画布
+499                 {
+500                     for (int x = rctCorrected\&.left; x < rctCorrected\&.right; x++)
+501                     {
+502                         int index = x + y * w;
+503                         if (dst[index] == src[index])   // 若两画布某位置色彩重叠，则在 x 方向上跳过接下来的 n 个像素点
+504                         {
+505                             x += g_vecWindows[index]\&.nSkipPixels;
+506                             continue;
+507                         }
+508                         dst[index] = src[index];
+509                     }
+510                 }
+511             }
+512         }
+513     }// FlushDrawing
+.fi
+.SS "void HiEasyX::FlushDrawing (RECT rct = \fC{ 0 }\fP)"
+
+.PP
+.nf
+
+    更新当前活动窗口的双缓冲
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    由于安全性问题，必须在窗口任务内调用此函数，否则不会更新双缓冲。
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    若要重绘窗口请使用 RedrawWindow
+.fi
+.PP
+.PP
+.PP
+.nf
+ 示例：
+.PP
+.nf
+BEGIN_TASK();
+hiex::FlushDrawing({ 200,200,300,300 });
+END_TASK(false);    // 注意，结束任务时标记 false 表示不更新双缓冲，因为上面已经更新过了
+REDRAW_WINDOW();
+.fi
+.PP
+
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIrct\fP 双缓冲更新区域（坐标都为 0 表示全部区域） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 516 行定义\&.
+.PP
+.nf
+517     {
+518         // 为了防止用户更新双缓冲时窗口拉伸导致画布冲突，必须在窗口任务内调用此函数
+519         if (IsInTask())
+520         {
+521             FlushDrawing(g_nFocusWindowIndex, rct);
+522         }
+523     }
+.fi
+.SS "void HiEasyX::flushmessage_win32 (BYTE filter = \fC\-1\fP, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+清除所有消息记录 
+.PP
+\fB参数\fP
+.RS 4
+\fIfilter\fP 消息筛选方式 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 753 行定义\&.
+.PP
+.nf
+754     {
+755         ClearMessage(filter, hWnd);
+756     }
+.fi
+.SS "void HiEasyX::FlushMouseMsgBuffer_win32 (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+清空鼠标消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 777 行定义\&.
+.PP
+.nf
+778     {
+779         ClearMessage(EM_MOUSE, hWnd);
+780     }
+.fi
+.SS "void HiEasyX::FreeWindow (int index)"
+
+.PP
+在文件 HiWindow\&.cpp 第 174 行定义\&.
+.PP
+.nf
+175     {
+176         if (!IsValidWindowIndex(index))
+177         {
+178             return;
+179         }
+180 
+181         // 閲婃斁缁樺浘缂撳啿
+182         if (g_vecWindows[index]\&.pImg)
+183         {
+184             delete g_vecWindows[index]\&.pImg;
+185             g_vecWindows[index]\&.pImg = nullptr;
+186         }
+187         if (g_vecWindows[index]\&.pBufferImg)
+188         {
+189             delete g_vecWindows[index]\&.pBufferImg;
+190             g_vecWindows[index]\&.pBufferImg = nullptr;
+191         }
+192 
+193         // 閲婃斁娑堟伅鍒楄〃鍐呭瓨
+194         std::vector<ExMessage>()\&.swap(g_vecWindows[index]\&.vecMessage);
+195 
+196         //DestroyWindow(g_vecWindows[index]\&.hWnd);
+197         //PostQuitMessage(0);
+198     }
+.fi
+.SS "void HiEasyX::Gdiplus_Arc (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画圆弧（传入顺时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 216 行定义\&.
+.PP
+.nf
+228     {
+229         Gdiplus_Try_Starup();
+230         Gdiplus::Graphics graphics(hdc);
+231         Gdiplus::Pen pen(linecolor, linewidth);
+232 
+233         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+234         graphics\&.SetSmoothingMode(smoothing_mode);
+235         graphics\&.DrawArc(&pen, x, y, w, h, stangle, endangle);
+236     }
+.fi
+.SS "void HiEasyX::Gdiplus_Ellipse (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画椭圆 
+.PP
+在文件 HiGdiplus\&.cpp 第 134 行定义\&.
+.PP
+.nf
+144     {
+145         Gdiplus_Try_Starup();
+146         Gdiplus::Graphics graphics(hdc);
+147         Gdiplus::Pen pen(linecolor, linewidth);
+148 
+149         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+150         graphics\&.SetSmoothingMode(smoothing_mode);
+151         graphics\&.DrawEllipse(&pen, x, y, w, h);
+152     }
+.fi
+.SS "void HiEasyX::Gdiplus_Line (HDC hdc, float x1, float y1, float x2, float y2, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画线 
+.PP
+在文件 HiGdiplus\&.cpp 第 40 行定义\&.
+.PP
+.nf
+50     {
+51         Gdiplus_Try_Starup();
+52         Gdiplus::Graphics graphics(hdc);
+53         Gdiplus::Pen pen(linecolor, linewidth);
+54 
+55         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+56         graphics\&.SetSmoothingMode(smoothing_mode);
+57         graphics\&.DrawLine(&pen, x1, y1, x2, y2);
+58     }
+.fi
+.SS "void HiEasyX::Gdiplus_Pie (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画饼状图（传入顺时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 173 行定义\&.
+.PP
+.nf
+185     {
+186         Gdiplus_Try_Starup();
+187         Gdiplus::Graphics graphics(hdc);
+188         Gdiplus::Pen pen(linecolor, linewidth);
+189 
+190         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+191         graphics\&.SetSmoothingMode(smoothing_mode);
+192         graphics\&.DrawPie(&pen, x, y, w, h, stangle, endangle);
+193     }
+.fi
+.SS "void HiEasyX::Gdiplus_Polygon (HDC hdc, int points_num, Gdiplus::PointF * points, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画多边形 
+.PP
+在文件 HiGdiplus\&.cpp 第 60 行定义\&.
+.PP
+.nf
+68     {
+69         Gdiplus_Try_Starup();
+70         Gdiplus::Graphics graphics(hdc);
+71         Gdiplus::Pen pen(linecolor, linewidth);
+72 
+73         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+74         graphics\&.SetSmoothingMode(smoothing_mode);
+75         graphics\&.DrawLines(&pen, points, points_num);
+76     }
+.fi
+.SS "void HiEasyX::Gdiplus_Rectangle (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画矩形 
+.PP
+在文件 HiGdiplus\&.cpp 第 95 行定义\&.
+.PP
+.nf
+105     {
+106         Gdiplus_Try_Starup();
+107         Gdiplus::Graphics graphics(hdc);
+108         Gdiplus::Pen pen(linecolor, linewidth);
+109 
+110         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+111         graphics\&.SetSmoothingMode(smoothing_mode);
+112         graphics\&.DrawRectangle(&pen, x, y, w, h);
+113     }
+.fi
+.SS "void HiEasyX::Gdiplus_Shutdown ()"
+
+.PP
+关闭 GDI+ 
+.PP
+在文件 HiGdiplus\&.cpp 第 21 行定义\&.
+.PP
+.nf
+22     {
+23         if (g_bStarup)
+24         {
+25             Gdiplus::GdiplusShutdown(g_Token);
+26             g_bStarup = false;
+27         }
+28     }
+.fi
+.SS "void HiEasyX::Gdiplus_SolidEllipse (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画无边框填充椭圆 
+.PP
+在文件 HiGdiplus\&.cpp 第 154 行定义\&.
+.PP
+.nf
+163     {
+164         Gdiplus_Try_Starup();
+165         Gdiplus::Graphics graphics(hdc);
+166         Gdiplus::SolidBrush brush(fillcolor);
+167 
+168         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+169         graphics\&.SetSmoothingMode(smoothing_mode);
+170         graphics\&.FillEllipse(&brush, x, y, w, h);
+171     }
+.fi
+.SS "void HiEasyX::Gdiplus_SolidPie (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画无边框填充饼状图（传入顺时针角度） 
+.PP
+在文件 HiGdiplus\&.cpp 第 195 行定义\&.
+.PP
+.nf
+206     {
+207         Gdiplus_Try_Starup();
+208         Gdiplus::Graphics graphics(hdc);
+209         Gdiplus::SolidBrush brush(fillcolor);
+210 
+211         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+212         graphics\&.SetSmoothingMode(smoothing_mode);
+213         graphics\&.FillPie(&brush, x, y, w, h, stangle, endangle);
+214     }
+.fi
+.SS "void HiEasyX::Gdiplus_SolidPolygon (HDC hdc, int points_num, Gdiplus::PointF * points, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画无边框填充多边形 
+.PP
+在文件 HiGdiplus\&.cpp 第 78 行定义\&.
+.PP
+.nf
+85     {
+86         Gdiplus_Try_Starup();
+87         Gdiplus::Graphics graphics(hdc);
+88         Gdiplus::SolidBrush brush(fillcolor);
+89 
+90         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+91         graphics\&.SetSmoothingMode(smoothing_mode);
+92         graphics\&.FillPolygon(&brush, points, points_num);
+93     }
+.fi
+.SS "void HiEasyX::Gdiplus_SolidRectangle (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+
+.PP
+画无边框填充矩形 
+.PP
+在文件 HiGdiplus\&.cpp 第 115 行定义\&.
+.PP
+.nf
+124     {
+125         Gdiplus_Try_Starup();
+126         Gdiplus::Graphics graphics(hdc);
+127         Gdiplus::SolidBrush brush(fillcolor);
+128 
+129         graphics\&.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+130         graphics\&.SetSmoothingMode(smoothing_mode);
+131         graphics\&.FillRectangle(&brush, x, y, w, h);
+132     }
+.fi
+.SS "void HiEasyX::Gdiplus_Try_Starup ()"
+
+.PP
+注意，必须先启动 GDI+，才能使用下面的绘图函数 启动 GDI+，如果已经启动则直接返回 
+.PP
+在文件 HiGdiplus\&.cpp 第 12 行定义\&.
+.PP
+.nf
+13     {
+14         if (!g_bStarup)
+15         {
+16             Gdiplus::GdiplusStartup(&g_Token, &g_Input, nullptr);
+17             g_bStarup = true;
+18         }
+19     }
+.fi
+.SS "bool HiEasyX::GetCustomIconState ()"
+
+.PP
+获取自定义程序图标的启用状态 
+.PP
+在文件 HiWindow\&.cpp 第 650 行定义\&.
+.PP
+.nf
+651     {
+652         return g_lpszCustomIcon;
+653     }
+.fi
+.SS "HICON HiEasyX::GetDefaultAppIcon ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 893 行定义\&.
+.PP
+.nf
+894     {
+895         static HBITMAP hBmp = Image2Bitmap(GetIconImage(), true);
+896         static HICON hIcon = Bitmap2Icon(hBmp);
+897         static bool init = false;
+898         if (!init)
+899         {
+900             DeleteObject(hBmp);
+901             init = true;
+902         }
+903         return hIcon;
+904     }
+.fi
+.SS "\fBDrawMode\fP HiEasyX::GetDrawMode ()"
+
+.PP
+获取全局绘制模式 
+.PP
+在文件 HiWindow\&.cpp 第 376 行定义\&.
+.PP
+.nf
+377     {
+378         return g_fDrawMode;
+379     }
+.fi
+.SS "\fBEasyWindow\fP& HiEasyX::GetFocusWindow ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 68 行定义\&.
+.PP
+.nf
+69     {
+70         static EasyWindow wndEmpty;
+71         if (IsFocusWindowExisted())
+72         {
+73             return g_vecWindows[g_nFocusWindowIndex];
+74         }
+75         else
+76         {
+77             wndEmpty = {};
+78             return wndEmpty;
+79         }
+80     }
+.fi
+.SS "HWND HiEasyX::GetHWnd_win32 ()"
+
+.PP
+得到当前活动绘图窗口的句柄 
+.PP
+在文件 HiWindow\&.cpp 第 332 行定义\&.
+.PP
+.nf
+333     {
+334         return IsFocusWindowExisted() ? GetFocusWindow()\&.hWnd : nullptr;
+335     }
+.fi
+.SS "IMAGE * HiEasyX::GetIconImage ()"
+
+.PP
+获取图标对象（显存的拷贝） 
+.PP
+在文件 HiIcon\&.cpp 第 75 行定义\&.
+.PP
+.nf
+76 {
+77     static IMAGE img(HIICON_WIDTH, HIICON_HEIGHT);
+78     static bool init = false;
+79     if (!init)
+80     {
+81         DWORD* p = GetImageBuffer(&img);
+82         memcpy(p, pBuf, HIICON_WIDTH * HIICON_HEIGHT * sizeof DWORD);
+83         init = true;
+84     }
+85 
+86     return &img;
+87 }
+.fi
+.SS "DWORD * HiEasyX::GetIconImageBuffer ()"
+
+.PP
+获取图标显存 
+.PP
+\fB参见\fP
+.RS 4
+图标大小 \fBHIICON_WIDTH\fP, \fBHIICON_HEIGHT\fP 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+显存指针 
+.RE
+.PP
+
+.PP
+在文件 HiIcon\&.cpp 第 70 行定义\&.
+.PP
+.nf
+71 {
+72     return pBuf;
+73 }
+.fi
+.SS "ExMessage HiEasyX::getmessage_win32 (BYTE filter = \fC\-1\fP, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+阻塞等待，直到获取到一个新消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIfilter\fP 消息筛选方式 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+获取到的消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 728 行定义\&.
+.PP
+.nf
+729     {
+730         while (!IsNewMessage(filter, hWnd)) HpSleep(1);
+731         ExMessage msg = GetNextMessage(filter, hWnd);
+732         RemoveMessage(hWnd);
+733         return msg;
+734     }
+.fi
+.SS "void HiEasyX::getmessage_win32 (ExMessage * msg, BYTE filter = \fC\-1\fP, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+阻塞等待，直到获取到一个新消息 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 返回获取到的消息 
+.br
+\fIfilter\fP 消息筛选方式 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 736 行定义\&.
+.PP
+.nf
+737     {
+738         ExMessage msgEx = getmessage_win32(filter);
+739         if (msg)    *msg = msgEx;
+740     }
+.fi
+.SS "MOUSEMSG HiEasyX::GetMouseMsg_win32 (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+阻塞等待，直到获取到一个新的鼠标消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+鼠标消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 763 行定义\&.
+.PP
+.nf
+764     {
+765         ExMessage msgEx = getmessage_win32(EM_MOUSE, hWnd);
+766         return To_MouseMsg(msgEx);
+767     }
+.fi
+.SS "std::vector<ExMessage>& HiEasyX::GetMsgVector (HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 664 行定义\&.
+.PP
+.nf
+665     {
+666         static std::vector<ExMessage> vec;
+667         int index = GetWindowIndex(hWnd);
+668         if (IsAliveWindow(index))
+669         {
+670             return g_vecWindows[index]\&.vecMessage;
+671         }
+672         else
+673         {
+674             vec\&.clear();
+675             return vec;
+676         }
+677     }
+.fi
+.SS "ExMessage HiEasyX::GetNextMessage (BYTE filter, HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 709 行定义\&.
+.PP
+.nf
+710     {
+711         if (IsNewMessage(filter, hWnd))
+712         {
+713             for (size_t i = 0; i < GetMsgVector(hWnd)\&.size(); i++)
+714             {
+715                 if (filter & GetExMessageType(GetMsgVector(hWnd)[i]))
+716                 {
+717                     for (size_t j = 0; j < i; j++)
+718                     {
+719                         RemoveMessage(hWnd);
+720                     }
+721                     return GetMsgVector(hWnd)[0];
+722                 }
+723             }
+724         }
+725         return {};
+726     }
+.fi
+.SS "\fBCanvas\fP * HiEasyX::GetWindowCanvas (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取窗口画布指针 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+画布指针，若未绑定画布则返回空 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 288 行定义\&.
+.PP
+.nf
+289     {
+290         int index = GetWindowIndex(hWnd);
+291         if (IsAliveWindow(index))
+292         {
+293             return g_vecWindows[index]\&.pBufferImgCanvas;
+294         }
+295         else
+296         {
+297             return nullptr;
+298         }
+299     }
+.fi
+.SS "IMAGE * HiEasyX::GetWindowImage (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取某窗口的图像指针 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+缓冲区图像指针 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 275 行定义\&.
+.PP
+.nf
+276     {
+277         int index = GetWindowIndex(hWnd);
+278         if (IsAliveWindow(index))
+279         {
+280             return g_vecWindows[index]\&.pBufferImg;
+281         }
+282         else
+283         {
+284             return nullptr;
+285         }
+286     }
+.fi
+.SS "int HiEasyX::GetWindowIndex (HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 85 行定义\&.
+.PP
+.nf
+86     {
+87         if (hWnd == nullptr)
+88         {
+89             return g_nFocusWindowIndex;
+90         }
+91         int index = NO_WINDOW_INDEX;
+92         for (int i = 0; i < (int)g_vecWindows\&.size(); i++)
+93         {
+94             if (hWnd == g_vecWindows[i]\&.hWnd)
+95             {
+96                 index = i;
+97                 break;
+98             }
+99         }
+100         return index;
+101     }
+.fi
+.SS "POINT HiEasyX::GetWindowPos (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取窗口位置 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+窗口位置 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 851 行定义\&.
+.PP
+.nf
+852     {
+853         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+854         RECT rct;
+855         GetWindowRect(hWnd, &rct);
+856         return { rct\&.left, rct\&.top };
+857     }
+.fi
+.SS "SIZE HiEasyX::GetWindowSize (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取窗口大小 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+窗口大小 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 859 行定义\&.
+.PP
+.nf
+860     {
+861         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+862         RECT rct;
+863         GetWindowRect(hWnd, &rct);
+864         return { rct\&.right - rct\&.left, rct\&.bottom - rct\&.top };
+865     }
+.fi
+.SS "\fBEasyWindow\fP HiEasyX::GetWorkingWindow ()"
+
+.PP
+得到当前绘图窗口的详细信息 
+.PP
+在文件 HiWindow\&.cpp 第 337 行定义\&.
+.PP
+.nf
+338     {
+339         return GetFocusWindow();
+340     }
+.fi
+.SS "void HiEasyX::init_end (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+初始化窗口结束后，可以用此函数阻塞等待目标窗口被关闭，然后函数返回 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 目标窗口（为空代表所有窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 311 行定义\&.
+.PP
+.nf
+312     {
+313         if (hWnd)
+314         {
+315             int index = GetWindowIndex(hWnd);
+316             while (IsAliveWindow(index))
+317                 Sleep(100);
+318         }
+319         else
+320             while (IsAnyWindow())
+321                 Sleep(100);
+322     }
+.fi
+.SS "HWND HiEasyX::initgraph_win32 (int w = \fC640\fP, int h = \fC480\fP, int flag = \fC\fBEW_NORMAL\fP\fP, LPCTSTR lpszWndTitle = \fCL''\fP, WNDPROC WindowProcess = \fCnullptr\fP, HWND hParent = \fCnullptr\fP)"
+
+.PP
+.nf
+
+    创建 Win32 绘图窗口（异于原生 EasyX 窗口）
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    窗口默认支持双击消息、调整大小（使用 EnableResizing 宏设置是否可以调整大小）
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIw\fP 窗口宽 
+.br
+\fIh\fP 窗口高 
+.br
+\fIflag\fP 窗口样式（EW_ 系列宏，默认为 EW_NORMAL） 
+.br
+\fIlpszWndTitle\fP 窗口标题 
+.br
+\fIWindowProcess\fP 窗口过程函数 
+.br
+\fIhParent\fP 父窗口句柄 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+创建的窗口句柄
+.RE
+.PP
+\fBBug\fP
+.RS 4
+不建议大批量创建绘图窗口，如果必要，请适当添加延时，否则可能导致未知问题。
+.RE
+.PP
+.PP
+\fB窗口过程函数规范 \fP
+.RS 4
+
+.RE
+.PP
+函数签名： LRESULT CALLBACK \fBWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)\fP;
+.PP
+注意事项： 若要以默认方式处理消息，则返回 HIWINDOW_DEFAULT_PROC 即可（不要使用 DefWindowProc 函数）
+.PP
+示例函数： 
+.PP
+.nf
+LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    switch (msg)
+    {
+    case WM_PAINT:
+        BEGIN_TASK_WND(hWnd);
+        circle(100, 100, 70);
+        END_TASK();
+        break;
+
+    case WM_CLOSE:
+        DestroyWindow(hWnd);
+        break;
+
+    case WM_DESTROY:
+        // TODO: 在此处释放申请的内存
+        PostQuitMessage(0);
+        break;
+
+    default:
+        return HIWINDOW_DEFAULT_PROC;   // 标识使用默认消息处理函数继续处理
+
+        // 若要以默认方式处理，请勿使用此语句
+        //return DefWindowProc(hWnd, msg, wParam, lParam);
+        break;
+    }
+
+    return 0;
+}
+
+.fi
+.PP
+  
+.PP
+在文件 HiWindow\&.cpp 第 1630 行定义\&.
+.PP
+.nf
+1631     {
+1632         // 标记是否已经完成窗口创建任务
+1633         int nDoneFlag = 0;
+1634         HWND hWnd = nullptr;
+1635 
+1636         // 存在父窗口时，实现模态窗口
+1637         if (hParent)
+1638         {
+1639             // 禁用父窗口（该窗口被销毁后，父窗口将会恢复正常）
+1640             EnableWindow(hParent, false);
+1641         }
+1642 
+1643         std::thread(InitWindow, w, h, flag, lpszWndTitle, WindowProcess, hParent, &nDoneFlag, &hWnd)\&.detach();
+1644 
+1645         while (nDoneFlag == 0)  Sleep(50);      // 等待窗口创建完成
+1646         if (nDoneFlag == -1)
+1647         {
+1648             if (hParent)                        // 创建子窗口失败，则使父窗口恢复正常
+1649             {
+1650                 EnableWindow(hParent, true);
+1651             }
+1652             return nullptr;
+1653         }
+1654         else
+1655         {
+1656             // 预设背景色
+1657             if (SetWorkingWindow(hWnd) && BeginTask())
+1658             {
+1659                 setbkcolor(CLASSICGRAY);
+1660                 settextcolor(BLACK);
+1661                 setlinecolor(BLACK);
+1662                 setfillcolor(BLACK);
+1663                 cleardevice();
+1664                 EndTask();
+1665                 RedrawWindow();
+1666             }
+1667 
+1668             return hWnd;
+1669         }
+1670     }
+.fi
+.SS "void HiEasyX::InitWindow (int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent, int * nDoneFlag, HWND * hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1426 行定义\&.
+.PP
+.nf
+1427     {
+1428         static int nWndCount = 0;   // 已创建窗口计数（用于生成窗口标题）
+1429         std::wstring wstrTitle;     // 窗口标题
+1430         EasyWindow wnd;             // 窗口信息
+1431         int nFrameW, nFrameH;       // 窗口标题栏宽高（各个窗口可能不同）
+1432         int nIndexWnd = nWndCount;  // 记录这个窗口的 id
+1433 
+1434         // 可能多个窗口同时在创建，为了防止预设窗口属性交叉，先备份数据，让出全局变量
+1435         bool isPreStyle = g_isPreStyle;
+1436         bool isPreStyleEx = g_isPreStyleEx;
+1437         bool isPrePos = g_isPrePos;
+1438         bool isPreShowState = g_isPreShowState;
+1439         long lPreStyle = g_lPreStyle;
+1440         long lPreStyleEx = g_lPreStyleEx;
+1441         POINT pPrePos = g_pPrePos;
+1442         int nPreCmdShow = g_nPreCmdShow;
+1443 
+1444         g_isPreStyle = false;
+1445         g_isPreStyleEx = false;
+1446         g_isPrePos = false;
+1447         g_isPreShowState = false;
+1448 
+1449         // 未设置标题
+1450         if (lstrlen(lpszWndTitle) == 0)
+1451         {
+1452             wstrTitle = L"EasyX_" + (std::wstring)GetEasyXVer() + L" HiEasyX (" _HIEASYX_VER_STR_ + L")";
+1453             if (nWndCount != 0)
+1454             {
+1455                 wstrTitle += L" ( WindowID: " + std::to_wstring(nWndCount + 1) + L" )";
+1456             }
+1457         }
+1458         else
+1459         {
+1460             wstrTitle = lpszWndTitle;
+1461         }
+1462 
+1463         // 第一次创建窗口 --- 初始化各项数据
+1464         if (nWndCount == 0)
+1465         {
+1466             // 发布模式下渲染开场动画
+1467 #ifndef _DEBUG
+1468 #ifndef _NO_START_ANIMATION_
+1469 
+1470             // 渲染开场动画
+1471             RenderStartScene();
+1472 
+1473 #endif // _NO_START_ANIMATION_
+1474 #endif // RELEASE
+1475 
+1476             // 获取分辨率
+1477             g_screenSize = GetScreenSize();
+1478 
+1479             // 默认程序图标
+1480             g_hIconDefault = GetDefaultAppIcon();
+1481 
+1482             // 注册窗口类
+1483             RegisterWndClass();
+1484             g_hConsole = GetConsoleWindow();
+1485 
+1486             // 隐藏控制台
+1487             if (g_hConsole)
+1488             {
+1489                 ShowWindow(g_hConsole, SW_HIDE);
+1490             }
+1491 
+1492             // 获取系统任务栏自定义的消息代码
+1493             g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
+1494         }
+1495 
+1496         // 如果现在不存在任何窗口
+1497         if (!IsAnyWindow())
+1498         {
+1499             // 初始化 GDI+ 绘图环境
+1500             Gdiplus_Try_Starup();
+1501         }
+1502 
+1503         // 控制台
+1504         if (g_hConsole && flag & EW_SHOWCONSOLE)
+1505         {
+1506             ShowWindow(g_hConsole, flag & SW_NORMAL);
+1507         }
+1508 
+1509         // 用户在创建窗口时设置的窗口属性
+1510         long user_style = WS_OVERLAPPEDWINDOW;
+1511         if (flag & EW_NOMINIMIZE)   // 剔除最小化按钮
+1512         {
+1513             user_style &= ~WS_MINIMIZEBOX & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX;
+1514         }
+1515         // 此方法不行，在下面处理此属性
+1516         /*if (flag & EW_NOCLOSE)
+1517         {
+1518             user_style &= ~WS_SYSMENU;
+1519         }*/
+1520         if (flag & EW_DBLCLKS)      // 支持双击
+1521         {
+1522             user_style |= CS_DBLCLKS;
+1523         }
+1524 
+1525         // 在创建窗口前将窗口加入容器，预设句柄为空，方便过程函数接收 WM_CREATE 消息
+1526         InitWindowStruct(wnd, hParent, w, h, WindowProcess);
+1527         g_vecWindows\&.push_back(wnd);
+1528 
+1529         // 创建窗口
+1530         for (int i = 0;; i++)
+1531         {
+1532             // 最终确定使用的窗口样式
+1533             long final_style = user_style;
+1534             if (isPreStyle)
+1535                 final_style = lPreStyle;
+1536             final_style |= WS_CLIPCHILDREN; // 必须加入此样式
+1537 
+1538             // 最终确定使用的窗口扩展样式
+1539             long final_style_ex = WS_EX_WINDOWEDGE;
+1540             if (isPreStyleEx)
+1541                 final_style_ex = lPreStyleEx;
+1542 
+1543             wnd\&.hWnd = CreateWindowEx(
+1544                 final_style_ex,
+1545                 g_lpszClassName,
+1546                 wstrTitle\&.c_str(),
+1547                 final_style,
+1548                 CW_USEDEFAULT, CW_USEDEFAULT,
+1549                 w, h,   // 宽高现在这样设置，稍后获取边框大小后再调整
+1550                 hParent,
+1551                 nullptr,
+1552                 g_hInstance,
+1553                 nullptr
+1554             );
+1555 
+1556             if (wnd\&.hWnd)
+1557             {
+1558                 // 创建窗口成功后，再将句柄记录
+1559                 g_vecWindows[g_vecWindows\&.size() - 1]\&.hWnd = wnd\&.hWnd;
+1560                 break;
+1561             }
+1562 
+1563             // 三次创建窗口失败，不再尝试
+1564             else if (i == 2)
+1565             {
+1566                 std::wstring str = std::to_wstring(GetLastError());
+1567                 MessageBox(nullptr, (L"Error creating window: " + str)\&.c_str(), L"[Error]", MB_OK | MB_ICONERROR);
+1568                 *nDoneFlag = -1;
+1569                 return;
+1570             }
+1571         }
+1572 
+1573         // 剔除关闭按钮
+1574         if (flag & EW_NOCLOSE)
+1575         {
+1576             HMENU hmenu = GetSystemMenu(wnd\&.hWnd, false);
+1577             RemoveMenu(hmenu, SC_CLOSE, MF_BYCOMMAND);
+1578         }
+1579 
+1580         // 抢夺窗口焦点
+1581         SetWorkingWindow(wnd\&.hWnd);
+1582 
+1583         *hWnd = wnd\&.hWnd;
+1584 
+1585         // 窗口创建完毕
+1586         nWndCount++;
+1587 
+1588         // 注意：
+1589         //  必须在显示窗口前标记已经完成创建窗口。
+1590         //  因为可以在自定义过程函数中创建子窗口，若是不在显示窗口前标记窗口创建完成，
+1591         //  就会导致父窗口过程函数阻塞，接下来显示窗口就会阻塞，进而导致整个窗口假死。
+1592         *nDoneFlag = 1;
+1593 
+1594         //** 显示窗口等后续处理 **//
+1595 
+1596         // 获取边框大小，补齐绘图区大小
+1597         RECT rcClient, rcWnd;
+1598         GetClientRect(wnd\&.hWnd, &rcClient);
+1599         GetWindowRect(wnd\&.hWnd, &rcWnd);
+1600         nFrameW = (rcWnd\&.right - rcWnd\&.left) - rcClient\&.right;
+1601         nFrameH = (rcWnd\&.bottom - rcWnd\&.top) - rcClient\&.bottom;
+1602 
+1603         int px = 0, py = 0;
+1604         if (isPrePos)
+1605         {
+1606             px = pPrePos\&.x;
+1607             py = pPrePos\&.y;
+1608         }
+1609         SetWindowPos(
+1610             wnd\&.hWnd,
+1611             HWND_TOP,
+1612             px, py,
+1613             w + nFrameW, h + nFrameH,
+1614             isPrePos ? 0 : SWP_NOMOVE
+1615         );
+1616 
+1617         ShowWindow(wnd\&.hWnd, isPreShowState ? nPreCmdShow : SW_SHOWNORMAL);
+1618         UpdateWindow(wnd\&.hWnd);
+1619 
+1620         // 消息派发，阻塞
+1621         // 窗口销毁后会自动退出
+1622         MSG Msg;
+1623         while (GetMessage(&Msg, 0, 0, 0) > 0)
+1624         {
+1625             TranslateMessage(&Msg);
+1626             DispatchMessage(&Msg);
+1627         }
+1628     }
+.fi
+.SS "\fBEasyWindow\fP& HiEasyX::InitWindowStruct (\fBEasyWindow\fP & wnd, HWND hParent, int w, int h, WNDPROC WindowProcess)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1402 行定义\&.
+.PP
+.nf
+1403     {
+1404         wnd\&.isAlive = true;
+1405         wnd\&.hWnd = nullptr;
+1406         wnd\&.hParent = hParent;
+1407         wnd\&.pImg = new IMAGE(w, h);
+1408         wnd\&.pBufferImg = new IMAGE(w, h);
+1409         wnd\&.pBufferImgCanvas = nullptr;
+1410         wnd\&.isNeedFlush = false;
+1411         wnd\&.funcWndProc = WindowProcess;
+1412         wnd\&.vecMessage\&.reserve(MSG_RESERVE_SIZE);
+1413         wnd\&.isUseTray = false;
+1414         wnd\&.nid = { 0 };
+1415         wnd\&.isUseTrayMenu = false;
+1416         wnd\&.hTrayMenu = nullptr;
+1417         wnd\&.funcTrayMenuProc = nullptr;
+1418         wnd\&.isNewSize = false;
+1419         wnd\&.isBusyProcessing = false;
+1420         wnd\&.nSkipPixels = 0;
+1421         wnd\&.vecSysCtrl\&.reserve(SYSCTRL_RESERVE_SIZE);
+1422         return wnd;
+1423     }
+.fi
+.SS "bool HiEasyX::IsAliveWindow (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+判断一窗口是否还存在（未被关闭） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否存在 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 111 行定义\&.
+.PP
+.nf
+112     {
+113         if (hWnd)
+114         {
+115             int index = GetWindowIndex(hWnd);
+116             if (IsValidWindowIndex(index))
+117             {
+118                 return g_vecWindows[index]\&.isAlive;
+119             }
+120             else
+121             {
+122                 return false;
+123             }
+124         }
+125         else
+126         {
+127             return IsFocusWindowExisted();
+128         }
+129     }
+.fi
+.SS "bool HiEasyX::IsAliveWindow (int index)"
+
+.PP
+在文件 HiWindow\&.cpp 第 131 行定义\&.
+.PP
+.nf
+132     {
+133         return IsValidWindowIndex(index) && g_vecWindows[index]\&.isAlive;
+134     }
+.fi
+.SS "bool HiEasyX::IsAnyWindow ()"
+
+.PP
+是否还存在未销毁的绘图窗口 
+.PP
+在文件 HiWindow\&.cpp 第 103 行定义\&.
+.PP
+.nf
+104     {
+105         for (auto& i : g_vecWindows)
+106             if (i\&.isAlive)
+107                 return true;
+108         return false;
+109     }
+.fi
+.SS "bool HiEasyX::IsFocusWindowExisted ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 62 行定义\&.
+.PP
+.nf
+63     {
+64         return IsValidWindowIndex(g_nFocusWindowIndex);
+65     }
+.fi
+.SS "bool HiEasyX::IsInTask (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+.nf
+
+    判断某窗口是否在任务中
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    窗口任务是队列式的，只有活动窗口可能处在任务中。
+    故若传入窗口不是活动窗口，将直接返回 false。
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否在任务中 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 555 行定义\&.
+.PP
+.nf
+556     {
+557         return g_isInTask && (hWnd ? GetFocusWindow()\&.hWnd == hWnd : true);
+558     }
+.fi
+.SS "bool HiEasyX::IsNewMessage (BYTE filter, HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 699 行定义\&.
+.PP
+.nf
+700     {
+701         for (auto& element : GetMsgVector(hWnd))
+702             if (filter & GetExMessageType(element))
+703                 return true;
+704         return false;
+705     }
+.fi
+.SS "bool HiEasyX::IsValidWindowIndex (int index)"
+
+.PP
+在文件 HiWindow\&.cpp 第 56 行定义\&.
+.PP
+.nf
+57     {
+58         return index >= 0 && index < (int)g_vecWindows\&.size();
+59     }
+.fi
+.SS "bool HiEasyX::IsWindowSizeChanged (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+判断某窗口的大小是否改变 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+窗口的大小是否改变 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 635 行定义\&.
+.PP
+.nf
+636     {
+637         int index = GetWindowIndex(hWnd);
+638         if (IsValidWindowIndex(index))
+639         {
+640             bool b = g_vecWindows[index]\&.isNewSize;
+641             g_vecWindows[index]\&.isNewSize = false;
+642             return b;
+643         }
+644         else
+645         {
+646             return false;
+647         }
+648     }
+.fi
+.SS "COLORREF HiEasyX::MixAlphaColor (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha = \fC255\fP)"
+
+.PP
+根据透明度混合颜色 
+.PP
+\fB参数\fP
+.RS 4
+\fIcDst\fP 原位置像素 
+.br
+\fIcSrc\fP 待绘制像素（根据其透明度混合颜色）
+.br
+\fIisCalculated\fP 
+.PP
+.nf
+
+    待绘制像素点是否已经乘以它的透明度
+.fi
+.PP
+.RE
+.PP
+备注： 此参数用于一些特殊情况，例如透明 png 图像中的像素就是已经乘过透明度的。 
+.PP
+.PP
+.nf
+\fB参数\fP
+.RS 4
+\fIalpha\fP 叠加在 src 上的透明度（默认为 255，即不叠加）
+.RE
+.PP
+\fB返回\fP
+.RS 4
+混合后的颜色（不含 alpha 值）
+.RE
+.PP
+.fi
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 9 行定义\&.
+.PP
+.nf
+10     {
+11         float fSrc = GetAValue(cSrc) / 255\&.0f;   // 待绘制像素的透明度
+12         if (alpha != 255)                       // 叠加透明度
+13             fSrc *= alpha / 255\&.0f;
+14         if (fSrc == 0\&.0f)                        // 绘制透明度为 0 时不做任何处理
+15             return cDst;
+16         float fDst = 1 - fSrc;                  // 原位置像素应乘透明度
+17 
+18         if (isCalculated)
+19         {
+20             return RGB(
+21                 GetRValue(cSrc) + GetRValue(cDst) * fDst,
+22                 GetGValue(cSrc) + GetGValue(cDst) * fDst,
+23                 GetBValue(cSrc) + GetBValue(cDst) * fDst
+24             );
+25         }
+26         else
+27         {
+28             return RGB(
+29                 GetRValue(cSrc) * fSrc + GetRValue(cDst) * fDst,
+30                 GetGValue(cSrc) * fSrc + GetGValue(cDst) * fDst,
+31                 GetBValue(cSrc) * fSrc + GetBValue(cDst) * fDst
+32             );
+33         }
+34 
+35     }
+.fi
+.SS "bool HiEasyX::MouseHit_win32 (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+检查是否存在鼠标消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否存在鼠标消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 758 行定义\&.
+.PP
+.nf
+759     {
+760         return IsNewMessage(EM_MOUSE, hWnd);
+761     }
+.fi
+.SS "void HiEasyX::MoveWindow (int x, int y, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+移动窗口 
+.PP
+\fB参数\fP
+.RS 4
+\fIx\fP 位置 
+.br
+\fIy\fP 位置 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 867 行定义\&.
+.PP
+.nf
+868     {
+869         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+870         SetWindowPos(hWnd, HWND_TOP, x, y, 0, 0, SWP_NOSIZE);
+871     }
+.fi
+.SS "void HiEasyX::MoveWindowRel (int dx, int dy, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+相对移动窗口 
+.PP
+\fB参数\fP
+.RS 4
+\fIdx\fP 相对位移 
+.br
+\fIdy\fP 相对位移 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 873 行定义\&.
+.PP
+.nf
+874     {
+875         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+876         POINT pos = GetWindowPos(hWnd);
+877         SetWindowPos(hWnd, HWND_TOP, pos\&.x + dx, pos\&.y + dy, 0, 0, SWP_NOSIZE);
+878     }
+.fi
+.SS "void HiEasyX::OnCreate (int indexWnd, HWND hWnd, LPARAM lParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1213 行定义\&.
+.PP
+.nf
+1214     {
+1215     }
+.fi
+.SS "void HiEasyX::OnDestroy (int indexWnd, WPARAM wParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1124 行定义\&.
+.PP
+.nf
+1125     {
+1126         closegraph_win32(indexWnd);
+1127 
+1128         // 存在参数，意味着这是用户调用 closegraph_win32 销毁窗口
+1129         // 故再调用 DestroyWindow
+1130         if (wParam)
+1131         {
+1132             DestroyWindow(g_vecWindows[indexWnd]\&.hWnd);
+1133         }
+1134     }
+.fi
+.SS "void HiEasyX::OnMove (HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1109 行定义\&.
+.PP
+.nf
+1110     {
+1111         //RECT rctWnd;
+1112         //GetWindowRect(hWnd, &rctWnd);
+1113 
+1116         //if (rctWnd\&.left < g_screenSize\&.left || rctWnd\&.top < g_screenSize\&.top
+1117         //  || rctWnd\&.right > g_screenSize\&.left + g_screenSize\&.w
+1118         //  || rctWnd\&.bottom > g_screenSize\&.top + g_screenSize\&.h)
+1119         //{
+1120         //  EnforceRedraw(hWnd);
+1121         //}
+1122     }
+.fi
+.SS "void HiEasyX::OnPaint (int indexWnd, HDC hdc)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1087 行定义\&.
+.PP
+.nf
+1088     {
+1089         // 在开启自动刷新双缓冲的情况下，处理双缓冲的刷新任务
+1090         if (g_bAutoFlush && g_vecWindows[indexWnd]\&.isNeedFlush)
+1091         {
+1092             WaitForProcessing(indexWnd);
+1093             g_vecWindows[indexWnd]\&.isBusyProcessing = true;      // 不能再启动任务
+1094             WaitForTask(g_vecWindows[indexWnd]\&.hWnd);            // 等待最后一个任务完成
+1095 
+1096             // 更新双缓冲
+1097             FlushDrawing(indexWnd);
+1098             g_vecWindows[indexWnd]\&.isNeedFlush = false;
+1099 
+1100             g_vecWindows[indexWnd]\&.isBusyProcessing = false;
+1101         }
+1102 
+1103         // 将绘图内容输出到窗口 HDC
+1104         RECT rctWnd;
+1105         GetClientRect(g_vecWindows[indexWnd]\&.hWnd, &rctWnd);
+1106         CopyImageToHDC(g_vecWindows[indexWnd]\&.pImg, hdc, rctWnd);
+1107     }
+.fi
+.SS "void HiEasyX::OnSize (int indexWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 906 行定义\&.
+.PP
+.nf
+907     {
+908         RECT rctWnd;
+909         GetClientRect(g_vecWindows[indexWnd]\&.hWnd, &rctWnd);
+910 
+911         WaitForProcessing(indexWnd);
+912         g_vecWindows[indexWnd]\&.isBusyProcessing = true;      // 不能再启动任务
+913         WaitForTask(g_vecWindows[indexWnd]\&.hWnd);            // 等待最后一个任务完成
+914 
+915         ResizeWindowImage(indexWnd, rctWnd);
+916         if (g_vecWindows[indexWnd]\&.pBufferImgCanvas)
+917         {
+918             g_vecWindows[indexWnd]\&.pBufferImgCanvas->UpdateSizeInfo();
+919         }
+920 
+921         g_vecWindows[indexWnd]\&.isBusyProcessing = false;
+922     }
+.fi
+.SS "HWND HiEasyX::OnSysCtrlCreate (int indexWnd, WPARAM wParam, LPARAM lParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1136 行定义\&.
+.PP
+.nf
+1137     {
+1138         CREATESTRUCT* c = (CREATESTRUCT*)lParam;
+1139         HWND hWnd = CreateWindow(
+1140             c->lpszClass,
+1141             c->lpszName,
+1142             c->style,
+1143             c->x, c->y,
+1144             c->cx, c->cy,
+1145             c->hwndParent,
+1146             c->hMenu,
+1147             GetModuleHandle(0),
+1148             c->lpCreateParams
+1149         );
+1150 
+1151         // 璁板綍
+1152         g_vecWindows[indexWnd]\&.vecSysCtrl\&.push_back((SysControlBase*)wParam);
+1153         return hWnd;
+1154     }
+.fi
+.SS "void HiEasyX::OnTaskBarCreated (int indexWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 962 行定义\&.
+.PP
+.nf
+963     {
+964         if (g_vecWindows[indexWnd]\&.isUseTray)
+965         {
+966             ShowTray(&g_vecWindows[indexWnd]\&.nid);
+967         }
+968     }
+.fi
+.SS "void HiEasyX::OnTray (int indexWnd, LPARAM lParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 924 行定义\&.
+.PP
+.nf
+925     {
+926         if (g_vecWindows[indexWnd]\&.isUseTray)
+927         {
+928             HWND hWnd = g_vecWindows[indexWnd]\&.hWnd;
+929             POINT ptMouse;
+930             GetCursorPos(&ptMouse);
+931 
+932             switch (lParam)
+933             {
+934                 // 左键激活窗口
+935             case WM_LBUTTONDOWN:
+936                 SetForegroundWindow(hWnd);
+937                 break;
+938 
+939                 // 右键打开菜单
+940             case WM_RBUTTONDOWN:
+941                 if (g_vecWindows[indexWnd]\&.isUseTrayMenu)
+942                 {
+943                     SetForegroundWindow(hWnd);  // 激活一下窗口，防止菜单不消失
+944 
+945                     // 显示菜单并跟踪
+946                     int nMenuId = TrackPopupMenu(g_vecWindows[indexWnd]\&.hTrayMenu, TPM_RETURNCMD, ptMouse\&.x, ptMouse\&.y, 0, hWnd, nullptr);
+947                     if (nMenuId == 0) PostMessage(hWnd, WM_LBUTTONDOWN, 0, 0);
+948                     if (g_vecWindows[indexWnd]\&.funcTrayMenuProc)
+949                     {
+950                         g_vecWindows[indexWnd]\&.funcTrayMenuProc(nMenuId);
+951                     }
+952 
+953                 }
+954                 break;
+955 
+956             default:
+957                 break;
+958             }
+959         }
+960     }
+.fi
+.SS "bool HiEasyX::peekmessage_win32 (ExMessage * msg, BYTE filter = \fC\-1\fP, bool removemsg = \fCtrue\fP, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取一个消息，立即返回是否获取成功 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 返回获取到的消息 
+.br
+\fIfilter\fP 消息筛选方式 
+.br
+\fIremovemsg\fP 获取消息后是否将其移除 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否获取到消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 742 行定义\&.
+.PP
+.nf
+743     {
+744         if (IsNewMessage(filter, hWnd))
+745         {
+746             if (msg)        *msg = GetNextMessage(filter, hWnd);
+747             if (removemsg)  RemoveMessage(hWnd);
+748             return true;
+749         }
+750         return false;
+751     }
+.fi
+.SS "bool HiEasyX::PeekMouseMsg_win32 (MOUSEMSG * pMsg, bool bRemoveMsg = \fCtrue\fP, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+获取一个新的鼠标消息，立即返回是否获取成功 
+.PP
+\fB参数\fP
+.RS 4
+\fIpMsg\fP 返回获取到的消息 
+.br
+\fIbRemoveMsg\fP 获取消息后是否将其移除 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否获取到消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 769 行定义\&.
+.PP
+.nf
+770     {
+771         ExMessage msgEx;
+772         bool r = peekmessage_win32(&msgEx, EM_MOUSE, bRemoveMsg, hWnd);
+773         *pMsg = To_MouseMsg(msgEx);
+774         return r;
+775     }
+.fi
+.SS "void HiEasyX::PreSetWindowPos (int x, int y)"
+
+.PP
+在创建窗口前设置窗口位置，仅对此操作后首个新窗口生效 
+.PP
+\fB参数\fP
+.RS 4
+\fIx\fP 位置 
+.br
+\fIy\fP 位置 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 827 行定义\&.
+.PP
+.nf
+828     {
+829         g_isPrePos = true;
+830         g_pPrePos = { x,y };
+831     }
+.fi
+.SS "void HiEasyX::PreSetWindowShowState (int nCmdShow)"
+
+.PP
+在创建窗口前设置窗口显示状态，仅对此操作后首个新窗口生效 
+.PP
+\fB参数\fP
+.RS 4
+\fInCmdShow\fP 显示状态（和 ShowWindow 用法一致） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 833 行定义\&.
+.PP
+.nf
+834     {
+835         g_isPreShowState = true;
+836         g_nPreCmdShow = nCmdShow;
+837     }
+.fi
+.SS "void HiEasyX::PreSetWindowStyle (long lStyle)"
+
+.PP
+.nf
+
+    在创建窗口前设置窗口样式，仅对此操作后首个新窗口生效
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    新窗口的所有普通样式都将被当前样式覆盖
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIlStyle\fP 新样式 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 815 行定义\&.
+.PP
+.nf
+816     {
+817         g_isPreStyle = true;
+818         g_lPreStyle = lStyle;
+819     }
+.fi
+.SS "void HiEasyX::PreSetWindowStyleEx (long lStyleEx)"
+
+.PP
+.nf
+
+    在创建窗口前设置窗口扩展样式，仅对此操作后首个新窗口生效
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    新窗口的所有扩展样式都将被当前样式覆盖
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIlStyleEx\fP 新样式 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 821 行定义\&.
+.PP
+.nf
+822     {
+823         g_isPreStyleEx = true;
+824         g_lPreStyleEx = lStyleEx;
+825     }
+.fi
+.SS "void HiEasyX::QuickDraw (UINT nSkipPixels, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置加速绘制跳过多少像素点 
+.PP
+\fB警告\fP
+.RS 4
+此加速效果是有损的，加速效果与跳过的像素点数正相关 
+.RE
+.PP
+\fB参数\fP
+.RS 4
+\fInSkipPixels\fP 跳过的像素点数目 
+.br
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 369 行定义\&.
+.PP
+.nf
+370     {
+371         int index = GetWindowIndex(hWnd);
+372         if (IsAliveWindow(index))
+373             g_vecWindows[index]\&.nSkipPixels = nSkipPixels;
+374     }
+.fi
+.SS "void HiEasyX::RedrawWindow (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+通知重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 要重绘的窗口 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 392 行定义\&.
+.PP
+.nf
+393     {
+394         if (!hWnd)
+395             hWnd = GetFocusWindow()\&.hWnd;
+396 
+397         switch (g_fDrawMode)
+398         {
+399         case DM_Real:
+400             SendUserRedrawMsg(hWnd);
+401             break;
+402 
+403         case DM_Normal:
+404             // 这个太慢了
+405             //InvalidateRect(hWnd, nullptr, false);
+406             SendUserRedrawMsg(hWnd);
+407             break;
+408 
+409         case DM_Fast:
+410             if (!(clock() % 2))
+411                 SendUserRedrawMsg(hWnd);
+412             break;
+413 
+414         case DM_VeryFast:
+415             if (!(clock() % 5))
+416                 SendUserRedrawMsg(hWnd);
+417             break;
+418 
+419         case DM_Fastest:
+420             if (!(clock() % 9))
+421                 SendUserRedrawMsg(hWnd);
+422             break;
+423 
+424         }
+425     }
+.fi
+.SS "void HiEasyX::RegisterExMessage (int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 971 行定义\&.
+.PP
+.nf
+972     {
+973         // 记录消息事件
+974         switch (msg)
+975         {
+976             // EM_MOUSE
+977         case WM_MOUSEMOVE:
+978         case WM_MOUSEWHEEL:
+979         case WM_LBUTTONDOWN:
+980         case WM_LBUTTONUP:
+981         case WM_LBUTTONDBLCLK:
+982         case WM_MBUTTONDOWN:
+983         case WM_MBUTTONUP:
+984         case WM_MBUTTONDBLCLK:
+985         case WM_RBUTTONDOWN:
+986         case WM_RBUTTONUP:
+987         case WM_RBUTTONDBLCLK:
+988         {
+989             ExMessage msgMouse = {};
+990             msgMouse\&.message = msg;
+991             msgMouse\&.x = GET_X_LPARAM(lParam);
+992             msgMouse\&.y = GET_Y_LPARAM(lParam);
+993             msgMouse\&.wheel = GET_WHEEL_DELTA_WPARAM(wParam);
+994             msgMouse\&.shift = LOWORD(wParam) & 0x04 ? true : false;
+995             msgMouse\&.ctrl = LOWORD(wParam) & 0x08 ? true : false;
+996             msgMouse\&.lbutton = LOWORD(wParam) & 0x01 ? true : false;
+997             msgMouse\&.mbutton = LOWORD(wParam) & 0x10 ? true : false;
+998             msgMouse\&.rbutton = LOWORD(wParam) & 0x02 ? true : false;
+999 
+1000             // 有滚轮消息时，得到的坐标是屏幕坐标，需要转换
+1001             if (msgMouse\&.wheel)
+1002             {
+1003                 POINT p = { msgMouse\&.x ,msgMouse\&.y };
+1004                 ScreenToClient(g_vecWindows[indexWnd]\&.hWnd, &p);
+1005                 msgMouse\&.x = (short)p\&.x;
+1006                 msgMouse\&.y = (short)p\&.y;
+1007             }
+1008 
+1009             g_vecWindows[indexWnd]\&.vecMessage\&.push_back(msgMouse);
+1010         }
+1011         break;
+1012 
+1013         // EM_KEY
+1014         case WM_KEYDOWN:
+1015         case WM_KEYUP:
+1016         case WM_SYSKEYDOWN:
+1017         case WM_SYSKEYUP:
+1018         {
+1019             // code from MSDN
+1020             WORD vkCode = LOWORD(wParam);                                 // virtual-key code
+1021             WORD keyFlags = HIWORD(lParam);
+1022             WORD scanCode = LOBYTE(keyFlags);                             // scan code
+1023             BOOL isExtendedKey = (keyFlags & KF_EXTENDED) == KF_EXTENDED; // extended-key flag, 1 if scancode has 0xE0 prefix
+1024 
+1025             if (isExtendedKey)
+1026                 scanCode = MAKEWORD(scanCode, 0xE0);
+1027 
+1028             BOOL repeatFlag = (keyFlags & KF_REPEAT) == KF_REPEAT;        // previous key-state flag, 1 on autorepeat
+1029             WORD repeatCount = LOWORD(lParam);                            // repeat count, > 0 if several keydown messages was combined into one message
+1030             BOOL upFlag = (keyFlags & KF_UP) == KF_UP;                    // transition-state flag, 1 on keyup
+1031 
+1032             // 功能键：不区分左右
+1033             // if we want to distinguish these keys:
+1034             //switch (vkCode)
+1035             //{
+1036             //case VK_SHIFT:   // converts to VK_LSHIFT or VK_RSHIFT
+1037             //case VK_CONTROL: // converts to VK_LCONTROL or VK_RCONTROL
+1038             //case VK_MENU:    // converts to VK_LMENU or VK_RMENU
+1039             //  vkCode = LOWORD(MapVirtualKeyW(scanCode, MAPVK_VSC_TO_VK_EX));
+1040             //  break;
+1041             //}
+1042 
+1043             ExMessage msgKey = {};
+1044             msgKey\&.message = msg;
+1045             msgKey\&.vkcode = (BYTE)vkCode;
+1046             msgKey\&.scancode = (BYTE)scanCode;
+1047             msgKey\&.extended = isExtendedKey;
+1048             msgKey\&.prevdown = repeatFlag;
+1049 
+1050             g_vecWindows[indexWnd]\&.vecMessage\&.push_back(msgKey);
+1051 
+1052             // 给控制台发一份，支持 _getch() 系列函数
+1053             PostMessage(g_hConsole, msg, wParam, lParam);
+1054         }
+1055         break;
+1056 
+1057         // EM_CHAR
+1058         case WM_CHAR:
+1059         {
+1060             ExMessage msgChar = {};
+1061             msgChar\&.message = msg;
+1062             msgChar\&.ch = (TCHAR)wParam;
+1063             g_vecWindows[indexWnd]\&.vecMessage\&.push_back(msgChar);
+1064 
+1065             // 通知控制台
+1066             PostMessage(g_hConsole, msg, wParam, lParam);
+1067         }
+1068         break;
+1069 
+1070         // EM_WINDOW
+1071         case WM_ACTIVATE:
+1072         case WM_MOVE:
+1073         case WM_SIZE:
+1074         {
+1075             ExMessage msgWindow = {};
+1076             msgWindow\&.message = msg;
+1077             msgWindow\&.wParam = wParam;
+1078             msgWindow\&.lParam = lParam;
+1079             g_vecWindows[indexWnd]\&.vecMessage\&.push_back(msgWindow);
+1080         }
+1081         break;
+1082 
+1083         }
+1084     }
+.fi
+.SS "void HiEasyX::RegisterWndClass ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1370 行定义\&.
+.PP
+.nf
+1371     {
+1372         HICON hIcon = g_hIconDefault;
+1373         HICON hIconSm = g_hIconDefault;
+1374         if (g_lpszCustomIcon)
+1375             hIcon = g_hCustomIcon;
+1376         if (g_lpszCustomIconSm)
+1377             hIconSm = g_hCustomIconSm;
+1378 
+1379         g_WndClassEx\&.cbSize = sizeof WNDCLASSEX;
+1380         g_WndClassEx\&.style = CS_VREDRAW | CS_HREDRAW;
+1381         g_WndClassEx\&.lpfnWndProc = WndProc;
+1382         g_WndClassEx\&.cbClsExtra = 0;
+1383         g_WndClassEx\&.cbWndExtra = 0;
+1384         g_WndClassEx\&.hInstance = g_hInstance;
+1385         g_WndClassEx\&.hIcon = hIcon;
+1386         g_WndClassEx\&.hIconSm = hIconSm;
+1387         g_WndClassEx\&.hCursor = LoadCursor(nullptr, IDC_ARROW);
+1388         g_WndClassEx\&.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+1389         g_WndClassEx\&.lpszMenuName = nullptr;
+1390         g_WndClassEx\&.lpszClassName = g_lpszClassName;
+1391 
+1392         // 注册窗口类
+1393         if (!RegisterClassEx(&g_WndClassEx))
+1394         {
+1395             std::wstring str = std::to_wstring(GetLastError());
+1396             MessageBox(nullptr, (L"Error registing window class: " + str)\&.c_str(), L"[Error]", MB_OK | MB_ICONERROR);
+1397             exit(-1);
+1398         }
+1399     }
+.fi
+.SS "void HiEasyX::RemoveMessage (HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 680 行定义\&.
+.PP
+.nf
+681     {
+682         if (GetMsgVector(hWnd)\&.size())
+683         {
+684             GetMsgVector(hWnd)\&.erase(GetMsgVector(hWnd)\&.begin());
+685         }
+686     }
+.fi
+.SS "void HiEasyX::RenderStartScene ()"
+
+.PP
+渲染开场动画 
+.PP
+在文件 HiStart\&.cpp 第 106 行定义\&.
+.PP
+.nf
+107 {
+108     initgraph(640, 480);                // 创建绘图窗口
+109     setbkcolor(RGB(80, 80, 80));
+110     cleardevice();
+111     setbkmode(TRANSPARENT);
+112 
+113     DWORD* pBuf = GetImageBuffer();
+114 
+115     GetDstPoints();                     // 获取目标点集
+116     GetSrcPoints();                     // 获取源点集
+117 
+118     // 运算
+119     int x, y;
+120     for (int i = 2; i <= 256; i += 2)
+121     {
+122         //int gray = i - 1 - 50;        // 暗
+123         //int gray = i - 1 + 10;        // 亮
+124         int gray = i - 1 + 100;         // 正常
+125         if (gray < 0) gray = 0;
+126         if (gray > 255) gray = 255;
+127         COLORREF c = RGB(gray, gray, gray);
+128         Blur(pBuf);                     // 全屏模糊处理
+129 
+130         for (int d = 0; d < g_nCount; d++)
+131         {
+132             x = g_pSrc[d]\&.x + (g_pDst[d]\&.x - g_pSrc[d]\&.x) * i / 256;
+133             y = g_pSrc[d]\&.y + (g_pDst[d]\&.y - g_pSrc[d]\&.y) * i / 256;
+134             pBuf[y * 640 + x] = c;        // 直接操作显示缓冲区画点
+135             //putpixel(g_pDst[d]\&.x, g_pDst[d]\&.y, WHITE);
+136         }
+137 
+138         LPCTSTR lpszText = L"Animation Author :  慢羊羊";
+139         outtextxy(getwidth() - textwidth(lpszText), getheight() - textheight(lpszText), lpszText);
+140 
+141         Sleep(10);                      // 延时
+142     }
+143 
+144     // 清理内存
+145     delete g_pDst;
+146     delete g_pSrc;
+147 
+148     Sleep(2000);
+149     ShowWindow(GetHWnd(), SW_HIDE);
+150 }
+.fi
+.SS "void HiEasyX::ResizeWindow (int w, int h, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+重设窗口大小 
+.PP
+\fB参数\fP
+.RS 4
+\fIw\fP 窗口宽 
+.br
+\fIh\fP 窗口高 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 880 行定义\&.
+.PP
+.nf
+881     {
+882         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+883         SetWindowPos(hWnd, HWND_TOP, 0, 0, w, h, SWP_NOMOVE);
+884     }
+.fi
+.SS "void HiEasyX::ResizeWindowImage (int index, RECT rct)"
+
+.PP
+在文件 HiWindow\&.cpp 第 561 行定义\&.
+.PP
+.nf
+562     {
+563         if (IsAliveWindow(index))
+564         {
+565             g_vecWindows[index]\&.pImg->Resize(rct\&.right, rct\&.bottom);
+566             g_vecWindows[index]\&.pBufferImg->Resize(rct\&.right, rct\&.bottom);
+567             g_vecWindows[index]\&.isNewSize = true;
+568         }
+569     }
+.fi
+.SS "IMAGE HiEasyX::RotateImage_Alpha (IMAGE * pImg, double radian, COLORREF bkcolor = \fCBLACK\fP)"
+
+.PP
+旋转图像（保留透明信息，自适应大小） 
+.PP
+\fB参数\fP
+.RS 4
+\fIpImg\fP 原图像 
+.br
+\fIradian\fP 旋转弧度 
+.br
+\fIbkcolor\fP 背景填充颜色 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+旋转后的图像 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 84 行定义\&.
+.PP
+.nf
+85     {
+86         radian = -radian;                                                       // 由于 y 轴翻转，旋转角度需要变负
+87         float fSin = (float)sin(radian), fCos = (float)cos(radian);             // 存储三角函数值
+88         float fNSin = (float)sin(-radian), fNCos = (float)cos(-radian);
+89         int left = 0, top = 0, right = 0, bottom = 0;                           // 旋转后图像顶点
+90         int w, h;
+91         GetImageSize(pImg, &w, &h);
+92         DWORD* pBuf = GetImageBuffer(pImg);
+93         POINT points[4] = { { 0, 0 },{ w, 0 },{ 0, h },{ w, h } };              // 存储图像顶点
+94         for (int j = 0; j < 4; j++)                                             // 旋转图像顶点，搜索旋转后的图像边界
+95         {
+96             points[j] = {
+97                 (int)(points[j]\&.x * fCos - points[j]\&.y * fSin),
+98                 (int)(points[j]\&.x * fSin + points[j]\&.y * fCos)
+99             };
+100             if (points[j]\&.x < points[left]\&.x) left = j;
+101             if (points[j]\&.y > points[top]\&.y)  top = j;
+102             if (points[j]\&.x > points[right]\&.x)    right = j;
+103             if (points[j]\&.y < points[bottom]\&.y)   bottom = j;
+104         }
+105 
+106         int nw = points[right]\&.x - points[left]\&.x;                                // 旋转后的图像尺寸
+107         int nh = points[top]\&.y - points[bottom]\&.y;
+108         int nSize = nw * nh;
+109         int offset_x = points[left]\&.x < 0 ? points[left]\&.x : 0;                   // 旋转后图像超出第一象限的位移（据此调整图像位置）
+110         int offset_y = points[bottom]\&.y < 0 ? points[bottom]\&.y : 0;
+111 
+112         IMAGE img(nw, nh);
+113         DWORD* pNewBuf = GetImageBuffer(&img);
+114         if (bkcolor != BLACK)                                                   // 设置图像背景色
+115             for (int i = 0; i < nSize; i++)
+116                 pNewBuf[i] = BGR(bkcolor);
+117 
+118         for (int i = offset_x, ni = 0; ni < nw; i++, ni++)                      // i 用于映射原图像坐标，ni 用于定位旋转后图像坐标
+119         {
+120             for (int j = offset_y, nj = 0; nj < nh; j++, nj++)
+121             {
+122                 int nx = (int)(i * fNCos - j * fNSin);                          // 从旋转后的图像坐标向原图像坐标映射
+123                 int ny = (int)(i * fNSin + j * fNCos);
+124                 if (nx >= 0 && nx < w && ny >= 0 && ny < h)                     // 若目标映射在原图像范围内，则拷贝色值
+125                     pNewBuf[nj * nw + ni] = pBuf[ny * w + nx];
+126             }
+127         }
+128 
+129         return img;
+130     }
+.fi
+.SS "void HiEasyX::SendUserRedrawMsg (HWND hWnd)"
+
+.PP
+在文件 HiWindow\&.cpp 第 387 行定义\&.
+.PP
+.nf
+388     {
+389         SendMessage(hWnd, WM_USER_REDRAW, 0, 0);
+390     }
+.fi
+.SS "void HiEasyX::SetCustomIcon (LPCTSTR lpszIcon, LPCTSTR lpszIconSm)"
+
+.PP
+.nf
+
+    使用自定义图标资源作为程序图标
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    必须在第一次创建窗口前就调用该函数才能生效。
+    使用 MAKEINTRESOURCE 宏可以将资源 ID 转为字符串。
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIlpszIcon\fP 大图标资源 
+.br
+\fIlpszIconSm\fP 小图标资源 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 655 行定义\&.
+.PP
+.nf
+656     {
+657         g_lpszCustomIcon = lpszIcon;
+658         g_lpszCustomIconSm = lpszIconSm;
+659         g_hCustomIcon = LoadIcon(g_hInstance, lpszIcon);
+660         g_hCustomIconSm = LoadIcon(g_hInstance, lpszIconSm);
+661     }
+.fi
+.SS "void HiEasyX::SetDrawMode (\fBDrawMode\fP mode)"
+
+.PP
+设置全局绘制模式 
+.PP
+\fB参数\fP
+.RS 4
+\fImode\fP 全局绘制模式 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 381 行定义\&.
+.PP
+.nf
+382     {
+383         g_fDrawMode = mode;
+384     }
+.fi
+.SS "void HiEasyX::SetTrayMenu (HMENU hMenu, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置托盘菜单（允许在任何时候设置） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhMenu\fP 菜单 
+.br
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 616 行定义\&.
+.PP
+.nf
+617     {
+618         int index = GetWindowIndex(hWnd);
+619         if (IsAliveWindow(index))
+620         {
+621             g_vecWindows[index]\&.isUseTrayMenu = true;
+622             g_vecWindows[index]\&.hTrayMenu = hMenu;
+623         }
+624     }
+.fi
+.SS "void HiEasyX::SetTrayMenuProcFunc (void(*)(UINT) pFunc, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置托盘菜单消息处理函数 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息处理函数 
+.br
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 626 行定义\&.
+.PP
+.nf
+627     {
+628         int index = GetWindowIndex(hWnd);
+629         if (IsAliveWindow(index))
+630         {
+631             g_vecWindows[index]\&.funcTrayMenuProc = pFunc;
+632         }
+633     }
+.fi
+.SS "int HiEasyX::SetWindowExStyle (long lNewExStyle, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置某窗口扩展样式 
+.PP
+\fB参数\fP
+.RS 4
+\fIlNewExStyle\fP 新样式 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+返回上一次设置的窗口样式，失败返回 0 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 845 行定义\&.
+.PP
+.nf
+846     {
+847         if (hWnd == nullptr)    hWnd = GetFocusWindow()\&.hWnd;
+848         return SetWindowLong(hWnd, GWL_EXSTYLE, lNewExStyle);
+849     }
+.fi
+.SS "int HiEasyX::SetWindowStyle (long lNewStyle, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置某窗口样式 
+.PP
+\fB参数\fP
+.RS 4
+\fIlNewStyle\fP 新样式 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+返回上一次设置的窗口样式，失败返回 0 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 839 行定义\&.
+.PP
+.nf
+840     {
+841         if (hWnd == nullptr)    hWnd = GetFocusWindow()\&.hWnd;
+842         return SetWindowLong(hWnd, GWL_STYLE, lNewStyle);
+843     }
+.fi
+.SS "void HiEasyX::SetWindowTitle (LPCTSTR lpszTitle, HWND hWnd = \fCnullptr\fP)"
+
+.PP
+设置窗口标题文本 
+.PP
+\fB参数\fP
+.RS 4
+\fIlpszTitle\fP 新的窗口标题 
+.br
+\fIhWnd\fP 窗口句柄（为空代表当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 886 行定义\&.
+.PP
+.nf
+887     {
+888         if (!hWnd)  hWnd = GetFocusWindow()\&.hWnd;
+889         SetWindowText(hWnd, lpszTitle);
+890     }
+.fi
+.SS "void HiEasyX::SetWndProcFunc (HWND hWnd, WNDPROC WindowProcess)"
+
+.PP
+设置某窗口的过程函数 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空标识当前活动窗口） 
+.br
+\fIWindowProcess\fP 新的过程函数 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 266 行定义\&.
+.PP
+.nf
+267     {
+268         int index = GetWindowIndex(hWnd);
+269         if (IsAliveWindow(index))
+270         {
+271             g_vecWindows[index]\&.funcWndProc = WindowProcess;
+272         }
+273     }
+.fi
+.SS "bool HiEasyX::SetWorkingWindow (HWND hWnd)"
+
+.PP
+等待当前任务完成并设置活动窗口 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 新的活动窗口句柄 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否设置成功 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 342 行定义\&.
+.PP
+.nf
+343     {
+344         if (!hWnd || GetFocusWindow()\&.hWnd == hWnd)
+345         {
+346             if (GetWorkingImage() != GetFocusWindow()\&.pBufferImg)
+347             {
+348                 SetWorkingImage(GetFocusWindow()\&.pBufferImg);
+349             }
+350             return true;
+351         }
+352 
+353         int index = GetWindowIndex(hWnd);
+354         if (IsAliveWindow(index))
+355         {
+356             WaitForTask();
+357             WaitForProcessing(index);
+358             g_nFocusWindowIndex = index;
+359 
+360             SetWorkingImage(GetFocusWindow()\&.pBufferImg);
+361             return true;
+362         }
+363         else
+364         {
+365             return false;
+366         }
+367     }
+.fi
+.SS "void HiEasyX::ShowTray (NOTIFYICONDATA * nid)"
+
+.PP
+在文件 HiWindow\&.cpp 第 571 行定义\&.
+.PP
+.nf
+572     {
+573         Shell_NotifyIcon(NIM_ADD, nid);
+574     }
+.fi
+.SS "LRESULT HiEasyX::SysCtrlProc (int indexWnd, UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1158 行定义\&.
+.PP
+.nf
+1159     {
+1160         switch (msg)
+1161         {
+1162             // 创建系统控件
+1163         case WM_SYSCTRL_CREATE:
+1164         {
+1165             g_vecWindows[indexWnd]\&.bHasCtrl = true;
+1166             bRet = true;
+1167             return (LRESULT)OnSysCtrlCreate(indexWnd, wParam, lParam);
+1168             break;
+1169         }
+1170 
+1171         // 析构系统控件
+1172         case WM_SYSCTRL_DELETE:
+1173         {
+1174             // 被析构的控件指针标记为空
+1175             for (size_t i = 0; i < g_vecWindows[indexWnd]\&.vecSysCtrl\&.size(); i++)
+1176             {
+1177                 if (g_vecWindows[indexWnd]\&.vecSysCtrl[i] == (SysControlBase*)wParam)
+1178                 {
+1179                     g_vecWindows[indexWnd]\&.vecSysCtrl[i] = nullptr;
+1180                 }
+1181             }
+1182 
+1183             bRet = true;
+1184             return 0;
+1185             break;
+1186         }
+1187 
+1188         }
+1189 
+1190         // 存在控件时，派发消息
+1191         if (g_vecWindows[indexWnd]\&.bHasCtrl)
+1192         {
+1193             bool bCtrlRet = false;
+1194             LRESULT lr = 0;
+1195             for (auto& pCtrl : g_vecWindows[indexWnd]\&.vecSysCtrl)
+1196             {
+1197                 if (pCtrl)
+1198                 {
+1199                     LRESULT lr = pCtrl->UpdateMessage(msg, wParam, lParam, bCtrlRet);
+1200                     if (bCtrlRet)
+1201                     {
+1202                         bRet = true;
+1203                         return lr;
+1204                     }
+1205                 }
+1206             }
+1207         }
+1208 
+1209         bRet = false;
+1210         return 0;
+1211     }
+.fi
+.SS "ExMessage HiEasyX::To_ExMessage (MOUSEMSG msg)"
+
+.PP
+MOUSEMSG 转 ExMessage 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP MOUSEMSG 消息 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+ExMessage 消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 782 行定义\&.
+.PP
+.nf
+783     {
+784         ExMessage msgEx = {};
+785         msgEx\&.message = msg\&.uMsg;
+786         msgEx\&.ctrl = msg\&.mkCtrl;
+787         msgEx\&.shift = msg\&.mkShift;
+788         msgEx\&.lbutton = msg\&.mkLButton;
+789         msgEx\&.mbutton = msg\&.mkMButton;
+790         msgEx\&.rbutton = msg\&.mkRButton;
+791         msgEx\&.x = msg\&.x;
+792         msgEx\&.y = msg\&.y;
+793         msgEx\&.wheel = msg\&.wheel;
+794         return msgEx;
+795     }
+.fi
+.SS "MOUSEMSG HiEasyX::To_MouseMsg (ExMessage msgEx)"
+
+.PP
+.nf
+
+    ExMessage 转 MOUSEMSG
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    ExMessage 消息类型若不是 EM_MOUSE，则返回空
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fImsgEx\fP ExMessage 消息 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+MOUSEMSG 消息 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 797 行定义\&.
+.PP
+.nf
+798     {
+799         MOUSEMSG msg = {};
+800         if (GetExMessageType(msgEx) == EM_MOUSE)
+801         {
+802             msg\&.uMsg = msgEx\&.message;
+803             msg\&.mkCtrl = msgEx\&.ctrl;
+804             msg\&.mkShift = msgEx\&.shift;
+805             msg\&.mkLButton = msgEx\&.lbutton;
+806             msg\&.mkMButton = msgEx\&.mbutton;
+807             msg\&.mkRButton = msgEx\&.rbutton;
+808             msg\&.x = msgEx\&.x;
+809             msg\&.y = msgEx\&.y;
+810             msg\&.wheel = msgEx\&.wheel;
+811         }
+812         return msg;
+813     }
+.fi
+.SS "void HiEasyX::WaitForProcessing (int index)"
+
+.PP
+在文件 HiWindow\&.cpp 第 137 行定义\&.
+.PP
+.nf
+138     {
+139         // 死窗口可能正在销毁，故不用 isAliveWindow
+140         if (IsValidWindowIndex(index))
+141         {
+142             while (g_vecWindows[index]\&.isBusyProcessing)
+143             {
+144                 HpSleep(1);
+145             }
+146         }
+147     }
+.fi
+.SS "void HiEasyX::WaitForTask (HWND hWnd = \fCnullptr\fP)"
+
+.PP
+阻塞等待某窗口任务完成 
+.PP
+\fB参数\fP
+.RS 4
+\fIhWnd\fP 窗口句柄（为空表示当前活动窗口） 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.cpp 第 161 行定义\&.
+.PP
+.nf
+162     {
+163         // 未设置句柄时只需要等待，若设置了则需要判断该句柄是否对应活动窗口
+164         if (!hWnd || (IsFocusWindowExisted() && GetFocusWindow()\&.hWnd == hWnd))
+165         {
+166             while (g_isInTask)
+167             {
+168                 HpSleep(1);
+169             }
+170         }
+171     }
+.fi
+.SS "LRESULT CALLBACK HiEasyX::WndProc (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1218 行定义\&.
+.PP
+.nf
+1219     {
+1220         // 窗口矩形信息
+1221         LRESULT resultUserProc = HIWINDOW_DEFAULT_PROC;     // 记录用户窗口过程函数返回值
+1222         int indexWnd = GetWindowIndex(hWnd);                // 该窗口在已记录列表中的索引
+1223 
+1224         // 调用窗口不在窗口列表内，则使用默认方法进行处理（无需检查窗口死活）
+1225         if (!IsValidWindowIndex(indexWnd))
+1226         {
+1227             // 也有可能正在接收 WM_CREATE 消息，此时窗口还未加入列表，则调用用户过程函数
+1228             if (msg == WM_CREATE)
+1229             {
+1230                 // 此时需要修正 index
+1231                 int indexReal = (int)g_vecWindows\&.size() - 1;
+1232                 OnCreate(indexReal, hWnd, lParam);
+1233                 WNDPROC proc = g_vecWindows[indexReal]\&.funcWndProc;
+1234                 if (proc)
+1235                 {
+1236                     proc(hWnd, msg, wParam, lParam);
+1237                 }
+1238             }
+1239 
+1240             return DefWindowProc(hWnd, msg, wParam, lParam);
+1241         }
+1242 
+1243         //** 开始处理窗口消息 **//
+1244 
+1245         // 预先处理部分消息
+1246         switch (msg)
+1247         {
+1248         case WM_SIZE:
+1249             OnSize(indexWnd);
+1250             break;
+1251 
+1252             // 托盘消息
+1253         case WM_TRAY:
+1254             OnTray(indexWnd, lParam);
+1255             break;
+1256 
+1257         default:
+1258             // 系统任务栏重新创建，此时可能需要重新创建托盘
+1259             if (msg == g_uWM_TASKBARCREATED)
+1260             {
+1261                 OnTaskBarCreated(indexWnd);
+1262             }
+1263             break;
+1264         }
+1265 
+1266         // 活窗口的一般事件处理
+1267         if (IsAliveWindow(indexWnd))
+1268         {
+1269             // 登记消息
+1270             RegisterExMessage(indexWnd, msg, wParam, lParam);
+1271 
+1272             // 处理系统控件消息
+1273             bool bRetSysCtrl = false;
+1274             LRESULT lrSysCtrl = SysCtrlProc(indexWnd, msg, wParam, lParam, bRetSysCtrl);
+1275             if (bRetSysCtrl)
+1276                 return lrSysCtrl;
+1277         }
+1278 
+1279         // 调用用户消息处理函数
+1280         if (g_vecWindows[indexWnd]\&.funcWndProc)
+1281         {
+1282             resultUserProc = g_vecWindows[indexWnd]\&.funcWndProc(hWnd, msg, wParam, lParam);
+1283         }
+1284 
+1285         // 善后工作
+1286         switch (msg)
+1287         {
+1288             // 用户重绘消息，处理完直接返回
+1289             // 也无需调用系统重绘方法
+1290             // 放着是为了让用户也能处理到这个消息
+1291         case WM_USER_REDRAW:
+1292         {
+1293             HDC hdc = GetDC(hWnd);
+1294             OnPaint(indexWnd, hdc);
+1295             ReleaseDC(hWnd, hdc);
+1296             return 0;
+1297             break;
+1298         }
+1299 
+1300         // 因为用户可能在过程函数中绘图，要在他之后输出缓存
+1301         case WM_PAINT:
+1302         {
+1303             HDC         hdc;
+1304             PAINTSTRUCT ps;
+1305             hdc = BeginPaint(hWnd, &ps);
+1306             OnPaint(indexWnd, hdc);
+1307             EndPaint(hWnd, &ps);
+1308 
+1309             // WM_PAINT 消息中需要调用系统绘制方法
+1310             DefWindowProc(hWnd, WM_PAINT, 0, 0);
+1311             break;
+1312         }
+1313 
+1314         case WM_MOVE:
+1315             OnMove(hWnd);
+1316             break;
+1317 
+1318             // 关闭窗口，释放内存
+1319         case WM_DESTROY:
+1320             OnDestroy(indexWnd, wParam);
+1321             break;
+1322         }
+1323 
+1324         // 返回值
+1325         LRESULT lResult = 0;
+1326 
+1327         // 此处统一在函数末尾返回
+1328 
+1329         // 用户未处理此消息
+1330         if (!g_vecWindows[indexWnd]\&.funcWndProc || resultUserProc == HIWINDOW_DEFAULT_PROC)
+1331         {
+1332             switch (msg)
+1333             {
+1334             case WM_CLOSE:
+1335                 DestroyWindow(g_vecWindows[indexWnd]\&.hWnd);
+1336                 break;
+1337 
+1338             case WM_DESTROY:
+1339                 PostQuitMessage(0);
+1340                 break;
+1341 
+1342                 // WM_PAINT 消息无需重复调用默认方法
+1343             case WM_PAINT:
+1344                 break;
+1345 
+1346             default:
+1347                 lResult = DefWindowProc(hWnd, msg, wParam, lParam);
+1348                 break;
+1349             }
+1350         }
+1351 
+1352         // 用户已处理此消息
+1353         else
+1354         {
+1355             switch (msg)
+1356             {
+1357             case WM_CLOSE:
+1358                 break;
+1359 
+1360             case WM_DESTROY:
+1361                 break;
+1362             }
+1363 
+1364             lResult = resultUserProc;
+1365         }
+1366 
+1367         return lResult;
+1368     }
+.fi
+.SS "IMAGE HiEasyX::ZoomImage_Alpha (IMAGE * srcimg, int width, int height = \fC0\fP)"
+
+.PP
+缩放图像（双线性插值，保留透明度信息） 
+.PP
+\fB参数\fP
+.RS 4
+\fIsrcimg\fP 原图像 
+.br
+\fIwidth\fP 目标宽度 
+.br
+\fIheight\fP 目标高度（为 0 则根据宽度按比例缩放） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+缩放后的图像 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 166 行定义\&.
+.PP
+.nf
+167     {
+168         int old_w, old_h;
+169         GetImageSize(srcimg, &old_w, &old_h);
+170 
+171         // 自动缩放
+172         if (height == 0)
+173         {
+174             height = width * old_h / old_w;
+175         }
+176 
+177         IMAGE output(width, height);
+178         DWORD* src = GetImageBuffer(srcimg);
+179         DWORD* dst = GetImageBuffer(&output);
+180 
+181         // 双线性插值（因为向下取样，所以 w, h 都要减一避免越界）
+182         for (int i = 0; i < height - 1; i++)
+183         {
+184             for (int j = 0; j < width - 1; j++)
+185             {
+186                 int xt = j * old_w / width;     // 新图坐标映射到原图上的位置
+187                 int yt = i * old_h / height;
+188 
+189                 // 实现逐行加载图片
+190                 byte r = (
+191                     GetRValue(src[xt + yt * old_w]) +
+192                     GetRValue(src[xt + yt * old_w + 1]) +
+193                     GetRValue(src[xt + (yt + 1) * old_w]) +
+194                     GetRValue(src[xt + (yt + 1) * old_w + 1])) / 4;
+195                 byte g = (
+196                     GetGValue(src[xt + yt * old_w]) +
+197                     GetGValue(src[xt + yt * old_w] + 1) +
+198                     GetGValue(src[xt + (yt + 1) * old_w]) +
+199                     GetGValue(src[xt + (yt + 1) * old_w]) + 1) / 4;
+200                 byte b = (
+201                     GetBValue(src[xt + yt * old_w]) +
+202                     GetBValue(src[xt + yt * old_w] + 1) +
+203                     GetBValue(src[xt + (yt + 1) * old_w]) +
+204                     GetBValue(src[xt + (yt + 1) * old_w + 1])) / 4;
+205 
+206                 // 赋值，保留 alpha
+207                 dst[i * width + j] = RGBA(r, g, b, GetAValue(src[xt + yt * old_w]));
+208             }
+209         }
+210 
+211         return output;
+212     }
+.fi
+.SS "IMAGE HiEasyX::ZoomImage_Rough_Alpha (IMAGE * srcimg, int width, int height = \fC0\fP)"
+
+.PP
+缩放图像（粗糙的、即不插值的缩放，保留透明度信息） 
+.PP
+\fB参数\fP
+.RS 4
+\fIsrcimg\fP 原图像 
+.br
+\fIwidth\fP 目标宽度 
+.br
+\fIheight\fP 目标高度（为 0 则根据宽度按比例缩放） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+缩放后的图像 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 132 行定义\&.
+.PP
+.nf
+133     {
+134         int src_width, src_height;
+135         GetImageSize(srcimg, &src_width, &src_height);
+136 
+137         // 自动缩放
+138         if (height == 0)
+139         {
+140             height = width * src_height / src_width;
+141         }
+142 
+143         IMAGE dstImage(width, height);
+144         IMAGE* dstimg = &dstImage;
+145 
+146         DWORD* dst = GetImageBuffer(dstimg);
+147         DWORD* src = GetImageBuffer(srcimg);
+148 
+149         float w_scale_rate = (float)src_width / width;
+150         float h_scale_rate = (float)src_height / height;
+151 
+152         for (int iy = 0; iy < height; iy++)
+153         {
+154             for (int ix = 0; ix < width; ix++)
+155             {
+156                 // 计算原图相应坐标
+157                 int x_scale = (int)(w_scale_rate * ix);
+158                 int y_scale = (int)(h_scale_rate * iy);
+159                 dst[ix + iy * width] = src[(int)(x_scale + y_scale * src_width)];
+160             }
+161         }
+162 
+163         return dstImage;
+164     }
+.fi
+.SS "IMAGE HiEasyX::ZoomImage_Win32_Alpha (IMAGE * srcimg, int width, int height = \fC0\fP)"
+
+.PP
+图像缩放（基于 Win32 API，比较快，保留透明度信息） 
+.PP
+\fB参数\fP
+.RS 4
+\fIsrcimg\fP 原图像 
+.br
+\fIwidth\fP 目标宽度 
+.br
+\fIheight\fP 目标高度（为 0 则根据宽度按比例缩放） 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+缩放后的图像 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 214 行定义\&.
+.PP
+.nf
+215     {
+216         int w, h;
+217         GetImageSize(srcimg, &w, &h);
+218 
+219         // 自动缩放
+220         if (height == 0)
+221         {
+222             height = width * h / w;
+223         }
+224 
+225         IMAGE img(width, height);
+226         StretchBlt(
+227             GetImageHDC(&img), 0, 0, width, height,
+228             GetImageHDC(srcimg), 0, 0,
+229             w, h, SRCCOPY
+230         );
+231         return img;
+232     }
+.fi
+.SH "变量说明"
+.PP 
+.SS "bool HiEasyX::g_bAutoFlush = true"
+
+.PP
+是否自动刷新双缓冲 
+.PP
+在文件 HiWindow\&.cpp 第 49 行定义\&.
+.SS "\fBDrawMode\fP HiEasyX::g_fDrawMode = \fBDM_Normal\fP"
+
+.PP
+全局绘制模式 
+.PP
+在文件 HiWindow\&.cpp 第 48 行定义\&.
+.SS "HWND HiEasyX::g_hConsole"
+
+.PP
+控制台句柄 
+.PP
+在文件 HiWindow\&.cpp 第 25 行定义\&.
+.SS "HICON HiEasyX::g_hCustomIcon"
+
+.PP
+自定义程序图标 
+.PP
+在文件 HiWindow\&.cpp 第 36 行定义\&.
+.SS "HICON HiEasyX::g_hCustomIconSm"
+
+.PP
+在文件 HiWindow\&.cpp 第 37 行定义\&.
+.SS "HICON HiEasyX::g_hIconDefault"
+
+.PP
+默认程序图标 
+.PP
+在文件 HiWindow\&.cpp 第 33 行定义\&.
+.SS "HINSTANCE HiEasyX::g_hInstance = GetModuleHandle(0)"
+
+.PP
+程序实例 
+.PP
+在文件 HiWindow\&.cpp 第 26 行定义\&.
+.SS "bool HiEasyX::g_isInTask = false"
+
+.PP
+标记处于任务中 
+.PP
+在文件 HiWindow\&.cpp 第 31 行定义\&.
+.SS "bool HiEasyX::g_isPrePos = false"
+
+.PP
+是否预设窗口位置 
+.PP
+在文件 HiWindow\&.cpp 第 41 行定义\&.
+.SS "bool HiEasyX::g_isPreShowState = false"
+
+.PP
+是否预设窗口显示状态 
+.PP
+在文件 HiWindow\&.cpp 第 42 行定义\&.
+.SS "bool HiEasyX::g_isPreStyle = false"
+
+.PP
+是否预设窗口样式 
+.PP
+在文件 HiWindow\&.cpp 第 39 行定义\&.
+.SS "bool HiEasyX::g_isPreStyleEx = false"
+
+.PP
+是否预设窗口扩展样式 
+.PP
+在文件 HiWindow\&.cpp 第 40 行定义\&.
+.SS "long HiEasyX::g_lPreStyle"
+
+.PP
+创建窗口前的预设样式 
+.PP
+在文件 HiWindow\&.cpp 第 43 行定义\&.
+.SS "long HiEasyX::g_lPreStyleEx"
+
+.PP
+创建窗口前的预设扩展样式 
+.PP
+在文件 HiWindow\&.cpp 第 44 行定义\&.
+.SS "wchar_t HiEasyX::g_lpszClassName[] = L'HiEasyX'"
+
+.PP
+窗口类名 
+.PP
+在文件 HiWindow\&.cpp 第 23 行定义\&.
+.SS "LPCTSTR HiEasyX::g_lpszCustomIcon = nullptr"
+
+.PP
+自定义程序图标资源，为空表示不使用 
+.PP
+在文件 HiWindow\&.cpp 第 34 行定义\&.
+.SS "LPCTSTR HiEasyX::g_lpszCustomIconSm = nullptr"
+
+.PP
+在文件 HiWindow\&.cpp 第 35 行定义\&.
+.SS "int HiEasyX::g_nFocusWindowIndex = \fBNO_WINDOW_INDEX\fP"
+
+.PP
+当前操作焦点窗口索引 
+.PP
+在文件 HiWindow\&.cpp 第 29 行定义\&.
+.SS "int HiEasyX::g_nPreCmdShow"
+
+.PP
+创建窗口前的预设显示状态 
+.PP
+在文件 HiWindow\&.cpp 第 46 行定义\&.
+.SS "POINT HiEasyX::g_pPrePos"
+
+.PP
+创建窗口前的预设窗口位置 
+.PP
+在文件 HiWindow\&.cpp 第 45 行定义\&.
+.SS "\fBScreenSize\fP HiEasyX::g_screenSize"
+
+.PP
+显示器信息 
+.PP
+在文件 HiWindow\&.cpp 第 24 行定义\&.
+.SS "UINT HiEasyX::g_uWM_TASKBARCREATED"
+
+.PP
+系统任务栏消息代码 
+.PP
+在文件 HiWindow\&.cpp 第 51 行定义\&.
+.SS "std::vector<\fBEasyWindow\fP> HiEasyX::g_vecWindows"
+
+.PP
+窗口表（管理多窗口） 
+.PP
+在文件 HiWindow\&.cpp 第 28 行定义\&.
+.SS "WNDCLASSEX HiEasyX::g_WndClassEx"
+
+.PP
+窗口类 
+.PP
+在文件 HiWindow\&.cpp 第 22 行定义\&.
+.SS "clock_t HiEasyX::tRecord = 0"
+
+.PP
+在文件 HiFPS\&.cpp 第 9 行定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

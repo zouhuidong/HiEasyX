@@ -1,0 +1,306 @@
+.TH "HiEasyX::Container" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Container \- 基础容器  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiContainer\&.h>\fP
+.PP
+被 \fBHiEasyX::ControlBase\fP , 以及 \fBHiEasyX::SysControlBase\fP 继承\&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBContainer\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Container\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBUpdateRect\fP (RECT rctOld)"
+.br
+.RI "响应更新区域消息 "
+.ti -1c
+.RI "RECT \fBGetRect\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetRect\fP (int x, int y, int w, int h)"
+.br
+.RI "设置位置和宽高 "
+.ti -1c
+.RI "void \fBSetRect\fP (RECT rct)"
+.br
+.RI "设置矩形区域 "
+.ti -1c
+.RI "POINT \fBGetPos\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetX\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetY\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBSetPos\fP (POINT pt)"
+.br
+.ti -1c
+.RI "void \fBMove\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBMoveRel\fP (int dx, int dy)"
+.br
+.ti -1c
+.RI "int \fBGetWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetWidth\fP (int w)"
+.br
+.ti -1c
+.RI "int \fBGetHeight\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetHeight\fP (int h)"
+.br
+.ti -1c
+.RI "void \fBResize\fP (int w, int h)"
+.br
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "RECT \fBm_rct\fP = { 0 }"
+.br
+.RI "容器区域 "
+.in -1c
+.SH "详细描述"
+.PP 
+基础容器 
+.PP
+在文件 HiContainer\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Container::Container ()"
+
+.PP
+在文件 HiContainer\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7     }
+.fi
+.SS "HiEasyX::Container::~Container ()\fC [virtual]\fP"
+
+.PP
+在文件 HiContainer\&.cpp 第 9 行定义\&.
+.PP
+.nf
+10     {
+11     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "int HiEasyX::Container::GetHeight () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 69 行定义\&.
+.PP
+.nf
+69 { return m_rct\&.bottom - m_rct\&.top; };
+.fi
+.SS "POINT HiEasyX::Container::GetPos () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 51 行定义\&.
+.PP
+.nf
+51 { return { m_rct\&.left,m_rct\&.top }; }
+.fi
+.SS "RECT HiEasyX::Container::GetRect () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 34 行定义\&.
+.PP
+.nf
+34 { return m_rct; }
+.fi
+.SS "int HiEasyX::Container::GetWidth () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 65 行定义\&.
+.PP
+.nf
+65 { return m_rct\&.right - m_rct\&.left; }
+.fi
+.SS "int HiEasyX::Container::GetX () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 53 行定义\&.
+.PP
+.nf
+53 { return m_rct\&.left; }
+.fi
+.SS "int HiEasyX::Container::GetY () const\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 55 行定义\&.
+.PP
+.nf
+55 { return m_rct\&.top; }
+.fi
+.SS "void HiEasyX::Container::Move (int x, int y)\fC [inline]\fP"
+
+.PP
+在文件 HiContainer\&.h 第 61 行定义\&.
+.PP
+.nf
+61 { SetPos(x, y); }
+.fi
+.SS "void HiEasyX::Container::MoveRel (int dx, int dy)"
+
+.PP
+在文件 HiContainer\&.cpp 第 56 行定义\&.
+.PP
+.nf
+57     {
+58         if(dx || dy)
+59             SetRect({ m_rct\&.left + dx, m_rct\&.top + dy, m_rct\&.right + dx, m_rct\&.bottom + dy });
+60     }
+.fi
+.SS "void HiEasyX::Container::Resize (int w, int h)"
+
+.PP
+在文件 HiContainer\&.cpp 第 51 行定义\&.
+.PP
+.nf
+52     {
+53         SetRect({ m_rct\&.left, m_rct\&.top, m_rct\&.left + w, m_rct\&.top + h });
+54     }
+.fi
+.SS "void HiEasyX::Container::SetHeight (int h)"
+
+.PP
+在文件 HiContainer\&.cpp 第 46 行定义\&.
+.PP
+.nf
+47     {
+48         SetRect({ m_rct\&.left, m_rct\&.top, m_rct\&.right, m_rct\&.top + h });
+49     }
+.fi
+.SS "void HiEasyX::Container::SetPos (int x, int y)"
+
+.PP
+在文件 HiContainer\&.cpp 第 31 行定义\&.
+.PP
+.nf
+32     {
+33         SetRect({ x,y,x + GetWidth(),y + GetHeight() });
+34     }
+.fi
+.SS "void HiEasyX::Container::SetPos (POINT pt)"
+
+.PP
+在文件 HiContainer\&.cpp 第 36 行定义\&.
+.PP
+.nf
+37     {
+38         SetRect({ pt\&.x,pt\&.y,pt\&.x + GetWidth(),pt\&.y + GetHeight() });
+39     }
+.fi
+.SS "void HiEasyX::Container::SetRect (int x, int y, int w, int h)"
+
+.PP
+设置位置和宽高 
+.PP
+\fB参数\fP
+.RS 4
+\fIx\fP 位置 
+.br
+\fIy\fP 位置 
+.br
+\fIw\fP 宽 
+.br
+\fIh\fP 高 
+.RE
+.PP
+
+.PP
+在文件 HiContainer\&.cpp 第 26 行定义\&.
+.PP
+.nf
+27     {
+28         SetRect({ x,y,x + w,y + h });
+29     }
+.fi
+.SS "void HiEasyX::Container::SetRect (RECT rct)"
+
+.PP
+设置矩形区域 
+.PP
+\fB参数\fP
+.RS 4
+\fIrct\fP 区域 
+.RE
+.PP
+
+.PP
+在文件 HiContainer\&.cpp 第 17 行定义\&.
+.PP
+.nf
+18     {
+19         RECT old = m_rct;
+20         m_rct = rct;
+21         if (m_rct\&.bottom < m_rct\&.top) m_rct\&.bottom = m_rct\&.top;
+22         if (m_rct\&.right < m_rct\&.left) m_rct\&.right = m_rct\&.left;
+23         UpdateRect(old);
+24     }
+.fi
+.SS "void HiEasyX::Container::SetWidth (int w)"
+
+.PP
+在文件 HiContainer\&.cpp 第 41 行定义\&.
+.PP
+.nf
+42     {
+43         SetRect({ m_rct\&.left, m_rct\&.top, m_rct\&.left + w, m_rct\&.bottom });
+44     }
+.fi
+.SS "void HiEasyX::Container::UpdateRect (RECT rctOld)\fC [virtual]\fP"
+
+.PP
+响应更新区域消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIrctOld\fP 旧的区域 
+.RE
+.PP
+
+.PP
+被 \fBHiEasyX::ScrollBar\fP, \fBHiEasyX::ControlBase\fP , 以及 \fBHiEasyX::SysControlBase\fP 重载\&.
+.PP
+在文件 HiContainer\&.cpp 第 13 行定义\&.
+.PP
+.nf
+14     {
+15     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "RECT HiEasyX::Container::m_rct = { 0 }\fC [protected]\fP"
+
+.PP
+容器区域 
+.PP
+在文件 HiContainer\&.h 第 20 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

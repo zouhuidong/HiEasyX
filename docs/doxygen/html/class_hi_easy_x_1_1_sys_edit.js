@@ -1,5 +1,6 @@
 var class_hi_easy_x_1_1_sys_edit =
 [
+    [ "PreStyle", "struct_hi_easy_x_1_1_sys_edit_1_1_pre_style.html", "struct_hi_easy_x_1_1_sys_edit_1_1_pre_style" ],
     [ "SysEdit", "class_hi_easy_x_1_1_sys_edit.html#a6291d03776ced1b65cc03c6264facdfd", null ],
     [ "SysEdit", "class_hi_easy_x_1_1_sys_edit.html#aa96169100c733b54dcc8da4e9417871a", null ],
     [ "SysEdit", "class_hi_easy_x_1_1_sys_edit.html#a3097b21863fdfc9492f0d9558c1a8b2f", null ],
@@ -9,12 +10,12 @@ var class_hi_easy_x_1_1_sys_edit =
     [ "Delete", "class_hi_easy_x_1_1_sys_edit.html#ae7bf88133eba3b5f87f370f41f39ae61", null ],
     [ "GetMaxTextLength", "class_hi_easy_x_1_1_sys_edit.html#acaf3548266aee839838828805ab5ef04", null ],
     [ "GetSel", "class_hi_easy_x_1_1_sys_edit.html#a67ac47c19cbff94d54588905ee2f4c4b", null ],
-    [ "isEdited", "class_hi_easy_x_1_1_sys_edit.html#a64c5ef60b83e34e21fdd71c09cd10c95", null ],
+    [ "IsEdited", "class_hi_easy_x_1_1_sys_edit.html#a032ef3afd1ba50f11a101476d5fef054", null ],
     [ "Lowercase", "class_hi_easy_x_1_1_sys_edit.html#a0da4b46ac9a8265d6ea318fbd436ea29", null ],
     [ "NumberOnly", "class_hi_easy_x_1_1_sys_edit.html#a982effd68dd8874fb0d82efe5a923651", null ],
     [ "Password", "class_hi_easy_x_1_1_sys_edit.html#ac802669cb1e61f20bb65af20eb72e173", null ],
     [ "Paste", "class_hi_easy_x_1_1_sys_edit.html#a297f5e842302fea55a19dbac30d95d9e", null ],
-    [ "PreSetStyle", "class_hi_easy_x_1_1_sys_edit.html#a121bedc28a86b3c965df0d6094518ff1", null ],
+    [ "PreSetStyle", "class_hi_easy_x_1_1_sys_edit.html#abbf6d7d013dbe3f919c5de366c4e64ba", null ],
     [ "ReadOnly", "class_hi_easy_x_1_1_sys_edit.html#a5c8008152f249d794aae23e19ccc483d", null ],
     [ "RealCreate", "class_hi_easy_x_1_1_sys_edit.html#a32cff157235b39f1b7bd084baf27c225", null ],
     [ "RegisterMessage", "class_hi_easy_x_1_1_sys_edit.html#a0cc4e870dea7fcafc618fb44a561d337", null ],

@@ -1,0 +1,182 @@
+.TH "HiEasyX::Scene" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Scene
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiCanvas\&.h>\fP
+.PP
+继承自 vector< Layer * > \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBLayer\fP * > \fBGetAllLayer\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBGetAllLayerSize\fP () const"
+.br
+.RI "获取所有图层的总数 "
+.ti -1c
+.RI "\fBLayer\fP * \fBGetSpecialLayer\fP (\fBLayerOrder\fP order)"
+.br
+.ti -1c
+.RI "void \fBRender\fP (IMAGE *pImg=nullptr, bool bShowAllOutline=false, bool bShowAllText=true)"
+.br
+.RI "渲染到画布 "
+.in -1c
+.SH "详细描述"
+.PP 
+
+.PP
+.nf
+
+    场景
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    图层索引越大，图层越靠前
+.fi
+.PP
+ 
+.PP
+在文件 HiCanvas\&.h 第 876 行定义\&.
+.SH "成员函数说明"
+.PP 
+.SS "std::vector< \fBLayer\fP * > HiEasyX::Scene::GetAllLayer ()"
+
+.PP
+.nf
+
+    获取所有图层的拷贝
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    图层索引越大，图层越靠前
+.fi
+.PP
+.PP
+\fB返回\fP
+.RS 4
+所有图层的拷贝 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 1997 行定义\&.
+.PP
+.nf
+1998     {
+1999         std::vector<Layer*> vecLayer;
+2000         vecLayer\&.push_back(&m_layerBottomMost);
+2001         vecLayer\&.push_back(&m_layerBottom);
+2002         vecLayer\&.insert(vecLayer\&.end(), this->begin(), this->end());
+2003         vecLayer\&.push_back(&m_layerTop);
+2004         vecLayer\&.push_back(&m_layerTopMost);
+2005         return vecLayer;
+2006     }
+.fi
+.SS "size_t HiEasyX::Scene::GetAllLayerSize () const"
+
+.PP
+获取所有图层的总数 
+.PP
+在文件 HiCanvas\&.cpp 第 2008 行定义\&.
+.PP
+.nf
+2009     {
+2010         // 普通图层加 4 个特殊图层
+2011         return this->size() + 4;
+2012     }
+.fi
+.SS "\fBLayer\fP * HiEasyX::Scene::GetSpecialLayer (\fBLayerOrder\fP order)"
+
+.PP
+.nf
+
+    获取特殊图层（除了普通图层外的其他图层，见 LayerOrder）
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    不建议滥用特殊图层
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIorder\fP 特殊图层索引 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+特殊图层 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 2014 行定义\&.
+.PP
+.nf
+2015     {
+2016         static Layer layerNull;
+2017         layerNull = {};
+2018         switch (order)
+2019         {
+2020         case LAYERORDER_BOTTOM_MOST:    return &m_layerBottomMost;  break;
+2021         case LAYERORDER_BOTTOM:         return &m_layerBottom;      break;
+2022         case LAYERORDER_TOP:            return &m_layerTop;         break;
+2023         case LAYERORDER_TOP_MOST:       return &m_layerTopMost;     break;
+2024         default:                        return &layerNull;          break;
+2025         }
+2026     }
+.fi
+.SS "void HiEasyX::Scene::Render (IMAGE * pImg = \fCnullptr\fP, bool bShowAllOutline = \fCfalse\fP, bool bShowAllText = \fCtrue\fP)"
+
+.PP
+渲染到画布 
+.PP
+\fB参数\fP
+.RS 4
+\fIpImg\fP 目标绘制画布 
+.br
+\fIbShowAllOutline\fP 是否显示轮廓 
+.br
+\fIbShowAllText\fP 是否显示轮廓文本 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 2028 行定义\&.
+.PP
+.nf
+2029     {
+2030         m_property\&.SaveWorkingImageOnly();
+2031         SetWorkingImage(pImg);
+2032         cleardevice();
+2033         m_property\&.ApplyWorkingImageOnly();
+2034 
+2035         size_t i = 0;
+2036         for (auto& layer : GetAllLayer())
+2037         {
+2038             layer->Render(pImg, bShowAllOutline, bShowAllText, L"Layer[" + std::to_wstring(i) + L"]");
+2039             i++;
+2040         }
+2041     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

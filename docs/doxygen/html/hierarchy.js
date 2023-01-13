@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Ball", "struct_ball.html", null ],
     [ "HiEasyX::Static::Char", "struct_hi_easy_x_1_1_static_1_1_char.html", null ],
     [ "HiEasyX::Container", "class_hi_easy_x_1_1_container.html", [
       [ "HiEasyX::ControlBase", "class_hi_easy_x_1_1_control_base.html", [
@@ -32,6 +33,8 @@ var hierarchy =
     ] ],
     [ "HiEasyX::MouseDrag", "class_hi_easy_x_1_1_mouse_drag.html", null ],
     [ "HiEasyX::MusicMCI", "class_hi_easy_x_1_1_music_m_c_i.html", null ],
+    [ "HiEasyX::SysComboBox::PreStyle", "struct_hi_easy_x_1_1_sys_combo_box_1_1_pre_style.html", null ],
+    [ "HiEasyX::SysEdit::PreStyle", "struct_hi_easy_x_1_1_sys_edit_1_1_pre_style.html", null ],
     [ "ScreenSize", "struct_screen_size.html", null ],
     [ "HiEasyX::ScrollBar::ScrollBarInfo", "struct_hi_easy_x_1_1_scroll_bar_1_1_scroll_bar_info.html", null ],
     [ "vector", null, [

@@ -1,0 +1,500 @@
+.TH "HiEasyX::SysComboBox" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysComboBox \- 系统组合框控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysComboBox\&.h>\fP
+.PP
+继承自 \fBHiEasyX::SysControlBase\fP \&.
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPreStyle\fP"
+.br
+.RI "组合框控件预设样式（必须在创建前设置才有效） "
+.in -1c
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysComboBox\fP ()"
+.br
+.ti -1c
+.RI "\fBSysComboBox\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "\fBSysComboBox\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "void \fBPreSetStyle\fP (\fBPreStyle\fP pre_style)"
+.br
+.RI "在创建控件前预设样式 "
+.ti -1c
+.RI "LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet) override"
+.br
+.RI "更新消息，此函数无需用户调用 "
+.ti -1c
+.RI "void \fBRegisterSelMessage\fP (void(*pFunc)(int sel, std::wstring wstrSelText))"
+.br
+.RI "注册选择消息 "
+.ti -1c
+.RI "void \fBRegisterEditMessage\fP (void(*pFunc)(std::wstring wstrText))"
+.br
+.RI "注册编辑消息 "
+.ti -1c
+.RI "int \fBGetSel\fP () const"
+.br
+.RI "获取选中的索引 "
+.ti -1c
+.RI "void \fBSetSel\fP (int sel)"
+.br
+.RI "设置选中的索引 "
+.ti -1c
+.RI "bool \fBSelectString\fP (std::wstring wstrText)"
+.br
+.RI "选择具有指定文本的一项 "
+.ti -1c
+.RI "void \fBAddString\fP (std::wstring wstrText)"
+.br
+.RI "增加项 "
+.ti -1c
+.RI "void \fBInsertString\fP (int index, std::wstring wstrText)"
+.br
+.RI "插入项 "
+.ti -1c
+.RI "void \fBDeleteString\fP (int index)"
+.br
+.RI "删除项 "
+.ti -1c
+.RI "int \fBGetCount\fP ()"
+.br
+.RI "获取列表内容数量 "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "清空列表 "
+.ti -1c
+.RI "void \fBShowDropdown\fP (bool enable)"
+.br
+.RI "显示列表 "
+.ti -1c
+.RI "bool \fBIsSelChanged\fP ()"
+.br
+.RI "判断选择项是否变化 "
+.ti -1c
+.RI "bool \fBIsEdited\fP ()"
+.br
+.RI "判断是否被编辑 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRealCreate\fP (HWND hParent) override"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "额外继承的成员函数"
+.SH "详细描述"
+.PP 
+系统组合框控件 
+.PP
+在文件 SysComboBox\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysComboBox::SysComboBox ()"
+
+.PP
+在文件 SysComboBox\&.cpp 第 25 行定义\&.
+.PP
+.nf
+26     {
+27     }
+.fi
+.SS "HiEasyX::SysComboBox::SysComboBox (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysComboBox\&.cpp 第 29 行定义\&.
+.PP
+.nf
+30     {
+31         Create(hParent, rct, strText);
+32     }
+.fi
+.SS "HiEasyX::SysComboBox::SysComboBox (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysComboBox\&.cpp 第 34 行定义\&.
+.PP
+.nf
+35     {
+36         Create(hParent, x, y, w, h, strText);
+37     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::SysComboBox::AddString (std::wstring wstrText)"
+
+.PP
+增加项 
+.PP
+\fB参数\fP
+.RS 4
+\fIwstrText\fP 项文本 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 122 行定义\&.
+.PP
+.nf
+123     {
+124         ComboBox_AddString(GetHandle(), wstrText\&.c_str());
+125     }
+.fi
+.SS "void HiEasyX::SysComboBox::Clear ()"
+
+.PP
+清空列表 
+.PP
+在文件 SysComboBox\&.cpp 第 142 行定义\&.
+.PP
+.nf
+143     {
+144         ComboBox_ResetContent(GetHandle());
+145     }
+.fi
+.SS "void HiEasyX::SysComboBox::DeleteString (int index)"
+
+.PP
+删除项 
+.PP
+\fB参数\fP
+.RS 4
+\fIindex\fP 项索引 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 132 行定义\&.
+.PP
+.nf
+133     {
+134         ComboBox_DeleteString(GetHandle(), index);
+135     }
+.fi
+.SS "int HiEasyX::SysComboBox::GetCount ()"
+
+.PP
+获取列表内容数量 
+.PP
+在文件 SysComboBox\&.cpp 第 137 行定义\&.
+.PP
+.nf
+138     {
+139         return ComboBox_GetCount(GetHandle());
+140     }
+.fi
+.SS "int HiEasyX::SysComboBox::GetSel () const\fC [inline]\fP"
+
+.PP
+获取选中的索引 
+.PP
+在文件 SysComboBox\&.h 第 77 行定义\&.
+.PP
+.nf
+77 { return m_nSel; }
+.fi
+.SS "void HiEasyX::SysComboBox::InsertString (int index, std::wstring wstrText)"
+
+.PP
+插入项 
+.PP
+\fB参数\fP
+.RS 4
+\fIindex\fP 插入位置 
+.br
+\fIwstrText\fP 项文本 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 127 行定义\&.
+.PP
+.nf
+128     {
+129         ComboBox_InsertString(GetHandle(), index, wstrText\&.c_str());
+130     }
+.fi
+.SS "bool HiEasyX::SysComboBox::IsEdited ()"
+
+.PP
+判断是否被编辑 
+.PP
+在文件 SysComboBox\&.cpp 第 159 行定义\&.
+.PP
+.nf
+160     {
+161         bool r = m_bEdited;
+162         m_bEdited = false;
+163         return r;
+164     }
+.fi
+.SS "bool HiEasyX::SysComboBox::IsSelChanged ()"
+
+.PP
+判断选择项是否变化 
+.PP
+在文件 SysComboBox\&.cpp 第 152 行定义\&.
+.PP
+.nf
+153     {
+154         bool r = m_bSelChanged;
+155         m_bSelChanged = false;
+156         return r;
+157     }
+.fi
+.SS "void HiEasyX::SysComboBox::PreSetStyle (\fBPreStyle\fP pre_style)"
+
+.PP
+在创建控件前预设样式 
+.PP
+在文件 SysComboBox\&.cpp 第 39 行定义\&.
+.PP
+.nf
+40     {
+41         if (pre_style\&.always_show_list)
+42         {
+43             m_lBasicStyle |= CBS_SIMPLE;
+44             m_lBasicStyle &= ~CBS_DROPDOWN;
+45             if (!pre_style\&.editable)
+46                 m_bSimple_No_Edit = true;
+47         }
+48         else
+49         {
+50             if (pre_style\&.editable)
+51             {
+52                 m_lBasicStyle |= CBS_DROPDOWN;
+53             }
+54             else
+55             {
+56                 m_lBasicStyle |= CBS_DROPDOWNLIST;
+57             }
+58         }
+59 
+60         if (pre_style\&.sort)
+61             m_lBasicStyle |= CBS_SORT;
+62         else
+63             m_lBasicStyle &= ~CBS_SORT;
+64     }
+.fi
+.SS "void HiEasyX::SysComboBox::RealCreate (HWND hParent)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+实现了 \fBHiEasyX::SysControlBase\fP\&.
+.PP
+在文件 SysComboBox\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_type = SCT_ComboBox;
+8         m_hWnd = CreateControl(
+9             hParent,
+10             L"ComboBox",
+11             L"",
+12             m_lBasicStyle
+13         );
+14 
+15         // CBS_SIMPLE 默认可以编辑
+16         // 若要禁用输入，必须获取编辑框的句柄
+17         if (m_bSimple_No_Edit)
+18         {
+19             // 获取输入框句柄，并设置为只读
+20             HWND combobox_edit = ChildWindowFromPoint(GetHandle(), { 3,3 });
+21             Edit_SetReadOnly(combobox_edit, true);
+22         }
+23     }
+.fi
+.SS "void HiEasyX::SysComboBox::RegisterEditMessage (void(*)(std::wstring wstrText) pFunc)"
+
+.PP
+注册编辑消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息响应函数 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 106 行定义\&.
+.PP
+.nf
+107     {
+108         m_pFuncEdit = pFunc;
+109     }
+.fi
+.SS "void HiEasyX::SysComboBox::RegisterSelMessage (void(*)(int sel, std::wstring wstrSelText) pFunc)"
+
+.PP
+注册选择消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息响应函数 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 101 行定义\&.
+.PP
+.nf
+102     {
+103         m_pFuncSel = pFunc;
+104     }
+.fi
+.SS "bool HiEasyX::SysComboBox::SelectString (std::wstring wstrText)"
+
+.PP
+选择具有指定文本的一项 
+.PP
+\fB参数\fP
+.RS 4
+\fIwstrText\fP 指定文本 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+是否选择成功 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 117 行定义\&.
+.PP
+.nf
+118     {
+119         return ComboBox_SelectString(GetHandle(), -1, wstrText\&.c_str()) != CB_ERR;
+120     }
+.fi
+.SS "void HiEasyX::SysComboBox::SetSel (int sel)"
+
+.PP
+设置选中的索引 
+.PP
+\fB参数\fP
+.RS 4
+\fIsel\fP 选中的索引 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 111 行定义\&.
+.PP
+.nf
+112     {
+113         m_nSel = sel;
+114         ComboBox_SetCurSel(GetHandle(), sel);
+115     }
+.fi
+.SS "void HiEasyX::SysComboBox::ShowDropdown (bool enable)"
+
+.PP
+显示列表 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否显示列表 
+.RE
+.PP
+
+.PP
+在文件 SysComboBox\&.cpp 第 147 行定义\&.
+.PP
+.nf
+148     {
+149         ComboBox_ShowDropdown(GetHandle(), enable);
+150     }
+.fi
+.SS "LRESULT HiEasyX::SysComboBox::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息，此函数无需用户调用 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.br
+\fIwParam\fP 参数 
+.br
+\fIlParam\fP 参数 
+.br
+\fIbRet\fP 标记是否返回值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+不定返回值 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::SysControlBase\fP \&.
+.PP
+在文件 SysComboBox\&.cpp 第 66 行定义\&.
+.PP
+.nf
+67     {
+68         if (msg == WM_COMMAND)
+69         {
+70             if (LOWORD(wParam) == GetID())
+71             {
+72                 switch (HIWORD(wParam))
+73                 {
+74                 case CBN_SELCHANGE:
+75                     m_nSel = ComboBox_GetCurSel(GetHandle());
+76                     m_bSelChanged = true;
+77                     if (m_pFuncSel)
+78                     {
+79                         int len = ComboBox_GetLBTextLen(GetHandle(), m_nSel);
+80                         WCHAR* buf = new WCHAR[len + 1];
+81                         ZeroMemory(buf, (len + 1) * sizeof WCHAR);
+82                         ComboBox_GetLBText(GetHandle(), m_nSel, buf);
+83                         m_pFuncSel(m_nSel, buf);
+84                         delete[] buf;
+85                     }
+86                     break;
+87 
+88                 case CBN_EDITUPDATE:
+89                     m_bEdited = true;
+90                     if (m_pFuncEdit)
+91                         m_pFuncEdit(GetText());
+92                     break;
+93                 }
+94             }
+95         }
+96 
+97         bRet = false;
+98         return 0;
+99     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

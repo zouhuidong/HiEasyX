@@ -1,0 +1,206 @@
+.TH "HiEasyX::SysRadioButton" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysRadioButton \- 系统单选框控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysRadioButton\&.h>\fP
+.PP
+继承自 \fBHiEasyX::SysControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysRadioButton\fP ()"
+.br
+.ti -1c
+.RI "\fBSysRadioButton\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "\fBSysRadioButton\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet) override"
+.br
+.RI "更新消息，此函数无需用户调用 "
+.ti -1c
+.RI "void \fBRegisterMessage\fP (void(*pFunc)(bool checked))"
+.br
+.RI "注册点击消息 "
+.ti -1c
+.RI "bool \fBIsChecked\fP () const"
+.br
+.RI "获取选中状态 "
+.ti -1c
+.RI "void \fBCheck\fP (bool check)"
+.br
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRealCreate\fP (HWND hParent) override"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "额外继承的成员函数"
+.SH "详细描述"
+.PP 
+系统单选框控件 
+.PP
+在文件 SysRadioButton\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysRadioButton::SysRadioButton ()"
+
+.PP
+在文件 SysRadioButton\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18     }
+.fi
+.SS "HiEasyX::SysRadioButton::SysRadioButton (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysRadioButton\&.cpp 第 20 行定义\&.
+.PP
+.nf
+21     {
+22         Create(hParent, rct, strText);
+23     }
+.fi
+.SS "HiEasyX::SysRadioButton::SysRadioButton (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysRadioButton\&.cpp 第 25 行定义\&.
+.PP
+.nf
+26     {
+27         Create(hParent, x, y, w, h, strText);
+28     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::SysRadioButton::Check (bool check)"
+
+.PP
+在文件 SysRadioButton\&.cpp 第 54 行定义\&.
+.PP
+.nf
+55     {
+56         Button_SetCheck(GetHandle(), check);
+57         m_bChecked = check;
+58     }
+.fi
+.SS "bool HiEasyX::SysRadioButton::IsChecked () const\fC [inline]\fP"
+
+.PP
+获取选中状态 
+.PP
+在文件 SysRadioButton\&.h 第 45 行定义\&.
+.PP
+.nf
+45 { return m_bChecked; }
+.fi
+.SS "void HiEasyX::SysRadioButton::RealCreate (HWND hParent)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+实现了 \fBHiEasyX::SysControlBase\fP\&.
+.PP
+在文件 SysRadioButton\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_type = SCT_RadioButton;
+8         m_hWnd = CreateControl(
+9             hParent,
+10             L"Button",
+11             L"",
+12             WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTORADIOBUTTON
+13         );
+14     }
+.fi
+.SS "void HiEasyX::SysRadioButton::RegisterMessage (void(*)(bool checked) pFunc)"
+
+.PP
+注册点击消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息响应函数 
+.RE
+.PP
+
+.PP
+在文件 SysRadioButton\&.cpp 第 49 行定义\&.
+.PP
+.nf
+50     {
+51         m_pFunc = pFunc;
+52     }
+.fi
+.SS "LRESULT HiEasyX::SysRadioButton::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息，此函数无需用户调用 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.br
+\fIwParam\fP 参数 
+.br
+\fIlParam\fP 参数 
+.br
+\fIbRet\fP 标记是否返回值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+不定返回值 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::SysControlBase\fP \&.
+.PP
+在文件 SysRadioButton\&.cpp 第 30 行定义\&.
+.PP
+.nf
+31     {
+32         if (msg == WM_COMMAND)
+33         {
+34             // 只要是按键按下消息就判断
+35             // 不能只判断自己的消息，因为同组的其它单选框被选择时，自己收不到消息
+36             if (HIWORD(wParam) == BN_CLICKED)
+37             {
+38                 bool checked = Button_GetCheck(GetHandle());
+39                 if (m_pFunc && m_bChecked != checked)
+40                     m_pFunc(checked);
+41                 m_bChecked = checked;
+42             }
+43         }
+44 
+45         bRet = false;
+46         return 0;
+47     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

@@ -1,0 +1,237 @@
+.TH "HiEasyX::EasyWindow" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::EasyWindow \- 窗口  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiWindow\&.h>\fP
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisAlive\fP"
+.br
+.RI "窗口是否存在 "
+.ti -1c
+.RI "HWND \fBhWnd\fP"
+.br
+.RI "窗口句柄 "
+.ti -1c
+.RI "HWND \fBhParent\fP"
+.br
+.RI "父窗口句柄 "
+.ti -1c
+.RI "IMAGE * \fBpImg\fP"
+.br
+.RI "窗口图像 "
+.ti -1c
+.RI "IMAGE * \fBpBufferImg\fP"
+.br
+.RI "图像缓冲区 "
+.ti -1c
+.RI "\fBCanvas\fP * \fBpBufferImgCanvas\fP"
+.br
+.RI "图像缓冲区绑定的画布指针 "
+.ti -1c
+.RI "bool \fBisNeedFlush\fP"
+.br
+.RI "是否需要输出绘图缓冲 "
+.ti -1c
+.RI "WNDPROC \fBfuncWndProc\fP"
+.br
+.RI "窗口消息处理函数 "
+.ti -1c
+.RI "std::vector< ExMessage > \fBvecMessage\fP"
+.br
+.RI "模拟 EasyX 窗口消息队列 "
+.ti -1c
+.RI "bool \fBisUseTray\fP"
+.br
+.RI "是否使用托盘 "
+.ti -1c
+.RI "NOTIFYICONDATA \fBnid\fP"
+.br
+.RI "托盘信息 "
+.ti -1c
+.RI "bool \fBisUseTrayMenu\fP"
+.br
+.RI "是否使用托盘菜单 "
+.ti -1c
+.RI "HMENU \fBhTrayMenu\fP"
+.br
+.RI "托盘菜单 "
+.ti -1c
+.RI "void(* \fBfuncTrayMenuProc\fP )(UINT)"
+.br
+.ti -1c
+.RI "bool \fBisNewSize\fP"
+.br
+.RI "窗口大小是否改变 "
+.ti -1c
+.RI "bool \fBisBusyProcessing\fP"
+.br
+.RI "是否正忙于处理内部消息（指不允许用户启动任务的情况） "
+.ti -1c
+.RI "int \fBnSkipPixels\fP"
+.br
+.RI "绘制时跳过的像素点数量（降质性速绘） "
+.ti -1c
+.RI "std::vector< \fBSysControlBase\fP * > \fBvecSysCtrl\fP"
+.br
+.RI "记录创建的系统控件 "
+.ti -1c
+.RI "bool \fBbHasCtrl\fP = false"
+.br
+.RI "是否创建过系统控件 "
+.in -1c
+.SH "详细描述"
+.PP 
+窗口 
+
+
+.PP
+\fB注解\fP
+.RS 4
+在 InitWindowStruct 函数中初始化此结构体 
+.RE
+.PP
+
+.PP
+在文件 HiWindow\&.h 第 57 行定义\&.
+.SH "类成员变量说明"
+.PP 
+.SS "bool HiEasyX::EasyWindow::bHasCtrl = false"
+
+.PP
+是否创建过系统控件 
+.PP
+在文件 HiWindow\&.h 第 95 行定义\&.
+.SS "void(* HiEasyX::EasyWindow::funcTrayMenuProc) (UINT)"
+
+.PP
+.nf
+
+    托盘菜单消息处理函数指针
+.fi
+.PP
+.PP
+.PP
+.nf
+备注：
+    给出此函数是为了方便响应托盘的菜单消息
+    如需响应完整的托盘消息，请自定义窗口过程函数并处理 WM_TRAY 消息
+.fi
+.PP
+ 
+.PP
+在文件 HiWindow\&.h 第 87 行定义\&.
+.SS "WNDPROC HiEasyX::EasyWindow::funcWndProc"
+
+.PP
+窗口消息处理函数 
+.PP
+在文件 HiWindow\&.h 第 69 行定义\&.
+.SS "HWND HiEasyX::EasyWindow::hParent"
+
+.PP
+父窗口句柄 
+.PP
+在文件 HiWindow\&.h 第 62 行定义\&.
+.SS "HMENU HiEasyX::EasyWindow::hTrayMenu"
+
+.PP
+托盘菜单 
+.PP
+在文件 HiWindow\&.h 第 76 行定义\&.
+.SS "HWND HiEasyX::EasyWindow::hWnd"
+
+.PP
+窗口句柄 
+.PP
+在文件 HiWindow\&.h 第 61 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isAlive"
+
+.PP
+窗口是否存在 
+.PP
+在文件 HiWindow\&.h 第 59 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isBusyProcessing"
+
+.PP
+是否正忙于处理内部消息（指不允许用户启动任务的情况） 
+.PP
+在文件 HiWindow\&.h 第 90 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isNeedFlush"
+
+.PP
+是否需要输出绘图缓冲 
+.PP
+在文件 HiWindow\&.h 第 67 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isNewSize"
+
+.PP
+窗口大小是否改变 
+.PP
+在文件 HiWindow\&.h 第 89 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isUseTray"
+
+.PP
+是否使用托盘 
+.PP
+在文件 HiWindow\&.h 第 73 行定义\&.
+.SS "bool HiEasyX::EasyWindow::isUseTrayMenu"
+
+.PP
+是否使用托盘菜单 
+.PP
+在文件 HiWindow\&.h 第 75 行定义\&.
+.SS "NOTIFYICONDATA HiEasyX::EasyWindow::nid"
+
+.PP
+托盘信息 
+.PP
+在文件 HiWindow\&.h 第 74 行定义\&.
+.SS "int HiEasyX::EasyWindow::nSkipPixels"
+
+.PP
+绘制时跳过的像素点数量（降质性速绘） 
+.PP
+在文件 HiWindow\&.h 第 92 行定义\&.
+.SS "IMAGE* HiEasyX::EasyWindow::pBufferImg"
+
+.PP
+图像缓冲区 
+.PP
+在文件 HiWindow\&.h 第 65 行定义\&.
+.SS "\fBCanvas\fP* HiEasyX::EasyWindow::pBufferImgCanvas"
+
+.PP
+图像缓冲区绑定的画布指针 
+.PP
+在文件 HiWindow\&.h 第 66 行定义\&.
+.SS "IMAGE* HiEasyX::EasyWindow::pImg"
+
+.PP
+窗口图像 
+.PP
+在文件 HiWindow\&.h 第 64 行定义\&.
+.SS "std::vector<ExMessage> HiEasyX::EasyWindow::vecMessage"
+
+.PP
+模拟 EasyX 窗口消息队列 
+.PP
+在文件 HiWindow\&.h 第 71 行定义\&.
+.SS "std::vector<\fBSysControlBase\fP*> HiEasyX::EasyWindow::vecSysCtrl"
+
+.PP
+记录创建的系统控件 
+.PP
+在文件 HiWindow\&.h 第 94 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

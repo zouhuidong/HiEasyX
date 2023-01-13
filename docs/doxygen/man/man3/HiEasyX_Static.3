@@ -1,0 +1,354 @@
+.TH "HiEasyX::Static" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Static \- 静态（文本、图像）控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Static\&.h>\fP
+.PP
+继承自 \fBHiEasyX::ControlBase\fP \&.
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBChar\fP"
+.br
+.in -1c
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBStatic\fP ()"
+.br
+.ti -1c
+.RI "\fBStatic\fP (int x, int y, int w, int h, std::wstring wstrText=L'')"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBChar\fP > \fBConvert\fP (std::wstring wstrText)"
+.br
+.ti -1c
+.RI "virtual std::wstring \fBConvert\fP (std::vector< \fBChar\fP > vecText)"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBChar\fP > & \fBGetTextVector\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBClearText\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBAddText\fP (std::wstring wstr, bool isSetTextColor=false, COLORREF cText=0, bool isSetBkColor=false, COLORREF cBk=0)"
+.br
+.RI "添加文本 "
+.ti -1c
+.RI "void \fBSetText\fP (std::wstring wstrText) override"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (std::vector< \fBChar\fP > vecText)"
+.br
+.ti -1c
+.RI "virtual \fBImageBlock\fP * \fBGetImage\fP ()"
+.br
+.RI "获取缓存的图像 "
+.ti -1c
+.RI "virtual void \fBSetImage\fP (\fBImageBlock\fP *pImgBlockmg)"
+.br
+.RI "设置显示图像 "
+.ti -1c
+.RI "void \fBDraw_Text\fP (int nTextOffsetX=0, int nTextOffsetY=0) override"
+.br
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.RI "绘制控件 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBChar\fP > \fBm_vecText\fP"
+.br
+.ti -1c
+.RI "\fBImageBlock\fP * \fBm_pImgBlock\fP = nullptr"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+静态（文本、图像）控件 
+.PP
+在文件 Static\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Static::Static ()"
+
+.PP
+在文件 Static\&.cpp 第 11 行定义\&.
+.PP
+.nf
+12     {
+13         Init();
+14     }
+.fi
+.SS "HiEasyX::Static::Static (int x, int y, int w, int h, std::wstring wstrText = \fCL''\fP)"
+
+.PP
+在文件 Static\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18         Init();
+19         SetRect(x, y, w, h);
+20         SetText(wstrText);
+21     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::Static::AddText (std::wstring wstr, bool isSetTextColor = \fCfalse\fP, COLORREF cText = \fC0\fP, bool isSetBkColor = \fCfalse\fP, COLORREF cBk = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+添加文本 
+.PP
+\fB参数\fP
+.RS 4
+\fIwstr\fP 文本 
+.br
+\fIisSetTextColor\fP 是否设置此文本颜色 
+.br
+\fIcText\fP 文本颜色 
+.br
+\fIisSetBkColor\fP 是否设置此文本背景颜色 
+.br
+\fIcBk\fP 文本背景色 
+.RE
+.PP
+
+.PP
+在文件 Static\&.cpp 第 53 行定义\&.
+.PP
+.nf
+54     {
+55         m_wstrText += wstr;
+56         if (!isSetTextColor)    cText = m_cText;
+57         if (!isSetBkColor)      cBk = m_cBackground;
+58         for (auto& ch : wstr)
+59         {
+60             m_vecText\&.push_back({ ch,cText,cBk });
+61         }
+62 
+63         MarkNeedRedrawAndRender();
+64     }
+.fi
+.SS "void HiEasyX::Static::ClearText ()\fC [virtual]\fP"
+
+.PP
+在文件 Static\&.cpp 第 45 行定义\&.
+.PP
+.nf
+46     {
+47         m_wstrText\&.clear();
+48         m_vecText\&.clear();
+49 
+50         MarkNeedRedrawAndRender();
+51     }
+.fi
+.SS "std::wstring HiEasyX::Static::Convert (std::vector< \fBChar\fP > vecText)\fC [virtual]\fP"
+
+.PP
+在文件 Static\&.cpp 第 34 行定义\&.
+.PP
+.nf
+35     {
+36         std::wstring wstr;
+37         for (auto& ch : vecText)
+38         {
+39             wstr\&.push_back(ch\&.ch);
+40         }
+41 
+42         return wstr;
+43     }
+.fi
+.SS "std::vector< \fBStatic::Char\fP > HiEasyX::Static::Convert (std::wstring wstrText)\fC [virtual]\fP"
+
+.PP
+在文件 Static\&.cpp 第 23 行定义\&.
+.PP
+.nf
+24     {
+25         std::vector<Static::Char> vec;
+26         for (auto& ch : wstrText)
+27         {
+28             vec\&.push_back({ ch,m_cText,m_cBackground });
+29         }
+30 
+31         return vec;
+32     }
+.fi
+.SS "void HiEasyX::Static::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+绘制控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIdraw_child\fP 是否绘制子控件 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Static\&.cpp 第 101 行定义\&.
+.PP
+.nf
+102     {
+103         if (m_bRedraw)
+104         {
+105             ControlBase::Draw(false);
+106 
+107             if (m_pImgBlock)
+108             {
+109                 m_canvas\&.PutImageIn_Alpha(
+110                     m_pImgBlock->x, m_pImgBlock->y,
+111                     m_pImgBlock->GetCanvas(),
+112                     { 0 },
+113                     m_pImgBlock->alpha, m_pImgBlock->bUseSrcAlpha, m_pImgBlock->isAlphaCalculated
+114                 );
+115             }
+116 
+117             Draw_Text();
+118         }
+119 
+120         if (draw_child)
+121         {
+122             DrawChild();
+123         }
+124     }
+.fi
+.SS "void HiEasyX::Static::Draw_Text (int nTextOffsetX = \fC0\fP, int nTextOffsetY = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Static\&.cpp 第 82 行定义\&.
+.PP
+.nf
+83     {
+84         int w = m_canvas\&.TextWidth(m_wstrText\&.c_str());
+85         int h = m_canvas\&.TextHeight(m_wstrText\&.c_str());
+86 
+87         m_canvas\&.MoveTo(
+88             (GetWidth() - w) / 2 + nTextOffsetX,
+89             (GetHeight() - h) / 2 + nTextOffsetY
+90         );
+91 
+92         for (auto& ch : m_vecText)
+93         {
+94             m_canvas\&.SetBkColor(ch\&.cBk);
+95             m_canvas\&.OutText(ch\&.ch, true, ch\&.cText);
+96         }
+97 
+98         m_canvas\&.SetBkColor(m_cBackground);
+99     }
+.fi
+.SS "virtual \fBImageBlock\fP* HiEasyX::Static::GetImage ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+获取缓存的图像 
+.PP
+在文件 Static\&.h 第 71 行定义\&.
+.PP
+.nf
+71 { return m_pImgBlock; }
+.fi
+.SS "virtual std::vector<\fBChar\fP>& HiEasyX::Static::GetTextVector ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 Static\&.h 第 44 行定义\&.
+.PP
+.nf
+44 { return m_vecText; }
+.fi
+.SS "void HiEasyX::Static::Init ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 Static\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_bEnableBorder = false;
+8         m_bAutoRedrawWhenReceiveMsg = false;
+9     }
+.fi
+.SS "void HiEasyX::Static::SetImage (\fBImageBlock\fP * pImgBlockmg)\fC [virtual]\fP"
+
+.PP
+设置显示图像 
+.PP
+\fB参数\fP
+.RS 4
+\fIpImgBlockmg\fP 要显示的图像块 
+.RE
+.PP
+
+.PP
+在文件 Static\&.cpp 第 126 行定义\&.
+.PP
+.nf
+127     {
+128         m_pImgBlock = pImgBlock;
+129 
+130         MarkNeedRedrawAndRender();
+131     }
+.fi
+.SS "void HiEasyX::Static::SetText (std::vector< \fBChar\fP > vecText)"
+
+.PP
+在文件 Static\&.cpp 第 74 行定义\&.
+.PP
+.nf
+75     {
+76         m_wstrText = Convert(vecText);
+77         m_vecText = vecText;
+78 
+79         MarkNeedRedrawAndRender();
+80     }
+.fi
+.SS "void HiEasyX::Static::SetText (std::wstring wstrText)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Static\&.cpp 第 66 行定义\&.
+.PP
+.nf
+67     {
+68         m_wstrText = wstrText;
+69         m_vecText = Convert(wstrText);
+70 
+71         MarkNeedRedrawAndRender();
+72     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "\fBImageBlock\fP* HiEasyX::Static::m_pImgBlock = nullptr\fC [protected]\fP"
+
+.PP
+在文件 Static\&.h 第 30 行定义\&.
+.SS "std::vector<\fBChar\fP> HiEasyX::Static::m_vecText\fC [protected]\fP"
+
+.PP
+在文件 Static\&.h 第 29 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

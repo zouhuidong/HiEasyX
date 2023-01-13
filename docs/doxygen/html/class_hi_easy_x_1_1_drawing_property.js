@@ -2,7 +2,7 @@ var class_hi_easy_x_1_1_drawing_property =
 [
     [ "ApplyProperty", "class_hi_easy_x_1_1_drawing_property.html#a03152238e5a5041da1f48d6f6c6faab6", null ],
     [ "ApplyWorkingImageOnly", "class_hi_easy_x_1_1_drawing_property.html#ac3706bd136c49bcfbea9d4d8ca62895e", null ],
-    [ "isSaved", "class_hi_easy_x_1_1_drawing_property.html#acdcc0e0e5bbd959d2312239e97f93ec6", null ],
+    [ "IsSaved", "class_hi_easy_x_1_1_drawing_property.html#a2e366e45e60e026b5db30a5efc1d3231", null ],
     [ "Reset", "class_hi_easy_x_1_1_drawing_property.html#aa69221af8718bf43fe00c41d5e234f70", null ],
     [ "SaveProperty", "class_hi_easy_x_1_1_drawing_property.html#aa579f826f3f7c0b3e0fd06dc2ac99631", null ],
     [ "SaveWorkingImageOnly", "class_hi_easy_x_1_1_drawing_property.html#a9f711cc7b0898983278bcc3e74981c48", null ],

@@ -1,0 +1,253 @@
+.TH "HiEasyX::Page" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Page \- 页控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Page\&.h>\fP
+.PP
+继承自 \fBHiEasyX::ControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBPage\fP ()"
+.br
+.ti -1c
+.RI "\fBPage\fP (int w, int h, COLORREF cBk=WHITE)"
+.br
+.ti -1c
+.RI "\fBPage\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "virtual void \fBBindToCanvas\fP (\fBCanvas\fP *pCanvas)"
+.br
+.RI "绑定到画布，渲染时默认输出到此画布 "
+.ti -1c
+.RI "virtual void \fBpush\fP (\fBControlBase\fP *pCtrl, int offset_x=0, int offset_y=0)"
+.br
+.RI "加入控件 "
+.ti -1c
+.RI "virtual void \fBpush\fP (const std::list< \fBControlBase\fP * > list)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBControlBase\fP *pCtrl)"
+.br
+.RI "移除控件 "
+.ti -1c
+.RI "void \fBRender\fP (\fBCanvas\fP *dst=nullptr, RECT *pRct=nullptr, int *pCount=0) override"
+.br
+.RI "渲染 "
+.ti -1c
+.RI "void \fBUpdateImage\fP (\fBCanvas\fP *pCanvas=nullptr)"
+.br
+.RI "更新控件，并输出到某画布（控件重绘并渲染） "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP (COLORREF cBk=WHITE)"
+.br
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "\fBCanvas\fP * \fBm_pCanvas\fP = nullptr"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+页控件 
+.PP
+在文件 Page\&.h 第 16 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Page::Page ()"
+
+.PP
+在文件 Page\&.cpp 第 17 行定义\&.
+.PP
+.nf
+18     {
+19         Init();
+20     }
+.fi
+.SS "HiEasyX::Page::Page (int w, int h, COLORREF cBk = \fCWHITE\fP)"
+
+.PP
+在文件 Page\&.cpp 第 22 行定义\&.
+.PP
+.nf
+23     {
+24         SetRect(0, 0, w, h);
+25         Init(cBk);
+26     }
+.fi
+.SS "HiEasyX::Page::Page (\fBCanvas\fP * pCanvas)"
+
+.PP
+在文件 Page\&.cpp 第 28 行定义\&.
+.PP
+.nf
+29     {
+30         BindToCanvas(pCanvas);
+31         Init();
+32     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::Page::BindToCanvas (\fBCanvas\fP * pCanvas)\fC [virtual]\fP"
+
+.PP
+绑定到画布，渲染时默认输出到此画布 
+.PP
+\fB参数\fP
+.RS 4
+\fIpCanvas\fP 画布 
+.RE
+.PP
+
+.PP
+在文件 Page\&.cpp 第 34 行定义\&.
+.PP
+.nf
+35     {
+36         SetRect(0, 0, pCanvas->GetWidth(), pCanvas->GetHeight());
+37         m_pCanvas = pCanvas;
+38         SetBkColor(m_pCanvas->GetBkColor());
+39     }
+.fi
+.SS "void HiEasyX::Page::Init (COLORREF cBk = \fCWHITE\fP)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 Page\&.cpp 第 7 行定义\&.
+.PP
+.nf
+8     {
+9         EnableBorder(false);
+10 
+11         // TODO：等 EasyX 修好了再启用
+12         //SetBkColor(cBk);
+13 
+14         m_bAutoRedrawWhenReceiveMsg = false;
+15     }
+.fi
+.SS "void HiEasyX::Page::push (const std::list< \fBControlBase\fP * > list)\fC [virtual]\fP"
+
+.PP
+在文件 Page\&.cpp 第 46 行定义\&.
+.PP
+.nf
+47     {
+48         for (auto& child : list)
+49             AddChild(child);
+50     }
+.fi
+.SS "void HiEasyX::Page::push (\fBControlBase\fP * pCtrl, int offset_x = \fC0\fP, int offset_y = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+加入控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIpCtrl\fP 控件 
+.br
+\fIoffset_x\fP 坐标偏移 
+.br
+\fIoffset_y\fP 坐标偏移 
+.RE
+.PP
+
+.PP
+在文件 Page\&.cpp 第 41 行定义\&.
+.PP
+.nf
+42     {
+43         AddChild(pCtrl, offset_x, offset_y);
+44     }
+.fi
+.SS "void HiEasyX::Page::remove (\fBControlBase\fP * pCtrl)\fC [virtual]\fP"
+
+.PP
+移除控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIpCtrl\fP 控件 
+.RE
+.PP
+
+.PP
+在文件 Page\&.cpp 第 52 行定义\&.
+.PP
+.nf
+53     {
+54         RemoveChild(pCtrl);
+55     }
+.fi
+.SS "void HiEasyX::Page::Render (\fBCanvas\fP * dst = \fCnullptr\fP, RECT * pRct = \fCnullptr\fP, int * pCount = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+渲染 
+.PP
+\fB参数\fP
+.RS 4
+\fIdst\fP 载体画布（为空则输出到已绑定画布） 
+.br
+\fIpRct\fP 内部使用 
+.br
+\fIpCount\fP 内部使用 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 Page\&.cpp 第 57 行定义\&.
+.PP
+.nf
+58     {
+59         if (!dst && m_pCanvas)
+60         {
+61             dst = m_pCanvas;
+62         }
+63 
+64         return ControlBase::Render(dst, pRct, pCount);
+65     }
+.fi
+.SS "void HiEasyX::Page::UpdateImage (\fBCanvas\fP * pCanvas = \fCnullptr\fP)"
+
+.PP
+更新控件，并输出到某画布（控件重绘并渲染） 
+.PP
+\fB参数\fP
+.RS 4
+\fIpCanvas\fP 载体画布（为空则输出到已绑定画布） 
+.RE
+.PP
+
+.PP
+在文件 Page\&.cpp 第 67 行定义\&.
+.PP
+.nf
+68     {
+69         Draw();
+70         Render(pCanvas);
+71     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "\fBCanvas\fP* HiEasyX::Page::m_pCanvas = nullptr\fC [protected]\fP"
+
+.PP
+在文件 Page\&.h 第 20 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

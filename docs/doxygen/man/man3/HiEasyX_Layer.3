@@ -1,0 +1,174 @@
+.TH "HiEasyX::Layer" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Layer \- 图层  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiCanvas\&.h>\fP
+.PP
+继承自 list< ImageBlock * > \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRender\fP (IMAGE *pImg=nullptr, bool bShowOutline=false, bool bShowText=true, std::wstring wstrAddedText=L'')"
+.br
+.RI "渲染到画布 "
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbVisible\fP = true"
+.br
+.RI "图层是否可见 "
+.ti -1c
+.RI "BYTE \fBalpha\fP = 255"
+.br
+.RI "图层中所有图像块的叠加透明度 "
+.ti -1c
+.RI "bool \fBbOutline\fP = false"
+.br
+.RI "是否显示轮廓 "
+.ti -1c
+.RI "bool \fBbText\fP = false"
+.br
+.RI "若显示轮廓，是否显示文字 "
+.in -1c
+.SH "详细描述"
+.PP 
+图层 
+.PP
+在文件 HiCanvas\&.h 第 835 行定义\&.
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::Layer::Render (IMAGE * pImg = \fCnullptr\fP, bool bShowOutline = \fCfalse\fP, bool bShowText = \fCtrue\fP, std::wstring wstrAddedText = \fCL''\fP)"
+
+.PP
+渲染到画布 
+.PP
+\fB参数\fP
+.RS 4
+\fIpImg\fP 目标绘制画布 
+.br
+\fIbShowOutline\fP 是否显示轮廓 
+.br
+\fIbShowText\fP 是否显示轮廓文本 
+.br
+\fIwstrAddedText\fP 附加轮廓文本 
+.RE
+.PP
+
+.PP
+在文件 HiCanvas\&.cpp 第 1921 行定义\&.
+.PP
+.nf
+1922     {
+1923         bool flagOutline = bOutline || bShowOutline;
+1924         bool flagText = bText || bShowText;
+1925         Canvas canvas;
+1926 
+1927         if (bVisible)
+1928         {
+1929             if (flagOutline)
+1930             {
+1931                 m_property[0]\&.SaveWorkingImageOnly();
+1932                 SetWorkingImage(pImg);
+1933                 m_property[1]\&.SaveProperty();
+1934 
+1935                 canvas\&.BindToImage(pImg);
+1936                 canvas\&.SetDefault();
+1937                 canvas\&.BeginBatchDrawing();
+1938 
+1939                 canvas\&.SetBkColor(WHITE);
+1940                 canvas\&.SetTextStyle(16, 0, L"Arial");
+1941             }
+1942 
+1943             wstrAddedText = L" " + wstrAddedText;
+1944 
+1945             size_t i = 0;
+1946             for (auto& element : *this)
+1947             {
+1948                 element->Render(pImg, alpha);
+1949 
+1950                 // 绘制轮廓
+1951                 if (flagOutline)
+1952                 {
+1953                     RECT rctImg = {
+1954                         element->x,
+1955                         element->y,
+1956                         element->x + element->GetWidth(),
+1957                         element->y + element->GetHeight()
+1958                     };
+1959 
+1960                     canvas\&.Rectangle(rctImg, true, BLACK);
+1961                     EXPAND_RECT(rctImg, 1);
+1962                     canvas\&.Rectangle(rctImg, true, WHITE);
+1963 
+1964                     // 绘制文本
+1965                     if (flagText)
+1966                     {
+1967                         std::wstring wstrOriginText = L" Block[" + std::to_wstring(i) + L"]";
+1968                         std::wstring wstrAllText = wstrAddedText + wstrOriginText;
+1969 
+1970                         int w = canvas\&.TextWidth(wstrAllText\&.c_str());
+1971                         int h = canvas\&.TextHeight(wstrAllText\&.c_str());
+1972 
+1973                         RECT rctText = { rctImg\&.right - w - 1, rctImg\&.bottom + 1, rctImg\&.right - 1, rctImg\&.bottom + h + 1 };
+1974 
+1975                         canvas\&.MoveTo(rctText\&.left, rctText\&.top);
+1976                         canvas\&.OutText(wstrAddedText\&.c_str(), true, GREEN);
+1977                         canvas\&.OutText(wstrOriginText\&.c_str(), true, BLACK);
+1978 
+1979                         canvas\&.Rectangle(rctText, true, BLACK);
+1980                         EXPAND_RECT(rctText, 1);
+1981                         canvas\&.Rectangle(rctText, true, WHITE);
+1982                     }
+1983                 }
+1984 
+1985                 i++;
+1986             }
+1987 
+1988             if (flagOutline)
+1989             {
+1990                 canvas\&.EndBatchDrawing();
+1991                 m_property[1]\&.ApplyProperty();
+1992                 m_property[0]\&.ApplyWorkingImageOnly();
+1993             }
+1994         }
+1995     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "BYTE HiEasyX::Layer::alpha = 255"
+
+.PP
+图层中所有图像块的叠加透明度 
+.PP
+在文件 HiCanvas\&.h 第 842 行定义\&.
+.SS "bool HiEasyX::Layer::bOutline = false"
+
+.PP
+是否显示轮廓 
+.PP
+在文件 HiCanvas\&.h 第 843 行定义\&.
+.SS "bool HiEasyX::Layer::bText = false"
+
+.PP
+若显示轮廓，是否显示文字 
+.PP
+在文件 HiCanvas\&.h 第 844 行定义\&.
+.SS "bool HiEasyX::Layer::bVisible = true"
+
+.PP
+图层是否可见 
+.PP
+在文件 HiCanvas\&.h 第 841 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

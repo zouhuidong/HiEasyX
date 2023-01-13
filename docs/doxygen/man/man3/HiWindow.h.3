@@ -1,0 +1,568 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiWindow.h \- \fBHiEasyX\fP 库的窗口模块  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiDef\&.h'\fP
+.br
+\fC#include 'HiFunc\&.h'\fP
+.br
+\fC#include <graphics\&.h>\fP
+.br
+\fC#include <windowsx\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <thread>\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBHiEasyX::EasyWindow\fP"
+.br
+.RI "窗口 "
+.ti -1c
+.RI "class \fBHiEasyX::Window\fP"
+.br
+.RI "窗口 "
+.in -1c
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "宏定义"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__HIWINDOW_H__\fP"
+.br
+.ti -1c
+.RI "#define \fBEW_NORMAL\fP   0"
+.br
+.ti -1c
+.RI "#define \fBNO_WINDOW_INDEX\fP   \-1"
+.br
+.ti -1c
+.RI "#define \fBHIWINDOW_DEFAULT_PROC\fP   (LRESULT)(\-10086)"
+.br
+.ti -1c
+.RI "#define \fBWM_TRAY\fP   (WM_USER + 9337)"
+.br
+.ti -1c
+.RI "#define \fBWM_SYSCTRL_CREATE\fP   (WM_USER + 9338)"
+.br
+.ti -1c
+.RI "#define \fBWM_SYSCTRL_DELETE\fP   (WM_USER + 9339)"
+.br
+.ti -1c
+.RI "#define \fBWM_USER_REDRAW\fP   (WM_USER + 9340)"
+.br
+.ti -1c
+.RI "#define \fBBEGIN_TASK\fP()"
+.br
+.ti -1c
+.RI "#define \fBBEGIN_TASK_WND\fP(hWnd)"
+.br
+.ti -1c
+.RI "#define \fBEND_TASK\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBREDRAW_WINDOW\fP(\&.\&.\&.)   \fBHiEasyX::RedrawWindow\fP(__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBEnableSomeStyle\fP(hwnd,  state,  exstyle,  enable_style,  disable_style)"
+.br
+.ti -1c
+.RI "#define \fBEnableResizing\fP(hwnd,  state)   \fBEnableSomeStyle\fP(hwnd, state, false, WS_SIZEBOX | WS_MAXIMIZEBOX, ~WS_SIZEBOX & ~WS_MAXIMIZEBOX)"
+.br
+.ti -1c
+.RI "#define \fBDisableResizing\fP(hwnd,  state)   \fBEnableResizing\fP(hwnd, !state)"
+.br
+.ti -1c
+.RI "#define \fBEnableSystemMenu\fP(hwnd,  state)   \fBEnableSomeStyle\fP(hwnd, state, false, WS_SYSMENU, ~WS_SYSMENU)"
+.br
+.ti -1c
+.RI "#define \fBDisableSystemMenu\fP(hwnd,  state)   \fBEnableSystemMenu\fP(hwnd, !state)"
+.br
+.ti -1c
+.RI "#define \fBEnableToolWindowStyle\fP(hwnd,  state)   \fBEnableSomeStyle\fP(hwnd, state, true, WS_EX_TOOLWINDOW, ~WS_EX_TOOLWINDOW)"
+.br
+.ti -1c
+.RI "#define \fBDisableToolWindowStyle\fP(hwnd,  state)   \fBEnableToolWindowStyle\fP(hwnd, !state)"
+.br
+.ti -1c
+.RI "#define \fBKEY_DOWN\fP(VK_NONAME)   ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)"
+.br
+.ti -1c
+.RI "#define \fBKEY_DOWN_WND\fP(VK_NONAME)   (GetForegroundWindow() == \fBHiEasyX::GetHWnd_win32\fP() && \fBKEY_DOWN\fP(VK_NONAME))"
+.br
+.ti -1c
+.RI "#define \fBinitgraph\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBclosegraph\fP   \fBHiEasyX::closegraph_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBBeginBatchDraw\fP()"
+.br
+.ti -1c
+.RI "#define \fBFlushBatchDraw\fP()   \fBREDRAW_WINDOW\fP()"
+.br
+.ti -1c
+.RI "#define \fBEndBatchDraw\fP()   \fBREDRAW_WINDOW\fP()"
+.br
+.ti -1c
+.RI "#define \fBGetHWnd\fP   \fBHiEasyX::GetHWnd_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBgetmessage\fP   \fBHiEasyX::getmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBpeekmessage\fP   \fBHiEasyX::peekmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBflushmessage\fP   \fBHiEasyX::flushmessage_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBMouseHit\fP   \fBHiEasyX::MouseHit_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBGetMouseMsg\fP   \fBHiEasyX::GetMouseMsg_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBPeekMouseMsg\fP   \fBHiEasyX::PeekMouseMsg_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBFlushMouseMsgBuffer\fP   \fBHiEasyX::FlushMouseMsgBuffer_win32\fP"
+.br
+.ti -1c
+.RI "#define \fBFLUSH_DRAW\fP()   (This_macro_is_deprecated___Please_use_macro__REDRAW_WINDOW__)"
+.br
+.in -1c
+.SS "枚举"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHiEasyX::DrawMode\fP { \fBHiEasyX::DM_Real\fP, \fBHiEasyX::DM_Normal\fP, \fBHiEasyX::DM_Fast\fP, \fBHiEasyX::DM_VeryFast\fP, \fBHiEasyX::DM_Fastest\fP }"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBHiEasyX::initgraph_win32\fP (int w, int h, int flag, LPCTSTR lpszWndTitle, WNDPROC WindowProcess, HWND hParent)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::closegraph_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "关闭某一绘图窗口 "
+.ti -1c
+.RI "void \fBHiEasyX::SetWndProcFunc\fP (HWND hWnd, WNDPROC WindowProcess)"
+.br
+.RI "设置某窗口的过程函数 "
+.ti -1c
+.RI "HWND \fBHiEasyX::GetHWnd_win32\fP ()"
+.br
+.RI "得到当前活动绘图窗口的句柄 "
+.ti -1c
+.RI "void \fBHiEasyX::init_end\fP (HWND hWnd=nullptr)"
+.br
+.RI "初始化窗口结束后，可以用此函数阻塞等待目标窗口被关闭，然后函数返回 "
+.ti -1c
+.RI "void \fBHiEasyX::AutoExit\fP ()"
+.br
+.RI "设置：当窗口都被销毁时，自动退出程序 "
+.ti -1c
+.RI "bool \fBHiEasyX::IsAnyWindow\fP ()"
+.br
+.RI "是否还存在未销毁的绘图窗口 "
+.ti -1c
+.RI "bool \fBHiEasyX::IsAliveWindow\fP (HWND hWnd=nullptr)"
+.br
+.RI "判断一窗口是否还存在（未被关闭） "
+.ti -1c
+.RI "IMAGE * \fBHiEasyX::GetWindowImage\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取某窗口的图像指针 "
+.ti -1c
+.RI "Canvas * \fBHiEasyX::GetWindowCanvas\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口画布指针 "
+.ti -1c
+.RI "void \fBHiEasyX::BindWindowCanvas\fP (Canvas *pCanvas, HWND hWnd)"
+.br
+.ti -1c
+.RI "EasyWindow \fBHiEasyX::GetWorkingWindow\fP ()"
+.br
+.RI "得到当前绘图窗口的详细信息 "
+.ti -1c
+.RI "bool \fBHiEasyX::SetWorkingWindow\fP (HWND hWnd)"
+.br
+.RI "等待当前任务完成并设置活动窗口 "
+.ti -1c
+.RI "void \fBHiEasyX::QuickDraw\fP (UINT nSkipPixels, HWND hWnd=nullptr)"
+.br
+.RI "设置加速绘制跳过多少像素点 "
+.ti -1c
+.RI "DrawMode \fBHiEasyX::GetDrawMode\fP ()"
+.br
+.RI "获取全局绘制模式 "
+.ti -1c
+.RI "void \fBHiEasyX::SetDrawMode\fP (DrawMode mode)"
+.br
+.RI "设置全局绘制模式 "
+.ti -1c
+.RI "void \fBHiEasyX::RedrawWindow\fP (HWND hWnd=nullptr)"
+.br
+.RI "通知重绘绘图窗口（在 WM_PAINT 消息内绘图不需要使用此函数） "
+.ti -1c
+.RI "void \fBHiEasyX::FlushDrawing\fP (RECT rct)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::EnableAutoFlush\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBHiEasyX::BeginTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::EndTask\fP (bool flush=true)"
+.br
+.RI "终止当前窗口任务 "
+.ti -1c
+.RI "bool \fBHiEasyX::IsInTask\fP (HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::WaitForTask\fP (HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待某窗口任务完成 "
+.ti -1c
+.RI "bool \fBHiEasyX::IsWindowSizeChanged\fP (HWND hWnd=nullptr)"
+.br
+.RI "判断某窗口的大小是否改变 "
+.ti -1c
+.RI "void \fBHiEasyX::CreateTray\fP (LPCTSTR lpszTrayName, HWND hWnd)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::DeleteTray\fP (HWND hWnd=nullptr)"
+.br
+.RI "删除某窗口的托盘 "
+.ti -1c
+.RI "void \fBHiEasyX::SetTrayMenu\fP (HMENU hMenu, HWND hWnd=nullptr)"
+.br
+.RI "设置托盘菜单（允许在任何时候设置） "
+.ti -1c
+.RI "void \fBHiEasyX::SetTrayMenuProcFunc\fP (void(*pFunc)(UINT), HWND hWnd=nullptr)"
+.br
+.RI "设置托盘菜单消息处理函数 "
+.ti -1c
+.RI "bool \fBHiEasyX::GetCustomIconState\fP ()"
+.br
+.RI "获取自定义程序图标的启用状态 "
+.ti -1c
+.RI "void \fBHiEasyX::SetCustomIcon\fP (LPCTSTR lpszIcon, LPCTSTR lpszIconSm)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowStyle\fP (long lStyle)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowStyleEx\fP (long lStyleEx)"
+.br
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowPos\fP (int x, int y)"
+.br
+.RI "在创建窗口前设置窗口位置，仅对此操作后首个新窗口生效 "
+.ti -1c
+.RI "void \fBHiEasyX::PreSetWindowShowState\fP (int nCmdShow)"
+.br
+.RI "在创建窗口前设置窗口显示状态，仅对此操作后首个新窗口生效 "
+.ti -1c
+.RI "int \fBHiEasyX::SetWindowStyle\fP (long lNewStyle, HWND hWnd=nullptr)"
+.br
+.RI "设置某窗口样式 "
+.ti -1c
+.RI "int \fBHiEasyX::SetWindowExStyle\fP (long lNewExStyle, HWND hWnd=nullptr)"
+.br
+.RI "设置某窗口扩展样式 "
+.ti -1c
+.RI "POINT \fBHiEasyX::GetWindowPos\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口位置 "
+.ti -1c
+.RI "SIZE \fBHiEasyX::GetWindowSize\fP (HWND hWnd=nullptr)"
+.br
+.RI "获取窗口大小 "
+.ti -1c
+.RI "void \fBHiEasyX::MoveWindow\fP (int x, int y, HWND hWnd=nullptr)"
+.br
+.RI "移动窗口 "
+.ti -1c
+.RI "void \fBHiEasyX::MoveWindowRel\fP (int dx, int dy, HWND hWnd=nullptr)"
+.br
+.RI "相对移动窗口 "
+.ti -1c
+.RI "void \fBHiEasyX::ResizeWindow\fP (int w, int h, HWND hWnd=nullptr)"
+.br
+.RI "重设窗口大小 "
+.ti -1c
+.RI "void \fBHiEasyX::SetWindowTitle\fP (LPCTSTR lpszTitle, HWND hWnd=nullptr)"
+.br
+.RI "设置窗口标题文本 "
+.ti -1c
+.RI "ExMessage \fBHiEasyX::getmessage_win32\fP (BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新消息 "
+.ti -1c
+.RI "void \fBHiEasyX::getmessage_win32\fP (ExMessage *msg, BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新消息 "
+.ti -1c
+.RI "bool \fBHiEasyX::peekmessage_win32\fP (ExMessage *msg, BYTE filter=\-1, bool removemsg=true, HWND hWnd=nullptr)"
+.br
+.RI "获取一个消息，立即返回是否获取成功 "
+.ti -1c
+.RI "void \fBHiEasyX::flushmessage_win32\fP (BYTE filter=\-1, HWND hWnd=nullptr)"
+.br
+.RI "清除所有消息记录 "
+.ti -1c
+.RI "bool \fBHiEasyX::MouseHit_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "检查是否存在鼠标消息 "
+.ti -1c
+.RI "MOUSEMSG \fBHiEasyX::GetMouseMsg_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "阻塞等待，直到获取到一个新的鼠标消息 "
+.ti -1c
+.RI "bool \fBHiEasyX::PeekMouseMsg_win32\fP (MOUSEMSG *pMsg, bool bRemoveMsg=true, HWND hWnd=nullptr)"
+.br
+.RI "获取一个新的鼠标消息，立即返回是否获取成功 "
+.ti -1c
+.RI "void \fBHiEasyX::FlushMouseMsgBuffer_win32\fP (HWND hWnd=nullptr)"
+.br
+.RI "清空鼠标消息 "
+.ti -1c
+.RI "ExMessage \fBHiEasyX::To_ExMessage\fP (MOUSEMSG msg)"
+.br
+.RI "MOUSEMSG 转 ExMessage "
+.ti -1c
+.RI "MOUSEMSG \fBHiEasyX::To_MouseMsg\fP (ExMessage msgEx)"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+\fBHiEasyX\fP 库的窗口模块 
+
+
+.PP
+\fB作者\fP
+.RS 4
+huidong 
+.RE
+.PP
+
+.PP
+在文件 \fBHiWindow\&.h\fP 中定义\&.
+.SH "宏定义说明"
+.PP 
+.SS "#define __HIWINDOW_H__"
+
+.PP
+在文件 HiWindow\&.h 第 17 行定义\&.
+.SS "#define BEGIN_TASK()"
+\fB值:\fP
+.PP
+.nf
+if (HiEasyX::SetWorkingWindow(nullptr))\
+    {\
+        if (HiEasyX::BeginTask())\
+        {(0)    /* 此处强制要求加分号 */
+.fi
+.PP
+在文件 HiWindow\&.h 第 777 行定义\&.
+.SS "#define BEGIN_TASK_WND(hWnd)"
+\fB值:\fP
+.PP
+.nf
+/* 设置工作窗口时将自动等待任务 */\
+    if (HiEasyX::SetWorkingWindow(hWnd))\
+    {\
+        if (HiEasyX::BeginTask())\
+        {(0)
+.fi
+.PP
+在文件 HiWindow\&.h 第 784 行定义\&.
+.SS "#define BeginBatchDraw()"
+
+.PP
+在文件 HiWindow\&.h 第 863 行定义\&.
+.SS "#define closegraph   \fBHiEasyX::closegraph_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 860 行定义\&.
+.SS "#define DisableResizing(hwnd, state)   \fBEnableResizing\fP(hwnd, !state)"
+
+.PP
+在文件 HiWindow\&.h 第 832 行定义\&.
+.SS "#define DisableSystemMenu(hwnd, state)   \fBEnableSystemMenu\fP(hwnd, !state)"
+
+.PP
+在文件 HiWindow\&.h 第 838 行定义\&.
+.SS "#define DisableToolWindowStyle(hwnd, state)   \fBEnableToolWindowStyle\fP(hwnd, !state)"
+
+.PP
+在文件 HiWindow\&.h 第 844 行定义\&.
+.SS "#define EnableResizing(hwnd, state)   \fBEnableSomeStyle\fP(hwnd, state, false, WS_SIZEBOX | WS_MAXIMIZEBOX, ~WS_SIZEBOX & ~WS_MAXIMIZEBOX)"
+
+.PP
+在文件 HiWindow\&.h 第 829 行定义\&.
+.SS "#define EnableSomeStyle(hwnd, state, exstyle, enable_style, disable_style)"
+\fB值:\fP
+.PP
+.nf
+(exstyle ?\
+                (state ?\\
+					HiEasyX::SetWindowExStyle(\
+                        (long)GetWindowExStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) | (enable_style),\
+                        hwnd\
+                    ) :\
+                    HiEasyX::SetWindowExStyle(\
+                        (long)GetWindowExStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) & (disable_style),\
+                        hwnd\
+                    )\
+                ) :\
+                (state ?\
+                    HiEasyX::SetWindowStyle(\
+                        (long)GetWindowStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) | (enable_style),\
+                        hwnd\
+                    ) :\
+                    HiEasyX::SetWindowStyle(\
+                        (long)GetWindowStyle(hwnd ? hwnd : HiEasyX::GetHWnd_win32()) & (disable_style),\
+                        hwnd\
+                    )\
+                )\
+            )
+.fi
+.PP
+在文件 HiWindow\&.h 第 804 行定义\&.
+.SS "#define EnableSystemMenu(hwnd, state)   \fBEnableSomeStyle\fP(hwnd, state, false, WS_SYSMENU, ~WS_SYSMENU)"
+
+.PP
+在文件 HiWindow\&.h 第 835 行定义\&.
+.SS "#define EnableToolWindowStyle(hwnd, state)   \fBEnableSomeStyle\fP(hwnd, state, true, WS_EX_TOOLWINDOW, ~WS_EX_TOOLWINDOW)"
+
+.PP
+在文件 HiWindow\&.h 第 841 行定义\&.
+.SS "#define END_TASK( \&.\&.\&.)"
+\fB值:\fP
+.PP
+.nf
+HiEasyX::EndTask(__VA_ARGS__);\
+        }\
+    }(0)
+.fi
+.PP
+在文件 HiWindow\&.h 第 792 行定义\&.
+.SS "#define EndBatchDraw()   \fBREDRAW_WINDOW\fP()"
+
+.PP
+在文件 HiWindow\&.h 第 865 行定义\&.
+.SS "#define EW_NORMAL   0"
+
+.PP
+在文件 HiWindow\&.h 第 21 行定义\&.
+.SS "#define FLUSH_DRAW()   (This_macro_is_deprecated___Please_use_macro__REDRAW_WINDOW__)"
+
+.PP
+在文件 HiWindow\&.h 第 881 行定义\&.
+.SS "#define FlushBatchDraw()   \fBREDRAW_WINDOW\fP()"
+
+.PP
+在文件 HiWindow\&.h 第 864 行定义\&.
+.SS "#define flushmessage   \fBHiEasyX::flushmessage_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 871 行定义\&.
+.SS "#define FlushMouseMsgBuffer   \fBHiEasyX::FlushMouseMsgBuffer_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 876 行定义\&.
+.SS "#define GetHWnd   \fBHiEasyX::GetHWnd_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 867 行定义\&.
+.SS "#define getmessage   \fBHiEasyX::getmessage_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 869 行定义\&.
+.SS "#define GetMouseMsg   \fBHiEasyX::GetMouseMsg_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 874 行定义\&.
+.SS "#define HIWINDOW_DEFAULT_PROC   (LRESULT)(\-10086)"
+
+.PP
+在文件 HiWindow\&.h 第 27 行定义\&.
+.SS "#define initgraph( \&.\&.\&.)"
+\fB值:\fP
+.PP
+.nf
+HiEasyX::initgraph_win32(__VA_ARGS__);\\
+								HiEasyX::AutoExit()
+.fi
+.PP
+在文件 HiWindow\&.h 第 857 行定义\&.
+.SS "#define KEY_DOWN(VK_NONAME)   ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)"
+
+.PP
+在文件 HiWindow\&.h 第 849 行定义\&.
+.SS "#define KEY_DOWN_WND(VK_NONAME)   (GetForegroundWindow() == \fBHiEasyX::GetHWnd_win32\fP() && \fBKEY_DOWN\fP(VK_NONAME))"
+
+.PP
+在文件 HiWindow\&.h 第 852 行定义\&.
+.SS "#define MouseHit   \fBHiEasyX::MouseHit_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 873 行定义\&.
+.SS "#define NO_WINDOW_INDEX   \-1"
+
+.PP
+在文件 HiWindow\&.h 第 24 行定义\&.
+.SS "#define peekmessage   \fBHiEasyX::peekmessage_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 870 行定义\&.
+.SS "#define PeekMouseMsg   \fBHiEasyX::PeekMouseMsg_win32\fP"
+
+.PP
+在文件 HiWindow\&.h 第 875 行定义\&.
+.SS "#define REDRAW_WINDOW( \&.\&.\&.)   \fBHiEasyX::RedrawWindow\fP(__VA_ARGS__)"
+
+.PP
+在文件 HiWindow\&.h 第 798 行定义\&.
+.SS "#define WM_SYSCTRL_CREATE   (WM_USER + 9338)"
+
+.PP
+在文件 HiWindow\&.h 第 35 行定义\&.
+.SS "#define WM_SYSCTRL_DELETE   (WM_USER + 9339)"
+
+.PP
+在文件 HiWindow\&.h 第 39 行定义\&.
+.SS "#define WM_TRAY   (WM_USER + 9337)"
+
+.PP
+在文件 HiWindow\&.h 第 30 行定义\&.
+.SS "#define WM_USER_REDRAW   (WM_USER + 9340)"
+
+.PP
+在文件 HiWindow\&.h 第 43 行定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

@@ -1,0 +1,70 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ControlBase.h" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGUI/ControlBase.h \- HiGUI 控件分支：控件基础  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./HiContainer\&.h'\fP
+.br
+\fC#include '\&.\&./HiMacro\&.h'\fP
+.br
+\fC#include '\&.\&./HiFunc\&.h'\fP
+.br
+\fC#include '\&.\&./HiCanvas\&.h'\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "class \fBHiEasyX::ControlBase\fP"
+.br
+.RI "控件基础 "
+.in -1c
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "类型定义"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBHiEasyX::MESSAGE_PROC_FUNC\fP) (ControlBase *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+.br
+.RI "控件消息处理函数 "
+.ti -1c
+.RI "typedef void(* \fBHiEasyX::MESSAGE_PROC_FUNC_CLASS\fP) (void *_This, ControlBase *_Ctrl, int _MsgId, ExMessage _ExMsg)"
+.br
+.RI "支持静态类函数作为控件消息处理函数 "
+.in -1c
+.SS "枚举"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHiEasyX::CtrlMessage\fP { \fBHiEasyX::CM_OTHER\fP, \fBHiEasyX::CM_HOVER\fP, \fBHiEasyX::CM_HOVER_OVER\fP, \fBHiEasyX::CM_PRESS\fP, \fBHiEasyX::CM_PRESS_OVER\fP, \fBHiEasyX::CM_CLICK\fP, \fBHiEasyX::CM_DOUBLE_CLICK\fP, \fBHiEasyX::CM_FOCUS\fP, \fBHiEasyX::CM_FOCUS_OVER\fP }"
+.br
+.RI "控件基础 "
+.in -1c
+.SH "详细描述"
+.PP 
+HiGUI 控件分支：控件基础 
+
+
+.PP
+\fB作者\fP
+.RS 4
+huidong 
+.RE
+.PP
+
+.PP
+在文件 \fBControlBase\&.h\fP 中定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

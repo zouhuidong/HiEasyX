@@ -1,0 +1,261 @@
+.TH "HiEasyX::SysButton" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysButton \- 系统按钮控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysButton\&.h>\fP
+.PP
+继承自 \fBHiEasyX::SysControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysButton\fP ()"
+.br
+.ti -1c
+.RI "\fBSysButton\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "\fBSysButton\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet) override"
+.br
+.RI "更新消息，此函数无需用户调用 "
+.ti -1c
+.RI "void \fBRegisterMessage\fP (void(*pFunc)())"
+.br
+.RI "注册点击消息 "
+.ti -1c
+.RI "void \fBImage\fP (bool enable, IMAGE *img=nullptr, bool reserve_text=false)"
+.br
+.RI "设置图片 "
+.ti -1c
+.RI "int \fBGetClickCount\fP ()"
+.br
+.RI "获取点击次数 "
+.ti -1c
+.RI "bool \fBIsClicked\fP ()"
+.br
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRealCreate\fP (HWND hParent) override"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "额外继承的成员函数"
+.SH "详细描述"
+.PP 
+系统按钮控件 
+.PP
+在文件 SysButton\&.h 第 18 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysButton::SysButton ()"
+
+.PP
+在文件 SysButton\&.cpp 第 18 行定义\&.
+.PP
+.nf
+19     {
+20     }
+.fi
+.SS "HiEasyX::SysButton::SysButton (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysButton\&.cpp 第 22 行定义\&.
+.PP
+.nf
+23     {
+24         Create(hParent, rct, strText);
+25     }
+.fi
+.SS "HiEasyX::SysButton::SysButton (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysButton\&.cpp 第 27 行定义\&.
+.PP
+.nf
+28     {
+29         Create(hParent, x, y, w, h, strText);
+30     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "int HiEasyX::SysButton::GetClickCount ()"
+
+.PP
+获取点击次数 
+.PP
+在文件 SysButton\&.cpp 第 72 行定义\&.
+.PP
+.nf
+73     {
+74         int c = m_nClickCount;
+75         m_nClickCount = 0;
+76         return c;
+77     }
+.fi
+.SS "void HiEasyX::SysButton::Image (bool enable, IMAGE * img = \fCnullptr\fP, bool reserve_text = \fCfalse\fP)"
+
+.PP
+设置图片 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用按钮图片 
+.br
+\fIimg\fP 图片 
+.br
+\fIreserve_text\fP 是否保留按钮中的文字 
+.RE
+.PP
+
+.PP
+在文件 SysButton\&.cpp 第 53 行定义\&.
+.PP
+.nf
+54     {
+55         long style = GetWindowLong(GetHandle(), GWL_STYLE);
+56         if (enable)
+57             style |= BS_BITMAP;
+58         else
+59             style &= ~BS_BITMAP;
+60         if (!enable || (enable && !reserve_text))
+61         {
+62             SetWindowLongPtr(GetHandle(), GWL_STYLE, style);
+63         }
+64         if (enable)
+65         {
+66             HBITMAP hBitmap = Image2Bitmap(img, false);
+67             SendMessage(GetHandle(), BM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBitmap);
+68             DeleteObject(hBitmap);
+69         }
+70     }
+.fi
+.SS "bool HiEasyX::SysButton::IsClicked ()"
+
+.PP
+.nf
+
+    判断是否点击按键
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    建议使用 GetClickCount，使用此函数可能丢失点击次数信息
+.fi
+.PP
+ 
+.PP
+在文件 SysButton\&.cpp 第 79 行定义\&.
+.PP
+.nf
+80     {
+81         return GetClickCount();
+82     }
+.fi
+.SS "void HiEasyX::SysButton::RealCreate (HWND hParent)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+实现了 \fBHiEasyX::SysControlBase\fP\&.
+.PP
+在文件 SysButton\&.cpp 第 7 行定义\&.
+.PP
+.nf
+8     {
+9         m_type = SCT_Button;
+10         m_hWnd = CreateControl(
+11             hParent,
+12             L"Button",
+13             L"",
+14             WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON
+15         );
+16     }
+.fi
+.SS "void HiEasyX::SysButton::RegisterMessage (void(*)() pFunc)"
+
+.PP
+注册点击消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息处理函数 
+.RE
+.PP
+
+.PP
+在文件 SysButton\&.cpp 第 48 行定义\&.
+.PP
+.nf
+49     {
+50         m_pFunc = pFunc;
+51     }
+.fi
+.SS "LRESULT HiEasyX::SysButton::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息，此函数无需用户调用 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.br
+\fIwParam\fP 参数 
+.br
+\fIlParam\fP 参数 
+.br
+\fIbRet\fP 标记是否返回值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+不定返回值 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::SysControlBase\fP \&.
+.PP
+在文件 SysButton\&.cpp 第 32 行定义\&.
+.PP
+.nf
+33     {
+34         if (msg == WM_COMMAND)
+35         {
+36             if (LOWORD(wParam) == GetID())
+37             {
+38                 m_nClickCount++;
+39                 if (m_pFunc)
+40                     m_pFunc();
+41             }
+42         }
+43 
+44         bRet = false;
+45         return 0;
+46     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

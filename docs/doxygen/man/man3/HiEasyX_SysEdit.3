@@ -1,0 +1,661 @@
+.TH "HiEasyX::SysEdit" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::SysEdit \- 系统输入框控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SysEdit\&.h>\fP
+.PP
+继承自 \fBHiEasyX::SysControlBase\fP \&.
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPreStyle\fP"
+.br
+.RI "编辑框预设样式（必须在创建前设置才有效） "
+.in -1c
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBSysEdit\fP ()"
+.br
+.ti -1c
+.RI "\fBSysEdit\fP (HWND hParent, RECT rct, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "\fBSysEdit\fP (HWND hParent, int x, int y, int w, int h, std::wstring strText=L'')"
+.br
+.ti -1c
+.RI "\fB~SysEdit\fP () override"
+.br
+.ti -1c
+.RI "void \fBPreSetStyle\fP (\fBPreStyle\fP pre_style)"
+.br
+.RI "在创建控件前预设控件样式 "
+.ti -1c
+.RI "LRESULT \fBUpdateMessage\fP (UINT msg, WPARAM wParam, LPARAM lParam, bool &bRet) override"
+.br
+.RI "更新消息，此函数无需用户调用 "
+.ti -1c
+.RI "void \fBRegisterMessage\fP (void(*pFunc)(std::wstring wstrText))"
+.br
+.RI "注册输入消息 "
+.ti -1c
+.RI "void \fBRightAlign\fP (bool enable)"
+.br
+.RI "设置文本右对齐 "
+.ti -1c
+.RI "void \fBUppercase\fP (bool enable)"
+.br
+.RI "自动转大写 "
+.ti -1c
+.RI "void \fBLowercase\fP (bool enable)"
+.br
+.RI "自动转小写 "
+.ti -1c
+.RI "void \fBPassword\fP (bool enable)"
+.br
+.RI "设置密码框 "
+.ti -1c
+.RI "void \fBReadOnly\fP (bool enable)"
+.br
+.RI "设置只读 "
+.ti -1c
+.RI "void \fBNumberOnly\fP (bool enable)"
+.br
+.RI "设置仅数字 "
+.ti -1c
+.RI "int \fBGetMaxTextLength\fP ()"
+.br
+.RI "获取最大输入长度 "
+.ti -1c
+.RI "void \fBSetMaxTextLength\fP (int len)"
+.br
+.RI "限制最大输入长度 "
+.ti -1c
+.RI "void \fBSetBkColor\fP (COLORREF color)"
+.br
+.RI "设置控件背景色 "
+.ti -1c
+.RI "void \fBSetTextBkColor\fP (COLORREF color)"
+.br
+.RI "设置文本背景色 "
+.ti -1c
+.RI "void \fBSetTextColor\fP (COLORREF color)"
+.br
+.RI "设置文本颜色 "
+.ti -1c
+.RI "void \fBGetSel\fP (int *begin, int *end)"
+.br
+.RI "获取光标选择区域 "
+.ti -1c
+.RI "void \fBSetSel\fP (int begin, int end)"
+.br
+.RI "设置光标选择区域 "
+.ti -1c
+.RI "void \fBCopy\fP ()"
+.br
+.RI "复制选中的文本 "
+.ti -1c
+.RI "void \fBCut\fP ()"
+.br
+.RI "剪切选中的文本 "
+.ti -1c
+.RI "void \fBPaste\fP ()"
+.br
+.RI "从剪切板黏贴文本到当前位置 "
+.ti -1c
+.RI "void \fBDelete\fP ()"
+.br
+.RI "删除选中的文本 "
+.ti -1c
+.RI "void \fBReplace\fP (std::wstring wstrText)"
+.br
+.RI "替换选中的文本 "
+.ti -1c
+.RI "bool \fBIsEdited\fP ()"
+.br
+.RI "判断是否被编辑 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBRealCreate\fP (HWND hParent) override"
+.br
+.RI "实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） "
+.in -1c
+.SS "额外继承的成员函数"
+.SH "详细描述"
+.PP 
+系统输入框控件 
+.PP
+在文件 SysEdit\&.h 第 18 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::SysEdit::SysEdit ()"
+
+.PP
+在文件 SysEdit\&.cpp 第 21 行定义\&.
+.PP
+.nf
+22     {
+23     }
+.fi
+.SS "HiEasyX::SysEdit::SysEdit (HWND hParent, RECT rct, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysEdit\&.cpp 第 25 行定义\&.
+.PP
+.nf
+26     {
+27         Create(hParent, rct, strText);
+28     }
+.fi
+.SS "HiEasyX::SysEdit::SysEdit (HWND hParent, int x, int y, int w, int h, std::wstring strText = \fCL''\fP)"
+
+.PP
+在文件 SysEdit\&.cpp 第 30 行定义\&.
+.PP
+.nf
+31     {
+32         Create(hParent, x, y, w, h, strText);
+33     }
+.fi
+.SS "HiEasyX::SysEdit::~SysEdit ()\fC [override]\fP"
+
+.PP
+在文件 SysEdit\&.cpp 第 35 行定义\&.
+.PP
+.nf
+36     {
+37         if (hBk)
+38             DeleteBrush(hBk);
+39     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::SysEdit::Copy ()"
+
+.PP
+复制选中的文本 
+.PP
+在文件 SysEdit\&.cpp 第 197 行定义\&.
+.PP
+.nf
+198     {
+199         SendMessage(GetHandle(), WM_COPY, 0, 0);
+200     }
+.fi
+.SS "void HiEasyX::SysEdit::Cut ()"
+
+.PP
+剪切选中的文本 
+.PP
+在文件 SysEdit\&.cpp 第 202 行定义\&.
+.PP
+.nf
+203     {
+204         SendMessage(GetHandle(), WM_CUT, 0, 0);
+205     }
+.fi
+.SS "void HiEasyX::SysEdit::Delete ()"
+
+.PP
+删除选中的文本 
+.PP
+在文件 SysEdit\&.cpp 第 212 行定义\&.
+.PP
+.nf
+213     {
+214         SendMessage(GetHandle(), WM_CLEAR, 0, 0);
+215     }
+.fi
+.SS "int HiEasyX::SysEdit::GetMaxTextLength ()"
+
+.PP
+获取最大输入长度 
+.PP
+在文件 SysEdit\&.cpp 第 156 行定义\&.
+.PP
+.nf
+157     {
+158         return (int)SendMessage(GetHandle(), EM_GETLIMITTEXT, 0, 0);
+159     }
+.fi
+.SS "void HiEasyX::SysEdit::GetSel (int * begin, int * end)"
+
+.PP
+获取光标选择区域 
+.PP
+\fB参数\fP
+.RS 4
+\fIbegin\fP 光标起始位置 
+.br
+\fIend\fP 选择结束位置 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 187 行定义\&.
+.PP
+.nf
+188     {
+189         SendMessage(GetHandle(), EM_GETSEL, (WPARAM)begin, (LPARAM)end);
+190     }
+.fi
+.SS "bool HiEasyX::SysEdit::IsEdited ()"
+
+.PP
+判断是否被编辑 
+.PP
+在文件 SysEdit\&.cpp 第 222 行定义\&.
+.PP
+.nf
+223     {
+224         bool r = m_bEdited;
+225         m_bEdited = false;
+226         return r;
+227     }
+.fi
+.SS "void HiEasyX::SysEdit::Lowercase (bool enable)"
+
+.PP
+自动转小写 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用转小写 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 131 行定义\&.
+.PP
+.nf
+132     {
+133         //m_property\&.uppercase = !enable;
+134         m_property\&.lowercase = enable;
+135         ApplyProperty();
+136     }
+.fi
+.SS "void HiEasyX::SysEdit::NumberOnly (bool enable)"
+
+.PP
+设置仅数字 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用仅数字输入 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 150 行定义\&.
+.PP
+.nf
+151     {
+152         m_property\&.number_only = enable;
+153         ApplyProperty();
+154     }
+.fi
+.SS "void HiEasyX::SysEdit::Password (bool enable)"
+
+.PP
+设置密码框 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用密码框 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 138 行定义\&.
+.PP
+.nf
+139     {
+140         m_property\&.password = enable;
+141         ApplyProperty();
+142     }
+.fi
+.SS "void HiEasyX::SysEdit::Paste ()"
+
+.PP
+从剪切板黏贴文本到当前位置 
+.PP
+在文件 SysEdit\&.cpp 第 207 行定义\&.
+.PP
+.nf
+208     {
+209         SendMessage(GetHandle(), WM_PASTE, 0, 0);
+210     }
+.fi
+.SS "void HiEasyX::SysEdit::PreSetStyle (\fBPreStyle\fP pre_style)"
+
+.PP
+在创建控件前预设控件样式 
+.PP
+在文件 SysEdit\&.cpp 第 41 行定义\&.
+.PP
+.nf
+42     {
+43         m_lBasicStyle |= (
+44             (pre_style\&.multiline ? ES_MULTILINE : 0)
+45             | (pre_style\&.center_text ? ES_CENTER : 0)
+46             | (pre_style\&.vscroll ? WS_VSCROLL : 0)
+47             | (pre_style\&.auto_vscroll ? ES_AUTOVSCROLL : 0)
+48             | (pre_style\&.hscroll ? WS_HSCROLL : 0)
+49             | (pre_style\&.auto_hscroll ? ES_AUTOHSCROLL : 0)
+50             );
+51     }
+.fi
+.SS "void HiEasyX::SysEdit::ReadOnly (bool enable)"
+
+.PP
+设置只读 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用只读 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 144 行定义\&.
+.PP
+.nf
+145     {
+146         m_property\&.read_only = enable;
+147         ApplyProperty();
+148     }
+.fi
+.SS "void HiEasyX::SysEdit::RealCreate (HWND hParent)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+实际调用的创建控件函数（各种控件实现不同，但内部都调用 CreateControl 创建控件） 
+.PP
+\fB参数\fP
+.RS 4
+\fIhParent\fP 父控件句柄 
+.RE
+.PP
+
+.PP
+实现了 \fBHiEasyX::SysControlBase\fP\&.
+.PP
+在文件 SysEdit\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_type = SCT_Edit;
+8         m_hWnd = CreateControl(
+9             hParent,
+10             L"Edit",
+11             L"",
+12             m_lBasicStyle
+13         );
+14 
+15         ApplyProperty();
+16 
+17         // 创建画刷
+18         SetBkColor(m_cBk);
+19     }
+.fi
+.SS "void HiEasyX::SysEdit::RegisterMessage (void(*)(std::wstring wstrText) pFunc)"
+
+.PP
+注册输入消息 
+.PP
+\fB参数\fP
+.RS 4
+\fIpFunc\fP 消息响应函数 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 89 行定义\&.
+.PP
+.nf
+90     {
+91         m_pFunc = pFunc;
+92     }
+.fi
+.SS "void HiEasyX::SysEdit::Replace (std::wstring wstrText)"
+
+.PP
+替换选中的文本 
+.PP
+\fB参数\fP
+.RS 4
+\fIwstrText\fP 替换文本 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 217 行定义\&.
+.PP
+.nf
+218     {
+219         SendMessage(GetHandle(), EM_REPLACESEL, true, (LPARAM)wstrText\&.c_str());
+220     }
+.fi
+.SS "void HiEasyX::SysEdit::RightAlign (bool enable)"
+
+.PP
+设置文本右对齐 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用右对齐 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 117 行定义\&.
+.PP
+.nf
+118     {
+119         m_property\&.left_align = !enable;
+120         m_property\&.right_align = enable;
+121         ApplyProperty();
+122     }
+.fi
+.SS "void HiEasyX::SysEdit::SetBkColor (COLORREF color)"
+
+.PP
+设置控件背景色 
+.PP
+\fB参数\fP
+.RS 4
+\fIcolor\fP 控件背景色 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 166 行定义\&.
+.PP
+.nf
+167     {
+168         m_cBk = color;
+169         if (hBk)
+170             DeleteBrush(hBk);
+171         hBk = CreateSolidBrush(color);
+172         InvalidateRect(GetHandle(), nullptr, true);
+173     }
+.fi
+.SS "void HiEasyX::SysEdit::SetMaxTextLength (int len)"
+
+.PP
+限制最大输入长度 
+.PP
+\fB参数\fP
+.RS 4
+\fIlen\fP 最大输入长度 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 161 行定义\&.
+.PP
+.nf
+162     {
+163         SendMessage(GetHandle(), EM_SETLIMITTEXT, (WPARAM)len, 0);
+164     }
+.fi
+.SS "void HiEasyX::SysEdit::SetSel (int begin, int end)"
+
+.PP
+设置光标选择区域 
+.PP
+\fB参数\fP
+.RS 4
+\fIbegin\fP 光标起始位置 
+.br
+\fIend\fP 选择结束位置（为 -1 可表示结尾） 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 192 行定义\&.
+.PP
+.nf
+193     {
+194         SendMessage(GetHandle(), EM_SETSEL, begin, end);
+195     }
+.fi
+.SS "void HiEasyX::SysEdit::SetTextBkColor (COLORREF color)"
+
+.PP
+设置文本背景色 
+.PP
+\fB参数\fP
+.RS 4
+\fIcolor\fP 文本背景色 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 175 行定义\&.
+.PP
+.nf
+176     {
+177         m_cTextBk = color;
+178         InvalidateRect(GetHandle(), nullptr, true);
+179     }
+.fi
+.SS "void HiEasyX::SysEdit::SetTextColor (COLORREF color)"
+
+.PP
+设置文本颜色 
+.PP
+\fB参数\fP
+.RS 4
+\fIcolor\fP 文本颜色 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 181 行定义\&.
+.PP
+.nf
+182     {
+183         m_cText = color;
+184         InvalidateRect(GetHandle(), nullptr, true);
+185     }
+.fi
+.SS "LRESULT HiEasyX::SysEdit::UpdateMessage (UINT msg, WPARAM wParam, LPARAM lParam, bool & bRet)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息，此函数无需用户调用 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.br
+\fIwParam\fP 参数 
+.br
+\fIlParam\fP 参数 
+.br
+\fIbRet\fP 标记是否返回值 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+不定返回值 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::SysControlBase\fP \&.
+.PP
+在文件 SysEdit\&.cpp 第 53 行定义\&.
+.PP
+.nf
+54     {
+55         switch (msg)
+56         {
+57         case WM_COMMAND:
+58             if (LOWORD(wParam) == GetID())
+59             {
+60                 switch (HIWORD(wParam))
+61                 {
+62                 case EN_UPDATE:
+63                     m_bEdited = true;
+64                     if (m_pFunc)
+65                         m_pFunc(GetText());
+66                     break;
+67                 }
+68             }
+69             break;
+70 
+71         case WM_CTLCOLOREDIT:
+72             if ((HWND)lParam == GetHandle())
+73             {
+74                 ::SetBkColor((HDC)wParam, m_cTextBk);
+75                 ::SetTextColor((HDC)wParam, m_cText);
+76                 //::SetBkMode((HDC)wParam, TRANSPARENT);
+77 
+78                 bRet = true;
+79                 return (INT_PTR)hBk;
+80                 //return (LRESULT)GetStockObject(WHITE_BRUSH);
+81             }
+82             break;
+83         }
+84 
+85         bRet = false;
+86         return 0;
+87     }
+.fi
+.SS "void HiEasyX::SysEdit::Uppercase (bool enable)"
+
+.PP
+自动转大写 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用转大写 
+.RE
+.PP
+
+.PP
+在文件 SysEdit\&.cpp 第 124 行定义\&.
+.PP
+.nf
+125     {
+126         m_property\&.uppercase = enable;
+127         //m_property\&.lowercase = !enable;
+128         ApplyProperty();
+129     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

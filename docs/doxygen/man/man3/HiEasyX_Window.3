@@ -1,0 +1,746 @@
+.TH "HiEasyX::Window" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Window \- 窗口  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiWindow\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBWindow\fP ()"
+.br
+.ti -1c
+.RI "\fBWindow\fP (int w, int h, int flag=\fBEW_NORMAL\fP, LPCTSTR lpszWndTitle=L'', WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)"
+.br
+.ti -1c
+.RI "virtual \fB~Window\fP ()"
+.br
+.ti -1c
+.RI "HWND \fBInitWindow\fP (int w=640, int h=480, int flag=\fBEW_NORMAL\fP, LPCTSTR lpszWndTitle=L'', WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)"
+.br
+.ti -1c
+.RI "HWND \fBCreate\fP (int w=640, int h=480, int flag=\fBEW_NORMAL\fP, LPCTSTR lpszWndTitle=L'', WNDPROC WindowProcess=nullptr, HWND hParent=nullptr)"
+.br
+.RI "等价于 InitWindow "
+.ti -1c
+.RI "void \fBCloseWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBDestroy\fP ()"
+.br
+.RI "等价于 CloseWindow "
+.ti -1c
+.RI "void \fBSetProcFunc\fP (WNDPROC WindowProcess)"
+.br
+.ti -1c
+.RI "HWND \fBGetHandle\fP ()"
+.br
+.ti -1c
+.RI "\fBEasyWindow\fP \fBGetInfo\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsAlive\fP ()"
+.br
+.ti -1c
+.RI "IMAGE * \fBGetImage\fP ()"
+.br
+.ti -1c
+.RI "\fBCanvas\fP * \fBGetCanvas\fP ()"
+.br
+.ti -1c
+.RI "void \fBBindCanvas\fP (\fBCanvas\fP *pCanvas)"
+.br
+.ti -1c
+.RI "void \fBWaitMyTask\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSetWorkingWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetQuickDraw\fP (UINT nSkipPixels)"
+.br
+.ti -1c
+.RI "void \fBRedraw\fP ()"
+.br
+.RI "重绘窗口 "
+.ti -1c
+.RI "void \fBFlushDrawing\fP (RECT rct={ 0 })"
+.br
+.ti -1c
+.RI "bool \fBBeginTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBEndTask\fP (bool flush=true)"
+.br
+.ti -1c
+.RI "bool \fBIsInTask\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsSizeChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBCreateTray\fP (LPCTSTR lpszTrayName)"
+.br
+.ti -1c
+.RI "void \fBDeleteTray\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetTrayMenu\fP (HMENU hMenu)"
+.br
+.ti -1c
+.RI "void \fBSetTrayMenuProcFunc\fP (void(*pFunc)(UINT))"
+.br
+.ti -1c
+.RI "void \fBPreSetStyle\fP (long lStyle)"
+.br
+.ti -1c
+.RI "void \fBPreSetStyleEx\fP (long lStyleEx)"
+.br
+.ti -1c
+.RI "void \fBPreSetPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBPreSetShowState\fP (int nCmdShow)"
+.br
+.ti -1c
+.RI "long \fBGetStyle\fP ()"
+.br
+.ti -1c
+.RI "int \fBSetStyle\fP (long lNewStyle)"
+.br
+.ti -1c
+.RI "long \fBGetExStyle\fP ()"
+.br
+.ti -1c
+.RI "int \fBSetExStyle\fP (long lNewExStyle)"
+.br
+.ti -1c
+.RI "POINT \fBGetPos\fP ()"
+.br
+.ti -1c
+.RI "SIZE \fBGetWindowSize\fP ()"
+.br
+.RI "获取整个窗口的大小 "
+.ti -1c
+.RI "int \fBGetWindowWidth\fP ()"
+.br
+.RI "获取整个窗口的宽度 "
+.ti -1c
+.RI "int \fBGetWindowHeight\fP ()"
+.br
+.RI "获取整个窗口的高度 "
+.ti -1c
+.RI "int \fBGetClientWidth\fP ()"
+.br
+.RI "获取客户区宽度 "
+.ti -1c
+.RI "int \fBGetClientHeight\fP ()"
+.br
+.RI "获取客户区高度 "
+.ti -1c
+.RI "void \fBMove\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBMoveRel\fP (int dx, int dy)"
+.br
+.ti -1c
+.RI "void \fBResize\fP (int w, int h)"
+.br
+.ti -1c
+.RI "void \fBSetTitle\fP (LPCTSTR lpszTitle)"
+.br
+.ti -1c
+.RI "bool \fBIsForegroundWindow\fP ()"
+.br
+.RI "判断此窗口是否为用户正在使用的窗口 "
+.ti -1c
+.RI "ExMessage \fBGet_Message\fP (BYTE filter=\-1)"
+.br
+.ti -1c
+.RI "void \fBGet_Message\fP (ExMessage *msg, BYTE filter=\-1)"
+.br
+.ti -1c
+.RI "bool \fBPeek_Message\fP (ExMessage *msg, BYTE filter=\-1, bool removemsg=true)"
+.br
+.ti -1c
+.RI "void \fBFlush_Message\fP (BYTE filter=\-1)"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+窗口 
+.PP
+在文件 HiWindow\&.h 第 118 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Window::Window ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1672 行定义\&.
+.PP
+.nf
+1673     {
+1674     }
+.fi
+.SS "HiEasyX::Window::Window (int w, int h, int flag = \fC\fBEW_NORMAL\fP\fP, LPCTSTR lpszWndTitle = \fCL''\fP, WNDPROC WindowProcess = \fCnullptr\fP, HWND hParent = \fCnullptr\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1676 行定义\&.
+.PP
+.nf
+1677     {
+1678         InitWindow(w, h, flag, lpszWndTitle, WindowProcess, hParent);
+1679     }
+.fi
+.SS "HiEasyX::Window::~Window ()\fC [virtual]\fP"
+
+.PP
+在文件 HiWindow\&.cpp 第 1681 行定义\&.
+.PP
+.nf
+1682     {
+1683     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "bool HiEasyX::Window::BeginTask ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1772 行定义\&.
+.PP
+.nf
+1773     {
+1774         if (SetWorkingWindow())
+1775         {
+1776             return HiEasyX::BeginTask();
+1777         }
+1778         else
+1779         {
+1780             return false;
+1781         }
+1782     }
+.fi
+.SS "void HiEasyX::Window::BindCanvas (\fBCanvas\fP * pCanvas)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1749 行定义\&.
+.PP
+.nf
+1750     {
+1751         BindWindowCanvas(pCanvas, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1752     }
+.fi
+.SS "void HiEasyX::Window::CloseWindow ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1709 行定义\&.
+.PP
+.nf
+1710     {
+1711         closegraph_win32(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1712     }
+.fi
+.SS "HWND HiEasyX::Window::Create (int w = \fC640\fP, int h = \fC480\fP, int flag = \fC\fBEW_NORMAL\fP\fP, LPCTSTR lpszWndTitle = \fCL''\fP, WNDPROC WindowProcess = \fCnullptr\fP, HWND hParent = \fCnullptr\fP)"
+
+.PP
+等价于 InitWindow 
+.PP
+在文件 HiWindow\&.cpp 第 1704 行定义\&.
+.PP
+.nf
+1705     {
+1706         return InitWindow(w, h, flag, lpszWndTitle, WindowProcess, hParent);
+1707     }
+.fi
+.SS "void HiEasyX::Window::CreateTray (LPCTSTR lpszTrayName)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1799 行定义\&.
+.PP
+.nf
+1800     {
+1801         HiEasyX::CreateTray(lpszTrayName, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1802     }
+.fi
+.SS "void HiEasyX::Window::DeleteTray ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1804 行定义\&.
+.PP
+.nf
+1805     {
+1806         HiEasyX::DeleteTray(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1807     }
+.fi
+.SS "void HiEasyX::Window::Destroy ()"
+
+.PP
+等价于 CloseWindow 
+.PP
+在文件 HiWindow\&.cpp 第 1714 行定义\&.
+.PP
+.nf
+1715     {
+1716         CloseWindow();
+1717     }
+.fi
+.SS "void HiEasyX::Window::EndTask (bool flush = \fCtrue\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1784 行定义\&.
+.PP
+.nf
+1785     {
+1786         HiEasyX::EndTask(flush);
+1787     }
+.fi
+.SS "void HiEasyX::Window::Flush_Message (BYTE filter = \fC\-1\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1943 行定义\&.
+.PP
+.nf
+1944     {
+1945         flushmessage_win32(filter, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1946     }
+.fi
+.SS "void HiEasyX::Window::FlushDrawing (RECT rct = \fC{ 0 }\fP)"
+
+.PP
+.nf
+
+    更新窗口的双缓冲
+.fi
+.PP
+.PP
+.PP
+.nf
+ 注意：
+    必须在窗口任务内调用此函数，详见 hiex::FlushDrawing
+.fi
+.PP
+ 
+.PP
+在文件 HiWindow\&.cpp 第 1764 行定义\&.
+.PP
+.nf
+1765     {
+1766         if (IsInTask())
+1767         {
+1768             HiEasyX::FlushDrawing(rct);
+1769         }
+1770     }
+.fi
+.SS "ExMessage HiEasyX::Window::Get_Message (BYTE filter = \fC\-1\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1928 行定义\&.
+.PP
+.nf
+1929     {
+1930         return getmessage_win32(filter, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1931     }
+.fi
+.SS "void HiEasyX::Window::Get_Message (ExMessage * msg, BYTE filter = \fC\-1\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1933 行定义\&.
+.PP
+.nf
+1934     {
+1935         return getmessage_win32(msg, filter, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1936     }
+.fi
+.SS "\fBCanvas\fP * HiEasyX::Window::GetCanvas ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1744 行定义\&.
+.PP
+.nf
+1745     {
+1746         return g_vecWindows[m_nWindowIndex]\&.pBufferImgCanvas;
+1747     }
+.fi
+.SS "int HiEasyX::Window::GetClientHeight ()"
+
+.PP
+获取客户区高度 
+.PP
+在文件 HiWindow\&.cpp 第 1923 行定义\&.
+.PP
+.nf
+1924     {
+1925         return g_vecWindows[m_nWindowIndex]\&.pBufferImg->getheight();
+1926     }
+.fi
+.SS "int HiEasyX::Window::GetClientWidth ()"
+
+.PP
+获取客户区宽度 
+.PP
+在文件 HiWindow\&.cpp 第 1918 行定义\&.
+.PP
+.nf
+1919     {
+1920         return g_vecWindows[m_nWindowIndex]\&.pBufferImg->getwidth();
+1921     }
+.fi
+.SS "long HiEasyX::Window::GetExStyle ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1863 行定义\&.
+.PP
+.nf
+1864     {
+1865         return GetWindowExStyle(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1866     }
+.fi
+.SS "HWND HiEasyX::Window::GetHandle ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1724 行定义\&.
+.PP
+.nf
+1725     {
+1726         return g_vecWindows[m_nWindowIndex]\&.hWnd;
+1727     }
+.fi
+.SS "IMAGE * HiEasyX::Window::GetImage ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1739 行定义\&.
+.PP
+.nf
+1740     {
+1741         return g_vecWindows[m_nWindowIndex]\&.pBufferImg;
+1742     }
+.fi
+.SS "\fBEasyWindow\fP HiEasyX::Window::GetInfo ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1729 行定义\&.
+.PP
+.nf
+1730     {
+1731         return g_vecWindows[m_nWindowIndex];
+1732     }
+.fi
+.SS "POINT HiEasyX::Window::GetPos ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1873 行定义\&.
+.PP
+.nf
+1874     {
+1875         return GetWindowPos(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1876     }
+.fi
+.SS "long HiEasyX::Window::GetStyle ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1853 行定义\&.
+.PP
+.nf
+1854     {
+1855         return GetWindowStyle(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1856     }
+.fi
+.SS "int HiEasyX::Window::GetWindowHeight ()"
+
+.PP
+获取整个窗口的高度 
+.PP
+在文件 HiWindow\&.cpp 第 1893 行定义\&.
+.PP
+.nf
+1894     {
+1895         return  GetWindowSize()\&.cy;
+1896     }
+.fi
+.SS "SIZE HiEasyX::Window::GetWindowSize ()"
+
+.PP
+获取整个窗口的大小 
+.PP
+在文件 HiWindow\&.cpp 第 1878 行定义\&.
+.PP
+.nf
+1879     {
+1880         return HiEasyX::GetWindowSize(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1881     }
+.fi
+.SS "int HiEasyX::Window::GetWindowWidth ()"
+
+.PP
+获取整个窗口的宽度 
+.PP
+在文件 HiWindow\&.cpp 第 1888 行定义\&.
+.PP
+.nf
+1889     {
+1890         return GetWindowSize()\&.cx;
+1891     }
+.fi
+.SS "HWND HiEasyX::Window::InitWindow (int w = \fC640\fP, int h = \fC480\fP, int flag = \fC\fBEW_NORMAL\fP\fP, LPCTSTR lpszWndTitle = \fCL''\fP, WNDPROC WindowProcess = \fCnullptr\fP, HWND hParent = \fCnullptr\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1685 行定义\&.
+.PP
+.nf
+1686     {
+1687         if (!m_isCreated)
+1688         {
+1689             // 预设窗口属性
+1690             if (m_isPreStyle)       PreSetWindowStyle(m_lPreStyle);
+1691             if (m_isPreStyleEx)     PreSetWindowStyleEx(m_lPreStyleEx);
+1692             if (m_isPrePos)         PreSetWindowPos(m_pPrePos\&.x, m_pPrePos\&.y);
+1693             if (m_isPreShowState)   PreSetWindowShowState(m_nPreCmdShow);
+1694 
+1695             HWND hwnd = initgraph_win32(w, h, flag, lpszWndTitle, WindowProcess, hParent);
+1696             int index = GetWindowIndex(hwnd);
+1697             m_nWindowIndex = index;
+1698             m_isCreated = true;
+1699             return hwnd;
+1700         }
+1701         return nullptr;
+1702     }
+.fi
+.SS "bool HiEasyX::Window::IsAlive ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1734 行定义\&.
+.PP
+.nf
+1735     {
+1736         return IsAliveWindow(m_nWindowIndex);
+1737     }
+.fi
+.SS "bool HiEasyX::Window::IsForegroundWindow ()"
+
+.PP
+判断此窗口是否为用户正在使用的窗口 
+.PP
+在文件 HiWindow\&.cpp 第 1913 行定义\&.
+.PP
+.nf
+1914     {
+1915         return GetForegroundWindow() == g_vecWindows[m_nWindowIndex]\&.hWnd;
+1916     }
+.fi
+.SS "bool HiEasyX::Window::IsInTask ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1789 行定义\&.
+.PP
+.nf
+1790     {
+1791         return HiEasyX::IsInTask(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1792     }
+.fi
+.SS "bool HiEasyX::Window::IsSizeChanged ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1794 行定义\&.
+.PP
+.nf
+1795     {
+1796         return IsWindowSizeChanged(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1797     }
+.fi
+.SS "void HiEasyX::Window::Move (int x, int y)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1883 行定义\&.
+.PP
+.nf
+1884     {
+1885         MoveWindow(x, y, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1886     }
+.fi
+.SS "void HiEasyX::Window::MoveRel (int dx, int dy)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1898 行定义\&.
+.PP
+.nf
+1899     {
+1900         MoveWindowRel(dx, dy, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1901     }
+.fi
+.SS "bool HiEasyX::Window::Peek_Message (ExMessage * msg, BYTE filter = \fC\-1\fP, bool removemsg = \fCtrue\fP)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1938 行定义\&.
+.PP
+.nf
+1939     {
+1940         return peekmessage_win32(msg, filter, removemsg, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1941     }
+.fi
+.SS "void HiEasyX::Window::PreSetPos (int x, int y)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1831 行定义\&.
+.PP
+.nf
+1832     {
+1833         m_isPrePos = true;
+1834         m_pPrePos = { x,y };
+1835     }
+.fi
+.SS "void HiEasyX::Window::PreSetShowState (int nCmdShow)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1837 行定义\&.
+.PP
+.nf
+1838     {
+1839         m_isPreShowState = true;
+1840         m_nPreCmdShow = nCmdShow;
+1841     }
+.fi
+.SS "void HiEasyX::Window::PreSetStyle (long lStyle)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1819 行定义\&.
+.PP
+.nf
+1820     {
+1821         m_isPreStyle = true;
+1822         m_lPreStyle = lStyle;
+1823     }
+.fi
+.SS "void HiEasyX::Window::PreSetStyleEx (long lStyleEx)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1825 行定义\&.
+.PP
+.nf
+1826     {
+1827         m_isPreStyleEx = true;
+1828         m_lPreStyleEx = lStyleEx;
+1829     }
+.fi
+.SS "void HiEasyX::Window::Redraw ()"
+
+.PP
+重绘窗口 
+.PP
+在文件 HiWindow\&.cpp 第 1848 行定义\&.
+.PP
+.nf
+1849     {
+1850         RedrawWindow(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1851     }
+.fi
+.SS "void HiEasyX::Window::Resize (int w, int h)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1903 行定义\&.
+.PP
+.nf
+1904     {
+1905         ResizeWindow(w, h, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1906     }
+.fi
+.SS "int HiEasyX::Window::SetExStyle (long lNewExStyle)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1868 行定义\&.
+.PP
+.nf
+1869     {
+1870         return SetWindowExStyle(lNewExStyle, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1871     }
+.fi
+.SS "void HiEasyX::Window::SetProcFunc (WNDPROC WindowProcess)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1719 行定义\&.
+.PP
+.nf
+1720     {
+1721         SetWndProcFunc(g_vecWindows[m_nWindowIndex]\&.hWnd, WindowProcess);
+1722     }
+.fi
+.SS "void HiEasyX::Window::SetQuickDraw (UINT nSkipPixels)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1843 行定义\&.
+.PP
+.nf
+1844     {
+1845         QuickDraw(nSkipPixels, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1846     }
+.fi
+.SS "int HiEasyX::Window::SetStyle (long lNewStyle)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1858 行定义\&.
+.PP
+.nf
+1859     {
+1860         return SetWindowStyle(lNewStyle, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1861     }
+.fi
+.SS "void HiEasyX::Window::SetTitle (LPCTSTR lpszTitle)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1908 行定义\&.
+.PP
+.nf
+1909     {
+1910         SetWindowTitle(lpszTitle, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1911     }
+.fi
+.SS "void HiEasyX::Window::SetTrayMenu (HMENU hMenu)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1809 行定义\&.
+.PP
+.nf
+1810     {
+1811         HiEasyX::SetTrayMenu(hMenu, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1812     }
+.fi
+.SS "void HiEasyX::Window::SetTrayMenuProcFunc (void(*)(UINT) pFunc)"
+
+.PP
+在文件 HiWindow\&.cpp 第 1814 行定义\&.
+.PP
+.nf
+1815     {
+1816         HiEasyX::SetTrayMenuProcFunc(pFunc, g_vecWindows[m_nWindowIndex]\&.hWnd);
+1817     }
+.fi
+.SS "bool HiEasyX::Window::SetWorkingWindow ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1759 行定义\&.
+.PP
+.nf
+1760     {
+1761         return HiEasyX::SetWorkingWindow(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1762     }
+.fi
+.SS "void HiEasyX::Window::WaitMyTask ()"
+
+.PP
+在文件 HiWindow\&.cpp 第 1754 行定义\&.
+.PP
+.nf
+1755     {
+1756         WaitForTask(g_vecWindows[m_nWindowIndex]\&.hWnd);
+1757     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

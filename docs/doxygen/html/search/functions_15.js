@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['zoomimage_5falpha_1322',['ZoomImage_Alpha',['../class_hi_easy_x_1_1_canvas.html#a320bb3e7381ba8c929ac14ffda8023c5',1,'HiEasyX::Canvas::ZoomImage_Alpha()'],['../namespace_hi_easy_x.html#a7e5cc54daa093eb02f3d1d8b966759e5',1,'HiEasyX::ZoomImage_Alpha()']]],
-  ['zoomimage_5fwin32_5falpha_1323',['ZoomImage_Win32_Alpha',['../class_hi_easy_x_1_1_canvas.html#aafac74472bd7804a2ffa66055d724eaa',1,'HiEasyX::Canvas::ZoomImage_Win32_Alpha()'],['../namespace_hi_easy_x.html#a75b090b9448298aee767cd1587e0b3bf',1,'HiEasyX::ZoomImage_Win32_Alpha()']]]
+  ['_7econtainer_1469',['~Container',['../class_hi_easy_x_1_1_container.html#ada5d0c737c3152ed10714738d3ce355e',1,'HiEasyX::Container']]],
+  ['_7econtrolbase_1470',['~ControlBase',['../class_hi_easy_x_1_1_control_base.html#aea4f802233d392dd4302479a428f97de',1,'HiEasyX::ControlBase']]],
+  ['_7egif_1471',['~Gif',['../class_hi_easy_x_1_1_gif.html#a92c5a0d3b2b4ce8a557d183799e4daf7',1,'HiEasyX::Gif']]],
+  ['_7eimageblock_1472',['~ImageBlock',['../class_hi_easy_x_1_1_image_block.html#a529516d1e27d6fd59e14f1d2c04e499f',1,'HiEasyX::ImageBlock']]],
+  ['_7emusicmci_1473',['~MusicMCI',['../class_hi_easy_x_1_1_music_m_c_i.html#a3054ff2b13fe01b08b9c569fd91901ff',1,'HiEasyX::MusicMCI']]],
+  ['_7esyscontrolbase_1474',['~SysControlBase',['../class_hi_easy_x_1_1_sys_control_base.html#abed767fbf3903d0ffad4a91b510d4ddd',1,'HiEasyX::SysControlBase']]],
+  ['_7esysedit_1475',['~SysEdit',['../class_hi_easy_x_1_1_sys_edit.html#a989c0c2c59c5013e5cf6dbe3415c00fd',1,'HiEasyX::SysEdit']]],
+  ['_7ewindow_1476',['~Window',['../class_hi_easy_x_1_1_window.html#ab527c57e7a57446c48881b094c53e59e',1,'HiEasyX::Window']]]
 ];

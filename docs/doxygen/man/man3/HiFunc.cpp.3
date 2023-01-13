@@ -1,0 +1,370 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiFunc.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiFunc\&.h'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "\fBScreenSize\fP \fBGetScreenSize\fP ()"
+.br
+.RI "获取多显示器大小信息 "
+.ti -1c
+.RI "void \fBGetImageSize\fP (IMAGE *pImg, int *width, int *height)"
+.br
+.ti -1c
+.RI "DWORD * \fBReverseAlpha\fP (DWORD *\fBpBuf\fP, int size)"
+.br
+.ti -1c
+.RI "HBITMAP \fBImage2Bitmap\fP (IMAGE *img, bool enable_alpha)"
+.br
+.RI "得到 IMAGE 对象的 HBITMAP "
+.ti -1c
+.RI "HICON \fBBitmap2Icon\fP (HBITMAP hBmp)"
+.br
+.RI "HBITMAP 转 HICON "
+.ti -1c
+.RI "void \fBHpSleep\fP (int ms)"
+.br
+.RI "精确延时函数（可以精确到 1ms，精度 ±1ms） "
+.ti -1c
+.RI "bool \fBIsInRect\fP (int x, int y, RECT rct)"
+.br
+.RI "点是否位于矩形内 "
+.ti -1c
+.RI "UINT \fBGetExMessageType\fP (ExMessage msg)"
+.br
+.RI "获取 ExMessage 的消息类型 "
+.in -1c
+.SH "函数说明"
+.PP 
+.SS "HICON Bitmap2Icon (HBITMAP hBmp)"
+
+.PP
+HBITMAP 转 HICON 
+.PP
+\fB参数\fP
+.RS 4
+\fIhBmp\fP 位图句柄 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+图标句柄 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 60 行定义\&.
+.PP
+.nf
+61 {
+62     BITMAP bmp = {};
+63     GetObject(hBmp, sizeof(BITMAP), &bmp);
+64 
+65     HBITMAP hbmMask = CreateCompatibleBitmap(GetDC(nullptr), bmp\&.bmWidth, bmp\&.bmHeight);
+66 
+67     ICONINFO ii = { 0 };
+68     ii\&.fIcon = TRUE;
+69     ii\&.hbmColor = hBmp;
+70     ii\&.hbmMask = hbmMask;
+71 
+72     HICON hIcon = CreateIconIndirect(&ii);
+73     DeleteObject(hbmMask);
+74 
+75     return hIcon;
+76 }
+.fi
+.SS "UINT GetExMessageType (ExMessage msg)"
+
+.PP
+获取 ExMessage 的消息类型 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 消息 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+EM_ 消息类型中的一种，若失败返回 0 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 100 行定义\&.
+.PP
+.nf
+101 {
+102     switch (msg\&.message)
+103     {
+104     case WM_MOUSEMOVE:
+105     case WM_MOUSEWHEEL:
+106     case WM_LBUTTONDOWN:
+107     case WM_LBUTTONUP:
+108     case WM_LBUTTONDBLCLK:
+109     case WM_MBUTTONDOWN:
+110     case WM_MBUTTONUP:
+111     case WM_MBUTTONDBLCLK:
+112     case WM_RBUTTONDOWN:
+113     case WM_RBUTTONUP:
+114     case WM_RBUTTONDBLCLK:
+115         return EM_MOUSE;
+116         break;
+117     case WM_KEYDOWN:
+118     case WM_KEYUP:
+119     case WM_SYSKEYDOWN:
+120     case WM_SYSKEYUP:
+121         return EM_KEY;
+122         break;
+123     case WM_CHAR:
+124         return EM_CHAR;
+125         break;
+126     case WM_ACTIVATE:
+127     case WM_MOVE:
+128     case WM_SIZE:
+129         return EM_WINDOW;
+130         break;
+131     default:
+132         return 0;
+133         break;
+134     }
+135 }
+.fi
+.SS "void GetImageSize (IMAGE * pImg, int * width, int * height)"
+
+.PP
+.nf
+
+    获取图像尺寸
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    可以方便地处理 IMAGE 指针为空，即指向主绘图窗口的情况
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIpImg\fP 目标图像 
+.br
+\fIwidth\fP 返回图像宽 
+.br
+\fIheight\fP 返回图像高 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 17 行定义\&.
+.PP
+.nf
+18 {
+19     // 普通 IMAGE 指针
+20     if (pImg)
+21     {
+22         *width = pImg->getwidth();
+23         *height = pImg->getheight();
+24     }
+25 
+26     // nullptr 对应绘图窗口
+27     else
+28     {
+29         IMAGE* pOld = GetWorkingImage();
+30         SetWorkingImage();
+31         *width = getwidth();
+32         *height = getheight();
+33         SetWorkingImage(pOld);
+34     }
+35 }
+.fi
+.SS "\fBScreenSize\fP GetScreenSize ()"
+
+.PP
+获取多显示器大小信息 
+.PP
+在文件 HiFunc\&.cpp 第 6 行定义\&.
+.PP
+.nf
+7 {
+8     int left = GetSystemMetrics(SM_XVIRTUALSCREEN);
+9     int top = GetSystemMetrics(SM_YVIRTUALSCREEN);
+10     int w = GetSystemMetrics(SM_CXVIRTUALSCREEN);
+11     int h = GetSystemMetrics(SM_CYVIRTUALSCREEN);
+12     return { left,top,w,h };
+13 }
+.fi
+.SS "void HpSleep (int ms)"
+
+.PP
+精确延时函数（可以精确到 1ms，精度 ±1ms） 
+.PP
+\fB作者\fP
+.RS 4
+yangw80 yw80@qq.com 
+.RE
+.PP
+\fB日期\fP
+.RS 4
+2011-5-4 
+.RE
+.PP
+\fB参数\fP
+.RS 4
+\fIms\fP 延时长度（单位：毫秒） 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 78 行定义\&.
+.PP
+.nf
+79 {
+80     static clock_t oldclock = clock();      // 静态变量，记录上一次 tick
+81     static int c = CLOCKS_PER_SEC / 1000;
+82 
+83     oldclock += ms * c;                     // 更新 tick
+84 
+85     if (clock() > oldclock)                 // 如果已经超时，无需延时
+86         oldclock = clock();
+87     else
+88         while (clock() < oldclock)          // 延时
+89             Sleep(1);                       // 释放 CPU 控制权，降低 CPU 占用率
+90 //          Sleep(0);                       // 更高精度、更高 CPU 占用率
+91 }
+.fi
+.SS "HBITMAP Image2Bitmap (IMAGE * img, bool enable_alpha)"
+
+.PP
+得到 IMAGE 对象的 HBITMAP 
+.PP
+\fB参数\fP
+.RS 4
+\fIimg\fP 目标图像
+.br
+\fIenable_alpha\fP 
+.PP
+.nf
+
+    是否允许图像的 alpha 信息
+.fi
+.PP
+.RE
+.PP
+注意： 若图像 alpha 值全为 0，则表示不启用透明混合 
+.PP
+.PP
+.nf
+\fB返回\fP
+.RS 4
+转换得到的位图句柄
+.RE
+.PP
+.fi
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 47 行定义\&.
+.PP
+.nf
+48 {
+49     // 测试结论
+50     // 若图像中有任何像素 alpha 不为 0，则启用 alpha
+51     // 若图像 alpha 全部为 0，则表示完全不透明
+52 
+53     DWORD* pBuf = GetImageBuffer(img);
+54     if (!enable_alpha)
+55         for (int i = 0; i < img->getwidth() * img->getheight(); i++)
+56             pBuf[i] &= 0x00ffffff;
+57     return CreateBitmap(img->getwidth(), img->getheight(), 1, 32, pBuf);
+58 }
+.fi
+.SS "bool IsInRect (int x, int y, RECT rct)"
+
+.PP
+点是否位于矩形内 
+.PP
+\fB参数\fP
+.RS 4
+\fIx\fP 位置 
+.br
+\fIy\fP 位置 
+.br
+\fIrct\fP 矩形 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+点是否位于矩形内 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 93 行定义\&.
+.PP
+.nf
+94 {
+95     if (rct\&.left > rct\&.right)    std::swap(rct\&.left, rct\&.right);
+96     if (rct\&.top > rct\&.bottom)    std::swap(rct\&.top, rct\&.bottom);
+97     return x >= rct\&.left && x <= rct\&.right && y >= rct\&.top && y <= rct\&.bottom;
+98 }
+.fi
+.SS "DWORD* ReverseAlpha (DWORD * pBuf, int size)"
+
+.PP
+.nf
+
+    反转图像 Alpha 值
+.fi
+.PP
+.PP
+.PP
+.nf
+ 备注：
+    将 alpha 值不为 0 的一切像素的 alpha 设为 0，
+    同时将 alpha 值为 0 的一切像素的 alpha 设为 255。
+.fi
+.PP
+.PP
+\fB参数\fP
+.RS 4
+\fIpBuf\fP 显存指针 
+.br
+\fIsize\fP 显存大小 
+.RE
+.PP
+\fB返回\fP
+.RS 4
+显存指针（和原来一样） 
+.RE
+.PP
+
+.PP
+在文件 HiFunc\&.cpp 第 37 行定义\&.
+.PP
+.nf
+38 {
+39     for (int i = 0; i < size; i++)
+40         if (pBuf[i] & 0xff000000)
+41             pBuf[i] &= 0x00ffffff;
+42         else
+43             pBuf[i] |= 0xff000000;
+44     return pBuf;
+45 }
+.fi
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

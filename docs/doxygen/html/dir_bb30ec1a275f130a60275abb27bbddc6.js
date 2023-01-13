@@ -17,6 +17,8 @@ var dir_bb30ec1a275f130a60275abb27bbddc6 =
     [ "HiFPS.h", "_hi_f_p_s_8h.html", "_hi_f_p_s_8h" ],
     [ "HiFunc.cpp", "_hi_func_8cpp.html", "_hi_func_8cpp" ],
     [ "HiFunc.h", "_hi_func_8h.html", "_hi_func_8h" ],
+    [ "HiGdiplus.cpp", "_hi_gdiplus_8cpp.html", "_hi_gdiplus_8cpp" ],
+    [ "HiGdiplus.h", "_hi_gdiplus_8h.html", "_hi_gdiplus_8h" ],
     [ "HiGif.cpp", "_hi_gif_8cpp.html", null ],
     [ "HiGif.h", "_hi_gif_8h.html", [
       [ "Gif", "class_hi_easy_x_1_1_gif.html", "class_hi_easy_x_1_1_gif" ]

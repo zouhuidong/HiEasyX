@@ -23,37 +23,38 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "HiEasyX", "index.html", [
-    [ "Bug List", "bug.html", null ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+    [ "Bug 列表", "bug.html", null ],
+    [ "命名空间", "namespaces.html", [
+      [ "命名空间列表", "namespaces.html", "namespaces_dup" ],
+      [ "命名空间成员", "namespacemembers.html", [
+        [ "全部", "namespacemembers.html", null ],
+        [ "函数", "namespacemembers_func.html", null ],
+        [ "变量", "namespacemembers_vars.html", null ],
+        [ "类型定义", "namespacemembers_type.html", null ],
+        [ "枚举", "namespacemembers_enum.html", null ],
+        [ "枚举值", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+    [ "类", "annotated.html", [
+      [ "类列表", "annotated.html", "annotated_dup" ],
+      [ "类索引", "classes.html", null ],
+      [ "类继承关系", "hierarchy.html", "hierarchy" ],
+      [ "类成员", "functions.html", [
+        [ "全部", "functions.html", "functions_dup" ],
+        [ "函数", "functions_func.html", "functions_func" ],
+        [ "变量", "functions_vars.html", null ],
+        [ "相关函数", "functions_rela.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+    [ "文件", "files.html", [
+      [ "文件列表", "files.html", "files_dup" ],
+      [ "文件成员", "globals.html", [
+        [ "全部", "globals.html", null ],
+        [ "函数", "globals_func.html", null ],
+        [ "变量", "globals_vars.html", null ],
+        [ "枚举", "globals_enum.html", null ],
+        [ "枚举值", "globals_eval.html", null ],
+        [ "宏定义", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -62,11 +63,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_button_8cpp.html",
-"_hi_window_8cpp.html#abe55307205efea866e8a8a6eb69f94f4",
-"class_hi_easy_x_1_1_canvas.html#a56238b89f8d2a0fea25a7cab3167e0cf",
-"class_hi_easy_x_1_1_gif.html#add7b8f86ace0f6e0efad68ce69f3df2a",
-"class_hi_easy_x_1_1_sys_edit.html#aa96169100c733b54dcc8da4e9417871a"
+"_hi_window_8cpp.html#a206c7957465bc411a7f03fe046c39ade",
+"_sys_group_box_8h_source.html",
+"class_hi_easy_x_1_1_control_base.html#a206af1bbabb242872b6128e84972f256",
+"class_hi_easy_x_1_1_scroll_bar.html#ad4b86cbe6e2edd43246c76479105643d",
+"functions_v.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = '点击 关闭 面板同步';
+var SYNCOFFMSG = '点击 开启 面板同步';

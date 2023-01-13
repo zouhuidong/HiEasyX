@@ -1,0 +1,150 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGdiplus.h" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGdiplus.h \- \fBHiEasyX\fP 库的 GDI+ 绘图模块  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <graphics\&.h>\fP
+.br
+\fC#include <gdiplus\&.h>\fP
+.br
+
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Try_Starup\fP ()"
+.br
+.RI "注意，必须先启动 GDI+，才能使用下面的绘图函数 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Shutdown\fP ()"
+.br
+.RI "关闭 GDI+ "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Line\fP (HDC hdc, float x1, float y1, float x2, float y2, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画线 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Polygon\fP (HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画多边形 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_SolidPolygon\fP (HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充多边形 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Rectangle\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画矩形 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_SolidRectangle\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充矩形 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Ellipse\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画椭圆 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_SolidEllipse\fP (HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充椭圆 "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Pie\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画饼状图（传入顺时针角度） "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_SolidPie\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画无边框填充饼状图（传入顺时针角度） "
+.ti -1c
+.RI "void \fBHiEasyX::Gdiplus_Arc\fP (HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)"
+.br
+.RI "画圆弧（传入顺时针角度） "
+.ti -1c
+.RI "Gdiplus::Color \fBHiEasyX::ConvertToGdiplusColor\fP (COLORREF color, bool reserve_alpha=false)"
+.br
+.RI "转换 COLORREF 到 Gdiplus::Color "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Line\fP (float x1, float y1, float x2, float y2, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画直线 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Polygon\fP (int points_num, POINT *points, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画多边形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_SolidPolygon\fP (int points_num, POINT *points, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充多边形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_FillPolygon\fP (int points_num, POINT *points, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充多边形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Rectangle\fP (float x, float y, float w, float h, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画矩形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_SolidRectangle\fP (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充矩形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_FillRectangle\fP (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充矩形 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Ellipse\fP (float x, float y, float w, float h, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画椭圆 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_SolidEllipse\fP (float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充椭圆 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_FillEllipse\fP (float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充椭圆 "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Pie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_SolidPie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF fillcolor, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画无边框填充饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_FillPie\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, COLORREF fillcolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画有边框填充饼状图（传入逆时针角度） "
+.ti -1c
+.RI "void \fBHiEasyX::EasyX_Gdiplus_Arc\fP (float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth=1, bool enable_alpha=false, bool enable_aa=true, IMAGE *pImg=nullptr)"
+.br
+.RI "画圆弧（传入逆时针角度） "
+.in -1c
+.SH "详细描述"
+.PP 
+\fBHiEasyX\fP 库的 GDI+ 绘图模块 
+
+
+.PP
+\fB作者\fP
+.RS 4
+huidong 
+.RE
+.PP
+
+.PP
+在文件 \fBHiGdiplus\&.h\fP 中定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

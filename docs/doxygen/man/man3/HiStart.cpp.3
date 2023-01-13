@@ -1,0 +1,186 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiStart.cpp" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiStart.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiStart\&.h'\fP
+.br
+\fC#include <graphics\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsEdgePoint\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBGetDstPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetSrcPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBBlur\fP (DWORD *pMem)"
+.br
+.in -1c
+.SS "变量"
+
+.in +1c
+.ti -1c
+.RI "POINT * \fBg_pDst\fP"
+.br
+.ti -1c
+.RI "POINT * \fBg_pSrc\fP"
+.br
+.ti -1c
+.RI "int \fBg_nWidth\fP"
+.br
+.ti -1c
+.RI "int \fBg_nHeight\fP"
+.br
+.ti -1c
+.RI "int \fBg_nCount\fP"
+.br
+.in -1c
+.SH "函数说明"
+.PP 
+.SS "void Blur (DWORD * pMem)"
+
+.PP
+在文件 HiStart\&.cpp 第 95 行定义\&.
+.PP
+.nf
+96 {
+97     for (int i = 640; i < 640 * 479; i++)
+98     {
+99         pMem[i] = RGB(
+100             (GetRValue(pMem[i]) + GetRValue(pMem[i - 640]) + GetRValue(pMem[i - 1]) + GetRValue(pMem[i + 1]) + GetRValue(pMem[i + 640])) / 5\&.f,
+101             (GetGValue(pMem[i]) + GetGValue(pMem[i - 640]) + GetGValue(pMem[i - 1]) + GetGValue(pMem[i + 1]) + GetGValue(pMem[i + 640])) / 5\&.1f,
+102             (GetBValue(pMem[i]) + GetBValue(pMem[i - 640]) + GetBValue(pMem[i - 1]) + GetBValue(pMem[i + 1]) + GetBValue(pMem[i + 640])) / 5\&.1f);
+103     }
+104 }
+.fi
+.SS "void GetDstPoints ()"
+
+.PP
+在文件 HiStart\&.cpp 第 36 行定义\&.
+.PP
+.nf
+37 {
+38     // 设置临时绘图对象
+39     IMAGE img;
+40     SetWorkingImage(&img);
+41 
+42     // 定义目标字符串
+43     TCHAR s[] = _T("Hi EasyX");
+44 
+45     // 计算目标字符串的宽高，并调整临时绘图对象的尺寸
+46     setcolor(WHITE);
+47     setfont(120, 0, _T("Arial"), 0, 0, 1000, false, false, false);
+48     g_nWidth = textwidth(s);
+49     g_nHeight = textheight(s);
+50     Resize(&img, g_nWidth, g_nHeight);
+51 
+52     // 输出目标字符串至 img 对象
+53     outtextxy(0, 0, s);
+54 
+55     // 计算构成目标字符串的点的数量
+56     int x, y;
+57     g_nCount = 0;
+58     for (x = 0; x < g_nWidth; x++)
+59         for (y = 0; y < g_nHeight; y++)
+60             if (IsEdgePoint(x, y))
+61                 g_nCount++;
+62 
+63     // 计算目标数据
+64     g_pDst = new POINT[g_nCount];
+65     int i = 0;
+66     for (x = 0; x < g_nWidth; x++)
+67         for (y = 0; y < g_nHeight; y++)
+68             if (IsEdgePoint(x, y))
+69             {
+70                 g_pDst[i]\&.x = x + (640 - g_nWidth) / 2;
+71                 g_pDst[i]\&.y = y + (480 - g_nHeight) / 2 - 20;
+72                 i++;
+73             }
+74 
+75     // 恢复对屏幕的绘图操作
+76     SetWorkingImage(nullptr);
+77 }
+.fi
+.SS "void GetSrcPoints ()"
+
+.PP
+在文件 HiStart\&.cpp 第 80 行定义\&.
+.PP
+.nf
+81 {
+82     // 设置随机种子
+83     srand((unsigned int)time(nullptr));
+84 
+85     // 设置随机的源数据
+86     g_pSrc = new POINT[g_nCount];
+87     for (int i = 0; i < g_nCount; i++)
+88     {
+89         g_pSrc[i]\&.x = rand() % 640;
+90         g_pSrc[i]\&.y = rand() % 480;
+91     }
+92 }
+.fi
+.SS "bool IsEdgePoint (int x, int y)"
+
+.PP
+在文件 HiStart\&.cpp 第 14 行定义\&.
+.PP
+.nf
+15 {
+16     //return getpixel(x, y) == WHITE;
+17 
+18     //POINT t[4] = { {0,1}, {0,-1}, {1,0}, {-1,0} };
+19     //POINT t[4] = { {0,2}, {0,-2}, {2,0}, {-2,0} };
+20     POINT t[4] = { {0,4}, {0,-1}, {4,0}, {-1,0} };
+21     if (getpixel(x, y) != WHITE)
+22     {
+23         return false;
+24     }
+25     for (int i = 0; i < 4; i++)
+26     {
+27         if (getpixel(x + t[i]\&.x, y + t[i]\&.y) != WHITE)
+28         {
+29             return true;
+30         }
+31     }
+32     return false;
+33 }
+.fi
+.SH "变量说明"
+.PP 
+.SS "int g_nCount"
+
+.PP
+在文件 HiStart\&.cpp 第 11 行定义\&.
+.SS "int g_nHeight"
+
+.PP
+在文件 HiStart\&.cpp 第 10 行定义\&.
+.SS "int g_nWidth"
+
+.PP
+在文件 HiStart\&.cpp 第 9 行定义\&.
+.SS "POINT* g_pDst"
+
+.PP
+在文件 HiStart\&.cpp 第 7 行定义\&.
+.SS "POINT* g_pSrc"
+
+.PP
+在文件 HiStart\&.cpp 第 8 行定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

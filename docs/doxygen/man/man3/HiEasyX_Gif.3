@@ -1,0 +1,651 @@
+.TH "HiEasyX::Gif" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::Gif
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiGif\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBGif\fP (const WCHAR *gifFileName=nullptr, HDC hdc=GetImageHDC())"
+.br
+.ti -1c
+.RI "\fBGif\fP (const \fBGif\fP &gif)"
+.br
+.ti -1c
+.RI "virtual \fB~Gif\fP ()"
+.br
+.ti -1c
+.RI "\fBGif\fP & \fBoperator=\fP (const \fBGif\fP &gif)"
+.br
+.ti -1c
+.RI "void \fBload\fP (const WCHAR *gifFileName)"
+.br
+.RI "加载图像 "
+.ti -1c
+.RI "void \fBbind\fP (HDC hdc)"
+.br
+.RI "绑定设备 "
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "清空图像 "
+.ti -1c
+.RI "void \fBsetPos\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "int \fBgetX\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetY\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetOrginWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetOrginHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetFrameCount\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetCurFrame\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetDelayTime\fP (int frame) const"
+.br
+.ti -1c
+.RI "void \fBsetDelayTime\fP (int frame, long time_ms)"
+.br
+.ti -1c
+.RI "void \fBsetAllDelayTime\fP (long time_ms)"
+.br
+.ti -1c
+.RI "void \fBupdateTime\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBdrawFrame\fP (int frame)"
+.br
+.ti -1c
+.RI "void \fBdrawFrame\fP (int frame, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBgetimage\fP (IMAGE *pimg, int frame)"
+.br
+.RI "获取图像 "
+.ti -1c
+.RI "void \fBplay\fP ()"
+.br
+.ti -1c
+.RI "void \fBpause\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoggle\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsPlaying\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool enable)"
+.br
+.ti -1c
+.RI "bool \fBIsVisible\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsAnimation\fP () const"
+.br
+.ti -1c
+.RI "void \fBresetPlayState\fP ()"
+.br
+.RI "重置播放状态 "
+.ti -1c
+.RI "void \fBinfo\fP () const"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+
+.PP
+.nf
+
+    \fBGif\fP 动图
+.fi
+.PP
+.PP
+.PP
+.nf
+ 使用方法：
+    1\&. load 加载图像
+    2\&. bind 绑定输出 HDC
+    3\&. （可选）setPos 设置位置
+    4\&. （可选）setSize 设置缩放大小（为 0 表示原图大小）
+    5\&. play 开始播放
+    6\&. draw 绘制到 HDC
+.fi
+.PP
+.PP
+\fBBug\fP
+.RS 4
+.RE
+.PP
+.PP
+.nf
+
+    1\&. 释放时可能崩溃
+    2\&. 对绑定的 HDC 调整大小可能导致崩溃
+.fi
+.PP
+ 
+.PP
+在文件 HiGif\&.h 第 34 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::Gif::Gif (const WCHAR * gifFileName = \fCnullptr\fP, HDC hdc = \fCGetImageHDC()\fP)"
+
+.PP
+在文件 HiGif\&.cpp 第 8 行定义\&.
+.PP
+.nf
+9     {
+10         init();
+11         if (gifFileName != nullptr)
+12             load(gifFileName);
+13         bind(hdc);
+14     }
+.fi
+.SS "HiEasyX::Gif::Gif (const \fBGif\fP & gif)"
+
+.PP
+在文件 HiGif\&.cpp 第 17 行定义\&.
+.PP
+.nf
+18     {
+19         copy(gif);
+20     }
+.fi
+.SS "HiEasyX::Gif::~Gif ()\fC [virtual]\fP"
+
+.PP
+在文件 HiGif\&.cpp 第 23 行定义\&.
+.PP
+.nf
+24     {
+25         delete gifImage;
+26         delete pItem;
+27         delete graphics;
+28     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::Gif::bind (HDC hdc)"
+
+.PP
+绑定设备 
+.PP
+\fB参数\fP
+.RS 4
+\fIhdc\fP 绘图设备 
+.RE
+.PP
+
+.PP
+在文件 HiGif\&.cpp 第 67 行定义\&.
+.PP
+.nf
+68     {
+69         this->hdc = hdc;
+70         if (graphics != nullptr)
+71             delete graphics;
+72         graphics = Gdiplus::Graphics::FromHDC(hdc);
+73     }
+.fi
+.SS "void HiEasyX::Gif::clear ()"
+
+.PP
+清空图像 
+.PP
+在文件 HiGif\&.cpp 第 76 行定义\&.
+.PP
+.nf
+77     {
+78         if (gifImage) {
+79             delete gifImage;
+80             gifImage = nullptr;
+81         }
+82 
+83         if (pItem) {
+84             delete pItem;
+85             pItem = nullptr;
+86         }
+87         frameCount = 0;
+88     }
+.fi
+.SS "void HiEasyX::Gif::draw ()"
+
+.PP
+在文件 HiGif\&.cpp 第 120 行定义\&.
+.PP
+.nf
+121     {
+122         draw(x, y);
+123     }
+.fi
+.SS "void HiEasyX::Gif::draw (int x, int y)"
+
+.PP
+在文件 HiGif\&.cpp 第 126 行定义\&.
+.PP
+.nf
+127     {
+128         updateTime();
+129         drawFrame(curFrame, x, y);
+130     }
+.fi
+.SS "void HiEasyX::Gif::drawFrame (int frame)"
+
+.PP
+在文件 HiGif\&.cpp 第 133 行定义\&.
+.PP
+.nf
+134     {
+135         drawFrame(frame, x, y);
+136     }
+.fi
+.SS "void HiEasyX::Gif::drawFrame (int frame, int x, int y)"
+
+.PP
+在文件 HiGif\&.cpp 第 139 行定义\&.
+.PP
+.nf
+140     {
+141         if (!visible)
+142             return;
+143         int w = width, h = height;
+144         if (w == 0 && h == 0) {
+145             w = gifImage->GetWidth();
+146             h = gifImage->GetHeight();
+147         }
+148         if (frameCount != 0 && gifImage && 0 <= frame) {
+149             frame %= frameCount;
+150             gifImage->SelectActiveFrame(&Gdiplus::FrameDimensionTime, frame);
+151             graphics->DrawImage(gifImage, x, y, w, h);
+152         }
+153     }
+.fi
+.SS "int HiEasyX::Gif::getCurFrame () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 101 行定义\&.
+.PP
+.nf
+101 { return curFrame; }
+.fi
+.SS "int HiEasyX::Gif::getDelayTime (int frame) const"
+
+.PP
+在文件 HiGif\&.cpp 第 182 行定义\&.
+.PP
+.nf
+183     {
+184         if (frame < 0 || frameCount <= frame ||
+185             !pItem || pItem->length <= (unsigned int)frame)
+186             return 0;
+187         else
+188             return ((long*)pItem->value)[frame] * 10;
+189     }
+.fi
+.SS "int HiEasyX::Gif::getFrameCount () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 100 行定义\&.
+.PP
+.nf
+100 { return frameCount; }
+.fi
+.SS "int HiEasyX::Gif::getHeight () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 93 行定义\&.
+.PP
+.nf
+93 { return height; }
+.fi
+.SS "void HiEasyX::Gif::getimage (IMAGE * pimg, int frame)"
+
+.PP
+获取图像 
+.PP
+\fB参数\fP
+.RS 4
+\fIpimg\fP 载体 
+.br
+\fIframe\fP 帧索引 
+.RE
+.PP
+
+.PP
+在文件 HiGif\&.cpp 第 156 行定义\&.
+.PP
+.nf
+157     {
+158         if (frame < 0 || frameCount <= frame)
+159             return;
+160 
+161         int width = gifImage->GetWidth(), height = gifImage->GetHeight();
+162 
+163         if (width != pimg->getwidth() || height != pimg->getheight())
+164             Resize(pimg, width, height);
+165 
+166         // 自定义图像缓存区（ARGB）
+167         Gdiplus::BitmapData bitmapData;
+168         bitmapData\&.Stride = width * 4;
+169         int buffSize = width * height * sizeof(COLORREF);
+170         bitmapData\&.Scan0 = GetImageBuffer(pimg);
+171 
+172         gifImage->SelectActiveFrame(&Gdiplus::FrameDimensionTime, frame);
+173         Gdiplus::Rect rect(0, 0, width, height);
+174         // 以 32 位像素 ARGB 格式读取， 自定义缓存区
+175 
+176         gifImage->LockBits(&rect,
+177             Gdiplus::ImageLockModeRead | Gdiplus::ImageLockModeUserInputBuf, PixelFormat32bppARGB, &bitmapData);
+178         gifImage->UnlockBits(&bitmapData);
+179     }
+.fi
+.SS "int HiEasyX::Gif::getOrginHeight () const"
+
+.PP
+在文件 HiGif\&.cpp 第 99 行定义\&.
+.PP
+.nf
+100     {
+101         if (!gifImage)
+102             return 0;
+103         return gifImage->GetHeight();
+104     }
+.fi
+.SS "int HiEasyX::Gif::getOrginWidth () const"
+
+.PP
+在文件 HiGif\&.cpp 第 91 行定义\&.
+.PP
+.nf
+92     {
+93         if (!gifImage)
+94             return 0;
+95         return gifImage->GetWidth();
+96     }
+.fi
+.SS "int HiEasyX::Gif::getWidth () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 92 行定义\&.
+.PP
+.nf
+92 { return width; }
+.fi
+.SS "int HiEasyX::Gif::getX () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 88 行定义\&.
+.PP
+.nf
+88 { return x; }
+.fi
+.SS "int HiEasyX::Gif::getY () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 89 行定义\&.
+.PP
+.nf
+89 { return y; }
+.fi
+.SS "void HiEasyX::Gif::info () const"
+
+.PP
+在文件 HiGif\&.cpp 第 247 行定义\&.
+.PP
+.nf
+248     {
+249         printf("绘制区域大小: %d x %d\n", getWidth(), getHeight());
+250         printf("原图像大小 : %d x %d\n", getOrginWidth(), getOrginHeight());
+251         int frameCnt = getFrameCount();
+252         printf("帧数: %d\n", getFrameCount());
+253         printf("帧的延时时间:\n");
+254         for (int i = 0; i < frameCnt; i++)
+255             printf("第%3d 帧:%4d ms\n", i, getDelayTime(i));
+256     }
+.fi
+.SS "bool HiEasyX::Gif::IsAnimation () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 134 行定义\&.
+.PP
+.nf
+134 { return frameCount > 1; }
+.fi
+.SS "bool HiEasyX::Gif::IsPlaying () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 129 行定义\&.
+.PP
+.nf
+129 { return playing; }
+.fi
+.SS "bool HiEasyX::Gif::IsVisible () const\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 132 行定义\&.
+.PP
+.nf
+132 { return visible; }
+.fi
+.SS "void HiEasyX::Gif::load (const WCHAR * gifFileName)"
+
+.PP
+加载图像 
+.PP
+\fB参数\fP
+.RS 4
+\fIgifFileName\fP 图像文件路径 
+.RE
+.PP
+
+.PP
+在文件 HiGif\&.cpp 第 58 行定义\&.
+.PP
+.nf
+59     {
+60         if (gifImage != nullptr)
+61             delete gifImage;
+62         gifImage = new Gdiplus::Bitmap(gifFileName);
+63         read();
+64     }
+.fi
+.SS "\fBGif\fP & HiEasyX::Gif::operator= (const \fBGif\fP & gif)"
+
+.PP
+在文件 HiGif\&.cpp 第 31 行定义\&.
+.PP
+.nf
+32     {
+33         if (this == &gif)           return *this;
+34         if (graphics != nullptr)    delete graphics;
+35         if (pItem != nullptr)       delete pItem;
+36         if (gifImage != nullptr)    delete gifImage;
+37 
+38         copy(gif);
+39 
+40         return *this;
+41     }
+.fi
+.SS "void HiEasyX::Gif::pause ()"
+
+.PP
+在文件 HiGif\&.cpp 第 223 行定义\&.
+.PP
+.nf
+224     {
+225         if (playing) {
+226             playing = false;
+227             this->pauseTime = clock();
+228         }
+229     }
+.fi
+.SS "void HiEasyX::Gif::play ()"
+
+.PP
+在文件 HiGif\&.cpp 第 209 行定义\&.
+.PP
+.nf
+210     {
+211         playing = true;
+212         clock_t sysTime = clock();
+213         if (frameBaseTime == 0) {
+214             pauseTime = frameBaseTime = sysTime;
+215             curFrame = 0;
+216             frameDelayTime = getDelayTime(curFrame);
+217         }
+218         else
+219             frameBaseTime += sysTime - pauseTime;
+220     }
+.fi
+.SS "void HiEasyX::Gif::resetPlayState ()"
+
+.PP
+重置播放状态 
+.PP
+在文件 HiGif\&.cpp 第 238 行定义\&.
+.PP
+.nf
+239     {
+240         curFrame = 0;
+241         curDelayTime = frameBaseTime = frameDelayTime = 0;
+242         pauseTime = 0;
+243         playing = false;
+244     }
+.fi
+.SS "void HiEasyX::Gif::setAllDelayTime (long time_ms)"
+
+.PP
+在文件 HiGif\&.cpp 第 202 行定义\&.
+.PP
+.nf
+203     {
+204         for (int i = 0; i < frameCount; i++)
+205             ((long*)pItem->value)[i] = time_ms / 10;
+206     }
+.fi
+.SS "void HiEasyX::Gif::setDelayTime (int frame, long time_ms)"
+
+.PP
+在文件 HiGif\&.cpp 第 192 行定义\&.
+.PP
+.nf
+193     {
+194         if (frame < 0 || frameCount <= frame ||
+195             !pItem || pItem->length <= (unsigned int)frame)
+196             return;
+197         else
+198             ((long*)pItem->value)[frame] = time_ms / 10;
+199     }
+.fi
+.SS "void HiEasyX::Gif::setPos (int x, int y)"
+
+.PP
+在文件 HiGif\&.cpp 第 106 行定义\&.
+.PP
+.nf
+107     {
+108         this->x = x;
+109         this->y = y;
+110     }
+.fi
+.SS "void HiEasyX::Gif::setSize (int width, int height)"
+
+.PP
+在文件 HiGif\&.cpp 第 113 行定义\&.
+.PP
+.nf
+114     {
+115         this->width = width;
+116         this->height = height;
+117     }
+.fi
+.SS "void HiEasyX::Gif::setVisible (bool enable)\fC [inline]\fP"
+
+.PP
+在文件 HiGif\&.h 第 131 行定义\&.
+.PP
+.nf
+131 { visible = enable; }
+.fi
+.SS "void HiEasyX::Gif::toggle ()"
+
+.PP
+在文件 HiGif\&.cpp 第 232 行定义\&.
+.PP
+.nf
+233     {
+234         playing ? pause() : play();
+235     }
+.fi
+.SS "void HiEasyX::Gif::updateTime ()"
+
+.PP
+在文件 HiGif\&.cpp 第 304 行定义\&.
+.PP
+.nf
+305     {
+306         // 图像为空，或者不是动图，或者没有调用过play()播放（）
+307         if (frameCount <= 1 || frameBaseTime == 0
+308             || (pItem && pItem->length == 0))
+309             return;
+310 
+311         // 根据播放或暂停计算帧播放时间
+312         curDelayTime = playing ? (clock() - frameBaseTime) : (pauseTime - frameBaseTime);
+313 
+314         int cnt = 0, totalTime = 0;
+315 
+316         // 间隔时间太长可能会跳过多帧
+317         while (curDelayTime >= frameDelayTime) {
+318             curDelayTime -= frameDelayTime;
+319             frameBaseTime += frameDelayTime;
+320 
+321             // 切换到下一帧
+322             if (++curFrame >= frameCount)
+323                 curFrame = 0;
+324             frameDelayTime = getDelayTime(curFrame);
+325 
+326             totalTime += frameDelayTime;
+327 
+328             // 多帧图像，但总延时时间为0的处理
+329             if (++cnt == frameCount && totalTime == 0)
+330                 break;
+331         }
+332     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

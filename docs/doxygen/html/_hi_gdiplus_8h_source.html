@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HiEasyX: E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiGdiplus.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="favorite.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HiEasyX
+   &#160;<span id="projectnumber">Ver 0.3.0</span>
+   </div>
+   <div id="projectbrief">EasyX 全面扩展库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_hi_gdiplus_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">HiGdiplus.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_hi_gdiplus_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;graphics.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;gdiplus.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_hi_easy_x.html">HiEasyX</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a9bec29415b714230fa672212b32c49b3">Gdiplus_Try_Starup</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#ad65546b7f7ed430e38ec43fc9d931e58">Gdiplus_Shutdown</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a9c26ac73ed3750a3cf958a21fd32d5d8">Gdiplus_Line</a>(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">float</span> x1,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">float</span> y1,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">float</span> x2,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">float</span> y2,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Gdiplus::Color linecolor,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> linewidth,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a9f1f99406ca6d591c82c2e7a20b5f87e">Gdiplus_Polygon</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        HDC hdc, </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">int</span> points_num, </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Gdiplus::PointF* points,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Gdiplus::Color linecolor, </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">float</span> linewidth, </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#ae83199ed61c033fc35bceb7c84c30ee1">Gdiplus_SolidPolygon</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> points_num,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        Gdiplus::PointF* points,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Gdiplus::Color fillcolor,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a4b7ed4079ce385f93520324cad16789b">Gdiplus_Rectangle</a>(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        Gdiplus::Color linecolor,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">float</span> linewidth,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a8fe97700f570f1589c1f1938be4975e4">Gdiplus_SolidRectangle</a>(</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Gdiplus::Color fillcolor,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a0a06449ce392ca0c14a2179c4f6693c3">Gdiplus_Ellipse</a>(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Gdiplus::Color linecolor,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">float</span> linewidth,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a714568794cce20b11e2ccadb10f3fdc3">Gdiplus_SolidEllipse</a>(</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        Gdiplus::Color fillcolor,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a5f94f4952661c433975f27937437b533">Gdiplus_Pie</a>(</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        Gdiplus::Color linecolor,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordtype">float</span> linewidth,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a41e1f036f6256a1a6e0b943388f5e77c">Gdiplus_SolidPie</a>(</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        Gdiplus::Color fillcolor,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a169dc37c2b3c5480bc9f0b72f63471ed">Gdiplus_Arc</a>(</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        HDC hdc,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        Gdiplus::Color linecolor,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">float</span> linewidth,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        Gdiplus::SmoothingMode smoothing_mode</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// 注：以下 EasyX 风格接口中</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">//      </span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">//      enable_alpha    表示是否使用传入颜色的 alpha 值</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">//      enable_aa       表示是否开启抗锯齿</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">//      pImg            表示目标绘制画布</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    Gdiplus::Color <a class="code" href="namespace_hi_easy_x.html#a11596a0118a766c1f45cecb2d88034b6">ConvertToGdiplusColor</a>(COLORREF color, <span class="keywordtype">bool</span> reserve_alpha = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#ad80f12072c4150be66cddd8d3fd6b244">EasyX_Gdiplus_Line</a>(</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">float</span> x1,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordtype">float</span> y1,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordtype">float</span> x2,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordtype">float</span> y2,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    );</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#ad702244891b91c86e7d7cf7b2b1540e7">EasyX_Gdiplus_Polygon</a>(</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">int</span> points_num,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        POINT* points,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    );</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a1547627ccf703da388398db3c73d5f92">EasyX_Gdiplus_SolidPolygon</a>(</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordtype">int</span> points_num,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        POINT* points,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    );</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#adfb9f9d6f48971cafb0406b138a571f7">EasyX_Gdiplus_FillPolygon</a>(</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordtype">int</span> points_num,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        POINT* points,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    );</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a8748f85b001f58a60a4c187e9f5f9f05">EasyX_Gdiplus_Rectangle</a>(</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    );</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a8003c21ad7a4b45144fa56c05364a0d2">EasyX_Gdiplus_SolidRectangle</a>(</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    );</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a5885b67a80912fe001866f2bb20275ca">EasyX_Gdiplus_FillRectangle</a>(</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    );</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a4c892fa107ea30eb73b17449844d4c34">EasyX_Gdiplus_Ellipse</a>(</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    );</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a4ab0ec1b2a4e90bba288e59cdd527861">EasyX_Gdiplus_SolidEllipse</a>(</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    );</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#af5a0cc9a3d9835581bfa0471e7a315fc">EasyX_Gdiplus_FillEllipse</a>(</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    );</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#a64c671d870a4b20c8599b8d6783b16b3">EasyX_Gdiplus_Pie</a>(</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    );</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#aad5e4e8749e504e6b63918e7e23ce6fb">EasyX_Gdiplus_SolidPie</a>(</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    );</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#addb850b74857441d6b1f7dcba3b80537">EasyX_Gdiplus_FillPie</a>(</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        COLORREF fillcolor,</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    );</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_hi_easy_x.html#ac0c4d0f2c28181cb6cb5c8c4baa96b08">EasyX_Gdiplus_Arc</a>(</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordtype">float</span> w,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordtype">float</span> h,</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordtype">float</span> stangle,</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordtype">float</span> endangle,</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        COLORREF linecolor,</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordtype">float</span> linewidth = 1,</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordtype">bool</span> enable_alpha = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordtype">bool</span> enable_aa = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        IMAGE* pImg = <span class="keyword">nullptr</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    );</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespace_hi_easy_x_html_a9c26ac73ed3750a3cf958a21fd32d5d8"><div class="ttname"><a href="namespace_hi_easy_x.html#a9c26ac73ed3750a3cf958a21fd32d5d8">HiEasyX::Gdiplus_Line</a></div><div class="ttdeci">void Gdiplus_Line(HDC hdc, float x1, float y1, float x2, float y2, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画线</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00040">HiGdiplus.cpp:40</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a11596a0118a766c1f45cecb2d88034b6"><div class="ttname"><a href="namespace_hi_easy_x.html#a11596a0118a766c1f45cecb2d88034b6">HiEasyX::ConvertToGdiplusColor</a></div><div class="ttdeci">Gdiplus::Color ConvertToGdiplusColor(COLORREF color, bool reserve_alpha)</div><div class="ttdoc">转换 COLORREF 到 Gdiplus::Color</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00030">HiGdiplus.cpp:30</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_af5a0cc9a3d9835581bfa0471e7a315fc"><div class="ttname"><a href="namespace_hi_easy_x.html#af5a0cc9a3d9835581bfa0471e7a315fc">HiEasyX::EasyX_Gdiplus_FillEllipse</a></div><div class="ttdeci">void EasyX_Gdiplus_FillEllipse(float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画有边框填充椭圆</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00429">HiGdiplus.cpp:429</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html"><div class="ttname"><a href="namespace_hi_easy_x.html">HiEasyX</a></div><div class="ttdef"><b>Definition:</b> <a href="_hi_canvas_8cpp_source.html#l00007">HiCanvas.cpp:7</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_ac0c4d0f2c28181cb6cb5c8c4baa96b08"><div class="ttname"><a href="namespace_hi_easy_x.html#ac0c4d0f2c28181cb6cb5c8c4baa96b08">HiEasyX::EasyX_Gdiplus_Arc</a></div><div class="ttdeci">void EasyX_Gdiplus_Arc(float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画圆弧（传入逆时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00509">HiGdiplus.cpp:509</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a8003c21ad7a4b45144fa56c05364a0d2"><div class="ttname"><a href="namespace_hi_easy_x.html#a8003c21ad7a4b45144fa56c05364a0d2">HiEasyX::EasyX_Gdiplus_SolidRectangle</a></div><div class="ttdeci">void EasyX_Gdiplus_SolidRectangle(float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画无边框填充矩形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00353">HiGdiplus.cpp:353</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a0a06449ce392ca0c14a2179c4f6693c3"><div class="ttname"><a href="namespace_hi_easy_x.html#a0a06449ce392ca0c14a2179c4f6693c3">HiEasyX::Gdiplus_Ellipse</a></div><div class="ttdeci">void Gdiplus_Ellipse(HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画椭圆</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00134">HiGdiplus.cpp:134</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a8fe97700f570f1589c1f1938be4975e4"><div class="ttname"><a href="namespace_hi_easy_x.html#a8fe97700f570f1589c1f1938be4975e4">HiEasyX::Gdiplus_SolidRectangle</a></div><div class="ttdeci">void Gdiplus_SolidRectangle(HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画无边框填充矩形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00115">HiGdiplus.cpp:115</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a8748f85b001f58a60a4c187e9f5f9f05"><div class="ttname"><a href="namespace_hi_easy_x.html#a8748f85b001f58a60a4c187e9f5f9f05">HiEasyX::EasyX_Gdiplus_Rectangle</a></div><div class="ttdeci">void EasyX_Gdiplus_Rectangle(float x, float y, float w, float h, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画矩形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00332">HiGdiplus.cpp:332</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_ad65546b7f7ed430e38ec43fc9d931e58"><div class="ttname"><a href="namespace_hi_easy_x.html#ad65546b7f7ed430e38ec43fc9d931e58">HiEasyX::Gdiplus_Shutdown</a></div><div class="ttdeci">void Gdiplus_Shutdown()</div><div class="ttdoc">关闭 GDI+</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00021">HiGdiplus.cpp:21</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_addb850b74857441d6b1f7dcba3b80537"><div class="ttname"><a href="namespace_hi_easy_x.html#addb850b74857441d6b1f7dcba3b80537">HiEasyX::EasyX_Gdiplus_FillPie</a></div><div class="ttdeci">void EasyX_Gdiplus_FillPie(float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画有边框填充饼状图（传入逆时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00490">HiGdiplus.cpp:490</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a4ab0ec1b2a4e90bba288e59cdd527861"><div class="ttname"><a href="namespace_hi_easy_x.html#a4ab0ec1b2a4e90bba288e59cdd527861">HiEasyX::EasyX_Gdiplus_SolidEllipse</a></div><div class="ttdeci">void EasyX_Gdiplus_SolidEllipse(float x, float y, float w, float h, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画无边框填充椭圆</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00410">HiGdiplus.cpp:410</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a5885b67a80912fe001866f2bb20275ca"><div class="ttname"><a href="namespace_hi_easy_x.html#a5885b67a80912fe001866f2bb20275ca">HiEasyX::EasyX_Gdiplus_FillRectangle</a></div><div class="ttdeci">void EasyX_Gdiplus_FillRectangle(float x, float y, float w, float h, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画有边框填充矩形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00372">HiGdiplus.cpp:372</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a5f94f4952661c433975f27937437b533"><div class="ttname"><a href="namespace_hi_easy_x.html#a5f94f4952661c433975f27937437b533">HiEasyX::Gdiplus_Pie</a></div><div class="ttdeci">void Gdiplus_Pie(HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画饼状图（传入顺时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00173">HiGdiplus.cpp:173</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a4c892fa107ea30eb73b17449844d4c34"><div class="ttname"><a href="namespace_hi_easy_x.html#a4c892fa107ea30eb73b17449844d4c34">HiEasyX::EasyX_Gdiplus_Ellipse</a></div><div class="ttdeci">void EasyX_Gdiplus_Ellipse(float x, float y, float w, float h, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画椭圆</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00389">HiGdiplus.cpp:389</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a9f1f99406ca6d591c82c2e7a20b5f87e"><div class="ttname"><a href="namespace_hi_easy_x.html#a9f1f99406ca6d591c82c2e7a20b5f87e">HiEasyX::Gdiplus_Polygon</a></div><div class="ttdeci">void Gdiplus_Polygon(HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画多边形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00060">HiGdiplus.cpp:60</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_adfb9f9d6f48971cafb0406b138a571f7"><div class="ttname"><a href="namespace_hi_easy_x.html#adfb9f9d6f48971cafb0406b138a571f7">HiEasyX::EasyX_Gdiplus_FillPolygon</a></div><div class="ttdeci">void EasyX_Gdiplus_FillPolygon(int points_num, POINT *points, COLORREF linecolor, COLORREF fillcolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画有边框填充多边形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00317">HiGdiplus.cpp:317</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a41e1f036f6256a1a6e0b943388f5e77c"><div class="ttname"><a href="namespace_hi_easy_x.html#a41e1f036f6256a1a6e0b943388f5e77c">HiEasyX::Gdiplus_SolidPie</a></div><div class="ttdeci">void Gdiplus_SolidPie(HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画无边框填充饼状图（传入顺时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00195">HiGdiplus.cpp:195</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a9bec29415b714230fa672212b32c49b3"><div class="ttname"><a href="namespace_hi_easy_x.html#a9bec29415b714230fa672212b32c49b3">HiEasyX::Gdiplus_Try_Starup</a></div><div class="ttdeci">void Gdiplus_Try_Starup()</div><div class="ttdoc">注意，必须先启动 GDI+，才能使用下面的绘图函数</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00012">HiGdiplus.cpp:12</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_aad5e4e8749e504e6b63918e7e23ce6fb"><div class="ttname"><a href="namespace_hi_easy_x.html#aad5e4e8749e504e6b63918e7e23ce6fb">HiEasyX::EasyX_Gdiplus_SolidPie</a></div><div class="ttdeci">void EasyX_Gdiplus_SolidPie(float x, float y, float w, float h, float stangle, float endangle, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画无边框填充饼状图（传入逆时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00469">HiGdiplus.cpp:469</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_ad80f12072c4150be66cddd8d3fd6b244"><div class="ttname"><a href="namespace_hi_easy_x.html#ad80f12072c4150be66cddd8d3fd6b244">HiEasyX::EasyX_Gdiplus_Line</a></div><div class="ttdeci">void EasyX_Gdiplus_Line(float x1, float y1, float x2, float y2, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画直线</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00238">HiGdiplus.cpp:238</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_ad702244891b91c86e7d7cf7b2b1540e7"><div class="ttname"><a href="namespace_hi_easy_x.html#ad702244891b91c86e7d7cf7b2b1540e7">HiEasyX::EasyX_Gdiplus_Polygon</a></div><div class="ttdeci">void EasyX_Gdiplus_Polygon(int points_num, POINT *points, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画多边形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00259">HiGdiplus.cpp:259</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_ae83199ed61c033fc35bceb7c84c30ee1"><div class="ttname"><a href="namespace_hi_easy_x.html#ae83199ed61c033fc35bceb7c84c30ee1">HiEasyX::Gdiplus_SolidPolygon</a></div><div class="ttdeci">void Gdiplus_SolidPolygon(HDC hdc, int points_num, Gdiplus::PointF *points, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画无边框填充多边形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00078">HiGdiplus.cpp:78</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a64c671d870a4b20c8599b8d6783b16b3"><div class="ttname"><a href="namespace_hi_easy_x.html#a64c671d870a4b20c8599b8d6783b16b3">HiEasyX::EasyX_Gdiplus_Pie</a></div><div class="ttdeci">void EasyX_Gdiplus_Pie(float x, float y, float w, float h, float stangle, float endangle, COLORREF linecolor, float linewidth, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画饼状图（传入逆时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00446">HiGdiplus.cpp:446</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a714568794cce20b11e2ccadb10f3fdc3"><div class="ttname"><a href="namespace_hi_easy_x.html#a714568794cce20b11e2ccadb10f3fdc3">HiEasyX::Gdiplus_SolidEllipse</a></div><div class="ttdeci">void Gdiplus_SolidEllipse(HDC hdc, float x, float y, float w, float h, Gdiplus::Color fillcolor, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画无边框填充椭圆</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00154">HiGdiplus.cpp:154</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a169dc37c2b3c5480bc9f0b72f63471ed"><div class="ttname"><a href="namespace_hi_easy_x.html#a169dc37c2b3c5480bc9f0b72f63471ed">HiEasyX::Gdiplus_Arc</a></div><div class="ttdeci">void Gdiplus_Arc(HDC hdc, float x, float y, float w, float h, float stangle, float endangle, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画圆弧（传入顺时针角度）</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00216">HiGdiplus.cpp:216</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a4b7ed4079ce385f93520324cad16789b"><div class="ttname"><a href="namespace_hi_easy_x.html#a4b7ed4079ce385f93520324cad16789b">HiEasyX::Gdiplus_Rectangle</a></div><div class="ttdeci">void Gdiplus_Rectangle(HDC hdc, float x, float y, float w, float h, Gdiplus::Color linecolor, float linewidth, Gdiplus::SmoothingMode smoothing_mode)</div><div class="ttdoc">画矩形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00095">HiGdiplus.cpp:95</a></div></div>
+<div class="ttc" id="anamespace_hi_easy_x_html_a1547627ccf703da388398db3c73d5f92"><div class="ttname"><a href="namespace_hi_easy_x.html#a1547627ccf703da388398db3c73d5f92">HiEasyX::EasyX_Gdiplus_SolidPolygon</a></div><div class="ttdeci">void EasyX_Gdiplus_SolidPolygon(int points_num, POINT *points, COLORREF fillcolor, bool enable_alpha, bool enable_aa, IMAGE *pImg)</div><div class="ttdoc">画无边框填充多边形</div><div class="ttdef"><b>Definition:</b> <a href="_hi_gdiplus_8cpp_source.html#l00289">HiGdiplus.cpp:289</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ac806fb56071b04220f9882214ac4d4d.html">HiEasyX</a></li><li class="navelem"><a class="el" href="dir_bb30ec1a275f130a60275abb27bbddc6.html">HiEasyX</a></li><li class="navelem"><a class="el" href="_hi_gdiplus_8h.html">HiGdiplus.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

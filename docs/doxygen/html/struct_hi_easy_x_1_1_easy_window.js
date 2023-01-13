@@ -8,6 +8,7 @@ var struct_hi_easy_x_1_1_easy_window =
     [ "hWnd", "struct_hi_easy_x_1_1_easy_window.html#ac28954486f1afeeb94f96e3324f5e67f", null ],
     [ "isAlive", "struct_hi_easy_x_1_1_easy_window.html#a2269803221f80d58069c0cd78d8f3395", null ],
     [ "isBusyProcessing", "struct_hi_easy_x_1_1_easy_window.html#a6a61c4e03119042f085f9b9ed8bedd8c", null ],
+    [ "isNeedFlush", "struct_hi_easy_x_1_1_easy_window.html#a2c672e2524c57f657cc2f2c6d94b9fc4", null ],
     [ "isNewSize", "struct_hi_easy_x_1_1_easy_window.html#afd73c9304cbda5dc953cbf60178eb420", null ],
     [ "isUseTray", "struct_hi_easy_x_1_1_easy_window.html#a00417e6fcb1ef0cc801bc158834a450e", null ],
     [ "isUseTrayMenu", "struct_hi_easy_x_1_1_easy_window.html#ad7209f098495dccc18792ab3c3aa1bce", null ],

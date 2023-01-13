@@ -1,0 +1,320 @@
+.TH "HiEasyX::MusicMCI" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::MusicMCI
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HiMusicMCI\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBMusicMCI\fP () noexcept"
+.br
+.RI "默认构造函数 "
+.ti -1c
+.RI "virtual \fB~MusicMCI\fP ()"
+.br
+.RI "虚析构函数 "
+.ti -1c
+.RI "bool \fBopen\fP (LPCWSTR music) noexcept"
+.br
+.RI "打开音乐 "
+.ti -1c
+.RI "bool \fBplay\fP () noexcept"
+.br
+.RI "播放音乐 "
+.ti -1c
+.RI "bool \fBpause\fP () noexcept"
+.br
+.RI "暂停音乐 "
+.ti -1c
+.RI "bool \fBstop\fP () noexcept"
+.br
+.RI "停止播放 "
+.ti -1c
+.RI "bool \fBclose\fP () noexcept"
+.br
+.RI "关闭音乐 "
+.ti -1c
+.RI "bool \fBgetCurrentTime\fP (DWORD &pos) noexcept"
+.br
+.RI "获取当前播放时间 "
+.ti -1c
+.RI "bool \fBgetTotalTime\fP (DWORD &time) noexcept"
+.br
+.RI "获取音乐总时长 "
+.ti -1c
+.RI "bool \fBsetVolume\fP (size_t volume) noexcept"
+.br
+.RI "设置音量大小 "
+.ti -1c
+.RI "bool \fBsetStartTime\fP (size_t start) noexcept"
+.br
+.RI "设置播放位置 "
+.in -1c
+.SH "详细描述"
+.PP 
+
+.PP
+.nf
+
+    MusicMCI（音乐播放操作层）
+    支持播放、暂停、设置音量、获取播放时间等操作
+.fi
+.PP
+ 
+.PP
+在文件 HiMusicMCI\&.h 第 19 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::MusicMCI::MusicMCI ()\fC [noexcept]\fP"
+
+.PP
+默认构造函数 
+.PP
+在文件 HiMusicMCI\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18         nDeviceID = -1;
+19     }
+.fi
+.SS "HiEasyX::MusicMCI::~MusicMCI ()\fC [virtual]\fP"
+
+.PP
+虚析构函数 
+.PP
+在文件 HiMusicMCI\&.cpp 第 21 行定义\&.
+.PP
+.nf
+22     {
+23         if (nDeviceID != -1) this->close();
+24     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "bool HiEasyX::MusicMCI::close ()\fC [noexcept]\fP"
+
+.PP
+关闭音乐 
+.PP
+在文件 HiMusicMCI\&.cpp 第 94 行定义\&.
+.PP
+.nf
+95     {
+96         MCI_GENERIC_PARMS mciGP{};
+97 
+98         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_CLOSE,
+99             MCI_NOTIFY | MCI_WAIT, (DWORD_PTR)(static_cast<LPVOID>(&mciGP)));
+100         if (dwReturn == 0)
+101         {
+102             nDeviceID = -1;
+103             return true;
+104         }
+105         else
+106             return false;
+107     }
+.fi
+.SS "bool HiEasyX::MusicMCI::getCurrentTime (DWORD & pos)\fC [noexcept]\fP"
+
+.PP
+获取当前播放时间 
+.PP
+在文件 HiMusicMCI\&.cpp 第 111 行定义\&.
+.PP
+.nf
+112     {
+113         MCI_STATUS_PARMS mciSP{};
+114 
+115         mciSP\&.dwItem = MCI_STATUS_POSITION;
+116         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_STATUS,
+117             MCI_STATUS_ITEM, (DWORD_PTR)(static_cast<LPVOID>(&mciSP)));
+118         if (dwReturn == 0)
+119         {
+120             pos = static_cast<DWORD>(mciSP\&.dwReturn);
+121             return true;
+122         }
+123         else
+124         {
+125             pos = 0;
+126             return false;
+127         }
+128     }
+.fi
+.SS "bool HiEasyX::MusicMCI::getTotalTime (DWORD & time)\fC [noexcept]\fP"
+
+.PP
+获取音乐总时长 
+.PP
+在文件 HiMusicMCI\&.cpp 第 132 行定义\&.
+.PP
+.nf
+133     {
+134         MCI_STATUS_PARMS mciSP{};
+135 
+136         mciSP\&.dwItem = MCI_STATUS_LENGTH;
+137         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_STATUS,
+138             MCI_WAIT | MCI_STATUS_ITEM, (DWORD_PTR)(static_cast<LPVOID>(&mciSP)));      // 关键，取得长度
+139         if (dwReturn == 0)
+140         {
+141             time = static_cast<DWORD>(mciSP\&.dwReturn);
+142             return true;
+143         }
+144         else
+145         {
+146             time = 0;
+147             return false;
+148         }
+149     }
+.fi
+.SS "bool HiEasyX::MusicMCI::open (LPCWSTR music)\fC [noexcept]\fP"
+
+.PP
+打开音乐 
+.PP
+在文件 HiMusicMCI\&.cpp 第 28 行定义\&.
+.PP
+.nf
+29     {
+30         MCI_OPEN_PARMS mciOP;
+31 
+32         mciOP\&.lpstrDeviceType = nullptr;
+33         mciOP\&.lpstrElementName = strSongPath;
+34         const DWORD dwReturn = mciSendCommand(0, MCI_OPEN,
+35             MCI_OPEN_ELEMENT | MCI_WAIT | MCI_OPEN_SHAREABLE, (DWORD_PTR)(static_cast<LPVOID>(&mciOP)));
+36 
+37 
+38         if (dwReturn == 0)
+39         {
+40             nDeviceID = mciOP\&.wDeviceID;
+41             return true;
+42         }
+43         else
+44         {
+45             nDeviceID = -1;
+46             return false;
+47         }
+48     }
+.fi
+.SS "bool HiEasyX::MusicMCI::pause ()\fC [noexcept]\fP"
+
+.PP
+暂停音乐 
+.PP
+在文件 HiMusicMCI\&.cpp 第 66 行定义\&.
+.PP
+.nf
+67     {
+68         MCI_GENERIC_PARMS mciGP{};
+69 
+70         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_PAUSE,
+71             MCI_NOTIFY | MCI_WAIT, (DWORD_PTR)(static_cast<LPVOID>(&mciGP)));
+72         if (dwReturn == 0)
+73             return true;
+74         else
+75             return false;
+76     }
+.fi
+.SS "bool HiEasyX::MusicMCI::play ()\fC [noexcept]\fP"
+
+.PP
+播放音乐 
+.PP
+在文件 HiMusicMCI\&.cpp 第 52 行定义\&.
+.PP
+.nf
+53     {
+54         MCI_PLAY_PARMS mciPP{};
+55 
+56         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_PLAY,
+57             MCI_NOTIFY, (DWORD_PTR)(static_cast<LPVOID>(&mciPP)));
+58         if (dwReturn == 0)
+59             return true;
+60         else
+61             return false;
+62     }
+.fi
+.SS "bool HiEasyX::MusicMCI::setStartTime (size_t start)\fC [noexcept]\fP"
+
+.PP
+设置播放位置 
+.PP
+在文件 HiMusicMCI\&.cpp 第 177 行定义\&.
+.PP
+.nf
+178     {
+179         DWORD end_time = 0;
+180         this->getTotalTime(end_time);
+181 
+182         if (start_time > end_time)
+183             return false;
+184 
+185         MCI_PLAY_PARMS mciPlay{};
+186         mciPlay\&.dwFrom = static_cast<DWORD>(start_time);
+187         mciPlay\&.dwTo = static_cast<DWORD>(end_time);
+188         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_PLAY,
+189             MCI_TO | MCI_FROM, (DWORD_PTR)(static_cast<LPVOID>(&mciPlay)));
+190 
+191         if (dwReturn == 0)
+192             return true;
+193         else
+194             return false;
+195     }
+.fi
+.SS "bool HiEasyX::MusicMCI::setVolume (size_t volume)\fC [noexcept]\fP"
+
+.PP
+设置音量大小 
+.PP
+在文件 HiMusicMCI\&.cpp 第 153 行定义\&.
+.PP
+.nf
+154     {
+155         if (nVolumeValue > 1000)
+156         {
+157             nVolumeValue = 1000;
+158         }
+159         else if (nVolumeValue < 0)
+160         {
+161             nVolumeValue = 0;
+162         }
+163 
+164         MCI_DGV_SETAUDIO_PARMS mciDSP;
+165         mciDSP\&.dwItem = MCI_DGV_SETAUDIO_VOLUME;
+166         mciDSP\&.dwValue = static_cast<DWORD>(nVolumeValue);
+167         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_SETAUDIO,
+168             MCI_DGV_SETAUDIO_VALUE | MCI_DGV_SETAUDIO_ITEM, (DWORD_PTR)(static_cast<LPVOID>(&mciDSP)));
+169         if (dwReturn == 0)
+170             return true;
+171         else
+172             return false;
+173     }
+.fi
+.SS "bool HiEasyX::MusicMCI::stop ()\fC [noexcept]\fP"
+
+.PP
+停止播放 
+.PP
+在文件 HiMusicMCI\&.cpp 第 80 行定义\&.
+.PP
+.nf
+81     {
+82         MCI_SEEK_PARMS mciSP{};
+83 
+84         const DWORD dwReturn = mciSendCommand(nDeviceID, MCI_SEEK,
+85             MCI_WAIT | MCI_NOTIFY | MCI_SEEK_TO_START, (DWORD_PTR)(static_cast<LPVOID>(&mciSP)));
+86         if (dwReturn == 0)
+87             return true;
+88         else
+89             return false;
+90     }
+.fi
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

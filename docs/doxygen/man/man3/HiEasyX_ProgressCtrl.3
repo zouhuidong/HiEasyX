@@ -1,0 +1,462 @@
+.TH "HiEasyX::ProgressCtrl" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::ProgressCtrl \- 进度条控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ProgressCtrl\&.h>\fP
+.PP
+继承自 \fBHiEasyX::ControlBase\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressCtrl\fP ()"
+.br
+.ti -1c
+.RI "\fBProgressCtrl\fP (int x, int y, int w, int h, int len)"
+.br
+.ti -1c
+.RI "virtual int \fBGetContentLength\fP () const"
+.br
+.RI "获取内容长度 "
+.ti -1c
+.RI "virtual void \fBSetContentLength\fP (int len)"
+.br
+.RI "设置内容长度 "
+.ti -1c
+.RI "virtual int \fBGetProcess\fP () const"
+.br
+.RI "获取进度（内容长度即为总进度） "
+.ti -1c
+.RI "virtual void \fBSetProcess\fP (int pos)"
+.br
+.RI "设置进度（内容长度即为总进度） "
+.ti -1c
+.RI "virtual void \fBStep\fP ()"
+.br
+.RI "进度加一 "
+.ti -1c
+.RI "virtual COLORREF \fBGetBarColor\fP () const"
+.br
+.RI "获取进度条颜色 "
+.ti -1c
+.RI "virtual void \fBSetBarColor\fP (COLORREF cBar)"
+.br
+.RI "设置进度条颜色 "
+.ti -1c
+.RI "virtual bool \fBGetAnimationState\fP () const"
+.br
+.RI "获取动画启用状态 "
+.ti -1c
+.RI "virtual void \fBEnableAnimation\fP (bool enable)"
+.br
+.RI "设置是否启用动画 "
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.RI "绘制控件 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_bEnableAnimation\fP = true"
+.br
+.RI "是否启用动画效果 "
+.ti -1c
+.RI "int \fBm_nLightPos\fP = 0"
+.br
+.RI "光源位置 "
+.ti -1c
+.RI "clock_t \fBm_tClock\fP = 0"
+.br
+.RI "保留上一次动画的绘制时间 "
+.ti -1c
+.RI "float \fBm_fSpeedRatio\fP = 0\&.4f"
+.br
+.RI "动画速度（每秒经过总长度的多少） "
+.ti -1c
+.RI "float \fBm_fLenRatio\fP = 0\&.8f"
+.br
+.RI "动画光亮效果长度占比 "
+.ti -1c
+.RI "float \fBm_fBarColorLightness\fP = 0\&.35f"
+.br
+.RI "进度条颜色亮度 "
+.ti -1c
+.RI "float \fBm_fBarLightLightness\fP = 0\&.41f"
+.br
+.RI "进度条光源亮度 "
+.ti -1c
+.RI "COLORREF \fBm_cBar\fP"
+.br
+.RI "进度条颜色（不用于亮度采样） "
+.ti -1c
+.RI "float \fBm_fH\fP = 0"
+.br
+.RI "色相信息 "
+.ti -1c
+.RI "float \fBm_fS\fP = 0"
+.br
+.RI "饱和度信息 "
+.ti -1c
+.RI "int \fBm_nPos\fP = 0"
+.br
+.RI "进度条进度 "
+.ti -1c
+.RI "int \fBm_nLen\fP = 100"
+.br
+.RI "进度总长度 "
+.in -1c
+.SH "详细描述"
+.PP 
+进度条控件 
+.PP
+在文件 ProgressCtrl\&.h 第 18 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::ProgressCtrl::ProgressCtrl ()"
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 10 行定义\&.
+.PP
+.nf
+11     {
+12         Init();
+13         SetBarColor(GREEN);
+14     }
+.fi
+.SS "HiEasyX::ProgressCtrl::ProgressCtrl (int x, int y, int w, int h, int len)"
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 16 行定义\&.
+.PP
+.nf
+17     {
+18         Init();
+19         m_nLen = len;
+20         SetRect(x, y, w, h);
+21         SetBarColor(GREEN);
+22     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::ProgressCtrl::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+绘制控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIdraw_child\fP 是否绘制子控件 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 ProgressCtrl\&.cpp 第 69 行定义\&.
+.PP
+.nf
+70     {
+71         if (m_bRedraw)
+72         {
+73             ControlBase::Draw(false);
+74 
+75             // 绘制结束位置
+76             int nEnd = (int)((m_nPos / (float)m_nLen) * (GetWidth() - 2));
+77 
+78             m_canvas\&.SolidRectangle(
+79                 { 1,1,nEnd,GetHeight() - 2 },
+80                 true, m_cBar
+81             );
+82 
+83             // 绘制动画效果
+84             if (m_bEnableAnimation)
+85             {
+86                 // 动画进度
+87                 if (m_tClock == 0)  m_tClock = clock();
+88                 float fProcess = (
+89                     ((clock() - m_tClock) / (float)CLOCKS_PER_SEC)  // 经过时长
+90                     / (1 / m_fSpeedRatio)                           // 总时长
+91                     );
+92                 if (fProcess >= 1)
+93                 {
+94                     fProcess = 0;
+95                     m_tClock = clock();
+96                 }
+97 
+98                 int nAnimationLen = (int)(m_nPos / (float)m_nLen * GetWidth() * m_fLenRatio);       // 动画效果长度
+99                 int nAnimationLenHalf = nAnimationLen / 2;                                      // 动画效果半长
+100                 int draw_pos = (int)((nEnd + nAnimationLen) * fProcess) - nAnimationLenHalf;    // 光源绘制 x 坐标
+101                 for (int i = -nAnimationLenHalf; i < nAnimationLenHalf; i++)
+102                 {
+103                     int pos = i + draw_pos;     // 当前绘制 x 坐标
+104 
+105                     // 当前绘制亮度
+106                     float l = (m_fBarColorLightness - m_fBarLightLightness) * (abs(i) / (float)nAnimationLenHalf) + m_fBarLightLightness;
+107                     if (pos >= 1 && pos <= nEnd)
+108                     {
+109                         m_canvas\&.Line(
+110                             pos, 1, pos, GetHeight() - 2,
+111                             true, HSLtoRGB(m_fH, m_fS, l)
+112                         );
+113                     }
+114                 }
+115             }
+116         }
+117 
+118         if (draw_child)
+119         {
+120             DrawChild();
+121         }
+122     }
+.fi
+.SS "void HiEasyX::ProgressCtrl::EnableAnimation (bool enable)\fC [virtual]\fP"
+
+.PP
+设置是否启用动画 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 59 行定义\&.
+.PP
+.nf
+60     {
+61         m_bEnableAnimation = enable;
+62 
+63         // 启用动画后，总是重绘
+64         m_bAlwaysRedrawAndRender = m_bEnableAnimation;
+65 
+66         MarkNeedRedrawAndRender();
+67     }
+.fi
+.SS "virtual bool HiEasyX::ProgressCtrl::GetAnimationState () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+获取动画启用状态 
+.PP
+在文件 ProgressCtrl\&.h 第 90 行定义\&.
+.PP
+.nf
+90 { return m_bEnableAnimation; }
+.fi
+.SS "virtual COLORREF HiEasyX::ProgressCtrl::GetBarColor () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+获取进度条颜色 
+.PP
+在文件 ProgressCtrl\&.h 第 79 行定义\&.
+.PP
+.nf
+79 { return m_cBar; }
+.fi
+.SS "virtual int HiEasyX::ProgressCtrl::GetContentLength () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+获取内容长度 
+.PP
+在文件 ProgressCtrl\&.h 第 52 行定义\&.
+.PP
+.nf
+52 { return m_nLen; }
+.fi
+.SS "virtual int HiEasyX::ProgressCtrl::GetProcess () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+获取进度（内容长度即为总进度） 
+.PP
+在文件 ProgressCtrl\&.h 第 63 行定义\&.
+.PP
+.nf
+63 { return m_nPos; }
+.fi
+.SS "void HiEasyX::ProgressCtrl::Init ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         m_bAlwaysRedrawAndRender = true;
+8     }
+.fi
+.SS "void HiEasyX::ProgressCtrl::SetBarColor (COLORREF cBar)\fC [virtual]\fP"
+
+.PP
+设置进度条颜色 
+.PP
+\fB参数\fP
+.RS 4
+\fIcBar\fP 进度条颜色 
+.RE
+.PP
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 48 行定义\&.
+.PP
+.nf
+49     {
+50         float h, s, l;
+51         RGBtoHSL(cBar, &h, &s, &l);
+52         m_fH = h;
+53         m_fS = s;
+54         m_cBar = HSLtoRGB(h, s, m_fBarColorLightness);
+55 
+56         MarkNeedRedrawAndRender();
+57     }
+.fi
+.SS "void HiEasyX::ProgressCtrl::SetContentLength (int len)\fC [virtual]\fP"
+
+.PP
+设置内容长度 
+.PP
+\fB参数\fP
+.RS 4
+\fIlen\fP 内容长度 
+.RE
+.PP
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 24 行定义\&.
+.PP
+.nf
+25     {
+26         m_nLen = len;
+27 
+28         MarkNeedRedrawAndRender();
+29     }
+.fi
+.SS "void HiEasyX::ProgressCtrl::SetProcess (int pos)\fC [virtual]\fP"
+
+.PP
+设置进度（内容长度即为总进度） 
+.PP
+\fB参数\fP
+.RS 4
+\fIpos\fP 进度 
+.RE
+.PP
+
+.PP
+在文件 ProgressCtrl\&.cpp 第 31 行定义\&.
+.PP
+.nf
+32     {
+33         m_nPos = pos;
+34 
+35         MarkNeedRedrawAndRender();
+36     }
+.fi
+.SS "void HiEasyX::ProgressCtrl::Step ()\fC [virtual]\fP"
+
+.PP
+进度加一 
+.PP
+在文件 ProgressCtrl\&.cpp 第 38 行定义\&.
+.PP
+.nf
+39     {
+40         if (m_nPos + 1 <= m_nLen)
+41         {
+42             m_nPos++;
+43         }
+44 
+45         MarkNeedRedrawAndRender();
+46     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "bool HiEasyX::ProgressCtrl::m_bEnableAnimation = true\fC [protected]\fP"
+
+.PP
+是否启用动画效果 
+.PP
+在文件 ProgressCtrl\&.h 第 22 行定义\&.
+.SS "COLORREF HiEasyX::ProgressCtrl::m_cBar\fC [protected]\fP"
+
+.PP
+进度条颜色（不用于亮度采样） 
+.PP
+在文件 ProgressCtrl\&.h 第 33 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fBarColorLightness = 0\&.35f\fC [protected]\fP"
+
+.PP
+进度条颜色亮度 
+.PP
+在文件 ProgressCtrl\&.h 第 30 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fBarLightLightness = 0\&.41f\fC [protected]\fP"
+
+.PP
+进度条光源亮度 
+.PP
+在文件 ProgressCtrl\&.h 第 31 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fH = 0\fC [protected]\fP"
+
+.PP
+色相信息 
+.PP
+在文件 ProgressCtrl\&.h 第 35 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fLenRatio = 0\&.8f\fC [protected]\fP"
+
+.PP
+动画光亮效果长度占比 
+.PP
+在文件 ProgressCtrl\&.h 第 28 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fS = 0\fC [protected]\fP"
+
+.PP
+饱和度信息 
+.PP
+在文件 ProgressCtrl\&.h 第 36 行定义\&.
+.SS "float HiEasyX::ProgressCtrl::m_fSpeedRatio = 0\&.4f\fC [protected]\fP"
+
+.PP
+动画速度（每秒经过总长度的多少） 
+.PP
+在文件 ProgressCtrl\&.h 第 26 行定义\&.
+.SS "int HiEasyX::ProgressCtrl::m_nLen = 100\fC [protected]\fP"
+
+.PP
+进度总长度 
+.PP
+在文件 ProgressCtrl\&.h 第 39 行定义\&.
+.SS "int HiEasyX::ProgressCtrl::m_nLightPos = 0\fC [protected]\fP"
+
+.PP
+光源位置 
+.PP
+在文件 ProgressCtrl\&.h 第 24 行定义\&.
+.SS "int HiEasyX::ProgressCtrl::m_nPos = 0\fC [protected]\fP"
+
+.PP
+进度条进度 
+.PP
+在文件 ProgressCtrl\&.h 第 38 行定义\&.
+.SS "clock_t HiEasyX::ProgressCtrl::m_tClock = 0\fC [protected]\fP"
+
+.PP
+保留上一次动画的绘制时间 
+.PP
+在文件 ProgressCtrl\&.h 第 25 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

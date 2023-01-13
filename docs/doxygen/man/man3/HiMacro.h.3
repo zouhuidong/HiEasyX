@@ -1,0 +1,298 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMacro.h" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiMacro.h \- \fBHiEasyX\fP 库的常用宏定义模块  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <graphics\&.h>\fP
+.br
+
+.SS "宏定义"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRGBA\fP(r,  g,  b,  a)   (COLORREF)( ((b)<<16) | ((g)<<8) | (r) | ((a)<<24) )"
+.br
+.ti -1c
+.RI "#define \fBGetAValue\fP(rgba)   (BYTE)( ((rgba)>>24) & 0xFF )"
+.br
+.ti -1c
+.RI "#define \fBREMOVE_ALPHA\fP(rgba)   (COLORREF)( rgba | 0xFF000000 )"
+.br
+.ti -1c
+.RI "#define \fBSET_ALPHA\fP(rgb,  a)   (COLORREF)( ((rgb) & 0xFFFFFF) | ((a)<<24) )"
+.br
+.ti -1c
+.RI "#define \fBGRAY_COLOR\fP(gray)   RGB(gray, gray, gray)"
+.br
+.ti -1c
+.RI "#define \fBGRAY_COLOR_ALPHA\fP(gray,  a)   \fBRGBA\fP(gray, gray, gray, a)"
+.br
+.ti -1c
+.RI "#define \fBrectangle_RECT\fP(rct)   rectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+.br
+.ti -1c
+.RI "#define \fBfillrectangle_RECT\fP(rct)   fillrectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+.br
+.ti -1c
+.RI "#define \fBsolidrectangle_RECT\fP(rct)   solidrectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+.br
+.ti -1c
+.RI "#define \fBPI\fP   3\&.1415926535"
+.br
+.ti -1c
+.RI "#define \fBEXPAND_RECT\fP(rct,  d)"
+.br
+.ti -1c
+.RI "#define \fBREDUCE_RECT\fP(rct,  d)"
+.br
+.ti -1c
+.RI "#define \fBIS_INCLUDE_RECT\fP(rctParent,  rctChild)"
+.br
+.ti -1c
+.RI "#define \fBMOVE_RECT\fP(rct,  dx,  dy)"
+.br
+.in -1c
+.SS "枚举"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEXTRA_COLORS\fP { \fBDARKBLUE\fP = RGB(0x00, 0x00, 0x8B), \fBDARKCYAN\fP = RGB(0x00, 0x8B, 0x8B), \fBDARKGOLDENROD\fP = RGB(0xB8, 0x86, 0x0B), \fBDARKGREEN\fP = RGB(0x00, 0x64, 0x00), \fBDARKRED\fP = RGB(0x8B, 0x00, 0x00), \fBDEEPPINK\fP = RGB(0xFF, 0x14, 0x93), \fBDEEPSKYBLUE\fP = RGB(0x00, 0xBF, 0xFF), \fBFORESTGREEN\fP = RGB(0x22, 0x8B, 0x22), \fBGOLD\fP = RGB(0xFF, 0xD7, 0x00), \fBGRAY\fP = RGB(0x80, 0x80, 0x80), \fBGREENYELLOW\fP = RGB(0xAD, 0xFF, 0x2F), \fBLIGHTPINK\fP = RGB(0xFF, 0xB6, 0xC1), \fBLIGHTSKYBLUE\fP = RGB(0x87, 0xCE, 0xFA), \fBLIGHTYELLOW\fP = RGB(0xFF, 0xFF, 0xE0), \fBDARKYELLOW\fP = RGB(255, 201, 14), \fBORANGE\fP = RGB(0xFF, 0xA5, 0x00), \fBORANGERED\fP = RGB(0xFF, 0x45, 0x00), \fBPINK\fP = RGB(0xFF, 0xC0, 0xCB), \fBPINKWHITE\fP = RGB(255, 230, 250), \fBPURPLE\fP = RGB(0x80, 0x00, 0x80), \fBSKYBLUE\fP = RGB(0x87, 0xCE, 0xEB), \fBSNOW\fP = RGB(0xFF, 0xFA, 0xFA), \fBSPRINGGREEN\fP = RGB(0x00, 0xFF, 0x7F), \fBSTEELBLUE\fP = RGB(0x46, 0x82, 0xB4), \fBTOMATO\fP = RGB(0xFF, 0x63, 0x47), \fBWHITESMOKE\fP = RGB(0xF5, 0xF5, 0xF5), \fBYELLOWGREEN\fP = RGB(0x9A, 0xCD, 0x32), \fBCLASSICGRAY\fP = RGB(0xF0, 0xF0, 0xF0), \fBMODERN_BORDER_GRAY\fP = 0xadadad, \fBMODERN_FILL_GRAY\fP = 0xe1e1e1, \fBMODERN_BORDER_BLUE\fP = 0xd77800, \fBMODERN_FILL_BLUE\fP = 0xfbf1e5, \fBMODERN_BORDER_PRESSED_BLUE\fP = 0x995400, \fBMODERN_FILL_PRESSED_BLUE\fP = 0xf7e4cc }"
+.br
+.RI "常用色彩扩展 "
+.in -1c
+.SH "详细描述"
+.PP 
+\fBHiEasyX\fP 库的常用宏定义模块 
+
+
+.PP
+\fB作者\fP
+.RS 4
+huidong 
+.RE
+.PP
+
+.PP
+在文件 \fBHiMacro\&.h\fP 中定义\&.
+.SH "宏定义说明"
+.PP 
+.SS "#define EXPAND_RECT(rct, d)"
+\fB值:\fP
+.PP
+.nf
+(rct)\&.left        -= d;\
+                                        (rct)\&.top        -= d;\
+                                        (rct)\&.right      += d;\
+                                        (rct)\&.bottom += d
+.fi
+.PP
+在文件 HiMacro\&.h 第 47 行定义\&.
+.SS "#define fillrectangle_RECT(rct)   fillrectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+
+.PP
+在文件 HiMacro\&.h 第 36 行定义\&.
+.SS "#define GetAValue(rgba)   (BYTE)( ((rgba)>>24) & 0xFF )"
+
+.PP
+在文件 HiMacro\&.h 第 19 行定义\&.
+.SS "#define GRAY_COLOR(gray)   RGB(gray, gray, gray)"
+
+.PP
+在文件 HiMacro\&.h 第 28 行定义\&.
+.SS "#define GRAY_COLOR_ALPHA(gray, a)   \fBRGBA\fP(gray, gray, gray, a)"
+
+.PP
+在文件 HiMacro\&.h 第 31 行定义\&.
+.SS "#define IS_INCLUDE_RECT(rctParent, rctChild)"
+\fB值:\fP
+.PP
+.nf
+(  (rctChild)\&.left      >= (rctParent)\&.left      \
+                                                &&  (rctChild)\&.right <= (rctParent)\&.right \
+                                                &&  (rctChild)\&.top       >= (rctParent)\&.top       \
+                                                &&  (rctChild)\&.bottom    <= (rctParent)\&.bottom    )
+.fi
+.PP
+在文件 HiMacro\&.h 第 59 行定义\&.
+.SS "#define MOVE_RECT(rct, dx, dy)"
+\fB值:\fP
+.PP
+.nf
+(rct)\&.left       += dx;\
+                                        (rct)\&.top        += dy;\
+                                        (rct)\&.right      += dx;\
+                                        (rct)\&.bottom += dy
+.fi
+.PP
+在文件 HiMacro\&.h 第 65 行定义\&.
+.SS "#define PI   3\&.1415926535"
+
+.PP
+在文件 HiMacro\&.h 第 42 行定义\&.
+.SS "#define rectangle_RECT(rct)   rectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+
+.PP
+在文件 HiMacro\&.h 第 35 行定义\&.
+.SS "#define REDUCE_RECT(rct, d)"
+\fB值:\fP
+.PP
+.nf
+(rct)\&.left     += d;\
+                                        (rct)\&.top        += d;\
+                                        (rct)\&.right      -= d;\
+                                        (rct)\&.bottom -= d
+.fi
+.PP
+在文件 HiMacro\&.h 第 53 行定义\&.
+.SS "#define REMOVE_ALPHA(rgba)   (COLORREF)( rgba | 0xFF000000 )"
+
+.PP
+在文件 HiMacro\&.h 第 22 行定义\&.
+.SS "#define RGBA(r, g, b, a)   (COLORREF)( ((b)<<16) | ((g)<<8) | (r) | ((a)<<24) )"
+
+.PP
+在文件 HiMacro\&.h 第 16 行定义\&.
+.SS "#define SET_ALPHA(rgb, a)   (COLORREF)( ((rgb) & 0xFFFFFF) | ((a)<<24) )"
+
+.PP
+在文件 HiMacro\&.h 第 25 行定义\&.
+.SS "#define solidrectangle_RECT(rct)   solidrectangle(rct\&.left,rct\&.top,rct\&.right,rct\&.bottom);"
+
+.PP
+在文件 HiMacro\&.h 第 37 行定义\&.
+.SH "枚举类型说明"
+.PP 
+.SS "enum \fBEXTRA_COLORS\fP"
+
+.PP
+常用色彩扩展 
+.PP
+\fB枚举值\fP
+.in +1c
+.TP
+\fB\fIDARKBLUE \fP\fP
+.TP
+\fB\fIDARKCYAN \fP\fP
+.TP
+\fB\fIDARKGOLDENROD \fP\fP
+.TP
+\fB\fIDARKGREEN \fP\fP
+.TP
+\fB\fIDARKRED \fP\fP
+.TP
+\fB\fIDEEPPINK \fP\fP
+.TP
+\fB\fIDEEPSKYBLUE \fP\fP
+.TP
+\fB\fIFORESTGREEN \fP\fP
+.TP
+\fB\fIGOLD \fP\fP
+.TP
+\fB\fIGRAY \fP\fP
+.TP
+\fB\fIGREENYELLOW \fP\fP
+.TP
+\fB\fILIGHTPINK \fP\fP
+.TP
+\fB\fILIGHTSKYBLUE \fP\fP
+.TP
+\fB\fILIGHTYELLOW \fP\fP
+.TP
+\fB\fIDARKYELLOW \fP\fP
+.TP
+\fB\fIORANGE \fP\fP
+.TP
+\fB\fIORANGERED \fP\fP
+.TP
+\fB\fIPINK \fP\fP
+.TP
+\fB\fIPINKWHITE \fP\fP
+.TP
+\fB\fIPURPLE \fP\fP
+.TP
+\fB\fISKYBLUE \fP\fP
+.TP
+\fB\fISNOW \fP\fP
+.TP
+\fB\fISPRINGGREEN \fP\fP
+.TP
+\fB\fISTEELBLUE \fP\fP
+.TP
+\fB\fITOMATO \fP\fP
+.TP
+\fB\fIWHITESMOKE \fP\fP
+.TP
+\fB\fIYELLOWGREEN \fP\fP
+.TP
+\fB\fICLASSICGRAY \fP\fP
+Windows 经典灰 
+.TP
+\fB\fIMODERN_BORDER_GRAY \fP\fP
+现代边框灰 
+.TP
+\fB\fIMODERN_FILL_GRAY \fP\fP
+现代填充灰 
+.TP
+\fB\fIMODERN_BORDER_BLUE \fP\fP
+现代边框蓝 
+.TP
+\fB\fIMODERN_FILL_BLUE \fP\fP
+现代填充蓝 
+.TP
+\fB\fIMODERN_BORDER_PRESSED_BLUE \fP\fP
+现代边框蓝（按下） 
+.TP
+\fB\fIMODERN_FILL_PRESSED_BLUE \fP\fP
+现代填充蓝（按下） 
+.PP
+在文件 HiMacro\&.h 第 73 行定义\&.
+.PP
+.nf
+74 {
+75     DARKBLUE = RGB(0x00, 0x00, 0x8B),
+76     DARKCYAN = RGB(0x00, 0x8B, 0x8B),
+77     DARKGOLDENROD = RGB(0xB8, 0x86, 0x0B),
+78     DARKGREEN = RGB(0x00, 0x64, 0x00),
+79     DARKRED = RGB(0x8B, 0x00, 0x00),
+80     DEEPPINK = RGB(0xFF, 0x14, 0x93),
+81     DEEPSKYBLUE = RGB(0x00, 0xBF, 0xFF),
+82     FORESTGREEN = RGB(0x22, 0x8B, 0x22),
+83     GOLD = RGB(0xFF, 0xD7, 0x00),
+84     GRAY = RGB(0x80, 0x80, 0x80),
+85     GREENYELLOW = RGB(0xAD, 0xFF, 0x2F),
+86     LIGHTPINK = RGB(0xFF, 0xB6, 0xC1),
+87     LIGHTSKYBLUE = RGB(0x87, 0xCE, 0xFA),
+88     LIGHTYELLOW = RGB(0xFF, 0xFF, 0xE0),
+89     DARKYELLOW = RGB(255, 201, 14),
+90     ORANGE = RGB(0xFF, 0xA5, 0x00),
+91     ORANGERED = RGB(0xFF, 0x45, 0x00),
+92     PINK = RGB(0xFF, 0xC0, 0xCB),
+93     PINKWHITE = RGB(255, 230, 250),
+94     PURPLE = RGB(0x80, 0x00, 0x80),
+95     SKYBLUE = RGB(0x87, 0xCE, 0xEB),
+96     SNOW = RGB(0xFF, 0xFA, 0xFA),
+97     SPRINGGREEN = RGB(0x00, 0xFF, 0x7F),
+98     STEELBLUE = RGB(0x46, 0x82, 0xB4),
+99     TOMATO = RGB(0xFF, 0x63, 0x47),
+100     WHITESMOKE = RGB(0xF5, 0xF5, 0xF5),
+101     YELLOWGREEN = RGB(0x9A, 0xCD, 0x32),
+102     
+103     CLASSICGRAY = RGB(0xF0, 0xF0, 0xF0),            
+104 
+105     MODERN_BORDER_GRAY = 0xadadad,                  
+106     MODERN_FILL_GRAY = 0xe1e1e1,                    
+107 
+108     MODERN_BORDER_BLUE = 0xd77800,                  
+109     MODERN_FILL_BLUE = 0xfbf1e5,                    
+110 
+111     MODERN_BORDER_PRESSED_BLUE = 0x995400,          
+112     MODERN_FILL_PRESSED_BLUE = 0xf7e4cc,            
+113 };
+.fi
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

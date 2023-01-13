@@ -1,0 +1,129 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.h \- \fBHiEasyX\fP 库的画布模块  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiDrawingProperty\&.h'\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <list>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "class \fBHiEasyX::Canvas\fP"
+.br
+.RI "画布 "
+.ti -1c
+.RI "class \fBHiEasyX::ImageBlock\fP"
+.br
+.RI "图像块 "
+.ti -1c
+.RI "class \fBHiEasyX::Layer\fP"
+.br
+.RI "图层 "
+.ti -1c
+.RI "class \fBHiEasyX::Scene\fP"
+.br
+.in -1c
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "宏定义"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDRAW_TNS_INIT_GRAPHICS\fP(nGraphW,  nGraphH)"
+.br
+.ti -1c
+.RI "#define \fBDRAW_TNS_RENDER_TO\fP(nRenderX,  nRenderY,  pDstImg,  alpha)"
+.br
+.in -1c
+.SS "枚举"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHiEasyX::LayerOrder\fP { \fBHiEasyX::LAYERORDER_BOTTOM_MOST\fP, \fBHiEasyX::LAYERORDER_BOTTOM\fP, \fBHiEasyX::LAYERORDER_NORMAL\fP, \fBHiEasyX::LAYERORDER_TOP\fP, \fBHiEasyX::LAYERORDER_TOP_MOST\fP }"
+.br
+.RI "特殊图层顺序标识 "
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBHiEasyX::MixAlphaColor\fP (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha=255)"
+.br
+.RI "根据透明度混合颜色 "
+.ti -1c
+.RI "void \fBHiEasyX::CopyImage_Alpha\fP (int x, int y, DWORD *pDst, int wDst, int hDst, DWORD *pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::RotateImage_Alpha\fP (IMAGE *pImg, double radian, COLORREF bkcolor=BLACK)"
+.br
+.RI "旋转图像（保留透明信息，自适应大小） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Rough_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（粗糙的、即不插值的缩放，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（双线性插值，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Win32_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "图像缩放（基于 Win32 API，比较快，保留透明度信息） "
+.in -1c
+.SH "详细描述"
+.PP 
+\fBHiEasyX\fP 库的画布模块 
+
+
+.PP
+\fB作者\fP
+.RS 4
+huidong 
+.RE
+.PP
+
+.PP
+在文件 \fBHiCanvas\&.h\fP 中定义\&.
+.SH "宏定义说明"
+.PP 
+.SS "#define DRAW_TNS_INIT_GRAPHICS(nGraphW, nGraphH)"
+\fB值:\fP
+.PP
+.nf
+{\
+        hiex::Canvas graphics(nGraphW, nGraphH);\
+        graphics\&.BeginBatchDrawing();(0)
+.fi
+.PP
+在文件 HiCanvas\&.h 第 962 行定义\&.
+.SS "#define DRAW_TNS_RENDER_TO(nRenderX, nRenderY, pDstImg, alpha)"
+\fB值:\fP
+.PP
+.nf
+graphics\&.EndBatchDrawing();\
+        ReverseAlpha(graphics\&.GetBuffer(), graphics\&.GetBufferSize());\
+        graphics\&.RenderTo(nRenderX, nRenderY, pDstImg, { 0 }, alpha, true);\
+    }(0)
+.fi
+.PP
+在文件 HiCanvas\&.h 第 976 行定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

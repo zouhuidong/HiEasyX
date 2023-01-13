@@ -1,0 +1,1090 @@
+.TH "HiEasyX::ScrollBar" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HiEasyX::ScrollBar \- 滚动条控件  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ScrollBar\&.h>\fP
+.PP
+继承自 \fBHiEasyX::ControlBase\fP \&.
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBScrollBarInfo\fP"
+.br
+.RI "滚动条信息 "
+.in -1c
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBScrollBar\fP ()"
+.br
+.ti -1c
+.RI "\fBScrollBar\fP (int x, int y, int w, int h, int len, int pos, bool bHorizontal=false)"
+.br
+.ti -1c
+.RI "int \fBGetButtonHeight\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetButtonHeight\fP (int h)"
+.br
+.RI "设置按钮高度（竖直放置时生效） "
+.ti -1c
+.RI "int \fBGetButtonWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetButtonWidth\fP (int w)"
+.br
+.RI "设置按钮宽度（水平放置时生效） "
+.ti -1c
+.RI "bool \fBIsDragging\fP () const"
+.br
+.RI "判断是否正在拖动 "
+.ti -1c
+.RI "int \fBGetSliderLength\fP () const"
+.br
+.RI "获取滑块像素长度 "
+.ti -1c
+.RI "int \fBGetSliderContentPos\fP () const"
+.br
+.RI "获取滑块内容位置 "
+.ti -1c
+.RI "void \fBSetSliderContentPos\fP (float pos)"
+.br
+.RI "设置滑块内容位置 "
+.ti -1c
+.RI "void \fBMoveSlider\fP (float d)"
+.br
+.RI "相对移动滑块的内容位置 "
+.ti -1c
+.RI "int \fBGetContentLength\fP () const"
+.br
+.RI "获取滚动条内容长度 "
+.ti -1c
+.RI "void \fBSetContentLength\fP (int len)"
+.br
+.RI "设置滚动条内容长度 "
+.ti -1c
+.RI "int \fBGetViewLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetViewLength\fP (int len)"
+.br
+.RI "设置视野内容长度 "
+.ti -1c
+.RI "int \fBGetSliderSpeed\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetSliderSpeed\fP (int speed)"
+.br
+.RI "设置按下按钮时滑块的运行速度 "
+.ti -1c
+.RI "bool \fBIsHorizontal\fP () const"
+.br
+.ti -1c
+.RI "void \fBEnableHorizontal\fP (bool enable)"
+.br
+.RI "启用水平放置 "
+.ti -1c
+.RI "bool \fBIsSliderPosChanged\fP ()"
+.br
+.RI "判断滑块位置是否改变 "
+.ti -1c
+.RI "RECT \fBGetOnWheelRect\fP () const"
+.br
+.RI "获取响应滚轮消息的区域（未自定义时返回空区域） "
+.ti -1c
+.RI "void \fBSetOnWheelRect\fP (RECT rct)"
+.br
+.RI "设置响应滚轮消息的区域（客户区坐标） "
+.ti -1c
+.RI "void \fBUpdateRect\fP (RECT rctOld) override"
+.br
+.RI "更新区域消息处理 "
+.ti -1c
+.RI "void \fBUpdateMessage\fP (ExMessage msg) override"
+.br
+.RI "更新消息 "
+.ti -1c
+.RI "void \fBDraw\fP (bool draw_child=true) override"
+.br
+.RI "绘制控件 "
+.in -1c
+.SS "Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "初始化 "
+.ti -1c
+.RI "virtual void \fBOnNormalButtonMsg\fP ()"
+.br
+.RI "响应普通按钮消息（Up 和 Down） "
+.ti -1c
+.RI "virtual void \fBUpdateSliderRect\fP ()"
+.br
+.RI "更新滑块位置区域 "
+.ti -1c
+.RI "void \fBUpdatePosRatio\fP ()"
+.br
+.RI "更新位置比例 "
+.ti -1c
+.RI "void \fBUpdateViewRatio\fP ()"
+.br
+.RI "更新视野比例 "
+.ti -1c
+.RI "void \fBUpdateScrollBarInfo\fP ()"
+.br
+.RI "更新滚动条信息 "
+.in -1c
+.SS "静态 Protected 成员函数"
+
+.in +1c
+.ti -1c
+.RI "static void \fBOnSpecialButtonMsg\fP (void *pThis, \fBControlBase\fP *pCtrl, int msgid, ExMessage msg)"
+.br
+.RI "响应特殊按钮消息（Top 和 Bottom） "
+.in -1c
+.SS "Protected 属性"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_nBtnHeight\fP = 20"
+.br
+.RI "按钮高度（竖直放置时有效） "
+.ti -1c
+.RI "int \fBm_nBtnWidth\fP = 20"
+.br
+.RI "按钮宽度（水平放置时有效） "
+.ti -1c
+.RI "bool \fBm_bHorizontal\fP = false"
+.br
+.RI "是否水平放置 "
+.ti -1c
+.RI "int \fBm_nDrawInterval\fP = 6"
+.br
+.RI "绘制间隙 "
+.ti -1c
+.RI "\fBButton\fP \fBm_btnTop\fP"
+.br
+.ti -1c
+.RI "\fBButton\fP \fBm_btnUp\fP"
+.br
+.ti -1c
+.RI "\fBButton\fP \fBm_btnDown\fP"
+.br
+.ti -1c
+.RI "\fBButton\fP \fBm_btnBottom\fP"
+.br
+.ti -1c
+.RI "\fBButton\fP \fBm_btnDrag\fP"
+.br
+.ti -1c
+.RI "\fBMouseDrag\fP \fBm_MouseDrag\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bDragging\fP = false"
+.br
+.RI "是否正在拖动 "
+.ti -1c
+.RI "int \fBm_nSliderSpeed\fP = 20"
+.br
+.RI "按住按钮时滑块每秒运行的内容长度 "
+.ti -1c
+.RI "clock_t \fBm_tPressed\fP = 0"
+.br
+.RI "按钮按住计时 "
+.ti -1c
+.RI "float \fBm_fPos\fP = 0"
+.br
+.RI "滑块内容位置 "
+.ti -1c
+.RI "int \fBm_nLen\fP = 0"
+.br
+.RI "内容总长度 "
+.ti -1c
+.RI "float \fBm_fPosRatio\fP = 0"
+.br
+.RI "滑块内容位置比例 "
+.ti -1c
+.RI "\fBScrollBarInfo\fP \fBm_info\fP = {}"
+.br
+.RI "滚动条信息 "
+.ti -1c
+.RI "int \fBm_nViewLen\fP = 10"
+.br
+.RI "视野内容长度 "
+.ti -1c
+.RI "float \fBm_fViewRatio\fP = 1"
+.br
+.RI "视野范围占总长度的比 "
+.ti -1c
+.RI "bool \fBm_bSliderPosChanged\fP = false"
+.br
+.RI "标记滑块位置改变 "
+.ti -1c
+.RI "RECT \fBm_rctOnWheel\fP = { 0 }"
+.br
+.RI "响应滚轮消息的区域（客户区坐标） "
+.ti -1c
+.RI "bool \fBm_bSetOnWheelRct\fP = false"
+.br
+.RI "是否设置了滚轮消息的响应区域 "
+.in -1c
+.SH "详细描述"
+.PP 
+滚动条控件 
+.PP
+在文件 ScrollBar\&.h 第 20 行定义\&.
+.SH "构造及析构函数说明"
+.PP 
+.SS "HiEasyX::ScrollBar::ScrollBar ()"
+
+.PP
+在文件 ScrollBar\&.cpp 第 141 行定义\&.
+.PP
+.nf
+142     {
+143         Init();
+144     }
+.fi
+.SS "HiEasyX::ScrollBar::ScrollBar (int x, int y, int w, int h, int len, int pos, bool bHorizontal = \fCfalse\fP)"
+
+.PP
+在文件 ScrollBar\&.cpp 第 146 行定义\&.
+.PP
+.nf
+147     {
+148         m_bHorizontal = bHorizontal;
+149         SetRect(x, y, w, h);
+150         SetContentLength(len);
+151         SetSliderContentPos((float)pos);
+152         Init();
+153     }
+.fi
+.SH "成员函数说明"
+.PP 
+.SS "void HiEasyX::ScrollBar::Draw (bool draw_child = \fCtrue\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+绘制控件 
+.PP
+\fB参数\fP
+.RS 4
+\fIdraw_child\fP 是否绘制子控件 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 ScrollBar\&.cpp 第 272 行定义\&.
+.PP
+.nf
+273     {
+274         // 按钮消息
+275         // 由于按下消息不会一直发送，所以此消息只能在每次重绘时处理
+276         OnNormalButtonMsg();
+277 
+278         if (m_bRedraw)
+279         {
+280             ControlBase::Draw();
+281 
+282             Canvas& canvasTop = m_btnTop\&.GetCanvas();
+283             Canvas& canvasUp = m_btnUp\&.GetCanvas();
+284             Canvas& canvasDown = m_btnDown\&.GetCanvas();
+285             Canvas& canvasBottom = m_btnBottom\&.GetCanvas();
+286 
+287             COLORREF cLine = DARKGRAY;
+288 
+289             if (m_bHorizontal)
+290             {
+291                 int bottom_y = GetHeight() - m_nDrawInterval;
+292                 int middle_y = GetHeight() / 2;
+293                 int right_x = m_nBtnWidth - m_nDrawInterval;
+294 
+295                 // 绘制朝左箭头
+296                 auto pDrawLeft = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
+297                     canvas\&.SetLineColor(cLine);
+298                     canvas\&.MoveTo(right_x, m_nDrawInterval);
+299                     canvas\&.LineTo(m_nDrawInterval, middle_y);
+300                     canvas\&.LineTo(right_x, bottom_y);
+301                 };
+302 
+303                 // 绘制朝右箭头
+304                 auto pDrawRight = [this, cLine, bottom_y, middle_y, right_x](Canvas& canvas) {
+305                     canvas\&.SetLineColor(cLine);
+306                     canvas\&.MoveTo(m_nDrawInterval, m_nDrawInterval);
+307                     canvas\&.LineTo(right_x, middle_y);
+308                     canvas\&.LineTo(m_nDrawInterval, bottom_y);
+309                 };
+310 
+311                 pDrawLeft(canvasTop);
+312                 pDrawLeft(canvasUp);
+313                 pDrawRight(canvasDown);
+314                 pDrawRight(canvasBottom);
+315 
+316                 canvasTop\&.Line(m_nDrawInterval, m_nDrawInterval, m_nDrawInterval, bottom_y);
+317                 canvasBottom\&.Line(right_x, m_nDrawInterval, right_x, bottom_y);
+318             }
+319             else
+320             {
+321                 int bottom_y = m_nBtnHeight - m_nDrawInterval;
+322                 int middle_x = GetWidth() / 2;
+323                 int right_x = GetWidth() - m_nDrawInterval;
+324 
+325                 // 绘制朝上箭头
+326                 auto pDrawUp = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
+327                     canvas\&.SetLineColor(cLine);
+328                     canvas\&.MoveTo(m_nDrawInterval, bottom_y);
+329                     canvas\&.LineTo(middle_x, m_nDrawInterval);
+330                     canvas\&.LineTo(right_x, bottom_y);
+331                 };
+332 
+333                 // 绘制朝下箭头
+334                 auto pDrawDown = [this, cLine, bottom_y, middle_x, right_x](Canvas& canvas) {
+335                     canvas\&.SetLineColor(cLine);
+336                     canvas\&.MoveTo(m_nDrawInterval, m_nDrawInterval);
+337                     canvas\&.LineTo(middle_x, bottom_y);
+338                     canvas\&.LineTo(right_x, m_nDrawInterval);
+339                 };
+340 
+341                 pDrawUp(canvasTop);
+342                 pDrawUp(canvasUp);
+343                 pDrawDown(canvasDown);
+344                 pDrawDown(canvasBottom);
+345 
+346                 canvasTop\&.Line(m_nDrawInterval, m_nDrawInterval, right_x, m_nDrawInterval);
+347                 canvasBottom\&.Line(m_nDrawInterval, bottom_y, right_x, bottom_y);
+348             }
+349         }
+350 
+351         if (draw_child)
+352         {
+353             DrawChild();
+354         }
+355     }
+.fi
+.SS "void HiEasyX::ScrollBar::EnableHorizontal (bool enable)"
+
+.PP
+启用水平放置 
+.PP
+\fB参数\fP
+.RS 4
+\fIenable\fP 是否启用 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 370 行定义\&.
+.PP
+.nf
+371     {
+372         m_bHorizontal = enable;
+373 
+374         MarkNeedRedrawAndRender();
+375     }
+.fi
+.SS "int HiEasyX::ScrollBar::GetButtonHeight () const\fC [inline]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 114 行定义\&.
+.PP
+.nf
+114 { return m_nBtnHeight; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetButtonWidth () const\fC [inline]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 122 行定义\&.
+.PP
+.nf
+122 { return m_nBtnWidth; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetContentLength () const\fC [inline]\fP"
+
+.PP
+获取滚动条内容长度 
+.PP
+在文件 ScrollBar\&.h 第 160 行定义\&.
+.PP
+.nf
+160 { return m_nLen; }
+.fi
+.SS "RECT HiEasyX::ScrollBar::GetOnWheelRect () const\fC [inline]\fP"
+
+.PP
+获取响应滚轮消息的区域（未自定义时返回空区域） 
+.PP
+在文件 ScrollBar\&.h 第 200 行定义\&.
+.PP
+.nf
+200 { return m_rctOnWheel; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetSliderContentPos () const\fC [inline]\fP"
+
+.PP
+获取滑块内容位置 
+.PP
+在文件 ScrollBar\&.h 第 143 行定义\&.
+.PP
+.nf
+143 { return (int)m_fPos; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetSliderLength () const\fC [inline]\fP"
+
+.PP
+获取滑块像素长度 
+.PP
+在文件 ScrollBar\&.h 第 138 行定义\&.
+.PP
+.nf
+138 { return m_info\&.slider_len; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetSliderSpeed () const\fC [inline]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 176 行定义\&.
+.PP
+.nf
+176 { return m_nSliderSpeed; }
+.fi
+.SS "int HiEasyX::ScrollBar::GetViewLength () const\fC [inline]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 168 行定义\&.
+.PP
+.nf
+168 { return m_nViewLen; }
+.fi
+.SS "void HiEasyX::ScrollBar::Init ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+初始化 
+.PP
+在文件 ScrollBar\&.cpp 第 54 行定义\&.
+.PP
+.nf
+55     {
+56         m_btnTop\&.SetMsgProcFunc(OnSpecialButtonMsg, this);
+57         m_btnBottom\&.SetMsgProcFunc(OnSpecialButtonMsg, this);
+58 
+59         AddChild(&m_btnTop);
+60         AddChild(&m_btnUp);
+61         AddChild(&m_btnDown);
+62         AddChild(&m_btnBottom);
+63         AddChild(&m_btnDrag);
+64 
+65         UpdateViewRatio();
+66     }
+.fi
+.SS "bool HiEasyX::ScrollBar::IsDragging () const\fC [inline]\fP"
+
+.PP
+判断是否正在拖动 
+.PP
+在文件 ScrollBar\&.h 第 133 行定义\&.
+.PP
+.nf
+133 { return m_bDragging; }
+.fi
+.SS "bool HiEasyX::ScrollBar::IsHorizontal () const\fC [inline]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 184 行定义\&.
+.PP
+.nf
+184 { return m_bHorizontal; }
+.fi
+.SS "bool HiEasyX::ScrollBar::IsSliderPosChanged ()"
+
+.PP
+判断滑块位置是否改变 
+.PP
+在文件 ScrollBar\&.cpp 第 357 行定义\&.
+.PP
+.nf
+358     {
+359         bool r = m_bSliderPosChanged;
+360         m_bSliderPosChanged = false;
+361         return m_bSliderPosChanged;
+362     }
+.fi
+.SS "void HiEasyX::ScrollBar::MoveSlider (float d)"
+
+.PP
+相对移动滑块的内容位置 
+.PP
+\fB参数\fP
+.RS 4
+\fId\fP 滑块位置 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 173 行定义\&.
+.PP
+.nf
+174     {
+175         SetSliderContentPos(m_fPos + d);
+176     }
+.fi
+.SS "void HiEasyX::ScrollBar::OnNormalButtonMsg ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+响应普通按钮消息（Up 和 Down） 
+.PP
+在文件 ScrollBar\&.cpp 第 24 行定义\&.
+.PP
+.nf
+25     {
+26         clock_t tNow = clock();
+27         float move_len = (float)(tNow - m_tPressed) / CLOCKS_PER_SEC * m_nSliderSpeed;
+28         if (m_btnUp\&.IsPressed())
+29         {
+30             if (m_tPressed != 0)
+31             {
+32                 MoveSlider(-move_len);
+33             }
+34             m_tPressed = tNow;
+35 
+36             MarkNeedRedrawAndRender();
+37         }
+38         else if (m_btnDown\&.IsPressed())
+39         {
+40             if (m_tPressed != 0)
+41             {
+42                 MoveSlider(move_len);
+43             }
+44             m_tPressed = tNow;
+45 
+46             MarkNeedRedrawAndRender();
+47         }
+48         else
+49         {
+50             m_tPressed = 0;
+51         }
+52     }
+.fi
+.SS "void HiEasyX::ScrollBar::OnSpecialButtonMsg (void * pThis, \fBControlBase\fP * pCtrl, int msgid, ExMessage msg)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+响应特殊按钮消息（Top 和 Bottom） 
+.PP
+\fB参数\fP
+.RS 4
+\fIpThis\fP 类指针 
+.br
+\fIpCtrl\fP 控件 
+.br
+\fImsgid\fP 消息 ID 
+.br
+\fImsg\fP 消息内容 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 5 行定义\&.
+.PP
+.nf
+6     {
+7         ScrollBar* _this = (ScrollBar*)pThis;
+8 
+9         switch (msgid)
+10         {
+11         case CM_CLICK:
+12             if (pCtrl == &_this->m_btnTop)
+13             {
+14                 _this->SetSliderContentPos(0);
+15             }
+16             else if (pCtrl == &_this->m_btnBottom)
+17             {
+18                 _this->SetSliderContentPos((float)_this->GetContentLength());
+19             }
+20             break;
+21         }
+22     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetButtonHeight (int h)"
+
+.PP
+设置按钮高度（竖直放置时生效） 
+.PP
+\fB参数\fP
+.RS 4
+\fIh\fP 高度 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 127 行定义\&.
+.PP
+.nf
+128     {
+129         m_nBtnHeight = h;
+130 
+131         MarkNeedRedrawAndRender();
+132     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetButtonWidth (int w)"
+
+.PP
+设置按钮宽度（水平放置时生效） 
+.PP
+\fB参数\fP
+.RS 4
+\fIw\fP 宽度 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 134 行定义\&.
+.PP
+.nf
+135     {
+136         m_nBtnWidth = w;
+137 
+138         MarkNeedRedrawAndRender();
+139     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetContentLength (int len)"
+
+.PP
+设置滚动条内容长度 
+.PP
+\fB参数\fP
+.RS 4
+\fIlen\fP 内容长度 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 178 行定义\&.
+.PP
+.nf
+179     {
+180         m_nLen = len;
+181         UpdatePosRatio();
+182         UpdateViewRatio();
+183         UpdateSliderRect();
+184     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetOnWheelRect (RECT rct)"
+
+.PP
+设置响应滚轮消息的区域（客户区坐标） 
+.PP
+\fB参数\fP
+.RS 4
+\fIrct\fP 消息响应区域 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 364 行定义\&.
+.PP
+.nf
+365     {
+366         m_rctOnWheel = rct;
+367         m_bSetOnWheelRct = true;
+368     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetSliderContentPos (float pos)"
+
+.PP
+设置滑块内容位置 
+.PP
+\fB参数\fP
+.RS 4
+\fIpos\fP 滑块位置 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 155 行定义\&.
+.PP
+.nf
+156     {
+157         if (pos < 0)
+158         {
+159             m_fPos = 0;
+160         }
+161         else if (pos > m_nLen)
+162         {
+163             m_fPos = (float)m_nLen;
+164         }
+165         else
+166         {
+167             m_fPos = pos;
+168         }
+169         UpdatePosRatio();
+170         UpdateSliderRect();
+171     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetSliderSpeed (int speed)"
+
+.PP
+设置按下按钮时滑块的运行速度 
+.PP
+\fB参数\fP
+.RS 4
+\fIspeed\fP 运行速度（每秒经过的内容长度） 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 193 行定义\&.
+.PP
+.nf
+194     {
+195         m_nSliderSpeed = speed;
+196     }
+.fi
+.SS "void HiEasyX::ScrollBar::SetViewLength (int len)"
+
+.PP
+设置视野内容长度 
+.PP
+\fB参数\fP
+.RS 4
+\fIlen\fP 视野内容长度 
+.RE
+.PP
+
+.PP
+在文件 ScrollBar\&.cpp 第 186 行定义\&.
+.PP
+.nf
+187     {
+188         m_nViewLen = len;
+189         UpdateViewRatio();
+190         UpdateSliderRect();
+191     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdateMessage (ExMessage msg)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新消息 
+.PP
+\fB参数\fP
+.RS 4
+\fImsg\fP 新消息 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 ScrollBar\&.cpp 第 222 行定义\&.
+.PP
+.nf
+223     {
+224         if (m_bVisible && m_bEnabled)
+225         {
+226             ControlBase::UpdateMessage(msg);
+227 
+228             // 此处响应消息无需转换
+229             //TransformMessage(msg);
+230 
+231             // 检查拖动状态
+232             m_MouseDrag\&.UpdateMessage(msg);
+233             if (m_btnDrag\&.IsPressed())
+234             {
+235                 m_bDragging = true;
+236             }
+237             else if (msg\&.message == WM_LBUTTONUP)
+238             {
+239                 m_bDragging = false;
+240             }
+241 
+242             // 拖动消息
+243             if (m_bDragging && m_MouseDrag\&.IsLeftDrag())
+244             {
+245                 if (m_info\&.slider_move_len)
+246                 {
+247                     int drag = m_bHorizontal ? m_MouseDrag\&.GetDragX() : m_MouseDrag\&.GetDragY();
+248                     MoveSlider(drag / (float)m_info\&.slider_move_len * m_nLen);
+249                 }
+250             }
+251 
+252             // 滚轮消息响应区域
+253             RECT rctWheel = m_bSetOnWheelRct ? m_rctOnWheel : m_rct;
+254             bool bWheel = false;
+255             if (IsInRect(msg\&.x, msg\&.y, rctWheel) || m_bDragging)
+256             {
+257                 if (msg\&.wheel)
+258                 {
+259                     bWheel = true;
+260                     MoveSlider(-msg\&.wheel / 120\&.0f * 3);
+261                 }
+262             }
+263 
+264             // 拖动或滚轮时需要重绘
+265             if (m_bDragging || bWheel)
+266             {
+267                 MarkNeedRedrawAndRender();
+268             }
+269         }
+270     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdatePosRatio ()\fC [protected]\fP"
+
+.PP
+更新位置比例 
+.PP
+在文件 ScrollBar\&.cpp 第 82 行定义\&.
+.PP
+.nf
+83     {
+84         if (m_nLen)
+85         {
+86             m_fPosRatio = m_fPos / m_nLen;
+87         }
+88         else
+89         {
+90             m_fPosRatio = 1;
+91         }
+92     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdateRect (RECT rctOld)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+更新区域消息处理 
+.PP
+\fB参数\fP
+.RS 4
+\fIrctOld\fP 旧区域 
+.RE
+.PP
+
+.PP
+重载 \fBHiEasyX::ControlBase\fP \&.
+.PP
+在文件 ScrollBar\&.cpp 第 198 行定义\&.
+.PP
+.nf
+199     {
+200         ControlBase::UpdateRect(rctOld);
+201 
+202         UpdateScrollBarInfo();
+203 
+204         if (m_bHorizontal)
+205         {
+206             m_btnTop\&.SetRect(0, 0, m_info\&.btnW, m_info\&.btnH);
+207             m_btnUp\&.SetRect(m_info\&.btnW, 0, m_info\&.btnW, m_info\&.btnH);
+208             m_btnBottom\&.SetRect(GetWidth() - m_info\&.btnW, 0, m_info\&.btnW, m_info\&.btnH);
+209             m_btnDown\&.SetRect(GetWidth() - m_info\&.btnW * 2, 0, m_info\&.btnW, m_info\&.btnH);
+210         }
+211         else
+212         {
+213             m_btnTop\&.SetRect(0, 0, m_info\&.btnW, m_info\&.btnH);
+214             m_btnUp\&.SetRect(0, m_info\&.btnH, m_info\&.btnW, m_info\&.btnH);
+215             m_btnDown\&.SetRect(0, GetHeight() - m_info\&.btnH * 2, m_info\&.btnW, m_info\&.btnH);
+216             m_btnBottom\&.SetRect(0, GetHeight() - m_info\&.btnH, m_info\&.btnW, m_info\&.btnH);
+217         }
+218 
+219         UpdateSliderRect();
+220     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdateScrollBarInfo ()\fC [protected]\fP"
+
+.PP
+更新滚动条信息 
+.PP
+在文件 ScrollBar\&.cpp 第 107 行定义\&.
+.PP
+.nf
+108     {
+109         if (m_bHorizontal)
+110         {
+111             m_info\&.btnW = m_nBtnWidth;
+112             m_info\&.btnH = GetHeight();
+113             m_info\&.slider_free_len = GetWidth() - m_info\&.btnW * 4;
+114         }
+115         else
+116         {
+117             m_info\&.btnW = GetWidth();
+118             m_info\&.btnH = m_nBtnHeight;
+119             m_info\&.slider_free_len = GetHeight() - m_info\&.btnH * 4;
+120         }
+121 
+122         m_info\&.slider_free_len -= 2; // 左右各空出 1 像素
+123         m_info\&.slider_len = (int)(m_info\&.slider_free_len * m_fViewRatio);
+124         m_info\&.slider_move_len = m_info\&.slider_free_len - m_info\&.slider_len;
+125     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdateSliderRect ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+更新滑块位置区域 
+.PP
+在文件 ScrollBar\&.cpp 第 68 行定义\&.
+.PP
+.nf
+69     {
+70         if (m_bHorizontal)
+71         {
+72             m_btnDrag\&.SetRect((int)(m_info\&.btnW * 2 + m_info\&.slider_move_len * m_fPosRatio) + 1, 2, m_info\&.slider_len, m_info\&.btnH - 4);
+73         }
+74         else
+75         {
+76             m_btnDrag\&.SetRect(2, (int)(m_info\&.btnH * 2 + m_info\&.slider_move_len * m_fPosRatio) + 1, m_info\&.btnW - 4, m_info\&.slider_len);
+77         }
+78 
+79         MarkNeedRedrawAndRender();
+80     }
+.fi
+.SS "void HiEasyX::ScrollBar::UpdateViewRatio ()\fC [protected]\fP"
+
+.PP
+更新视野比例 
+.PP
+在文件 ScrollBar\&.cpp 第 94 行定义\&.
+.PP
+.nf
+95     {
+96         if (m_nLen)
+97         {
+98             m_fViewRatio = m_nViewLen / (float)m_nLen;
+99         }
+100         else
+101         {
+102             m_fViewRatio = 1;
+103         }
+104         UpdateScrollBarInfo();
+105     }
+.fi
+.SH "类成员变量说明"
+.PP 
+.SS "bool HiEasyX::ScrollBar::m_bDragging = false\fC [protected]\fP"
+
+.PP
+是否正在拖动 
+.PP
+在文件 ScrollBar\&.h 第 51 行定义\&.
+.SS "bool HiEasyX::ScrollBar::m_bHorizontal = false\fC [protected]\fP"
+
+.PP
+是否水平放置 
+.PP
+在文件 ScrollBar\&.h 第 40 行定义\&.
+.SS "bool HiEasyX::ScrollBar::m_bSetOnWheelRct = false\fC [protected]\fP"
+
+.PP
+是否设置了滚轮消息的响应区域 
+.PP
+在文件 ScrollBar\&.h 第 67 行定义\&.
+.SS "bool HiEasyX::ScrollBar::m_bSliderPosChanged = false\fC [protected]\fP"
+
+.PP
+标记滑块位置改变 
+.PP
+在文件 ScrollBar\&.h 第 64 行定义\&.
+.SS "\fBButton\fP HiEasyX::ScrollBar::m_btnBottom\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 48 行定义\&.
+.SS "\fBButton\fP HiEasyX::ScrollBar::m_btnDown\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 47 行定义\&.
+.SS "\fBButton\fP HiEasyX::ScrollBar::m_btnDrag\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 49 行定义\&.
+.SS "\fBButton\fP HiEasyX::ScrollBar::m_btnTop\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 45 行定义\&.
+.SS "\fBButton\fP HiEasyX::ScrollBar::m_btnUp\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 46 行定义\&.
+.SS "float HiEasyX::ScrollBar::m_fPos = 0\fC [protected]\fP"
+
+.PP
+滑块内容位置 
+.PP
+在文件 ScrollBar\&.h 第 55 行定义\&.
+.SS "float HiEasyX::ScrollBar::m_fPosRatio = 0\fC [protected]\fP"
+
+.PP
+滑块内容位置比例 
+.PP
+在文件 ScrollBar\&.h 第 57 行定义\&.
+.SS "float HiEasyX::ScrollBar::m_fViewRatio = 1\fC [protected]\fP"
+
+.PP
+视野范围占总长度的比 
+.PP
+在文件 ScrollBar\&.h 第 62 行定义\&.
+.SS "\fBScrollBarInfo\fP HiEasyX::ScrollBar::m_info = {}\fC [protected]\fP"
+
+.PP
+滚动条信息 
+.PP
+在文件 ScrollBar\&.h 第 59 行定义\&.
+.SS "\fBMouseDrag\fP HiEasyX::ScrollBar::m_MouseDrag\fC [protected]\fP"
+
+.PP
+在文件 ScrollBar\&.h 第 50 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nBtnHeight = 20\fC [protected]\fP"
+
+.PP
+按钮高度（竖直放置时有效） 
+.PP
+在文件 ScrollBar\&.h 第 37 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nBtnWidth = 20\fC [protected]\fP"
+
+.PP
+按钮宽度（水平放置时有效） 
+.PP
+在文件 ScrollBar\&.h 第 38 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nDrawInterval = 6\fC [protected]\fP"
+
+.PP
+绘制间隙 
+.PP
+在文件 ScrollBar\&.h 第 42 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nLen = 0\fC [protected]\fP"
+
+.PP
+内容总长度 
+.PP
+在文件 ScrollBar\&.h 第 56 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nSliderSpeed = 20\fC [protected]\fP"
+
+.PP
+按住按钮时滑块每秒运行的内容长度 
+.PP
+在文件 ScrollBar\&.h 第 52 行定义\&.
+.SS "int HiEasyX::ScrollBar::m_nViewLen = 10\fC [protected]\fP"
+
+.PP
+视野内容长度 
+.PP
+在文件 ScrollBar\&.h 第 61 行定义\&.
+.SS "RECT HiEasyX::ScrollBar::m_rctOnWheel = { 0 }\fC [protected]\fP"
+
+.PP
+响应滚轮消息的区域（客户区坐标） 
+.PP
+在文件 ScrollBar\&.h 第 66 行定义\&.
+.SS "clock_t HiEasyX::ScrollBar::m_tPressed = 0\fC [protected]\fP"
+
+.PP
+按钮按住计时 
+.PP
+在文件 ScrollBar\&.h 第 53 行定义\&.
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

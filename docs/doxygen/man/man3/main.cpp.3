@@ -1,0 +1,204 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiEasyX\&.h'\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "struct \fBBall\fP"
+.br
+.in -1c
+.SS "宏定义"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBALL_NUM\fP   14"
+.br
+.RI "透明小球边界碰撞示例 "
+.ti -1c
+.RI "#define \fBRADIUS\fP   70"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "变量"
+
+.in +1c
+.ti -1c
+.RI "\fBhiex::SysButton\fP \fBbtn\fP"
+.br
+.ti -1c
+.RI "bool \fBshow_outline\fP = false"
+.br
+.in -1c
+.SH "宏定义说明"
+.PP 
+.SS "#define BALL_NUM   14"
+
+.PP
+透明小球边界碰撞示例 
+.PP
+\fB注解\fP
+.RS 4
+此示例用于演示 HiCanvas 的透明通道、场景和图层 
+.RE
+.PP
+\fB作者\fP
+.RS 4
+huidong mailhuid@163.com 
+.RE
+.PP
+\fB日期\fP
+.RS 4
+2023\&.01\&.12 
+.RE
+.PP
+
+.PP
+在文件 main\&.cpp 第 11 行定义\&.
+.SS "#define RADIUS   70"
+
+.PP
+在文件 main\&.cpp 第 14 行定义\&.
+.SH "函数说明"
+.PP 
+.SS "int main ()"
+
+.PP
+在文件 main\&.cpp 第 27 行定义\&.
+.PP
+.nf
+28 {
+29     hiex::Window wnd(640, 480);         // 创建窗口
+30     hiex::Canvas canvas;                // 创建画布对象
+31     wnd\&.BindCanvas(&canvas);         // 将窗口和画布绑定
+32 
+33     // 手动刷新双缓冲
+34     //hiex::EnableAutoFlush(false);
+35 
+36     canvas\&.Clear(true, BLACK);           // 设置背景色为黑色，清空画布
+37 
+38     // 创建按钮，用于点击设置是否显示轮廓
+39     btn\&.Create(wnd\&.GetHandle(), 50, 50, 120, 30, L"Hide outline");
+40     btn\&.RegisterMessage([]() {
+41         show_outline = !show_outline;
+42     btn\&.SetText(show_outline ? L"Show outline" : L"Hide outline");
+43         });
+44 
+45     // 初始化随机数
+46     srand((UINT)time(nullptr));
+47 
+48     hiex::Scene scene;      // 场景
+49     hiex::Layer layer;      // 图层
+50 
+51     Ball balls[BALL_NUM];   // 小球
+52 
+53     // 初始化小球
+54     for (auto& i : balls)
+55     {
+56         // 位置和速度的初始化
+57         i\&.x = (float)(rand() % canvas\&.GetWidth());
+58         i\&.y = (float)(rand() % canvas\&.GetHeight());
+59         i\&.vx = rand() % 5 * (rand() % 2 ? 2\&.0f : -2\&.0f);
+60         i\&.vy = rand() % 5 * (rand() % 2 ? 2\&.0f : -2\&.0f);
+61         if (i\&.vx == 0)
+62             i\&.vx = 3;
+63         if (i\&.vy == 0)
+64             i\&.vy = 3;
+65 
+66         // 小球的图像块设置
+67         i\&.img\&.CreateCanvas(RADIUS * 2, RADIUS * 2);
+68         i\&.img\&.GetCanvas()->Clear();
+69         i\&.img\&.GetCanvas()->SolidCircle(RADIUS, RADIUS, RADIUS, true, rand() % 0xffffff);
+70         ReverseAlpha(i\&.img\&.GetCanvas()->GetBuffer(), i\&.img\&.GetCanvas()->GetBufferSize());
+71 
+72         // 设置图像块透明度
+73         i\&.img\&.alpha = 200;
+74         i\&.img\&.bUseSrcAlpha = true;
+75 
+76         // 加入图像块到图层
+77         layer\&.push_back(&i\&.img);
+78     }
+79 
+80     // 加入图层到场景
+81     scene\&.push_back(&layer);
+82 
+83     // 主循环（窗口关闭或按下按键时退出）
+84     while (wnd\&.IsAlive() && !peekmessage(nullptr, EM_CHAR))
+85     {
+86         for (auto& i : balls)
+87         {
+88             i\&.x += i\&.vx;
+89             i\&.y += i\&.vy;
+90 
+91             // 碰撞判定
+92             if (i\&.x - RADIUS < 0)
+93             {
+94                 i\&.x = RADIUS;
+95                 i\&.vx = -i\&.vx;
+96             }
+97             if (i\&.x + RADIUS > canvas\&.GetWidth())
+98             {
+99                 i\&.x = (float)canvas\&.GetWidth() - RADIUS;
+100                 i\&.vx = -i\&.vx;
+101             }
+102             if (i\&.y - RADIUS < 0)
+103             {
+104                 i\&.y = RADIUS;
+105                 i\&.vy = -i\&.vy;
+106             }
+107             if (i\&.y + RADIUS > canvas\&.GetHeight())
+108             {
+109                 i\&.y = (float)canvas\&.GetHeight() - RADIUS;
+110                 i\&.vy = -i\&.vy;
+111             }
+112 
+113             // 更新位置
+114             i\&.img\&.SetPos((int)i\&.x - RADIUS, (int)i\&.y - RADIUS);
+115         }
+116 
+117         if (wnd\&.BeginTask())
+118         {
+119             // 渲染场景
+120             scene\&.Render(canvas\&.GetImagePointer(), show_outline);
+121 
+122             // 手动刷新双缓冲
+123             //wnd\&.FlushDrawing();
+124 
+125             wnd\&.EndTask();
+126             wnd\&.Redraw();
+127         }
+128 
+129         // 平衡帧率
+130         hiex::DelayFPS(24);
+131     }
+132 
+133     return 0;
+134 }
+.fi
+.SH "变量说明"
+.PP 
+.SS "\fBhiex::SysButton\fP btn"
+
+.PP
+在文件 main\&.cpp 第 24 行定义\&.
+.SS "bool show_outline = false"
+
+.PP
+在文件 main\&.cpp 第 25 行定义\&.
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

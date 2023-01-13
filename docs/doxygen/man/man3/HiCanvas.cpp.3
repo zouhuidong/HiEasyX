@@ -1,0 +1,54 @@
+.TH "E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp" 3 "2023年 一月 13日 星期五" "Version Ver 0.3.0" "HiEasyX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+E:/_MYC/_VS_Project/HiEasyX/HiEasyX/HiEasyX/HiCanvas.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'HiCanvas\&.h'\fP
+.br
+\fC#include 'HiMacro\&.h'\fP
+.br
+\fC#include 'HiWindow\&.h'\fP
+.br
+\fC#include 'HiGdiplus\&.h'\fP
+.br
+
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBHiEasyX\fP"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "COLORREF \fBHiEasyX::MixAlphaColor\fP (COLORREF cDst, COLORREF cSrc, bool isCalculated, BYTE alpha=255)"
+.br
+.RI "根据透明度混合颜色 "
+.ti -1c
+.RI "void \fBHiEasyX::CopyImage_Alpha\fP (int x, int y, DWORD *pDst, int wDst, int hDst, DWORD *pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)"
+.br
+.ti -1c
+.RI "IMAGE \fBHiEasyX::RotateImage_Alpha\fP (IMAGE *pImg, double radian, COLORREF bkcolor=BLACK)"
+.br
+.RI "旋转图像（保留透明信息，自适应大小） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Rough_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（粗糙的、即不插值的缩放，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "缩放图像（双线性插值，保留透明度信息） "
+.ti -1c
+.RI "IMAGE \fBHiEasyX::ZoomImage_Win32_Alpha\fP (IMAGE *srcimg, int width, int height=0)"
+.br
+.RI "图像缩放（基于 Win32 API，比较快，保留透明度信息） "
+.in -1c
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 HiEasyX 的 源代码自动生成\&.

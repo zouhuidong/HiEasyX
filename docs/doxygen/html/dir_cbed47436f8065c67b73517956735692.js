@@ -11,13 +11,15 @@ var dir_cbed47436f8065c67b73517956735692 =
     ] ],
     [ "SysComboBox.cpp", "_sys_combo_box_8cpp.html", null ],
     [ "SysComboBox.h", "_sys_combo_box_8h.html", [
-      [ "SysComboBox", "class_hi_easy_x_1_1_sys_combo_box.html", "class_hi_easy_x_1_1_sys_combo_box" ]
+      [ "SysComboBox", "class_hi_easy_x_1_1_sys_combo_box.html", "class_hi_easy_x_1_1_sys_combo_box" ],
+      [ "PreStyle", "struct_hi_easy_x_1_1_sys_combo_box_1_1_pre_style.html", "struct_hi_easy_x_1_1_sys_combo_box_1_1_pre_style" ]
     ] ],
     [ "SysControlBase.cpp", "_sys_control_base_8cpp.html", "_sys_control_base_8cpp" ],
     [ "SysControlBase.h", "_sys_control_base_8h.html", "_sys_control_base_8h" ],
     [ "SysEdit.cpp", "_sys_edit_8cpp.html", null ],
     [ "SysEdit.h", "_sys_edit_8h.html", [
-      [ "SysEdit", "class_hi_easy_x_1_1_sys_edit.html", "class_hi_easy_x_1_1_sys_edit" ]
+      [ "SysEdit", "class_hi_easy_x_1_1_sys_edit.html", "class_hi_easy_x_1_1_sys_edit" ],
+      [ "PreStyle", "struct_hi_easy_x_1_1_sys_edit_1_1_pre_style.html", "struct_hi_easy_x_1_1_sys_edit_1_1_pre_style" ]
     ] ],
     [ "SysGroup.cpp", "_sys_group_8cpp.html", null ],
     [ "SysGroup.h", "_sys_group_8h.html", [

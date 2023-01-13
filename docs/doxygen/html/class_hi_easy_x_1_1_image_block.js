@@ -10,7 +10,7 @@ var class_hi_easy_x_1_1_image_block =
     [ "GetHeight", "class_hi_easy_x_1_1_image_block.html#a2f3ea4561f23825cd47ea6b0b4cf46a0", null ],
     [ "GetPos", "class_hi_easy_x_1_1_image_block.html#a455941c55c428999e17db1ee55e9fb59", null ],
     [ "GetWidth", "class_hi_easy_x_1_1_image_block.html#af2d4c2b56fb957ab41cc8ae02cdf8cd0", null ],
-    [ "Render", "class_hi_easy_x_1_1_image_block.html#afa3f260aea67604b761e5462ff48e709", null ],
+    [ "Render", "class_hi_easy_x_1_1_image_block.html#ab4d33f1f48c172b400a14224398beb85", null ],
     [ "SetCanvas", "class_hi_easy_x_1_1_image_block.html#a5963b3d8e857996f512caadb731acf97", null ],
     [ "SetPos", "class_hi_easy_x_1_1_image_block.html#a7ffc111b77534d486650edaa49d4d0fe", null ],
     [ "alpha", "class_hi_easy_x_1_1_image_block.html#ac77a27ba8cde18f2e1cbc458613b8ec7", null ],
