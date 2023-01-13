@@ -56,7 +56,7 @@ int main()
 
 	END_TASK();			// （不同于 EasyX）完成绘制，结束任务
 
-	FLUSH_DRAW();			// （不同于 EasyX）将绘制内容刷新到屏幕
+	REDRAW_WINDOW();			// （不同于 EasyX）将绘制内容刷新到屏幕
 
 	getmessage(EM_KEY);		// 任意键退出
 
