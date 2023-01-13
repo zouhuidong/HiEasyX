@@ -11,7 +11,7 @@ HiEasyX 只有一个目的——让 EasyX 更易用。
 
 > [快速教程](./Tutorial.md)
 >
-> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)
+> [Alan-CRL 的教程](https://hiex.alan-crl.top/introduction/tutorial/)
 
 > [在线文档](https://zouhuidong.github.io/HiEasyX)
 
@@ -173,4 +173,4 @@ int main()
 
 > [快速教程](./Tutorial.md)
 >
-> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)
+> [Alan-CRL 的教程](https://hiex.alan-crl.top/introduction/tutorial/)
