@@ -1,5 +1,40 @@
 # 更新日志
 
+
+**Ver 0.3.0** (2023.01.13)
+
+*新增*
+* HiGdiplus 模块（对 GDI+ 的封装，可以绘制透明和抗锯齿图形，包括 HiGdiplus.h 和 HiGdiplus.cpp）
+* DRAW_TNS_INIT_GRAPHICS 和 DRAW_TNS_RENDER_TO 宏，可以很方便地绘制透明图形
+* EnableAutoFlush 函数（设置是否启用自动刷新双缓冲）
+* Canvas::GP_ 系列函数（对应 GDI+ 绘图函数，支持透明和抗锯齿）
+* Canvas::ZoomImage_Rough_Alpha 函数（提供更多一种缩放函数）
+* Canvas::Clear_Alpha 函数（用于保留背景色透明度地清空画布）
+* Canvas::EnableAutoMarkFlushWindow 函数（在画布绑定到窗口的情况下，可以设置 Canvas 每次绘制后是否自动标记需要刷新双缓冲）
+* FlushDrawing 函数（支持部分刷新双缓冲）
+* SetWindowTitle 函数（设置窗口标题）
+
+---------------------------
+
+改动
+双缓冲刷新机制变得更高效（原本是每次窗口任务结束后直接刷新双缓冲，现在只在任务结束时标记需要刷新，实际等到响应窗口重绘消息时才真正刷新双缓冲）
+EnforceRedraw 函数改名为 RedrawWindow
+FLUSH_DRAW 宏改名为 REDRAW_WINDOW
+响应 WM_PAINT 消息时只对需要部分进行重绘
+SysEdit::PreSetStyle 函数和 SysComboBox::PreSetStyle 函数的形参改为了一个囊括了所有旧形参的结构体
+isXXX 函数改名为 IsXXX
+Canvas::Render 函数改名为 Canvas::RenderTo
+Canvas::GetPixel_Fast、Canvas::PutPixel_Fast、Canvas::PutPixel_Fast_Alpha 函数的 _Fast 后缀都改为 _Direct
+绘制模式 DM_Normal 和 DM_Real 改成一样了
+
+---------------------------
+
+
+删除
+FlushDrawingToWnd 函数
+
+---
+
 **Ver 0.2.2** (2022.12.04)
 
 *新增*
