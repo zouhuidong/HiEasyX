@@ -732,12 +732,12 @@ namespace HiEasyX
 		float GP_GetLineWidth() const { return m_fGPLineWidth; }
 
 		/**
-		 * @brief 设置 GDI+ 绘制时是否使用透明度
+		 * @brief 设置 GDI+ 绘制时是否使用透明度（默认不使用）
 		*/
 		void GP_EnableAlpha(bool enable);
 
 		/**
-		 * @brief 设置 GDI+ 绘制时是否抗锯齿
+		 * @brief 设置 GDI+ 绘制时是否抗锯齿（默认开启）
 		*/
 		void GP_EnableAA(bool enable);
 

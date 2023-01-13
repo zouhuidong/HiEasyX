@@ -5,13 +5,13 @@
 ![Stars](https://img.shields.io/github/stars/zouhuidong/HiEasyX)
 ![Forks](https://img.shields.io/github/forks/zouhuidong/HiEasyX)
 
-HiEasyX 基于 EasyX 实现了在窗口、绘图、UI 等诸多方面的全面升级。
+HiEasyX 是基于 EasyX 的扩展库，支持创建多窗口、透明抗锯齿绘图、系统 UI 组件等等。
 
-HiEasyX 只有一个目的——让 EasyX 更易用。
+HiEasyX 和 EasyX 的契合度很高，它能让你在使用 EasyX 的过程中如虎添翼~
 
-> [快速教程](./Tutorial.md)
+> [HiEasyX 教程目录](./Tutorial/index.md)
 >
-> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)
+> [Alan-CRL 的教程](https://hiex.alan-crl.top/)
 
 > [在线文档](https://zouhuidong.github.io/HiEasyX)
 
@@ -68,8 +68,8 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
     - SysComboBox
   + HiCanvas：EasyX 绘图函数的 C++ 封装
     - 支持透明通道
+    - 支持 GDI+ 透明和抗锯齿绘制
     - 和 HiWindow 完美融合
-    - 使用更加方便
   + HiGif：动图支持（改编自：依稀_yixy）
   + HiMusicMCI：声音 API 封装（原作者：悠远的苍穹 <2237505658@qq.com>）
   + HiMouseDrag：鼠标拖动消息封装
@@ -82,58 +82,11 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 
 悠远的苍穹
 
-## 编译环境
+## 立即开始
 
-* Windows 7 及以上 以及 Windows Sever 2008 R2 及以上 （推荐使用 Windows 10/11）
-* Visual Studio 2012 及以上 （推荐使用 Visual Studio 2022）
-* EasyX_20220901
-
-> *需要 C++ 11 及以上版本。*
-> 
-> *需要 UNICODE 字符集，且并不支持 MBCS 字符集。*
-> 
-> *您必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn*
-
-**注意：暂不支持 MinGW 等 GCC 编译器，请使用 Visual Studio 编译项目。**
-
-## 配置此库
-
-您可以直接打开仓库中的项目并编译运行。下面是在您的项目中配置此库的方法：
-
-1. 下载仓库到本地
-2. 创建一个 Visual Studio 项目
-3. 复制仓库项目中的 `./HiEasyX/HiEasyX.h` 和 `./HiEasyX/HiEasyX/` 整个文件夹到您的项目目录下
-4. 将刚才复制的文件和文件夹加入到您的 Visual Studio 项目中（拖入 Visual Studio 的项目资源管理器即可，或可以手动添加）
-5. 编写代码，编译运行
-
-> **温馨提示**
-> 
-> 由于 HiEasyX 源码文件较多，故建议在 Visual Studio 项目资源管理器中创建 HiEasyX 筛选器，将上述文件和文件夹都拖入此筛选器中，这样可以使项目结构更整洁。第一次编译需要编译全部文件，所以耗时较长，后面就不会了。
-
-测试代码：
-
-```cpp
-#include "HiEasyX.h"			// 包含 HiEasyX 头文件
-
-int main()
-{
-	initgraph();			// 初始化窗口
-
-	BEGIN_TASK();			// （不同于 EasyX）启动任务，标识开始绘制
-
-	circle(320, 240, 100);		// 画圆
-
-	END_TASK();			// （不同于 EasyX）完成绘制，结束任务
-
-	FLUSH_DRAW();			// （不同于 EasyX）将绘制内容刷新到屏幕
-
-	getmessage(EM_KEY);		// 任意键退出
-
-	closegraph();			// 关闭窗口
-	return 0;
-}
-
-```
+> [HiEasyX 教程目录](./Tutorial/index.md)
+>
+> [Alan-CRL 的教程](https://hiex.alan-crl.top/)
 
 ## 示例程序截屏
 
@@ -168,9 +121,3 @@ int main()
 <img src="./screenshot/gui.png"><br>
 <b>部分自绘控件</b>
 </div><br>
-
-## 立即开始
-
-> [快速教程](./Tutorial.md)
->
-> [Alan-CRL 的教程](https://hiex.netlify.app/introduction/tutorial/)

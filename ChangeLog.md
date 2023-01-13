@@ -5,7 +5,7 @@
 
 **新增**
 1. 新增 `HiGdiplus` 模块（对 GDI+ 的封装，可以绘制透明和抗锯齿图形，包括 `HiGdiplus.h` 和 `HiGdiplus.cpp`）
-2. 新增 `DRAW_TNS_INIT_GRAPHICS` 和 `DRAW_TNS_RENDER_TO` 宏，可以很方便地绘制透明图形
+2. 新增 `DRAW_TNS_INIT_GRAPHICS` 宏和 `DRAW_TNS_RENDER_TO` 宏，可以很方便地绘制透明图形
 3. 新增 `EnableAutoFlush` 函数（设置是否启用自动刷新双缓冲）
 4. 新增 `Canvas::GP_` 系列函数（对应 GDI+ 绘图函数，支持透明和抗锯齿）
 5. 新增 `Canvas::ZoomImage_Rough_Alpha` 函数（提供更多一种缩放函数）
@@ -22,7 +22,7 @@
 5. `SysEdit::PreSetStyle` 函数和 `SysComboBox::PreSetStyle` 函数的形参改为了一个囊括了所有旧形参的结构体
 6. `isXXX` 函数改名为 `IsXXX`
 7. `Canvas::Render` 函数改名为 `Canvas::RenderTo`
-8. `Canvas::GetPixel_Fast`、`Canvas::PutPixel_Fast`、`Canvas::PutPixel_Fast_Alpha` 函数的 `_Fast` 后缀都改为 `_Direct`
+8. `Canvas::GetPixel_Fast`、 `Canvas::PutPixel_Fast`、 `Canvas::PutPixel_Fast_Alpha` 函数的 `_Fast` 后缀都改为 `_Direct`
 9. 绘制模式 `DM_Normal` 和 `DM_Real` 改成一样了
 
 **删除**

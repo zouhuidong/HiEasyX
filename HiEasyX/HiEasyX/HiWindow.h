@@ -39,7 +39,7 @@
 #define WM_SYSCTRL_DELETE					(WM_USER + 9339)
 
 // 用户重绘消息，无需参数
-// 在快速绘制模式下会发送此消息而非 WN_PAINT
+// 用户调用 RedrawWindow 以重绘窗口时会发送此消息而非 WN_PAINT
 #define WM_USER_REDRAW						(WM_USER + 9340)
 
 
