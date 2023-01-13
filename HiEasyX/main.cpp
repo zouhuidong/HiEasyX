@@ -2,25 +2,29 @@
 
 int main()
 {
-	hiex::Window wnd(300, 200);
+	initgraph(640, 480);
 
-	// 编辑框
-	hiex::SysEdit edit;
-	edit.PreSetStyle({ true, false, true, true });	// 预设样式可以不用创建结构体，直接简写成这样
-	edit.Create(wnd.GetHandle(), 10, 10, 280, 140, L"Type here~");
-	edit.SetFont(24, 0, L"微软雅黑");
+	hiex::Canvas canvas;
+	hiex::BindWindowCanvas(&canvas);
 
-	// 按钮
-	hiex::SysButton btn;
-	btn.Create(wnd.GetHandle(), 190, 160, 100, 30, L"Submit");
+	canvas.CenterText(L"Wonderful");
 
-	while (wnd.IsAlive())
+	// 由于 canvas 绑定了窗口，所以由外部向 canvas 上绘图前，要先启动窗口任务，
+	// 此处使用 BeginBatchDrawing 是因为它会在内部启动窗口任务。
+	canvas.BeginBatchDrawing();
+
+	// 绘制透明图形
+	DRAW_TNS_INIT_GRAPHICS(201, 201);
 	{
-		// 按下按钮时，弹窗显示输入的文本
-		if (btn.IsClicked())
-			MessageBox(wnd.GetHandle(), edit.GetText().c_str(), L"Submit", MB_OK);
-		Sleep(50);
+		graphics.FillCircle(100, 100, 100, true, RED, SKYBLUE);
 	}
+	DRAW_TNS_RENDER_TO(120, 120, canvas.Pt(), 100);
 
+	// 对应 BeginBatchDrawing
+	canvas.EndBatchDrawing();
+
+	REDRAW_WINDOW();
+	getmessage(EM_CHAR);
+	closegraph();
 	return 0;
 }
