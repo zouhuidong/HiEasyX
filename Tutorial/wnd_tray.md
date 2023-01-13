@@ -26,7 +26,7 @@ void OnTray(UINT id)
 	}
 
 	END_TASK();
-	FLUSH_DRAW();
+	REDRAW_WINDOW();
 }
 
 int main()
