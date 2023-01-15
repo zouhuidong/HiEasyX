@@ -13,7 +13,13 @@ namespace HiEasyX
 {
 	/////// GDI+ 环境配置 ///////
 
-	/// 注意，必须先启动 GDI+，才能使用下面的绘图函数
+	//
+	//	备注：
+	//		调用下面的绘图函数时，会自动尝试启动 GDI+。
+	// 
+	//		创建 HiWindow 绘图窗口时也会自动启动 GDI+，最后一个绘图窗口关闭时，GDI+ 会自动关闭。
+	//		如果没有创建绘图窗口，则需要手动关闭 GDI+。
+	//
 
 	/**
 	 * @brief 启动 GDI+，如果已经启动则直接返回
@@ -128,7 +134,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color linecolor,
 		float linewidth,
 		Gdiplus::SmoothingMode smoothing_mode
@@ -144,7 +150,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color fillcolor,
 		Gdiplus::SmoothingMode smoothing_mode
 	);
@@ -159,7 +165,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color linecolor,
 		float linewidth,
 		Gdiplus::SmoothingMode smoothing_mode

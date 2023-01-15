@@ -177,7 +177,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color linecolor,
 		float linewidth,
 		Gdiplus::SmoothingMode smoothing_mode
@@ -189,7 +189,7 @@ namespace HiEasyX
 
 		graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
 		graphics.SetSmoothingMode(smoothing_mode);
-		graphics.DrawPie(&pen, x, y, w, h, stangle, endangle);
+		graphics.DrawPie(&pen, x, y, w, h, stangle, sweepangle);
 	}
 
 	void Gdiplus_SolidPie(
@@ -199,7 +199,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color fillcolor,
 		Gdiplus::SmoothingMode smoothing_mode
 	)
@@ -210,7 +210,7 @@ namespace HiEasyX
 
 		graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
 		graphics.SetSmoothingMode(smoothing_mode);
-		graphics.FillPie(&brush, x, y, w, h, stangle, endangle);
+		graphics.FillPie(&brush, x, y, w, h, stangle, sweepangle);
 	}
 
 	void Gdiplus_Arc(
@@ -220,7 +220,7 @@ namespace HiEasyX
 		float w,
 		float h,
 		float stangle,
-		float endangle,
+		float sweepangle,
 		Gdiplus::Color linecolor,
 		float linewidth,
 		Gdiplus::SmoothingMode smoothing_mode
@@ -232,7 +232,7 @@ namespace HiEasyX
 
 		graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
 		graphics.SetSmoothingMode(smoothing_mode);
-		graphics.DrawArc(&pen, x, y, w, h, stangle, endangle);
+		graphics.DrawArc(&pen, x, y, w, h, stangle, sweepangle);
 	}
 
 	void EasyX_Gdiplus_Line(
@@ -459,7 +459,7 @@ namespace HiEasyX
 	{
 		Gdiplus_Pie(
 			GetImageHDC(pImg),
-			x, y, w, h, -stangle, -endangle,
+			x, y, w, h, -stangle, -(endangle - stangle) /* sweepangle */,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
@@ -481,7 +481,7 @@ namespace HiEasyX
 	{
 		Gdiplus_SolidPie(
 			GetImageHDC(pImg),
-			x, y, w, h, -stangle, -endangle,
+			x, y, w, h, -stangle, -(endangle - stangle),
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
 		);
@@ -522,7 +522,7 @@ namespace HiEasyX
 	{
 		Gdiplus_Arc(
 			GetImageHDC(pImg),
-			x, y, w, h, -stangle, -endangle,
+			x, y, w, h, -stangle, -(endangle - stangle),
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
 			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
