@@ -36,7 +36,7 @@ namespace HiEasyX
 
 	void CopyImage_Alpha(int x, int y, DWORD* pDst, int wDst, int hDst, DWORD* pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
-		// 裁剪起点或终点无效
+		// 对待输出图像的裁剪起点或终点无效
 		if (crop.left > wSrc || crop.top > hSrc || crop.right < crop.left || crop.bottom < crop.top)
 			return;
 
@@ -1557,20 +1557,36 @@ namespace HiEasyX
 		return 0;
 	}
 
-	IMAGE Canvas::Load_Image_Alpha(LPCTSTR lpszImgFile, int x, int y, bool bResize, int nWidth, int nHeight, BYTE alpha, bool bUseSrcAlpha)
+	IMAGE Canvas::Load_Image_Alpha(LPCTSTR lpszImgFile, int x, int y, bool bResize, int nWidth, int nHeight, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
 	{
-		if (!bResize && (x > m_nWidth || y > m_nHeight))	return {};
+		// 标记到底要不要调整图像大小
+		bool resize_flag = bResize;
+		if (m_nWidth == 0 && m_nHeight == 0)
+		{
+			resize_flag = true;
+		}
+
+		// 如果超出画布范围而又不调整图像大小，则直接返回
+		if (!resize_flag && (x > m_nWidth || y > m_nHeight))	return {};
+
+		// 加载图像
 		IMAGE img;
 		loadimage(&img, lpszImgFile, nWidth, nHeight, true);
 		int w = img.getwidth(), h = img.getheight();
+
+		// 如果图像在左侧或上方越界，那么不用输出了
 		if (x <= -w || y <= -h)	return {};
-		if (bResize)
+
+		// 调整图像大小
+		if (resize_flag)
 		{
 			int nw = x + w;
 			int nh = y + h;
-			Resize(m_nWidth < nw ? nw : m_nWidth, m_nHeight < nh ? nh : m_nHeight);
+			Resize(nw, nh);
 		}
-		PutImageIn_Alpha(x, y, &img, { 0 }, alpha, bUseSrcAlpha);
+
+		// 输出图像
+		PutImageIn_Alpha(x, y, &img, { 0 }, alpha, bUseSrcAlpha, isCalculated);
 		return img;
 	}
 

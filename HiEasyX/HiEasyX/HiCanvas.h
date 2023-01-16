@@ -66,7 +66,8 @@ namespace HiEasyX
 	 * </pre>
 	*/
 	void CopyImage_Alpha(
-		int x, int y,
+		int x,
+		int y,
 		DWORD* pDst, int wDst, int hDst,
 		DWORD* pSrc, int wSrc, int hSrc,
 		RECT crop = { 0 },
@@ -620,20 +621,24 @@ namespace HiEasyX
 		 * @param[in] lpszImgFile		图像文件路径
 		 * @param[in] x					输出到画布的位置
 		 * @param[in] y					输出到画布的位置
-		 * @param[in] bResize			是否调整画布大小以正好容纳图像
+		 * @param[in] bResize			是否调整画布大小以正好容纳图像（对于无宽高的画布会自动调整大小）
 		 * @param[in] nWidth			图像目标拉伸尺寸，为 0 表示不拉伸
 		 * @param[in] nHeight			图像目标拉伸尺寸，为 0 表示不拉伸
 		 * @param[in] alpha				叠加透明度
 		 * @param[in] bUseSrcAlpha		是否使用原图的透明度信息进行混合（仅支持有透明度信息的 png 图像）
+		 * @param[in] isCalculated		原图是否已经混合透明度
 		 * @return 读取到的 IMAGE 对象
 		*/
 		IMAGE Load_Image_Alpha(
 			LPCTSTR lpszImgFile,
-			int x = 0, int y = 0,
-			bool bResize = true,
-			int nWidth = 0, int nHeight = 0,
+			int x = 0,
+			int y = 0,
+			bool bResize = false,
+			int nWidth = 0,
+			int nHeight = 0,
 			BYTE alpha = 255,
-			bool bUseSrcAlpha = false
+			bool bUseSrcAlpha = false,
+			bool isCalculated = false
 		);
 
 		/**
@@ -647,7 +652,8 @@ namespace HiEasyX
 		 * @param[in] isCalculated		原图是否已经混合透明度
 		*/
 		void PutImageIn_Alpha(
-			int x, int y,
+			int x,
+			int y,
 			IMAGE* pImg,
 			RECT crop = { 0 },
 			BYTE alpha = 255,
@@ -666,7 +672,8 @@ namespace HiEasyX
 		 * @param[in] isCalculated	画布像素是否已经透明混合
 		*/
 		void RenderTo(
-			int x, int y,
+			int x,
+			int y,
 			IMAGE* pImg = nullptr,
 			RECT crop = { 0 },
 			BYTE alpha = 255,
