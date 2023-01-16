@@ -4,7 +4,15 @@
 
 **修复**
 
-修正 Ver 0.3.0 中 GDI+ 封装函数中，画弧线函数和画饼状图函数的 `sweepangle` 和 `endangle` 混淆的问题
+1. 修正 Ver 0.3.0 中 GDI+ 封装函数中，画弧线函数和画饼状图函数的 `sweepangle` 和 `endangle` 混淆的问题
+2. 补充 `Canvas::Load_Image_Alpha` 函数的 `isCalculated` 参数
+3. 在无宽高的画布中调用 `Canvas::Load_Image_Alpha` 函数，可以自动调整画布到图像大小
+
+**已知 bug**
+
+在 EasyX 20220901 中，如果在调用 `initgraph`，也就是创建窗口前创建 Canvas，可能会导致无法绘制内容：包括无法在画布上绘制内容，以及创建窗口后也无法绘制内容。
+
+此问题很可能是由 EasyX 20220901 的一个 bug 导致的，详见：https://qa.codebus.cn/question/2480
 
 
 ## Ver 0.3.0 (2023.01.13)
