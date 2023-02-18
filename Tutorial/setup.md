@@ -16,7 +16,7 @@
 > 
 > * 必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn
 >
-> * 暂不支持 MinGW 等 GCC 编译器，请使用 Visual Studio 编译项目。
+> * 暂不支持 MinGW 等 GCC 编译器，请使用 Visual Studio 编译项目。（关于 MinGW 的问题，参见 https://github.com/zouhuidong/HiEasyX/issues/14 ）
 
 ## 配置 HiEasyX 到项目中
 
