@@ -71,7 +71,7 @@ int main()
 }
 ```
 
-> 查看了解更多封装的 Gdiplus 函数可以转到[此处](https://hiex.alan-crl.top/function/graphical/gdiplus/)
+> 查看了解更多封装的 Gdiplus 函数可以转到 [此处](https://hiex.alan-crl.top/function/graphical/gdiplus/)
 
 
 > [回到教程目录](./index.md)
