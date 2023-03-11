@@ -1,6 +1,7 @@
 /**
  * @brief 	比较原生 EasyX 和 HiEasyX 的绘图效率
  * @author 	huidong <mailhuid@163.com>
+ * @version	HiEasyX Ver0.3.2
  * @date 	2022.08.14
 */
 

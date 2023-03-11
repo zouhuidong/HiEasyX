@@ -1,6 +1,7 @@
 /**
  * @brief	展示 HiEasyX 的 GUI 模块
  * @author	huidong <mailhuid@163.com>
+ * @version	HiEasyX Ver0.3.2
  * @date	2023.01.12
 */
 

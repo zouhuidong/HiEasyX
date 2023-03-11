@@ -5,6 +5,7 @@
 HiEasyX 对 GDI+ 的封装在 `HiGdiplus.h` 中，这些绘图函数都支持透明通道和抗锯齿。可以这样调用它们：
 
 ```cpp
+// HiEasyX Ver0.3.2
 #include "HiEasyX.h"
 
 int main()
@@ -26,10 +27,10 @@ int main()
 		SET_ALPHA(RED, 170),	// 使用透明度为 170 的红色
 		25,						// 设置线宽
 		true,					// 启用透明通道
-		true,					// 启用抗锯齿
+		Gdiplus::SmoothingModeAntiAlias,	// 启用抗锯齿
 		canvas.Pt()				// 设置绘制到 canvas 上
 	);
-	
+
 	// 对应 BeginBatchDrawing
 	canvas.EndBatchDrawing();
 
@@ -45,6 +46,7 @@ int main()
 使用方法很简单，见代码：
 
 ```cpp
+// HiEasyX Ver0.3.2
 #include "HiEasyX.h"
 
 int main()
@@ -67,6 +69,37 @@ int main()
 	REDRAW_WINDOW();
 	getmessage(EM_CHAR);
 	closegraph();
+	return 0;
+}
+```
+
+其它示例：
+```cpp
+// HiEasyX Ver0.3.2
+#include "HiEasyX.h"
+
+int main()
+{
+	hiex::Window wnd;
+	wnd.Create();
+
+	hiex::Canvas canvas;
+	wnd.BindCanvas(&canvas);
+
+	// 开启透明通道
+	canvas.GP_EnableAlpha(true);
+	
+	// 设置抗锯齿模式为高质量（抗锯齿的所有模式定义在枚举类型 Gdiplus::SmoothingMode 中）
+	canvas.GP_SetSmoothingMode(Gdiplus::SmoothingModeHighQuality);
+
+	// 绘制圆角矩形
+	canvas.GP_RoundRect(100, 120, 100, 100, 20, 20, true, SET_ALPHA(PURPLE, 100));
+	canvas.GP_SolidRoundRect(180, 120, 100, 100, 20, 20, true, SET_ALPHA(GREEN, 100));
+	canvas.GP_FillRoundRect(260, 120, 100, 100, 20, 20, true, SET_ALPHA(BLACK, 100), SET_ALPHA(RED, 100));
+
+	wnd.Redraw();
+
+	hiex::init_end();
 	return 0;
 }
 ```

@@ -10,6 +10,7 @@
 #include <vector>
 #include <list>
 #include <string>
+#include <gdiplus.h>
 
 namespace HiEasyX
 {
@@ -141,7 +142,7 @@ namespace HiEasyX
 		COLORREF m_cGPFillColor = WHITE;	///< GDI+ 绘图时使用的填充颜色
 		float m_fGPLineWidth = 1.f;			///< GDI+ 绘图时的线条宽度
 		bool m_bGPAlpha = false;			///< GDI+ 绘图时是否启用透明度
-		bool m_bGPAA = true;				///< GDI+ 绘图时是否抗锯齿
+		Gdiplus::SmoothingMode m_enuSmoothingMode = Gdiplus::SmoothingModeAntiAlias;	///< GDI+ 抗锯齿模式
 
 		HWND m_hBindWindow;					///< 绑定到的窗口
 		bool m_bAutoMarkFlushWindow = true;	///< 绑定到窗口时，标记是否在绘制后自动设置需要更新双缓冲
@@ -726,7 +727,7 @@ namespace HiEasyX
 		//		GDI+ 绘图函数不和 EasyX 原生函数共享同样的绘图颜色，
 		//		这是因为 GDI+ 的绘图函数支持透明，而 EasyX 原生函数不支持。
 		// 
-		//		可以使用 RGBA 宏设置带透明度的颜色
+		//		可以使用 RGBA 或 SET_ALPHA 宏设置带透明度的颜色
 		// 
 		////////////////////////////////////////////////////////////////////
 
@@ -744,12 +745,12 @@ namespace HiEasyX
 		void GP_EnableAlpha(bool enable);
 
 		/**
-		 * @brief 设置 GDI+ 绘制时是否抗锯齿（默认开启）
+		 * @brief 设置 GDI+ 抗锯齿模式
 		*/
-		void GP_EnableAA(bool enable);
+		void GP_SetSmoothingMode(Gdiplus::SmoothingMode smoothing_mode);
 
 		bool GP_IsEnbaleAlpha() const { return m_bGPAlpha; }
-		bool GP_IsEnbaleAA() const { return m_bGPAA; }
+		Gdiplus::SmoothingMode GP_GetSmoothingMode() const { return m_enuSmoothingMode; }
 
 		void GP_Line(float x1, float y1, float x2, float y2, bool isSetColor = false, COLORREF linecolor = 0);
 
@@ -760,6 +761,10 @@ namespace HiEasyX
 		void GP_Rectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0);
 		void GP_SolidRectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF fillcolor = 0);
 		void GP_FillRectangle(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
+
+		void GP_RoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor = false, COLORREF linecolor = 0);
+		void GP_SolidRoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor = false, COLORREF fillcolor = 0);
+		void GP_FillRoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor = false, COLORREF linecolor = 0, COLORREF fillcolor = 0);
 
 		void GP_Ellipse(float x, float y, float w, float h, bool isSetColor = false, COLORREF linecolor = 0);
 		void GP_SolidEllipse(float x, float y, float w, float h, bool isSetColor = false, COLORREF fillcolor = 0);

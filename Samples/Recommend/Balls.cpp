@@ -2,6 +2,7 @@
  * @brief	透明小球边界碰撞示例
  * @note	此示例用于演示 HiCanvas 的透明通道、场景和图层
  * @author	huidong <mailhuid@163.com>
+ * @version	HiEasyX Ver0.3.2
  * @date	2023.01.12
 */
 

@@ -1695,9 +1695,9 @@ namespace HiEasyX
 		m_bGPAlpha = enable;
 	}
 
-	void Canvas::GP_EnableAA(bool enable)
+	void Canvas::GP_SetSmoothingMode(Gdiplus::SmoothingMode smoothing_mode)
 	{
-		m_bGPAA = enable;
+		m_enuSmoothingMode = smoothing_mode;
 	}
 
 	void Canvas::GP_Line(float x1, float y1, float x2, float y2, bool isSetColor, COLORREF linecolor)
@@ -1705,7 +1705,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Line(x1, y1, x2, y2, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Line(x1, y1, x2, y2, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1715,7 +1715,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Polygon(points_num, points, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Polygon(points_num, points, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1725,7 +1725,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetFillColor(fillcolor);
-			EasyX_Gdiplus_SolidPolygon(points_num, points, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_SolidPolygon(points_num, points, m_cGPFillColor, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1739,7 +1739,7 @@ namespace HiEasyX
 				GP_SetLineColor(linecolor);
 				GP_SetFillColor(fillcolor);
 			}
-			EasyX_Gdiplus_FillPolygon(points_num, points, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_FillPolygon(points_num, points, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1749,7 +1749,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Rectangle(x, y, w, h, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Rectangle(x, y, w, h, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1759,7 +1759,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetFillColor(fillcolor);
-			EasyX_Gdiplus_SolidRectangle(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_SolidRectangle(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1773,7 +1773,41 @@ namespace HiEasyX
 				GP_SetLineColor(linecolor);
 				GP_SetFillColor(fillcolor);
 			}
-			EasyX_Gdiplus_FillRectangle(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_FillRectangle(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_RoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor, COLORREF linecolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetLineColor(linecolor);
+			EasyX_Gdiplus_RoundRect(x, y, w, h, ellipsewidth, ellipseheight, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_SolidRoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)	GP_SetFillColor(fillcolor);
+			EasyX_Gdiplus_SolidRoundRect(x, y, w, h, ellipsewidth, ellipseheight, m_cGPFillColor, m_bGPAlpha, m_enuSmoothingMode, Pt());
+			EndWindowTask();
+		}
+	}
+
+	void Canvas::GP_FillRoundRect(float x, float y, float w, float h, float ellipsewidth, float ellipseheight, bool isSetColor, COLORREF linecolor, COLORREF fillcolor)
+	{
+		if (BeginWindowTask())
+		{
+			if (isSetColor)
+			{
+				GP_SetLineColor(linecolor);
+				GP_SetFillColor(fillcolor);
+			}
+			EasyX_Gdiplus_FillRoundRect(x, y, w, h, ellipsewidth, ellipseheight, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1783,7 +1817,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Ellipse(x, y, w, h, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Ellipse(x, y, w, h, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1793,7 +1827,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetFillColor(fillcolor);
-			EasyX_Gdiplus_SolidEllipse(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_SolidEllipse(x, y, w, h, m_cGPFillColor, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1807,7 +1841,7 @@ namespace HiEasyX
 				GP_SetLineColor(linecolor);
 				GP_SetFillColor(fillcolor);
 			}
-			EasyX_Gdiplus_FillEllipse(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_FillEllipse(x, y, w, h, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1817,7 +1851,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1827,7 +1861,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetFillColor(fillcolor);
-			EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, m_cGPFillColor, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, m_cGPFillColor, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1841,7 +1875,7 @@ namespace HiEasyX
 				GP_SetLineColor(linecolor);
 				GP_SetFillColor(fillcolor);
 			}
-			EasyX_Gdiplus_FillPie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_FillPie(x, y, w, h, stangle, endangle, m_cGPLineColor, m_cGPFillColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}
@@ -1851,7 +1885,7 @@ namespace HiEasyX
 		if (BeginWindowTask())
 		{
 			if (isSetColor)	GP_SetLineColor(linecolor);
-			EasyX_Gdiplus_Arc(x, y, w, h, stangle, endangle, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_bGPAA, Pt());
+			EasyX_Gdiplus_Arc(x, y, w, h, stangle, endangle, m_cGPLineColor, m_fGPLineWidth, m_bGPAlpha, m_enuSmoothingMode, Pt());
 			EndWindowTask();
 		}
 	}

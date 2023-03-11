@@ -202,7 +202,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -215,7 +215,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -227,7 +227,7 @@ namespace HiEasyX
 		POINT* points,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -241,7 +241,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -256,7 +256,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -270,7 +270,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -286,7 +286,58 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief »­Ô²½Ç¾ØÐÎ
+	*/
+	void EasyX_Gdiplus_RoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF linecolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief »­ÎÞ±ß¿òÌî³äÔ²½Ç¾ØÐÎ
+	*/
+	void EasyX_Gdiplus_SolidRoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF fillcolor,
+		bool enable_alpha = false,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
+		IMAGE* pImg = nullptr
+	);
+
+	/**
+	 * @brief »­ÓÐ±ß¿òÌî³äÔ²½Ç¾ØÐÎ
+	*/
+	void EasyX_Gdiplus_FillRoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth = 1,
+		bool enable_alpha = false,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -301,7 +352,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -315,7 +366,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -331,7 +382,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -348,7 +399,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -364,7 +415,7 @@ namespace HiEasyX
 		float endangle,
 		COLORREF fillcolor,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -382,7 +433,7 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 
@@ -399,7 +450,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth = 1,
 		bool enable_alpha = false,
-		bool enable_aa = true,
+		Gdiplus::SmoothingMode smoothing_mode = Gdiplus::SmoothingModeHighQuality,
 		IMAGE* pImg = nullptr
 	);
 

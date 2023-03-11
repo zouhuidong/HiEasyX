@@ -243,7 +243,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -252,7 +252,7 @@ namespace HiEasyX
 			x1, y1, x2, y2,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -262,7 +262,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -280,7 +280,7 @@ namespace HiEasyX
 			pPts,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 
 		delete[] pPts;
@@ -291,7 +291,7 @@ namespace HiEasyX
 		POINT* points,
 		COLORREF fillcolor,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -308,7 +308,7 @@ namespace HiEasyX
 			points_num,
 			pPts,
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 
 		delete[] pPts;
@@ -321,12 +321,12 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
-		EasyX_Gdiplus_SolidPolygon(points_num, points, fillcolor, enable_alpha, enable_aa, pImg);
-		EasyX_Gdiplus_Polygon(points_num, points, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+		EasyX_Gdiplus_SolidPolygon(points_num, points, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Polygon(points_num, points, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
 	}
 
 	void EasyX_Gdiplus_Rectangle(
@@ -337,7 +337,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -346,7 +346,7 @@ namespace HiEasyX
 			x, y, w, h,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -357,7 +357,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -365,7 +365,7 @@ namespace HiEasyX
 			GetImageHDC(pImg),
 			x, y, w, h,
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -378,12 +378,79 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
-		EasyX_Gdiplus_SolidRectangle(x, y, w, h, fillcolor, enable_alpha, enable_aa, pImg);
-		EasyX_Gdiplus_Rectangle(x, y, w, h, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+		EasyX_Gdiplus_SolidRectangle(x, y, w, h, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Rectangle(x, y, w, h, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+	}
+
+	void EasyX_Gdiplus_RoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF linecolor,
+		float linewidth,
+		bool enable_alpha,
+		Gdiplus::SmoothingMode smoothing_mode,
+		IMAGE* pImg
+	)
+	{
+		EasyX_Gdiplus_Arc(x, y, ellipsewidth, ellipseheight, 180, 90, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Arc(x + w - ellipsewidth, y, ellipsewidth, ellipseheight, 90, 0, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Arc(x, y + h - ellipseheight, ellipsewidth, ellipseheight, 270, 180, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Arc(x + w - ellipsewidth, y + h - ellipseheight, ellipsewidth, ellipseheight, -90, 0, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+
+		EasyX_Gdiplus_Line(x + ellipsewidth / 2.f, y, x + w - ellipsewidth / 2.f, y, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Line(x, y + ellipseheight / 2.f, x, y + h - ellipseheight / 2.f, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Line(x + w, y + ellipseheight / 2.f, x + w, y + h - ellipseheight / 2.f, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Line(x + ellipsewidth / 2.f, y + h, x + w - ellipsewidth / 2.f, y + h, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+	}
+
+	void EasyX_Gdiplus_SolidRoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF fillcolor,
+		bool enable_alpha,
+		Gdiplus::SmoothingMode smoothing_mode,
+		IMAGE* pImg
+	)
+	{
+		EasyX_Gdiplus_SolidPie(x, y, ellipsewidth, ellipseheight, 180, 90, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_SolidPie(x + w - ellipsewidth, y, ellipsewidth, ellipseheight, 90, 0, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_SolidPie(x, y + h - ellipseheight, ellipsewidth, ellipseheight, 270, 180, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_SolidPie(x + w - ellipsewidth, y + h - ellipseheight, ellipsewidth, ellipseheight, -90, 0, fillcolor, enable_alpha, smoothing_mode, pImg);
+
+		EasyX_Gdiplus_SolidRectangle(x + ellipsewidth / 2.f, y, w - ellipsewidth, ellipseheight / 2.f, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_SolidRectangle(x, y + ellipseheight / 2.f, w, h - ellipseheight, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_SolidRectangle(x + ellipsewidth / 2.f, y + h - ellipseheight / 2.f, w - ellipsewidth, ellipseheight / 2.f, fillcolor, enable_alpha, smoothing_mode, pImg);
+	}
+
+	void EasyX_Gdiplus_FillRoundRect(
+		float x,
+		float y,
+		float w,
+		float h,
+		float ellipsewidth,
+		float ellipseheight,
+		COLORREF linecolor,
+		COLORREF fillcolor,
+		float linewidth,
+		bool enable_alpha,
+		Gdiplus::SmoothingMode smoothing_mode,
+		IMAGE* pImg
+	)
+	{
+		EasyX_Gdiplus_SolidRoundRect(x, y, w, h, ellipsewidth, ellipseheight, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_RoundRect(x, y, w, h, ellipsewidth, ellipseheight, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
 	}
 
 	void EasyX_Gdiplus_Ellipse(
@@ -394,7 +461,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -403,7 +470,7 @@ namespace HiEasyX
 			x, y, w, h,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -414,7 +481,7 @@ namespace HiEasyX
 		float h,
 		COLORREF fillcolor,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -422,7 +489,7 @@ namespace HiEasyX
 			GetImageHDC(pImg),
 			x, y, w, h,
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -435,12 +502,12 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
-		EasyX_Gdiplus_SolidEllipse(x, y, w, h, fillcolor, enable_alpha, enable_aa, pImg);
-		EasyX_Gdiplus_Ellipse(x, y, w, h, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+		EasyX_Gdiplus_SolidEllipse(x, y, w, h, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Ellipse(x, y, w, h, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
 	}
 
 	void EasyX_Gdiplus_Pie(
@@ -453,7 +520,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -462,7 +529,7 @@ namespace HiEasyX
 			x, y, w, h, -stangle, -(endangle - stangle) /* sweepangle */,
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -475,7 +542,7 @@ namespace HiEasyX
 		float endangle,
 		COLORREF fillcolor,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -483,7 +550,7 @@ namespace HiEasyX
 			GetImageHDC(pImg),
 			x, y, w, h, -stangle, -(endangle - stangle),
 			ConvertToGdiplusColor(fillcolor, enable_alpha),
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 
@@ -498,12 +565,12 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
-		EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, fillcolor, enable_alpha, enable_aa, pImg);
-		EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, linecolor, linewidth, enable_alpha, enable_aa, pImg);
+		EasyX_Gdiplus_SolidPie(x, y, w, h, stangle, endangle, fillcolor, enable_alpha, smoothing_mode, pImg);
+		EasyX_Gdiplus_Pie(x, y, w, h, stangle, endangle, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
 	}
 
 	void EasyX_Gdiplus_Arc(
@@ -516,7 +583,7 @@ namespace HiEasyX
 		COLORREF linecolor,
 		float linewidth,
 		bool enable_alpha,
-		bool enable_aa,
+		Gdiplus::SmoothingMode smoothing_mode,
 		IMAGE* pImg
 	)
 	{
@@ -525,7 +592,7 @@ namespace HiEasyX
 			x, y, w, h, -stangle, -(endangle - stangle),
 			ConvertToGdiplusColor(linecolor, enable_alpha),
 			linewidth,
-			enable_aa ? Gdiplus::SmoothingModeAntiAlias : Gdiplus::SmoothingModeDefault
+			smoothing_mode
 		);
 	}
 };
