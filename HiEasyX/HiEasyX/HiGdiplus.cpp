@@ -397,7 +397,8 @@ namespace HiEasyX
 		float linewidth,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg)
+		IMAGE* pImg
+	)
 	{
 		if (ellipsewidth > w) ellipsewidth = w;
 		if (ellipseheight > h) ellipseheight = h;
@@ -428,7 +429,8 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg)
+		IMAGE* pImg
+	)
 	{
 		if (ellipsewidth > w) ellipsewidth = w;
 		if (ellipseheight > h) ellipseheight = h;
@@ -461,7 +463,8 @@ namespace HiEasyX
 		float linewidth,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg)
+		IMAGE* pImg
+	)
 	{
 		if (ellipsewidth > w) ellipsewidth = w;
 		if (ellipseheight > h) ellipseheight = h;
