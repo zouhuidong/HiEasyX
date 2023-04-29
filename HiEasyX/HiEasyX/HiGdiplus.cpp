@@ -266,7 +266,7 @@ namespace HiEasyX
 		IMAGE* pImg
 	)
 	{
-		// 转换点的类型
+		// 杞崲鐐圭殑绫诲瀷
 		Gdiplus::PointF* pPts = new Gdiplus::PointF[points_num];
 		for (int i = 0; i < points_num; i++)
 		{
@@ -295,7 +295,7 @@ namespace HiEasyX
 		IMAGE* pImg
 	)
 	{
-		// 转换点的类型
+		// 杞崲鐐圭殑绫诲瀷
 		Gdiplus::PointF* pPts = new Gdiplus::PointF[points_num];
 		for (int i = 0; i < points_num; i++)
 		{
@@ -397,18 +397,25 @@ namespace HiEasyX
 		float linewidth,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg
-	)
+		IMAGE* pImg)
 	{
-		EasyX_Gdiplus_Arc(x, y, ellipsewidth, ellipseheight, 180, 90, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Arc(x + w - ellipsewidth, y, ellipsewidth, ellipseheight, 90, 0, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Arc(x, y + h - ellipseheight, ellipsewidth, ellipseheight, 270, 180, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Arc(x + w - ellipsewidth, y + h - ellipseheight, ellipsewidth, ellipseheight, -90, 0, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		if (ellipsewidth > w) ellipsewidth = w;
+		if (ellipseheight > h) ellipseheight = h;
 
-		EasyX_Gdiplus_Line(x + ellipsewidth / 2.f, y, x + w - ellipsewidth / 2.f, y, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Line(x, y + ellipseheight / 2.f, x, y + h - ellipseheight / 2.f, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Line(x + w, y + ellipseheight / 2.f, x + w, y + h - ellipseheight / 2.f, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_Line(x + ellipsewidth / 2.f, y + h, x + w - ellipsewidth / 2.f, y + h, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		Gdiplus_Try_Starup();
+		Gdiplus::Graphics graphics(GetImageHDC(pImg));
+		graphics.SetSmoothingMode(smoothing_mode);
+
+		Gdiplus::Pen pen(ConvertToGdiplusColor(linecolor, enable_alpha), linewidth);
+
+		Gdiplus::GraphicsPath path;
+		path.AddArc(x, y, ellipsewidth, ellipseheight, 180, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y, ellipsewidth, ellipseheight, 270, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 0, 90);
+		path.AddArc(x, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 90, 90);
+		path.CloseFigure();
+
+		graphics.DrawPath(&pen, &path);
 	}
 
 	void EasyX_Gdiplus_SolidRoundRect(
@@ -421,17 +428,25 @@ namespace HiEasyX
 		COLORREF fillcolor,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg
-	)
+		IMAGE* pImg)
 	{
-		EasyX_Gdiplus_SolidPie(x, y, ellipsewidth, ellipseheight, 180, 90, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_SolidPie(x + w - ellipsewidth, y, ellipsewidth, ellipseheight, 90, 0, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_SolidPie(x, y + h - ellipseheight, ellipsewidth, ellipseheight, 270, 180, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_SolidPie(x + w - ellipsewidth, y + h - ellipseheight, ellipsewidth, ellipseheight, -90, 0, fillcolor, enable_alpha, smoothing_mode, pImg);
+		if (ellipsewidth > w) ellipsewidth = w;
+		if (ellipseheight > h) ellipseheight = h;
 
-		EasyX_Gdiplus_SolidRectangle(x + ellipsewidth / 2.f, y, w - ellipsewidth, ellipseheight / 2.f, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_SolidRectangle(x, y + ellipseheight / 2.f, w, h - ellipseheight, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_SolidRectangle(x + ellipsewidth / 2.f, y + h - ellipseheight / 2.f, w - ellipsewidth, ellipseheight / 2.f, fillcolor, enable_alpha, smoothing_mode, pImg);
+		Gdiplus_Try_Starup();
+		Gdiplus::Graphics graphics(GetImageHDC(pImg));
+		graphics.SetSmoothingMode(smoothing_mode);
+
+		Gdiplus::SolidBrush brush(ConvertToGdiplusColor(fillcolor, enable_alpha));
+
+		Gdiplus::GraphicsPath path;
+		path.AddArc(x, y, ellipsewidth, ellipseheight, 180, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y, ellipsewidth, ellipseheight, 270, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 0, 90);
+		path.AddArc(x, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 90, 90);
+		path.CloseFigure();
+
+		graphics.FillPath(&brush, &path);
 	}
 
 	void EasyX_Gdiplus_FillRoundRect(
@@ -446,11 +461,27 @@ namespace HiEasyX
 		float linewidth,
 		bool enable_alpha,
 		Gdiplus::SmoothingMode smoothing_mode,
-		IMAGE* pImg
-	)
+		IMAGE* pImg)
 	{
-		EasyX_Gdiplus_SolidRoundRect(x, y, w, h, ellipsewidth, ellipseheight, fillcolor, enable_alpha, smoothing_mode, pImg);
-		EasyX_Gdiplus_RoundRect(x, y, w, h, ellipsewidth, ellipseheight, linecolor, linewidth, enable_alpha, smoothing_mode, pImg);
+		if (ellipsewidth > w) ellipsewidth = w;
+		if (ellipseheight > h) ellipseheight = h;
+
+		Gdiplus_Try_Starup();
+		Gdiplus::Graphics graphics(GetImageHDC(pImg));
+		graphics.SetSmoothingMode(smoothing_mode);
+
+		Gdiplus::Pen pen(ConvertToGdiplusColor(linecolor, enable_alpha), linewidth);
+		Gdiplus::SolidBrush brush(ConvertToGdiplusColor(fillcolor, enable_alpha));
+
+		Gdiplus::GraphicsPath path;
+		path.AddArc(x, y, ellipsewidth, ellipseheight, 180, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y, ellipsewidth, ellipseheight, 270, 90);
+		path.AddArc(x + w - ellipsewidth - 1, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 0, 90);
+		path.AddArc(x, y + h - ellipseheight - 1, ellipsewidth, ellipseheight, 90, 90);
+		path.CloseFigure();
+
+		graphics.FillPath(&brush, &path);
+		graphics.DrawPath(&pen, &path);
 	}
 
 	void EasyX_Gdiplus_Ellipse(
