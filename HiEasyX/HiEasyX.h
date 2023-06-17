@@ -1,18 +1,18 @@
 /**
  * @file	HiEasyX.h
- * @brief	HiEasyX ¿âÍ·ÎÄ¼ş
- * @note	HiEasyX ÊÇ»ùÓÚ EasyX µÄÀ©Õ¹¿â£¬Ö§³Ö´´½¨¶à´°¿Ú¡¢Í¸Ã÷¿¹¾â³İ»æÍ¼¡¢ÏµÍ³ UI ×é¼şµÈµÈ¡£
+ * @brief	HiEasyX åº“å¤´æ–‡ä»¶
+ * @note	HiEasyX æ˜¯åŸºäº EasyX çš„æ‰©å±•åº“ï¼Œæ”¯æŒåˆ›å»ºå¤šçª—å£ã€é€æ˜æŠ—é”¯é½¿ç»˜å›¾ã€ç³»ç»Ÿ UI ç»„ä»¶ç­‰ç­‰ã€‚
  *
- * @version	Ver 0.3.3
+ * @version	Ver 0.3.4
  * @envir	VisualStudio 2022 | EasyX_20220901 | Windows 10
  * @site	https://github.com/zouhuidong/HiEasyX
  *
  * @author	huidong
  * @qq		1442701429
  * @email	mailhuid@163.com
- * 
+ *
  * @create	2022.07.20
- * @update	2023.04.29
+ * @update	2023.06.17
 */
 
 #pragma once
@@ -28,7 +28,7 @@
 #include "HiEasyX/HiMusicMCI.h"
 #include "HiEasyX/HiGif.h"
 
-// Î´Ñ¡ÔñÊ¹ÓÃÔ­Éú EasyX
+// æœªé€‰æ‹©ä½¿ç”¨åŸç”Ÿ EasyX
 #ifndef _NATIVE_EASYX_
 #include "HiEasyX/HiWindow.h"
 #include "HiEasyX/HiSysGUI/HiSysGUI.h"
@@ -38,10 +38,8 @@
 #include "HiEasyX/HiCanvas.h"
 #include "HiEasyX/HiGUI/HiGUI.h"
 
-
-// HiEasyX ÃüÃû¿Õ¼äËõĞ´
+// HiEasyX å‘½åç©ºé—´ç¼©å†™
 namespace hiex = HiEasyX;
 
-// ¼æÈİ¾É°æ EasyWin32 ÃüÃû¿Õ¼ä£¬Çë¾¡Á¿Ê¹ÓÃ HiEasyX ÃüÃû¿Õ¼ä
+// å…¼å®¹æ—§ç‰ˆ EasyWin32 å‘½åç©ºé—´ï¼Œè¯·å°½é‡ä½¿ç”¨ HiEasyX å‘½åç©ºé—´
 namespace EasyWin32 = HiEasyX;
-
