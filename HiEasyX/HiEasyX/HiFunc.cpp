@@ -12,18 +12,18 @@ ScreenSize GetScreenSize()
 	return { left,top,w,h };
 }
 
-// »ñÈ¡Í¼Ïñ³ß´ç
-// ¿ÉÒÔ·½±ãµØ´¦Àí IMAGE Ö¸ÕëÎª¿Õ£¬¼´Ö¸ÏòÖ÷»æÍ¼´°¿ÚµÄÇé¿ö
+// è·å–å›¾åƒå°ºå¯¸
+// å¯ä»¥æ–¹ä¾¿åœ°å¤„ç† IMAGE æŒ‡é’ˆä¸ºç©ºï¼Œå³æŒ‡å‘ä¸»ç»˜å›¾çª—å£çš„æƒ…å†µ
 void GetImageSize(IMAGE* pImg, int* width, int* height)
 {
-	// ÆÕÍ¨ IMAGE Ö¸Õë
+	// æ™®é€š IMAGE æŒ‡é’ˆ
 	if (pImg)
 	{
 		*width = pImg->getwidth();
 		*height = pImg->getheight();
 	}
 
-	// nullptr ¶ÔÓ¦»æÍ¼´°¿Ú
+	// nullptr å¯¹åº”ç»˜å›¾çª—å£
 	else
 	{
 		IMAGE* pOld = GetWorkingImage();
@@ -46,15 +46,43 @@ DWORD* ReverseAlpha(DWORD* pBuf, int size)
 
 HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha)
 {
-	// ²âÊÔ½áÂÛ
-	// ÈôÍ¼ÏñÖĞÓĞÈÎºÎÏñËØ alpha ²»Îª 0£¬ÔòÆôÓÃ alpha
-	// ÈôÍ¼Ïñ alpha È«²¿Îª 0£¬Ôò±íÊ¾ÍêÈ«²»Í¸Ã÷
+	// æµ‹è¯•ç»“è®º
+	// è‹¥å›¾åƒä¸­æœ‰ä»»ä½•åƒç´  alpha ä¸ä¸º 0ï¼Œåˆ™å¯ç”¨ alpha
+	// è‹¥å›¾åƒ alpha å…¨éƒ¨ä¸º 0ï¼Œåˆ™è¡¨ç¤ºå®Œå…¨ä¸é€æ˜
 
 	DWORD* pBuf = GetImageBuffer(img);
 	if (!enable_alpha)
 		for (int i = 0; i < img->getwidth() * img->getheight(); i++)
 			pBuf[i] &= 0x00ffffff;
 	return CreateBitmap(img->getwidth(), img->getheight(), 1, 32, pBuf);
+}
+
+IMAGE Bitmap2Image(HBITMAP* hBitmap, bool enable_alpha)
+{
+	BITMAP bm;
+	GetObject(*hBitmap, sizeof(bm), &bm);
+	int width = bm.bmWidth;
+	int height = bm.bmHeight;
+
+	IMAGE img(width, height);
+	DWORD* pBuf = GetImageBuffer(&img);
+
+	BITMAPINFO bmi = { 0 };
+	bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+	bmi.bmiHeader.biWidth = width;
+	bmi.bmiHeader.biHeight = -height;
+	bmi.bmiHeader.biPlanes = 1;
+	bmi.bmiHeader.biBitCount = 32;
+
+	HDC hMemDC = CreateCompatibleDC(NULL);
+	GetDIBits(hMemDC, *hBitmap, 0, height, pBuf, &bmi, DIB_RGB_COLORS);
+	DeleteDC(hMemDC);
+
+	if (!enable_alpha)
+		for (int i = 0; i < width * height; i++)
+			pBuf[i] &= 0x00ffffff;
+
+	return img;
 }
 
 HICON Bitmap2Icon(HBITMAP hBmp)
@@ -77,17 +105,17 @@ HICON Bitmap2Icon(HBITMAP hBmp)
 
 void HpSleep(int ms)
 {
-	static clock_t oldclock = clock();		// ¾²Ì¬±äÁ¿£¬¼ÇÂ¼ÉÏÒ»´Î tick
+	static clock_t oldclock = clock();		// é™æ€å˜é‡ï¼Œè®°å½•ä¸Šä¸€æ¬¡ tick
 	static int c = CLOCKS_PER_SEC / 1000;
 
-	oldclock += ms * c;						// ¸üĞÂ tick
+	oldclock += ms * c;						// æ›´æ–° tick
 
-	if (clock() > oldclock)					// Èç¹ûÒÑ¾­³¬Ê±£¬ÎŞĞèÑÓÊ±
+	if (clock() > oldclock)					// å¦‚æœå·²ç»è¶…æ—¶ï¼Œæ— éœ€å»¶æ—¶
 		oldclock = clock();
 	else
-		while (clock() < oldclock)			// ÑÓÊ±
-			Sleep(1);						// ÊÍ·Å CPU ¿ØÖÆÈ¨£¬½µµÍ CPU Õ¼ÓÃÂÊ
-//			Sleep(0);						// ¸ü¸ß¾«¶È¡¢¸ü¸ß CPU Õ¼ÓÃÂÊ
+		while (clock() < oldclock)			// å»¶æ—¶
+			Sleep(1);						// é‡Šæ”¾ CPU æ§åˆ¶æƒï¼Œé™ä½ CPU å ç”¨ç‡
+//			Sleep(0);						// æ›´é«˜ç²¾åº¦ã€æ›´é«˜ CPU å ç”¨ç‡
 }
 
 bool IsInRect(int x, int y, RECT rct)
