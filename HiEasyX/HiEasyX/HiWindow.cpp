@@ -7,7 +7,6 @@
 #include "HiCanvas.h"
 #include "HiSysGUI/SysControlBase.h"
 
-
 // 预留消息空间
 #define MSG_RESERVE_SIZE		100
 
@@ -17,7 +16,6 @@
 namespace HiEasyX
 {
 	////////////****** 全局变量 ******////////////
-
 
 	WNDCLASSEX				g_WndClassEx;								///< 窗口类
 	wchar_t					g_lpszClassName[] = L"HiEasyX";				///< 窗口类名
@@ -325,7 +323,7 @@ namespace HiEasyX
 	{
 		std::thread([]() {
 			init_end();
-		exit(0);
+			exit(0);
 			}).detach();
 	}
 
@@ -420,7 +418,6 @@ namespace HiEasyX
 			if (!(clock() % 9))
 				SendUserRedrawMsg(hWnd);
 			break;
-
 		}
 	}
 
@@ -735,7 +732,7 @@ namespace HiEasyX
 
 	void getmessage_win32(ExMessage* msg, BYTE filter, HWND hWnd)
 	{
-		ExMessage msgEx = getmessage_win32(filter);
+		ExMessage msgEx = getmessage_win32(filter, hWnd);
 		if (msg)	*msg = msgEx;
 	}
 
@@ -949,7 +946,6 @@ namespace HiEasyX
 					{
 						g_vecWindows[indexWnd].funcTrayMenuProc(nMenuId);
 					}
-
 				}
 				break;
 
@@ -1079,7 +1075,6 @@ namespace HiEasyX
 			g_vecWindows[indexWnd].vecMessage.push_back(msgWindow);
 		}
 		break;
-
 		}
 	}
 
@@ -1184,7 +1179,6 @@ namespace HiEasyX
 			return 0;
 			break;
 		}
-
 		}
 
 		// 存在控件时，派发消息
@@ -1452,7 +1446,7 @@ namespace HiEasyX
 			wstrTitle = L"EasyX_" + (std::wstring)GetEasyXVer() + L" HiEasyX (" _HIEASYX_VER_STR_ + L")";
 			if (nWndCount != 0)
 			{
-				wstrTitle += L" ( WindowID: " + std::to_wstring(nWndCount + 1) + L" )";
+				wstrTitle += L" ( WindowID: " + std::to_wstring(nWndCount) + L" )";
 			}
 		}
 		else
@@ -1945,4 +1939,3 @@ namespace HiEasyX
 		flushmessage_win32(filter, g_vecWindows[m_nWindowIndex].hWnd);
 	}
 }
-
