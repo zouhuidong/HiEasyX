@@ -1,6 +1,6 @@
 /**
  * @file	HiFunc.h
- * @brief	HiEasyX ¿âµÄ³£ÓÃÔÓÏîº¯Êı
+ * @brief	HiEasyX åº“çš„å¸¸ç”¨æ‚é¡¹å‡½æ•°
  * @author	huidong
 */
 
@@ -11,92 +11,107 @@
 #include <graphics.h>
 
 /**
- * @brief ´æ´¢Õû¸öÆÁÄ»µÄ´óĞ¡ĞÅÏ¢£¨¶àÏÔÊ¾Æ÷£©
+ * @brief å­˜å‚¨æ•´ä¸ªå±å¹•çš„å¤§å°ä¿¡æ¯ï¼ˆå¤šæ˜¾ç¤ºå™¨ï¼‰
 */
 struct ScreenSize
 {
-	int left;	///< ¶àÏÔÊ¾Æ÷µÄ×óÉÏ½Ç x ×ø±ê
-	int top;	///< ¶àÏÔÊ¾Æ÷µÄ×óÉÏ½Ç y ×ø±ê
-	int w;		///< ¶àÏÔÊ¾Æ÷µÄ×ÜºÍ¿í¶È
-	int h;		///< ¶àÏÔÊ¾Æ÷µÄ×ÜºÍ¸ß¶È
+	int left;	///< å¤šæ˜¾ç¤ºå™¨çš„å·¦ä¸Šè§’ x åæ ‡
+	int top;	///< å¤šæ˜¾ç¤ºå™¨çš„å·¦ä¸Šè§’ y åæ ‡
+	int w;		///< å¤šæ˜¾ç¤ºå™¨çš„æ€»å’Œå®½åº¦
+	int h;		///< å¤šæ˜¾ç¤ºå™¨çš„æ€»å’Œé«˜åº¦
 };
 
 /**
- * @brief »ñÈ¡¶àÏÔÊ¾Æ÷´óĞ¡ĞÅÏ¢
+ * @brief è·å–å¤šæ˜¾ç¤ºå™¨å¤§å°ä¿¡æ¯
 */
 ScreenSize GetScreenSize();
 
 /**
  * @brief <pre>
- *		»ñÈ¡Í¼Ïñ³ß´ç
+ *		è·å–å›¾åƒå°ºå¯¸
  * 
- *	±¸×¢£º
- *		¿ÉÒÔ·½±ãµØ´¦Àí IMAGE Ö¸ÕëÎª¿Õ£¬¼´Ö¸ÏòÖ÷»æÍ¼´°¿ÚµÄÇé¿ö
+ *	å¤‡æ³¨ï¼š
+ *		å¯ä»¥æ–¹ä¾¿åœ°å¤„ç† IMAGE æŒ‡é’ˆä¸ºç©ºï¼Œå³æŒ‡å‘ä¸»ç»˜å›¾çª—å£çš„æƒ…å†µ
  * </pre>
  * 
- * @param[in] pImg			Ä¿±êÍ¼Ïñ
- * @param[out] width		·µ»ØÍ¼Ïñ¿í
- * @param[out] height		·µ»ØÍ¼Ïñ¸ß
+ * @param[in] pImg			ç›®æ ‡å›¾åƒ
+ * @param[out] width		è¿”å›å›¾åƒå®½
+ * @param[out] height		è¿”å›å›¾åƒé«˜
 */
 void GetImageSize(IMAGE* pImg, int* width, int* height);
 
 /**
  * @brief <pre>
- *		·´×ªÍ¼Ïñ Alpha Öµ
+ *		åè½¬å›¾åƒ Alpha å€¼
  *	
- *	±¸×¢£º
- *		½« alpha Öµ²»Îª 0 µÄÒ»ÇĞÏñËØµÄ alpha ÉèÎª 0£¬
- *		Í¬Ê±½« alpha ÖµÎª 0 µÄÒ»ÇĞÏñËØµÄ alpha ÉèÎª 255¡£
+ *	å¤‡æ³¨ï¼š
+ *		å°† alpha å€¼ä¸ä¸º 0 çš„ä¸€åˆ‡åƒç´ çš„ alpha è®¾ä¸º 0ï¼Œ
+ *		åŒæ—¶å°† alpha å€¼ä¸º 0 çš„ä¸€åˆ‡åƒç´ çš„ alpha è®¾ä¸º 255ã€‚
  * </pre>
  * 
- * @param[in, out] pBuf		ÏÔ´æÖ¸Õë
- * @param[in] size			ÏÔ´æ´óĞ¡ 
- * @return ÏÔ´æÖ¸Õë£¨ºÍÔ­À´Ò»Ñù£©
+ * @param[in, out] pBuf		æ˜¾å­˜æŒ‡é’ˆ
+ * @param[in] size			æ˜¾å­˜å¤§å° 
+ * @return æ˜¾å­˜æŒ‡é’ˆï¼ˆå’ŒåŸæ¥ä¸€æ ·ï¼‰
 */
 DWORD* ReverseAlpha(DWORD* pBuf, int size);
 
 /**
- * @brief µÃµ½ IMAGE ¶ÔÏóµÄ HBITMAP
- * @param[in] img			Ä¿±êÍ¼Ïñ
+ * @brief å¾—åˆ° IMAGE å¯¹è±¡çš„ HBITMAP
+ * @param[in] img			ç›®æ ‡å›¾åƒ
  *
  * @param[in] enable_alpha <pre>
- *		ÊÇ·ñÔÊĞíÍ¼ÏñµÄ alpha ĞÅÏ¢
+ *		æ˜¯å¦å…è®¸å›¾åƒçš„ alpha ä¿¡æ¯
  *
- *	×¢Òâ£º
- *		ÈôÍ¼Ïñ alpha ÖµÈ«Îª 0£¬Ôò±íÊ¾²»ÆôÓÃÍ¸Ã÷»ìºÏ
+ *	æ³¨æ„ï¼š
+ *		è‹¥å›¾åƒ alpha å€¼å…¨ä¸º 0ï¼Œåˆ™è¡¨ç¤ºä¸å¯ç”¨é€æ˜æ··åˆ
  * </pre>
  * 
- * @return ×ª»»µÃµ½µÄÎ»Í¼¾ä±ú
+ * @return è½¬æ¢å¾—åˆ°çš„ä½å›¾å¥æŸ„
 */
 HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha);
 
 /**
- * @brief HBITMAP ×ª HICON
- * @param[in] hBmp Î»Í¼¾ä±ú
- * @return Í¼±ê¾ä±ú
+ * @brief å¾—åˆ° HBITMAP å¯¹è±¡çš„ IMAGE
+ * @param[in] img			ç›®æ ‡å›¾åƒ
+ *
+ * @param[in] enable_alpha <pre>
+ *		æ˜¯å¦å…è®¸å›¾åƒçš„ alpha ä¿¡æ¯
+ *
+ *	æ³¨æ„ï¼š
+ *		è‹¥å›¾åƒ alpha å€¼å…¨ä¸º 0ï¼Œåˆ™è¡¨ç¤ºä¸å¯ç”¨é€æ˜æ··åˆ
+ * </pre>
+ *
+ * @return è½¬æ¢å¾—åˆ°çš„ä½å›¾å¥æŸ„
+*/
+IMAGE Bitmap2Image(HBITMAP* hBitmap, bool enable_alpha);
+
+/**
+ * @brief HBITMAP è½¬ HICON
+ * @param[in] hBmp ä½å›¾å¥æŸ„
+ * @return å›¾æ ‡å¥æŸ„
 */
 HICON Bitmap2Icon(HBITMAP hBmp);
 
 /**
- * @brief ¾«È·ÑÓÊ±º¯Êı£¨¿ÉÒÔ¾«È·µ½ 1ms£¬¾«¶È ¡À1ms£©
+ * @brief ç²¾ç¡®å»¶æ—¶å‡½æ•°ï¼ˆå¯ä»¥ç²¾ç¡®åˆ° 1msï¼Œç²¾åº¦ Â±1msï¼‰
  * @author yangw80 <yw80@qq.com>
  * @date 2011-5-4
- * @param[in] ms ÑÓÊ±³¤¶È£¨µ¥Î»£ººÁÃë£©
+ * @param[in] ms å»¶æ—¶é•¿åº¦ï¼ˆå•ä½ï¼šæ¯«ç§’ï¼‰
 */
 void HpSleep(int ms);
 
 /**
- * @brief µãÊÇ·ñÎ»ÓÚ¾ØĞÎÄÚ
- * @param[in] x		Î»ÖÃ
- * @param[in] y		Î»ÖÃ
- * @param[in] rct		¾ØĞÎ
- * @return µãÊÇ·ñÎ»ÓÚ¾ØĞÎÄÚ
+ * @brief ç‚¹æ˜¯å¦ä½äºçŸ©å½¢å†…
+ * @param[in] x		ä½ç½®
+ * @param[in] y		ä½ç½®
+ * @param[in] rct		çŸ©å½¢
+ * @return ç‚¹æ˜¯å¦ä½äºçŸ©å½¢å†…
 */
 bool IsInRect(int x, int y, RECT rct);
 
 /**
- * @brief »ñÈ¡ ExMessage µÄÏûÏ¢ÀàĞÍ
- * @param[in] msg ÏûÏ¢
- * @return EM_ ÏûÏ¢ÀàĞÍÖĞµÄÒ»ÖÖ£¬ÈôÊ§°Ü·µ»Ø 0
+ * @brief è·å– ExMessage çš„æ¶ˆæ¯ç±»å‹
+ * @param[in] msg æ¶ˆæ¯
+ * @return EM_ æ¶ˆæ¯ç±»å‹ä¸­çš„ä¸€ç§ï¼Œè‹¥å¤±è´¥è¿”å› 0
 */
 UINT GetExMessageType(ExMessage msg);
