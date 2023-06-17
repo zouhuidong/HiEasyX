@@ -400,8 +400,8 @@ namespace HiEasyX
 		IMAGE* pImg
 	)
 	{
-		if (ellipsewidth > w) ellipsewidth = w;
-		if (ellipseheight > h) ellipseheight = h;
+		if (ellipsewidth > w - 1) ellipsewidth = w - 1;
+		if (ellipseheight > h - 1) ellipseheight = h - 1;
 
 		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(GetImageHDC(pImg));
@@ -432,8 +432,8 @@ namespace HiEasyX
 		IMAGE* pImg
 	)
 	{
-		if (ellipsewidth > w) ellipsewidth = w;
-		if (ellipseheight > h) ellipseheight = h;
+		if (ellipsewidth > w - 1) ellipsewidth = w - 1;
+		if (ellipseheight > h - 1) ellipseheight = h - 1;
 
 		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(GetImageHDC(pImg));
@@ -466,8 +466,8 @@ namespace HiEasyX
 		IMAGE* pImg
 	)
 	{
-		if (ellipsewidth > w) ellipsewidth = w;
-		if (ellipseheight > h) ellipseheight = h;
+		if (ellipsewidth > w - 1) ellipsewidth = w - 1;
+		if (ellipseheight > h - 1) ellipseheight = h - 1;
 
 		Gdiplus_Try_Starup();
 		Gdiplus::Graphics graphics(GetImageHDC(pImg));
@@ -630,4 +630,3 @@ namespace HiEasyX
 		);
 	}
 };
-
