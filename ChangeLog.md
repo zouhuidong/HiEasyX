@@ -1,5 +1,20 @@
 # 更新日志
 
+## Ver 0.3.5 pre
+
+**新增**
+- 新增 CreateImageColor 可以创建并返回一张指定尺寸和填充颜色（可以包含透明度）的图像
+- 新增 SetImageColor 可以将一张 IMAGE 设置成指定背景颜色（可以包含透明度）的图像
+
+## Ver 0.3.4 (2023.06.17)
+
+**新增**
+- 新增 `Bitmap2Image` 函数，可以将 `HBITMAP` 转换为 `IMAGE`。
+
+**改动**
+- 修复 `getmessage_win32` 和 `Window` 类中的消息函数无法正确获取指定窗口句柄消息的问题。
+- 修复 `EasyX_Gdiplus_RoundRect` 等 GdiPlus 封装绘图函数绘制圆角矩形时出现圆角异常的 bug。
+- 
 ## Ver 0.3.3 (2023.04.29)
 
 **修复**
