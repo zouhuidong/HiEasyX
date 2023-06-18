@@ -12,18 +12,18 @@ ScreenSize GetScreenSize()
 	return { left,top,w,h };
 }
 
-// Ëé∑ÂèñÂõæÂÉèÂ∞∫ÂØ∏
-// ÂèØ‰ª•Êñπ‰æøÂú∞Â§ÑÁêÜ IMAGE ÊåáÈíà‰∏∫Á©∫ÔºåÂç≥ÊåáÂêë‰∏ªÁªòÂõæÁ™óÂè£ÁöÑÊÉÖÂÜµ
+// ªÒ»°ÕºœÒ≥ﬂ¥Á
+// ø…“‘∑Ω±„µÿ¥¶¿Ì IMAGE ÷∏’ÎŒ™ø’£¨º¥÷∏œÚ÷˜ªÊÕº¥∞ø⁄µƒ«Èøˆ
 void GetImageSize(IMAGE* pImg, int* width, int* height)
 {
-	// ÊôÆÈÄö IMAGE ÊåáÈíà
+	// ∆’Õ® IMAGE ÷∏’Î
 	if (pImg)
 	{
 		*width = pImg->getwidth();
 		*height = pImg->getheight();
 	}
 
-	// nullptr ÂØπÂ∫îÁªòÂõæÁ™óÂè£
+	// nullptr ∂‘”¶ªÊÕº¥∞ø⁄
 	else
 	{
 		IMAGE* pOld = GetWorkingImage();
@@ -44,11 +44,29 @@ DWORD* ReverseAlpha(DWORD* pBuf, int size)
 	return pBuf;
 }
 
+IMAGE CreateImageColor(int w, int h, COLORREF color, bool enable_alpha)
+{
+	IMAGE img(w, h);
+	DWORD* pMem = GetImageBuffer(&img);
+	DWORD bgColor = (((enable_alpha ? color >> 24 : 255) << 24) | (GetRValue(color) << 16) | (GetGValue(color) << 8) | GetBValue(color));
+	for (int i = 0; i < w * h; i++) pMem[i] = bgColor;
+	return img;
+}
+
+void SetImageColor(IMAGE& img, COLORREF color, bool enable_alpha)
+{
+	int w = img.getwidth();
+	int h = img.getheight();
+	DWORD* pMem = GetImageBuffer(&img);
+	DWORD bgColor = (((enable_alpha ? color >> 24 : 255) << 24) | (GetRValue(color) << 16) | (GetGValue(color) << 8) | GetBValue(color));
+	for (int i = 0; i < w * h; i++) pMem[i] = bgColor;
+}
+
 HBITMAP Image2Bitmap(IMAGE* img, bool enable_alpha)
 {
-	// ÊµãËØïÁªìËÆ∫
-	// Ëã•ÂõæÂÉè‰∏≠Êúâ‰ªª‰ΩïÂÉèÁ¥† alpha ‰∏ç‰∏∫ 0ÔºåÂàôÂêØÁî® alpha
-	// Ëã•ÂõæÂÉè alpha ÂÖ®ÈÉ®‰∏∫ 0ÔºåÂàôË°®Á§∫ÂÆåÂÖ®‰∏çÈÄèÊòé
+	// ≤‚ ‘Ω·¬€
+	// »ÙÕºœÒ÷–”–»Œ∫ŒœÒÀÿ alpha ≤ªŒ™ 0£¨‘Ú∆Ù”√ alpha
+	// »ÙÕºœÒ alpha »´≤øŒ™ 0£¨‘Ú±Ì æÕÍ»´≤ªÕ∏√˜
 
 	DWORD* pBuf = GetImageBuffer(img);
 	if (!enable_alpha)
@@ -105,17 +123,17 @@ HICON Bitmap2Icon(HBITMAP hBmp)
 
 void HpSleep(int ms)
 {
-	static clock_t oldclock = clock();		// ÈùôÊÄÅÂèòÈáèÔºåËÆ∞ÂΩï‰∏ä‰∏ÄÊ¨° tick
+	static clock_t oldclock = clock();		// æ≤Ã¨±‰¡ø£¨º«¬º…œ“ª¥Œ tick
 	static int c = CLOCKS_PER_SEC / 1000;
 
-	oldclock += ms * c;						// Êõ¥Êñ∞ tick
+	oldclock += ms * c;						// ∏¸–¬ tick
 
-	if (clock() > oldclock)					// Â¶ÇÊûúÂ∑≤ÁªèË∂ÖÊó∂ÔºåÊó†ÈúÄÂª∂Êó∂
+	if (clock() > oldclock)					// »Áπ˚“—æ≠≥¨ ±£¨Œﬁ–Ë—” ±
 		oldclock = clock();
 	else
-		while (clock() < oldclock)			// Âª∂Êó∂
-			Sleep(1);						// ÈáäÊîæ CPU ÊéßÂà∂ÊùÉÔºåÈôç‰Ωé CPU Âç†Áî®Áéá
-//			Sleep(0);						// Êõ¥È´òÁ≤æÂ∫¶„ÄÅÊõ¥È´ò CPU Âç†Áî®Áéá
+		while (clock() < oldclock)			// —” ±
+			Sleep(1);						//  Õ∑≈ CPU øÿ÷∆»®£¨ΩµµÕ CPU ’º”√¬ 
+	//			Sleep(0);						// ∏¸∏ﬂæ´∂»°¢∏¸∏ﬂ CPU ’º”√¬ 
 }
 
 bool IsInRect(int x, int y, RECT rct)
