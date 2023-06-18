@@ -14,7 +14,7 @@
 **改动**
 - 修复 `getmessage_win32` 和 `Window` 类中的消息函数无法正确获取指定窗口句柄消息的问题。
 - 修复 `EasyX_Gdiplus_RoundRect` 等 GdiPlus 封装绘图函数绘制圆角矩形时出现圆角异常的 bug。
-- 
+
 ## Ver 0.3.3 (2023.04.29)
 
 **修复**
