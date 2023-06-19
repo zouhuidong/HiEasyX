@@ -9,8 +9,6 @@ HiEasyX 是基于 EasyX 的扩展库，支持创建多窗口、透明抗锯齿�
 
 HiEasyX 和 EasyX 的契合度很高，它能让你在使用 EasyX 的过程中如虎添翼~
 
-**如果你有什么需求，请分享给我们~**
-
 > [HiEasyX 教程目录](./Tutorial/index.md)
 >
 > [Alan-CRL 的教程](https://hiex.alan-crl.top/)
@@ -77,6 +75,8 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
   + HiMouseDrag：鼠标拖动消息封装
 
 以上模块如非原创，均已特别标注。
+
+**如果你有什么需求，请分享给我们~**
 
 ### 鸣谢
 
