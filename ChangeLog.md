@@ -1,6 +1,6 @@
 # 更新日志
 
-## Ver 0.3.5 pre
+## Ver 0.3.5 (2023.06.23)
 
 **新增**
 - 新增 CreateImageColor 函数：可以创建并返回一张指定尺寸和填充颜色（可以包含透明度）的图像
@@ -8,6 +8,14 @@
 - 新增 hiex::TransparentImage 函数：可绘制带有透明通道的图像（可叠加透明度绘制，可只绘制图像指定区域，可拉伸图像绘制）
 - 新增 hiex::RECTToRectF 函数：可以将 RECT 转换为 RectF
 - 新增 hiex::RectFToRECT 函数：可以将 RectF 转换为 RECT
+- 新增 SetWindowTransparent 和 Window::SetTransparent 函数：可以设置窗口透明度，或启用/禁用窗口透明度
+- 新增 hiex::init_console 函数：可创建/显示控制台窗口（如果已经创建则显示）
+- 新增 hiex::hide_console 函数：可隐藏控制台窗口
+- 新增 hiex::close_console 函数：可关闭控制台窗口（不关闭程序）
+注意如果定义了 `#pragma comment( linker, "/subsystem:windows /entry:mainCRTStartup" )` 则控制台函数将不起作用
+
+**改动**
+- 统一设置文件编码为 unicode
 
 ## Ver 0.3.4 (2023.06.17)
 
