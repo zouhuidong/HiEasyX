@@ -31,7 +31,6 @@ namespace HiEasyX
 				GetBValue(cSrc) * fSrc + GetBValue(cDst) * fDst
 			);
 		}
-
 	}
 
 	void CopyImage_Alpha(int x, int y, DWORD* pDst, int wDst, int hDst, DWORD* pSrc, int wSrc, int hSrc, RECT crop, BYTE alpha, bool bUseSrcAlpha, bool isCalculated)
@@ -1675,6 +1674,22 @@ namespace HiEasyX
 		}
 	}
 
+	void Canvas::ZoomImage_Gdiplus_Alpha(int nW, int nH)
+	{
+		if (m_bBindToImgPointer)
+		{
+			if (BeginWindowTask())
+			{
+				*m_pImg = HiEasyX::ZoomImage_Gdiplus_Alpha(m_pImg, nW, nH);
+				UpdateSizeInfo();
+			}
+		}
+		else
+		{
+			operator=(HiEasyX::ZoomImage_Win32_Alpha(this, nW, nH));
+		}
+	}
+
 	void Canvas::GP_SetLineColor(COLORREF color)
 	{
 		m_cGPLineColor = color;
@@ -2089,6 +2104,4 @@ namespace HiEasyX
 			i++;
 		}
 	}
-
 }
-

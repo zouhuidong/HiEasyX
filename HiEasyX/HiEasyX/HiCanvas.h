@@ -295,7 +295,6 @@ namespace HiEasyX
 		void EnableAutoMarkFlushWindow(bool enable);
 		bool IsEnableAutoMarkFlushWindow() const { return m_bAutoMarkFlushWindow; }
 
-
 		/////// 绘图状态设置函数 ///////
 
 		/**
@@ -719,6 +718,13 @@ namespace HiEasyX
 		*/
 		void ZoomImage_Win32_Alpha(int nW, int nH = 0);
 
+		/**
+		 * @brief 缩放图像（基于 Win32 API，比较快，保留透明度信息）
+		 * @param[in] nW	目标宽度
+		 * @param[in] nH	目标高度（为 0 则根据宽度按比例缩放）
+		*/
+		void ZoomImage_Gdiplus_Alpha(int nW, int nH = 0);
+
 		/////// GDI+ 相关绘图函数 ///////
 
 		////////////////////////////////////////////////////////////////////
@@ -726,9 +732,9 @@ namespace HiEasyX
 		// 注意：
 		//		GDI+ 绘图函数不和 EasyX 原生函数共享同样的绘图颜色，
 		//		这是因为 GDI+ 的绘图函数支持透明，而 EasyX 原生函数不支持。
-		// 
+		//
 		//		可以使用 RGBA 或 SET_ALPHA 宏设置带透明度的颜色
-		// 
+		//
 		////////////////////////////////////////////////////////////////////
 
 		void GP_SetLineColor(COLORREF color);
@@ -937,9 +943,7 @@ namespace HiEasyX
 		*/
 		void Render(IMAGE* pImg = nullptr, bool bShowAllOutline = false, bool bShowAllText = true);
 	};
-
 }
-
 
 ////////////////********* 宏定义 *********////////////////
 
@@ -948,13 +952,13 @@ namespace HiEasyX
 // nGraphW, nGraphH		所绘制透明图形的宽高
 //
 // 注意：需要配合 DRAW_TNS_RENDER_TO 宏使用
-// 
+//
 // 使用方法：
 //		在 DRAW_TNS_INIT_GRAPHICS 宏和 DRAW_TNS_RENDER_TO 宏之间，插入一个代码块。
 //		在这个代码块中使用 Canvas 变量 graphics 进行绘制。
 //		绘制时调用 Canvas 的普通绘图函数即可，无需 GDI+ 系列封装函数（带 "GP_" 前缀的函数）
 //		或者直接使用原生 EasyX 函数进行绘制也可以。
-// 
+//
 // 使用示例：
 /*
 	// 准备绘制透明图形（设置图形的宽高）
@@ -990,4 +994,3 @@ namespace HiEasyX
 		ReverseAlpha(graphics.GetBuffer(), graphics.GetBufferSize());\
 		graphics.RenderTo(nRenderX, nRenderY, pDstImg, { 0 }, alpha, true);\
 	}(0)
-
