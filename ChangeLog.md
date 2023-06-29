@@ -3,6 +3,11 @@
 ## Ver 0.4.0 pre 1 (暂未 pr)
 
 **新增** Release模式全新启动动画  
+**新增** `hiex::ZoomImage_Gdiplus_Alpha` 和 `Canvas::ZoomImage_Gdiplus_Alpha` 函数：拉伸图像（可包含透明通道，速度快质量佳）  
+**新增** `hiex::OverlayImageTransparency` 函数：融合（叠加）图像透明度  
+**新增** `hiex::RemoveImageTransparency` 函数：移除图像透明通道  
+**新增** Release模式全新启动动画  
+
 **修复** `Bitmap2Image` 函数当定义不使用透明度时，透明度不为 255 的问题  
 
 ## Ver 0.3.5 (2023.06.23)
