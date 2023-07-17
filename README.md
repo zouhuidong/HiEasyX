@@ -7,6 +7,10 @@
 
 HiEasyX 是基于 EasyX 的扩展库，支持创建多窗口、透明抗锯齿绘图、系统 UI 组件等等。
 
+**近期重大更新**：同时支持 Unicode 和 MBCS 字符集（后续将支持 MinGW 等）[详情](https://github.com/zouhuidong/HiEasyX/releases)
+
+---
+
 HiEasyX 和 EasyX 的契合度很高，它能让你在使用 EasyX 的过程中如虎添翼~
 
 > [HiEasyX 教程目录](./Tutorial/index.md)
