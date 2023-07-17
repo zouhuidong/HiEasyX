@@ -1,4 +1,5 @@
 #include "SysEdit.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -7,8 +8,8 @@ namespace HiEasyX
 		m_type = SCT_Edit;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Edit",
-			L"",
+			_T("Edit"),
+			_T(""),
 			m_lBasicStyle
 		);
 
@@ -22,15 +23,25 @@ namespace HiEasyX
 	{
 	}
 
+#ifdef UNICODE
 	SysEdit::SysEdit(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
-
 	SysEdit::SysEdit(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	SysEdit::SysEdit(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+	SysEdit::SysEdit(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
 
 	SysEdit::~SysEdit()
 	{
@@ -86,10 +97,17 @@ namespace HiEasyX
 		return 0;
 	}
 
+#ifdef UNICODE
 	void SysEdit::RegisterMessage(void(*pFunc)(std::wstring wstrText))
 	{
 		m_pFunc = pFunc;
 	}
+#else
+	void SysEdit::RegisterMessage(void(*pFunc)(std::string wstrText))
+	{
+		m_pFunc = pFunc;
+	}
+#endif
 
 	void SysEdit::ApplyProperty()
 	{
@@ -214,10 +232,17 @@ namespace HiEasyX
 		SendMessage(GetHandle(), WM_CLEAR, 0, 0);
 	}
 
+#ifdef UNICODE
 	void SysEdit::Replace(std::wstring wstrText)
 	{
 		SendMessage(GetHandle(), EM_REPLACESEL, true, (LPARAM)wstrText.c_str());
 	}
+#else
+	void SysEdit::Replace(std::string strText)
+	{
+		SendMessage(GetHandle(), EM_REPLACESEL, true, (LPARAM)strText.c_str());
+	}
+#endif
 
 	bool SysEdit::IsEdited()
 	{

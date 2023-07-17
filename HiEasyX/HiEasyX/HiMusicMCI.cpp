@@ -1,6 +1,11 @@
 #include "HiMusicMCI.h"
 #include <Digitalv.h>
-#pragma comment(lib, "winmm.lib")
+
+#ifdef _MSC_VER
+#pragma comment (lib, "winmm.lib")
+#else
+#pragma GCC link "winmm.lib"
+#endif
 
 /****************************************************************************************************************
  *  class MusicMCI																								*
@@ -25,16 +30,15 @@ namespace HiEasyX
 
 	// 打开文件
 	// 成功返回 true，失败返回 false
-	bool MusicMCI::open(LPCWSTR strSongPath)noexcept
+	bool MusicMCI::open(LPCTSTR strSongPath) noexcept
 	{
 		MCI_OPEN_PARMS mciOP;
-
+		
 		mciOP.lpstrDeviceType = nullptr;
 		mciOP.lpstrElementName = strSongPath;
 		const DWORD dwReturn = mciSendCommand(0, MCI_OPEN,
-			MCI_OPEN_ELEMENT | MCI_WAIT | MCI_OPEN_SHAREABLE, (DWORD_PTR)(static_cast<LPVOID>(&mciOP)));
-
-
+			MCI_OPEN_ELEMENT | MCI_WAIT | MCI_OPEN_SHAREABLE, (DWORD_PTR)&mciOP);
+		
 		if (dwReturn == 0)
 		{
 			nDeviceID = mciOP.wDeviceID;

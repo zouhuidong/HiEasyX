@@ -64,7 +64,11 @@ namespace HiEasyX
 		RECT m_rctClear = { 0 };									///< 记录需要清空的区域
 		bool m_bAlwaysRedrawAndRender = false;						///< 总是重绘和渲染（占用更高）
 
+#ifdef UNICODE
 		std::wstring m_wstrText;									///< 控件文本
+#else
+		std::string m_strText;									///< 控件文本
+#endif
 
 		Canvas m_canvas;											///< 画布
 		BYTE m_alpha = 255;											///< 透明度
@@ -143,9 +147,13 @@ namespace HiEasyX
 
 		ControlBase();
 
+#ifdef UNICODE
 		ControlBase(std::wstring wstrText);
-
 		ControlBase(int x, int y, int w = 0, int h = 0, std::wstring wstrText = L"");
+#else
+		ControlBase(std::string strText);
+		ControlBase(int x, int y, int w = 0, int h = 0, std::string strText = "");
+#endif
 
 		virtual ~ControlBase();
 
@@ -206,9 +214,13 @@ namespace HiEasyX
 
 		virtual void SetAlpha(BYTE alpha, bool bUseCanvasAlpha, bool isAlphaCalculated);
 
+#ifdef UNICODE
 		virtual std::wstring GetText() const { return m_wstrText; }
-
 		virtual void SetText(std::wstring wstr);
+#else
+		virtual std::string GetText() const { return m_strText; }
+		virtual void SetText(std::string str);
+#endif
 
 		virtual void Draw_Text(int nTextOffsetX = 0, int nTextOffsetY = 0);
 

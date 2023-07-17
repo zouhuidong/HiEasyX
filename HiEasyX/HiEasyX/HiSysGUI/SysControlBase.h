@@ -97,9 +97,13 @@ namespace HiEasyX
 		 * @param[in] strText	控件文本
 		 * @return 控件窗口句柄
 		*/
+#ifdef UNICODE
 		HWND Create(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		HWND Create(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		HWND Create(HWND hParent, RECT rct, std::string strText = "");
+		HWND Create(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		/**
 		 * @brief 移除控件
@@ -127,13 +131,21 @@ namespace HiEasyX
 
 		int GetTextLength();
 
+#ifdef UNICODE
 		std::wstring GetText();
-
 		void SetText(std::wstring wstr);
+#else
+		std::string GetText();
+		void SetText(std::string str);
+#endif
 
 		HFONT GetFont();
 
+#ifdef UNICODE
 		void SetFont(int h, int w = 0, std::wstring typeface = L"");
+#else
+		void SetFont(int h, int w = 0, std::string typeface = "");
+#endif
 
 		int GetID();
 

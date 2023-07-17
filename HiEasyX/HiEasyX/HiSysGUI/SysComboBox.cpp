@@ -1,4 +1,5 @@
 #include "SysComboBox.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -7,8 +8,8 @@ namespace HiEasyX
 		m_type = SCT_ComboBox;
 		m_hWnd = CreateControl(
 			hParent,
-			L"ComboBox",
-			L"",
+			_T("ComboBox"),
+			_T(""),
 			m_lBasicStyle
 		);
 
@@ -26,15 +27,25 @@ namespace HiEasyX
 	{
 	}
 
+#ifdef UNICODE
 	SysComboBox::SysComboBox(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
-
 	SysComboBox::SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	SysComboBox::SysComboBox(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+	SysComboBox::SysComboBox(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
 
 	void SysComboBox::PreSetStyle(PreStyle pre_style)
 	{
@@ -77,8 +88,8 @@ namespace HiEasyX
 					if (m_pFuncSel)
 					{
 						int len = ComboBox_GetLBTextLen(GetHandle(), m_nSel);
-						WCHAR* buf = new WCHAR[len + 1];
-						ZeroMemory(buf, (len + 1) * sizeof WCHAR);
+						TCHAR* buf = new TCHAR[len + 1];
+						ZeroMemory(buf, (len + 1) * sizeof(TCHAR));
 						ComboBox_GetLBText(GetHandle(), m_nSel, buf);
 						m_pFuncSel(m_nSel, buf);
 						delete[] buf;
@@ -98,36 +109,59 @@ namespace HiEasyX
 		return 0;
 	}
 
+#ifdef UNICODE
 	void SysComboBox::RegisterSelMessage(void(*pFunc)(int sel, std::wstring wstrSelText))
 	{
 		m_pFuncSel = pFunc;
 	}
-
 	void SysComboBox::RegisterEditMessage(void(*pFunc)(std::wstring wstrText))
 	{
 		m_pFuncEdit = pFunc;
 	}
-
+#else
+	void SysComboBox::RegisterSelMessage(void(*pFunc)(int sel, std::string wstrSelText))
+	{
+		m_pFuncSel = pFunc;
+	}
+	void SysComboBox::RegisterEditMessage(void(*pFunc)(std::string wstrText))
+	{
+		m_pFuncEdit = pFunc;
+	}
+#endif
+	
 	void SysComboBox::SetSel(int sel)
 	{
 		m_nSel = sel;
 		ComboBox_SetCurSel(GetHandle(), sel);
 	}
 
+#ifdef UNICODE
 	bool SysComboBox::SelectString(std::wstring wstrText)
 	{
 		return ComboBox_SelectString(GetHandle(), -1, wstrText.c_str()) != CB_ERR;
 	}
-
 	void SysComboBox::AddString(std::wstring wstrText)
 	{
 		ComboBox_AddString(GetHandle(), wstrText.c_str());
 	}
-
 	void SysComboBox::InsertString(int index, std::wstring wstrText)
 	{
 		ComboBox_InsertString(GetHandle(), index, wstrText.c_str());
 	}
+#else
+	bool SysComboBox::SelectString(std::string wstrText)
+	{
+		return ComboBox_SelectString(GetHandle(), -1, wstrText.c_str()) != CB_ERR;
+	}
+	void SysComboBox::AddString(std::string wstrText)
+	{
+		ComboBox_AddString(GetHandle(), wstrText.c_str());
+	}
+	void SysComboBox::InsertString(int index, std::string strText)
+	{
+		ComboBox_InsertString(GetHandle(), index, strText.c_str());
+	}
+#endif
 
 	void SysComboBox::DeleteString(int index)
 	{

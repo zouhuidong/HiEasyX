@@ -16,18 +16,20 @@ namespace HiEasyX
 		Init();
 	}
 
+#ifdef UNICODE
 	ControlBase::ControlBase(std::wstring wstrText)
 	{
 		Init();
 		SetText(wstrText);
 	}
-
-	ControlBase::ControlBase(int x, int y, int w, int h, std::wstring wstrText)
+#else
+	ControlBase::ControlBase(int x, int y, int w, int h, std::string strText)
 	{
 		Init();
 		SetRect(x, y, w, h);
-		SetText(wstrText);
+		SetText(strText);
 	}
+#endif
 
 	ControlBase::~ControlBase()
 	{
@@ -195,24 +197,47 @@ namespace HiEasyX
 		MarkNeedRedrawAndRender();
 	}
 
+#ifdef UNICODE
 	void ControlBase::SetText(std::wstring wstr)
 	{
 		m_wstrText = wstr;
-
+		
 		MarkNeedRedrawAndRender();
 	}
+#else
+	void ControlBase::SetText(std::string str)
+	{
+		m_strText = str;
+		
+		MarkNeedRedrawAndRender();
+	}
+#endif
 
 	void ControlBase::Draw_Text(int nTextOffsetX, int nTextOffsetY)
 	{
 		m_canvas.SetBkColor(m_cBackground);
 		m_canvas.SetTextColor(m_cText);
+		
+#ifdef UNICODE
 		int w = m_canvas.TextWidth(m_wstrText.c_str());
 		int h = m_canvas.TextHeight(m_wstrText.c_str());
+		
 		m_canvas.OutTextXY(
 			(GetWidth() - w) / 2 + nTextOffsetX,
 			(GetHeight() - h) / 2 + nTextOffsetY,
 			m_wstrText.c_str()
-		);
+			);
+#else
+		int w = m_canvas.TextWidth(m_strText.c_str());
+		int h = m_canvas.TextHeight(m_strText.c_str());
+		
+		m_canvas.OutTextXY(
+			(GetWidth() - w) / 2 + nTextOffsetX,
+			(GetHeight() - h) / 2 + nTextOffsetY,
+			m_strText.c_str()
+			);
+#endif
+		
 	}
 
 	void ControlBase::Redraw()

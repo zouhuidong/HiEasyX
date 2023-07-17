@@ -79,7 +79,7 @@ IMAGE* HiEasyX::GetIconImage()
 	if (!init)
 	{
 		DWORD* p = GetImageBuffer(&img);
-		memcpy(p, pBuf, HIICON_WIDTH * HIICON_HEIGHT * sizeof DWORD);
+		memcpy(p, pBuf, HIICON_WIDTH * HIICON_HEIGHT * sizeof(DWORD));
 		init = true;
 	}
 

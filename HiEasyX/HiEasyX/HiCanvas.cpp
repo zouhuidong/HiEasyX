@@ -1189,6 +1189,7 @@ namespace HiEasyX
 	{
 		if (BeginDrawing())
 		{
+#ifdef UNICODE
 			va_list list;
 			va_start(list, _Format);
 			wchar_t* buf = new wchar_t[_Size];
@@ -1201,6 +1202,20 @@ namespace HiEasyX
 
 			EndDrawing();
 			return width;
+#else
+			va_list list;
+			va_start(list, _Format);
+			char* buf = new char[_Size];
+			_vsnprintf_s(buf, _Size, _TRUNCATE, _Format, list);
+			va_end(list);
+
+			outtextxy(x, y, buf);
+			int width = textwidth(buf);
+			delete[] buf;
+
+			EndDrawing();
+			return width;
+#endif
 		}
 		return 0;
 	}
@@ -1281,6 +1296,7 @@ namespace HiEasyX
 
 	void Canvas::CenterText_Format(int _Size, LPCTSTR _Format, ...)
 	{
+#ifdef UNICODE
 		va_list list;
 		va_start(list, _Format);
 		wchar_t* buf = new wchar_t[_Size];
@@ -1289,6 +1305,16 @@ namespace HiEasyX
 
 		CenterText(buf);
 		delete[] buf;
+#else
+		va_list list;
+		va_start(list, _Format);
+		TCHAR* buf = new TCHAR[_Size];
+		_vsnprintf_s(buf, _Size, _TRUNCATE, _Format, list);
+		va_end(list);
+
+		CenterText(buf);
+		delete[] buf;
+#endif
 	}
 
 	LOGFONT Canvas::GetTextStyle()
@@ -1540,6 +1566,7 @@ namespace HiEasyX
 	{
 		if (BeginDrawing())
 		{
+#ifdef UNICODE
 			va_list list;
 			va_start(list, _Format);
 			wchar_t* buf = new wchar_t[_Size];
@@ -1552,6 +1579,20 @@ namespace HiEasyX
 
 			EndDrawing();
 			return width;
+#else
+			va_list list;
+			va_start(list, _Format);
+			TCHAR* buf = new TCHAR[_Size];
+			_vsnprintf_s(buf, _Size, _TRUNCATE, _Format, list);
+			va_end(list);
+
+			outtext(buf);
+			int width = textwidth(buf);
+			delete[] buf;
+
+			EndDrawing();
+			return width;
+#endif
 		}
 		return 0;
 	}
@@ -1983,6 +2024,7 @@ namespace HiEasyX
 		}
 	}
 
+#ifdef UNICODE
 	void Layer::Render(IMAGE* pImg, bool bShowOutline, bool bShowText, std::wstring wstrAddedText)
 	{
 		bool flagOutline = bOutline || bShowOutline;
@@ -2002,7 +2044,7 @@ namespace HiEasyX
 				canvas.BeginBatchDrawing();
 
 				canvas.SetBkColor(WHITE);
-				canvas.SetTextStyle(16, 0, L"Arial");
+				canvas.SetTextStyle(16, 0, _T("Arial"));
 			}
 
 			wstrAddedText = L" " + wstrAddedText;
@@ -2058,6 +2100,83 @@ namespace HiEasyX
 			}
 		}
 	}
+#else
+	void Layer::Render(IMAGE* pImg, bool bShowOutline, bool bShowText, std::string strAddedText)
+	{
+		bool flagOutline = bOutline || bShowOutline;
+		bool flagText = bText || bShowText;
+		Canvas canvas;
+
+		if (bVisible)
+		{
+			if (flagOutline)
+			{
+				m_property[0].SaveWorkingImageOnly();
+				SetWorkingImage(pImg);
+				m_property[1].SaveProperty();
+
+				canvas.BindToImage(pImg);
+				canvas.SetDefault();
+				canvas.BeginBatchDrawing();
+
+				canvas.SetBkColor(WHITE);
+				canvas.SetTextStyle(16, 0, _T("Arial"));
+			}
+
+			strAddedText = " " + strAddedText;
+
+			size_t i = 0;
+			for (auto& element : *this)
+			{
+				element->Render(pImg, alpha);
+
+				// 绘制轮廓
+				if (flagOutline)
+				{
+					RECT rctImg = {
+						element->x,
+						element->y,
+						element->x + element->GetWidth(),
+						element->y + element->GetHeight()
+					};
+
+					canvas.Rectangle(rctImg, true, BLACK);
+					EXPAND_RECT(rctImg, 1);
+					canvas.Rectangle(rctImg, true, WHITE);
+
+					// 绘制文本
+					if (flagText)
+					{
+						std::string strOriginText = " Block[" + std::to_string(i) + "]";
+						std::string strAllText = strAddedText + strOriginText;
+
+						int w = canvas.TextWidth(strAllText.c_str());
+						int h = canvas.TextHeight(strAllText.c_str());
+
+						RECT rctText = { rctImg.right - w - 1, rctImg.bottom + 1, rctImg.right - 1, rctImg.bottom + h + 1 };
+
+						canvas.MoveTo(rctText.left, rctText.top);
+						canvas.OutText(strAddedText.c_str(), true, GREEN);
+						canvas.OutText(strOriginText.c_str(), true, BLACK);
+
+						canvas.Rectangle(rctText, true, BLACK);
+						EXPAND_RECT(rctText, 1);
+						canvas.Rectangle(rctText, true, WHITE);
+					}
+				}
+
+				i++;
+			}
+
+			if (flagOutline)
+			{
+				canvas.EndBatchDrawing();
+				m_property[1].ApplyProperty();
+				m_property[0].ApplyWorkingImageOnly();
+			}
+		}
+	}
+#endif
 
 	std::vector<Layer*> Scene::GetAllLayer()
 	{
@@ -2100,7 +2219,12 @@ namespace HiEasyX
 		size_t i = 0;
 		for (auto& layer : GetAllLayer())
 		{
+#ifdef UNICODE
 			layer->Render(pImg, bShowAllOutline, bShowAllText, L"Layer[" + std::to_wstring(i) + L"]");
+#else
+			layer->Render(pImg, bShowAllOutline, bShowAllText, "Layer[" + std::to_string(i) + "]");
+#endif
+
 			i++;
 		}
 	}

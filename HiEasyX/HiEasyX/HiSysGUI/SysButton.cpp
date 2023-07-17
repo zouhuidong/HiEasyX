@@ -1,6 +1,6 @@
 #include "SysButton.h"
-
 #include "../HiFunc.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -9,25 +9,39 @@ namespace HiEasyX
 		m_type = SCT_Button;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Button",
-			L"",
+			_T("Button"),
+			_T(""),
 			WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON
-		);
+			);
 	}
 
 	SysButton::SysButton()
 	{
 	}
 
+#ifdef UNICODE
 	SysButton::SysButton(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
+#else
+	SysButton::SysButton(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+#endif
 
+#ifdef UNICODE
 	SysButton::SysButton(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	SysButton::SysButton(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
 
 	LRESULT SysButton::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
 	{

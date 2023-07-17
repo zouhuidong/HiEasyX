@@ -40,7 +40,11 @@ namespace HiEasyX
 
 		Button();
 
+#ifdef UNICODE
 		Button(int x, int y, int w, int h, std::wstring wstrText = L"");
+#else
+		Button(int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		/**
 		 * @brief ÆôÓÃ¿Ø¼þ

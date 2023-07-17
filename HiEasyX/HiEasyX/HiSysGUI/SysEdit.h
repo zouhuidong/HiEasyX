@@ -34,7 +34,13 @@ namespace HiEasyX
 		} m_property;
 
 		long m_lBasicStyle = WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER;
+
+#ifdef UNICODE
 		void (*m_pFunc)(std::wstring wstrText) = nullptr;
+#else
+		void (*m_pFunc)(std::string wstrText) = nullptr;
+#endif
+
 		bool m_bEdited = false;
 
 		COLORREF m_cBk = WHITE;
@@ -68,9 +74,13 @@ namespace HiEasyX
 
 		SysEdit();
 
+#ifdef UNICODE
 		SysEdit(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysEdit(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysEdit(HWND hParent, RECT rct, std::string strText = "");
+		SysEdit(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		~SysEdit() override;
 
@@ -85,7 +95,11 @@ namespace HiEasyX
 		 * @brief 注册输入消息
 		 * @param[in] pFunc 消息响应函数
 		*/
+#ifdef UNICODE
 		void RegisterMessage(void (*pFunc)(std::wstring wstrText));
+#else
+		void RegisterMessage(void (*pFunc)(std::string strText));
+#endif
 
 		/**
 		 * @brief 设置文本右对齐
@@ -136,7 +150,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置控件背景色
-		 * @param[in] color 控件背景色 
+		 * @param[in] color 控件背景色
 		*/
 		void SetBkColor(COLORREF color);
 
@@ -148,7 +162,7 @@ namespace HiEasyX
 
 		/**
 		 * @brief 设置文本颜色
-		 * @param[in] color 文本颜色 
+		 * @param[in] color 文本颜色
 		*/
 		void SetTextColor(COLORREF color);
 
@@ -190,7 +204,11 @@ namespace HiEasyX
 		 * @brief 替换选中的文本
 		 * @param[in] wstrText 替换文本
 		*/
+#ifdef UNICODE
 		void Replace(std::wstring wstrText);
+#else
+		void Replace(std::string strText);
+#endif
 
 		/**
 		 * @brief 判断是否被编辑

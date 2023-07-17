@@ -31,8 +31,12 @@ namespace HiEasyX
 
 		SysGroupBox();
 
+#ifdef UNICODE
 		SysGroupBox(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysGroupBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysGroupBox(HWND hParent, RECT rct, std::string strText = "");
+		SysGroupBox(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 	};
 }

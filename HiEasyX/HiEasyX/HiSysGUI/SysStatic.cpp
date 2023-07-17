@@ -1,6 +1,6 @@
 #include "SysStatic.h"
-
 #include "../HiFunc.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -9,8 +9,8 @@ namespace HiEasyX
 		m_type = SCT_Static;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Static",
-			L"",
+			_T("Static"),
+			_T(""),
 			WS_CHILD | WS_VISIBLE
 		);
 
@@ -20,15 +20,25 @@ namespace HiEasyX
 	{
 	}
 
+#ifdef UNICODE
 	HiEasyX::SysStatic::SysStatic(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
-
 	HiEasyX::SysStatic::SysStatic(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	HiEasyX::SysStatic::SysStatic(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+	HiEasyX::SysStatic::SysStatic(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
 
 	void SysStatic::Center(bool center)
 	{

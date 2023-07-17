@@ -1,4 +1,5 @@
 #include "SysGroup.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -7,8 +8,8 @@ namespace HiEasyX
 		m_type = SCT_Group;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Button",
-			L"",
+			_T("Button"),
+			_T(""),
 			WS_CHILD | WS_GROUP
 		);
 	}

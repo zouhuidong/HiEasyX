@@ -24,7 +24,7 @@ namespace HiEasyX
 	public:
 		MusicMCI()noexcept;										///< Ä¬ÈÏ¹¹Ôìº¯Êý
 		virtual ~MusicMCI();									///< ÐéÎö¹¹º¯Êý
-		bool open(LPCWSTR music)noexcept;						///< ´ò¿ªÒôÀÖ
+		bool open(LPCTSTR music)noexcept;						///< ´ò¿ªÒôÀÖ
 		bool play()noexcept;									///< ²¥·ÅÒôÀÖ
 		bool pause()noexcept;									///< ÔÝÍ£ÒôÀÖ
 		bool stop()noexcept;									///< Í£Ö¹²¥·Å

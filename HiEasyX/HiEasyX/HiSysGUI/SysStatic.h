@@ -25,9 +25,13 @@ namespace HiEasyX
 
 		SysStatic();
 
+#ifdef UNICODE
 		SysStatic(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysStatic(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysStatic(HWND hParent, RECT rct, std::string strText = "");
+		SysStatic(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		/**
 		 * @brief 设置文本居中

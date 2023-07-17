@@ -27,9 +27,13 @@ namespace HiEasyX
 
 		SysRadioButton();
 
+#ifdef UNICODE
 		SysRadioButton(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysRadioButton(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysRadioButton(HWND hParent, RECT rct, std::string strText = "");
+		SysRadioButton(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 

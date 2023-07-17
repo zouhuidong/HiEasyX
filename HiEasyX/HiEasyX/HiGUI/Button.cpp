@@ -13,12 +13,21 @@ namespace HiEasyX
 		InitColor();
 	}
 
+#ifdef UNICODE
 	Button::Button(int x, int y, int w, int h, std::wstring wstrText)
 	{
 		SetRect(x, y, w, h);
 		SetText(wstrText);
 		InitColor();
 	}
+#else
+	Button::Button(int x, int y, int w, int h, std::string strText)
+	{
+		SetRect(x, y, w, h);
+		SetText(strText);
+		InitColor();
+	}
+#endif
 
 	void Button::SetEnable(bool enable)
 	{

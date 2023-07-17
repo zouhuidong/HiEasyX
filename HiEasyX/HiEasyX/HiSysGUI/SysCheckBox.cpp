@@ -1,4 +1,5 @@
 #include "SysCheckBox.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -7,8 +8,8 @@ namespace HiEasyX
 		m_type = SCT_CheckBox;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Button",
-			L"",
+			_T("Button"),
+			_T(""),
 			WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTOCHECKBOX
 		);
 	}
@@ -17,15 +18,26 @@ namespace HiEasyX
 	{
 	}
 
+#ifdef UNICODE
 	SysCheckBox::SysCheckBox(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
-
 	SysCheckBox::SysCheckBox(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	SysCheckBox::SysCheckBox(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+	SysCheckBox::SysCheckBox(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
+
 
 	LRESULT SysCheckBox::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
 	{

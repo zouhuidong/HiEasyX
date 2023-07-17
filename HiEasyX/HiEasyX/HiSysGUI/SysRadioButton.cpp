@@ -1,4 +1,5 @@
 #include "SysRadioButton.h"
+#include <tchar.h>
 
 namespace HiEasyX
 {
@@ -7,8 +8,8 @@ namespace HiEasyX
 		m_type = SCT_RadioButton;
 		m_hWnd = CreateControl(
 			hParent,
-			L"Button",
-			L"",
+			_T("Button"),
+			_T(""),
 			WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTORADIOBUTTON
 		);
 	}
@@ -17,15 +18,25 @@ namespace HiEasyX
 	{
 	}
 
+#ifdef UNICODE
 	SysRadioButton::SysRadioButton(HWND hParent, RECT rct, std::wstring strText)
 	{
 		Create(hParent, rct, strText);
 	}
-
 	SysRadioButton::SysRadioButton(HWND hParent, int x, int y, int w, int h, std::wstring strText)
 	{
 		Create(hParent, x, y, w, h, strText);
 	}
+#else
+	SysRadioButton::SysRadioButton(HWND hParent, RECT rct, std::string strText)
+	{
+		Create(hParent, rct, strText);
+	}
+	SysRadioButton::SysRadioButton(HWND hParent, int x, int y, int w, int h, std::string strText)
+	{
+		Create(hParent, x, y, w, h, strText);
+	}
+#endif
 
 	LRESULT SysRadioButton::UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet)
 	{

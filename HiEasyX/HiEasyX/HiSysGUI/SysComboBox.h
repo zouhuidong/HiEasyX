@@ -21,8 +21,13 @@ namespace HiEasyX
 		int m_nSel = -1;
 		bool m_bSelChanged = false;
 		bool m_bEdited = false;
+#ifdef UNICODE
 		void (*m_pFuncSel)(int sel, std::wstring wstrSelText) = nullptr;
 		void (*m_pFuncEdit)(std::wstring wstrText) = nullptr;
+#else
+		void (*m_pFuncSel)(int sel, std::string wstrSelText) = nullptr;
+		void (*m_pFuncEdit)(std::string wstrText) = nullptr;
+#endif
 
 		/**
 		 * @brief	标记用户设置了 CBS_SIMPLE 同时禁用输入
@@ -48,9 +53,13 @@ namespace HiEasyX
 
 		SysComboBox();
 
+#ifdef UNICODE
 		SysComboBox(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysComboBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysComboBox(HWND hParent, RECT rct, std::string strText = "");
+		SysComboBox(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		/**
 		 * @brief 在创建控件前预设样式
@@ -63,13 +72,21 @@ namespace HiEasyX
 		 * @brief 注册选择消息
 		 * @param[in] pFunc 消息响应函数
 		*/
+#ifdef UNICODE
 		void RegisterSelMessage(void (*pFunc)(int sel, std::wstring wstrSelText));
+#else
+		void RegisterSelMessage(void (*pFunc)(int sel, std::string strSelText));
+#endif
 
 		/**
 		 * @brief 注册编辑消息
 		 * @param[in] pFunc 消息响应函数
 		*/
+#ifdef UNICODE
 		void RegisterEditMessage(void (*pFunc)(std::wstring wstrText));
+#else
+		void RegisterEditMessage(void (*pFunc)(std::string strText));
+#endif
 
 		/**
 		 * @brief 获取选中的索引
@@ -87,20 +104,32 @@ namespace HiEasyX
 		 * @param[in] wstrText 指定文本
 		 * @return 是否选择成功
 		*/
+#ifdef UNICODE
 		bool SelectString(std::wstring wstrText);
+#else
+		bool SelectString(std::string strText);
+#endif
 
 		/**
 		 * @brief 增加项
 		 * @param[in] wstrText 项文本
 		*/
+#ifdef UNICODE
 		void AddString(std::wstring wstrText);
+#else
+		void AddString(std::string strText);
+#endif
 
 		/**
 		 * @brief 插入项
 		 * @param[in] index		插入位置
 		 * @param[in] wstrText	项文本
 		*/
+#ifdef UNICODE
 		void InsertString(int index, std::wstring wstrText);
+#else
+		void InsertString(int index, std::string strText);
+#endif
 
 		/**
 		 * @brief 删除项

@@ -27,9 +27,13 @@ namespace HiEasyX
 
 		SysCheckBox();
 
+#ifdef UNICODE
 		SysCheckBox(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysCheckBox(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysCheckBox(HWND hParent, RECT rct, std::string strText = "");
+		SysCheckBox(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 

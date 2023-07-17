@@ -29,9 +29,13 @@ namespace HiEasyX
 
 		SysButton();
 
+#ifdef UNICODE
 		SysButton(HWND hParent, RECT rct, std::wstring strText = L"");
-
 		SysButton(HWND hParent, int x, int y, int w, int h, std::wstring strText = L"");
+#else
+		SysButton(HWND hParent, RECT rct, std::string strText = "");
+		SysButton(HWND hParent, int x, int y, int w, int h, std::string strText = "");
+#endif
 
 		LRESULT UpdateMessage(UINT msg, WPARAM wParam, LPARAM lParam, bool& bRet) override;
 
