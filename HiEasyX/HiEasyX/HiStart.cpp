@@ -257,7 +257,7 @@ void GetDstPoints(int w, int h, HWND hWnd)
 	font.lfUnderline = false;
 	font.lfStrikeOut = false;
 	font.lfQuality = PROOF_QUALITY;
-	
+
 #ifdef _MSC_VER
 	_tcscpy_s(font.lfFaceName, _T("Arial"));
 #else
@@ -349,10 +349,17 @@ void Blur(DWORD* pMem, int w, int h, int speed)
 {
 	for (int i = w; i < w * (h - 1); i++)
 	{
+#ifdef _MSC_VER
+		pMem[i] = RGB(
+			min(255, (GetRValue(pMem[i]) + GetRValue(pMem[i - w]) + GetRValue(pMem[i - 1]) + GetRValue(pMem[i + 1]) + GetRValue(pMem[i + w])) / 5 + speed),
+			min(255, (GetGValue(pMem[i]) + GetGValue(pMem[i - w]) + GetGValue(pMem[i - 1]) + GetGValue(pMem[i + 1]) + GetGValue(pMem[i + w])) / 5 + speed),
+			min(255, (GetBValue(pMem[i]) + GetBValue(pMem[i - w]) + GetBValue(pMem[i - 1]) + GetBValue(pMem[i + 1]) + GetBValue(pMem[i + w])) / 5 + speed));
+#else
 		pMem[i] = RGB(
 			std::min(255, (GetRValue(pMem[i]) + GetRValue(pMem[i - w]) + GetRValue(pMem[i - 1]) + GetRValue(pMem[i + 1]) + GetRValue(pMem[i + w])) / 5 + speed),
 			std::min(255, (GetGValue(pMem[i]) + GetGValue(pMem[i - w]) + GetGValue(pMem[i - 1]) + GetGValue(pMem[i + 1]) + GetGValue(pMem[i + w])) / 5 + speed),
 			std::min(255, (GetBValue(pMem[i]) + GetBValue(pMem[i - w]) + GetBValue(pMem[i - 1]) + GetBValue(pMem[i + 1]) + GetBValue(pMem[i + w])) / 5 + speed));
+#endif
 	}
 }
 
@@ -374,7 +381,7 @@ void HiEasyX::RenderStartScene(HWND hWnd, int w, int h, int nPreCmdShow)
 	ShowWindow(hWnd, nPreCmdShow);
 	UpdateWindow(hWnd);
 	DWORD* pBuf = GetImageBuffer(HiEasyX::GetWindowImage(hWnd));
-	
+
 	// 运算
 	int x, y;
 	long long sleep_time = (long long)(-1 * (0.000006276f) * (w * h) + 25);
@@ -382,23 +389,40 @@ void HiEasyX::RenderStartScene(HWND hWnd, int w, int h, int nPreCmdShow)
 	{
 		BEGIN_TASK();
 
+#ifdef _MSC_VER
+		int brightness = max(0, 150 - i);
+#else
 		int brightness = std::max(0, 150 - i);
+#endif
+
 		Blur(pBuf, w, h, i <= 256 ? 3 : int(double(i - 256) / 10) + 3);                     // 全屏模糊处理
 
+#ifdef _MSC_VER
+		int val = min(256, i);
+#else
 		int val = std::min(256, i);
+#endif
+
 		for (int d = 0; d < g_nCount; d++)
 		{
+#ifdef _MSC_VER
+			x = g_pSrc[d].x + (g_pDst[d].x - g_pSrc[d].x) * val / max(256, 514 - i);
+			y = g_pSrc[d].y + (g_pDst[d].y - g_pSrc[d].y) * val / max(256, 514 - i);
+			pBuf[y * w + x] = RGB(min(255, GetBValue(g_pDst_color[d]) + brightness), min(255, GetGValue(g_pDst_color[d]) + brightness), min(255, GetRValue(g_pDst_color[d]) + brightness));        // 直接操作显示缓冲区画点
+
+#else
 			x = g_pSrc[d].x + (g_pDst[d].x - g_pSrc[d].x) * val / std::max(256, 514 - i);
 			y = g_pSrc[d].y + (g_pDst[d].y - g_pSrc[d].y) * val / std::max(256, 514 - i);
 			pBuf[y * w + x] = RGB(std::min(255, GetBValue(g_pDst_color[d]) + brightness), std::min(255, GetGValue(g_pDst_color[d]) + brightness), std::min(255, GetRValue(g_pDst_color[d]) + brightness));        // 直接操作显示缓冲区画点
+#endif
 		}
 
 		END_TASK();
 		REDRAW_WINDOW();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(sleep_time));
-		
-		if(!HiEasyX::IsAliveWindow(hWnd)) break;
+
+		if (!HiEasyX::IsAliveWindow(hWnd)) break;
 	}
 
 	// 清理内存
