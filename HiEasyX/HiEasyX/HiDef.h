@@ -5,7 +5,7 @@
 */
 
 // 版本定义
-#define _HIEASYX_VER_STR_	_T("Ver 0.4.0 pre2")
+#define _HIEASYX_VER_STR_	_T("Ver 0.4.0 RC1")
 
 // 使用原生 EasyX 窗口（默认为 HiWindow）
 //#define _NATIVE_EASYX_

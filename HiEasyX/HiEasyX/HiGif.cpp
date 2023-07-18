@@ -1,5 +1,10 @@
 #include "HiGif.h"
-#pragma comment(lib, "gdiplus.lib")
+ 
+#ifdef _MSC_VER
+#pragma comment (lib, "gdiplus.lib")
+#else
+#pragma GCC link "gdiplus.lib"
+#endif
 
 namespace HiEasyX
 {
