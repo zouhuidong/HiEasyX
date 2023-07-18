@@ -1,14 +1,18 @@
 # 更新日志
 
-## Ver 0.4.0 pre2
+## Ver 0.4.0 RC1
 
-**重大更新** 同时支持 Unicode 和 MBCS 字符集（后续将支持 MinGW 等） 
+**重大更新** 同时支持 Unicode 和 MBCS 字符集
+**重大更新** 同时支持 MSVC、MinGW、TDM 等编译器
 **新增** Release模式全新启动动画  
 **新增** `hiex::ZoomImage_Gdiplus_Alpha` 和 `Canvas::ZoomImage_Gdiplus_Alpha` 函数：拉伸图像（可包含透明通道，速度快质量佳）  
 **新增** `hiex::OverlayImageTransparency` 函数：融合（叠加）图像透明度  
 **新增** `hiex::RemoveImageTransparency` 函数：移除图像透明通道  
 
 **修复** `Bitmap2Image` 函数当定义不使用透明度时，透明度不为 255 的问题  
+
+![MinGW 编译通过](https://img1.imgtp.com/2023/07/18/88mlcM0s.png)
+![TDM-GCC 编译通过](https://img1.imgtp.com/2023/07/18/2v6edVtc.png)
 
 ## Ver 0.3.5 (2023.06.23)
 
