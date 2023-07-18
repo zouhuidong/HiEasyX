@@ -3,8 +3,6 @@
 
 #ifdef _MSC_VER
 #pragma comment (lib, "winmm.lib")
-#else
-#pragma GCC link "winmm.lib"
 #endif
 
 /****************************************************************************************************************

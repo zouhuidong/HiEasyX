@@ -13,7 +13,10 @@
 #include <WinUser.h>
 #include <vector>
 #include <thread>
+
+#ifdef _MSC_VER
 #pragma comment (lib, "Msimg32.lib")
+#endif
 
 #define __HIWINDOW_H__
 

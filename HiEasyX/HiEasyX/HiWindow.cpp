@@ -1508,12 +1508,17 @@ namespace HiEasyX
 			g_uWM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
 
 #ifndef _DEBUG
+#ifndef __DEBUG__
+#ifndef DEBUG
 #ifndef _NO_START_ANIMATION_
 
-			if (!(isPreShowState && nPreCmdShow == SW_HIDE) && w >= 640 && h >= 480) start_animation = true;
+			if (!(isPreShowState && nPreCmdShow == SW_HIDE) && w >= 640 && h >= 480) 
+				start_animation = true;
 
-#endif // _NO_START_ANIMATION_
-#endif // RELEASE
+#endif
+#endif
+#endif
+#endif
 		}
 
 		// 如果现在不存在任何窗口

@@ -12,8 +12,6 @@
 
 #ifdef _MSC_VER
 #pragma comment (lib, "Msimg32.lib")
-#else
-#pragma GCC link "Msimg32"
 #endif
 
 /**

@@ -3,8 +3,6 @@
 
 #ifdef _MSC_VER
 #pragma comment (lib, "gdiplus.lib")
-#else
-#pragma GCC link "gdiplus.lib"
 #endif
 
 bool							g_bStarup = false;

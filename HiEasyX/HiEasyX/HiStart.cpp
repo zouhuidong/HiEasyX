@@ -339,8 +339,8 @@ void GetSrcPoints(int w, int h)
 	g_pSrc = new POINT[g_nCount];
 	for (int i = 0; i < g_nCount; i++)
 	{
-		g_pSrc[i].x = rand() % w;
-		g_pSrc[i].y = rand() % h;
+		g_pSrc[i].x = 1 + rand() % (w - 1);
+		g_pSrc[i].y = 1 + rand() % (h - 1);
 	}
 }
 
@@ -374,7 +374,7 @@ void HiEasyX::RenderStartScene(HWND hWnd, int w, int h, int nPreCmdShow)
 	ShowWindow(hWnd, nPreCmdShow);
 	UpdateWindow(hWnd);
 	DWORD* pBuf = GetImageBuffer(HiEasyX::GetWindowImage(hWnd));
-
+	
 	// 运算
 	int x, y;
 	long long sleep_time = (long long)(-1 * (0.000006276f) * (w * h) + 25);
@@ -397,6 +397,8 @@ void HiEasyX::RenderStartScene(HWND hWnd, int w, int h, int nPreCmdShow)
 		REDRAW_WINDOW();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(sleep_time));
+		
+		if(!HiEasyX::IsAliveWindow(hWnd)) break;
 	}
 
 	// 清理内存
