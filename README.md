@@ -115,7 +115,7 @@ HiEasyX 支持创建多绘图窗口，拥有相对完善的控件库，支持透
 以下的示例程序源码可以在 `./Samples/` 中找到
 
 <div align=center>
-<img src="./screenshot/start.png"><br>
+<img src="https://img1.imgtp.com/2023/07/18/Q4NDbzEU.png"><br>
 <b>Release 模式启动动画效果</b>
 </div><br>
 
