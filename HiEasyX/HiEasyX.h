@@ -3,7 +3,7 @@
  * @brief		HiEasyX 库头文件
  * @note		HiEasyX 是基于 EasyX 的扩展库，支持创建多窗口、透明抗锯齿绘图、系统 UI 组件等等。
  *
- * @version		Ver 0.4.0
+ * @version		Ver 0.4.1
  * @envir		VisualStudio 2022 | EasyX_20220901 | Windows 11
  * @site		https://github.com/zouhuidong/HiEasyX
  *
@@ -17,7 +17,7 @@
  *
  * @create		2022.07.20
  * @update		2023.07.18
- * 
+ *
  * @attention	如果使用MinGW和TDM等编译器，则需要添加链接选项:-leasyx -lmsimg32 -lgdiplus -lgdi32 -lwinmm
  * 				需要使用 C++14 及以上标准，编译时需选择 ISO C++14 (或以上标准)标准或添加编译选项:-std=c++14 (或以上标准)
 */
