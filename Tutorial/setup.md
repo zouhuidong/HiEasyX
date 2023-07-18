@@ -5,30 +5,30 @@
 ## 编译环境
 
 * Windows 7 及以上，Windows Sever 2008 R2 及以上（推荐使用 Windows 10/11）
-* Visual Studio 2012 及以上（推荐使用 Visual Studio 2022）
+* Visual Studio 2013 及以上（推荐使用 Visual Studio 2022）
 * 推荐 EasyX 版本：EasyX_20220901
 
 > **注意：**
 >
-> * 需要编译器支持 C++ 11
+> * 需要编译器支持 C++ 14
 > 
-> * 需要在项目中使用 UNICODE 字符集，尚不支持 MBCS 字符集。
+> * HiEasyX 对于 Unicode 和 MBCS 字符集均支持
 > 
 > * 必须已经配置 EasyX 图形库，如未配置，请访问图形库官网 https://easyx.cn
 >
-> * 暂不支持 MinGW 等 GCC 编译器，请使用 Visual Studio 编译项目。（关于 MinGW 的问题，参见 https://github.com/zouhuidong/HiEasyX/issues/14 ）
+> * 对于 MinGW 等 GCC 编译器，需提前安装 EasyX-for-MinGW：https://codebus.cn/bestans/easyx-for-mingw
 
 ## 配置 HiEasyX 到项目中
 
 1. 首先下载整个仓库到你的计算机，如果想使用旧版 HiEasyX，请在 [Release](https://github.com/zouhuidong/HiEasyX/releases) 页面中下载旧版的源码。
 
-2. 然后打开下载好的仓库文件夹，里面的 Visual Studio 项目可以直接编译（前提是你已经配置了 EasyX）
-
 接下来要将 HiEasyX 配置到你的项目中，只需要：
 
-1. 创建一个 Visual Studio 项目
+1. 创建一个项目
 2. 复制仓库项目中的 `./HiEasyX/HiEasyX.h` 和 `./HiEasyX/HiEasyX/` 整个文件夹到你的项目目录下（和项目源码放一起即可）
-3. 将刚才复制的文件和文件夹加入到您的 Visual Studio 项目中（拖入 Visual Studio 的项目资源管理器即可，或可以在 VS 中右键项目然后手动选择添加这些文件）
+3. 将刚才复制的文件和文件夹加入到您的项目中（拖入编译器的项目资源管理器即可，或可以在项目文件手动选择添加这些文件）
+
+对于 MinGW 等 GCC 编译器，需额外添加配置：需要添加链接选项: `-leasyx -lmsimg32 -lgdiplus -lgdi32 -lwinmm`
 
 最后在源码中包含此库：
 
