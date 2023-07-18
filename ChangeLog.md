@@ -1,9 +1,9 @@
 # 更新日志
 
-## Ver 0.4.0 RC1
+## Ver 0.4.0 (2023.07.18)
 
 **重大更新** 同时支持 Unicode 和 MBCS 字符集
-**重大更新** 同时支持 MSVC、MinGW、TDM 等编译器
+**重大更新** 同时支持 MSVC、MinGW、TDM-GCC 等编译器
 **新增** Release模式全新启动动画  
 **新增** `hiex::ZoomImage_Gdiplus_Alpha` 和 `Canvas::ZoomImage_Gdiplus_Alpha` 函数：拉伸图像（可包含透明通道，速度快质量佳）  
 **新增** `hiex::OverlayImageTransparency` 函数：融合（叠加）图像透明度  
