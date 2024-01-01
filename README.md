@@ -11,6 +11,8 @@ HiEasyX 是基于 EasyX 的扩展库，支持创建多窗口、透明抗锯齿�
 **近期重大更新**：同时支持 MSVC、MinGW、TDM-GCC 等编译器  
 [详情](https://github.com/zouhuidong/HiEasyX/releases)
 
+**官方Q群**：761990769
+
 ---
 
 HiEasyX 和 EasyX 的契合度很高，它能让你在使用 EasyX 的过程中如虎添翼~
