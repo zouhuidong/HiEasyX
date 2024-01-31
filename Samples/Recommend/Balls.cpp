@@ -1,20 +1,20 @@
 /**
- * @brief	Í¸Ã÷Ğ¡Çò±ß½çÅö×²Ê¾Àı
- * @note	´ËÊ¾ÀıÓÃÓÚÑİÊ¾ HiCanvas µÄÍ¸Ã÷Í¨µÀ¡¢³¡¾°ºÍÍ¼²ã
- * @author	huidong <mailhuid@163.com>
- * @version	HiEasyX Ver0.3.2
- * @date	2023.01.12
+ * @brief	é€æ˜å°çƒè¾¹ç•Œç¢°æ’ç¤ºä¾‹
+ * @note	æ­¤ç¤ºä¾‹ç”¨äºæ¼”ç¤º HiCanvas çš„é€æ˜é€šé“ã€åœºæ™¯å’Œå›¾å±‚
+ * @author	huidong<mailhuid@163.com> alan-crl<alan-crl@foxmail.com>
+ * @version	HiEasyX Ver0.4.1
+ * @date	2024.01.31
 */
 
 #include "HiEasyX.h"
 
-// Ğ¡ÇòÊıÁ¿
+// å°çƒæ•°é‡
 #define BALL_NUM 14
 
-// Ğ¡Çò°ë¾¶
+// å°çƒåŠå¾„
 #define RADIUS 70
 
-// ÇòÌå
+// çƒä½“
 struct Ball
 {
 	hiex::ImageBlock img;
@@ -22,39 +22,39 @@ struct Ball
 	float vx, vy;
 };
 
-hiex::SysButton btn;			// °´Å¥
-bool show_outline = false;		// ÊÇ·ñÏÔÊ¾ÂÖÀª
+hiex::SysButton btn;			// æŒ‰é’®
+bool show_outline = false;		// æ˜¯å¦æ˜¾ç¤ºè½®å»“
 
 int main()
 {
-	hiex::Window wnd(640, 480);			// ´´½¨´°¿Ú
-	hiex::Canvas canvas;				// ´´½¨»­²¼¶ÔÏó
-	wnd.BindCanvas(&canvas);			// ½«´°¿ÚºÍ»­²¼°ó¶¨
+	hiex::Window wnd(640, 480);			// åˆ›å»ºçª—å£
+	hiex::Canvas canvas;				// åˆ›å»ºç”»å¸ƒå¯¹è±¡
+	wnd.BindCanvas(&canvas);			// å°†çª—å£å’Œç”»å¸ƒç»‘å®š
 
-	// ÊÖ¶¯Ë¢ĞÂË«»º³å
+	// æ‰‹åŠ¨åˆ·æ–°åŒç¼“å†²
 	//hiex::EnableAutoFlush(false);
 
-	canvas.Clear(true, BLACK);			// ÉèÖÃ±³¾°É«ÎªºÚÉ«£¬Çå¿Õ»­²¼
+	canvas.Clear(true, BLACK);			// è®¾ç½®èƒŒæ™¯è‰²ä¸ºé»‘è‰²ï¼Œæ¸…ç©ºç”»å¸ƒ
 
-	// ´´½¨°´Å¥£¬ÓÃÓÚµã»÷ÉèÖÃÊÇ·ñÏÔÊ¾ÂÖÀª
+	// åˆ›å»ºæŒ‰é’®ï¼Œç”¨äºç‚¹å‡»è®¾ç½®æ˜¯å¦æ˜¾ç¤ºè½®å»“
 	btn.Create(wnd.GetHandle(), 50, 50, 120, 30, L"Hide outline");
 	btn.RegisterMessage([]() {
 		show_outline = !show_outline;
-	btn.SetText(show_outline ? L"Show outline" : L"Hide outline");
+		btn.SetText(show_outline ? L"Show outline" : L"Hide outline");
 		});
 
-	// ³õÊ¼»¯Ëæ»úÊı
+	// åˆå§‹åŒ–éšæœºæ•°
 	srand((UINT)time(nullptr));
 
-	hiex::Scene scene;		// ³¡¾°
-	hiex::Layer layer;		// Í¼²ã
+	hiex::Scene scene;		// åœºæ™¯
+	hiex::Layer layer;		// å›¾å±‚
 
-	Ball balls[BALL_NUM];	// Ğ¡Çò
+	Ball balls[BALL_NUM];	// å°çƒ
 
-	// ³õÊ¼»¯Ğ¡Çò
+	// åˆå§‹åŒ–å°çƒ
 	for (auto& i : balls)
 	{
-		// Î»ÖÃºÍËÙ¶ÈµÄ³õÊ¼»¯
+		// ä½ç½®å’Œé€Ÿåº¦çš„åˆå§‹åŒ–
 		i.x = (float)(rand() % canvas.GetWidth());
 		i.y = (float)(rand() % canvas.GetHeight());
 		i.vx = rand() % 5 * (rand() % 2 ? 2.0f : -2.0f);
@@ -64,24 +64,24 @@ int main()
 		if (i.vy == 0)
 			i.vy = 3;
 
-		// Ğ¡ÇòµÄÍ¼Ïñ¿éÉèÖÃ
+		// å°çƒçš„å›¾åƒå—è®¾ç½®
 		i.img.CreateCanvas(RADIUS * 2, RADIUS * 2);
 		i.img.GetCanvas()->Clear();
 		i.img.GetCanvas()->SolidCircle(RADIUS, RADIUS, RADIUS, true, rand() % 0xffffff);
 		ReverseAlpha(i.img.GetCanvas()->GetBuffer(), i.img.GetCanvas()->GetBufferSize());
 
-		// ÉèÖÃÍ¼Ïñ¿éÍ¸Ã÷¶È
+		// è®¾ç½®å›¾åƒå—é€æ˜åº¦
 		i.img.alpha = 200;
 		i.img.bUseSrcAlpha = true;
 
-		// ¼ÓÈëÍ¼Ïñ¿éµ½Í¼²ã
+		// åŠ å…¥å›¾åƒå—åˆ°å›¾å±‚
 		layer.push_back(&i.img);
 	}
 
-	// ¼ÓÈëÍ¼²ãµ½³¡¾°
+	// åŠ å…¥å›¾å±‚åˆ°åœºæ™¯
 	scene.push_back(&layer);
 
-	// Ö÷Ñ­»·£¨´°¿Ú¹Ø±Õ»ò°´ÏÂ°´¼üÊ±ÍË³ö£©
+	// ä¸»å¾ªç¯ï¼ˆçª—å£å…³é—­æˆ–æŒ‰ä¸‹æŒ‰é”®æ—¶é€€å‡ºï¼‰
 	while (wnd.IsAlive() && !peekmessage(nullptr, EM_CHAR))
 	{
 		for (auto& i : balls)
@@ -89,7 +89,7 @@ int main()
 			i.x += i.vx;
 			i.y += i.vy;
 
-			// Åö×²ÅĞ¶¨
+			// ç¢°æ’åˆ¤å®š
 			if (i.x - RADIUS < 0)
 			{
 				i.x = RADIUS;
@@ -111,24 +111,25 @@ int main()
 				i.vy = -i.vy;
 			}
 
-			// ¸üĞÂÎ»ÖÃ
+			// æ›´æ–°ä½ç½®
 			i.img.SetPos((int)i.x - RADIUS, (int)i.y - RADIUS);
 		}
 
 		if (wnd.BeginTask())
 		{
-			// äÖÈ¾³¡¾°
+			// æ¸²æŸ“åœºæ™¯
 			scene.Render(canvas.GetImagePointer(), show_outline);
 
-			// ÊÖ¶¯Ë¢ĞÂË«»º³å
+			// æ‰‹åŠ¨åˆ·æ–°åŒç¼“å†²
 			//wnd.FlushDrawing();
 
 			wnd.EndTask();
 			wnd.Redraw();
 		}
 
-		// Æ½ºâÖ¡ÂÊ
-		hiex::DelayFPS(24);
+		// å¹³è¡¡å¸§ç‡
+		static hiex::tDelayFPS recond;
+		hiex::DelayFPS(recond, 24);
 	}
 
 	return 0;
