@@ -1,3 +1,12 @@
+# 📢公告
+> 本仓库是旧版 HiEasyX 代码，现暂停维护。新版仓库迁移至 https://gitee.com/gfigure/hi-easyx 由 Margoo 继续开发。
+>
+> 欢迎访问新版 HiEasyX 官网：https://www.hieasyx.cn/
+> 
+
+
+<br/>
+
 # HiEasyX
 ![Release](https://img.shields.io/github/v/release/zouhuidong/HiEasyX)
 [![Blog](https://img.shields.io/badge/blog-huidong.xyz-green.svg)](http://huidong.xyz)
